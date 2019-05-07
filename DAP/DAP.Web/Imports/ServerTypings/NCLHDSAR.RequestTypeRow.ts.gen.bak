@@ -1,0 +1,23 @@
+﻿
+namespace DAP.NCLHDSAR {
+    export interface RequestTypeRow {
+        Type?: number;
+        Desc?: string;
+    }
+
+    export namespace RequestTypeRow {
+        export const idProperty = 'Type';
+        export const nameProperty = 'Desc';
+        export const localTextPrefix = 'NCLHDSAR.RequestType';
+
+        export namespace Fields {
+            export declare const Type;
+            export declare const Desc;
+        }
+
+        [
+            'Type',
+            'Desc'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

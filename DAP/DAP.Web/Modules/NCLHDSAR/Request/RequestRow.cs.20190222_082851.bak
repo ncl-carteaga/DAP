@@ -1,0 +1,282 @@
+﻿
+namespace DAP.NCLHDSAR.Entities
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using Serenity.Data.Mapping;
+    using System;
+    using System.ComponentModel;
+    using System.IO;
+
+    [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[Request]")]
+    [DisplayName("Request"), InstanceName("Request")]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
+    public sealed class RequestRow : Row, IIdRow, INameRow
+    {
+        [DisplayName("Id"), Size(10), PrimaryKey, ForeignKey("[dbo].[Request]", "Id"), LeftJoin("j"), QuickSearch, TextualField("ReqStage")]
+        public String Id
+        {
+            get { return Fields.Id[this]; }
+            set { Fields.Id[this] = value; }
+        }
+        
+        [DisplayName(" Created Dt"), Expression("j.[Created_dt]")]
+        public DateTime? CreatedDt
+        {
+            get { return Fields.CreatedDt[this]; }
+            set { Fields.CreatedDt[this] = value; }
+        }
+
+        [DisplayName(" Deadline Dt"), Expression("j.[Deadline_dt]")]
+        public DateTime? DeadlineDt
+        {
+            get { return Fields.DeadlineDt[this]; }
+            set { Fields.DeadlineDt[this] = value; }
+        }
+
+        [DisplayName(" Last Updated Dt"), Expression("j.[LastUpdated_dt]")]
+        public DateTime? LastUpdatedDt
+        {
+            get { return Fields.LastUpdatedDt[this]; }
+            set { Fields.LastUpdatedDt[this] = value; }
+        }
+
+        [DisplayName(" Req Extended"), Expression("j.[Req_Extended]")]
+        public Boolean? ReqExtended
+        {
+            get { return Fields.ReqExtended[this]; }
+            set { Fields.ReqExtended[this] = value; }
+        }
+
+        [DisplayName(" Req Stage"), Expression("j.[Req_Stage]")]
+        public String ReqStage
+        {
+            get { return Fields.ReqStage[this]; }
+            set { Fields.ReqStage[this] = value; }
+        }
+
+        [DisplayName(" Req Approver"), Expression("j.[Req_Approver]")]
+        public String ReqApprover
+        {
+            get { return Fields.ReqApprover[this]; }
+            set { Fields.ReqApprover[this] = value; }
+        }
+
+        [DisplayName(" Email"), Expression("j.[Email]")]
+        public String Email
+        {
+            get { return Fields.Email[this]; }
+            set { Fields.Email[this] = value; }
+        }
+
+        [DisplayName(" First Name"), Expression("j.[FirstName]")]
+        public String FirstName
+        {
+            get { return Fields.FirstName[this]; }
+            set { Fields.FirstName[this] = value; }
+        }
+
+        [DisplayName(" Last Name"), Expression("j.[LastName]")]
+        public String LastName
+        {
+            get { return Fields.LastName[this]; }
+            set { Fields.LastName[this] = value; }
+        }
+
+        [DisplayName(" Req Details"), Expression("j.[Req_Details]")]
+        public String ReqDetails
+        {
+            get { return Fields.ReqDetails[this]; }
+            set { Fields.ReqDetails[this] = value; }
+        }
+
+        [DisplayName(" Subject Type"), Expression("j.[Subject_type]")]
+        public String SubjectType
+        {
+            get { return Fields.SubjectType[this]; }
+            set { Fields.SubjectType[this] = value; }
+        }
+
+        [DisplayName(" Request Type"), Expression("j.[RequestType]")]
+        public String RequestType
+        {
+            get { return Fields.RequestType[this]; }
+            set { Fields.RequestType[this] = value; }
+        }
+
+        [DisplayName(" Address1"), Expression("j.[Address1]")]
+        public String Address1
+        {
+            get { return Fields.Address1[this]; }
+            set { Fields.Address1[this] = value; }
+        }
+
+        [DisplayName(" City"), Expression("j.[City]")]
+        public String City
+        {
+            get { return Fields.City[this]; }
+            set { Fields.City[this] = value; }
+        }
+
+        [DisplayName(" Country"), Expression("j.[Country]")]
+        public String Country
+        {
+            get { return Fields.Country[this]; }
+            set { Fields.Country[this] = value; }
+        }
+
+        [DisplayName(" Ncl Yn"), Expression("j.[NCL_YN]")]
+        public String NclYn
+        {
+            get { return Fields.NclYn[this]; }
+            set { Fields.NclYn[this] = value; }
+        }
+
+        [DisplayName(" Latitudes Num"), Expression("j.[Latitudes_num]")]
+        public String LatitudesNum
+        {
+            get { return Fields.LatitudesNum[this]; }
+            set { Fields.LatitudesNum[this] = value; }
+        }
+
+        [DisplayName(" Oceania Yn"), Expression("j.[Oceania_YN]")]
+        public String OceaniaYn
+        {
+            get { return Fields.OceaniaYn[this]; }
+            set { Fields.OceaniaYn[this] = value; }
+        }
+
+        [DisplayName(" Oceania Mp Card Num"), Expression("j.[Oceania_MPCard_num]")]
+        public String OceaniaMpCardNum
+        {
+            get { return Fields.OceaniaMpCardNum[this]; }
+            set { Fields.OceaniaMpCardNum[this] = value; }
+        }
+
+        [DisplayName(" Regent Yn"), Expression("j.[Regent_YN]")]
+        public String RegentYn
+        {
+            get { return Fields.RegentYn[this]; }
+            set { Fields.RegentYn[this] = value; }
+        }
+
+        [DisplayName(" Regent Mp Card Num"), Expression("j.[Regent_MPCard_num]")]
+        public String RegentMpCardNum
+        {
+            get { return Fields.RegentMpCardNum[this]; }
+            set { Fields.RegentMpCardNum[this] = value; }
+        }
+
+        [DisplayName(" Sixthman Yn"), Expression("j.[Sixthman_YN]")]
+        public String SixthmanYn
+        {
+            get { return Fields.SixthmanYn[this]; }
+            set { Fields.SixthmanYn[this] = value; }
+        }
+
+        [DisplayName(" Identity Verification Opt Outs"), Expression("j.[Identity_Verification_OptOuts]")]
+        public String IdentityVerificationOptOuts
+        {
+            get { return Fields.IdentityVerificationOptOuts[this]; }
+            set { Fields.IdentityVerificationOptOuts[this] = value; }
+        }
+
+        [DisplayName(" Identity Verification Other Requests"), Expression("j.[Identity_Verification_OtherRequests]")]
+        public String IdentityVerificationOtherRequests
+        {
+            get { return Fields.IdentityVerificationOtherRequests[this]; }
+            set { Fields.IdentityVerificationOtherRequests[this] = value; }
+        }
+
+        [DisplayName(" Request Type Num"), Expression("j.[RequestType_num]")]
+        public Int32? RequestTypeNum
+        {
+            get { return Fields.RequestTypeNum[this]; }
+            set { Fields.RequestTypeNum[this] = value; }
+        }
+
+        [DisplayName(" Req Status"), Expression("j.[Req_status]")]
+        public String ReqStatus
+        {
+            get { return Fields.ReqStatus[this]; }
+            set { Fields.ReqStatus[this] = value; }
+        }
+
+        [DisplayName(" Load Dt"), Expression("j.[Load_dt]")]
+        public DateTime? LoadDt
+        {
+            get { return Fields.LoadDt[this]; }
+            set { Fields.LoadDt[this] = value; }
+        }
+
+        [DisplayName(" Process Dt"), Expression("j.[Process_dt]")]
+        public DateTime? ProcessDt
+        {
+            get { return Fields.ProcessDt[this]; }
+            set { Fields.ProcessDt[this] = value; }
+        }
+
+        [DisplayName("Request Type Num Desc"), Expression("jRequestTypeNum.[Req_desc]")]
+        public String RequestTypeNumDesc
+        {
+            get { return Fields.RequestTypeNumDesc[this]; }
+            set { Fields.RequestTypeNumDesc[this] = value; }
+        }
+
+        IIdField IIdRow.IdField
+        {
+            get { return Fields.Id; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.Id; }
+        }
+
+        public static readonly RowFields Fields = new RowFields().Init();
+
+        public RequestRow()
+            : base(Fields)
+        {
+        }
+
+        public class RowFields : RowFieldsBase
+        {
+            public StringField Id;
+            
+
+            public DateTimeField CreatedDt;
+            public DateTimeField DeadlineDt;
+            public DateTimeField LastUpdatedDt;
+            public BooleanField ReqExtended;
+            public StringField ReqStage;
+            public StringField ReqApprover;
+            public StringField Email;
+            public StringField FirstName;
+            public StringField LastName;
+            public StringField ReqDetails;
+            public StringField SubjectType;
+            public StringField RequestType;
+            public StringField Address1;
+            public StringField City;
+            public StringField Country;
+            public StringField NclYn;
+            public StringField LatitudesNum;
+            public StringField OceaniaYn;
+            public StringField OceaniaMpCardNum;
+            public StringField RegentYn;
+            public StringField RegentMpCardNum;
+            public StringField SixthmanYn;
+            public StringField IdentityVerificationOptOuts;
+            public StringField IdentityVerificationOtherRequests;
+            public Int32Field RequestTypeNum;
+            public StringField ReqStatus;
+            public DateTimeField LoadDt;
+            public DateTimeField ProcessDt;
+
+            public StringField RequestTypeNumDesc;
+        }
+    }
+}

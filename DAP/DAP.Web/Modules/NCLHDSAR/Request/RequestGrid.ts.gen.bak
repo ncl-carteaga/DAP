@@ -1,0 +1,16 @@
+﻿
+namespace DAP.NCLHDSAR {
+
+    @Serenity.Decorators.registerClass()
+    export class RequestGrid extends Serenity.EntityGrid<RequestRow, any> {
+        protected getColumnsKey() { return 'NCLHDSAR.Request'; }
+        protected getDialogType() { return RequestDialog; }
+        protected getIdProperty() { return RequestRow.idProperty; }
+        protected getLocalTextPrefix() { return RequestRow.localTextPrefix; }
+        protected getService() { return RequestService.baseUrl; }
+
+        constructor(container: JQuery) {
+            super(container);
+        }
+    }
+}

@@ -1,0 +1,45 @@
+﻿
+namespace DAP.NCLHDSAR.Forms
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using System;
+    using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.IO;
+
+    [FormScript("NCLHDSAR.Request")]
+    [BasedOnRow(typeof(Entities.RequestRow), CheckNames = true)]
+    public class RequestForm
+    {
+        public DateTime CreatedDt1 { get; set; }
+        public DateTime DeadlineDt1 { get; set; }
+        public DateTime LastUpdatedDt1 { get; set; }
+        public Boolean ReqExtended1 { get; set; }
+        public String ReqStage1 { get; set; }
+        public String ReqApprover1 { get; set; }
+        public String Email1 { get; set; }
+        public String FirstName1 { get; set; }
+        public String LastName1 { get; set; }
+        public String ReqDetails1 { get; set; }
+        public String SubjectType1 { get; set; }
+        public String RequestType1 { get; set; }
+        public String Address11 { get; set; }
+        public String City1 { get; set; }
+        public String Country1 { get; set; }
+        public String NclYn1 { get; set; }
+        public String LatitudesNum1 { get; set; }
+        public String OceaniaYn1 { get; set; }
+        public String OceaniaMpCardNum1 { get; set; }
+        public String RegentYn1 { get; set; }
+        public String RegentMpCardNum1 { get; set; }
+        public String SixthmanYn1 { get; set; }
+        public String IdentityVerificationOptOuts1 { get; set; }
+        public String IdentityVerificationOtherRequests1 { get; set; }
+        public Int32 RequestTypeNum1 { get; set; }
+        public String ReqStatus1 { get; set; }
+        public DateTime LoadDt1 { get; set; }
+        public DateTime ProcessDt1 { get; set; }
+    }
+}

@@ -1,0 +1,34 @@
+﻿
+namespace DAP.NCLHDSAR {
+
+    // get a reference to order row field names
+    import fld = RequestRow.Fields;
+
+    @Serenity.Decorators.registerClass()
+    export class RequestGrid extends Serenity.EntityGrid<RequestRow, any> {
+        protected getColumnsKey() { return 'NCLHDSAR.Request'; }
+        protected getDialogType() { return RequestDialog; }
+        protected getIdProperty() { return RequestRow.idProperty; }
+        protected getLocalTextPrefix() { return RequestRow.localTextPrefix; }
+        protected getService() { return RequestService.baseUrl; }
+
+        constructor(container: JQuery) {
+            super(container);
+        }
+
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[] {
+
+            // get quick filter list from base class
+            let filters = super.getQuickFilters();
+
+            // quick filter init method is a good place to set initial
+            // value for a quick filter editor, just after it is created
+
+            Q.first(filters, x => x.field == fld.ReqStage).init = w => {
+                (w as Serenity.TextAreaEditor).value = "NEW";
+            };
+
+            return filters;
+        }
+    }
+}
