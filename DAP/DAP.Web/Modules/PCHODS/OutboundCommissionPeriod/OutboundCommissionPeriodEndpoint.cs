@@ -16,14 +16,20 @@ namespace DAP.PCHODS.Endpoints
         [HttpPost, AuthorizeCreate(typeof(MyRow))]
         public SaveResponse Create(SaveRequest<MyRow> request)
         {
+            var user = (UserDefinition)Authorization.UserDefinition;
             //return new MyRepository().Create(uow, request);
             using (var connection = SqlConnections.NewByKey("PCH_ODS"))
 
             using (var uow = new UnitOfWork(connection))
             {
 
-                uow.Connection.Execute("CloseCommissionPeriod",
-                                        commandType: CommandType.StoredProcedure);
+                uow.Connection.Execute("usp_Outbound_CloseCommissionPeriod",
+                    param: new
+                    {
+                        UserId = user.UserId,
+                        Username = user.Username
+                    },
+                    commandType: CommandType.StoredProcedure);
 
                 uow.Commit();
                 return new SaveResponse();

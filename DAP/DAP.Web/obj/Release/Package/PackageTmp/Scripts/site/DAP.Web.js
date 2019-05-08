@@ -4567,7 +4567,7 @@ var DAP;
                 _this.form.NvsUserId.changeSelect2(function (e) {
                     var nvsuserid = Q.toId(_this.form.NvsUserId.value);
                     if (nvsuserid != null) {
-                        _this.form.CompanyCd.value = PCHODS.OutboundNvsUsersRow.getLookup().itemById[nvsuserid].CompanyCd;
+                        // this.form.CompanyCd.value = PCHODS.OutboundNvsUsersRow.getLookup().itemById[nvsuserid].CompanyCd;                   
                     }
                 });
                 return _this;
@@ -4719,8 +4719,19 @@ var DAP;
                 columns.push({
                     field: 'Close Period',
                     name: '',
-                    format: function (ctx) { return '<a class="inline-action close-period" title="Close Period">' +
-                        '<i class="fa fa-unlock text-red"></i></a>'; },
+                    format: function (ctx) {
+                        var CurItem = ctx.item;
+                        var klass = "";
+                        if (CurItem.IsOpen) {
+                            klass = '<a class="inline-action close-period" title="Close Period">' +
+                                '<i class="fa  fa-unlock text-red"></i></a>';
+                        }
+                        else {
+                            klass = '<a class="inline-action period-closed" title="Period Closed">' +
+                                '<i class="fa  fa-lock text-green"></i></a>';
+                        }
+                        return klass;
+                    },
                     width: 24,
                     minWidth: 24,
                     maxWidth: 24
@@ -4802,6 +4813,74 @@ var DAP;
             return UsersEditor;
         }(Serenity.LookupEditorBase));
         PCHODS.UsersEditor = UsersEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCompanyRow;
+        (function (OutboundCompanyRow) {
+            OutboundCompanyRow.idProperty = 'Cd';
+            OutboundCompanyRow.nameProperty = 'Cd';
+            OutboundCompanyRow.localTextPrefix = 'PCHODS.OutboundCompany';
+            OutboundCompanyRow.lookupKey = 'PCHODS.Outbound_Company';
+            function getLookup() {
+                return Q.getLookup('PCHODS.Outbound_Company');
+            }
+            OutboundCompanyRow.getLookup = getLookup;
+        })(OutboundCompanyRow = PCHODS.OutboundCompanyRow || (PCHODS.OutboundCompanyRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCompanyService;
+        (function (OutboundCompanyService) {
+            OutboundCompanyService.baseUrl = 'PCHODS/OutboundCompany';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OutboundCompanyService.Methods || (OutboundCompanyService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OutboundCompanyService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OutboundCompanyService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = OutboundCompanyService.baseUrl + '/' + x;
+            });
+        })(OutboundCompanyService = PCHODS.OutboundCompanyService || (PCHODS.OutboundCompanyService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var CompanyEditor = /** @class */ (function (_super) {
+            __extends(CompanyEditor, _super);
+            function CompanyEditor(hidden) {
+                return _super.call(this, hidden) || this;
+            }
+            CompanyEditor.prototype.getLookupKey = function () {
+                return PCHODS.OutboundCompanyRow.lookupKey;
+            };
+            CompanyEditor.prototype.getItemText = function (item, lookup) {
+                return _super.prototype.getItemText.call(this, item, lookup) +
+                    ' (' +
+                    item.Nm +
+                    ')';
+            };
+            CompanyEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], CompanyEditor);
+            return CompanyEditor;
+        }(Serenity.LookupEditorBase));
+        PCHODS.CompanyEditor = CompanyEditor;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

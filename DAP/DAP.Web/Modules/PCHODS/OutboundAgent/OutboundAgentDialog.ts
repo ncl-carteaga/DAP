@@ -19,7 +19,7 @@ namespace DAP.PCHODS {
             this.form.NvsUserId.changeSelect2(e => {
                 var nvsuserid = Q.toId(this.form.NvsUserId.value);                
                 if (nvsuserid != null) {
-                    this.form.CompanyCd.value = PCHODS.OutboundNvsUsersRow.getLookup().itemById[nvsuserid].CompanyCd;                   
+                   // this.form.CompanyCd.value = PCHODS.OutboundNvsUsersRow.getLookup().itemById[nvsuserid].CompanyCd;                   
                 }
             });
         }

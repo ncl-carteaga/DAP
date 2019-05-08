@@ -9,12 +9,12 @@ namespace DAP.PCHODS.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[OutboundCommissionPeriod]")]
+    [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_CommissionPeriod]")]
     [DisplayName("Outbound Commission Period"), InstanceName("Outbound Commission Period")]
     [ReadPermission("Administration:General")]
     [ModifyPermission("Administration:General")]    
     [DataAuditLog]
-    public sealed class OutboundCommissionPeriodRow : Row, IIdRow
+    public sealed class OutboundCommissionPeriodRow : Row, IIdRow, INameRow
     {
         [DisplayName("Outbound Commission Period Id"), Column("OutboundCommissionPeriodID"), Identity]
         public Int32? OutboundCommissionPeriodId
@@ -60,9 +60,28 @@ namespace DAP.PCHODS.Entities
             set { Fields.PreviousMonth[this] = value; }
         }
 
+        [DisplayName("Closed Date")]
+        public DateTime? ClosedDate
+        {
+            get { return Fields.ClosedDate[this]; }
+            set { Fields.ClosedDate[this] = value; }
+        }
+
+        [DisplayName("Closed By"), Size(50), QuickSearch]
+        public String ClosedBy
+        {
+            get { return Fields.ClosedBy[this]; }
+            set { Fields.ClosedBy[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.OutboundCommissionPeriodId; }
+        }
+
+        StringField INameRow.NameField
+        {
+            get { return Fields.ClosedBy; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -80,6 +99,8 @@ namespace DAP.PCHODS.Entities
             public DateTimeField EndDate;
             public DateTimeField CurrentMonth;
             public DateTimeField PreviousMonth;
+            public DateTimeField ClosedDate;
+            public StringField ClosedBy;
         }
     }
 }

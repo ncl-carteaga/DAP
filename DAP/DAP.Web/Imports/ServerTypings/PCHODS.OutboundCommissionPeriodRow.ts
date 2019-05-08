@@ -6,10 +6,13 @@
         EndDate?: string;
         CurrentMonth?: string;
         PreviousMonth?: string;
+        ClosedDate?: string;
+        ClosedBy?: string;
     }
 
     export namespace OutboundCommissionPeriodRow {
         export const idProperty = 'OutboundCommissionPeriodId';
+        export const nameProperty = 'ClosedBy';
         export const localTextPrefix = 'PCHODS.OutboundCommissionPeriod';
 
         export declare const enum Fields {
@@ -18,7 +21,9 @@
             StartDate = "StartDate",
             EndDate = "EndDate",
             CurrentMonth = "CurrentMonth",
-            PreviousMonth = "PreviousMonth"
+            PreviousMonth = "PreviousMonth",
+            ClosedDate = "ClosedDate",
+            ClosedBy = "ClosedBy"
         }
     }
 }

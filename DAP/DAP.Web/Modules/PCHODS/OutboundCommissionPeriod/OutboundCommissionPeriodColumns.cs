@@ -23,5 +23,9 @@ namespace DAP.PCHODS.Lookups
         public DateTime CurrentMonth { get; set; }
         [Width(100)]
         public DateTime PreviousMonth { get; set; }
+
+        public DateTime ClosedDate { get; set; }
+
+        public String ClosedBy { get; set; }
     }
 }
