@@ -27,7 +27,7 @@ namespace DAP.Administration.Entities
             set { Fields.LogType[this] = value; }
         }
 
-        [DisplayName("Log Date"), NotNull, DateTimeKind(DateTimeKind.Utc), QuickFilter]
+        [DisplayName("Log Date"), NotNull,  QuickFilter]
         public DateTime? LogDate
         {
             get { return Fields.LogDate[this]; }

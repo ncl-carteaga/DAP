@@ -3803,9 +3803,7 @@ var DAP;
                 $.fn['vegas'] && $('body')['vegas']({
                     delay: 30000,
                     cover: true,
-                    overlay: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA3NCSVQICAjb4U" +
-                        "/gAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMA/1uRIrUAAAAJcEhZcwAAAsQAAALEAVuRnQsAAAAWdEVYdENyZWF0" +
-                        "aW9uIFRpbWUAMDQvMTMvMTGrW0T6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJljaGBgAAABhACBrONIPgAAAABJRU5ErkJggg==",
+                    overlay: "",
                     slides: [
                         { src: Q.resolveUrl("~/Content/site/slides/slide1.jpg"), transition: 'fade' },
                         { src: Q.resolveUrl("~/Content/site/slides/slide2.jpg"), transition: 'zoomOut' },
@@ -4229,8 +4227,19 @@ var DAP;
                 columns.push({
                     field: 'Resolve Date',
                     name: '',
-                    format: function (ctx) { return '<a class="inline-action resolve-date" title="Mark as Resolve">' +
-                        '<i class="fa fa-calendar-plus-o text-green"></i></a>'; },
+                    format: function (ctx) {
+                        var CurItem = ctx.item;
+                        var klass = "";
+                        if (CurItem.ResolvedDt == null) {
+                            klass = '<a class="inline-action resolve-date" title="Mark as Resolve">' +
+                                '<i class="fa fa-calendar-plus-o text-green"></i></a>';
+                        }
+                        else {
+                            klass = '<a class="inline-action date-resolved" title="Resolved">' +
+                                '<i class="fa  fa-calendar-check-o text-green"></i></a>';
+                        }
+                        return klass;
+                    },
                     width: 24,
                     minWidth: 24,
                     maxWidth: 24
