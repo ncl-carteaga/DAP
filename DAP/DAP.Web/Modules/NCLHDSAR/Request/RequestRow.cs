@@ -53,7 +53,7 @@ namespace DAP.NCLHDSAR.Entities
         }
 
         [DisplayName("Created Dt"), Column("Created_dt"), NotNull, Updatable(false)]
-        [DisplayFormat("MM/dd/yyyy HH:mm:ss")]
+        
         public DateTime? CreatedDt
         {
             get { return Fields.CreatedDt[this]; }
@@ -61,7 +61,7 @@ namespace DAP.NCLHDSAR.Entities
         }
 
         [DisplayName("Deadline Dt"), Column("Deadline_dt"), NotNull, Updatable(false)]
-        [DisplayFormat("MM/dd/yyyy HH:mm:ss")]
+        
         public DateTime? DeadlineDt
         {
             get { return Fields.DeadlineDt[this]; }
@@ -69,7 +69,7 @@ namespace DAP.NCLHDSAR.Entities
         }
 
         [DisplayName("Days Left"), AlignCenter, Updatable(false)]
-        [Expression("DATEDIFF(DAY, getdate(),DeadLine_dt)")]        
+        [Expression("CASE WHEN Req_Stage in ('RESOLVED', 'CLOSED','COMPLETE') THEN 0 ELSE CASE WHEN DATEDIFF(DAY, getdate(), DeadLine_dt) < 0 THEN 0 ELSE DATEDIFF(DAY, getdate(), DeadLine_dt) END END")]        
         public Int32? DaysLeft
         {
             get { return Fields.DaysLeft[this]; }
@@ -77,7 +77,7 @@ namespace DAP.NCLHDSAR.Entities
         }
 
         [DisplayName("Days Old"), AlignCenter, Updatable(false)]
-        [Expression("DATEDIFF(DAY, getdate(),Created_dt)")]
+        [Expression("DATEDIFF(DAY,Created_dt, getdate())")]
         public Int32? DaysOld
         {
             get { return Fields.DaysOld[this]; }

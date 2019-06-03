@@ -3803,9 +3803,7 @@ var DAP;
                 $.fn['vegas'] && $('body')['vegas']({
                     delay: 30000,
                     cover: true,
-                    overlay: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACAQMAAABIeJ9nAAAAA3NCSVQICAjb4U" +
-                        "/gAAAABlBMVEX///8AAABVwtN+AAAAAnRSTlMA/1uRIrUAAAAJcEhZcwAAAsQAAALEAVuRnQsAAAAWdEVYdENyZWF0" +
-                        "aW9uIFRpbWUAMDQvMTMvMTGrW0T6AAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M1cbXjNgAAAAxJREFUCJljaGBgAAABhACBrONIPgAAAABJRU5ErkJggg==",
+                    overlay: "",
                     slides: [
                         { src: Q.resolveUrl("~/Content/site/slides/slide1.jpg"), transition: 'fade' },
                         { src: Q.resolveUrl("~/Content/site/slides/slide2.jpg"), transition: 'zoomOut' },
@@ -4131,12 +4129,34 @@ var DAP;
                     if (sysid != null) {
                         _this.form.ResolvedDt.value = null;
                     }
-                    _this.form.RequestValue.changeSelect2(function (e) {
-                        var rqvalue = Q.toId(_this.form.RequestValue.value);
-                        if (rqvalue != null) {
-                            _this.form.ResolvedDt.value = null;
-                        }
-                    });
+                });
+                _this.form.RequestValue.changeSelect2(function (e) {
+                    var rqvalue = Q.toId(_this.form.RequestValue.value);
+                    if (rqvalue != null) {
+                        _this.form.ResolvedDt.value = null;
+                    }
+                });
+                //this.form.RequestValue.addValidationRule(this.uniqueName, e => {
+                //    if (!(/^[0-9]*$/.test(this.form.RequestValue.value))) return "Only Numbers";
+                //});
+                _this.form.RequestValue.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.SystemMasterId.value != null &&
+                        ((_this.form.SystemMasterId.value == "2" || _this.form.SystemMasterId.value == "3") &&
+                            _this.form.RequestValue.value.length != 12) ||
+                        (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                        return "Invalid NVS MP Card Number Format";
+                    }
+                    if (_this.form.SystemMasterId.value != null &&
+                        (_this.form.SystemMasterId.value == "4" || _this.form.SystemMasterId.value == "5" || _this.form.SystemMasterId.value == "6" || _this.form.SystemMasterId.value == "7") &&
+                        _this.form.RequestValue.value.length != 15) {
+                        return "Invalid SFDC ID Format";
+                    }
+                    if (_this.form.SystemMasterId.value != null &&
+                        ((_this.form.SystemMasterId.value == "1" || _this.form.SystemMasterId.value == "8" || _this.form.SystemMasterId.value == "9" || _this.form.SystemMasterId.value == "10") &&
+                            _this.form.RequestValue.value.length != 10) ||
+                        (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                        return "Invalid SEAWARE/EPSILON Client ID Format";
+                    }
                 });
                 return _this;
             }
@@ -4226,11 +4246,22 @@ var DAP;
                     minWidth: 24,
                     maxWidth: 24
                 });
-                columns.push({
+                columns.splice(6, 0, {
                     field: 'Resolve Date',
                     name: '',
-                    format: function (ctx) { return '<a class="inline-action resolve-date" title="Mark as Resolve">' +
-                        '<i class="fa fa-calendar-plus-o text-green"></i></a>'; },
+                    format: function (ctx) {
+                        var CurItem = ctx.item;
+                        var klass = "";
+                        if (CurItem.ResolvedDt == null) {
+                            klass = '<a class="inline-action resolve-date" title="Mark as Resolve">' +
+                                '<i class="fa fa-calendar-plus-o text-green"></i></a>';
+                        }
+                        else {
+                            klass = '<a class="inline-action date-resolved" title="Resolved">' +
+                                '<i class="fa  fa-calendar-check-o text-green"></i></a>';
+                        }
+                        return klass;
+                    },
                     width: 24,
                     minWidth: 24,
                     maxWidth: 24
@@ -4575,7 +4606,7 @@ var DAP;
                 return NCLHDSAR.SystemMasterRow.lookupKey;
             };
             SystemMasterEditor.prototype.getItemText = function (item, lookup) {
-                return _super.prototype.getItemText.call(this, item, lookup) + ' [' + item.Id + ']';
+                return _super.prototype.getItemText.call(this, item, lookup) + ' (' + item.Id + ')';
             };
             SystemMasterEditor = __decorate([
                 Serenity.Decorators.registerEditor()
@@ -4893,5 +4924,96 @@ var DAP;
         }(Serenity.LookupEditorBase));
         PCHODS.UsersEditor = UsersEditor;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var RequestValueEditor = /** @class */ (function (_super) {
+            __extends(RequestValueEditor, _super);
+            function RequestValueEditor(input) {
+                var _this = _super.call(this, input) || this;
+                _this.addValidationRule(_this.uniqueName, function (e) {
+                    var value = Q.trimToNull(_this.get_value());
+                    if (value == null) {
+                        return null;
+                    }
+                    return RequestValueEditor_1.validate(value);
+                });
+                input.bind('change', function (e) {
+                    if (!Serenity.WX.hasOriginalEvent(e)) {
+                        return;
+                    }
+                    _this.formatValue();
+                });
+                input.bind('blur', function (e) {
+                    if (_this.element.hasClass('valid')) {
+                        _this.formatValue();
+                    }
+                });
+                return _this;
+            }
+            RequestValueEditor_1 = RequestValueEditor;
+            RequestValueEditor.prototype.formatValue = function () {
+                this.element.val(this.getFormattedValue());
+            };
+            RequestValueEditor.prototype.getFormattedValue = function () {
+                var value = this.element.val();
+                return RequestValueEditor_1.formatField(value);
+            };
+            RequestValueEditor.prototype.get_value = function () {
+                return this.getFormattedValue();
+            };
+            RequestValueEditor.prototype.set_value = function (value) {
+                this.element.val(value);
+            };
+            RequestValueEditor.validate = function (value) {
+                var valid = RequestValueEditor_1.isValidValue(value);
+                if (valid) {
+                    return null;
+                }
+                return Q.text('Invalid Format');
+            };
+            RequestValueEditor.isValidValue = function (requestvalue) {
+                if (Q.isEmptyOrNull(requestvalue)) {
+                    return false;
+                }
+                requestvalue = Q.replaceAll(Q.replaceAll(requestvalue, ' ', ''), '-', '');
+                if (requestvalue.length < 10) {
+                    return false;
+                }
+                //if (requestvalue.length !== 10) {
+                //    return false;
+                //}
+                for (var i = 0; i < requestvalue.length; i++) {
+                    var c = requestvalue.charAt(i);
+                    if (c < '0' || c > '9') {
+                        return false;
+                    }
+                }
+                return true;
+            };
+            RequestValueEditor.formatField = function (requestvalue) {
+                //    if (!PhoneEditor.isValidPhone(phone)) {
+                //        return phone;
+                //    }
+                //    phone = Q.replaceAll(Q.replaceAll(Q.replaceAll(Q.replaceAll(phone, ' ', ''), '-', ''), '(', ''), ')', '');
+                //    if (Q.startsWith(phone, '0')) {
+                //        phone = phone.substring(1);
+                //    }
+                //    phone = '(' + phone.substr(0, 3) + ') ' + phone.substr(3, 3) + '-' + phone.substr(6, 2) + phone.substr(8, 2);
+                return requestvalue;
+            };
+            var RequestValueEditor_1;
+            __decorate([
+                Serenity.Decorators.option()
+            ], RequestValueEditor.prototype, "multiple", void 0);
+            RequestValueEditor = RequestValueEditor_1 = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], RequestValueEditor);
+            return RequestValueEditor;
+        }(Serenity.StringEditor));
+        NCLHDSAR.RequestValueEditor = RequestValueEditor;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

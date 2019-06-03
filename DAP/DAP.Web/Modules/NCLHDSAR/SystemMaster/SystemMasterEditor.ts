@@ -12,7 +12,7 @@
         }
 
         protected getItemText(item, lookup) {
-            return super.getItemText(item, lookup) + ' [' + item.Id + ']';
+            return super.getItemText(item, lookup) + ' (' + item.Id + ')';
         }
     }
 }

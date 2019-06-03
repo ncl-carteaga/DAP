@@ -1195,6 +1195,7 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttibutesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestValueEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestType\RequestTypeDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestType\RequestTypeEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestType\RequestTypeGrid.ts" />
@@ -2050,6 +2051,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.RequestTypeEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\NCLHDSAR.RequestValueEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.SystemMasterEditorAttribute.cs">

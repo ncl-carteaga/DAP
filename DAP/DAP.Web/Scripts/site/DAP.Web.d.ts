@@ -2335,3 +2335,16 @@ declare namespace DAP.PCHODS {
         protected getItemText(item: PCHODS.OutboundNvsUsersRow, lookup: Q.Lookup<PCHODS.OutboundNvsUsersRow>): string;
     }
 }
+declare namespace DAP.NCLHDSAR {
+    class RequestValueEditor extends Serenity.StringEditor {
+        constructor(input: JQuery);
+        protected formatValue(): void;
+        protected getFormattedValue(): string;
+        multiple: boolean;
+        get_value(): string;
+        set_value(value: string): void;
+        static validate(value: string): string;
+        static isValidValue(requestvalue: string): boolean;
+        static formatField(requestvalue: any): any;
+    }
+}

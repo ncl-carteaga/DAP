@@ -23,7 +23,7 @@ namespace DAP.NCLHDSAR {
                 maxWidth: 24
             });
 
-            columns.push({
+            columns.splice(6,0, {
                 field: 'Resolve Date',
                 name: '',
                 format: ctx => {

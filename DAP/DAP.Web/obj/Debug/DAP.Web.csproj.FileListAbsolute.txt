@@ -1,3 +1,4 @@
+C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CoreCompileInputs.cache
 C:\Git\DAP\DAP\DAP.Web\bin\wkhtmltopdf.exe
 C:\Git\DAP\DAP\DAP.Web\bin\DAP.Web.dll.config
 C:\Git\DAP\DAP\DAP.Web\bin\DAP.Web.dll
@@ -53,7 +54,6 @@ C:\Git\DAP\DAP\DAP.Web\bin\System.Web.Razor.xml
 C:\Git\DAP\DAP\DAP.Web\bin\System.Web.WebPages.xml
 C:\Git\DAP\DAP\DAP.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Git\DAP\DAP\DAP.Web\bin\System.Web.WebPages.Razor.xml
-C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CoreCompileInputs.cache
 C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CopyComplete
 C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.dll
 C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.pdb
