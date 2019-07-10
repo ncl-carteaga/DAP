@@ -3,9 +3,9 @@ namespace DAP.Common
 {
     public class DashboardPageModel
     {
-        public int OpenOrders { get; set; }
-        public int ClosedOrderPercent { get; set; }
-        public int CustomerCount { get; set; }
-        public int ProductCount { get; set; }
+        public int AllRequests { get; set; }
+        public int ClosedRequest { get; set; }        
+        public int Due10Days { get; set; }
+        public int Overdue { get; set; }
     }
 }

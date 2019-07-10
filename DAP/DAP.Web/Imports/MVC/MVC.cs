@@ -66,7 +66,7 @@ namespace MVC
         {
             public static class Account
             {
-                public const string AccountLogin = "~/Modules/Membership/Account/AccountLogin.cshtml";
+                public const string AccountLogin = "~/Modules/Membership/Account/AccountLogin.cshtml";                
                 public const string AccountLogin_AdminLTE = "~/Modules/Membership/Account/AccountLogin.AdminLTE.cshtml";
                 public static class ChangePassword
                 {

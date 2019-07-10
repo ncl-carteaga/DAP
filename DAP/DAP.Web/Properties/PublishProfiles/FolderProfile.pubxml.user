@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/05/2013 06:41:36</publishTime>
     </File>
     <File Include="bin/DAP.Web.dll">
-      <publishTime>05/03/2019 13:49:53</publishTime>
+      <publishTime>06/27/2019 13:42:34</publishTime>
     </File>
     <File Include="bin/DAP.Web.pdb">
-      <publishTime>05/03/2019 13:49:53</publishTime>
+      <publishTime>06/27/2019 13:42:34</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>05/16/2018 18:40:30</publishTime>
@@ -1845,6 +1845,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/site/images/accordion-arrows.png">
       <publishTime>04/12/2019 14:12:14</publishTime>
     </File>
+    <File Include="Content/site/images/CombinedLogo.jpg">
+      <publishTime>03/23/2018 11:02:33</publishTime>
+    </File>
+    <File Include="Content/site/images/NCLH-web-logo.png">
+      <publishTime>03/23/2018 12:02:25</publishTime>
+    </File>
     <File Include="Content/site/images/serenity-logo-40.png">
       <publishTime>04/12/2019 14:12:14</publishTime>
     </File>
@@ -1870,7 +1876,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:22</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>04/30/2019 12:20:42</publishTime>
+      <publishTime>05/09/2019 13:39:01</publishTime>
     </File>
     <File Include="Content/site/site.gridviews.less">
       <publishTime>04/12/2019 14:26:23</publishTime>
@@ -1903,13 +1909,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:23</publishTime>
     </File>
     <File Include="Content/site/slides/slide1.jpg">
-      <publishTime>04/12/2019 14:12:14</publishTime>
+      <publishTime>03/23/2018 10:28:56</publishTime>
     </File>
     <File Include="Content/site/slides/slide2.jpg">
-      <publishTime>04/12/2019 14:12:14</publishTime>
+      <publishTime>03/23/2018 10:28:56</publishTime>
     </File>
     <File Include="Content/site/slides/slide3.jpg">
-      <publishTime>04/12/2019 14:12:14</publishTime>
+      <publishTime>03/23/2018 10:28:56</publishTime>
     </File>
     <File Include="Content/skins/azure.less">
       <publishTime>04/12/2019 14:26:23</publishTime>
@@ -2155,7 +2161,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:27</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>05/01/2019 13:11:50</publishTime>
+      <publishTime>05/30/2019 11:24:51</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>04/12/2019 14:26:23</publishTime>
@@ -2239,7 +2245,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:24</publishTime>
     </File>
     <File Include="Modules/Common/Dashboard/DashboardIndex.cshtml">
-      <publishTime>04/25/2019 08:53:55</publishTime>
+      <publishTime>05/15/2019 08:24:46</publishTime>
     </File>
     <File Include="Modules/Common/EmailClient/EmailIndex.cshtml">
       <publishTime>04/12/2019 14:26:25</publishTime>
@@ -2257,7 +2263,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:25</publishTime>
     </File>
     <File Include="Modules/Membership/Account/AccountLogin.cshtml">
-      <publishTime>04/17/2019 10:41:03</publishTime>
+      <publishTime>05/09/2019 13:27:33</publishTime>
     </File>
     <File Include="Modules/Membership/Account/ChangePassword/AccountChangePassword.cshtml">
       <publishTime>04/12/2019 14:26:25</publishTime>
@@ -2269,7 +2275,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:25</publishTime>
     </File>
     <File Include="Modules/Membership/Account/LoginPanel.ts">
-      <publishTime>04/12/2019 14:26:25</publishTime>
+      <publishTime>05/09/2019 13:27:33</publishTime>
     </File>
     <File Include="Modules/Membership/Account/ResetPassword/AccountResetPassword.AdminLTE.cshtml">
       <publishTime>04/12/2019 14:26:25</publishTime>
@@ -3766,7 +3772,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:27:03</publishTime>
     </File>
     <File Include="Scripts/site/DAP.Web.js">
-      <publishTime>05/03/2019 12:45:20</publishTime>
+      <publishTime>06/27/2019 13:37:43</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>04/12/2019 14:26:27</publishTime>

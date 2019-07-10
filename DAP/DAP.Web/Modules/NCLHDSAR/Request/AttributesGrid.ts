@@ -23,11 +23,21 @@ namespace DAP.NCLHDSAR {
                 maxWidth: 24
             });
 
-            columns.push({
+            columns.splice(6,0, {
                 field: 'Resolve Date',
                 name: '',
-                format: ctx => '<a class="inline-action resolve-date" title="Mark as Resolve">' +
-                    '<i class="fa fa-calendar-plus-o text-green"></i></a>',
+                format: ctx => {
+                    var CurItem = <RequestAttributesRow>ctx.item;
+                    var klass = "";
+                    if (CurItem.ResolvedDt == null) {
+                        klass = '<a class="inline-action resolve-date" title="Mark as Resolve">' +
+                            '<i class="fa fa-calendar-plus-o text-green"></i></a>'
+                    } else {
+                        klass = '<a class="inline-action date-resolved" title="Resolved">' +
+                            '<i class="fa  fa-calendar-check-o text-green"></i></a>';
+                    }
+                    return klass;
+                },
                 width: 24,
                 minWidth: 24,
                 maxWidth: 24

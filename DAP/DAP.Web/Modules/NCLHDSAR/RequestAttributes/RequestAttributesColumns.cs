@@ -15,7 +15,7 @@ namespace DAP.NCLHDSAR.Columns
     {
         //[EditLink]
         //public Int32 Id { get; set; }        
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight, Visible(false)]
         public Int32 RequestAttributeId { get; set; }
         [EditLink, Width(200)]
         public String SystemMasterSystemDesc { get; set; }

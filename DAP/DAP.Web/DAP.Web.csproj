@@ -557,6 +557,8 @@
     <Content Include="Content\serenity\images\zoom.png" />
     <Content Include="Content\serenity\serenity.css" />
     <Content Include="Content\simple-line-icons.css" />
+    <Content Include="Content\site\images\CombinedLogo.jpg" />
+    <Content Include="Content\site\images\NCLH-web-logo.png" />
     <Content Include="Content\slick-default-theme.css" />
     <Content Include="Content\slick.columnpicker.css" />
     <Content Include="Content\slick.grid.css" />
@@ -1195,6 +1197,7 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttibutesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestValueEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestType\RequestTypeDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestType\RequestTypeEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestType\RequestTypeGrid.ts" />
@@ -2050,6 +2053,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.RequestTypeEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\NCLHDSAR.RequestValueEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.SystemMasterEditorAttribute.cs">

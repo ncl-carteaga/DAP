@@ -16,6 +16,7 @@ namespace DAP.NCLHDSAR.Entities
     //[ModifyPermission("Administration:General")]
     [ReadPermission("Administration:General|Reviewer:General|Approver:View")]
     [ModifyPermission("Administration:General|Approver:Modify:Reviewer:Modify")]
+    [InsertPermission("Administration:General|Approver:Modify:Reviewer:Modify")]
     [LookupScript(typeof(Lookups.SystemMasterLookup))]
     [DataAuditLog]
     public sealed class RequestAttributesRow : Row, IIdRow, INameRow
@@ -219,9 +220,8 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.SystemMasterSystemTable[this] = value; }
         }
 
-        [DisplayName("System Desc"), Expression("jSystemMaster.[System_desc]")]
-        [Expression("CONCAT(T0.[System_desc], CONCAT(' (', T0.[Id], ')'))")]
-        [Expression("(T0.System_desc || ' (' || T0.Id || ')')", Dialect = "Sqlite")]
+        [DisplayName("System Desc")]
+        [Expression("CONCAT(jSystemMaster.[System_name], CONCAT(' (', jSystemMaster.[Id], ')'))")]        
         public String SystemMasterSystemDesc
         {
             get { return Fields.SystemMasterSystemDesc[this]; }

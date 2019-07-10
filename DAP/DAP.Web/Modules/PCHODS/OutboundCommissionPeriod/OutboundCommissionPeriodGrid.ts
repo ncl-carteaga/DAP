@@ -88,7 +88,7 @@ namespace DAP.PCHODS {
             var buttons = super.getButtons();
 
             buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
-            buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
+            //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
 
             //Add a Button
             //buttons.push({

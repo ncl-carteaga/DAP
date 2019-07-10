@@ -10,6 +10,64 @@ namespace DAP.NCLHDSAR {
         protected getService() { return RequestAttributesService.baseUrl; }
 
         protected form = new RequestAttributesForm(this.idPrefix);
-    
+
+        constructor() {
+            super();
+
+            this.form = new RequestAttributesForm(this.idPrefix);
+
+            this.form.SystemMasterId.changeSelect2(e => {
+                var sysid = Q.toId(this.form.SystemMasterId.value);
+                if (sysid != null) {
+                    this.form.ResolvedDt.value = null;
+                }
+            });
+
+            this.form.RequestValue.changeSelect2(e => {
+                var rqvalue = Q.toId(this.form.RequestValue.value);
+                if (rqvalue != null) {
+                    this.form.ResolvedDt.value = null;
+                }
+            });
+
+            //this.form.RequestValue.addValidationRule(this.uniqueName, e => {
+            //    if (!(/^[0-9]*$/.test(this.form.RequestValue.value))) return "Only Numbers";
+            //});
+
+            this.form.RequestValue.addValidationRule(this.uniqueName, e => {
+                if (this.form.SystemMasterId.value != null) {
+
+                    switch (this.form.SystemMasterId.value) {
+                        case "2":
+                        case "3":
+                            if ((this.form.RequestValue.value.length != 12) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid NVS MP Card Number Format";
+                            }
+                            break;
+                        case "4":
+                        case "5":
+                        case "6":
+                        case "7":
+                            if (this.form.RequestValue.value.length != 15) {
+                                return "Invalid NVS MP Card Number Format";
+                            }
+                            break;
+                        case "1":
+                        case "8":
+                        case "9":
+                        case "10":
+                            if ((this.form.RequestValue.value.length != 10) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid SEAWARE/EPSILON Client ID Format";
+                            }
+                            break;
+                }
+                }
+
+                
+
+            });
+
+        }
+
     }
 }

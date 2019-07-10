@@ -36,7 +36,7 @@ namespace DAP.PCHODS.Repositories
         public ListResponse<MyRow> List(IDbConnection connection, ListRequest request)
         {
             //   return new MyListHandler().Process(connection, request);
-            var data = connection.Query<MyRow>("GetOpenCommissionPeriod",
+            var data = connection.Query<MyRow>("usp_Outbound_GetOpenCommissionPeriod",
                  commandType: System.Data.CommandType.StoredProcedure);
 
             var response = new ListResponse<MyRow>();

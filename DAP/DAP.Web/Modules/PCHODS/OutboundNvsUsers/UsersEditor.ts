@@ -16,6 +16,7 @@
                 ' (' +
                 item.UserFirstName + ' ' + item.UserLastName +
                 ', ' + item.CompanyCd +
+                ', ' + item.DepartmentDesc +
                 ')';
         }
     }
