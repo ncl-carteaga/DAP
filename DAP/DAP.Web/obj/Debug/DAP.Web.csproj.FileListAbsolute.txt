@@ -57,3 +57,4 @@ C:\Git\DAP\DAP\DAP.Web\bin\System.Web.WebPages.Razor.xml
 C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CopyComplete
 C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.dll
 C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.pdb
+C:\Git\DAP\DAP\DAP.Web\obj\Debug\DAP.Web.csprojAssemblyReference.cache

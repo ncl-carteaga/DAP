@@ -7,7 +7,7 @@ namespace DAP.Administration.Entities
     using System;
     using System.ComponentModel;
 
-    [ConnectionKey("Default"), Module("Administration"), TableName("DataAuditLog")]
+    [ConnectionKey("Default"), Module("Administration"), TableName("admin.DataAuditLog")]
     [DisplayName("Data Audit Logs"), InstanceName("Data Audit Log"), TwoLevelCached]
     [ReadPermission(PermissionKeys.Security)]
     [ModifyPermission(PermissionKeys.Security)]

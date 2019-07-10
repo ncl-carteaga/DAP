@@ -1491,19 +1491,22 @@ declare namespace DAP.PCHODS {
         UserLastName?: string;
         CompanyCd?: string;
         ActiveInd?: string;
+        DepartmentCd?: string;
+        DepartmentDesc?: string;
     }
     namespace OutboundNvsUsersRow {
         const idProperty = "UserId";
         const nameProperty = "UserId";
         const localTextPrefix = "PCHODS.OutboundNvsUsers";
         const lookupKey = "NCLHDSAR.OutboundNvsUsers";
-        function getLookup(): Q.Lookup<OutboundNvsUsersRow>;
-        const enum Fields {
-            UserId = "UserId",
-            UserFirstName = "UserFirstName",
-            UserLastName = "UserLastName",
-            CompanyCd = "CompanyCd",
-            ActiveInd = "ActiveInd"
+        namespace Fields {
+            const UserId: any;
+            const UserFirstName: any;
+            const UserLastName: any;
+            const CompanyCd: any;
+            const ActiveInd: any;
+            const DepartmentCd: any;
+            const DepartmentDesc: any;
         }
     }
 }
@@ -2197,6 +2200,19 @@ declare namespace DAP.NCLHDSAR {
     }
 }
 declare namespace DAP.NCLHDSAR {
+    class RequestValueEditor extends Serenity.StringEditor {
+        constructor(input: JQuery);
+        protected formatValue(): void;
+        protected getFormattedValue(): string;
+        multiple: boolean;
+        get_value(): string;
+        set_value(value: string): void;
+        static validate(value: string): string;
+        static isValidValue(requestvalue: string): boolean;
+        static formatField(requestvalue: any): any;
+    }
+}
+declare namespace DAP.NCLHDSAR {
     class RequestTypeDialog extends Serenity.EntityDialog<RequestTypeRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -2333,18 +2349,5 @@ declare namespace DAP.PCHODS {
         constructor(hidden: JQuery);
         protected getLookupKey(): string;
         protected getItemText(item: PCHODS.OutboundNvsUsersRow, lookup: Q.Lookup<PCHODS.OutboundNvsUsersRow>): string;
-    }
-}
-declare namespace DAP.NCLHDSAR {
-    class RequestValueEditor extends Serenity.StringEditor {
-        constructor(input: JQuery);
-        protected formatValue(): void;
-        protected getFormattedValue(): string;
-        multiple: boolean;
-        get_value(): string;
-        set_value(value: string): void;
-        static validate(value: string): string;
-        static isValidValue(requestvalue: string): boolean;
-        static formatField(requestvalue: any): any;
     }
 }

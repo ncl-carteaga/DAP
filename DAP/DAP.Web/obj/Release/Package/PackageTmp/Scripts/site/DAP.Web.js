@@ -1279,10 +1279,18 @@ var DAP;
             OutboundNvsUsersRow.nameProperty = 'UserId';
             OutboundNvsUsersRow.localTextPrefix = 'PCHODS.OutboundNvsUsers';
             OutboundNvsUsersRow.lookupKey = 'NCLHDSAR.OutboundNvsUsers';
-            function getLookup() {
-                return Q.getLookup('NCLHDSAR.OutboundNvsUsers');
-            }
-            OutboundNvsUsersRow.getLookup = getLookup;
+            var Fields;
+            (function (Fields) {
+            })(Fields = OutboundNvsUsersRow.Fields || (OutboundNvsUsersRow.Fields = {}));
+            [
+                'UserId',
+                'UserFirstName',
+                'UserLastName',
+                'CompanyCd',
+                'ActiveInd',
+                'DepartmentCd',
+                'DepartmentDesc'
+            ].forEach(function (x) { return Fields[x] = x; });
         })(OutboundNvsUsersRow = PCHODS.OutboundNvsUsersRow || (PCHODS.OutboundNvsUsersRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -4140,22 +4148,31 @@ var DAP;
                 //    if (!(/^[0-9]*$/.test(this.form.RequestValue.value))) return "Only Numbers";
                 //});
                 _this.form.RequestValue.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.SystemMasterId.value != null &&
-                        ((_this.form.SystemMasterId.value == "2" || _this.form.SystemMasterId.value == "3") &&
-                            _this.form.RequestValue.value.length != 12) ||
-                        (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
-                        return "Invalid NVS MP Card Number Format";
-                    }
-                    if (_this.form.SystemMasterId.value != null &&
-                        (_this.form.SystemMasterId.value == "4" || _this.form.SystemMasterId.value == "5" || _this.form.SystemMasterId.value == "6" || _this.form.SystemMasterId.value == "7") &&
-                        _this.form.RequestValue.value.length != 15) {
-                        return "Invalid SFDC ID Format";
-                    }
-                    if (_this.form.SystemMasterId.value != null &&
-                        ((_this.form.SystemMasterId.value == "1" || _this.form.SystemMasterId.value == "8" || _this.form.SystemMasterId.value == "9" || _this.form.SystemMasterId.value == "10") &&
-                            _this.form.RequestValue.value.length != 10) ||
-                        (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
-                        return "Invalid SEAWARE/EPSILON Client ID Format";
+                    if (_this.form.SystemMasterId.value != null) {
+                        switch (_this.form.SystemMasterId.value) {
+                            case "2":
+                            case "3":
+                                if ((_this.form.RequestValue.value.length != 12) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid NVS MP Card Number Format";
+                                }
+                                break;
+                            case "4":
+                            case "5":
+                            case "6":
+                            case "7":
+                                if (_this.form.RequestValue.value.length != 15) {
+                                    return "Invalid NVS MP Card Number Format";
+                                }
+                                break;
+                            case "1":
+                            case "8":
+                            case "9":
+                            case "10":
+                                if ((_this.form.RequestValue.value.length != 10) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid SEAWARE/EPSILON Client ID Format";
+                                }
+                                break;
+                        }
                     }
                 });
                 return _this;
@@ -4498,6 +4515,97 @@ var DAP;
             return RequestAttributesEditor;
         }(DAP.Common.GridEditorBase));
         NCLHDSAR.RequestAttributesEditor = RequestAttributesEditor;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var RequestValueEditor = /** @class */ (function (_super) {
+            __extends(RequestValueEditor, _super);
+            function RequestValueEditor(input) {
+                var _this = _super.call(this, input) || this;
+                _this.addValidationRule(_this.uniqueName, function (e) {
+                    var value = Q.trimToNull(_this.get_value());
+                    if (value == null) {
+                        return null;
+                    }
+                    return RequestValueEditor_1.validate(value);
+                });
+                input.bind('change', function (e) {
+                    if (!Serenity.WX.hasOriginalEvent(e)) {
+                        return;
+                    }
+                    _this.formatValue();
+                });
+                input.bind('blur', function (e) {
+                    if (_this.element.hasClass('valid')) {
+                        _this.formatValue();
+                    }
+                });
+                return _this;
+            }
+            RequestValueEditor_1 = RequestValueEditor;
+            RequestValueEditor.prototype.formatValue = function () {
+                this.element.val(this.getFormattedValue());
+            };
+            RequestValueEditor.prototype.getFormattedValue = function () {
+                var value = this.element.val();
+                return RequestValueEditor_1.formatField(value);
+            };
+            RequestValueEditor.prototype.get_value = function () {
+                return this.getFormattedValue();
+            };
+            RequestValueEditor.prototype.set_value = function (value) {
+                this.element.val(value);
+            };
+            RequestValueEditor.validate = function (value) {
+                var valid = RequestValueEditor_1.isValidValue(value);
+                if (valid) {
+                    return null;
+                }
+                return Q.text('Invalid Format');
+            };
+            RequestValueEditor.isValidValue = function (requestvalue) {
+                if (Q.isEmptyOrNull(requestvalue)) {
+                    return false;
+                }
+                requestvalue = Q.replaceAll(Q.replaceAll(requestvalue, ' ', ''), '-', '');
+                if (requestvalue.length < 10) {
+                    return false;
+                }
+                //if (requestvalue.length !== 10) {
+                //    return false;
+                //}
+                for (var i = 0; i < requestvalue.length; i++) {
+                    var c = requestvalue.charAt(i);
+                    if (c < '0' || c > '9') {
+                        return false;
+                    }
+                }
+                return true;
+            };
+            RequestValueEditor.formatField = function (requestvalue) {
+                //    if (!PhoneEditor.isValidPhone(phone)) {
+                //        return phone;
+                //    }
+                //    phone = Q.replaceAll(Q.replaceAll(Q.replaceAll(Q.replaceAll(phone, ' ', ''), '-', ''), '(', ''), ')', '');
+                //    if (Q.startsWith(phone, '0')) {
+                //        phone = phone.substring(1);
+                //    }
+                //    phone = '(' + phone.substr(0, 3) + ') ' + phone.substr(3, 3) + '-' + phone.substr(6, 2) + phone.substr(8, 2);
+                return requestvalue;
+            };
+            var RequestValueEditor_1;
+            __decorate([
+                Serenity.Decorators.option()
+            ], RequestValueEditor.prototype, "multiple", void 0);
+            RequestValueEditor = RequestValueEditor_1 = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], RequestValueEditor);
+            return RequestValueEditor;
+        }(Serenity.StringEditor));
+        NCLHDSAR.RequestValueEditor = RequestValueEditor;
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -4915,6 +5023,7 @@ var DAP;
                     ' (' +
                     item.UserFirstName + ' ' + item.UserLastName +
                     ', ' + item.CompanyCd +
+                    ', ' + item.DepartmentDesc +
                     ')';
             };
             UsersEditor = __decorate([
@@ -4924,96 +5033,5 @@ var DAP;
         }(Serenity.LookupEditorBase));
         PCHODS.UsersEditor = UsersEditor;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var NCLHDSAR;
-    (function (NCLHDSAR) {
-        var RequestValueEditor = /** @class */ (function (_super) {
-            __extends(RequestValueEditor, _super);
-            function RequestValueEditor(input) {
-                var _this = _super.call(this, input) || this;
-                _this.addValidationRule(_this.uniqueName, function (e) {
-                    var value = Q.trimToNull(_this.get_value());
-                    if (value == null) {
-                        return null;
-                    }
-                    return RequestValueEditor_1.validate(value);
-                });
-                input.bind('change', function (e) {
-                    if (!Serenity.WX.hasOriginalEvent(e)) {
-                        return;
-                    }
-                    _this.formatValue();
-                });
-                input.bind('blur', function (e) {
-                    if (_this.element.hasClass('valid')) {
-                        _this.formatValue();
-                    }
-                });
-                return _this;
-            }
-            RequestValueEditor_1 = RequestValueEditor;
-            RequestValueEditor.prototype.formatValue = function () {
-                this.element.val(this.getFormattedValue());
-            };
-            RequestValueEditor.prototype.getFormattedValue = function () {
-                var value = this.element.val();
-                return RequestValueEditor_1.formatField(value);
-            };
-            RequestValueEditor.prototype.get_value = function () {
-                return this.getFormattedValue();
-            };
-            RequestValueEditor.prototype.set_value = function (value) {
-                this.element.val(value);
-            };
-            RequestValueEditor.validate = function (value) {
-                var valid = RequestValueEditor_1.isValidValue(value);
-                if (valid) {
-                    return null;
-                }
-                return Q.text('Invalid Format');
-            };
-            RequestValueEditor.isValidValue = function (requestvalue) {
-                if (Q.isEmptyOrNull(requestvalue)) {
-                    return false;
-                }
-                requestvalue = Q.replaceAll(Q.replaceAll(requestvalue, ' ', ''), '-', '');
-                if (requestvalue.length < 10) {
-                    return false;
-                }
-                //if (requestvalue.length !== 10) {
-                //    return false;
-                //}
-                for (var i = 0; i < requestvalue.length; i++) {
-                    var c = requestvalue.charAt(i);
-                    if (c < '0' || c > '9') {
-                        return false;
-                    }
-                }
-                return true;
-            };
-            RequestValueEditor.formatField = function (requestvalue) {
-                //    if (!PhoneEditor.isValidPhone(phone)) {
-                //        return phone;
-                //    }
-                //    phone = Q.replaceAll(Q.replaceAll(Q.replaceAll(Q.replaceAll(phone, ' ', ''), '-', ''), '(', ''), ')', '');
-                //    if (Q.startsWith(phone, '0')) {
-                //        phone = phone.substring(1);
-                //    }
-                //    phone = '(' + phone.substr(0, 3) + ') ' + phone.substr(3, 3) + '-' + phone.substr(6, 2) + phone.substr(8, 2);
-                return requestvalue;
-            };
-            var RequestValueEditor_1;
-            __decorate([
-                Serenity.Decorators.option()
-            ], RequestValueEditor.prototype, "multiple", void 0);
-            RequestValueEditor = RequestValueEditor_1 = __decorate([
-                Serenity.Decorators.registerEditor()
-            ], RequestValueEditor);
-            return RequestValueEditor;
-        }(Serenity.StringEditor));
-        NCLHDSAR.RequestValueEditor = RequestValueEditor;
-    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

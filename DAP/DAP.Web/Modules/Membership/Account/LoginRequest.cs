@@ -8,9 +8,9 @@ namespace DAP.Membership
     [BasedOnRow(typeof(Administration.Entities.UserRow), CheckNames = true)]
     public class LoginRequest : ServiceRequest
     {
-        [Placeholder("default username is 'admin'")]
+        [Placeholder("NCL username")]
         public string Username { get; set; }
-        [PasswordEditor, Placeholder("default password for 'admin' is 'serenity'"), Required(true)]
+        [PasswordEditor, Placeholder("NCL network password"), Required(true)]
         public string Password { get; set; }
         [Ignore]
         public string TwoFactorGuid { get; set; }

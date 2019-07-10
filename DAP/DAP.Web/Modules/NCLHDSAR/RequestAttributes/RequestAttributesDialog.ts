@@ -35,23 +35,35 @@ namespace DAP.NCLHDSAR {
             //});
 
             this.form.RequestValue.addValidationRule(this.uniqueName, e => {
-                if (this.form.SystemMasterId.value != null &&
-                    ((this.form.SystemMasterId.value == "2" || this.form.SystemMasterId.value == "3") &&
-                    this.form.RequestValue.value.length != 12) ||
-                        (!(/^[0-9]*$/.test(this.form.RequestValue.value))) ) {
-                    return "Invalid NVS MP Card Number Format";
+                if (this.form.SystemMasterId.value != null) {
+
+                    switch (this.form.SystemMasterId.value) {
+                        case "2":
+                        case "3":
+                            if ((this.form.RequestValue.value.length != 12) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid NVS MP Card Number Format";
+                            }
+                            break;
+                        case "4":
+                        case "5":
+                        case "6":
+                        case "7":
+                            if (this.form.RequestValue.value.length != 15) {
+                                return "Invalid NVS MP Card Number Format";
+                            }
+                            break;
+                        case "1":
+                        case "8":
+                        case "9":
+                        case "10":
+                            if ((this.form.RequestValue.value.length != 10) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid SEAWARE/EPSILON Client ID Format";
+                            }
+                            break;
                 }
-                if (this.form.SystemMasterId.value != null &&
-                    (this.form.SystemMasterId.value == "4" || this.form.SystemMasterId.value == "5" || this.form.SystemMasterId.value == "6" || this.form.SystemMasterId.value == "7") &&
-                    this.form.RequestValue.value.length != 15) {
-                    return "Invalid SFDC ID Format";
                 }
-                if (this.form.SystemMasterId.value != null &&
-                    ((this.form.SystemMasterId.value == "1" || this.form.SystemMasterId.value == "8" || this.form.SystemMasterId.value == "9" || this.form.SystemMasterId.value == "10") &&
-                      this.form.RequestValue.value.length != 10) ||
-                      (!(/^[0-9]*$/.test(this.form.RequestValue.value))) ) {
-                    return "Invalid SEAWARE/EPSILON Client ID Format";
-                }
+
+                
 
             });
 

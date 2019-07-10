@@ -51,6 +51,20 @@ namespace DAP.PCHODS.Entities
             set { Fields.ActiveInd[this] = value; }
         }
 
+        [DisplayName("Department Cd"), Column("department_cd"), Size(6), NotNull]
+        public String DepartmentCd
+        {
+            get { return Fields.DepartmentCd[this]; }
+            set { Fields.DepartmentCd[this] = value; }
+        }
+
+        [DisplayName("Department Desc"), Column("department_desc"), Size(30), NotNull, LookupInclude]
+        public String DepartmentDesc
+        {
+            get { return Fields.DepartmentDesc[this]; }
+            set { Fields.DepartmentDesc[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.UserId; }
@@ -75,6 +89,8 @@ namespace DAP.PCHODS.Entities
             public StringField UserLastName;
             public StringField CompanyCd;
             public StringField ActiveInd;
+            public StringField DepartmentCd;
+            public StringField DepartmentDesc;
         }
     }
 }

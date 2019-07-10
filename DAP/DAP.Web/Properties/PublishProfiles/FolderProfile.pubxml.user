@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/05/2013 06:41:36</publishTime>
     </File>
     <File Include="bin/DAP.Web.dll">
-      <publishTime>05/31/2019 16:12:14</publishTime>
+      <publishTime>06/27/2019 13:42:34</publishTime>
     </File>
     <File Include="bin/DAP.Web.pdb">
-      <publishTime>05/31/2019 16:12:14</publishTime>
+      <publishTime>06/27/2019 13:42:34</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>05/16/2018 18:40:30</publishTime>
@@ -1844,6 +1844,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Content/site/images/accordion-arrows.png">
       <publishTime>04/12/2019 14:12:14</publishTime>
+    </File>
+    <File Include="Content/site/images/CombinedLogo.jpg">
+      <publishTime>03/23/2018 11:02:33</publishTime>
+    </File>
+    <File Include="Content/site/images/NCLH-web-logo.png">
+      <publishTime>03/23/2018 12:02:25</publishTime>
     </File>
     <File Include="Content/site/images/serenity-logo-40.png">
       <publishTime>04/12/2019 14:12:14</publishTime>
@@ -3766,7 +3772,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:27:03</publishTime>
     </File>
     <File Include="Scripts/site/DAP.Web.js">
-      <publishTime>05/31/2019 11:29:18</publishTime>
+      <publishTime>06/27/2019 13:37:43</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>04/12/2019 14:26:27</publishTime>
