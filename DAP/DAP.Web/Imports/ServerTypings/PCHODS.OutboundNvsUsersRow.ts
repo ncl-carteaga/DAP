@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODS {
+﻿namespace DAP.PCHODS {
     export interface OutboundNvsUsersRow {
         UserId?: string;
         UserFirstName?: string;
@@ -16,24 +15,19 @@ namespace DAP.PCHODS {
         export const localTextPrefix = 'PCHODS.OutboundNvsUsers';
         export const lookupKey = 'NCLHDSAR.OutboundNvsUsers';
 
-        export namespace Fields {
-            export declare const UserId;
-            export declare const UserFirstName;
-            export declare const UserLastName;
-            export declare const CompanyCd;
-            export declare const ActiveInd;
-            export declare const DepartmentCd;
-            export declare const DepartmentDesc;
+        export function getLookup(): Q.Lookup<OutboundNvsUsersRow> {
+            return Q.getLookup<OutboundNvsUsersRow>('NCLHDSAR.OutboundNvsUsers');
         }
 
-        [
-            'UserId',
-            'UserFirstName',
-            'UserLastName',
-            'CompanyCd',
-            'ActiveInd',
-            'DepartmentCd',
-            'DepartmentDesc'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            UserId = "UserId",
+            UserFirstName = "UserFirstName",
+            UserLastName = "UserLastName",
+            CompanyCd = "CompanyCd",
+            ActiveInd = "ActiveInd",
+            DepartmentCd = "DepartmentCd",
+            DepartmentDesc = "DepartmentDesc"
+        }
     }
 }
+

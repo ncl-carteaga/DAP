@@ -13,8 +13,9 @@ namespace DAP.NCLHDSAR.Entities
     [DisplayName("System Master"), InstanceName("System Master")]
     //[ReadPermission("Administration:General")]
     //[ModifyPermission("Administration:General")
-    [ReadPermission("Administration:General|Reviewer:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Request.View)]
+    [ModifyPermission(PermissionKeys.Request.Modify)]
+    [DeletePermission(PermissionKeys.Request.Delete)]
     [DataAuditLog]
     public sealed class SystemMasterRow : Row, IIdRow, INameRow
     {

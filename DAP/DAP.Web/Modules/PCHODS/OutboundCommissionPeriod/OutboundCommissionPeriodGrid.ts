@@ -59,22 +59,40 @@ namespace DAP.PCHODS {
 
                 if (target.hasClass('close-period')) {
                     Q.confirm('Are you sure you want to close this period?', () => {
-                        var bla = OutboundCommissionPeriodService.Create(
-                            {
-                            },
-                            response => {
-                                // *** Success ***
-                                var message = JSON.parse(bla.responseText);
-                                Q.notifySuccess(message, "Commission period has been closed successfully!");
 
-                                this.refresh();
-                            })
-                    },
-                        {
+                        var crow = Q.deepClone(this.itemAt(row));
+                        crow.ClosedDate = Q.formatDate(new Date(), "MM/dd/yyyy");
+                        crow.IsOpen = false;
+                        crow.ClosedBy = Q.Authorization.username;
 
+                        PCHODS.OutboundCommissionPeriodService.Update({
+                            EntityId: item.OutboundCommissionPeriodID,
+                            Entity: crow
+                        }, response => {
+                            this.refresh();
                         });
-                }
 
+                        crow.IsOpen = true;
+                        crow.ClosedDate = null;
+                        crow.ClosedBy = null;
+                        crow.OutboundCommissionPeriodID = null;
+
+                        let st = new Date(crow.StartDate);
+                        st.setMonth(st.getMonth() + 1);
+
+                        crow.StartDate = st;
+                        crow.EndDate = new Date(st.getFullYear(), st.getMonth() + 1, 0);
+                        crow.PreviousMonth = crow.CurrentMonth;
+                        crow.CurrentMonth = st;
+
+                        PCHODS.OutboundCommissionPeriodService.Create({
+                            Entity: crow
+                        }, response => {
+                            this.refresh();
+                        });
+                        Q.notifySuccess("Commission Period Closed Successfully.");
+                    });
+                }
             }
         }
 

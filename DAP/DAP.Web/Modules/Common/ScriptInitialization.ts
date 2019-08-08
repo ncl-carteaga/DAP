@@ -25,8 +25,8 @@ namespace DAP.ScriptInitialization {
             (!meta.length && Q.Authorization.isLoggedIn)) {
 
             new Serenity.IdleTimeout({
-                activityTimeout: 15 * 60,
-                warningDuration: 2 * 60
+                activityTimeout: 60 * 60,
+                warningDuration: 5 * 60
             });
         }
     });

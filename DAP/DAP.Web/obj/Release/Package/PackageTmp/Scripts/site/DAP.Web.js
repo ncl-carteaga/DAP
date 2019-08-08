@@ -1173,6 +1173,246 @@ var DAP;
 (function (DAP) {
     var PCHODS;
     (function (PCHODS) {
+        var OutboundCommissionHistAuForm = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistAuForm, _super);
+            function OutboundCommissionHistAuForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            OutboundCommissionHistAuForm.formKey = 'PCHODS.OutboundCommissionHistAu';
+            return OutboundCommissionHistAuForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.OutboundCommissionHistAuForm = OutboundCommissionHistAuForm;
+        [
+            ['CommissionId', function () { return Serenity.StringEditor; }],
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['LowNumBookings', function () { return Serenity.DecimalEditor; }],
+            ['HighNumBookings', function () { return Serenity.DecimalEditor; }],
+            ['CommissionRate', function () { return Serenity.DecimalEditor; }],
+            ['ActiveDt', function () { return Serenity.DateEditor; }],
+            ['InactiveDt', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(OutboundCommissionHistAuForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistAuRow;
+        (function (OutboundCommissionHistAuRow) {
+            OutboundCommissionHistAuRow.idProperty = 'CommissionHistAuId';
+            OutboundCommissionHistAuRow.nameProperty = 'CommissionId';
+            OutboundCommissionHistAuRow.localTextPrefix = 'PCHODS.OutboundCommissionHistAu';
+            var Fields;
+            (function (Fields) {
+            })(Fields = OutboundCommissionHistAuRow.Fields || (OutboundCommissionHistAuRow.Fields = {}));
+            [
+                'CommissionId',
+                'CompanyCd',
+                'LowNumBookings',
+                'HighNumBookings',
+                'CommissionRate',
+                'ActiveDt',
+                'InactiveDt',
+                'CommissionHistAuId'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(OutboundCommissionHistAuRow = PCHODS.OutboundCommissionHistAuRow || (PCHODS.OutboundCommissionHistAuRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistAuService;
+        (function (OutboundCommissionHistAuService) {
+            OutboundCommissionHistAuService.baseUrl = 'PCHODS/OutboundCommissionHistAu';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OutboundCommissionHistAuService.Methods || (OutboundCommissionHistAuService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OutboundCommissionHistAuService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OutboundCommissionHistAuService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = OutboundCommissionHistAuService.baseUrl + '/' + x;
+            });
+        })(OutboundCommissionHistAuService = PCHODS.OutboundCommissionHistAuService || (PCHODS.OutboundCommissionHistAuService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistBrForm = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistBrForm, _super);
+            function OutboundCommissionHistBrForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            OutboundCommissionHistBrForm.formKey = 'PCHODS.OutboundCommissionHistBr';
+            return OutboundCommissionHistBrForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.OutboundCommissionHistBrForm = OutboundCommissionHistBrForm;
+        [
+            ['CommissionId', function () { return Serenity.StringEditor; }],
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['LowNumBookings', function () { return Serenity.DecimalEditor; }],
+            ['HighNumBookings', function () { return Serenity.DecimalEditor; }],
+            ['CommissionRate', function () { return Serenity.DecimalEditor; }],
+            ['ActiveDt', function () { return Serenity.DateEditor; }],
+            ['InactiveDt', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(OutboundCommissionHistBrForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistBrRow;
+        (function (OutboundCommissionHistBrRow) {
+            OutboundCommissionHistBrRow.idProperty = 'CommissionHistBrId';
+            OutboundCommissionHistBrRow.nameProperty = 'CommissionId';
+            OutboundCommissionHistBrRow.localTextPrefix = 'PCHODS.OutboundCommissionHistBr';
+            var Fields;
+            (function (Fields) {
+            })(Fields = OutboundCommissionHistBrRow.Fields || (OutboundCommissionHistBrRow.Fields = {}));
+            [
+                'CommissionId',
+                'CompanyCd',
+                'LowNumBookings',
+                'HighNumBookings',
+                'CommissionRate',
+                'ActiveDt',
+                'InactiveDt',
+                'CommissionHistBrId'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(OutboundCommissionHistBrRow = PCHODS.OutboundCommissionHistBrRow || (PCHODS.OutboundCommissionHistBrRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistBrService;
+        (function (OutboundCommissionHistBrService) {
+            OutboundCommissionHistBrService.baseUrl = 'PCHODS/OutboundCommissionHistBr';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OutboundCommissionHistBrService.Methods || (OutboundCommissionHistBrService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OutboundCommissionHistBrService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OutboundCommissionHistBrService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = OutboundCommissionHistBrService.baseUrl + '/' + x;
+            });
+        })(OutboundCommissionHistBrService = PCHODS.OutboundCommissionHistBrService || (PCHODS.OutboundCommissionHistBrService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistForm = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistForm, _super);
+            function OutboundCommissionHistForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            OutboundCommissionHistForm.formKey = 'PCHODS.OutboundCommissionHist';
+            return OutboundCommissionHistForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.OutboundCommissionHistForm = OutboundCommissionHistForm;
+        [
+            ['CommissionId', function () { return Serenity.StringEditor; }],
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['LowNumBookings', function () { return Serenity.DecimalEditor; }],
+            ['HighNumBookings', function () { return Serenity.DecimalEditor; }],
+            ['CommissionRate', function () { return Serenity.DecimalEditor; }],
+            ['ActiveDt', function () { return Serenity.DateEditor; }],
+            ['InactiveDt', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(OutboundCommissionHistForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistRow;
+        (function (OutboundCommissionHistRow) {
+            OutboundCommissionHistRow.idProperty = 'CommissionHistId';
+            OutboundCommissionHistRow.nameProperty = 'CommissionId';
+            OutboundCommissionHistRow.localTextPrefix = 'PCHODS.OutboundCommissionHist';
+            var Fields;
+            (function (Fields) {
+            })(Fields = OutboundCommissionHistRow.Fields || (OutboundCommissionHistRow.Fields = {}));
+            [
+                'CommissionId',
+                'CompanyCd',
+                'LowNumBookings',
+                'HighNumBookings',
+                'CommissionRate',
+                'ActiveDt',
+                'InactiveDt',
+                'CommissionHistId'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(OutboundCommissionHistRow = PCHODS.OutboundCommissionHistRow || (PCHODS.OutboundCommissionHistRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistService;
+        (function (OutboundCommissionHistService) {
+            OutboundCommissionHistService.baseUrl = 'PCHODS/OutboundCommissionHist';
+            var Methods;
+            (function (Methods) {
+            })(Methods = OutboundCommissionHistService.Methods || (OutboundCommissionHistService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OutboundCommissionHistService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OutboundCommissionHistService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = OutboundCommissionHistService.baseUrl + '/' + x;
+            });
+        })(OutboundCommissionHistService = PCHODS.OutboundCommissionHistService || (PCHODS.OutboundCommissionHistService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
         var OutboundCommissionPeriodForm = /** @class */ (function (_super) {
             __extends(OutboundCommissionPeriodForm, _super);
             function OutboundCommissionPeriodForm(prefix) {
@@ -1314,6 +1554,82 @@ var DAP;
             });
         })(OutboundNvsUsersService = PCHODS.OutboundNvsUsersService || (PCHODS.OutboundNvsUsersService = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesForm = /** @class */ (function (_super) {
+            __extends(NtrIntlDatelineCruisesForm, _super);
+            function NtrIntlDatelineCruisesForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            NtrIntlDatelineCruisesForm.formKey = 'PCHODSNVS.NtrIntlDatelineCruises';
+            return NtrIntlDatelineCruisesForm;
+        }(Serenity.PrefixedContext));
+        PCHODSNVS.NtrIntlDatelineCruisesForm = NtrIntlDatelineCruisesForm;
+        [,
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['CruiseSegmentCd', function () { return Serenity.StringEditor; }],
+            ['CruiseDaysQty', function () { return Serenity.IntegerEditor; }],
+            ['CruiseCalendarDaysQty', function () { return Serenity.IntegerEditor; }],
+            ['LoadDt', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(NtrIntlDatelineCruisesForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesRow;
+        (function (NtrIntlDatelineCruisesRow) {
+            NtrIntlDatelineCruisesRow.idProperty = 'CruiseIntlTk';
+            NtrIntlDatelineCruisesRow.nameProperty = 'CompanyCd';
+            NtrIntlDatelineCruisesRow.localTextPrefix = 'PCHODSNVS.NtrIntlDatelineCruises';
+            var Fields;
+            (function (Fields) {
+            })(Fields = NtrIntlDatelineCruisesRow.Fields || (NtrIntlDatelineCruisesRow.Fields = {}));
+            [
+                'CruiseIntlTk',
+                'CompanyCd',
+                'CruiseSegmentCd',
+                'CruiseDaysQty',
+                'CruiseCalendarDaysQty',
+                'LoadDt'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(NtrIntlDatelineCruisesRow = PCHODSNVS.NtrIntlDatelineCruisesRow || (PCHODSNVS.NtrIntlDatelineCruisesRow = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesService;
+        (function (NtrIntlDatelineCruisesService) {
+            NtrIntlDatelineCruisesService.baseUrl = 'PCHODSNVS/NtrIntlDatelineCruises';
+            var Methods;
+            (function (Methods) {
+            })(Methods = NtrIntlDatelineCruisesService.Methods || (NtrIntlDatelineCruisesService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                NtrIntlDatelineCruisesService[x] = function (r, s, o) {
+                    return Q.serviceRequest(NtrIntlDatelineCruisesService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = NtrIntlDatelineCruisesService.baseUrl + '/' + x;
+            });
+        })(NtrIntlDatelineCruisesService = PCHODSNVS.NtrIntlDatelineCruisesService || (PCHODSNVS.NtrIntlDatelineCruisesService = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -2411,8 +2727,8 @@ var DAP;
             if ((meta.length && meta.attr('content')) ||
                 (!meta.length && Q.Authorization.isLoggedIn)) {
                 new Serenity.IdleTimeout({
-                    activityTimeout: 15 * 60,
-                    warningDuration: 2 * 60
+                    activityTimeout: 60 * 60,
+                    warningDuration: 5 * 60
                 });
             }
         });
@@ -3934,7 +4250,7 @@ var DAP;
                 window.setTimeout(updateCounter, 1000);
             };
             LoginPanel.prototype.getTemplate = function () {
-                return "\n<div class=\"flex-layout\">\n    <div class=\"logo\"></div>\n    <h3>" + Q.text("Forms.Membership.Login.FormTitle") + "</h3>\n    <form id=\"~_Form\" action=\"\">\n        <div class=\"s-Form\">\n            <div class=\"fieldset ui-widget ui-widget-content ui-corner-all\">\n                <div id=\"~_PropertyGrid\"></div>\n                <div class=\"clear\"></div>\n            </div>\n            <div class=\"buttons\">\n                <button id=\"~_LoginButton\" type=\"submit\" class=\"btn btn-primary\">\n                    " + Q.text("Forms.Membership.Login.SignInButton") + "\n                </button>\n            </div>\n            <div class=\"actions\">\n                <a href=\"" + Q.resolveUrl('~/Account/ForgotPassword') + "\"><i class=\"fa fa-angle-right\"></i>&nbsp;" + Q.text("Forms.Membership.Login.ForgotPassword") + "</a>\n                <a href=\"" + Q.resolveUrl('~/Account/SignUp') + "\"><i class=\"fa fa-angle-right\"></i>&nbsp;" + Q.text("Forms.Membership.Login.SignUpButton") + "</a>\n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </form>\n</div>\n";
+                return "\n<div class=\"flex-layout\">\n    <div class=\"logo\"></div>\n    <h3>" + Q.text("Forms.Membership.Login.FormTitle") + "</h3>\n    <form id=\"~_Form\" action=\"\">\n        <div class=\"s-Form\">\n            <div class=\"fieldset ui-widget ui-widget-content ui-corner-all\">\n                <div id=\"~_PropertyGrid\"></div>\n                <div class=\"clear\"></div>\n            </div>\n            <div class=\"buttons\">\n                <button id=\"~_LoginButton\" type=\"submit\" class=\"btn btn-primary\">\n                    " + Q.text("Forms.Membership.Login.SignInButton") + "\n                </button>\n            </div>\n            <div class=\"actions\">             \n                <div class=\"clear\"></div>\n            </div>\n        </div>\n    </form>\n</div>\n";
             };
             LoginPanel = __decorate([
                 Serenity.Decorators.registerClass()
@@ -4152,7 +4468,7 @@ var DAP;
                         switch (_this.form.SystemMasterId.value) {
                             case "2":
                             case "3":
-                                if ((_this.form.RequestValue.value.length != 12) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                if ((_this.form.RequestValue.value.length > 12) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
                                     return "Invalid NVS MP Card Number Format";
                                 }
                                 break;
@@ -4160,16 +4476,24 @@ var DAP;
                             case "5":
                             case "6":
                             case "7":
-                                if (_this.form.RequestValue.value.length != 15) {
-                                    return "Invalid NVS MP Card Number Format";
+                                if (_this.form.RequestValue.value.length > 18) {
+                                    return "Invalid SFDC ID Format";
                                 }
                                 break;
                             case "1":
+                                if ((_this.form.RequestValue.value.length > 10) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid SEAWARE Client ID Format";
+                                }
+                                break;
                             case "8":
                             case "9":
+                                if ((_this.form.RequestValue.value.length > 10) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid EPSILON OCI/SSC Client ID Format";
+                                }
+                                break;
                             case "10":
-                                if ((_this.form.RequestValue.value.length != 10) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
-                                    return "Invalid SEAWARE/EPSILON Client ID Format";
+                                if ((_this.form.RequestValue.value.length > 13) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid EPSILON NCL Client ID Format";
                                 }
                                 break;
                         }
@@ -4182,6 +4506,22 @@ var DAP;
             RequestAttributesDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.RequestAttributesRow.localTextPrefix; };
             RequestAttributesDialog.prototype.getNameProperty = function () { return NCLHDSAR.RequestAttributesRow.nameProperty; };
             RequestAttributesDialog.prototype.getService = function () { return NCLHDSAR.RequestAttributesService.baseUrl; };
+            RequestAttributesDialog.prototype.getToolbarButtons = function () {
+                var _this = this;
+                var btns = _super.prototype.getToolbarButtons.call(this);
+                var newBtn = {
+                    title: "Save And New",
+                    onClick: function () {
+                        _this.save(function () {
+                            var ent = {};
+                            ent.Id = Q.toId(_this.form.Id.value);
+                            _this.loadEntity(ent);
+                        });
+                    }
+                };
+                btns.push(newBtn);
+                return btns;
+            };
             RequestAttributesDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], RequestAttributesDialog);
@@ -4872,6 +5212,144 @@ var DAP;
 (function (DAP) {
     var PCHODS;
     (function (PCHODS) {
+        var OutboundCommissionHistDialog = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistDialog, _super);
+            function OutboundCommissionHistDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.OutboundCommissionHistForm(_this.idPrefix);
+                return _this;
+            }
+            OutboundCommissionHistDialog.prototype.getFormKey = function () { return PCHODS.OutboundCommissionHistForm.formKey; };
+            OutboundCommissionHistDialog.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistRow.idProperty; };
+            OutboundCommissionHistDialog.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistRow.localTextPrefix; };
+            OutboundCommissionHistDialog.prototype.getNameProperty = function () { return PCHODS.OutboundCommissionHistRow.nameProperty; };
+            OutboundCommissionHistDialog.prototype.getService = function () { return PCHODS.OutboundCommissionHistService.baseUrl; };
+            OutboundCommissionHistDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionHistDialog);
+            return OutboundCommissionHistDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.OutboundCommissionHistDialog = OutboundCommissionHistDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistGrid = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistGrid, _super);
+            function OutboundCommissionHistGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OutboundCommissionHistGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionHist'; };
+            OutboundCommissionHistGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionHistDialog; };
+            OutboundCommissionHistGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistRow.idProperty; };
+            OutboundCommissionHistGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistRow.localTextPrefix; };
+            OutboundCommissionHistGrid.prototype.getService = function () { return PCHODS.OutboundCommissionHistService.baseUrl; };
+            OutboundCommissionHistGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionHistGrid);
+            return OutboundCommissionHistGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.OutboundCommissionHistGrid = OutboundCommissionHistGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistAuDialog = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistAuDialog, _super);
+            function OutboundCommissionHistAuDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.OutboundCommissionHistAuForm(_this.idPrefix);
+                return _this;
+            }
+            OutboundCommissionHistAuDialog.prototype.getFormKey = function () { return PCHODS.OutboundCommissionHistAuForm.formKey; };
+            OutboundCommissionHistAuDialog.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistAuRow.idProperty; };
+            OutboundCommissionHistAuDialog.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistAuRow.localTextPrefix; };
+            OutboundCommissionHistAuDialog.prototype.getNameProperty = function () { return PCHODS.OutboundCommissionHistAuRow.nameProperty; };
+            OutboundCommissionHistAuDialog.prototype.getService = function () { return PCHODS.OutboundCommissionHistAuService.baseUrl; };
+            OutboundCommissionHistAuDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionHistAuDialog);
+            return OutboundCommissionHistAuDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.OutboundCommissionHistAuDialog = OutboundCommissionHistAuDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistAuGrid = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistAuGrid, _super);
+            function OutboundCommissionHistAuGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OutboundCommissionHistAuGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionHistAu'; };
+            OutboundCommissionHistAuGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionHistAuDialog; };
+            OutboundCommissionHistAuGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistAuRow.idProperty; };
+            OutboundCommissionHistAuGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistAuRow.localTextPrefix; };
+            OutboundCommissionHistAuGrid.prototype.getService = function () { return PCHODS.OutboundCommissionHistAuService.baseUrl; };
+            OutboundCommissionHistAuGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionHistAuGrid);
+            return OutboundCommissionHistAuGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.OutboundCommissionHistAuGrid = OutboundCommissionHistAuGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistBrDialog = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistBrDialog, _super);
+            function OutboundCommissionHistBrDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.OutboundCommissionHistBrForm(_this.idPrefix);
+                return _this;
+            }
+            OutboundCommissionHistBrDialog.prototype.getFormKey = function () { return PCHODS.OutboundCommissionHistBrForm.formKey; };
+            OutboundCommissionHistBrDialog.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistBrRow.idProperty; };
+            OutboundCommissionHistBrDialog.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistBrRow.localTextPrefix; };
+            OutboundCommissionHistBrDialog.prototype.getNameProperty = function () { return PCHODS.OutboundCommissionHistBrRow.nameProperty; };
+            OutboundCommissionHistBrDialog.prototype.getService = function () { return PCHODS.OutboundCommissionHistBrService.baseUrl; };
+            OutboundCommissionHistBrDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionHistBrDialog);
+            return OutboundCommissionHistBrDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.OutboundCommissionHistBrDialog = OutboundCommissionHistBrDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionHistBrGrid = /** @class */ (function (_super) {
+            __extends(OutboundCommissionHistBrGrid, _super);
+            function OutboundCommissionHistBrGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OutboundCommissionHistBrGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionHistBr'; };
+            OutboundCommissionHistBrGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionHistBrDialog; };
+            OutboundCommissionHistBrGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistBrRow.idProperty; };
+            OutboundCommissionHistBrGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistBrRow.localTextPrefix; };
+            OutboundCommissionHistBrGrid.prototype.getService = function () { return PCHODS.OutboundCommissionHistBrService.baseUrl; };
+            OutboundCommissionHistBrGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionHistBrGrid);
+            return OutboundCommissionHistBrGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.OutboundCommissionHistBrGrid = OutboundCommissionHistBrGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
         var OutboundCommissionPeriodDialog = /** @class */ (function (_super) {
             __extends(OutboundCommissionPeriodDialog, _super);
             function OutboundCommissionPeriodDialog() {
@@ -4889,95 +5367,6 @@ var DAP;
             return OutboundCommissionPeriodDialog;
         }(Serenity.EntityDialog));
         PCHODS.OutboundCommissionPeriodDialog = OutboundCommissionPeriodDialog;
-    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHODS;
-    (function (PCHODS) {
-        var OutboundCommissionPeriodGrid = /** @class */ (function (_super) {
-            __extends(OutboundCommissionPeriodGrid, _super);
-            function OutboundCommissionPeriodGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            OutboundCommissionPeriodGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionPeriod'; };
-            OutboundCommissionPeriodGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionPeriodDialog; };
-            OutboundCommissionPeriodGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionPeriodRow.idProperty; };
-            OutboundCommissionPeriodGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionPeriodRow.localTextPrefix; };
-            OutboundCommissionPeriodGrid.prototype.getService = function () { return PCHODS.OutboundCommissionPeriodService.baseUrl; };
-            OutboundCommissionPeriodGrid.prototype.createQuickSearchInput = function () { };
-            OutboundCommissionPeriodGrid.prototype.getColumns = function () {
-                var columns = _super.prototype.getColumns.call(this);
-                columns.push({
-                    field: 'Close Period',
-                    name: '',
-                    format: function (ctx) {
-                        var CurItem = ctx.item;
-                        var klass = "";
-                        if (CurItem.IsOpen) {
-                            klass = '<a class="inline-action close-period" title="Close Period">' +
-                                '<i class="fa  fa-unlock text-red"></i></a>';
-                        }
-                        else {
-                            klass = '<a class="inline-action period-closed" title="Period Closed">' +
-                                '<i class="fa  fa-lock text-green"></i></a>';
-                        }
-                        return klass;
-                    },
-                    width: 24,
-                    minWidth: 24,
-                    maxWidth: 24
-                });
-                return columns;
-            };
-            OutboundCommissionPeriodGrid.prototype.onClick = function (e, row, cell) {
-                var _this = this;
-                _super.prototype.onClick.call(this, e, row, cell);
-                if (e.isDefaultPrevented())
-                    return;
-                var item = this.itemAt(row);
-                var target = $(e.target);
-                // if user clicks "i" element, e.g. icon
-                if (target.parent().hasClass('inline-action'))
-                    target = target.parent();
-                if (target.hasClass('inline-action')) {
-                    e.preventDefault();
-                    if (target.hasClass('close-period')) {
-                        Q.confirm('Are you sure you want to close this period?', function () {
-                            var bla = PCHODS.OutboundCommissionPeriodService.Create({}, function (response) {
-                                // *** Success ***
-                                var message = JSON.parse(bla.responseText);
-                                Q.notifySuccess(message, "Commission period has been closed successfully!");
-                                _this.refresh();
-                            });
-                        }, {});
-                    }
-                }
-            };
-            OutboundCommissionPeriodGrid.prototype.getButtons = function () {
-                // call base method to get list of buttons
-                // by default, base entity grid adds a few buttons, 
-                // add, refresh, column selection in order.
-                var buttons = _super.prototype.getButtons.call(this);
-                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
-                //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
-                //Add a Button
-                //buttons.push({
-                //    title: "Close Commission Period",
-                //    hint: "Close Commission Period",
-                //    cssClass: "'close-period-button' ",
-                //    icon: "'fa-hand-lizard-o'",
-                //    onClick: () => this.closePerdiodClick(),
-                //    separator: true
-                //});       
-                return buttons;
-            };
-            OutboundCommissionPeriodGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], OutboundCommissionPeriodGrid);
-            return OutboundCommissionPeriodGrid;
-        }(Serenity.EntityGrid));
-        PCHODS.OutboundCommissionPeriodGrid = OutboundCommissionPeriodGrid;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -5032,6 +5421,161 @@ var DAP;
             return UsersEditor;
         }(Serenity.LookupEditorBase));
         PCHODS.UsersEditor = UsersEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesDialog = /** @class */ (function (_super) {
+            __extends(NtrIntlDatelineCruisesDialog, _super);
+            function NtrIntlDatelineCruisesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODSNVS.NtrIntlDatelineCruisesForm(_this.idPrefix);
+                return _this;
+            }
+            NtrIntlDatelineCruisesDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrIntlDatelineCruisesForm.formKey; };
+            NtrIntlDatelineCruisesDialog.prototype.getIdProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.idProperty; };
+            NtrIntlDatelineCruisesDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
+            NtrIntlDatelineCruisesDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.nameProperty; };
+            NtrIntlDatelineCruisesDialog.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
+            NtrIntlDatelineCruisesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrIntlDatelineCruisesDialog);
+            return NtrIntlDatelineCruisesDialog;
+        }(Serenity.EntityDialog));
+        PCHODSNVS.NtrIntlDatelineCruisesDialog = NtrIntlDatelineCruisesDialog;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesGrid = /** @class */ (function (_super) {
+            __extends(NtrIntlDatelineCruisesGrid, _super);
+            function NtrIntlDatelineCruisesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            NtrIntlDatelineCruisesGrid.prototype.getColumnsKey = function () { return 'PCHODSNVS.NtrIntlDatelineCruises'; };
+            NtrIntlDatelineCruisesGrid.prototype.getDialogType = function () { return PCHODSNVS.NtrIntlDatelineCruisesDialog; };
+            NtrIntlDatelineCruisesGrid.prototype.getIdProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.idProperty; };
+            NtrIntlDatelineCruisesGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
+            NtrIntlDatelineCruisesGrid.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
+            NtrIntlDatelineCruisesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrIntlDatelineCruisesGrid);
+            return NtrIntlDatelineCruisesGrid;
+        }(Serenity.EntityGrid));
+        PCHODSNVS.NtrIntlDatelineCruisesGrid = NtrIntlDatelineCruisesGrid;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundCommissionPeriodGrid = /** @class */ (function (_super) {
+            __extends(OutboundCommissionPeriodGrid, _super);
+            function OutboundCommissionPeriodGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            OutboundCommissionPeriodGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionPeriod'; };
+            OutboundCommissionPeriodGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionPeriodDialog; };
+            OutboundCommissionPeriodGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionPeriodRow.idProperty; };
+            OutboundCommissionPeriodGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionPeriodRow.localTextPrefix; };
+            OutboundCommissionPeriodGrid.prototype.getService = function () { return PCHODS.OutboundCommissionPeriodService.baseUrl; };
+            OutboundCommissionPeriodGrid.prototype.createQuickSearchInput = function () { };
+            OutboundCommissionPeriodGrid.prototype.getColumns = function () {
+                var columns = _super.prototype.getColumns.call(this);
+                columns.push({
+                    field: 'Close Period',
+                    name: '',
+                    format: function (ctx) {
+                        var CurItem = ctx.item;
+                        var klass = "";
+                        if (CurItem.IsOpen) {
+                            klass = '<a class="inline-action close-period" title="Close Period">' +
+                                '<i class="fa  fa-unlock text-red"></i></a>';
+                        }
+                        else {
+                            klass = '<a class="inline-action period-closed" title="Period Closed">' +
+                                '<i class="fa  fa-lock text-green"></i></a>';
+                        }
+                        return klass;
+                    },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                return columns;
+            };
+            OutboundCommissionPeriodGrid.prototype.onClick = function (e, row, cell) {
+                var _this = this;
+                _super.prototype.onClick.call(this, e, row, cell);
+                if (e.isDefaultPrevented())
+                    return;
+                var item = this.itemAt(row);
+                var target = $(e.target);
+                // if user clicks "i" element, e.g. icon
+                if (target.parent().hasClass('inline-action'))
+                    target = target.parent();
+                if (target.hasClass('inline-action')) {
+                    e.preventDefault();
+                    if (target.hasClass('close-period')) {
+                        Q.confirm('Are you sure you want to close this period?', function () {
+                            var crow = Q.deepClone(_this.itemAt(row));
+                            crow.ClosedDate = Q.formatDate(new Date(), "MM/dd/yyyy");
+                            crow.IsOpen = false;
+                            crow.ClosedBy = Q.Authorization.username;
+                            PCHODS.OutboundCommissionPeriodService.Update({
+                                EntityId: item.OutboundCommissionPeriodID,
+                                Entity: crow
+                            }, function (response) {
+                                _this.refresh();
+                            });
+                            crow.IsOpen = true;
+                            crow.ClosedDate = null;
+                            crow.ClosedBy = null;
+                            crow.OutboundCommissionPeriodID = null;
+                            var st = new Date(crow.StartDate);
+                            st.setMonth(st.getMonth() + 1);
+                            crow.StartDate = st;
+                            crow.EndDate = new Date(st.getFullYear(), st.getMonth() + 1, 0);
+                            crow.PreviousMonth = crow.CurrentMonth;
+                            crow.CurrentMonth = st;
+                            PCHODS.OutboundCommissionPeriodService.Create({
+                                Entity: crow
+                            }, function (response) {
+                                _this.refresh();
+                            });
+                            Q.notifySuccess("Commission Period Closed Successfully.");
+                        });
+                    }
+                }
+            };
+            OutboundCommissionPeriodGrid.prototype.getButtons = function () {
+                // call base method to get list of buttons
+                // by default, base entity grid adds a few buttons, 
+                // add, refresh, column selection in order.
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
+                //Add a Button
+                //buttons.push({
+                //    title: "Close Commission Period",
+                //    hint: "Close Commission Period",
+                //    cssClass: "'close-period-button' ",
+                //    icon: "'fa-hand-lizard-o'",
+                //    onClick: () => this.closePerdiodClick(),
+                //    separator: true
+                //});       
+                return buttons;
+            };
+            OutboundCommissionPeriodGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundCommissionPeriodGrid);
+            return OutboundCommissionPeriodGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.OutboundCommissionPeriodGrid = OutboundCommissionPeriodGrid;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

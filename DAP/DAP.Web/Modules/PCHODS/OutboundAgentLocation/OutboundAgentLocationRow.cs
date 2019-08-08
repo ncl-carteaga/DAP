@@ -11,8 +11,9 @@ namespace DAP.PCHODS.Entities
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_AgentLocation]")]
     [DisplayName("Outbound Agent Location"), InstanceName("Outbound Agent Location")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     [DataAuditLog]
     public sealed class OutboundAgentLocationRow : Row, IIdRow, INameRow
     {

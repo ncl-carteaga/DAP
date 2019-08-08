@@ -3,6 +3,7 @@
         export const baseUrl = 'PCHODS/OutboundCommissionPeriod';
 
         export declare function Create(request: Serenity.SaveRequest<OutboundCommissionPeriodRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function CreateWithSP(request: Serenity.SaveRequest<OutboundCommissionPeriodRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Update(request: Serenity.SaveRequest<OutboundCommissionPeriodRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundCommissionPeriodRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -10,6 +11,7 @@
 
         export declare const enum Methods {
             Create = "PCHODS/OutboundCommissionPeriod/Create",
+            CreateWithSP = "PCHODS/OutboundCommissionPeriod/CreateWithSP",
             Update = "PCHODS/OutboundCommissionPeriod/Update",
             Delete = "PCHODS/OutboundCommissionPeriod/Delete",
             Retrieve = "PCHODS/OutboundCommissionPeriod/Retrieve",
@@ -18,6 +20,7 @@
 
         [
             'Create', 
+            'CreateWithSP', 
             'Update', 
             'Delete', 
             'Retrieve', 

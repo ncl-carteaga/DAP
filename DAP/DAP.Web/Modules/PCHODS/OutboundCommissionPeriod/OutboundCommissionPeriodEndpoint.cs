@@ -14,7 +14,13 @@ namespace DAP.PCHODS.Endpoints
     public class OutboundCommissionPeriodController : ServiceEndpoint
     {
         [HttpPost, AuthorizeCreate(typeof(MyRow))]
-        public SaveResponse Create(SaveRequest<MyRow> request)
+        public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)
+        {
+            return new MyRepository().Create(uow, request);
+        }
+
+        [HttpPost, AuthorizeCreate(typeof(MyRow))]
+        public SaveResponse CreateWithSP(SaveRequest<MyRow> request)
         {
             var user = (UserDefinition)Authorization.UserDefinition;
             //return new MyRepository().Create(uow, request);
