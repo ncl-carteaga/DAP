@@ -11,8 +11,9 @@ namespace DAP.NCLHDSAR.Entities
 
     [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[Request_Type]")]
     [DisplayName("Request Type"), InstanceName("Request Type")]
-    [ReadPermission("Administration:General|Reviewer:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Request.View)]
+    [ModifyPermission(PermissionKeys.Request.Modify)]
+    [DeletePermission(PermissionKeys.Request.Delete)]
     [DataAuditLog]
     public sealed class RequestTypeRow : Row, IIdRow, INameRow
     {

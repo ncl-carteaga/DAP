@@ -11,8 +11,9 @@ namespace DAP.PCHODS.Entities
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_CommissionPeriod]")]
     [DisplayName("Outbound Commission Period"), InstanceName("Outbound Commission Period")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]    
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     [DataAuditLog]
     public sealed class OutboundCommissionPeriodRow : Row, IIdRow, INameRow
     {

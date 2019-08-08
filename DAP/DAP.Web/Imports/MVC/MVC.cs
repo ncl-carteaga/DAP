@@ -132,9 +132,33 @@ namespace MVC
                 public const string OutboundAgentLocationIndex = "~/Modules/PCHODS/OutboundAgentLocation/OutboundAgentLocationIndex.cshtml";
             }
 
+            public static class OutboundCommissionHist
+            {
+                public const string OutboundCommissionHistIndex = "~/Modules/PCHODS/OutboundCommissionHist/OutboundCommissionHistIndex.cshtml";
+            }
+
+            public static class OutboundCommissionHistAu
+            {
+                public const string OutboundCommissionHistAuIndex = "~/Modules/PCHODS/OutboundCommissionHistAu/OutboundCommissionHistAuIndex.cshtml";
+            }
+
+            public static class OutboundCommissionHistBr
+            {
+                public const string OutboundCommissionHistBrIndex = "~/Modules/PCHODS/OutboundCommissionHistBr/OutboundCommissionHistBrIndex.cshtml";
+            }
+
             public static class OutboundCommissionPeriod
             {
                 public const string OutboundCommissionPeriodIndex = "~/Modules/PCHODS/OutboundCommissionPeriod/OutboundCommissionPeriodIndex.cshtml";
+            }
+
+        }
+
+        public static class PCHODSNVS
+        {
+            public static class NtrIntlDatelineCruises
+            {
+                public const string NtrIntlDatelineCruisesIndex = "~/Modules/PCHODSNVS/NtrIntlDatelineCruises/NtrIntlDatelineCruisesIndex.cshtml";
             }
         }
 

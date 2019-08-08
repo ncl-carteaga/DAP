@@ -1102,6 +1102,11 @@
     <Content Include="tsconfig.json" />
     <Content Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationIndex.cshtml" />
     <Content Include="Modules\PCHODS\OutboundAgent\OutboundAgentIndex.cshtml" />
+    <Content Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistIndex.cshtml" />
+    <Content Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuIndex.cshtml" />
+    <Content Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesIndex.cshtml" />
+    <Content Include="Content\site\site.pchodsnvs.less" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1179,6 +1184,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.Lookups.OutboundCommissionPeriodColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistAuColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistBrColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionPeriodForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1186,6 +1200,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionPeriodService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
@@ -1230,6 +1247,14 @@
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgent\OutboundAgentDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgent\OutboundAgentGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2032,6 +2057,42 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCompanyService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistAuRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistAuService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistBrRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistBrService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistAuForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionHistBrForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2237,6 +2298,7 @@
     <Compile Include="Modules\PCHODS\OutboundCompany\CompanyLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundNvsUsers\UsersLookup.cs" />
     <Compile Include="Modules\PCHODS\PCHODSNavigation.cs" />
+    <Compile Include="Modules\PCHODS\PCHODSPermissionKeys.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
     <Compile Include="Modules\Administration\User\Authentication\AuthorizationService.cs" />
@@ -2293,6 +2355,31 @@
     <Compile Include="Modules\PCHODS\OutboundCompany\OutboundCompanyRow.cs" />
     <Compile Include="Modules\PCHODS\OutboundCompany\OutboundCompanyRepository.cs" />
     <Compile Include="Modules\PCHODS\OutboundCompany\OutboundCompanyEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistRow.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistRepository.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuRow.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuRepository.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrRow.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrRepository.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistPage.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistColumns.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\OutboundCommissionHistForm.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuPage.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuColumns.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\OutboundCommissionHistAuForm.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrPage.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrColumns.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\PCHODSNVSNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

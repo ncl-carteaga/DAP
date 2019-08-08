@@ -40,7 +40,7 @@ namespace DAP.NCLHDSAR {
                     switch (this.form.SystemMasterId.value) {
                         case "2":
                         case "3":
-                            if ((this.form.RequestValue.value.length != 12) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                            if ((this.form.RequestValue.value.length > 12) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
                                 return "Invalid NVS MP Card Number Format";
                             }
                             break;
@@ -48,16 +48,24 @@ namespace DAP.NCLHDSAR {
                         case "5":
                         case "6":
                         case "7":
-                            if (this.form.RequestValue.value.length != 15) {
-                                return "Invalid NVS MP Card Number Format";
+                            if (this.form.RequestValue.value.length > 18) {
+                                return "Invalid SFDC ID Format";
                             }
                             break;
                         case "1":
+                            if ((this.form.RequestValue.value.length > 10) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid SEAWARE Client ID Format";
+                            }
+                            break;
                         case "8":
                         case "9":
+                            if ((this.form.RequestValue.value.length > 10) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid EPSILON OCI/SSC Client ID Format";
+                            }
+                            break;
                         case "10":
-                            if ((this.form.RequestValue.value.length != 10) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
-                                return "Invalid SEAWARE/EPSILON Client ID Format";
+                            if ((this.form.RequestValue.value.length > 13) || (!(/^[0-9]*$/.test(this.form.RequestValue.value)))) {
+                                return "Invalid EPSILON NCL Client ID Format";
                             }
                             break;
                 }
@@ -67,6 +75,26 @@ namespace DAP.NCLHDSAR {
 
             });
 
+        }
+
+
+        protected getToolbarButtons(): Serenity.ToolButton[] {
+            let btns = super.getToolbarButtons();
+            let newBtn: Serenity.ToolButton =
+            {
+                title: "Save And New",
+                onClick: () => {
+                    this.save(() => {
+                        let ent: RequestAttributesRow = {};
+                        ent.Id = Q.toId(this.form.Id.value);
+                        this.loadEntity(ent);
+                    });
+
+                }
+            }
+
+            btns.push(newBtn);
+            return btns;
         }
 
     }

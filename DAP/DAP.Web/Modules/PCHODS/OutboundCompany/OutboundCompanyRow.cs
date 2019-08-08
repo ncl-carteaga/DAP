@@ -11,8 +11,9 @@ namespace DAP.PCHODS.Entities
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_Company]")]
     [DisplayName("Outbound Company"), InstanceName("Outbound Company")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     [LookupScript("PCHODS.Outbound_Company")]
     public sealed class OutboundCompanyRow : Row, IIdRow, INameRow
     {

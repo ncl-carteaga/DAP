@@ -167,9 +167,7 @@
                     ${Q.text("Forms.Membership.Login.SignInButton")}
                 </button>
             </div>
-            <div class="actions">
-                <a href="${Q.resolveUrl('~/Account/ForgotPassword')}"><i class="fa fa-angle-right"></i>&nbsp;${Q.text("Forms.Membership.Login.ForgotPassword")}</a>
-                <a href="${Q.resolveUrl('~/Account/SignUp')}"><i class="fa fa-angle-right"></i>&nbsp;${Q.text("Forms.Membership.Login.SignUpButton")}</a>
+            <div class="actions">             
                 <div class="clear"></div>
             </div>
         </div>

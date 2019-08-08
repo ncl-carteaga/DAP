@@ -18,14 +18,14 @@ namespace DAP.NCLHDSAR
             public const string View = "NCLHDSAR:Request:View";
         }
 
-        [DisplayName("RequestAttributes")]
-        public class RequestAttributes
+        [DisplayName("RequestAttribute")]
+        public class RequestAttribute
         {
             [ImplicitPermission(General), ImplicitPermission(View)]
-            public const string Delete = "NCLHDSAR:RequestAttributes:Delete";
+            public const string Delete = "NCLHDSAR:RequestAttribute:Delete";
             [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
-            public const string Modify = "NCLHDSAR:RequestAttributes:Modify";
-            public const string View = "NCLHDSAR:RequestAttributes:View";
+            public const string Modify = "NCLHDSAR:RequestAttribute:Modify";
+            public const string View = "NCLHDSAR:RequestAttribute:View";
         }
 
         [Description("[General]")]

@@ -11,8 +11,9 @@ namespace DAP.PCHODS.Entities
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_NVS_Users]")]
     [DisplayName("Outbound Nvs Users"), InstanceName("Outbound Nvs Users")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     [LookupScript("NCLHDSAR.OutboundNvsUsers")]
     public sealed class OutboundNvsUsersRow : Row, IIdRow, INameRow
     {

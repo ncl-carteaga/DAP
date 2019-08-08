@@ -1118,6 +1118,7 @@ declare namespace DAP.NCLHDSAR {
         RequestTypeNumDesc?: string;
         DaysLeft?: number;
         DaysOld?: number;
+        Count?: number;
     }
     namespace RequestRow {
         const idProperty = "Id";
@@ -1158,7 +1159,8 @@ declare namespace DAP.NCLHDSAR {
             ProcessDt = "ProcessDt",
             RequestTypeNumDesc = "RequestTypeNumDesc",
             DaysLeft = "DaysLeft",
-            DaysOld = "DaysOld"
+            DaysOld = "DaysOld",
+            Count = "Count"
         }
     }
 }
@@ -1393,6 +1395,188 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+    interface OutboundCommissionHistAuForm {
+        CommissionId: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        LowNumBookings: Serenity.DecimalEditor;
+        HighNumBookings: Serenity.DecimalEditor;
+        CommissionRate: Serenity.DecimalEditor;
+        ActiveDt: Serenity.DateEditor;
+        InactiveDt: Serenity.DateEditor;
+    }
+    class OutboundCommissionHistAuForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODS {
+    interface OutboundCommissionHistAuRow {
+        CommissionId?: string;
+        CompanyCd?: string;
+        LowNumBookings?: number;
+        HighNumBookings?: number;
+        CommissionRate?: number;
+        ActiveDt?: string;
+        InactiveDt?: string;
+        CommissionHistAuId?: number;
+    }
+    namespace OutboundCommissionHistAuRow {
+        const idProperty = "CommissionHistAuId";
+        const nameProperty = "CommissionId";
+        const localTextPrefix = "PCHODS.OutboundCommissionHistAu";
+        const enum Fields {
+            CommissionId = "CommissionId",
+            CompanyCd = "CompanyCd",
+            LowNumBookings = "LowNumBookings",
+            HighNumBookings = "HighNumBookings",
+            CommissionRate = "CommissionRate",
+            ActiveDt = "ActiveDt",
+            InactiveDt = "InactiveDt",
+            CommissionHistAuId = "CommissionHistAuId"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace OutboundCommissionHistAuService {
+        const baseUrl = "PCHODS/OutboundCommissionHistAu";
+        function Create(request: Serenity.SaveRequest<OutboundCommissionHistAuRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OutboundCommissionHistAuRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundCommissionHistAuRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundCommissionHistAuRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/OutboundCommissionHistAu/Create",
+            Update = "PCHODS/OutboundCommissionHistAu/Update",
+            Delete = "PCHODS/OutboundCommissionHistAu/Delete",
+            Retrieve = "PCHODS/OutboundCommissionHistAu/Retrieve",
+            List = "PCHODS/OutboundCommissionHistAu/List"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    interface OutboundCommissionHistBrForm {
+        CommissionId: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        LowNumBookings: Serenity.DecimalEditor;
+        HighNumBookings: Serenity.DecimalEditor;
+        CommissionRate: Serenity.DecimalEditor;
+        ActiveDt: Serenity.DateEditor;
+        InactiveDt: Serenity.DateEditor;
+    }
+    class OutboundCommissionHistBrForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODS {
+    interface OutboundCommissionHistBrRow {
+        CommissionId?: string;
+        CompanyCd?: string;
+        LowNumBookings?: number;
+        HighNumBookings?: number;
+        CommissionRate?: number;
+        ActiveDt?: string;
+        InactiveDt?: string;
+        CommissionHistBrId?: number;
+    }
+    namespace OutboundCommissionHistBrRow {
+        const idProperty = "CommissionHistBrId";
+        const nameProperty = "CommissionId";
+        const localTextPrefix = "PCHODS.OutboundCommissionHistBr";
+        const enum Fields {
+            CommissionId = "CommissionId",
+            CompanyCd = "CompanyCd",
+            LowNumBookings = "LowNumBookings",
+            HighNumBookings = "HighNumBookings",
+            CommissionRate = "CommissionRate",
+            ActiveDt = "ActiveDt",
+            InactiveDt = "InactiveDt",
+            CommissionHistBrId = "CommissionHistBrId"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace OutboundCommissionHistBrService {
+        const baseUrl = "PCHODS/OutboundCommissionHistBr";
+        function Create(request: Serenity.SaveRequest<OutboundCommissionHistBrRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OutboundCommissionHistBrRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundCommissionHistBrRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundCommissionHistBrRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/OutboundCommissionHistBr/Create",
+            Update = "PCHODS/OutboundCommissionHistBr/Update",
+            Delete = "PCHODS/OutboundCommissionHistBr/Delete",
+            Retrieve = "PCHODS/OutboundCommissionHistBr/Retrieve",
+            List = "PCHODS/OutboundCommissionHistBr/List"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    interface OutboundCommissionHistForm {
+        CommissionId: Serenity.StringEditor;
+        CompanyCd: CompanyEditor;
+        LowNumBookings: Serenity.DecimalEditor;
+        HighNumBookings: Serenity.DecimalEditor;
+        CommissionRate: Serenity.DecimalEditor;
+        ActiveDt: Serenity.DateEditor;
+        InactiveDt: Serenity.DateEditor;
+    }
+    class OutboundCommissionHistForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODS {
+    interface OutboundCommissionHistRow {
+        CommissionId?: string;
+        CompanyCd?: string;
+        LowNumBookings?: number;
+        HighNumBookings?: number;
+        CommissionRate?: number;
+        ActiveDt?: string;
+        InactiveDt?: string;
+        CommissionHistId?: number;
+        CompanyName?: string;
+    }
+    namespace OutboundCommissionHistRow {
+        const idProperty = "CommissionHistId";
+        const nameProperty = "CommissionId";
+        const localTextPrefix = "PCHODS.OutboundCommissionHist";
+        const enum Fields {
+            CommissionId = "CommissionId",
+            CompanyCd = "CompanyCd",
+            LowNumBookings = "LowNumBookings",
+            HighNumBookings = "HighNumBookings",
+            CommissionRate = "CommissionRate",
+            ActiveDt = "ActiveDt",
+            InactiveDt = "InactiveDt",
+            CommissionHistId = "CommissionHistId",
+            CompanyName = "CompanyName"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace OutboundCommissionHistService {
+        const baseUrl = "PCHODS/OutboundCommissionHist";
+        function Create(request: Serenity.SaveRequest<OutboundCommissionHistRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OutboundCommissionHistRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundCommissionHistRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundCommissionHistRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/OutboundCommissionHist/Create",
+            Update = "PCHODS/OutboundCommissionHist/Update",
+            Delete = "PCHODS/OutboundCommissionHist/Delete",
+            Retrieve = "PCHODS/OutboundCommissionHist/Retrieve",
+            List = "PCHODS/OutboundCommissionHist/List"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
     interface OutboundCommissionPeriodForm {
         IsOpen: Serenity.BooleanEditor;
         StartDate: Serenity.DateEditor;
@@ -1437,12 +1621,14 @@ declare namespace DAP.PCHODS {
     namespace OutboundCommissionPeriodService {
         const baseUrl = "PCHODS/OutboundCommissionPeriod";
         function Create(request: Serenity.SaveRequest<OutboundCommissionPeriodRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function CreateWithSP(request: Serenity.SaveRequest<OutboundCommissionPeriodRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Update(request: Serenity.SaveRequest<OutboundCommissionPeriodRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundCommissionPeriodRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundCommissionPeriodRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODS/OutboundCommissionPeriod/Create",
+            CreateWithSP = "PCHODS/OutboundCommissionPeriod/CreateWithSP",
             Update = "PCHODS/OutboundCommissionPeriod/Update",
             Delete = "PCHODS/OutboundCommissionPeriod/Delete",
             Retrieve = "PCHODS/OutboundCommissionPeriod/Retrieve",
@@ -1499,14 +1685,15 @@ declare namespace DAP.PCHODS {
         const nameProperty = "UserId";
         const localTextPrefix = "PCHODS.OutboundNvsUsers";
         const lookupKey = "NCLHDSAR.OutboundNvsUsers";
-        namespace Fields {
-            const UserId: any;
-            const UserFirstName: any;
-            const UserLastName: any;
-            const CompanyCd: any;
-            const ActiveInd: any;
-            const DepartmentCd: any;
-            const DepartmentDesc: any;
+        function getLookup(): Q.Lookup<OutboundNvsUsersRow>;
+        const enum Fields {
+            UserId = "UserId",
+            UserFirstName = "UserFirstName",
+            UserLastName = "UserLastName",
+            CompanyCd = "CompanyCd",
+            ActiveInd = "ActiveInd",
+            DepartmentCd = "DepartmentCd",
+            DepartmentDesc = "DepartmentDesc"
         }
     }
 }
@@ -1524,6 +1711,60 @@ declare namespace DAP.PCHODS {
             Delete = "PCHODS/OutboundNvsUsers/Delete",
             Retrieve = "PCHODS/OutboundNvsUsers/Retrieve",
             List = "PCHODS/OutboundNvsUsers/List"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrIntlDatelineCruisesForm {
+        CompanyCd: Serenity.StringEditor;
+        CruiseSegmentCd: Serenity.StringEditor;
+        CruiseDaysQty: Serenity.IntegerEditor;
+        CruiseCalendarDaysQty: Serenity.IntegerEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class NtrIntlDatelineCruisesForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrIntlDatelineCruisesRow {
+        CruiseIntlTk?: number;
+        CompanyCd?: string;
+        CruiseSegmentCd?: string;
+        CruiseDaysQty?: number;
+        CruiseCalendarDaysQty?: number;
+        LoadDt?: string;
+    }
+    namespace NtrIntlDatelineCruisesRow {
+        const idProperty = "CruiseIntlTk";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "PCHODSNVS.NtrIntlDatelineCruises";
+        const enum Fields {
+            CruiseIntlTk = "CruiseIntlTk",
+            CompanyCd = "CompanyCd",
+            CruiseSegmentCd = "CruiseSegmentCd",
+            CruiseDaysQty = "CruiseDaysQty",
+            CruiseCalendarDaysQty = "CruiseCalendarDaysQty",
+            LoadDt = "LoadDt"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace NtrIntlDatelineCruisesService {
+        const baseUrl = "PCHODSNVS/NtrIntlDatelineCruises";
+        function Create(request: Serenity.SaveRequest<NtrIntlDatelineCruisesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NtrIntlDatelineCruisesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrIntlDatelineCruisesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrIntlDatelineCruisesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/NtrIntlDatelineCruises/Create",
+            Update = "PCHODSNVS/NtrIntlDatelineCruises/Update",
+            Delete = "PCHODSNVS/NtrIntlDatelineCruises/Delete",
+            Retrieve = "PCHODSNVS/NtrIntlDatelineCruises/Retrieve",
+            List = "PCHODSNVS/NtrIntlDatelineCruises/List"
         }
     }
 }
@@ -2120,6 +2361,7 @@ declare namespace DAP.NCLHDSAR {
         protected getService(): string;
         protected form: RequestAttributesForm;
         constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -2315,12 +2557,109 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+    class OutboundCommissionHistDialog extends Serenity.EntityDialog<OutboundCommissionHistRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: OutboundCommissionHistForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundCommissionHistGrid extends Serenity.EntityGrid<OutboundCommissionHistRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OutboundCommissionHistDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundCommissionHistAuDialog extends Serenity.EntityDialog<OutboundCommissionHistAuRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: OutboundCommissionHistAuForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundCommissionHistAuGrid extends Serenity.EntityGrid<OutboundCommissionHistAuRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OutboundCommissionHistAuDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundCommissionHistBrDialog extends Serenity.EntityDialog<OutboundCommissionHistBrRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: OutboundCommissionHistBrForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundCommissionHistBrGrid extends Serenity.EntityGrid<OutboundCommissionHistBrRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OutboundCommissionHistBrDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODS {
     class OutboundCommissionPeriodDialog extends Serenity.EntityDialog<OutboundCommissionPeriodRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         protected form: OutboundCommissionPeriodForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class CompanyEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, OutboundCompanyRow> {
+        constructor(hidden: JQuery);
+        protected getLookupKey(): string;
+        protected getItemText(item: PCHODS.OutboundCompanyRow, lookup: Q.Lookup<PCHODS.OutboundCompanyRow>): string;
+    }
+}
+declare namespace DAP.PCHODS {
+    class UsersEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, OutboundNvsUsersRow> {
+        constructor(hidden: JQuery);
+        protected getLookupKey(): string;
+        protected getItemText(item: PCHODS.OutboundNvsUsersRow, lookup: Q.Lookup<PCHODS.OutboundNvsUsersRow>): string;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class NtrIntlDatelineCruisesDialog extends Serenity.EntityDialog<NtrIntlDatelineCruisesRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: NtrIntlDatelineCruisesForm;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class NtrIntlDatelineCruisesGrid extends Serenity.EntityGrid<NtrIntlDatelineCruisesRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NtrIntlDatelineCruisesDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.PCHODS {
@@ -2338,16 +2677,10 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
-    class CompanyEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, OutboundCompanyRow> {
-        constructor(hidden: JQuery);
-        protected getLookupKey(): string;
-        protected getItemText(item: PCHODS.OutboundCompanyRow, lookup: Q.Lookup<PCHODS.OutboundCompanyRow>): string;
-    }
 }
 declare namespace DAP.PCHODS {
-    class UsersEditor extends Serenity.LookupEditorBase<Serenity.LookupEditorOptions, OutboundNvsUsersRow> {
-        constructor(hidden: JQuery);
-        protected getLookupKey(): string;
-        protected getItemText(item: PCHODS.OutboundNvsUsersRow, lookup: Q.Lookup<PCHODS.OutboundNvsUsersRow>): string;
-    }
+}
+declare namespace DAP.PCHODS {
+}
+declare namespace DAP.PCHODSNVS {
 }

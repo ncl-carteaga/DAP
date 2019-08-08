@@ -11,8 +11,9 @@ namespace DAP.PCHODS.Entities
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_Agent]")]
     [DisplayName("Outbound Agent"), InstanceName("Outbound Agent")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     [LookupScript(typeof(Lookups.OutboundAgentLocationLookup))]        
     [DataAuditLog]
     [LeftJoin("c","Outbound_Company","c.[Company_Cd] = T0.[Company_CD]")]

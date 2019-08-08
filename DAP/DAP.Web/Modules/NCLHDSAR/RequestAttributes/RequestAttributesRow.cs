@@ -14,9 +14,10 @@ namespace DAP.NCLHDSAR.Entities
     [DisplayName("Request Attributes"), InstanceName("Request Attributes")]
     //[ReadPermission("Administration:General")]
     //[ModifyPermission("Administration:General")]
-    [ReadPermission("Administration:General|Reviewer:General|Approver:View")]
-    [ModifyPermission("Administration:General|Approver:Modify:Reviewer:Modify")]
-    [InsertPermission("Administration:General|Approver:Modify:Reviewer:Modify")]
+    [ReadPermission("NCLHDSAR:Request:View|NCLHDSAR:RequestAttribute:View")]
+    [ModifyPermission("NCLHDSAR:Request:Modify|NCLHDSAR:RequestAttribute:Modify")]
+    [DeletePermission("NCLHDSAR:Request:Delete|NCLHDSAR:RequestAttribute:Delete")]
+    //[InsertPermission("Administration:General|Approver:Modify:Reviewer:Modify")]
     [LookupScript(typeof(Lookups.SystemMasterLookup))]
     [DataAuditLog]
     public sealed class RequestAttributesRow : Row, IIdRow, INameRow

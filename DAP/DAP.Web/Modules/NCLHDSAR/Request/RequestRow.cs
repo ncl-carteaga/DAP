@@ -15,9 +15,9 @@ namespace DAP.NCLHDSAR.Entities
     [DisplayName("Request"), InstanceName("Request")]
     //[ReadPermission("Administration:General")]
     //[ModifyPermission("Administration:General")]
-    [ReadPermission(PermissionKeys.Request.View)]
-    [ModifyPermission(PermissionKeys.Request.Modify)]
-    [DeletePermission(PermissionKeys.Request.Delete)]
+    [ReadPermission("NCLHDSAR:Request:View|NCLHDSAR:RequestAttribute:View")]
+    [ModifyPermission("NCLHDSAR:Request:Modify|NCLHDSAR:RequestAttribute:Modify")]    
+    [DeletePermission("NCLHDSAR:Request:Delete|NCLHDSAR:RequestAttribute:Delete")]
     [LookupScript(typeof(Lookups.RequestTypeLookup))]
     [DataAuditLog]
     public sealed class RequestRow : Row, IIdRow, INameRow
@@ -83,6 +83,16 @@ namespace DAP.NCLHDSAR.Entities
             get { return Fields.DaysOld[this]; }
             set { Fields.DaysOld[this] = value; }
         }
+
+        [DisplayName("# Attr"), AlignCenter, Updatable(false)]
+        [Expression("(SELECT COUNT(T1.Id) FROM dbo.Request_Attributes AS T1 WHERE T0.Id = T1.Id)")]
+        public Int32? Count
+        {
+            get { return Fields.Count[this]; }
+            set { Fields.Count[this] = value; }
+        }
+
+
         [DisplayName("Request Desc"), Size(255), NotNull, Updatable(false)]        
         public String RequestType
         {
@@ -318,6 +328,7 @@ namespace DAP.NCLHDSAR.Entities
             public StringField RequestTypeNumDesc;
             public Int32Field DaysLeft;
             public Int32Field DaysOld;
+            public Int32Field Count;
             //   public RowListField<RequestAttributesRow> DetailList;
         }
     }
