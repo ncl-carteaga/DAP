@@ -152,6 +152,16 @@ namespace MVC
                 public const string OutboundCommissionPeriodIndex = "~/Modules/PCHODS/OutboundCommissionPeriod/OutboundCommissionPeriodIndex.cshtml";
             }
 
+            public static class OutboundMonthlyRptArchiveOverride
+            {
+                public const string OutboundMonthlyRptArchiveOverrideIndex = "~/Modules/PCHODS/OutboundMonthlyRptArchiveOverride/OutboundMonthlyRptArchiveOverrideIndex.cshtml";
+            }
+
+            public static class VwOutboundMonthlyRptArchiveOverride
+            {
+                public const string VwOutboundMonthlyRptArchiveOverrideIndex = "~/Modules/PCHODS/VwOutboundMonthlyRptArchiveOverride/VwOutboundMonthlyRptArchiveOverrideIndex.cshtml";
+            }
+
         }
 
         public static class PCHODSNVS

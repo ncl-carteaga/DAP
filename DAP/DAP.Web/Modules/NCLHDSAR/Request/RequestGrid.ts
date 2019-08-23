@@ -34,11 +34,31 @@ namespace DAP.NCLHDSAR {
             //    }
             //});
 
-
-
             //Q.first(filters, x => x.field == fld.ReqStatus).init = w => {
             //    (w as Serenity.TextAreaEditor).value = "IN PROGRESS";
             //};
+
+            // make employee filter a textbox, instead of lookup, and search by starts with
+            let filter = Q.first(filters, x => x.field == fld.LastName);
+            filter.title = "Last Name Starts With";
+            filter.type = Serenity.StringEditor;
+            filter.handler = h => {
+                if (h.active) {
+                    h.request.Criteria = Serenity.Criteria.and(h.request.Criteria,
+                        [[fld.LastName], 'like', h.value + '%']);
+                }
+            };
+
+            filter = Q.first(filters, x => x.field == fld.FirstName);
+            filter.title = "First Name Starts With";
+            filter.type = Serenity.StringEditor;
+            filter.handler = h => {
+                if (h.active) {
+                    h.request.Criteria = Serenity.Criteria.and(h.request.Criteria,
+                        [[fld.FirstName], 'like', h.value + '%']);
+                }
+            };
+
 
             return filters;
         }

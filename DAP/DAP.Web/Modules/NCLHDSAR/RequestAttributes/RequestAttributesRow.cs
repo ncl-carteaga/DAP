@@ -222,7 +222,7 @@ namespace DAP.NCLHDSAR.Entities
         }
 
         [DisplayName("System Desc")]
-        [Expression("CONCAT(jSystemMaster.[System_name], CONCAT(' (', jSystemMaster.[Id], ')'))")]        
+        [Expression("CONCAT(jSystemMaster.[System_name], CONCAT(' (', jSystemMaster.[Id], ' - ', jSystemMaster.[System_Table],  ')'))")]        
         public String SystemMasterSystemDesc
         {
             get { return Fields.SystemMasterSystemDesc[this]; }

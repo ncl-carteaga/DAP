@@ -9435,6 +9435,18 @@ button.ui-button {
 .s-PCHODS-OutboundCommissionHistBrDialog .caption {
   width: 150px;
 }
+.s-PCHODS-OutboundMonthlyRptArchiveOverrideDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-OutboundMonthlyRptArchiveOverrideDialog .caption {
+  width: 150px;
+}
+.s-PCHODS-VwOutboundMonthlyRptArchiveOverrideDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-VwOutboundMonthlyRptArchiveOverrideDialog .caption {
+  width: 150px;
+}
 .s-PCHODSNVS-NtrIntlDatelineCruisesDialog > .size {
   width: 650px;
 }

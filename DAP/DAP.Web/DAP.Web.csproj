@@ -1107,6 +1107,8 @@
     <Content Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrIndex.cshtml" />
     <Content Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesIndex.cshtml" />
     <Content Include="Content\site\site.pchodsnvs.less" />
+    <Content Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideIndex.cshtml" />
+    <Content Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1202,6 +1204,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionPeriodService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.VwOutboundMonthlyRptArchiveOverrideColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1255,6 +1266,10 @@
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2093,6 +2108,21 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.VwOutboundMonthlyRptArchiveOverrideRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.VwOutboundMonthlyRptArchiveOverrideService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.VwOutboundMonthlyRptArchiveOverrideForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2288,6 +2318,7 @@
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterPage.cs" />
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRepository.cs" />
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodColumns.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodEndpoint.cs" />
@@ -2380,6 +2411,18 @@
     <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesColumns.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesForm.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSNavigation.cs" />
+    <Compile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideRow.cs" />
+    <Compile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideRepository.cs" />
+    <Compile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverridePage.cs" />
+    <Compile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideColumns.cs" />
+    <Compile Include="Modules\PCHODS\VwOutboundMonthlyRptArchiveOverride\VwOutboundMonthlyRptArchiveOverrideForm.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideRow.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideRepository.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverridePage.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideColumns.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

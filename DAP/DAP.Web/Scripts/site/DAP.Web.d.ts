@@ -1395,6 +1395,8 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+}
+declare namespace DAP.PCHODS {
     interface OutboundCommissionHistAuForm {
         CommissionId: Serenity.StringEditor;
         CompanyCd: Serenity.StringEditor;
@@ -1420,6 +1422,7 @@ declare namespace DAP.PCHODS {
         ActiveDt?: string;
         InactiveDt?: string;
         CommissionHistAuId?: number;
+        CompanyName?: string;
     }
     namespace OutboundCommissionHistAuRow {
         const idProperty = "CommissionHistAuId";
@@ -1433,7 +1436,8 @@ declare namespace DAP.PCHODS {
             CommissionRate = "CommissionRate",
             ActiveDt = "ActiveDt",
             InactiveDt = "InactiveDt",
-            CommissionHistAuId = "CommissionHistAuId"
+            CommissionHistAuId = "CommissionHistAuId",
+            CompanyName = "CompanyName"
         }
     }
 }
@@ -1453,6 +1457,8 @@ declare namespace DAP.PCHODS {
             List = "PCHODS/OutboundCommissionHistAu/List"
         }
     }
+}
+declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface OutboundCommissionHistBrForm {
@@ -1480,6 +1486,7 @@ declare namespace DAP.PCHODS {
         ActiveDt?: string;
         InactiveDt?: string;
         CommissionHistBrId?: number;
+        CompanyName?: string;
     }
     namespace OutboundCommissionHistBrRow {
         const idProperty = "CommissionHistBrId";
@@ -1493,7 +1500,8 @@ declare namespace DAP.PCHODS {
             CommissionRate = "CommissionRate",
             ActiveDt = "ActiveDt",
             InactiveDt = "InactiveDt",
-            CommissionHistBrId = "CommissionHistBrId"
+            CommissionHistBrId = "CommissionHistBrId",
+            CompanyName = "CompanyName"
         }
     }
 }
@@ -1513,6 +1521,8 @@ declare namespace DAP.PCHODS {
             List = "PCHODS/OutboundCommissionHistBr/List"
         }
     }
+}
+declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface OutboundCommissionHistForm {
@@ -1713,6 +1723,8 @@ declare namespace DAP.PCHODS {
             List = "PCHODS/OutboundNvsUsers/List"
         }
     }
+}
+declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrIntlDatelineCruisesForm {
@@ -2573,7 +2585,16 @@ declare namespace DAP.PCHODS {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
+        private pendingChanges;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected onViewProcessData(response: any): Serenity.ListResponse<OutboundCommissionHistRow>;
+        private setSaveButtonState;
+        private getEffectiveValue;
+        private numericInputFormatter;
+        protected getColumns(): Slick.Column[];
+        private inputsChange;
+        private saveClick;
         protected createSlickGrid(): Slick.Grid;
         protected getSlickOptions(): Slick.GridOptions;
         protected usePager(): boolean;
@@ -2596,7 +2617,19 @@ declare namespace DAP.PCHODS {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
+        private pendingChanges;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected onViewProcessData(response: any): Serenity.ListResponse<OutboundCommissionHistAuRow>;
+        private setSaveButtonState;
+        private getEffectiveValue;
+        private numericInputFormatter;
+        protected getColumns(): Slick.Column[];
+        private inputsChange;
+        private saveClick;
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
     }
 }
 declare namespace DAP.PCHODS {
@@ -2616,7 +2649,19 @@ declare namespace DAP.PCHODS {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
+        private pendingChanges;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected onViewProcessData(response: any): Serenity.ListResponse<OutboundCommissionHistBrRow>;
+        private setSaveButtonState;
+        private getEffectiveValue;
+        private numericInputFormatter;
+        protected getColumns(): Slick.Column[];
+        private inputsChange;
+        private saveClick;
+        protected createSlickGrid(): Slick.Grid;
+        protected getSlickOptions(): Slick.GridOptions;
+        protected usePager(): boolean;
     }
 }
 declare namespace DAP.PCHODS {
@@ -2626,6 +2671,20 @@ declare namespace DAP.PCHODS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         protected form: OutboundCommissionPeriodForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundCommissionPeriodGrid extends Serenity.EntityGrid<OutboundCommissionPeriodRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OutboundCommissionPeriodDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createQuickSearchInput(): void;
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODS {
@@ -2663,24 +2722,204 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODS {
-    class OutboundCommissionPeriodGrid extends Serenity.EntityGrid<OutboundCommissionPeriodRow, any> {
+    interface VwOutboundMonthlyRptArchiveOverrideForm {
+        NclId: Serenity.StringEditor;
+        OutboundMonth: Serenity.StringEditor;
+        OriginalUserName: Serenity.StringEditor;
+        OciPrevMonthDomestic: Serenity.DecimalEditor;
+        SscPrevMonthDomestic: Serenity.DecimalEditor;
+        OciPrevMonthInternational: Serenity.DecimalEditor;
+        SscPrevMonthInternational: Serenity.DecimalEditor;
+        OciPrevMonthRevDomestic: Serenity.DecimalEditor;
+        SscPrevMonthRevDomestic: Serenity.DecimalEditor;
+        OciPrevMonthRevInternational: Serenity.DecimalEditor;
+        SscPrevMonthRevInternational: Serenity.DecimalEditor;
+        OciAdjustdomestic: Serenity.DecimalEditor;
+        SscAdjustdomestic: Serenity.DecimalEditor;
+    }
+    class VwOutboundMonthlyRptArchiveOverrideForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODS {
+    interface VwOutboundMonthlyRptArchiveOverrideRow {
+        OutboundMonthlyRptArchiveId?: number;
+        NclId?: string;
+        OutboundMonth?: string;
+        OriginalUserName?: string;
+        OciPrevMonthDomestic?: number;
+        SscPrevMonthDomestic?: number;
+        OciPrevMonthInternational?: number;
+        SscPrevMonthInternational?: number;
+        OciPrevMonthRevDomestic?: number;
+        SscPrevMonthRevDomestic?: number;
+        OciPrevMonthRevInternational?: number;
+        SscPrevMonthRevInternational?: number;
+        OciAdjustdomestic?: number;
+        SscAdjustdomestic?: number;
+    }
+    namespace VwOutboundMonthlyRptArchiveOverrideRow {
+        const idProperty = "OutboundMonthlyRptArchiveId";
+        const nameProperty = "NclId";
+        const localTextPrefix = "PCHODS.VwOutboundMonthlyRptArchiveOverride";
+        const enum Fields {
+            OutboundMonthlyRptArchiveId = "OutboundMonthlyRptArchiveId",
+            NclId = "NclId",
+            OutboundMonth = "OutboundMonth",
+            OriginalUserName = "OriginalUserName",
+            OciPrevMonthDomestic = "OciPrevMonthDomestic",
+            SscPrevMonthDomestic = "SscPrevMonthDomestic",
+            OciPrevMonthInternational = "OciPrevMonthInternational",
+            SscPrevMonthInternational = "SscPrevMonthInternational",
+            OciPrevMonthRevDomestic = "OciPrevMonthRevDomestic",
+            SscPrevMonthRevDomestic = "SscPrevMonthRevDomestic",
+            OciPrevMonthRevInternational = "OciPrevMonthRevInternational",
+            SscPrevMonthRevInternational = "SscPrevMonthRevInternational",
+            OciAdjustdomestic = "OciAdjustdomestic",
+            SscAdjustdomestic = "SscAdjustdomestic"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace VwOutboundMonthlyRptArchiveOverrideService {
+        const baseUrl = "PCHODS/VwOutboundMonthlyRptArchiveOverride";
+        function Create(request: Serenity.SaveRequest<VwOutboundMonthlyRptArchiveOverrideRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<VwOutboundMonthlyRptArchiveOverrideRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<VwOutboundMonthlyRptArchiveOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<VwOutboundMonthlyRptArchiveOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/VwOutboundMonthlyRptArchiveOverride/Create",
+            Update = "PCHODS/VwOutboundMonthlyRptArchiveOverride/Update",
+            Delete = "PCHODS/VwOutboundMonthlyRptArchiveOverride/Delete",
+            Retrieve = "PCHODS/VwOutboundMonthlyRptArchiveOverride/Retrieve",
+            List = "PCHODS/VwOutboundMonthlyRptArchiveOverride/List"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    class VwOutboundMonthlyRptArchiveOverrideDialog extends Serenity.EntityDialog<VwOutboundMonthlyRptArchiveOverrideRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: VwOutboundMonthlyRptArchiveOverrideForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+        private saveClick;
+    }
+}
+declare namespace DAP.PCHODS {
+    class VwOutboundMonthlyRptArchiveOverrideGrid extends Serenity.EntityGrid<VwOutboundMonthlyRptArchiveOverrideRow, any> {
         protected getColumnsKey(): string;
-        protected getDialogType(): typeof OutboundCommissionPeriodDialog;
+        protected getDialogType(): typeof VwOutboundMonthlyRptArchiveOverrideDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-        protected createQuickSearchInput(): void;
-        protected getColumns(): Slick.Column[];
-        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
-        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.PCHODS {
+    interface OutboundMonthlyRptArchiveOverrideRow {
+        OutboundMonthlyRptArchiveId?: number;
+        NclId?: string;
+        OutboundMonth?: string;
+        OriginalUserName?: string;
+        OciPrevMonthDomestic?: number;
+        SscPrevMonthDomestic?: number;
+        OciPrevMonthInternational?: number;
+        SscPrevMonthInternational?: number;
+        OciPrevMonthRevDomestic?: number;
+        SscPrevMonthRevDomestic?: number;
+        OciPrevMonthRevInternational?: number;
+        SscPrevMonthRevInternational?: number;
+        OciAdjustdomestic?: number;
+        SscAdjustdomestic?: number;
+    }
+    namespace OutboundMonthlyRptArchiveOverrideRow {
+        const idProperty = "OutboundMonthlyRptArchiveId";
+        const nameProperty = "NclId";
+        const localTextPrefix = "PCHODS.OutboundMonthlyRptArchiveOverride";
+        const enum Fields {
+            OutboundMonthlyRptArchiveId = "OutboundMonthlyRptArchiveId",
+            NclId = "NclId",
+            OutboundMonth = "OutboundMonth",
+            OriginalUserName = "OriginalUserName",
+            OciPrevMonthDomestic = "OciPrevMonthDomestic",
+            SscPrevMonthDomestic = "SscPrevMonthDomestic",
+            OciPrevMonthInternational = "OciPrevMonthInternational",
+            SscPrevMonthInternational = "SscPrevMonthInternational",
+            OciPrevMonthRevDomestic = "OciPrevMonthRevDomestic",
+            SscPrevMonthRevDomestic = "SscPrevMonthRevDomestic",
+            OciPrevMonthRevInternational = "OciPrevMonthRevInternational",
+            SscPrevMonthRevInternational = "SscPrevMonthRevInternational",
+            OciAdjustdomestic = "OciAdjustdomestic",
+            SscAdjustdomestic = "SscAdjustdomestic"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace OutboundMonthlyRptArchiveOverrideService {
+        const baseUrl = "PCHODS/OutboundMonthlyRptArchiveOverride";
+        function Create(request: Serenity.SaveRequest<OutboundMonthlyRptArchiveOverrideRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<OutboundMonthlyRptArchiveOverrideRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundMonthlyRptArchiveOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundMonthlyRptArchiveOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/OutboundMonthlyRptArchiveOverride/Create",
+            Update = "PCHODS/OutboundMonthlyRptArchiveOverride/Update",
+            Delete = "PCHODS/OutboundMonthlyRptArchiveOverride/Delete",
+            Retrieve = "PCHODS/OutboundMonthlyRptArchiveOverride/Retrieve",
+            List = "PCHODS/OutboundMonthlyRptArchiveOverride/List"
+        }
     }
 }
 declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
+    class OutboundMonthlyRptArchiveOverrideDialog extends Serenity.EntityDialog<OutboundMonthlyRptArchiveOverrideRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: OutboundMonthlyRptArchiveOverrideForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class OutboundMonthlyRptArchiveOverrideGrid extends Serenity.EntityGrid<OutboundMonthlyRptArchiveOverrideRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof OutboundMonthlyRptArchiveOverrideDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
 }
 declare namespace DAP.PCHODS {
 }
-declare namespace DAP.PCHODSNVS {
+declare namespace DAP.PCHODS {
+    interface OutboundMonthlyRptArchiveOverrideForm {
+        NclId: Serenity.StringEditor;
+        OutboundMonth: Serenity.StringEditor;
+        OriginalUserName: Serenity.StringEditor;
+        OciPrevMonthDomestic: Serenity.DecimalEditor;
+        SscPrevMonthDomestic: Serenity.DecimalEditor;
+        OciPrevMonthInternational: Serenity.DecimalEditor;
+        SscPrevMonthInternational: Serenity.DecimalEditor;
+        OciPrevMonthRevDomestic: Serenity.DecimalEditor;
+        SscPrevMonthRevDomestic: Serenity.DecimalEditor;
+        OciPrevMonthRevInternational: Serenity.DecimalEditor;
+        SscPrevMonthRevInternational: Serenity.DecimalEditor;
+        OciAdjustdomestic: Serenity.DecimalEditor;
+        SscAdjustdomestic: Serenity.DecimalEditor;
+    }
+    class OutboundMonthlyRptArchiveOverrideForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
 }

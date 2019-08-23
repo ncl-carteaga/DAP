@@ -101,5 +101,6 @@ namespace DAP.NCLHDSAR {
 
         protected createQuickSearchInput(): void {
         }
+        
     }
 }
