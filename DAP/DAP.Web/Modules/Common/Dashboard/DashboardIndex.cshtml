@@ -13,6 +13,8 @@
     <h1>@LocalText.Get("Navigation.Dashboard")<small>@Html.Raw(Texts.Site.Dashboard.ContentDescription)</small></h1>
 }
 
+@if (Serenity.Authorization.HasPermission("NCLHDSAR:Request:View"))
+{
 <!-- Small boxes (Stat box) -->
 <div class="row">
   
@@ -56,6 +58,10 @@
         </div>
     </div><!-- ./col -->
 </div><!-- /.row -->
+}
+
+
+
 <!-- Main row -->
 @*<div class="row">
     <!-- Left col -->

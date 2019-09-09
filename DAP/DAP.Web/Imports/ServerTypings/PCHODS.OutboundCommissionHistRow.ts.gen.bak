@@ -1,0 +1,41 @@
+﻿
+namespace DAP.PCHODS {
+    export interface OutboundCommissionHistRow {
+        CommissionId?: string;
+        CompanyCd?: string;
+        LowNumBookings?: number;
+        HighNumBookings?: number;
+        CommissionRate?: number;
+        ActiveDt?: string;
+        InactiveDt?: string;
+        CommissionHistId?: number;
+    }
+
+    export namespace OutboundCommissionHistRow {
+        export const idProperty = 'CommissionHistId';
+        export const nameProperty = 'CommissionId';
+        export const localTextPrefix = 'PCHODS.OutboundCommissionHist';
+
+        export namespace Fields {
+            export declare const CommissionId;
+            export declare const CompanyCd;
+            export declare const LowNumBookings;
+            export declare const HighNumBookings;
+            export declare const CommissionRate;
+            export declare const ActiveDt;
+            export declare const InactiveDt;
+            export declare const CommissionHistId;
+        }
+
+        [
+            'CommissionId',
+            'CompanyCd',
+            'LowNumBookings',
+            'HighNumBookings',
+            'CommissionRate',
+            'ActiveDt',
+            'InactiveDt',
+            'CommissionHistId'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}
