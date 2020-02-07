@@ -54,6 +54,15 @@ namespace MVC
             {
                 public const string ReportPage = "~/Modules/Common/Reporting/ReportPage.cshtml";
             }
+
+        }
+
+        public static class DWSupport
+        {
+            public static class FinReportPublishingSupp
+            {
+                public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
+            }
         }
 
         public static class Errors
@@ -98,6 +107,11 @@ namespace MVC
 
         public static class NCLHDSAR
         {
+            public static class Assignee
+            {
+                public const string AssigneeIndex = "~/Modules/NCLHDSAR/Assignee/AssigneeIndex.cshtml";
+            }
+
             public static class Request
             {
                 public const string RequestIndex = "~/Modules/NCLHDSAR/Request/RequestIndex.cshtml";
@@ -108,14 +122,38 @@ namespace MVC
                 public const string RequestAttributesIndex = "~/Modules/NCLHDSAR/RequestAttributes/RequestAttributesIndex.cshtml";
             }
 
+            public static class RequestStatus
+            {
+                public const string RequestStatusIndex = "~/Modules/NCLHDSAR/RequestStatus/RequestStatusIndex.cshtml";
+            }
+
             public static class RequestType
             {
                 public const string RequestTypeIndex = "~/Modules/NCLHDSAR/RequestType/RequestTypeIndex.cshtml";
             }
 
+            public static class SwRequest
+            {
+                public const string SwRequestIndex = "~/Modules/NCLHDSAR/SwRequest/SwRequestIndex.cshtml";
+            }
+
+            public static class SwRequestAttributes
+            {
+                public const string SwRequestAttributesIndex = "~/Modules/NCLHDSAR/SwRequestAttributes/SwRequestAttributesIndex.cshtml";
+            }
+
             public static class SystemMaster
             {
                 public const string SystemMasterIndex = "~/Modules/NCLHDSAR/SystemMaster/SystemMasterIndex.cshtml";
+            }
+
+        }
+
+        public static class NCLHODSSPENDVIS
+        {
+            public static class Amoslevel
+            {
+                public const string AmoslevelIndex = "~/Modules/NCLHODSSPENDVIS/Amoslevel/AmoslevelIndex.cshtml";
             }
 
         }
@@ -157,11 +195,6 @@ namespace MVC
                 public const string OutboundMonthlyRptArchiveOverrideIndex = "~/Modules/PCHODS/OutboundMonthlyRptArchiveOverride/OutboundMonthlyRptArchiveOverrideIndex.cshtml";
             }
 
-            public static class VwOutboundMonthlyRptArchiveOverride
-            {
-                public const string VwOutboundMonthlyRptArchiveOverrideIndex = "~/Modules/PCHODS/VwOutboundMonthlyRptArchiveOverride/VwOutboundMonthlyRptArchiveOverrideIndex.cshtml";
-            }
-
         }
 
         public static class PCHODSNVS
@@ -181,6 +214,14 @@ namespace MVC
             public const string _LayoutSlimHead = "~/Views/Shared/_LayoutSlimHead.cshtml";
             public const string Error = "~/Views/Shared/Error.cshtml";
             public const string LeftNavigation = "~/Views/Shared/LeftNavigation.cshtml";
+        }
+
+        public static class SSISConfig
+        {
+            public static class SsisConfigBase
+            {
+                public const string SsisConfigBaseIndex = "~/Modules/SSISConfig/SsisConfigBase/SsisConfigBaseIndex.cshtml";
+            }
         }
     }
 }

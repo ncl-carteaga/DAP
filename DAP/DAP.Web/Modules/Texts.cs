@@ -56,7 +56,7 @@ namespace DAP
 
                 public static class Login
                 {
-                    public static LocalText FormTitle = "Welcome to NCLH DAP (NCLH Data Automation Portal)";
+                    public static LocalText FormTitle = "Welcome to NCLH Data Automation Portal (DAP)";
                     public static LocalText SignInButton = "Sign In";
                     public static LocalText ForgotPassword = "Forgot password?";
                     public static LocalText SignUpButton = "Register a new account";

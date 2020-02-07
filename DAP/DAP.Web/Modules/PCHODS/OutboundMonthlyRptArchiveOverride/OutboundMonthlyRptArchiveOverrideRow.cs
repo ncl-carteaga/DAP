@@ -17,28 +17,28 @@ namespace DAP.PCHODS.Entities
     [DataAuditLog]
     public sealed class OutboundMonthlyRptArchiveOverrideRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Outbound Monthly Rpt Archive Id"), Identity]
+        [DisplayName("Outbound Monthly Rpt Archive Id"), PrimaryKey, Updatable(false)]
         public Int32? OutboundMonthlyRptArchiveId
         {
             get { return Fields.OutboundMonthlyRptArchiveId[this]; }
             set { Fields.OutboundMonthlyRptArchiveId[this] = value; }
         }
 
-        [DisplayName("Ncl Id"), Column("NCL_ID"), Size(255), NotNull, QuickSearch]
+        [DisplayName("Ncl Id"), Column("NCL_ID"), Size(255), NotNull, Updatable(false)]
         public String NclId
         {
             get { return Fields.NclId[this]; }
             set { Fields.NclId[this] = value; }
         }
 
-        [DisplayName("Outbound Month"), Column("Outbound_month"), Size(6), NotNull]
+        [DisplayName("Outbound Month"), Column("Outbound_month"), Size(6), NotNull, QuickFilter, Updatable(false), LookupEditor(typeof(Lookups.OutboundMonthLookup))]
         public String OutboundMonth
         {
             get { return Fields.OutboundMonth[this]; }
             set { Fields.OutboundMonth[this] = value; }
         }
 
-        [DisplayName("Original User Name"), Column("original_user_name"), Size(50), NotNull]
+        [DisplayName("Original User Name"), Column("original_user_name"), Size(50), NotNull, QuickSearch, Updatable(false)]
         public String OriginalUserName
         {
             get { return Fields.OriginalUserName[this]; }
@@ -122,7 +122,7 @@ namespace DAP.PCHODS.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.NclId; }
+            get { return Fields.OriginalUserName; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();

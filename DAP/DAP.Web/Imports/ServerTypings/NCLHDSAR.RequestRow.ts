@@ -33,7 +33,7 @@
         RequestTypeNumDesc?: string;
         DaysLeft?: number;
         DaysOld?: number;
-        Count?: number;
+        AttrCount?: number;
     }
 
     export namespace RequestRow {
@@ -80,7 +80,7 @@
             RequestTypeNumDesc = "RequestTypeNumDesc",
             DaysLeft = "DaysLeft",
             DaysOld = "DaysOld",
-            Count = "Count"
+            AttrCount = "AttrCount"
         }
     }
 }

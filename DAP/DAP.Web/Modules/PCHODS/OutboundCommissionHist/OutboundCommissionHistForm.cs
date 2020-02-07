@@ -14,6 +14,7 @@ namespace DAP.PCHODS.Forms
     public class OutboundCommissionHistForm
     {
         public String CommissionId { get; set; }
+        [CompanyEditor]
         public String CompanyCd { get; set; }
         public Decimal LowNumBookings { get; set; }
         public Decimal HighNumBookings { get; set; }

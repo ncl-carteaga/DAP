@@ -143,6 +143,28 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.Email1[this] = value; }
         }
 
+        [DisplayName("Old First Name"), Column("Old_First_nm"), Size(100)]
+        public String OldFirstNm
+        {
+            get { return Fields.OldFirstNm[this]; }
+            set { Fields.OldFirstNm[this] = value; }
+        }
+
+        [DisplayName("Old Middle Name"), Column("Old_Middle_nm"), Size(100)]
+        public String OldMiddleNm
+        {
+            get { return Fields.OldMiddleNm[this]; }
+            set { Fields.OldMiddleNm[this] = value; }
+        }
+
+        [DisplayName("Old Last Name"), Column("Old_Last_nm"), Size(100)]
+        public String OldLastNm
+        {
+            get { return Fields.OldLastNm[this]; }
+            set { Fields.OldLastNm[this] = value; }
+        }
+
+
         [DisplayName("Old Address 1"), Column("Old_Addr1"), Size(255)]
         
         public String OldAddr1
@@ -269,36 +291,39 @@ namespace DAP.NCLHDSAR.Entities
             public StringField OldPostalCd;
             public StringField OldCountryCd;
             public StringField OldEmail;
-            
 
-          //  public DateTimeField CreatedDt;
-          //  public DateTimeField DeadlineDt;
-          //  public DateTimeField LastUpdatedDt;
-          //  public BooleanField ReqExtended;
-          //  public StringField ReqStage;
-          //  public StringField ReqApprover;
-          ////  public StringField Email;
-          //  public StringField FirstName;
-          //  public StringField LastName;
-          //  public StringField ReqDetails;
-          //  public StringField SubjectType;
-          //  public StringField RequestType;
-          //  public StringField Address1;
-          //  public StringField City;
-          //  public StringField Country;
-          //  public StringField NclYn;
-          //  public StringField LatitudesNum;
-          //  public StringField OceaniaYn;
-          //  public StringField OceaniaMpCardNum;
-          //  public StringField RegentYn;
-          //  public StringField RegentMpCardNum;
-          //  public StringField SixthmanYn;
-          //  public StringField IdentityVerificationOptOuts;
-          //  public StringField IdentityVerificationOtherRequests;
-          //  public Int32Field RequestTypeNum;
-          //  public StringField ReqStatus;
-          //  public DateTimeField LoadDt;
-          //  public DateTimeField ProcessDt;
+            public StringField OldFirstNm;
+            public StringField OldMiddleNm;
+            public StringField OldLastNm;
+
+            //  public DateTimeField CreatedDt;
+            //  public DateTimeField DeadlineDt;
+            //  public DateTimeField LastUpdatedDt;
+            //  public BooleanField ReqExtended;
+            //  public StringField ReqStage;
+            //  public StringField ReqApprover;
+            ////  public StringField Email;
+            //  public StringField FirstName;
+            //  public StringField LastName;
+            //  public StringField ReqDetails;
+            //  public StringField SubjectType;
+            //  public StringField RequestType;
+            //  public StringField Address1;
+            //  public StringField City;
+            //  public StringField Country;
+            //  public StringField NclYn;
+            //  public StringField LatitudesNum;
+            //  public StringField OceaniaYn;
+            //  public StringField OceaniaMpCardNum;
+            //  public StringField RegentYn;
+            //  public StringField RegentMpCardNum;
+            //  public StringField SixthmanYn;
+            //  public StringField IdentityVerificationOptOuts;
+            //  public StringField IdentityVerificationOtherRequests;
+            //  public Int32Field RequestTypeNum;
+            //  public StringField ReqStatus;
+            //  public DateTimeField LoadDt;
+            //  public DateTimeField ProcessDt;
 
             public StringField SystemMasterSystemName;
             public StringField SystemMasterSystemTable;

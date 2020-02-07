@@ -18,7 +18,7 @@
 
     export namespace OutboundMonthlyRptArchiveOverrideRow {
         export const idProperty = 'OutboundMonthlyRptArchiveId';
-        export const nameProperty = 'NclId';
+        export const nameProperty = 'OriginalUserName';
         export const localTextPrefix = 'PCHODS.OutboundMonthlyRptArchiveOverride';
 
         export declare const enum Fields {

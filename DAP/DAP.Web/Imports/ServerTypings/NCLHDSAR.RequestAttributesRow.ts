@@ -23,6 +23,9 @@
         OldPostalCd?: string;
         OldCountryCd?: string;
         OldEmail?: string;
+        OldFirstNm?: string;
+        OldMiddleNm?: string;
+        OldLastNm?: string;
         SystemMasterSystemName?: string;
         SystemMasterSystemTable?: string;
         SystemMasterSystemDesc?: string;
@@ -63,6 +66,9 @@
             OldPostalCd = "OldPostalCd",
             OldCountryCd = "OldCountryCd",
             OldEmail = "OldEmail",
+            OldFirstNm = "OldFirstNm",
+            OldMiddleNm = "OldMiddleNm",
+            OldLastNm = "OldLastNm",
             SystemMasterSystemName = "SystemMasterSystemName",
             SystemMasterSystemTable = "SystemMasterSystemTable",
             SystemMasterSystemDesc = "SystemMasterSystemDesc",

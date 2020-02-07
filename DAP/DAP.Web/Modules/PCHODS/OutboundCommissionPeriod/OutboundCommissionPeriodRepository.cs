@@ -47,6 +47,17 @@ namespace DAP.PCHODS.Repositories
         private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> { }
+        private class MyListHandler : ListRequestHandler<MyRow> {
+
+            //protected override void ApplyFilters(SqlQuery query)
+            //{
+            //    base.ApplyFilters(query);
+
+            //    query.Where(fld.IsOpen == 1 || fld.StartDate == DateTime.Today.Year);
+                
+
+            //}
+
+        }
     }
 }

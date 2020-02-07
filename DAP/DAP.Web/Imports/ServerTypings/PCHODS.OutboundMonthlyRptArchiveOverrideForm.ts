@@ -1,7 +1,7 @@
 ﻿namespace DAP.PCHODS {
     export interface OutboundMonthlyRptArchiveOverrideForm {
+        OutboundMonth: Serenity.LookupEditor;
         NclId: Serenity.StringEditor;
-        OutboundMonth: Serenity.StringEditor;
         OriginalUserName: Serenity.StringEditor;
         OciPrevMonthDomestic: Serenity.DecimalEditor;
         SscPrevMonthDomestic: Serenity.DecimalEditor;
@@ -26,23 +26,24 @@
                 OutboundMonthlyRptArchiveOverrideForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.DecimalEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.DecimalEditor;
 
                 Q.initFormType(OutboundMonthlyRptArchiveOverrideForm, [
-                    'NclId', w0,
                     'OutboundMonth', w0,
-                    'OriginalUserName', w0,
-                    'OciPrevMonthDomestic', w1,
-                    'SscPrevMonthDomestic', w1,
-                    'OciPrevMonthInternational', w1,
-                    'SscPrevMonthInternational', w1,
-                    'OciPrevMonthRevDomestic', w1,
-                    'SscPrevMonthRevDomestic', w1,
-                    'OciPrevMonthRevInternational', w1,
-                    'SscPrevMonthRevInternational', w1,
-                    'OciAdjustdomestic', w1,
-                    'SscAdjustdomestic', w1
+                    'NclId', w1,
+                    'OriginalUserName', w1,
+                    'OciPrevMonthDomestic', w2,
+                    'SscPrevMonthDomestic', w2,
+                    'OciPrevMonthInternational', w2,
+                    'SscPrevMonthInternational', w2,
+                    'OciPrevMonthRevDomestic', w2,
+                    'SscPrevMonthRevDomestic', w2,
+                    'OciPrevMonthRevInternational', w2,
+                    'SscPrevMonthRevInternational', w2,
+                    'OciAdjustdomestic', w2,
+                    'SscAdjustdomestic', w2
                 ]);
             }
         }

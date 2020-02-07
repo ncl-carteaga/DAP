@@ -17,6 +17,7 @@ namespace DAP.PCHODSNVS.Columns
         public Int32 CruiseIntlTk { get; set; }
         [EditLink]
         public String CompanyCd { get; set; }
+        [EditLink]
         public String CruiseSegmentCd { get; set; }
         public Int32 CruiseDaysQty { get; set; }
         public Int32 CruiseCalendarDaysQty { get; set; }

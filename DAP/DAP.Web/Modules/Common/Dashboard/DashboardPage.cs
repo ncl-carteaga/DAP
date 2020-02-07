@@ -23,13 +23,19 @@ namespace DAP.Common.Pages
                    {
                        model.AllRequests = connection.Count<RequestRow>(o.ReqStage != "Complete" && o.ReqStage != "Closed" && o.ReqStage != "Resolved");
                        model.Due10Days = connection.Count<RequestRow>(o.DaysLeft <= 10 && o.DaysLeft >= 0 && o.ReqStage != "Complete" && o.ReqStage != "Closed" && o.ReqStage != "Resolved");
-                       model.Overdue = connection.Count<RequestRow>(o.DaysLeft < 0 && o.ReqStage != "Complete" && o.ReqStage != "Closed" && o.ReqStage != "Resolved");
-                       //var totalOrders = model.OpenOrders + closedOrders;
-                       //model.ClosedOrderPercent = (int)Math.Round(totalOrders == 0 ? 100 :
-                       //    ((double)closedOrders / (double)totalOrders * 100));
-                       //model.CustomerCount = connection.Count<CustomerRow>();
-                       //model.ProductCount = connection.Count<ProductRow>();
+                       model.Overdue = connection.Count<RequestRow>(o.DaysLeft == 0 && o.ReqStage != "Complete" && o.ReqStage != "Closed" && o.ReqStage != "Resolved");
+                       
                    }
+                   var s = SwRequestRow.Fields;
+                   using (var connection = SqlConnections.NewFor<SwRequestRow>())
+                   {
+
+                       model.AllSwRequests = connection.Count<SwRequestRow>(s.StatusId != 3 && s.StatusId != 4);
+                       model.SwDue10Days = connection.Count<SwRequestRow>(s.DaysLeft <= 10 && s.DaysLeft >= 0 && s.StatusId != 3 && s.StatusId != 4);
+                       model.SwOverdue = connection.Count<SwRequestRow>(s.DaysLeft == 0 && s.StatusId != 3 && s.StatusId != 4);
+
+                   }
+
                    return model;
                });
             return View(MVC.Views.Common.Dashboard.DashboardIndex, cachedModel);

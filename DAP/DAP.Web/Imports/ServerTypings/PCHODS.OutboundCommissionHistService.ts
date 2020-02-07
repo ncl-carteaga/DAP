@@ -7,13 +7,15 @@
         export declare function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<OutboundCommissionHistRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundCommissionHistRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function ListByCompany(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<OutboundCommissionHistRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
         export declare const enum Methods {
             Create = "PCHODS/OutboundCommissionHist/Create",
             Update = "PCHODS/OutboundCommissionHist/Update",
             Delete = "PCHODS/OutboundCommissionHist/Delete",
             Retrieve = "PCHODS/OutboundCommissionHist/Retrieve",
-            List = "PCHODS/OutboundCommissionHist/List"
+            List = "PCHODS/OutboundCommissionHist/List",
+            ListByCompany = "PCHODS/OutboundCommissionHist/ListByCompany"
         }
 
         [
@@ -21,7 +23,8 @@
             'Update', 
             'Delete', 
             'Retrieve', 
-            'List'
+            'List', 
+            'ListByCompany'
         ].forEach(x => {
             (<any>OutboundCommissionHistService)[x] = function (r, s, o) {
                 return Q.serviceRequest(baseUrl + '/' + x, r, s, o);

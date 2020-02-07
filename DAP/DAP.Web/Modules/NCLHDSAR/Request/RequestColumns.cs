@@ -13,7 +13,7 @@ namespace DAP.NCLHDSAR.Columns
     [BasedOnRow(typeof(Entities.RequestRow), CheckNames = true)]
     public class RequestColumns
     {
-        public Int32 Count { get; set; }
+        public Int32 AttrCount { get; set; }
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public String Id { get; set; }
         [EditLink]

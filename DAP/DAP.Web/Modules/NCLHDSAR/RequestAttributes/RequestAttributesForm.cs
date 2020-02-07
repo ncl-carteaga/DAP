@@ -20,11 +20,14 @@ namespace DAP.NCLHDSAR.Forms
         public String RequestValue { get; set; }
         public DateTime ResolvedDt { get; set; }
         public DateTime ExtractDt { get; set; }
-        //public String FirstNm { get; set; }
-        //public String MiddleNm { get; set; }
-        //public String LastNm { get; set; }
-        [Tab("New Address")]
 
+        [Tab("New Address")]
+        [OneThirdWidth]
+        public String FirstNm { get; set; }
+        [OneThirdWidth]
+        public String MiddleNm { get; set; }
+        [OneThirdWidth]
+        public String LastNm { get; set; }
         public String Addr1 { get; set; }
 
         public String Addr2 { get; set; }
@@ -39,6 +42,12 @@ namespace DAP.NCLHDSAR.Forms
 
         public String Email1 { get; set; }
         [Tab("Old Address")]
+        [OneThirdWidth]
+        public String OldFirstNm { get; set; }
+        [OneThirdWidth]
+        public String OldMiddleNm { get; set; }
+        [OneThirdWidth]
+        public String OldLastNm { get; set; }
         public String OldAddr1 { get; set; }
 
         public String OldAddr2 { get; set; }

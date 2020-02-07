@@ -14,6 +14,7 @@ namespace DAP.PCHODSNVS.Entities
     [ReadPermission(PermissionKeys.Finance.View)]
     [ModifyPermission(PermissionKeys.Finance.Modify)]
     [DeletePermission(PermissionKeys.Finance.Delete)]
+    [DataAuditLog]
     public sealed class NtrIntlDatelineCruisesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Cruise Intl Tk"), Column("cruise_intl_tk"), Identity, Visible(false)]

@@ -86,10 +86,10 @@ namespace DAP.NCLHDSAR.Entities
 
         [DisplayName("# Attr"), AlignCenter, Updatable(false)]
         [Expression("(SELECT COUNT(T1.Id) FROM dbo.Request_Attributes AS T1 WHERE T0.Id = T1.Id)")]
-        public Int32? Count
+        public Int32? AttrCount
         {
-            get { return Fields.Count[this]; }
-            set { Fields.Count[this] = value; }
+            get { return Fields.AttrCount[this]; }
+            set { Fields.AttrCount[this] = value; }
         }
 
 
@@ -328,7 +328,7 @@ namespace DAP.NCLHDSAR.Entities
             public StringField RequestTypeNumDesc;
             public Int32Field DaysLeft;
             public Int32Field DaysOld;
-            public Int32Field Count;
+            public Int32Field AttrCount;
             //   public RowListField<RequestAttributesRow> DetailList;
         }
     }

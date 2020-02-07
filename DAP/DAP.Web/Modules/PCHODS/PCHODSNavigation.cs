@@ -8,4 +8,4 @@ using MyPages = DAP.PCHODS.Pages;
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission History US", typeof(MyPages.OutboundCommissionHistController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission History AU", typeof(MyPages.OutboundCommissionHistAuController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission History BR", typeof(MyPages.OutboundCommissionHistBrController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Outbound/Monthly Report Archive", typeof(MyPages.VwOutboundMonthlyRptArchiveOverrideController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Outbound/Monthly Rpt Archive", typeof(MyPages.OutboundMonthlyRptArchiveOverrideController), icon: null)]

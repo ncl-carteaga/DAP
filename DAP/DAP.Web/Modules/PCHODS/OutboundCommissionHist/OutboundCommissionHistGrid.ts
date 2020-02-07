@@ -12,6 +12,7 @@ namespace DAP.PCHODS {
         protected getService() { return OutboundCommissionHistService.baseUrl; }
 
         private pendingChanges: Q.Dictionary<any> = {};
+        private _CompanyID: string
 
         constructor(container: JQuery) {
             super(container);
@@ -29,6 +30,13 @@ namespace DAP.PCHODS {
                 title: 'Save Changes',
                 cssClass: 'apply-changes-button disabled',
                 onClick: e => this.saveClick(),
+                separator: true
+            });
+
+            buttons.push({
+                title: 'Create New Bracket',
+                cssClass: 'add-button',
+                onClick: e => this.createNewBracketClick(),
                 separator: true
             });
 
@@ -200,6 +208,16 @@ namespace DAP.PCHODS {
             return false;
         }
         
-
+        private createNewBracketClick() {
+                   
+            let dialog = new PCHODS.SelectComapanyDialog();
+            dialog.returnData = (dataList) => {
+                this._CompanyID = dataList;
+            };
+            this.initDialog(dialog);
+            dialog.dialogOpen();
+                        
+            
+        }
     }
 }

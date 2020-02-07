@@ -5,6 +5,9 @@
         RequestValue: Serenity.StringEditor;
         ResolvedDt: Serenity.DateEditor;
         ExtractDt: Serenity.DateEditor;
+        FirstNm: Serenity.StringEditor;
+        MiddleNm: Serenity.StringEditor;
+        LastNm: Serenity.StringEditor;
         Addr1: Serenity.StringEditor;
         Addr2: Serenity.StringEditor;
         CityNm: Serenity.StringEditor;
@@ -12,6 +15,9 @@
         PostalCd: Serenity.StringEditor;
         CountryCd: Serenity.StringEditor;
         Email1: Serenity.StringEditor;
+        OldFirstNm: Serenity.StringEditor;
+        OldMiddleNm: Serenity.StringEditor;
+        OldLastNm: Serenity.StringEditor;
         OldAddr1: Serenity.StringEditor;
         OldAddr2: Serenity.StringEditor;
         OldCityNm: Serenity.StringEditor;
@@ -42,6 +48,9 @@
                     'RequestValue', w0,
                     'ResolvedDt', w2,
                     'ExtractDt', w2,
+                    'FirstNm', w0,
+                    'MiddleNm', w0,
+                    'LastNm', w0,
                     'Addr1', w0,
                     'Addr2', w0,
                     'CityNm', w0,
@@ -49,6 +58,9 @@
                     'PostalCd', w0,
                     'CountryCd', w0,
                     'Email1', w0,
+                    'OldFirstNm', w0,
+                    'OldMiddleNm', w0,
+                    'OldLastNm', w0,
                     'OldAddr1', w0,
                     'OldAddr2', w0,
                     'OldCityNm', w0,

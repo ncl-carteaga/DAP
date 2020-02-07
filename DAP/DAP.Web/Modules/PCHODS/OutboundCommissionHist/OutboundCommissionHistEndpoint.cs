@@ -42,5 +42,12 @@ namespace DAP.PCHODS.Endpoints
         {
             return new MyRepository().List(connection, request);
         }
+
+        [HttpPost]
+        public ListResponse<MyRow> ListByCompany(IDbConnection connection, ListRequest request)
+        {
+            
+            return new MyRepository().List(connection, request);
+        }
     }
 }
