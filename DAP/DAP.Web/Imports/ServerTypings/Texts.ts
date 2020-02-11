@@ -131,12 +131,33 @@
             }
         }
 
+        namespace DWSupport {
+
+            namespace FinReportPublishingSupp {
+                export const CreatedByNam: string;
+                export const CreatedTs: string;
+                export const FinReportPublishingSurKey: string;
+                export const ModifiedByNam: string;
+                export const ModifiedTs: string;
+                export const ProcessedDateTs: string;
+                export const PublishCd: string;
+                export const PublishCommentsTxt: string;
+                export const PublishDat: string;
+            }
+        }
+
         namespace NCLHDSAR {
+
+            namespace Assignee {
+                export const AssigneeId: string;
+                export const FullName: string;
+                export const IsActive: string;
+            }
 
             namespace Request {
                 export const Address1: string;
+                export const AttrCount: string;
                 export const City: string;
-                export const Count: string;
                 export const Country: string;
                 export const CreatedDt: string;
                 export const DaysLeft: string;
@@ -186,6 +207,9 @@
                 export const OldCityNm: string;
                 export const OldCountryCd: string;
                 export const OldEmail: string;
+                export const OldFirstNm: string;
+                export const OldLastNm: string;
+                export const OldMiddleNm: string;
                 export const OldPostalCd: string;
                 export const OldStateNm: string;
                 export const PostalCd: string;
@@ -200,9 +224,74 @@
                 export const SystemMasterSystemTable: string;
             }
 
+            namespace RequestStatus {
+                export const StatusDescription: string;
+                export const StatusId: string;
+                export const StatusOrder: string;
+            }
+
             namespace RequestType {
                 export const Desc: string;
                 export const Type: string;
+            }
+
+            namespace SwRequest {
+                export const ApiResponse: string;
+                export const ApiResponseDepth: string;
+                export const ApiResponseId: string;
+                export const AssigneeFullName: string;
+                export const AssigneeId: string;
+                export const AssigneeIsActive: string;
+                export const AttributeCount: string;
+                export const ClientAddress: string;
+                export const ClientEmailAddress: string;
+                export const ClientFirstName: string;
+                export const ClientGuestCategory: string;
+                export const ClientIsRelatedtoHousehold: string;
+                export const ClientLastName: string;
+                export const ClientLatitudesNumber: string;
+                export const ClientZipCode: string;
+                export const DaysLeft: string;
+                export const DaysOld: string;
+                export const DeadlineDt: string;
+                export const LastUpdatedDt: string;
+                export const RecordId: string;
+                export const RecordTimeStamp: string;
+                export const RequestType: string;
+                export const StatusId: string;
+                export const StatusStatusDescription: string;
+                export const StatusStatusOrder: string;
+                export const UpdatedBy: string;
+            }
+
+            namespace SwRequestAttributes {
+                export const Addr1: string;
+                export const Addr2: string;
+                export const CityNm: string;
+                export const CountryCd: string;
+                export const Email: string;
+                export const ExtractDt: string;
+                export const FirstNm: string;
+                export const Id: string;
+                export const LastNm: string;
+                export const LastUpdated: string;
+                export const MiddleNm: string;
+                export const OldAddr1: string;
+                export const OldAddr2: string;
+                export const OldCityNm: string;
+                export const OldCountryCd: string;
+                export const OldEmail: string;
+                export const OldFirstNm: string;
+                export const OldLastNm: string;
+                export const OldMiddleNm: string;
+                export const OldPostalCd: string;
+                export const OldStateNm: string;
+                export const PostalCd: string;
+                export const RequestAttributeId: string;
+                export const RequestValue: string;
+                export const ResolvedDt: string;
+                export const StateNm: string;
+                export const SystemMasterId: string;
             }
 
             namespace SystemMaster {
@@ -211,6 +300,19 @@
                 export const SystemDesc: string;
                 export const SystemName: string;
                 export const SystemTable: string;
+            }
+        }
+
+        namespace NCLHODSSPENDVIS {
+
+            namespace Amoslevel {
+                export const AccountId: string;
+                export const Descr: string;
+                export const FlexDim1Name: string;
+                export const FlexDim2Name: string;
+                export const FlexDim3Name: string;
+                export const FlexDim4Name: string;
+                export const IdNum: string;
             }
         }
 
@@ -251,6 +353,7 @@
                 export const CommissionId: string;
                 export const CommissionRate: string;
                 export const CompanyCd: string;
+                export const CompanyName: string;
                 export const HighNumBookings: string;
                 export const InactiveDt: string;
                 export const LowNumBookings: string;
@@ -262,6 +365,7 @@
                 export const CommissionId: string;
                 export const CommissionRate: string;
                 export const CompanyCd: string;
+                export const CompanyName: string;
                 export const HighNumBookings: string;
                 export const InactiveDt: string;
                 export const LowNumBookings: string;
@@ -281,6 +385,23 @@
             namespace OutboundCompany {
                 export const Cd: string;
                 export const Nm: string;
+            }
+
+            namespace OutboundMonthlyRptArchiveOverride {
+                export const NclId: string;
+                export const OciAdjustdomestic: string;
+                export const OciPrevMonthDomestic: string;
+                export const OciPrevMonthInternational: string;
+                export const OciPrevMonthRevDomestic: string;
+                export const OciPrevMonthRevInternational: string;
+                export const OriginalUserName: string;
+                export const OutboundMonth: string;
+                export const OutboundMonthlyRptArchiveId: string;
+                export const SscAdjustdomestic: string;
+                export const SscPrevMonthDomestic: string;
+                export const SscPrevMonthInternational: string;
+                export const SscPrevMonthRevDomestic: string;
+                export const SscPrevMonthRevInternational: string;
             }
 
             namespace OutboundNvsUsers {
@@ -303,6 +424,21 @@
                 export const CruiseIntlTk: string;
                 export const CruiseSegmentCd: string;
                 export const LoadDt: string;
+            }
+        }
+
+        namespace SSISConfig {
+
+            namespace SsisConfigBase {
+                export const ConfigId: string;
+                export const ConfigurationFilter: string;
+                export const ConfiguredValue: string;
+                export const ConfiguredValueType: string;
+                export const EnvironmentDesc: string;
+                export const EnvironmentEnum: string;
+                export const ModifiedBy: string;
+                export const ModifiedOn: string;
+                export const PackagePath: string;
             }
         }
     }
@@ -551,6 +687,6 @@
         export const SavePrimaryKeyError: string;
     }
 
-    DAP['Texts'] = Q.proxyTexts(Texts, '', {Db:{Administration:{DataAuditLog:{FieldName:1,LogDate:1,LogId:1,LogType:1,NewValue:1,OldValue:1,RecordId:1,Tablename:1,UserDisplayName:1,UserId:1,Username:1},Language:{Id:1,LanguageId:1,LanguageName:1},Role:{RoleId:1,RoleKey:1,RoleName:1},RolePermission:{PermissionKey:1,RoleId:1,RolePermissionId:1,RoleRoleName:1},Translation:{CustomText:1,EntityPlural:1,Key:1,OverrideConfirmation:1,SaveChangesButton:1,SourceLanguage:1,SourceText:1,TargetLanguage:1,TargetText:1},User:{DisplayName:1,Email:1,ImpersonationToken:1,InsertDate:1,InsertUserId:1,IsActive:1,LastDirectoryUpdate:1,MobilePhoneNumber:1,MobilePhoneVerified:1,Password:1,PasswordConfirm:1,PasswordHash:1,PasswordSalt:1,Source:1,TwoFactorAuth:1,UpdateDate:1,UpdateUserId:1,UserId:1,UserImage:1,Username:1},UserPermission:{Granted:1,PermissionKey:1,User:1,UserId:1,UserPermissionId:1,Username:1},UserRole:{RoleId:1,User:1,UserId:1,UserRoleId:1,Username:1}},Common:{BackgroundTaskLog:{LogId:1,Message:1,RunAt:1,Server:1,Status:1,TaskKey:1},Mail:{Bcc:1,Body:1,Cc:1,ErrorMessage:1,InsertDate:1,InsertUser:1,InsertUserId:1,LockExpiration:1,MailFrom:1,MailId:1,MailTo:1,Priority:1,ReplyTo:1,RetryCount:1,SentDate:1,Status:1,Subject:1,Uid:1},UserPreference:{Name:1,PreferenceType:1,UserId:1,UserPreferenceId:1,Value:1}},NCLHDSAR:{Request:{Address1:1,City:1,Count:1,Country:1,CreatedDt:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,Email:1,FirstName:1,FullName:1,Id:1,IdentityVerificationOptOuts:1,IdentityVerificationOtherRequests:1,LastName:1,LastUpdatedDt:1,LatitudesNum:1,LoadDt:1,NclYn:1,OceaniaMpCardNum:1,OceaniaYn:1,ProcessDt:1,RegentMpCardNum:1,RegentYn:1,ReqApprover:1,ReqDetails:1,ReqExtended:1,ReqStage:1,ReqStatus:1,RequestType:1,RequestTypeNum:1,RequestTypeNumDesc:1,SixthmanYn:1,SubjectType:1},RequestAttributes:{Addr1:1,Addr2:1,CityNm:1,CountryCd:1,Email1:1,ExtractDt:1,FirstNm:1,Id:1,LastNm:1,MiddleNm:1,OldAddr1:1,OldAddr2:1,OldCityNm:1,OldCountryCd:1,OldEmail:1,OldPostalCd:1,OldStateNm:1,PostalCd:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,StateNm:1,SystemMasterId:1,SystemMasterSystemActiveYn:1,SystemMasterSystemDesc:1,SystemMasterSystemName:1,SystemMasterSystemTable:1},RequestType:{Desc:1,Type:1},SystemMaster:{Id:1,SystemActiveYn:1,SystemDesc:1,SystemName:1,SystemTable:1}},PCHODS:{OutboundAgent:{AgentId:1,AgentLocationDescription:1,AgentLocationId:1,CompanyCd:1,CompanyName:1,Nm:1,NvsUserId:1,PrimaryBrand:1,StartInactiveDt:1},OutboundAgentLocation:{AgentLocationId:1,Description:1},OutboundCommissionHist:{ActiveDt:1,CommissionHistId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistAu:{ActiveDt:1,CommissionHistAuId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistBr:{ActiveDt:1,CommissionHistBrId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionPeriod:{ClosedBy:1,ClosedDate:1,CurrentMonth:1,EndDate:1,IsOpen:1,OutboundCommissionPeriodId:1,PreviousMonth:1,StartDate:1},OutboundCompany:{Cd:1,Nm:1},OutboundNvsUsers:{ActiveInd:1,CompanyCd:1,DepartmentCd:1,DepartmentDesc:1,UserFirstName:1,UserId:1,UserLastName:1}},PCHODSNVS:{NtrIntlDatelineCruises:{CompanyCd:1,CruiseCalendarDaysQty:1,CruiseDaysQty:1,CruiseIntlTk:1,CruiseSegmentCd:1,LoadDt:1}}},Forms:{Membership:{ChangePassword:{FormTitle:1,SubmitButton:1,Success:1},ForgotPassword:{BackToLogin:1,FormInfo:1,FormTitle:1,SubmitButton:1,Success:1},Login:{FacebookButton:1,ForgotPassword:1,FormTitle:1,GoogleButton:1,OR:1,RememberMe:1,SignInButton:1,SignUpButton:1},ResetPassword:{BackToLogin:1,EmailSubject:1,FormTitle:1,SubmitButton:1,Success:1},SignUp:{AcceptTerms:1,ActivateEmailSubject:1,ActivationCompleteMessage:1,BackToLogin:1,ConfirmEmail:1,ConfirmPassword:1,DisplayName:1,Email:1,FormInfo:1,FormTitle:1,Password:1,SubmitButton:1,Success:1}}},Site:{AccessDenied:{ClickToChangeUser:1,ClickToLogin:1,LackPermissions:1,NotLoggedIn:1,PageTitle:1},BasicProgressDialog:{CancelTitle:1,PleaseWait:1},BulkServiceAction:{AllHadErrorsFormat:1,AllSuccessFormat:1,ConfirmationFormat:1,ErrorCount:1,NothingToProcess:1,SomeHadErrorsFormat:1,SuccessCount:1},CardViewMixin:{CardView:1,ListView:1},Dashboard:{ContentDescription:1},Dialogs:{PendingChangesConfirmation:1},DraggableGroupingMixin:{CollapseAllButton:1,DropPlaceholder:1,ExpandAllButton:1},EmailClient:{BackButton:1,CCLabel:1,CancelButton:1,ComposeButton:1,DeleteButton:1,DeleteMessageConfirmation:1,DeleteMessageSuccess:1,DeleteNoSelectionWarning:1,DeleteSelectedConfirmation:1,DeleteSelectedSuccess:1,FolderNames:{drafts:1,inbox:1,junk:1,sent:1,trash:1},FoldersTitle:1,ForwardButton:1,ImapHost:1,ImapPassword:1,ImapPort:1,ImapUsername:1,LoginButton:1,LoginTitle:1,MoveMessageSuccess:1,MoveNoSelectionWarning:1,MoveSelectedSuccess:1,MoveToFolder:1,NewEmailDialogTitle:1,PageTitle:1,QuickSettings:1,RefreshButton:1,ReplyAllButton:1,ReplyButton:1,ReplyEmailDialogTitle:1,SearchPlaceholder:1,SendButton:1,SignoutButton:1,SmtpHost:1,SmtpPassword:1,SmtpPort:1,SmtpUsername:1,ToLabel:1,ToggleReadButton:1,ToggleSeenNoSelectionWarning:1},FavoriteViewsMixin:{DeleteButtonHint:1,DeleteSuccessMessage:1,EmptyNameError:1,FavoriteViews:1,LoadedViewMessage:1,SaveButton:1,SaveSuccessMessage:1,SaveView:1},HeaderFiltersMixin:{CancelButton:1,ClearButton:1,OkButton:1,Search:1,SelectAll:1},Layout:{FooterCopyright:1,FooterInfo:1,FooterRights:1,GeneralSettings:1,Language:1,Theme:1,ThemeAzure:1,ThemeAzureLight:1,ThemeBlack:1,ThemeBlackLight:1,ThemeBlue:1,ThemeBlueLight:1,ThemeCosmos:1,ThemeCosmosLight:1,ThemeGlassy:1,ThemeGlassyLight:1,ThemeGreen:1,ThemeGreenLight:1,ThemePurple:1,ThemePurpleLight:1,ThemeRed:1,ThemeRedLight:1,ThemeYellow:1,ThemeYellowLight:1},RolePermissionDialog:{DialogTitle:1,EditButton:1,SaveSuccess:1},UserDialog:{EditPermissionsButton:1,EditRolesButton:1},UserPermissionDialog:{DialogTitle:1,Grant:1,Permission:1,Revoke:1,SaveSuccess:1},UserRoleDialog:{DialogTitle:1,SaveSuccess:1},ValidationError:{Title:1},WizardDialog:{BackButton:1,CancelMessage:1,FinishButton:1,NextButton:1}},Validation:{AuthenticationError:1,CantFindUserWithEmail:1,CurrentPasswordMismatch:1,DeleteForeignKeyError:1,EmailConfirm:1,EmailInUse:1,InvalidActivateToken:1,InvalidResetToken:1,MinRequiredPasswordLength:1,SavePrimaryKeyError:1}});
+    DAP['Texts'] = Q.proxyTexts(Texts, '', {Db:{Administration:{DataAuditLog:{FieldName:1,LogDate:1,LogId:1,LogType:1,NewValue:1,OldValue:1,RecordId:1,Tablename:1,UserDisplayName:1,UserId:1,Username:1},Language:{Id:1,LanguageId:1,LanguageName:1},Role:{RoleId:1,RoleKey:1,RoleName:1},RolePermission:{PermissionKey:1,RoleId:1,RolePermissionId:1,RoleRoleName:1},Translation:{CustomText:1,EntityPlural:1,Key:1,OverrideConfirmation:1,SaveChangesButton:1,SourceLanguage:1,SourceText:1,TargetLanguage:1,TargetText:1},User:{DisplayName:1,Email:1,ImpersonationToken:1,InsertDate:1,InsertUserId:1,IsActive:1,LastDirectoryUpdate:1,MobilePhoneNumber:1,MobilePhoneVerified:1,Password:1,PasswordConfirm:1,PasswordHash:1,PasswordSalt:1,Source:1,TwoFactorAuth:1,UpdateDate:1,UpdateUserId:1,UserId:1,UserImage:1,Username:1},UserPermission:{Granted:1,PermissionKey:1,User:1,UserId:1,UserPermissionId:1,Username:1},UserRole:{RoleId:1,User:1,UserId:1,UserRoleId:1,Username:1}},Common:{BackgroundTaskLog:{LogId:1,Message:1,RunAt:1,Server:1,Status:1,TaskKey:1},Mail:{Bcc:1,Body:1,Cc:1,ErrorMessage:1,InsertDate:1,InsertUser:1,InsertUserId:1,LockExpiration:1,MailFrom:1,MailId:1,MailTo:1,Priority:1,ReplyTo:1,RetryCount:1,SentDate:1,Status:1,Subject:1,Uid:1},UserPreference:{Name:1,PreferenceType:1,UserId:1,UserPreferenceId:1,Value:1}},DWSupport:{FinReportPublishingSupp:{CreatedByNam:1,CreatedTs:1,FinReportPublishingSurKey:1,ModifiedByNam:1,ModifiedTs:1,ProcessedDateTs:1,PublishCd:1,PublishCommentsTxt:1,PublishDat:1}},NCLHDSAR:{Assignee:{AssigneeId:1,FullName:1,IsActive:1},Request:{Address1:1,AttrCount:1,City:1,Country:1,CreatedDt:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,Email:1,FirstName:1,FullName:1,Id:1,IdentityVerificationOptOuts:1,IdentityVerificationOtherRequests:1,LastName:1,LastUpdatedDt:1,LatitudesNum:1,LoadDt:1,NclYn:1,OceaniaMpCardNum:1,OceaniaYn:1,ProcessDt:1,RegentMpCardNum:1,RegentYn:1,ReqApprover:1,ReqDetails:1,ReqExtended:1,ReqStage:1,ReqStatus:1,RequestType:1,RequestTypeNum:1,RequestTypeNumDesc:1,SixthmanYn:1,SubjectType:1},RequestAttributes:{Addr1:1,Addr2:1,CityNm:1,CountryCd:1,Email1:1,ExtractDt:1,FirstNm:1,Id:1,LastNm:1,MiddleNm:1,OldAddr1:1,OldAddr2:1,OldCityNm:1,OldCountryCd:1,OldEmail:1,OldFirstNm:1,OldLastNm:1,OldMiddleNm:1,OldPostalCd:1,OldStateNm:1,PostalCd:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,StateNm:1,SystemMasterId:1,SystemMasterSystemActiveYn:1,SystemMasterSystemDesc:1,SystemMasterSystemName:1,SystemMasterSystemTable:1},RequestStatus:{StatusDescription:1,StatusId:1,StatusOrder:1},RequestType:{Desc:1,Type:1},SwRequest:{ApiResponse:1,ApiResponseDepth:1,ApiResponseId:1,AssigneeFullName:1,AssigneeId:1,AssigneeIsActive:1,AttributeCount:1,ClientAddress:1,ClientEmailAddress:1,ClientFirstName:1,ClientGuestCategory:1,ClientIsRelatedtoHousehold:1,ClientLastName:1,ClientLatitudesNumber:1,ClientZipCode:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,LastUpdatedDt:1,RecordId:1,RecordTimeStamp:1,RequestType:1,StatusId:1,StatusStatusDescription:1,StatusStatusOrder:1,UpdatedBy:1},SwRequestAttributes:{Addr1:1,Addr2:1,CityNm:1,CountryCd:1,Email:1,ExtractDt:1,FirstNm:1,Id:1,LastNm:1,LastUpdated:1,MiddleNm:1,OldAddr1:1,OldAddr2:1,OldCityNm:1,OldCountryCd:1,OldEmail:1,OldFirstNm:1,OldLastNm:1,OldMiddleNm:1,OldPostalCd:1,OldStateNm:1,PostalCd:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,StateNm:1,SystemMasterId:1},SystemMaster:{Id:1,SystemActiveYn:1,SystemDesc:1,SystemName:1,SystemTable:1}},NCLHODSSPENDVIS:{Amoslevel:{AccountId:1,Descr:1,FlexDim1Name:1,FlexDim2Name:1,FlexDim3Name:1,FlexDim4Name:1,IdNum:1}},PCHODS:{OutboundAgent:{AgentId:1,AgentLocationDescription:1,AgentLocationId:1,CompanyCd:1,CompanyName:1,Nm:1,NvsUserId:1,PrimaryBrand:1,StartInactiveDt:1},OutboundAgentLocation:{AgentLocationId:1,Description:1},OutboundCommissionHist:{ActiveDt:1,CommissionHistId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistAu:{ActiveDt:1,CommissionHistAuId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistBr:{ActiveDt:1,CommissionHistBrId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionPeriod:{ClosedBy:1,ClosedDate:1,CurrentMonth:1,EndDate:1,IsOpen:1,OutboundCommissionPeriodId:1,PreviousMonth:1,StartDate:1},OutboundCompany:{Cd:1,Nm:1},OutboundMonthlyRptArchiveOverride:{NclId:1,OciAdjustdomestic:1,OciPrevMonthDomestic:1,OciPrevMonthInternational:1,OciPrevMonthRevDomestic:1,OciPrevMonthRevInternational:1,OriginalUserName:1,OutboundMonth:1,OutboundMonthlyRptArchiveId:1,SscAdjustdomestic:1,SscPrevMonthDomestic:1,SscPrevMonthInternational:1,SscPrevMonthRevDomestic:1,SscPrevMonthRevInternational:1},OutboundNvsUsers:{ActiveInd:1,CompanyCd:1,DepartmentCd:1,DepartmentDesc:1,UserFirstName:1,UserId:1,UserLastName:1}},PCHODSNVS:{NtrIntlDatelineCruises:{CompanyCd:1,CruiseCalendarDaysQty:1,CruiseDaysQty:1,CruiseIntlTk:1,CruiseSegmentCd:1,LoadDt:1}},SSISConfig:{SsisConfigBase:{ConfigId:1,ConfigurationFilter:1,ConfiguredValue:1,ConfiguredValueType:1,EnvironmentDesc:1,EnvironmentEnum:1,ModifiedBy:1,ModifiedOn:1,PackagePath:1}}},Forms:{Membership:{ChangePassword:{FormTitle:1,SubmitButton:1,Success:1},ForgotPassword:{BackToLogin:1,FormInfo:1,FormTitle:1,SubmitButton:1,Success:1},Login:{FacebookButton:1,ForgotPassword:1,FormTitle:1,GoogleButton:1,OR:1,RememberMe:1,SignInButton:1,SignUpButton:1},ResetPassword:{BackToLogin:1,EmailSubject:1,FormTitle:1,SubmitButton:1,Success:1},SignUp:{AcceptTerms:1,ActivateEmailSubject:1,ActivationCompleteMessage:1,BackToLogin:1,ConfirmEmail:1,ConfirmPassword:1,DisplayName:1,Email:1,FormInfo:1,FormTitle:1,Password:1,SubmitButton:1,Success:1}}},Site:{AccessDenied:{ClickToChangeUser:1,ClickToLogin:1,LackPermissions:1,NotLoggedIn:1,PageTitle:1},BasicProgressDialog:{CancelTitle:1,PleaseWait:1},BulkServiceAction:{AllHadErrorsFormat:1,AllSuccessFormat:1,ConfirmationFormat:1,ErrorCount:1,NothingToProcess:1,SomeHadErrorsFormat:1,SuccessCount:1},CardViewMixin:{CardView:1,ListView:1},Dashboard:{ContentDescription:1},Dialogs:{PendingChangesConfirmation:1},DraggableGroupingMixin:{CollapseAllButton:1,DropPlaceholder:1,ExpandAllButton:1},EmailClient:{BackButton:1,CCLabel:1,CancelButton:1,ComposeButton:1,DeleteButton:1,DeleteMessageConfirmation:1,DeleteMessageSuccess:1,DeleteNoSelectionWarning:1,DeleteSelectedConfirmation:1,DeleteSelectedSuccess:1,FolderNames:{drafts:1,inbox:1,junk:1,sent:1,trash:1},FoldersTitle:1,ForwardButton:1,ImapHost:1,ImapPassword:1,ImapPort:1,ImapUsername:1,LoginButton:1,LoginTitle:1,MoveMessageSuccess:1,MoveNoSelectionWarning:1,MoveSelectedSuccess:1,MoveToFolder:1,NewEmailDialogTitle:1,PageTitle:1,QuickSettings:1,RefreshButton:1,ReplyAllButton:1,ReplyButton:1,ReplyEmailDialogTitle:1,SearchPlaceholder:1,SendButton:1,SignoutButton:1,SmtpHost:1,SmtpPassword:1,SmtpPort:1,SmtpUsername:1,ToLabel:1,ToggleReadButton:1,ToggleSeenNoSelectionWarning:1},FavoriteViewsMixin:{DeleteButtonHint:1,DeleteSuccessMessage:1,EmptyNameError:1,FavoriteViews:1,LoadedViewMessage:1,SaveButton:1,SaveSuccessMessage:1,SaveView:1},HeaderFiltersMixin:{CancelButton:1,ClearButton:1,OkButton:1,Search:1,SelectAll:1},Layout:{FooterCopyright:1,FooterInfo:1,FooterRights:1,GeneralSettings:1,Language:1,Theme:1,ThemeAzure:1,ThemeAzureLight:1,ThemeBlack:1,ThemeBlackLight:1,ThemeBlue:1,ThemeBlueLight:1,ThemeCosmos:1,ThemeCosmosLight:1,ThemeGlassy:1,ThemeGlassyLight:1,ThemeGreen:1,ThemeGreenLight:1,ThemePurple:1,ThemePurpleLight:1,ThemeRed:1,ThemeRedLight:1,ThemeYellow:1,ThemeYellowLight:1},RolePermissionDialog:{DialogTitle:1,EditButton:1,SaveSuccess:1},UserDialog:{EditPermissionsButton:1,EditRolesButton:1},UserPermissionDialog:{DialogTitle:1,Grant:1,Permission:1,Revoke:1,SaveSuccess:1},UserRoleDialog:{DialogTitle:1,SaveSuccess:1},ValidationError:{Title:1},WizardDialog:{BackButton:1,CancelMessage:1,FinishButton:1,NextButton:1}},Validation:{AuthenticationError:1,CantFindUserWithEmail:1,CurrentPasswordMismatch:1,DeleteForeignKeyError:1,EmailConfirm:1,EmailInUse:1,InvalidActivateToken:1,InvalidResetToken:1,MinRequiredPasswordLength:1,SavePrimaryKeyError:1}});
 }
 

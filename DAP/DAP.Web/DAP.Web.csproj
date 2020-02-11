@@ -613,6 +613,7 @@
     <Content Include="fonts\ionicons.svg" />
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <Content Include="Modules\NCLHDSAR\Request\NCLHDSAR.RequestDialog.Template.html" />
+    <Content Include="Modules\NCLHDSAR\SwRequest\NCLHDSAR.SwRequestDialog.Template.html" />
     <Content Include="Readme.CodeGenerator.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -1107,6 +1108,18 @@
     <Content Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrIndex.cshtml" />
     <Content Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesIndex.cshtml" />
     <Content Include="Content\site\site.pchodsnvs.less" />
+    <Content Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideIndex.cshtml" />
+    <Content Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppIndex.cshtml" />
+    <Content Include="Content\site\site.dwsupport.less" />
+    <Content Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelIndex.cshtml" />
+    <Content Include="Content\site\site.nclhodsspendvis.less" />
+    <Content Include="Content\site\site.config.less" />
+    <Content Include="Content\site\site.ssisconfig.less" />
+    <Content Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseIndex.cshtml" />
+    <Content Include="Modules\NCLHDSAR\Assignee\AssigneeIndex.cshtml" />
+    <Content Include="Modules\NCLHDSAR\RequestStatus\RequestStatusIndex.cshtml" />
+    <Content Include="Modules\NCLHDSAR\SwRequest\SwRequestIndex.cshtml" />
+    <Content Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1125,6 +1138,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.UserListRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinReportPublishingSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestAttributesColumns.ts">
@@ -1151,6 +1170,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestStatusColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestTypeColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1163,6 +1185,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestTypeService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestAttributesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SystemMasterColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1173,6 +1201,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SystemMasterService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.AmoslevelColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.Lookups.OutboundAgentColumns.ts">
@@ -1202,7 +1233,16 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundCommissionPeriodService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.SelectCompanyForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.SsisConfigBaseColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Texts.ts">
@@ -1222,10 +1262,14 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\Request\AttributesGrid.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Request\RequestDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Request\RequestGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequestAttributes\SWRequestAttributesEditor.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequest\SwAttributeDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequest\SwAttributesGrid.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCompany\CompanyEditor.ts" />
@@ -1255,6 +1299,22 @@
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistBr\OutboundCommissionHistBrGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelGrid.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\Assignee\AssigneeDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\Assignee\AssigneeGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequest\SwRequestDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequest\SwRequestGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2093,6 +2153,78 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinReportPublishingSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinReportPublishingSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinReportPublishingSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.AmoslevelRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.AmoslevelService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.AmoslevelForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.SsisConfigBaseRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.SsisConfigBaseService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.SsisConfigBaseForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestStatusRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestStatusService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestStatusForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestAttributesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestAttributesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestAttributesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2117,6 +2249,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.RequestValueEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\NCLHDSAR.SwRequestAttributesEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.SystemMasterEditorAttribute.cs">
@@ -2242,6 +2377,7 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -2288,7 +2424,10 @@
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterPage.cs" />
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRepository.cs" />
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRow.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
+    <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodColumns.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodEndpoint.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodForm.cs" />
@@ -2296,9 +2435,11 @@
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodRepository.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodRow.cs" />
     <Compile Include="Modules\PCHODS\OutboundCompany\CompanyLookup.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonth.cs" />
     <Compile Include="Modules\PCHODS\OutboundNvsUsers\UsersLookup.cs" />
     <Compile Include="Modules\PCHODS\PCHODSNavigation.cs" />
     <Compile Include="Modules\PCHODS\PCHODSPermissionKeys.cs" />
+    <Compile Include="Modules\SSISConfig\SSISConfigPermissionKeys.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
     <Compile Include="Modules\Administration\User\Authentication\AuthorizationService.cs" />
@@ -2380,6 +2521,57 @@
     <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesColumns.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\NtrIntlDatelineCruisesForm.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSNavigation.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideRow.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideRepository.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverridePage.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideColumns.cs" />
+    <Compile Include="Modules\PCHODS\OutboundMonthlyRptArchiveOverride\OutboundMonthlyRptArchiveOverrideForm.cs" />
+    <Compile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\FinReportPublishingSupp\FinReportPublishingSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\DWSupportNavigation.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelRow.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelRepository.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelEndpoint.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelPage.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelColumns.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\Amoslevel\AmoslevelForm.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISNavigation.cs" />
+    <Compile Include="Modules\SSISConfig\SSISConfigNavigation.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseRow.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseRepository.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBasePage.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseColumns.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\SsisConfigBaseForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\Assignee\AssigneeRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\Assignee\AssigneeRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\Assignee\AssigneeEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\Assignee\AssigneePage.cs" />
+    <Compile Include="Modules\NCLHDSAR\Assignee\AssigneeColumns.cs" />
+    <Compile Include="Modules\NCLHDSAR\Assignee\AssigneeForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusPage.cs" />
+    <Compile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusColumns.cs" />
+    <Compile Include="Modules\NCLHDSAR\RequestStatus\RequestStatusForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequest\SwRequestRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequest\SwRequestRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequest\SwRequestEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequest\SwRequestPage.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequest\SwRequestColumns.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequest\SwRequestForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesPage.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesColumns.cs" />
+    <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

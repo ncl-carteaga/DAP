@@ -544,6 +544,73 @@ var DAP;
         })(UserPreferenceService = Common.UserPreferenceService || (Common.UserPreferenceService = {}));
     })(Common = DAP.Common || (DAP.Common = {}));
 })(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var FinReportPublishingSuppForm = /** @class */ (function (_super) {
+            __extends(FinReportPublishingSuppForm, _super);
+            function FinReportPublishingSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!FinReportPublishingSuppForm.init) {
+                    FinReportPublishingSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.DateEditor;
+                    var w1 = s.TextAreaEditor;
+                    var w2 = s.BooleanEditor;
+                    var w3 = s.StringEditor;
+                    Q.initFormType(FinReportPublishingSuppForm, [
+                        'PublishDat', w0,
+                        'PublishCommentsTxt', w1,
+                        'PublishCd', w2,
+                        'CreatedTs', w0,
+                        'CreatedByNam', w3,
+                        'ModifiedTs', w0,
+                        'ModifiedByNam', w3,
+                        'ProcessedDateTs', w0
+                    ]);
+                }
+                return _this;
+            }
+            FinReportPublishingSuppForm.formKey = 'DWSupport.FinReportPublishingSupp';
+            return FinReportPublishingSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.FinReportPublishingSuppForm = FinReportPublishingSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var FinReportPublishingSuppRow;
+        (function (FinReportPublishingSuppRow) {
+            FinReportPublishingSuppRow.idProperty = 'FinReportPublishingSurKey';
+            FinReportPublishingSuppRow.nameProperty = 'PublishCommentsTxt';
+            FinReportPublishingSuppRow.localTextPrefix = 'DWSupport.FinReportPublishingSupp';
+        })(FinReportPublishingSuppRow = DWSupport.FinReportPublishingSuppRow || (DWSupport.FinReportPublishingSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var FinReportPublishingSuppService;
+        (function (FinReportPublishingSuppService) {
+            FinReportPublishingSuppService.baseUrl = 'DWSupport/FinReportPublishingSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                FinReportPublishingSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(FinReportPublishingSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(FinReportPublishingSuppService = DWSupport.FinReportPublishingSuppService || (DWSupport.FinReportPublishingSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
 var Serenity;
 (function (Serenity) {
     var EmailClient;
@@ -741,6 +808,70 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var AssigneeForm = /** @class */ (function (_super) {
+            __extends(AssigneeForm, _super);
+            function AssigneeForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!AssigneeForm.init) {
+                    AssigneeForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.BooleanEditor;
+                    Q.initFormType(AssigneeForm, [
+                        'FullName', w0,
+                        'IsActive', w1
+                    ]);
+                }
+                return _this;
+            }
+            AssigneeForm.formKey = 'NCLHDSAR.Assignee';
+            return AssigneeForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.AssigneeForm = AssigneeForm;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var AssigneeRow;
+        (function (AssigneeRow) {
+            AssigneeRow.idProperty = 'AssigneeId';
+            AssigneeRow.nameProperty = 'FullName';
+            AssigneeRow.localTextPrefix = 'NCLHDSAR.Assignee';
+            AssigneeRow.lookupKey = 'NCLHDSAR.Assignee';
+            function getLookup() {
+                return Q.getLookup('NCLHDSAR.Assignee');
+            }
+            AssigneeRow.getLookup = getLookup;
+        })(AssigneeRow = NCLHDSAR.AssigneeRow || (NCLHDSAR.AssigneeRow = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var AssigneeService;
+        (function (AssigneeService) {
+            AssigneeService.baseUrl = 'NCLHDSAR/Assignee';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                AssigneeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(AssigneeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(AssigneeService = NCLHDSAR.AssigneeService || (NCLHDSAR.AssigneeService = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var RequestAttributesForm = /** @class */ (function (_super) {
             __extends(RequestAttributesForm, _super);
             function RequestAttributesForm(prefix) {
@@ -757,6 +888,9 @@ var DAP;
                         'RequestValue', w0,
                         'ResolvedDt', w2,
                         'ExtractDt', w2,
+                        'FirstNm', w0,
+                        'MiddleNm', w0,
+                        'LastNm', w0,
                         'Addr1', w0,
                         'Addr2', w0,
                         'CityNm', w0,
@@ -764,6 +898,9 @@ var DAP;
                         'PostalCd', w0,
                         'CountryCd', w0,
                         'Email1', w0,
+                        'OldFirstNm', w0,
+                        'OldMiddleNm', w0,
+                        'OldLastNm', w0,
                         'OldAddr1', w0,
                         'OldAddr2', w0,
                         'OldCityNm', w0,
@@ -915,6 +1052,70 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var RequestStatusForm = /** @class */ (function (_super) {
+            __extends(RequestStatusForm, _super);
+            function RequestStatusForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!RequestStatusForm.init) {
+                    RequestStatusForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    Q.initFormType(RequestStatusForm, [
+                        'StatusDescription', w0,
+                        'StatusOrder', w1
+                    ]);
+                }
+                return _this;
+            }
+            RequestStatusForm.formKey = 'NCLHDSAR.RequestStatus';
+            return RequestStatusForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.RequestStatusForm = RequestStatusForm;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var RequestStatusRow;
+        (function (RequestStatusRow) {
+            RequestStatusRow.idProperty = 'StatusId';
+            RequestStatusRow.nameProperty = 'StatusDescription';
+            RequestStatusRow.localTextPrefix = 'NCLHDSAR.RequestStatus';
+            RequestStatusRow.lookupKey = 'NCLHDSAR.RequestStatus';
+            function getLookup() {
+                return Q.getLookup('NCLHDSAR.RequestStatus');
+            }
+            RequestStatusRow.getLookup = getLookup;
+        })(RequestStatusRow = NCLHDSAR.RequestStatusRow || (NCLHDSAR.RequestStatusRow = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var RequestStatusService;
+        (function (RequestStatusService) {
+            RequestStatusService.baseUrl = 'NCLHDSAR/RequestStatus';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                RequestStatusService[x] = function (r, s, o) {
+                    return Q.serviceRequest(RequestStatusService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(RequestStatusService = NCLHDSAR.RequestStatusService || (NCLHDSAR.RequestStatusService = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var RequestTypeForm = /** @class */ (function (_super) {
             __extends(RequestTypeForm, _super);
             function RequestTypeForm(prefix) {
@@ -971,6 +1172,164 @@ var DAP;
                 };
             });
         })(RequestTypeService = NCLHDSAR.RequestTypeService || (NCLHDSAR.RequestTypeService = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestAttributesForm = /** @class */ (function (_super) {
+            __extends(SwRequestAttributesForm, _super);
+            function SwRequestAttributesForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SwRequestAttributesForm.init) {
+                    SwRequestAttributesForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = NCLHDSAR.SystemMasterEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(SwRequestAttributesForm, [
+                        'Id', w0,
+                        'SystemMasterId', w1,
+                        'RequestValue', w0,
+                        'ResolvedDt', w2,
+                        'ExtractDt', w2,
+                        'FirstNm', w0,
+                        'MiddleNm', w0,
+                        'LastNm', w0,
+                        'Addr1', w0,
+                        'Addr2', w0,
+                        'CityNm', w0,
+                        'StateNm', w0,
+                        'PostalCd', w0,
+                        'CountryCd', w0,
+                        'Email', w0,
+                        'OldFirstNm', w0,
+                        'OldMiddleNm', w0,
+                        'OldLastNm', w0,
+                        'OldAddr1', w0,
+                        'OldAddr2', w0,
+                        'OldCityNm', w0,
+                        'OldStateNm', w0,
+                        'OldPostalCd', w0,
+                        'OldCountryCd', w0,
+                        'OldEmail', w0
+                    ]);
+                }
+                return _this;
+            }
+            SwRequestAttributesForm.formKey = 'NCLHDSAR.SwRequestAttributes';
+            return SwRequestAttributesForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.SwRequestAttributesForm = SwRequestAttributesForm;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestAttributesRow;
+        (function (SwRequestAttributesRow) {
+            SwRequestAttributesRow.idProperty = 'RequestAttributeId';
+            SwRequestAttributesRow.nameProperty = 'RequestValue';
+            SwRequestAttributesRow.localTextPrefix = 'NCLHDSAR.SwRequestAttributes';
+        })(SwRequestAttributesRow = NCLHDSAR.SwRequestAttributesRow || (NCLHDSAR.SwRequestAttributesRow = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestAttributesService;
+        (function (SwRequestAttributesService) {
+            SwRequestAttributesService.baseUrl = 'NCLHDSAR/SwRequestAttributes';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SwRequestAttributesService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SwRequestAttributesService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SwRequestAttributesService = NCLHDSAR.SwRequestAttributesService || (NCLHDSAR.SwRequestAttributesService = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestForm = /** @class */ (function (_super) {
+            __extends(SwRequestForm, _super);
+            function SwRequestForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SwRequestForm.init) {
+                    SwRequestForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.LookupEditor;
+                    Q.initFormType(SwRequestForm, [
+                        'ClientFirstName', w0,
+                        'ClientLastName', w0,
+                        'ClientEmailAddress', w0,
+                        'RecordTimeStamp', w1,
+                        'ClientAddress', w0,
+                        'ClientZipCode', w0,
+                        'ClientLatitudesNumber', w0,
+                        'ClientIsRelatedtoHousehold', w0,
+                        'RequestType', w0,
+                        'ClientGuestCategory', w0,
+                        'LastUpdatedDt', w1,
+                        'UpdatedBy', w0,
+                        'AssigneeId', w2,
+                        'StatusId', w2,
+                        'ApiResponseId', w0,
+                        'ApiResponse', w0,
+                        'ApiResponseDepth', w0
+                    ]);
+                }
+                return _this;
+            }
+            SwRequestForm.formKey = 'NCLHDSAR.SwRequest';
+            return SwRequestForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.SwRequestForm = SwRequestForm;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestRow;
+        (function (SwRequestRow) {
+            SwRequestRow.idProperty = 'RecordId';
+            SwRequestRow.nameProperty = 'ClientLastName';
+            SwRequestRow.localTextPrefix = 'NCLHDSAR.SwRequest';
+        })(SwRequestRow = NCLHDSAR.SwRequestRow || (NCLHDSAR.SwRequestRow = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestService;
+        (function (SwRequestService) {
+            SwRequestService.baseUrl = 'NCLHDSAR/SwRequest';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SwRequestService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SwRequestService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SwRequestService = NCLHDSAR.SwRequestService || (NCLHDSAR.SwRequestService = {}));
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -1037,6 +1396,68 @@ var DAP;
             });
         })(SystemMasterService = NCLHDSAR.SystemMasterService || (NCLHDSAR.SystemMasterService = {}));
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var AmoslevelForm = /** @class */ (function (_super) {
+            __extends(AmoslevelForm, _super);
+            function AmoslevelForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!AmoslevelForm.init) {
+                    AmoslevelForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    Q.initFormType(AmoslevelForm, [
+                        'AccountId', w0,
+                        'Descr', w0,
+                        'FlexDim1Name', w0,
+                        'FlexDim2Name', w0,
+                        'FlexDim3Name', w0,
+                        'FlexDim4Name', w0
+                    ]);
+                }
+                return _this;
+            }
+            AmoslevelForm.formKey = 'NCLHODSSPENDVIS.Amoslevel';
+            return AmoslevelForm;
+        }(Serenity.PrefixedContext));
+        NCLHODSSPENDVIS.AmoslevelForm = AmoslevelForm;
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var AmoslevelRow;
+        (function (AmoslevelRow) {
+            AmoslevelRow.idProperty = 'IdNum';
+            AmoslevelRow.nameProperty = 'AccountId';
+            AmoslevelRow.localTextPrefix = 'NCLHODSSPENDVIS.Amoslevel';
+        })(AmoslevelRow = NCLHODSSPENDVIS.AmoslevelRow || (NCLHODSSPENDVIS.AmoslevelRow = {}));
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var AmoslevelService;
+        (function (AmoslevelService) {
+            AmoslevelService.baseUrl = 'NCLHODSSPENDVIS/Amoslevel';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                AmoslevelService[x] = function (r, s, o) {
+                    return Q.serviceRequest(AmoslevelService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(AmoslevelService = NCLHODSSPENDVIS.AmoslevelService || (NCLHODSSPENDVIS.AmoslevelService = {}));
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -1175,28 +1596,30 @@ var DAP;
     (function (PCHODS) {
         var OutboundCommissionHistAuForm = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistAuForm, _super);
-            function OutboundCommissionHistAuForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function OutboundCommissionHistAuForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OutboundCommissionHistAuForm.init) {
+                    OutboundCommissionHistAuForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(OutboundCommissionHistAuForm, [
+                        'CommissionId', w0,
+                        'CompanyCd', w0,
+                        'LowNumBookings', w1,
+                        'HighNumBookings', w1,
+                        'CommissionRate', w1,
+                        'ActiveDt', w2,
+                        'InactiveDt', w2
+                    ]);
+                }
+                return _this;
             }
             OutboundCommissionHistAuForm.formKey = 'PCHODS.OutboundCommissionHistAu';
             return OutboundCommissionHistAuForm;
         }(Serenity.PrefixedContext));
         PCHODS.OutboundCommissionHistAuForm = OutboundCommissionHistAuForm;
-        [
-            ['CommissionId', function () { return Serenity.StringEditor; }],
-            ['CompanyCd', function () { return Serenity.StringEditor; }],
-            ['LowNumBookings', function () { return Serenity.DecimalEditor; }],
-            ['HighNumBookings', function () { return Serenity.DecimalEditor; }],
-            ['CommissionRate', function () { return Serenity.DecimalEditor; }],
-            ['ActiveDt', function () { return Serenity.DateEditor; }],
-            ['InactiveDt', function () { return Serenity.DateEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(OutboundCommissionHistAuForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -1208,19 +1631,6 @@ var DAP;
             OutboundCommissionHistAuRow.idProperty = 'CommissionHistAuId';
             OutboundCommissionHistAuRow.nameProperty = 'CommissionId';
             OutboundCommissionHistAuRow.localTextPrefix = 'PCHODS.OutboundCommissionHistAu';
-            var Fields;
-            (function (Fields) {
-            })(Fields = OutboundCommissionHistAuRow.Fields || (OutboundCommissionHistAuRow.Fields = {}));
-            [
-                'CommissionId',
-                'CompanyCd',
-                'LowNumBookings',
-                'HighNumBookings',
-                'CommissionRate',
-                'ActiveDt',
-                'InactiveDt',
-                'CommissionHistAuId'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(OutboundCommissionHistAuRow = PCHODS.OutboundCommissionHistAuRow || (PCHODS.OutboundCommissionHistAuRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -1231,9 +1641,6 @@ var DAP;
         var OutboundCommissionHistAuService;
         (function (OutboundCommissionHistAuService) {
             OutboundCommissionHistAuService.baseUrl = 'PCHODS/OutboundCommissionHistAu';
-            var Methods;
-            (function (Methods) {
-            })(Methods = OutboundCommissionHistAuService.Methods || (OutboundCommissionHistAuService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1244,7 +1651,6 @@ var DAP;
                 OutboundCommissionHistAuService[x] = function (r, s, o) {
                     return Q.serviceRequest(OutboundCommissionHistAuService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = OutboundCommissionHistAuService.baseUrl + '/' + x;
             });
         })(OutboundCommissionHistAuService = PCHODS.OutboundCommissionHistAuService || (PCHODS.OutboundCommissionHistAuService = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
@@ -1255,28 +1661,30 @@ var DAP;
     (function (PCHODS) {
         var OutboundCommissionHistBrForm = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistBrForm, _super);
-            function OutboundCommissionHistBrForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function OutboundCommissionHistBrForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OutboundCommissionHistBrForm.init) {
+                    OutboundCommissionHistBrForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(OutboundCommissionHistBrForm, [
+                        'CommissionId', w0,
+                        'CompanyCd', w0,
+                        'LowNumBookings', w1,
+                        'HighNumBookings', w1,
+                        'CommissionRate', w1,
+                        'ActiveDt', w2,
+                        'InactiveDt', w2
+                    ]);
+                }
+                return _this;
             }
             OutboundCommissionHistBrForm.formKey = 'PCHODS.OutboundCommissionHistBr';
             return OutboundCommissionHistBrForm;
         }(Serenity.PrefixedContext));
         PCHODS.OutboundCommissionHistBrForm = OutboundCommissionHistBrForm;
-        [
-            ['CommissionId', function () { return Serenity.StringEditor; }],
-            ['CompanyCd', function () { return Serenity.StringEditor; }],
-            ['LowNumBookings', function () { return Serenity.DecimalEditor; }],
-            ['HighNumBookings', function () { return Serenity.DecimalEditor; }],
-            ['CommissionRate', function () { return Serenity.DecimalEditor; }],
-            ['ActiveDt', function () { return Serenity.DateEditor; }],
-            ['InactiveDt', function () { return Serenity.DateEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(OutboundCommissionHistBrForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -1288,19 +1696,6 @@ var DAP;
             OutboundCommissionHistBrRow.idProperty = 'CommissionHistBrId';
             OutboundCommissionHistBrRow.nameProperty = 'CommissionId';
             OutboundCommissionHistBrRow.localTextPrefix = 'PCHODS.OutboundCommissionHistBr';
-            var Fields;
-            (function (Fields) {
-            })(Fields = OutboundCommissionHistBrRow.Fields || (OutboundCommissionHistBrRow.Fields = {}));
-            [
-                'CommissionId',
-                'CompanyCd',
-                'LowNumBookings',
-                'HighNumBookings',
-                'CommissionRate',
-                'ActiveDt',
-                'InactiveDt',
-                'CommissionHistBrId'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(OutboundCommissionHistBrRow = PCHODS.OutboundCommissionHistBrRow || (PCHODS.OutboundCommissionHistBrRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -1311,9 +1706,6 @@ var DAP;
         var OutboundCommissionHistBrService;
         (function (OutboundCommissionHistBrService) {
             OutboundCommissionHistBrService.baseUrl = 'PCHODS/OutboundCommissionHistBr';
-            var Methods;
-            (function (Methods) {
-            })(Methods = OutboundCommissionHistBrService.Methods || (OutboundCommissionHistBrService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1324,7 +1716,6 @@ var DAP;
                 OutboundCommissionHistBrService[x] = function (r, s, o) {
                     return Q.serviceRequest(OutboundCommissionHistBrService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = OutboundCommissionHistBrService.baseUrl + '/' + x;
             });
         })(OutboundCommissionHistBrService = PCHODS.OutboundCommissionHistBrService || (PCHODS.OutboundCommissionHistBrService = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
@@ -1335,28 +1726,31 @@ var DAP;
     (function (PCHODS) {
         var OutboundCommissionHistForm = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistForm, _super);
-            function OutboundCommissionHistForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function OutboundCommissionHistForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OutboundCommissionHistForm.init) {
+                    OutboundCommissionHistForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = PCHODS.CompanyEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(OutboundCommissionHistForm, [
+                        'CommissionId', w0,
+                        'CompanyCd', w1,
+                        'LowNumBookings', w2,
+                        'HighNumBookings', w2,
+                        'CommissionRate', w2,
+                        'ActiveDt', w3,
+                        'InactiveDt', w3
+                    ]);
+                }
+                return _this;
             }
             OutboundCommissionHistForm.formKey = 'PCHODS.OutboundCommissionHist';
             return OutboundCommissionHistForm;
         }(Serenity.PrefixedContext));
         PCHODS.OutboundCommissionHistForm = OutboundCommissionHistForm;
-        [
-            ['CommissionId', function () { return Serenity.StringEditor; }],
-            ['CompanyCd', function () { return Serenity.StringEditor; }],
-            ['LowNumBookings', function () { return Serenity.DecimalEditor; }],
-            ['HighNumBookings', function () { return Serenity.DecimalEditor; }],
-            ['CommissionRate', function () { return Serenity.DecimalEditor; }],
-            ['ActiveDt', function () { return Serenity.DateEditor; }],
-            ['InactiveDt', function () { return Serenity.DateEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(OutboundCommissionHistForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -1368,19 +1762,6 @@ var DAP;
             OutboundCommissionHistRow.idProperty = 'CommissionHistId';
             OutboundCommissionHistRow.nameProperty = 'CommissionId';
             OutboundCommissionHistRow.localTextPrefix = 'PCHODS.OutboundCommissionHist';
-            var Fields;
-            (function (Fields) {
-            })(Fields = OutboundCommissionHistRow.Fields || (OutboundCommissionHistRow.Fields = {}));
-            [
-                'CommissionId',
-                'CompanyCd',
-                'LowNumBookings',
-                'HighNumBookings',
-                'CommissionRate',
-                'ActiveDt',
-                'InactiveDt',
-                'CommissionHistId'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(OutboundCommissionHistRow = PCHODS.OutboundCommissionHistRow || (PCHODS.OutboundCommissionHistRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -1391,20 +1772,17 @@ var DAP;
         var OutboundCommissionHistService;
         (function (OutboundCommissionHistService) {
             OutboundCommissionHistService.baseUrl = 'PCHODS/OutboundCommissionHist';
-            var Methods;
-            (function (Methods) {
-            })(Methods = OutboundCommissionHistService.Methods || (OutboundCommissionHistService.Methods = {}));
             [
                 'Create',
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'ListByCompany'
             ].forEach(function (x) {
                 OutboundCommissionHistService[x] = function (r, s, o) {
                     return Q.serviceRequest(OutboundCommissionHistService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = OutboundCommissionHistService.baseUrl + '/' + x;
             });
         })(OutboundCommissionHistService = PCHODS.OutboundCommissionHistService || (PCHODS.OutboundCommissionHistService = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
@@ -1459,6 +1837,7 @@ var DAP;
             OutboundCommissionPeriodService.baseUrl = 'PCHODS/OutboundCommissionPeriod';
             [
                 'Create',
+                'CreateWithSP',
                 'Update',
                 'Delete',
                 'Retrieve',
@@ -1513,24 +1892,87 @@ var DAP;
 (function (DAP) {
     var PCHODS;
     (function (PCHODS) {
+        var OutboundMonthlyRptArchiveOverrideForm = /** @class */ (function (_super) {
+            __extends(OutboundMonthlyRptArchiveOverrideForm, _super);
+            function OutboundMonthlyRptArchiveOverrideForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!OutboundMonthlyRptArchiveOverrideForm.init) {
+                    OutboundMonthlyRptArchiveOverrideForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DecimalEditor;
+                    Q.initFormType(OutboundMonthlyRptArchiveOverrideForm, [
+                        'OutboundMonth', w0,
+                        'NclId', w1,
+                        'OriginalUserName', w1,
+                        'OciPrevMonthDomestic', w2,
+                        'SscPrevMonthDomestic', w2,
+                        'OciPrevMonthInternational', w2,
+                        'SscPrevMonthInternational', w2,
+                        'OciPrevMonthRevDomestic', w2,
+                        'SscPrevMonthRevDomestic', w2,
+                        'OciPrevMonthRevInternational', w2,
+                        'SscPrevMonthRevInternational', w2,
+                        'OciAdjustdomestic', w2,
+                        'SscAdjustdomestic', w2
+                    ]);
+                }
+                return _this;
+            }
+            OutboundMonthlyRptArchiveOverrideForm.formKey = 'PCHODS.OutboundMonthlyRptArchiveOverride';
+            return OutboundMonthlyRptArchiveOverrideForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.OutboundMonthlyRptArchiveOverrideForm = OutboundMonthlyRptArchiveOverrideForm;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundMonthlyRptArchiveOverrideRow;
+        (function (OutboundMonthlyRptArchiveOverrideRow) {
+            OutboundMonthlyRptArchiveOverrideRow.idProperty = 'OutboundMonthlyRptArchiveId';
+            OutboundMonthlyRptArchiveOverrideRow.nameProperty = 'OriginalUserName';
+            OutboundMonthlyRptArchiveOverrideRow.localTextPrefix = 'PCHODS.OutboundMonthlyRptArchiveOverride';
+        })(OutboundMonthlyRptArchiveOverrideRow = PCHODS.OutboundMonthlyRptArchiveOverrideRow || (PCHODS.OutboundMonthlyRptArchiveOverrideRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundMonthlyRptArchiveOverrideService;
+        (function (OutboundMonthlyRptArchiveOverrideService) {
+            OutboundMonthlyRptArchiveOverrideService.baseUrl = 'PCHODS/OutboundMonthlyRptArchiveOverride';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                OutboundMonthlyRptArchiveOverrideService[x] = function (r, s, o) {
+                    return Q.serviceRequest(OutboundMonthlyRptArchiveOverrideService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(OutboundMonthlyRptArchiveOverrideService = PCHODS.OutboundMonthlyRptArchiveOverrideService || (PCHODS.OutboundMonthlyRptArchiveOverrideService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
         var OutboundNvsUsersRow;
         (function (OutboundNvsUsersRow) {
             OutboundNvsUsersRow.idProperty = 'UserId';
             OutboundNvsUsersRow.nameProperty = 'UserId';
             OutboundNvsUsersRow.localTextPrefix = 'PCHODS.OutboundNvsUsers';
             OutboundNvsUsersRow.lookupKey = 'NCLHDSAR.OutboundNvsUsers';
-            var Fields;
-            (function (Fields) {
-            })(Fields = OutboundNvsUsersRow.Fields || (OutboundNvsUsersRow.Fields = {}));
-            [
-                'UserId',
-                'UserFirstName',
-                'UserLastName',
-                'CompanyCd',
-                'ActiveInd',
-                'DepartmentCd',
-                'DepartmentDesc'
-            ].forEach(function (x) { return Fields[x] = x; });
+            function getLookup() {
+                return Q.getLookup('NCLHDSAR.OutboundNvsUsers');
+            }
+            OutboundNvsUsersRow.getLookup = getLookup;
         })(OutboundNvsUsersRow = PCHODS.OutboundNvsUsersRow || (PCHODS.OutboundNvsUsersRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -1557,30 +1999,56 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var SelectCompanyForm = /** @class */ (function (_super) {
+            __extends(SelectCompanyForm, _super);
+            function SelectCompanyForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SelectCompanyForm.init) {
+                    SelectCompanyForm.init = true;
+                    var s = Serenity;
+                    var w0 = PCHODS.CompanyEditor;
+                    Q.initFormType(SelectCompanyForm, [
+                        'CompanyCd', w0
+                    ]);
+                }
+                return _this;
+            }
+            SelectCompanyForm.formKey = 'PCHODS.SelectCompany';
+            return SelectCompanyForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.SelectCompanyForm = SelectCompanyForm;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
         var NtrIntlDatelineCruisesForm = /** @class */ (function (_super) {
             __extends(NtrIntlDatelineCruisesForm, _super);
-            function NtrIntlDatelineCruisesForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function NtrIntlDatelineCruisesForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!NtrIntlDatelineCruisesForm.init) {
+                    NtrIntlDatelineCruisesForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(NtrIntlDatelineCruisesForm, [
+                        'CompanyCd', w0,
+                        'CruiseSegmentCd', w0,
+                        'CruiseDaysQty', w1,
+                        'CruiseCalendarDaysQty', w1,
+                        'LoadDt', w2
+                    ]);
+                }
+                return _this;
             }
             NtrIntlDatelineCruisesForm.formKey = 'PCHODSNVS.NtrIntlDatelineCruises';
             return NtrIntlDatelineCruisesForm;
         }(Serenity.PrefixedContext));
         PCHODSNVS.NtrIntlDatelineCruisesForm = NtrIntlDatelineCruisesForm;
-        [,
-            ['CompanyCd', function () { return Serenity.StringEditor; }],
-            ['CruiseSegmentCd', function () { return Serenity.StringEditor; }],
-            ['CruiseDaysQty', function () { return Serenity.IntegerEditor; }],
-            ['CruiseCalendarDaysQty', function () { return Serenity.IntegerEditor; }],
-            ['LoadDt', function () { return Serenity.DateEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(NtrIntlDatelineCruisesForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -1592,17 +2060,6 @@ var DAP;
             NtrIntlDatelineCruisesRow.idProperty = 'CruiseIntlTk';
             NtrIntlDatelineCruisesRow.nameProperty = 'CompanyCd';
             NtrIntlDatelineCruisesRow.localTextPrefix = 'PCHODSNVS.NtrIntlDatelineCruises';
-            var Fields;
-            (function (Fields) {
-            })(Fields = NtrIntlDatelineCruisesRow.Fields || (NtrIntlDatelineCruisesRow.Fields = {}));
-            [
-                'CruiseIntlTk',
-                'CompanyCd',
-                'CruiseSegmentCd',
-                'CruiseDaysQty',
-                'CruiseCalendarDaysQty',
-                'LoadDt'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(NtrIntlDatelineCruisesRow = PCHODSNVS.NtrIntlDatelineCruisesRow || (PCHODSNVS.NtrIntlDatelineCruisesRow = {}));
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
@@ -1613,9 +2070,6 @@ var DAP;
         var NtrIntlDatelineCruisesService;
         (function (NtrIntlDatelineCruisesService) {
             NtrIntlDatelineCruisesService.baseUrl = 'PCHODSNVS/NtrIntlDatelineCruises';
-            var Methods;
-            (function (Methods) {
-            })(Methods = NtrIntlDatelineCruisesService.Methods || (NtrIntlDatelineCruisesService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -1626,16 +2080,81 @@ var DAP;
                 NtrIntlDatelineCruisesService[x] = function (r, s, o) {
                     return Q.serviceRequest(NtrIntlDatelineCruisesService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = NtrIntlDatelineCruisesService.baseUrl + '/' + x;
             });
         })(NtrIntlDatelineCruisesService = PCHODSNVS.NtrIntlDatelineCruisesService || (PCHODSNVS.NtrIntlDatelineCruisesService = {}));
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var SsisConfigBaseForm = /** @class */ (function (_super) {
+            __extends(SsisConfigBaseForm, _super);
+            function SsisConfigBaseForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SsisConfigBaseForm.init) {
+                    SsisConfigBaseForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(SsisConfigBaseForm, [
+                        'ConfigurationFilter', w0,
+                        'PackagePath', w0,
+                        'ConfiguredValueType', w0,
+                        'ConfiguredValue', w0,
+                        'EnvironmentEnum', w1,
+                        'EnvironmentDesc', w0,
+                        'ModifiedBy', w0,
+                        'ModifiedOn', w2
+                    ]);
+                }
+                return _this;
+            }
+            SsisConfigBaseForm.formKey = 'SSISConfig.SsisConfigBase';
+            return SsisConfigBaseForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.SsisConfigBaseForm = SsisConfigBaseForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var SsisConfigBaseRow;
+        (function (SsisConfigBaseRow) {
+            SsisConfigBaseRow.idProperty = 'ConfigId';
+            SsisConfigBaseRow.nameProperty = 'ConfigurationFilter';
+            SsisConfigBaseRow.localTextPrefix = 'SSISConfig.SsisConfigBase';
+        })(SsisConfigBaseRow = SSISConfig.SsisConfigBaseRow || (SSISConfig.SsisConfigBaseRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var SsisConfigBaseService;
+        (function (SsisConfigBaseService) {
+            SsisConfigBaseService.baseUrl = 'SSISConfig/SsisConfigBase';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SsisConfigBaseService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SsisConfigBaseService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SsisConfigBaseService = SSISConfig.SsisConfigBaseService || (SSISConfig.SsisConfigBaseService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var Texts;
     (function (Texts) {
-        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, NCLHDSAR: { Request: { Address1: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestType: { Desc: 1, Type: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, LastUpdated: 1, MiddleNm: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 } }, SSISConfig: { SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DAP.Texts || (DAP.Texts = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -4118,6 +4637,103 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var FinReportPublishingSuppDialog = /** @class */ (function (_super) {
+            __extends(FinReportPublishingSuppDialog, _super);
+            function FinReportPublishingSuppDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.FinReportPublishingSuppForm(_this.idPrefix);
+                _this.form.PublishDat.addValidationRule(_this.uniqueName, function (e) {
+                    var pdt = new Date(Q.formatDate(_this.form.PublishDat.value, "MM/dd/yyyy"));
+                    //pdt.setHours(0, 0, 0, 0);
+                    var dt = new Date(Q.formatDate(new Date(), "MM/dd/yyyy"));
+                    //dt.setHours(0, 0, 0, 0);
+                    if (pdt.getTime() < dt.getTime()) {
+                        return "Publish Date Should be greater or equal than Today";
+                    }
+                });
+                return _this;
+            }
+            FinReportPublishingSuppDialog.prototype.getFormKey = function () { return DWSupport.FinReportPublishingSuppForm.formKey; };
+            FinReportPublishingSuppDialog.prototype.getIdProperty = function () { return DWSupport.FinReportPublishingSuppRow.idProperty; };
+            FinReportPublishingSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.FinReportPublishingSuppRow.localTextPrefix; };
+            FinReportPublishingSuppDialog.prototype.getNameProperty = function () { return DWSupport.FinReportPublishingSuppRow.nameProperty; };
+            FinReportPublishingSuppDialog.prototype.getService = function () { return DWSupport.FinReportPublishingSuppService.baseUrl; };
+            FinReportPublishingSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            FinReportPublishingSuppDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                if (this.form.ProcessedDateTs.value != null) {
+                    Serenity.EditorUtils.setReadOnly(this.form.PublishDat, true);
+                    Serenity.EditorUtils.setReadOnly(this.form.PublishCommentsTxt, true);
+                    Serenity.EditorUtils.setReadOnly(this.form.PublishCd, true);
+                    this.applyChangesButton.hide();
+                    this.saveAndCloseButton.hide();
+                }
+            };
+            FinReportPublishingSuppDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                // finding all editor elements and setting their readonly attribute
+                // note that this helper method only works with basic inputs, 
+                // some editors require widget based set readonly overload (setReadOnly)
+                //Serenity.EditorUtils.setReadonly(this.element.find('.editor'), true);
+                //// this.form.NclYn.element.closest('.category').toggleClass('category collapsible collapsed', true);
+                ////this.form.Address1.element.closest('.category').toggleClass('category collapsible collapsed', true);
+                //// img.toggleClass('fa-plus').toggleClass('fa-minus');
+                //// remove required asterisk (*)
+                //this.element.find('sup').hide();
+                //this.applyChangesButton.hide();
+                //this.saveAndCloseButton.hide();
+            };
+            FinReportPublishingSuppDialog.prototype.updateTitle = function () {
+                //super.updateTitle();
+                // remove super.updateTitle() call above and uncomment 
+                // below line if you'd like to use this version
+                // 
+                this.dialogTitle = 'Financial Report Publishing';
+            };
+            FinReportPublishingSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], FinReportPublishingSuppDialog);
+            return FinReportPublishingSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.FinReportPublishingSuppDialog = FinReportPublishingSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var FinReportPublishingSuppGrid = /** @class */ (function (_super) {
+            __extends(FinReportPublishingSuppGrid, _super);
+            function FinReportPublishingSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            FinReportPublishingSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.FinReportPublishingSupp'; };
+            FinReportPublishingSuppGrid.prototype.getDialogType = function () { return DWSupport.FinReportPublishingSuppDialog; };
+            FinReportPublishingSuppGrid.prototype.getIdProperty = function () { return DWSupport.FinReportPublishingSuppRow.idProperty; };
+            FinReportPublishingSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.FinReportPublishingSuppRow.localTextPrefix; };
+            FinReportPublishingSuppGrid.prototype.getService = function () { return DWSupport.FinReportPublishingSuppService.baseUrl; };
+            FinReportPublishingSuppGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                var btn = Q.first(buttons, function (x) { return x.cssClass == "add-button"; });
+                btn.title = Q.text("Add New");
+                return buttons;
+            };
+            FinReportPublishingSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], FinReportPublishingSuppGrid);
+            return FinReportPublishingSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.FinReportPublishingSuppGrid = FinReportPublishingSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var Membership;
     (function (Membership) {
         var LoginPanel = /** @class */ (function (_super) {
@@ -4442,6 +5058,52 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var AssigneeDialog = /** @class */ (function (_super) {
+            __extends(AssigneeDialog, _super);
+            function AssigneeDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new NCLHDSAR.AssigneeForm(_this.idPrefix);
+                return _this;
+            }
+            AssigneeDialog.prototype.getFormKey = function () { return NCLHDSAR.AssigneeForm.formKey; };
+            AssigneeDialog.prototype.getIdProperty = function () { return NCLHDSAR.AssigneeRow.idProperty; };
+            AssigneeDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.AssigneeRow.localTextPrefix; };
+            AssigneeDialog.prototype.getNameProperty = function () { return NCLHDSAR.AssigneeRow.nameProperty; };
+            AssigneeDialog.prototype.getService = function () { return NCLHDSAR.AssigneeService.baseUrl; };
+            AssigneeDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AssigneeDialog);
+            return AssigneeDialog;
+        }(Serenity.EntityDialog));
+        NCLHDSAR.AssigneeDialog = AssigneeDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var AssigneeGrid = /** @class */ (function (_super) {
+            __extends(AssigneeGrid, _super);
+            function AssigneeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            AssigneeGrid.prototype.getColumnsKey = function () { return 'NCLHDSAR.Assignee'; };
+            AssigneeGrid.prototype.getDialogType = function () { return NCLHDSAR.AssigneeDialog; };
+            AssigneeGrid.prototype.getIdProperty = function () { return NCLHDSAR.AssigneeRow.idProperty; };
+            AssigneeGrid.prototype.getLocalTextPrefix = function () { return NCLHDSAR.AssigneeRow.localTextPrefix; };
+            AssigneeGrid.prototype.getService = function () { return NCLHDSAR.AssigneeService.baseUrl; };
+            AssigneeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AssigneeGrid);
+            return AssigneeGrid;
+        }(Serenity.EntityGrid));
+        NCLHDSAR.AssigneeGrid = AssigneeGrid;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var RequestAttributesDialog = /** @class */ (function (_super) {
             __extends(RequestAttributesDialog, _super);
             function RequestAttributesDialog() {
@@ -4597,13 +5259,22 @@ var DAP;
                 columns.unshift({
                     field: 'Delete Row',
                     name: '',
-                    format: function (ctx) { return '<a class="inline-action delete-row" title="delete">' +
+                    format: function (ctx) { return '<a class="inline-action delete-row" title="delete row">' +
                         '<i class="fa fa-trash-o text-red"></i></a>'; },
                     width: 24,
                     minWidth: 24,
                     maxWidth: 24
                 });
-                columns.splice(6, 0, {
+                columns.splice(5, 0, {
+                    field: 'Copy Value',
+                    name: '',
+                    format: function (ctx) { return '<a class="inline-action copy-value" title="Copy value">' +
+                        '<i class="fa fa-clipboard text-green"></i></a>'; },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                columns.splice(7, 0, {
                     field: 'Resolve Date',
                     name: '',
                     format: function (ctx) {
@@ -4657,6 +5328,11 @@ var DAP;
                                 _this.refresh();
                             });
                         });
+                    }
+                    else if (target.hasClass('copy-value')) {
+                        var crow = Q.deepClone(this.itemAt(row));
+                        var dummy = $('<input>').val(crow.RequestValue).appendTo('body').select();
+                        document.execCommand('copy');
                     }
                 }
             };
@@ -4808,6 +5484,23 @@ var DAP;
                 //Q.first(filters, x => x.field == fld.ReqStatus).init = w => {
                 //    (w as Serenity.TextAreaEditor).value = "IN PROGRESS";
                 //};
+                // make employee filter a textbox, instead of lookup, and search by starts with
+                var filter = Q.first(filters, function (x) { return x.field == "LastName" /* LastName */; });
+                filter.title = "Last Name Starts With";
+                filter.type = Serenity.StringEditor;
+                filter.handler = function (h) {
+                    if (h.active) {
+                        h.request.Criteria = Serenity.Criteria.and(h.request.Criteria, [["LastName" /* LastName */], 'like', h.value + '%']);
+                    }
+                };
+                filter = Q.first(filters, function (x) { return x.field == "FirstName" /* FirstName */; });
+                filter.title = "First Name Starts With";
+                filter.type = Serenity.StringEditor;
+                filter.handler = function (h) {
+                    if (h.active) {
+                        h.request.Criteria = Serenity.Criteria.and(h.request.Criteria, [["FirstName" /* FirstName */], 'like', h.value + '%']);
+                    }
+                };
                 return filters;
             };
             /**
@@ -4952,6 +5645,52 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var RequestStatusDialog = /** @class */ (function (_super) {
+            __extends(RequestStatusDialog, _super);
+            function RequestStatusDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new NCLHDSAR.RequestStatusForm(_this.idPrefix);
+                return _this;
+            }
+            RequestStatusDialog.prototype.getFormKey = function () { return NCLHDSAR.RequestStatusForm.formKey; };
+            RequestStatusDialog.prototype.getIdProperty = function () { return NCLHDSAR.RequestStatusRow.idProperty; };
+            RequestStatusDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.RequestStatusRow.localTextPrefix; };
+            RequestStatusDialog.prototype.getNameProperty = function () { return NCLHDSAR.RequestStatusRow.nameProperty; };
+            RequestStatusDialog.prototype.getService = function () { return NCLHDSAR.RequestStatusService.baseUrl; };
+            RequestStatusDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RequestStatusDialog);
+            return RequestStatusDialog;
+        }(Serenity.EntityDialog));
+        NCLHDSAR.RequestStatusDialog = RequestStatusDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var RequestStatusGrid = /** @class */ (function (_super) {
+            __extends(RequestStatusGrid, _super);
+            function RequestStatusGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RequestStatusGrid.prototype.getColumnsKey = function () { return 'NCLHDSAR.RequestStatus'; };
+            RequestStatusGrid.prototype.getDialogType = function () { return NCLHDSAR.RequestStatusDialog; };
+            RequestStatusGrid.prototype.getIdProperty = function () { return NCLHDSAR.RequestStatusRow.idProperty; };
+            RequestStatusGrid.prototype.getLocalTextPrefix = function () { return NCLHDSAR.RequestStatusRow.localTextPrefix; };
+            RequestStatusGrid.prototype.getService = function () { return NCLHDSAR.RequestStatusService.baseUrl; };
+            RequestStatusGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RequestStatusGrid);
+            return RequestStatusGrid;
+        }(Serenity.EntityGrid));
+        NCLHDSAR.RequestStatusGrid = RequestStatusGrid;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var RequestTypeDialog = /** @class */ (function (_super) {
             __extends(RequestTypeDialog, _super);
             function RequestTypeDialog() {
@@ -5021,6 +5760,442 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var SwRequestAttributesDialog = /** @class */ (function (_super) {
+            __extends(SwRequestAttributesDialog, _super);
+            function SwRequestAttributesDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new NCLHDSAR.SwRequestAttributesForm(_this.idPrefix);
+                _this.form = new NCLHDSAR.SwRequestAttributesForm(_this.idPrefix);
+                _this.form.SystemMasterId.changeSelect2(function (e) {
+                    var sysid = Q.toId(_this.form.SystemMasterId.value);
+                    if (sysid != null) {
+                        _this.form.ResolvedDt.value = null;
+                    }
+                });
+                _this.form.RequestValue.changeSelect2(function (e) {
+                    var rqvalue = Q.toId(_this.form.RequestValue.value);
+                    if (rqvalue != null) {
+                        _this.form.ResolvedDt.value = null;
+                    }
+                });
+                //this.form.RequestValue.addValidationRule(this.uniqueName, e => {
+                //    if (!(/^[0-9]*$/.test(this.form.RequestValue.value))) return "Only Numbers";
+                //});
+                _this.form.RequestValue.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.SystemMasterId.value != null) {
+                        switch (_this.form.SystemMasterId.value) {
+                            case "2":
+                            case "3":
+                                if ((_this.form.RequestValue.value.length > 12) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid NVS MP Card Number Format";
+                                }
+                                break;
+                            case "4":
+                            case "5":
+                            case "6":
+                            case "7":
+                                if (_this.form.RequestValue.value.length > 18) {
+                                    return "Invalid SFDC ID Format";
+                                }
+                                break;
+                            case "1":
+                                if ((_this.form.RequestValue.value.length > 10) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid SEAWARE Client ID Format";
+                                }
+                                break;
+                            case "8":
+                            case "9":
+                                if ((_this.form.RequestValue.value.length > 10) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid EPSILON OCI/SSC Client ID Format";
+                                }
+                                break;
+                            case "10":
+                                if ((_this.form.RequestValue.value.length > 13) || (!(/^[0-9]*$/.test(_this.form.RequestValue.value)))) {
+                                    return "Invalid EPSILON NCL Client ID Format";
+                                }
+                                break;
+                        }
+                    }
+                });
+                return _this;
+            }
+            SwRequestAttributesDialog.prototype.getFormKey = function () { return NCLHDSAR.SwRequestAttributesForm.formKey; };
+            SwRequestAttributesDialog.prototype.getIdProperty = function () { return NCLHDSAR.SwRequestAttributesRow.idProperty; };
+            SwRequestAttributesDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.SwRequestAttributesRow.localTextPrefix; };
+            SwRequestAttributesDialog.prototype.getNameProperty = function () { return NCLHDSAR.SwRequestAttributesRow.nameProperty; };
+            SwRequestAttributesDialog.prototype.getService = function () { return NCLHDSAR.SwRequestAttributesService.baseUrl; };
+            SwRequestAttributesDialog.prototype.getToolbarButtons = function () {
+                var _this = this;
+                var btns = _super.prototype.getToolbarButtons.call(this);
+                var newBtn = {
+                    title: "Save And New",
+                    onClick: function () {
+                        _this.save(function () {
+                            var ent = {};
+                            ent.Id = Q.toId(_this.form.Id.value);
+                            _this.loadEntity(ent);
+                        });
+                    }
+                };
+                btns.push(newBtn);
+                return btns;
+            };
+            SwRequestAttributesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SwRequestAttributesDialog);
+            return SwRequestAttributesDialog;
+        }(Serenity.EntityDialog));
+        NCLHDSAR.SwRequestAttributesDialog = SwRequestAttributesDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../SwRequestAttributes/SwRequestAttributesDialog.ts" />
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwAttributeDialog = /** @class */ (function (_super) {
+            __extends(SwAttributeDialog, _super);
+            function SwAttributeDialog() {
+                return _super.call(this) || this;
+            }
+            SwAttributeDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                Serenity.EditorUtils.setReadOnly(this.form.Id, true);
+            };
+            SwAttributeDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SwAttributeDialog);
+            return SwAttributeDialog;
+        }(NCLHDSAR.SwRequestAttributesDialog));
+        NCLHDSAR.SwAttributeDialog = SwAttributeDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestAttributesGrid = /** @class */ (function (_super) {
+            __extends(SwRequestAttributesGrid, _super);
+            function SwRequestAttributesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SwRequestAttributesGrid.prototype.getColumnsKey = function () { return 'NCLHDSAR.SwRequestAttributes'; };
+            SwRequestAttributesGrid.prototype.getDialogType = function () { return NCLHDSAR.SwRequestAttributesDialog; };
+            SwRequestAttributesGrid.prototype.getIdProperty = function () { return NCLHDSAR.SwRequestAttributesRow.idProperty; };
+            SwRequestAttributesGrid.prototype.getLocalTextPrefix = function () { return NCLHDSAR.SwRequestAttributesRow.localTextPrefix; };
+            SwRequestAttributesGrid.prototype.getService = function () { return NCLHDSAR.SwRequestAttributesService.baseUrl; };
+            SwRequestAttributesGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
+            SwRequestAttributesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SwRequestAttributesGrid);
+            return SwRequestAttributesGrid;
+        }(Serenity.EntityGrid));
+        NCLHDSAR.SwRequestAttributesGrid = SwRequestAttributesGrid;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../SwRequestAttributes/SwRequestAttributesGrid.ts" />
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwAttributeGrid = /** @class */ (function (_super) {
+            __extends(SwAttributeGrid, _super);
+            function SwAttributeGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SwAttributeGrid.prototype.getDialogType = function () { return NCLHDSAR.SwAttributeDialog; };
+            SwAttributeGrid.prototype.getColumns = function () {
+                var columns = _super.prototype.getColumns.call(this);
+                columns.unshift({
+                    field: 'Delete Row',
+                    name: '',
+                    format: function (ctx) { return '<a class="inline-action delete-row" title="delete row">' +
+                        '<i class="fa fa-trash-o text-red"></i></a>'; },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                columns.splice(5, 0, {
+                    field: 'Copy Value',
+                    name: '',
+                    format: function (ctx) { return '<a class="inline-action copy-value" title="Copy value">' +
+                        '<i class="fa fa-clipboard text-green"></i></a>'; },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                columns.splice(7, 0, {
+                    field: 'Resolve Date',
+                    name: '',
+                    format: function (ctx) {
+                        var CurItem = ctx.item;
+                        var klass = "";
+                        if (CurItem.ResolvedDt == null) {
+                            klass = '<a class="inline-action resolve-date" title="Mark as Resolve">' +
+                                '<i class="fa fa-calendar-plus-o text-green"></i></a>';
+                        }
+                        else {
+                            klass = '<a class="inline-action date-resolved" title="Resolved">' +
+                                '<i class="fa  fa-calendar-check-o text-green"></i></a>';
+                        }
+                        return klass;
+                    },
+                    width: 24,
+                    minWidth: 24,
+                    maxWidth: 24
+                });
+                return columns;
+            };
+            SwAttributeGrid.prototype.onClick = function (e, row, cell) {
+                var _this = this;
+                _super.prototype.onClick.call(this, e, row, cell);
+                if (e.isDefaultPrevented())
+                    return;
+                var item = this.itemAt(row);
+                var target = $(e.target);
+                // if user clicks "i" element, e.g. icon
+                if (target.parent().hasClass('inline-action'))
+                    target = target.parent();
+                if (target.hasClass('inline-action')) {
+                    e.preventDefault();
+                    if (target.hasClass('delete-row')) {
+                        Q.confirm('Delete record?', function () {
+                            NCLHDSAR.SwRequestAttributesService.Delete({
+                                EntityId: item.RequestAttributeId,
+                            }, function (response) {
+                                _this.refresh();
+                            });
+                        });
+                    }
+                    else if (target.hasClass('resolve-date')) {
+                        Q.confirm('Mark as resolve?', function () {
+                            var crow = Q.deepClone(_this.itemAt(row));
+                            crow.ResolvedDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                            NCLHDSAR.SwRequestAttributesService.Update({
+                                EntityId: item.RequestAttributeId,
+                                Entity: crow
+                            }, function (response) {
+                                _this.refresh();
+                            });
+                        });
+                    }
+                    else if (target.hasClass('copy-value')) {
+                        var crow = Q.deepClone(this.itemAt(row));
+                        var dummy = $('<input>').val(crow.RequestValue).appendTo('body').select();
+                        document.execCommand('copy');
+                    }
+                }
+            };
+            SwAttributeGrid.prototype.initEntityDialog = function (itemType, dialog) {
+                _super.prototype.initEntityDialog.call(this, itemType, dialog);
+                Serenity.SubDialogHelper.cascade(dialog, this.element.closest('.ui-dialog'));
+            };
+            SwAttributeGrid.prototype.addButtonClick = function () {
+                this.editItem({ Id: this.requestID });
+            };
+            SwAttributeGrid.prototype.getInitialTitle = function () {
+                return null;
+            };
+            SwAttributeGrid.prototype.getGridCanLoad = function () {
+                return _super.prototype.getGridCanLoad.call(this) && !!this.requestID;
+            };
+            Object.defineProperty(SwAttributeGrid.prototype, "requestID", {
+                get: function () {
+                    return this._RequestID;
+                },
+                set: function (value) {
+                    if (this._RequestID !== value) {
+                        this._RequestID = value;
+                        this.setEquality('ID', value);
+                        this.refresh();
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            SwAttributeGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SwAttributeGrid);
+            return SwAttributeGrid;
+        }(NCLHDSAR.SwRequestAttributesGrid));
+        NCLHDSAR.SwAttributeGrid = SwAttributeGrid;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestDialog = /** @class */ (function (_super) {
+            __extends(SwRequestDialog, _super);
+            function SwRequestDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new NCLHDSAR.SwRequestForm(_this.idPrefix);
+                _this.aGrid = new NCLHDSAR.SwAttributeGrid(_this.byId('SwAttributeGrid'));
+                // force order dialog to open in Dialog mode instead of Panel mode
+                // which is set as default on OrderDialog with @panelAttribute
+                //this.aGrid.openDialogsAsPanel = true;
+                //this.byId('General').closest('.field').hide().end().appendTo(this.byId('TabDetails'));
+                DAP.DialogUtils.pendingChangesConfirmation(_this.element, function () { return _this.getSaveState() != _this.loadedState; });
+                return _this;
+            }
+            SwRequestDialog.prototype.getFormKey = function () { return NCLHDSAR.SwRequestForm.formKey; };
+            SwRequestDialog.prototype.getIdProperty = function () { return NCLHDSAR.SwRequestRow.idProperty; };
+            SwRequestDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.SwRequestRow.localTextPrefix; };
+            SwRequestDialog.prototype.getNameProperty = function () { return NCLHDSAR.SwRequestRow.nameProperty; };
+            SwRequestDialog.prototype.getService = function () { return NCLHDSAR.SwRequestService.baseUrl; };
+            SwRequestDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            SwRequestDialog.prototype.getSaveState = function () {
+                try {
+                    return $.toJSON(this.getSaveEntity());
+                }
+                catch (e) {
+                    return null;
+                }
+            };
+            SwRequestDialog.prototype.loadResponse = function (data) {
+                _super.prototype.loadResponse.call(this, data);
+                this.loadedState = this.getSaveState();
+            };
+            SwRequestDialog.prototype.loadEntity = function (entity) {
+                _super.prototype.loadEntity.call(this, entity);
+                Serenity.TabsExtensions.setDisabled(this.tabs, 'Attributes', this.isNewOrDeleted());
+                this.aGrid.requestID = entity.RecordId;
+            };
+            SwRequestDialog.prototype.onSaveSuccess = function (response) {
+                _super.prototype.onSaveSuccess.call(this, response);
+                //Q.reloadLookup('Default.Request');
+            };
+            SwRequestDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                // finding all editor elements and setting their readonly attribute
+                // note that this helper method only works with basic inputs, 
+                // some editors require widget based set readonly overload (setReadOnly)
+                //Serenity.EditorUtils.setReadonly(this.element.find('.editor'), true);
+                // this.form.NclYn.element.closest('.category').toggleClass('category collapsible collapsed', true);
+                //this.form.Address1.element.closest('.category').toggleClass('category collapsible collapsed', true);
+                // img.toggleClass('fa-plus').toggleClass('fa-minus');
+                // remove required asterisk (*)
+                //this.element.find('sup').hide();
+                //this.applyChangesButton.hide();
+                //this.saveAndCloseButton.hide();
+            };
+            SwRequestDialog.prototype.updateTitle = function () {
+                //super.updateTitle();
+                // remove super.updateTitle() call above and uncomment 
+                // below line if you'd like to use this version
+                // 
+                this.dialogTitle = 'View Request (' + this.getEntityNameFieldValue() + ')';
+            };
+            SwRequestDialog.prototype.createToolbar = function () {
+            };
+            SwRequestDialog.prototype.createQuickSearchInput = function () {
+            };
+            SwRequestDialog = __decorate([
+                Serenity.Decorators.registerClass(),
+                Serenity.Decorators.panel()
+            ], SwRequestDialog);
+            return SwRequestDialog;
+        }(Serenity.EntityDialog));
+        NCLHDSAR.SwRequestDialog = SwRequestDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestGrid = /** @class */ (function (_super) {
+            __extends(SwRequestGrid, _super);
+            function SwRequestGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SwRequestGrid.prototype.getColumnsKey = function () { return 'NCLHDSAR.SwRequest'; };
+            SwRequestGrid.prototype.getDialogType = function () { return NCLHDSAR.SwRequestDialog; };
+            SwRequestGrid.prototype.getIdProperty = function () { return NCLHDSAR.SwRequestRow.idProperty; };
+            SwRequestGrid.prototype.getLocalTextPrefix = function () { return NCLHDSAR.SwRequestRow.localTextPrefix; };
+            SwRequestGrid.prototype.getService = function () { return NCLHDSAR.SwRequestService.baseUrl; };
+            SwRequestGrid.prototype.getQuickFilters = function () {
+                // get quick filter list from base class
+                var filters = _super.prototype.getQuickFilters.call(this);
+                // make employee filter a textbox, instead of lookup, and search by starts with
+                var filter = Q.first(filters, function (x) { return x.field == "ClientLastName" /* ClientLastName */; });
+                filter.title = "Last Name Starts With";
+                filter.type = Serenity.StringEditor;
+                filter.handler = function (h) {
+                    if (h.active) {
+                        h.request.Criteria = Serenity.Criteria.and(h.request.Criteria, [["ClientLastName" /* ClientLastName */], 'like', h.value + '%']);
+                    }
+                };
+                filter = Q.first(filters, function (x) { return x.field == "ClientFirstName" /* ClientFirstName */; });
+                filter.title = "First Name Starts With";
+                filter.type = Serenity.StringEditor;
+                filter.handler = function (h) {
+                    if (h.active) {
+                        h.request.Criteria = Serenity.Criteria.and(h.request.Criteria, [["ClientFirstName" /* ClientFirstName */], 'like', h.value + '%']);
+                    }
+                };
+                return filters;
+            };
+            /**
+             * This method is called to get list of buttons to be created.
+             */
+            SwRequestGrid.prototype.getButtons = function () {
+                // call base method to get list of buttons
+                // by default, base entity grid adds a few buttons, 
+                // add, refresh, column selection in order.
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            SwRequestGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
+            SwRequestGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SwRequestGrid);
+            return SwRequestGrid;
+        }(Serenity.EntityGrid));
+        NCLHDSAR.SwRequestGrid = SwRequestGrid;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../../Common/Helpers/GridEditorBase.ts" />
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var SwRequestAttributesEditor = /** @class */ (function (_super) {
+            __extends(SwRequestAttributesEditor, _super);
+            function SwRequestAttributesEditor(container) {
+                return _super.call(this, container) || this;
+            }
+            SwRequestAttributesEditor.prototype.getColumnsKey = function () { return 'NCLHDSAR.SwRequestAttributes'; };
+            SwRequestAttributesEditor.prototype.getDialogType = function () { return NCLHDSAR.SwRequestAttributesDialog; };
+            SwRequestAttributesEditor.prototype.getLocalTextPrefix = function () { return NCLHDSAR.SwRequestAttributesRow.localTextPrefix; };
+            SwRequestAttributesEditor = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SwRequestAttributesEditor);
+            return SwRequestAttributesEditor;
+        }(DAP.Common.GridEditorBase));
+        NCLHDSAR.SwRequestAttributesEditor = SwRequestAttributesEditor;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var SystemMasterDialog = /** @class */ (function (_super) {
             __extends(SystemMasterDialog, _super);
             function SystemMasterDialog() {
@@ -5054,7 +6229,7 @@ var DAP;
                 return NCLHDSAR.SystemMasterRow.lookupKey;
             };
             SystemMasterEditor.prototype.getItemText = function (item, lookup) {
-                return _super.prototype.getItemText.call(this, item, lookup) + ' (' + item.Id + ')';
+                return _super.prototype.getItemText.call(this, item, lookup) + ' (' + item.Id + ' - ' + item.SystemTable + ')';
             };
             SystemMasterEditor = __decorate([
                 Serenity.Decorators.registerEditor()
@@ -5085,6 +6260,52 @@ var DAP;
         }(Serenity.EntityGrid));
         NCLHDSAR.SystemMasterGrid = SystemMasterGrid;
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var AmoslevelDialog = /** @class */ (function (_super) {
+            __extends(AmoslevelDialog, _super);
+            function AmoslevelDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new NCLHODSSPENDVIS.AmoslevelForm(_this.idPrefix);
+                return _this;
+            }
+            AmoslevelDialog.prototype.getFormKey = function () { return NCLHODSSPENDVIS.AmoslevelForm.formKey; };
+            AmoslevelDialog.prototype.getIdProperty = function () { return NCLHODSSPENDVIS.AmoslevelRow.idProperty; };
+            AmoslevelDialog.prototype.getLocalTextPrefix = function () { return NCLHODSSPENDVIS.AmoslevelRow.localTextPrefix; };
+            AmoslevelDialog.prototype.getNameProperty = function () { return NCLHODSSPENDVIS.AmoslevelRow.nameProperty; };
+            AmoslevelDialog.prototype.getService = function () { return NCLHODSSPENDVIS.AmoslevelService.baseUrl; };
+            AmoslevelDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AmoslevelDialog);
+            return AmoslevelDialog;
+        }(Serenity.EntityDialog));
+        NCLHODSSPENDVIS.AmoslevelDialog = AmoslevelDialog;
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var AmoslevelGrid = /** @class */ (function (_super) {
+            __extends(AmoslevelGrid, _super);
+            function AmoslevelGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            AmoslevelGrid.prototype.getColumnsKey = function () { return 'NCLHODSSPENDVIS.Amoslevel'; };
+            AmoslevelGrid.prototype.getDialogType = function () { return NCLHODSSPENDVIS.AmoslevelDialog; };
+            AmoslevelGrid.prototype.getIdProperty = function () { return NCLHODSSPENDVIS.AmoslevelRow.idProperty; };
+            AmoslevelGrid.prototype.getLocalTextPrefix = function () { return NCLHODSSPENDVIS.AmoslevelRow.localTextPrefix; };
+            AmoslevelGrid.prototype.getService = function () { return NCLHODSSPENDVIS.AmoslevelService.baseUrl; };
+            AmoslevelGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AmoslevelGrid);
+            return AmoslevelGrid;
+        }(Serenity.EntityGrid));
+        NCLHODSSPENDVIS.AmoslevelGrid = AmoslevelGrid;
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -5239,19 +6460,272 @@ var DAP;
         var OutboundCommissionHistGrid = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistGrid, _super);
             function OutboundCommissionHistGrid(container) {
-                return _super.call(this, container) || this;
+                var _this = _super.call(this, container) || this;
+                _this.pendingChanges = {};
+                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
+                return _this;
             }
             OutboundCommissionHistGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionHist'; };
             OutboundCommissionHistGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionHistDialog; };
             OutboundCommissionHistGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistRow.idProperty; };
             OutboundCommissionHistGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistRow.localTextPrefix; };
             OutboundCommissionHistGrid.prototype.getService = function () { return PCHODS.OutboundCommissionHistService.baseUrl; };
+            OutboundCommissionHistGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "column-picker"; }), 1);
+                buttons.push({
+                    title: 'Save Changes',
+                    cssClass: 'apply-changes-button disabled',
+                    onClick: function (e) { return _this.saveClick(); },
+                    separator: true
+                });
+                buttons.push({
+                    title: 'Create New Bracket',
+                    cssClass: 'add-button',
+                    onClick: function (e) { return _this.createNewBracketClick(); },
+                    separator: true
+                });
+                return buttons;
+            };
+            OutboundCommissionHistGrid.prototype.onViewProcessData = function (response) {
+                this.pendingChanges = {};
+                this.setSaveButtonState();
+                return _super.prototype.onViewProcessData.call(this, response);
+            };
+            OutboundCommissionHistGrid.prototype.setSaveButtonState = function () {
+                this.toolbar.findButton('apply-changes-button').toggleClass('disabled', Object.keys(this.pendingChanges).length === 0);
+            };
+            OutboundCommissionHistGrid.prototype.getEffectiveValue = function (item, field) {
+                var pending = this.pendingChanges[item.CommissionHistId];
+                if (pending && pending[field] !== undefined) {
+                    return pending[field];
+                }
+                return item[field];
+            };
+            OutboundCommissionHistGrid.prototype.numericInputFormatter = function (ctx, num_dec) {
+                var klass = 'edit numeric';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.CommissionHistId];
+                if (pending && pending[ctx.column.field] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, ctx.column.field);
+                if (num_dec == 2) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                }
+                else if (num_dec == 4) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.####') + "'/>";
+                }
+            };
+            OutboundCommissionHistGrid.prototype.getColumns = function () {
+                var _this = this;
+                var columns = _super.prototype.getColumns.call(this);
+                var num = function (ctx) { return _this.numericInputFormatter(ctx, 2); };
+                var num4 = function (ctx) { return _this.numericInputFormatter(ctx, 4); };
+                Q.first(columns, function (x) { return x.field === "LowNumBookings" /* LowNumBookings */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "HighNumBookings" /* HighNumBookings */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "CommissionRate" /* CommissionRate */; }).format = num4;
+                return columns;
+            };
+            OutboundCommissionHistGrid.prototype.inputsChange = function (e) {
+                var cell = this.slickGrid.getCellFromEvent(e);
+                var item = this.itemAt(cell.row);
+                var input = $(e.target);
+                var field = input.data('field');
+                var text = Q.coalesce(Q.trimToNull(input.val()), '0');
+                var pending = this.pendingChanges[item.CommissionHistId];
+                var effective = this.getEffectiveValue(item, field);
+                var oldText;
+                if (input.hasClass("numeric"))
+                    oldText = Q.formatNumber(effective, '0.##');
+                else
+                    oldText = effective;
+                var value;
+                if (field === 'CommissionRate' || field == 'LowNumBookings' || field == 'HighNumBookings') {
+                    value = Q.parseDecimal(text);
+                    if (value == null || isNaN(value)) {
+                        Q.notifyError(Q.text('Validation.Decimal'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                }
+                else if (input.hasClass("numeric")) {
+                    var i = Q.parseInteger(text);
+                    if (isNaN(i) || i > 32767 || i < 0) {
+                        Q.notifyError(Q.text('Validation.Integer'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                    value = i;
+                }
+                else
+                    value = text;
+                if (!pending) {
+                    this.pendingChanges[item.CommissionHistId] = pending = {};
+                }
+                pending[field] = value;
+                item[field] = value;
+                this.view.refresh();
+                if (input.hasClass("numeric"))
+                    value = Q.formatNumber(value, '0.##');
+                input.val(value).addClass('dirty');
+                this.setSaveButtonState();
+            };
+            OutboundCommissionHistGrid.prototype.saveClick = function () {
+                if (Object.keys(this.pendingChanges).length === 0) {
+                    return;
+                }
+                // this calls save service for all modified rows, one by one
+                // you could write a batch update service
+                var keys = Object.keys(this.pendingChanges);
+                var current = -1;
+                var self = this;
+                (function saveNext() {
+                    if (++current >= keys.length) {
+                        self.refresh();
+                        return;
+                    }
+                    var key = keys[current];
+                    var entity = Q.deepClone(self.pendingChanges[key]);
+                    entity.CommissionHistId = key;
+                    Q.serviceRequest('PCHODS/OutboundCommissionHist/Update', {
+                        EntityId: key,
+                        Entity: entity
+                    }, function (response) {
+                        delete self.pendingChanges[key];
+                        saveNext();
+                    });
+                })();
+            };
+            OutboundCommissionHistGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                // need to register this plugin for grouping or you'll have errors
+                grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+                this.view.setGrouping([{
+                        getter: 'CompanyName'
+                    }]);
+                return grid;
+            };
+            OutboundCommissionHistGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.showFooterRow = false;
+                return opt;
+            };
+            OutboundCommissionHistGrid.prototype.usePager = function () {
+                return false;
+            };
+            OutboundCommissionHistGrid.prototype.createNewBracketClick = function () {
+                var _this = this;
+                var dialog = new PCHODS.SelectComapanyDialog();
+                dialog.returnData = function (dataList) {
+                    _this._CompanyID = dataList;
+                };
+                this.initDialog(dialog);
+                dialog.dialogOpen();
+            };
             OutboundCommissionHistGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], OutboundCommissionHistGrid);
             return OutboundCommissionHistGrid;
         }(Serenity.EntityGrid));
         PCHODS.OutboundCommissionHistGrid = OutboundCommissionHistGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var SelectComapanyDialog = /** @class */ (function (_super) {
+            __extends(SelectComapanyDialog, _super);
+            function SelectComapanyDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new PCHODS.SelectCompanyForm(_this.idPrefix);
+                _this.dialogTitle = "Create New Bracket";
+                return _this;
+            }
+            SelectComapanyDialog.prototype.getFormKey = function () { return PCHODS.SelectCompanyForm.formKey; };
+            SelectComapanyDialog.prototype.createBracket = function () {
+                var HistRow, _a = {};
+                var equalFilter = { "CompanyCd": this.form.CompanyCd.value };
+                PCHODS.OutboundCommissionHistService.List({
+                    EqualityFilter: equalFilter
+                }, function (response) {
+                    HistRow = response.Entities;
+                });
+            };
+            SelectComapanyDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Create New Bracket',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.CompanyCd.value == null ||
+                                Q.isEmptyOrNull(_this.form.CompanyCd.value)) {
+                                Q.notifyError("Please select a Company!");
+                                return;
+                            }
+                            var HistRow, _a = {};
+                            var equalFilter = { "CompanyCd": _this.form.CompanyCd.value };
+                            PCHODS.OutboundCommissionHistService.List({
+                                EqualityFilter: equalFilter
+                            }, function (response) {
+                                HistRow = response.Entities;
+                                var _loop_1 = function (item) {
+                                    item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                                    //Q.alert(item.InactiveDt);
+                                    PCHODS.OutboundCommissionHistService.Update({
+                                        EntityId: item.CommissionHistId,
+                                        Entity: item
+                                    }, function (response) {
+                                        item.CommissionHistId = null;
+                                        item.ActiveDt = item.InactiveDt;
+                                        item.InactiveDt = null;
+                                        PCHODS.OutboundCommissionHistService.Create({
+                                            Entity: item
+                                        }, function (response) {
+                                            Serenity.SubDialogHelper.triggerDataChange(_this);
+                                        });
+                                    });
+                                };
+                                for (var _i = 0, HistRow_1 = HistRow; _i < HistRow_1.length; _i++) {
+                                    var item = HistRow_1[_i];
+                                    _loop_1(item);
+                                }
+                                Q.notifySuccess("Bracket Created Successfully!", '');
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            SelectComapanyDialog.prototype.getDialogOptions = function () {
+                var opt = _super.prototype.getDialogOptions.call(this);
+                opt.width = 550;
+                return opt;
+            };
+            SelectComapanyDialog.prototype.onDialogClose = function () {
+                this.returnData(this.form.CompanyCd.value);
+            };
+            SelectComapanyDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SelectComapanyDialog);
+            return SelectComapanyDialog;
+        }(Serenity.PropertyDialog));
+        PCHODS.SelectComapanyDialog = SelectComapanyDialog;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -5285,13 +6759,162 @@ var DAP;
         var OutboundCommissionHistAuGrid = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistAuGrid, _super);
             function OutboundCommissionHistAuGrid(container) {
-                return _super.call(this, container) || this;
+                var _this = _super.call(this, container) || this;
+                _this.pendingChanges = {};
+                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
+                return _this;
             }
             OutboundCommissionHistAuGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionHistAu'; };
             OutboundCommissionHistAuGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionHistAuDialog; };
             OutboundCommissionHistAuGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistAuRow.idProperty; };
             OutboundCommissionHistAuGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistAuRow.localTextPrefix; };
             OutboundCommissionHistAuGrid.prototype.getService = function () { return PCHODS.OutboundCommissionHistAuService.baseUrl; };
+            OutboundCommissionHistAuGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "column-picker"; }), 1);
+                buttons.push({
+                    title: 'Save Changes',
+                    cssClass: 'apply-changes-button disabled',
+                    onClick: function (e) { return _this.saveClick(); },
+                    separator: true
+                });
+                return buttons;
+            };
+            OutboundCommissionHistAuGrid.prototype.onViewProcessData = function (response) {
+                this.pendingChanges = {};
+                this.setSaveButtonState();
+                return _super.prototype.onViewProcessData.call(this, response);
+            };
+            OutboundCommissionHistAuGrid.prototype.setSaveButtonState = function () {
+                this.toolbar.findButton('apply-changes-button').toggleClass('disabled', Object.keys(this.pendingChanges).length === 0);
+            };
+            OutboundCommissionHistAuGrid.prototype.getEffectiveValue = function (item, field) {
+                var pending = this.pendingChanges[item.CommissionHistAuId];
+                if (pending && pending[field] !== undefined) {
+                    return pending[field];
+                }
+                return item[field];
+            };
+            OutboundCommissionHistAuGrid.prototype.numericInputFormatter = function (ctx, num_dec) {
+                var klass = 'edit numeric';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.CommissionHistAuId];
+                if (pending && pending[ctx.column.field] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, ctx.column.field);
+                if (num_dec == 2) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                }
+                else if (num_dec == 4) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.####') + "'/>";
+                }
+            };
+            OutboundCommissionHistAuGrid.prototype.getColumns = function () {
+                var _this = this;
+                var columns = _super.prototype.getColumns.call(this);
+                var num = function (ctx) { return _this.numericInputFormatter(ctx, 2); };
+                var num4 = function (ctx) { return _this.numericInputFormatter(ctx, 4); };
+                Q.first(columns, function (x) { return x.field === "LowNumBookings" /* LowNumBookings */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "HighNumBookings" /* HighNumBookings */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "CommissionRate" /* CommissionRate */; }).format = num4;
+                return columns;
+            };
+            OutboundCommissionHistAuGrid.prototype.inputsChange = function (e) {
+                var cell = this.slickGrid.getCellFromEvent(e);
+                var item = this.itemAt(cell.row);
+                var input = $(e.target);
+                var field = input.data('field');
+                var text = Q.coalesce(Q.trimToNull(input.val()), '0');
+                var pending = this.pendingChanges[item.CommissionHistAuId];
+                var effective = this.getEffectiveValue(item, field);
+                var oldText;
+                if (input.hasClass("numeric"))
+                    oldText = Q.formatNumber(effective, '0.##');
+                else
+                    oldText = effective;
+                var value;
+                if (field === 'CommissionRate' || field == 'LowNumBookings' || field == 'HighNumBookings') {
+                    value = Q.parseDecimal(text);
+                    if (value == null || isNaN(value)) {
+                        Q.notifyError(Q.text('Validation.Decimal'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                }
+                else if (input.hasClass("numeric")) {
+                    var i = Q.parseInteger(text);
+                    if (isNaN(i) || i > 32767 || i < 0) {
+                        Q.notifyError(Q.text('Validation.Integer'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                    value = i;
+                }
+                else
+                    value = text;
+                if (!pending) {
+                    this.pendingChanges[item.CommissionHistAuId] = pending = {};
+                }
+                pending[field] = value;
+                item[field] = value;
+                this.view.refresh();
+                if (input.hasClass("numeric"))
+                    value = Q.formatNumber(value, '0.##');
+                input.val(value).addClass('dirty');
+                this.setSaveButtonState();
+            };
+            OutboundCommissionHistAuGrid.prototype.saveClick = function () {
+                if (Object.keys(this.pendingChanges).length === 0) {
+                    return;
+                }
+                // this calls save service for all modified rows, one by one
+                // you could write a batch update service
+                var keys = Object.keys(this.pendingChanges);
+                var current = -1;
+                var self = this;
+                (function saveNext() {
+                    if (++current >= keys.length) {
+                        self.refresh();
+                        return;
+                    }
+                    var key = keys[current];
+                    var entity = Q.deepClone(self.pendingChanges[key]);
+                    entity.CommissionHistAuId = key;
+                    Q.serviceRequest('PCHODS/OutboundCommissionHistAu/Update', {
+                        EntityId: key,
+                        Entity: entity
+                    }, function (response) {
+                        delete self.pendingChanges[key];
+                        saveNext();
+                    });
+                })();
+            };
+            OutboundCommissionHistAuGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                // need to register this plugin for grouping or you'll have errors
+                grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+                this.view.setGrouping([{
+                        getter: 'CompanyName'
+                    }]);
+                return grid;
+            };
+            OutboundCommissionHistAuGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.showFooterRow = false;
+                return opt;
+            };
+            OutboundCommissionHistAuGrid.prototype.usePager = function () {
+                return false;
+            };
             OutboundCommissionHistAuGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], OutboundCommissionHistAuGrid);
@@ -5331,13 +6954,162 @@ var DAP;
         var OutboundCommissionHistBrGrid = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistBrGrid, _super);
             function OutboundCommissionHistBrGrid(container) {
-                return _super.call(this, container) || this;
+                var _this = _super.call(this, container) || this;
+                _this.pendingChanges = {};
+                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
+                return _this;
             }
             OutboundCommissionHistBrGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundCommissionHistBr'; };
             OutboundCommissionHistBrGrid.prototype.getDialogType = function () { return PCHODS.OutboundCommissionHistBrDialog; };
             OutboundCommissionHistBrGrid.prototype.getIdProperty = function () { return PCHODS.OutboundCommissionHistBrRow.idProperty; };
             OutboundCommissionHistBrGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundCommissionHistBrRow.localTextPrefix; };
             OutboundCommissionHistBrGrid.prototype.getService = function () { return PCHODS.OutboundCommissionHistBrService.baseUrl; };
+            OutboundCommissionHistBrGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "column-picker"; }), 1);
+                buttons.push({
+                    title: 'Save Changes',
+                    cssClass: 'apply-changes-button disabled',
+                    onClick: function (e) { return _this.saveClick(); },
+                    separator: true
+                });
+                return buttons;
+            };
+            OutboundCommissionHistBrGrid.prototype.onViewProcessData = function (response) {
+                this.pendingChanges = {};
+                this.setSaveButtonState();
+                return _super.prototype.onViewProcessData.call(this, response);
+            };
+            OutboundCommissionHistBrGrid.prototype.setSaveButtonState = function () {
+                this.toolbar.findButton('apply-changes-button').toggleClass('disabled', Object.keys(this.pendingChanges).length === 0);
+            };
+            OutboundCommissionHistBrGrid.prototype.getEffectiveValue = function (item, field) {
+                var pending = this.pendingChanges[item.CommissionHistBrId];
+                if (pending && pending[field] !== undefined) {
+                    return pending[field];
+                }
+                return item[field];
+            };
+            OutboundCommissionHistBrGrid.prototype.numericInputFormatter = function (ctx, num_dec) {
+                var klass = 'edit numeric';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.CommissionHistBrId];
+                if (pending && pending[ctx.column.field] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, ctx.column.field);
+                if (num_dec == 2) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                }
+                else if (num_dec == 4) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.####') + "'/>";
+                }
+            };
+            OutboundCommissionHistBrGrid.prototype.getColumns = function () {
+                var _this = this;
+                var columns = _super.prototype.getColumns.call(this);
+                var num = function (ctx) { return _this.numericInputFormatter(ctx, 2); };
+                var num4 = function (ctx) { return _this.numericInputFormatter(ctx, 4); };
+                Q.first(columns, function (x) { return x.field === "LowNumBookings" /* LowNumBookings */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "HighNumBookings" /* HighNumBookings */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "CommissionRate" /* CommissionRate */; }).format = num4;
+                return columns;
+            };
+            OutboundCommissionHistBrGrid.prototype.inputsChange = function (e) {
+                var cell = this.slickGrid.getCellFromEvent(e);
+                var item = this.itemAt(cell.row);
+                var input = $(e.target);
+                var field = input.data('field');
+                var text = Q.coalesce(Q.trimToNull(input.val()), '0');
+                var pending = this.pendingChanges[item.CommissionHistBrId];
+                var effective = this.getEffectiveValue(item, field);
+                var oldText;
+                if (input.hasClass("numeric"))
+                    oldText = Q.formatNumber(effective, '0.##');
+                else
+                    oldText = effective;
+                var value;
+                if (field === 'CommissionRate' || field == 'LowNumBookings' || field == 'HighNumBookings') {
+                    value = Q.parseDecimal(text);
+                    if (value == null || isNaN(value)) {
+                        Q.notifyError(Q.text('Validation.Decimal'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                }
+                else if (input.hasClass("numeric")) {
+                    var i = Q.parseInteger(text);
+                    if (isNaN(i) || i > 32767 || i < 0) {
+                        Q.notifyError(Q.text('Validation.Integer'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                    value = i;
+                }
+                else
+                    value = text;
+                if (!pending) {
+                    this.pendingChanges[item.CommissionHistBrId] = pending = {};
+                }
+                pending[field] = value;
+                item[field] = value;
+                this.view.refresh();
+                if (input.hasClass("numeric"))
+                    value = Q.formatNumber(value, '0.##');
+                input.val(value).addClass('dirty');
+                this.setSaveButtonState();
+            };
+            OutboundCommissionHistBrGrid.prototype.saveClick = function () {
+                if (Object.keys(this.pendingChanges).length === 0) {
+                    return;
+                }
+                // this calls save service for all modified rows, one by one
+                // you could write a batch update service
+                var keys = Object.keys(this.pendingChanges);
+                var current = -1;
+                var self = this;
+                (function saveNext() {
+                    if (++current >= keys.length) {
+                        self.refresh();
+                        return;
+                    }
+                    var key = keys[current];
+                    var entity = Q.deepClone(self.pendingChanges[key]);
+                    entity.CommissionHistBrId = key;
+                    Q.serviceRequest('PCHODS/OutboundCommissionHistBr/Update', {
+                        EntityId: key,
+                        Entity: entity
+                    }, function (response) {
+                        delete self.pendingChanges[key];
+                        saveNext();
+                    });
+                })();
+            };
+            OutboundCommissionHistBrGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                // need to register this plugin for grouping or you'll have errors
+                grid.registerPlugin(new Slick.Data.GroupItemMetadataProvider());
+                this.view.setGrouping([{
+                        getter: 'CompanyName'
+                    }]);
+                return grid;
+            };
+            OutboundCommissionHistBrGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.showFooterRow = false;
+                return opt;
+            };
+            OutboundCommissionHistBrGrid.prototype.usePager = function () {
+                return false;
+            };
             OutboundCommissionHistBrGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], OutboundCommissionHistBrGrid);
@@ -5368,106 +7140,6 @@ var DAP;
         }(Serenity.EntityDialog));
         PCHODS.OutboundCommissionPeriodDialog = OutboundCommissionPeriodDialog;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHODS;
-    (function (PCHODS) {
-        var CompanyEditor = /** @class */ (function (_super) {
-            __extends(CompanyEditor, _super);
-            function CompanyEditor(hidden) {
-                return _super.call(this, hidden) || this;
-            }
-            CompanyEditor.prototype.getLookupKey = function () {
-                return PCHODS.OutboundCompanyRow.lookupKey;
-            };
-            CompanyEditor.prototype.getItemText = function (item, lookup) {
-                return _super.prototype.getItemText.call(this, item, lookup) +
-                    ' (' +
-                    item.Nm +
-                    ')';
-            };
-            CompanyEditor = __decorate([
-                Serenity.Decorators.registerEditor()
-            ], CompanyEditor);
-            return CompanyEditor;
-        }(Serenity.LookupEditorBase));
-        PCHODS.CompanyEditor = CompanyEditor;
-    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHODS;
-    (function (PCHODS) {
-        var UsersEditor = /** @class */ (function (_super) {
-            __extends(UsersEditor, _super);
-            function UsersEditor(hidden) {
-                return _super.call(this, hidden) || this;
-            }
-            UsersEditor.prototype.getLookupKey = function () {
-                return PCHODS.OutboundNvsUsersRow.lookupKey;
-            };
-            UsersEditor.prototype.getItemText = function (item, lookup) {
-                return _super.prototype.getItemText.call(this, item, lookup) +
-                    ' (' +
-                    item.UserFirstName + ' ' + item.UserLastName +
-                    ', ' + item.CompanyCd +
-                    ', ' + item.DepartmentDesc +
-                    ')';
-            };
-            UsersEditor = __decorate([
-                Serenity.Decorators.registerEditor()
-            ], UsersEditor);
-            return UsersEditor;
-        }(Serenity.LookupEditorBase));
-        PCHODS.UsersEditor = UsersEditor;
-    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHODSNVS;
-    (function (PCHODSNVS) {
-        var NtrIntlDatelineCruisesDialog = /** @class */ (function (_super) {
-            __extends(NtrIntlDatelineCruisesDialog, _super);
-            function NtrIntlDatelineCruisesDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new PCHODSNVS.NtrIntlDatelineCruisesForm(_this.idPrefix);
-                return _this;
-            }
-            NtrIntlDatelineCruisesDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrIntlDatelineCruisesForm.formKey; };
-            NtrIntlDatelineCruisesDialog.prototype.getIdProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.idProperty; };
-            NtrIntlDatelineCruisesDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
-            NtrIntlDatelineCruisesDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.nameProperty; };
-            NtrIntlDatelineCruisesDialog.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
-            NtrIntlDatelineCruisesDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], NtrIntlDatelineCruisesDialog);
-            return NtrIntlDatelineCruisesDialog;
-        }(Serenity.EntityDialog));
-        PCHODSNVS.NtrIntlDatelineCruisesDialog = NtrIntlDatelineCruisesDialog;
-    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHODSNVS;
-    (function (PCHODSNVS) {
-        var NtrIntlDatelineCruisesGrid = /** @class */ (function (_super) {
-            __extends(NtrIntlDatelineCruisesGrid, _super);
-            function NtrIntlDatelineCruisesGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            NtrIntlDatelineCruisesGrid.prototype.getColumnsKey = function () { return 'PCHODSNVS.NtrIntlDatelineCruises'; };
-            NtrIntlDatelineCruisesGrid.prototype.getDialogType = function () { return PCHODSNVS.NtrIntlDatelineCruisesDialog; };
-            NtrIntlDatelineCruisesGrid.prototype.getIdProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.idProperty; };
-            NtrIntlDatelineCruisesGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
-            NtrIntlDatelineCruisesGrid.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
-            NtrIntlDatelineCruisesGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], NtrIntlDatelineCruisesGrid);
-            return NtrIntlDatelineCruisesGrid;
-        }(Serenity.EntityGrid));
-        PCHODSNVS.NtrIntlDatelineCruisesGrid = NtrIntlDatelineCruisesGrid;
-    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -5577,5 +7249,238 @@ var DAP;
         }(Serenity.EntityGrid));
         PCHODS.OutboundCommissionPeriodGrid = OutboundCommissionPeriodGrid;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var CompanyEditor = /** @class */ (function (_super) {
+            __extends(CompanyEditor, _super);
+            function CompanyEditor(hidden) {
+                return _super.call(this, hidden) || this;
+            }
+            CompanyEditor.prototype.getLookupKey = function () {
+                return PCHODS.OutboundCompanyRow.lookupKey;
+            };
+            CompanyEditor.prototype.getItemText = function (item, lookup) {
+                return _super.prototype.getItemText.call(this, item, lookup) +
+                    ' (' +
+                    item.Nm +
+                    ')';
+            };
+            CompanyEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], CompanyEditor);
+            return CompanyEditor;
+        }(Serenity.LookupEditorBase));
+        PCHODS.CompanyEditor = CompanyEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundMonthlyRptArchiveOverrideDialog = /** @class */ (function (_super) {
+            __extends(OutboundMonthlyRptArchiveOverrideDialog, _super);
+            function OutboundMonthlyRptArchiveOverrideDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new PCHODS.OutboundMonthlyRptArchiveOverrideForm(_this.idPrefix);
+                return _this;
+            }
+            OutboundMonthlyRptArchiveOverrideDialog.prototype.getFormKey = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideForm.formKey; };
+            OutboundMonthlyRptArchiveOverrideDialog.prototype.getIdProperty = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideRow.idProperty; };
+            OutboundMonthlyRptArchiveOverrideDialog.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideRow.localTextPrefix; };
+            OutboundMonthlyRptArchiveOverrideDialog.prototype.getNameProperty = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideRow.nameProperty; };
+            OutboundMonthlyRptArchiveOverrideDialog.prototype.getService = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideService.baseUrl; };
+            OutboundMonthlyRptArchiveOverrideDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            OutboundMonthlyRptArchiveOverrideDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundMonthlyRptArchiveOverrideDialog);
+            return OutboundMonthlyRptArchiveOverrideDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.OutboundMonthlyRptArchiveOverrideDialog = OutboundMonthlyRptArchiveOverrideDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var OutboundMonthlyRptArchiveOverrideGrid = /** @class */ (function (_super) {
+            __extends(OutboundMonthlyRptArchiveOverrideGrid, _super);
+            function OutboundMonthlyRptArchiveOverrideGrid(container) {
+                var _this = _super.call(this, container) || this;
+                _this.canSubmit = false;
+                return _this;
+            }
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getColumnsKey = function () { return 'PCHODS.OutboundMonthlyRptArchiveOverride'; };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getDialogType = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideDialog; };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getIdProperty = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideRow.idProperty; };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getLocalTextPrefix = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideRow.localTextPrefix; };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getService = function () { return PCHODS.OutboundMonthlyRptArchiveOverrideService.baseUrl; };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.onViewSubmit = function () {
+                _super.prototype.onViewSubmit.call(this);
+                if (this.canSubmit) {
+                    this.canSubmit = false;
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                buttons.push({
+                    title: "Search",
+                    cssClass: "search-button",
+                    onClick: function () {
+                        _this.canSubmit = true;
+                        _this.view.populate();
+                    }
+                });
+                return buttons;
+            };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.getPersistanceStorage = function () {
+                return null;
+            };
+            OutboundMonthlyRptArchiveOverrideGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
+            OutboundMonthlyRptArchiveOverrideGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], OutboundMonthlyRptArchiveOverrideGrid);
+            return OutboundMonthlyRptArchiveOverrideGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.OutboundMonthlyRptArchiveOverrideGrid = OutboundMonthlyRptArchiveOverrideGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UsersEditor = /** @class */ (function (_super) {
+            __extends(UsersEditor, _super);
+            function UsersEditor(hidden) {
+                return _super.call(this, hidden) || this;
+            }
+            UsersEditor.prototype.getLookupKey = function () {
+                return PCHODS.OutboundNvsUsersRow.lookupKey;
+            };
+            UsersEditor.prototype.getItemText = function (item, lookup) {
+                return _super.prototype.getItemText.call(this, item, lookup) +
+                    ' (' +
+                    item.UserFirstName + ' ' + item.UserLastName +
+                    ', ' + item.CompanyCd +
+                    ', ' + item.DepartmentDesc +
+                    ')';
+            };
+            UsersEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], UsersEditor);
+            return UsersEditor;
+        }(Serenity.LookupEditorBase));
+        PCHODS.UsersEditor = UsersEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesDialog = /** @class */ (function (_super) {
+            __extends(NtrIntlDatelineCruisesDialog, _super);
+            function NtrIntlDatelineCruisesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODSNVS.NtrIntlDatelineCruisesForm(_this.idPrefix);
+                return _this;
+            }
+            NtrIntlDatelineCruisesDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrIntlDatelineCruisesForm.formKey; };
+            NtrIntlDatelineCruisesDialog.prototype.getIdProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.idProperty; };
+            NtrIntlDatelineCruisesDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
+            NtrIntlDatelineCruisesDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.nameProperty; };
+            NtrIntlDatelineCruisesDialog.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
+            NtrIntlDatelineCruisesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrIntlDatelineCruisesDialog);
+            return NtrIntlDatelineCruisesDialog;
+        }(Serenity.EntityDialog));
+        PCHODSNVS.NtrIntlDatelineCruisesDialog = NtrIntlDatelineCruisesDialog;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrIntlDatelineCruisesGrid = /** @class */ (function (_super) {
+            __extends(NtrIntlDatelineCruisesGrid, _super);
+            function NtrIntlDatelineCruisesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            NtrIntlDatelineCruisesGrid.prototype.getColumnsKey = function () { return 'PCHODSNVS.NtrIntlDatelineCruises'; };
+            NtrIntlDatelineCruisesGrid.prototype.getDialogType = function () { return PCHODSNVS.NtrIntlDatelineCruisesDialog; };
+            NtrIntlDatelineCruisesGrid.prototype.getIdProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.idProperty; };
+            NtrIntlDatelineCruisesGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
+            NtrIntlDatelineCruisesGrid.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
+            NtrIntlDatelineCruisesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrIntlDatelineCruisesGrid);
+            return NtrIntlDatelineCruisesGrid;
+        }(Serenity.EntityGrid));
+        PCHODSNVS.NtrIntlDatelineCruisesGrid = NtrIntlDatelineCruisesGrid;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var SsisConfigBaseDialog = /** @class */ (function (_super) {
+            __extends(SsisConfigBaseDialog, _super);
+            function SsisConfigBaseDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new SSISConfig.SsisConfigBaseForm(_this.idPrefix);
+                return _this;
+            }
+            SsisConfigBaseDialog.prototype.getFormKey = function () { return SSISConfig.SsisConfigBaseForm.formKey; };
+            SsisConfigBaseDialog.prototype.getIdProperty = function () { return SSISConfig.SsisConfigBaseRow.idProperty; };
+            SsisConfigBaseDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.SsisConfigBaseRow.localTextPrefix; };
+            SsisConfigBaseDialog.prototype.getNameProperty = function () { return SSISConfig.SsisConfigBaseRow.nameProperty; };
+            SsisConfigBaseDialog.prototype.getService = function () { return SSISConfig.SsisConfigBaseService.baseUrl; };
+            SsisConfigBaseDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SsisConfigBaseDialog);
+            return SsisConfigBaseDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.SsisConfigBaseDialog = SsisConfigBaseDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var SsisConfigBaseGrid = /** @class */ (function (_super) {
+            __extends(SsisConfigBaseGrid, _super);
+            function SsisConfigBaseGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SsisConfigBaseGrid.prototype.getColumnsKey = function () { return 'SSISConfig.SsisConfigBase'; };
+            SsisConfigBaseGrid.prototype.getDialogType = function () { return SSISConfig.SsisConfigBaseDialog; };
+            SsisConfigBaseGrid.prototype.getIdProperty = function () { return SSISConfig.SsisConfigBaseRow.idProperty; };
+            SsisConfigBaseGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.SsisConfigBaseRow.localTextPrefix; };
+            SsisConfigBaseGrid.prototype.getService = function () { return SSISConfig.SsisConfigBaseService.baseUrl; };
+            SsisConfigBaseGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SsisConfigBaseGrid);
+            return SsisConfigBaseGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

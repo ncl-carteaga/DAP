@@ -16,14 +16,24 @@ namespace DAP.NCLHDSAR {
             columns.unshift({
                 field: 'Delete Row',
                 name: '',
-                format: ctx => '<a class="inline-action delete-row" title="delete">' +
+                format: ctx => '<a class="inline-action delete-row" title="delete row">' +
                     '<i class="fa fa-trash-o text-red"></i></a>',
                 width: 24,
                 minWidth: 24,
                 maxWidth: 24
             });
 
-            columns.splice(6,0, {
+            columns.splice(5,0, {
+                field: 'Copy Value',
+                name: '',
+                format: ctx => '<a class="inline-action copy-value" title="Copy value">' +
+                    '<i class="fa fa-clipboard text-green"></i></a>',
+                width: 24,
+                minWidth: 24,
+                maxWidth: 24
+            });
+
+            columns.splice(7,0, {
                 field: 'Resolve Date',
                 name: '',
                 format: ctx => {
@@ -84,6 +94,13 @@ namespace DAP.NCLHDSAR {
                             this.refresh();
                         });
                     });
+                }
+                else if (target.hasClass('copy-value')) {
+                    
+                    var crow = Q.deepClone(this.itemAt(row));
+                    var dummy = $('<input>').val(crow.RequestValue).appendTo('body').select()
+                    document.execCommand('copy')
+                        
                 }
             }
         }

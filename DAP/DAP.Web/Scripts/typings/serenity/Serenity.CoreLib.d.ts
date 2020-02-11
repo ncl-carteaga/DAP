@@ -2798,6 +2798,9 @@ declare namespace Serenity {
         load(entityOrId: any, done: () => void, fail: (p1: any) => void): void;
     }
     class EntityDialog<TItem, TOptions> extends TemplatedDialog<TOptions> implements IEditDialog {
+        getQuickFilters(): any {
+            throw new Error("Method not implemented.");
+        }
         protected entity: TItem;
         protected entityId: any;
         protected propertyGrid: PropertyGrid;
