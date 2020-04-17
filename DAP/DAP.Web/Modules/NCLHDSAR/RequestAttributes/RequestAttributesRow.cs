@@ -258,6 +258,19 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.SystemMasterSystemActiveYn[this] = value; }
         }
 
+        [DisplayName("Modified Date"), Column("ModifiedDate"), Updatable(false), Insertable(false), DisplayFormat("MM/dd/yyyy HH:mm")]
+        public DateTime? ModifiedDate
+        {
+            get { return Fields.ModifiedDate[this]; }
+            set { Fields.ModifiedDate[this] = value; }
+        }
+
+        [DisplayName("Modified By"), Column("ModifiedBy"), Size(50), Updatable(false), Insertable(false)]
+        public String ModifiedBy
+        {
+            get { return Fields.ModifiedBy[this]; }
+            set { Fields.ModifiedBy[this] = value; }
+        }
 
         public static readonly RowFields Fields = new RowFields().Init();
 
@@ -296,39 +309,15 @@ namespace DAP.NCLHDSAR.Entities
             public StringField OldMiddleNm;
             public StringField OldLastNm;
 
-            //  public DateTimeField CreatedDt;
-            //  public DateTimeField DeadlineDt;
-            //  public DateTimeField LastUpdatedDt;
-            //  public BooleanField ReqExtended;
-            //  public StringField ReqStage;
-            //  public StringField ReqApprover;
-            ////  public StringField Email;
-            //  public StringField FirstName;
-            //  public StringField LastName;
-            //  public StringField ReqDetails;
-            //  public StringField SubjectType;
-            //  public StringField RequestType;
-            //  public StringField Address1;
-            //  public StringField City;
-            //  public StringField Country;
-            //  public StringField NclYn;
-            //  public StringField LatitudesNum;
-            //  public StringField OceaniaYn;
-            //  public StringField OceaniaMpCardNum;
-            //  public StringField RegentYn;
-            //  public StringField RegentMpCardNum;
-            //  public StringField SixthmanYn;
-            //  public StringField IdentityVerificationOptOuts;
-            //  public StringField IdentityVerificationOtherRequests;
-            //  public Int32Field RequestTypeNum;
-            //  public StringField ReqStatus;
-            //  public DateTimeField LoadDt;
-            //  public DateTimeField ProcessDt;
-
+          
             public StringField SystemMasterSystemName;
             public StringField SystemMasterSystemTable;
             public StringField SystemMasterSystemDesc;
             public StringField SystemMasterSystemActiveYn;
+
+            public DateTimeField ModifiedDate;
+            public StringField ModifiedBy;
+
         }
     }
 }

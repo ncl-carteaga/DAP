@@ -13,5 +13,8 @@ namespace DAP.Administration
 
         [Description("Languages and Translations")]
         public const string Translation = "Administration:Translation";
+
+        [Description("Data Audit Log")]
+        public const string AuditLog = "Administration:DataAuditLog";
     }
 }

@@ -218,6 +218,16 @@ namespace MVC
 
         public static class SSISConfig
         {
+            public static class INTConfigBase
+            {
+                public const string INTConfigBaseIndex = "~/Modules/SSISConfig/INTConfigBase/INTConfigBaseIndex.cshtml";
+            }
+
+            public static class PsInterfaceConfig
+            {
+                public const string PsInterfaceConfigIndex = "~/Modules/SSISConfig/PsInterfaceConfig/PsInterfaceConfigIndex.cshtml";
+            }
+
             public static class SsisConfigBase
             {
                 public const string SsisConfigBaseIndex = "~/Modules/SSISConfig/SsisConfigBase/SsisConfigBaseIndex.cshtml";

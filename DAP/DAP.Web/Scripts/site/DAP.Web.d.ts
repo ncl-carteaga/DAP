@@ -1046,6 +1046,31 @@ declare namespace DAP.NCLHDSAR {
     }
 }
 declare namespace DAP.NCLHDSAR {
+    interface NoteRow {
+        NoteId?: number;
+        EntityType?: string;
+        EntityId?: number;
+        Text?: string;
+        InsertUserId?: number;
+        InsertDate?: string;
+        InsertUserDisplayName?: string;
+    }
+    namespace NoteRow {
+        const idProperty = "NoteId";
+        const nameProperty = "EntityType";
+        const localTextPrefix = "NCLHDSAR.Note";
+        const enum Fields {
+            NoteId = "NoteId",
+            EntityType = "EntityType",
+            EntityId = "EntityId",
+            Text = "Text",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            InsertUserDisplayName = "InsertUserDisplayName"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
 }
 declare namespace DAP.NCLHDSAR {
     interface RequestAttributesForm {
@@ -1113,6 +1138,8 @@ declare namespace DAP.NCLHDSAR {
         SystemMasterSystemTable?: string;
         SystemMasterSystemDesc?: string;
         SystemMasterSystemActiveYn?: string;
+        ModifiedDate?: string;
+        ModifiedBy?: string;
     }
     namespace RequestAttributesRow {
         const idProperty = "RequestAttributeId";
@@ -1150,7 +1177,9 @@ declare namespace DAP.NCLHDSAR {
             SystemMasterSystemName = "SystemMasterSystemName",
             SystemMasterSystemTable = "SystemMasterSystemTable",
             SystemMasterSystemDesc = "SystemMasterSystemDesc",
-            SystemMasterSystemActiveYn = "SystemMasterSystemActiveYn"
+            SystemMasterSystemActiveYn = "SystemMasterSystemActiveYn",
+            ModifiedDate = "ModifiedDate",
+            ModifiedBy = "ModifiedBy"
         }
     }
 }
@@ -1411,26 +1440,6 @@ declare namespace DAP.NCLHDSAR {
         RequestValue: Serenity.StringEditor;
         ResolvedDt: Serenity.DateEditor;
         ExtractDt: Serenity.DateEditor;
-        FirstNm: Serenity.StringEditor;
-        MiddleNm: Serenity.StringEditor;
-        LastNm: Serenity.StringEditor;
-        Addr1: Serenity.StringEditor;
-        Addr2: Serenity.StringEditor;
-        CityNm: Serenity.StringEditor;
-        StateNm: Serenity.StringEditor;
-        PostalCd: Serenity.StringEditor;
-        CountryCd: Serenity.StringEditor;
-        Email: Serenity.StringEditor;
-        OldFirstNm: Serenity.StringEditor;
-        OldMiddleNm: Serenity.StringEditor;
-        OldLastNm: Serenity.StringEditor;
-        OldAddr1: Serenity.StringEditor;
-        OldAddr2: Serenity.StringEditor;
-        OldCityNm: Serenity.StringEditor;
-        OldStateNm: Serenity.StringEditor;
-        OldPostalCd: Serenity.StringEditor;
-        OldCountryCd: Serenity.StringEditor;
-        OldEmail: Serenity.StringEditor;
     }
     class SwRequestAttributesForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1445,28 +1454,9 @@ declare namespace DAP.NCLHDSAR {
         RequestValue?: string;
         ResolvedDt?: string;
         ExtractDt?: string;
-        FirstNm?: string;
-        MiddleNm?: string;
-        LastNm?: string;
-        Addr1?: string;
-        Addr2?: string;
-        CityNm?: string;
-        StateNm?: string;
-        PostalCd?: string;
-        CountryCd?: string;
-        Email?: string;
-        OldAddr1?: string;
-        OldAddr2?: string;
-        OldCityNm?: string;
-        OldStateNm?: string;
-        OldPostalCd?: string;
-        OldCountryCd?: string;
-        OldEmail?: string;
         RequestAttributeId?: number;
-        OldFirstNm?: string;
-        OldMiddleNm?: string;
-        OldLastNm?: string;
         LastUpdated?: string;
+        SystemMasterSystemDesc?: string;
     }
     namespace SwRequestAttributesRow {
         const idProperty = "RequestAttributeId";
@@ -1478,28 +1468,9 @@ declare namespace DAP.NCLHDSAR {
             RequestValue = "RequestValue",
             ResolvedDt = "ResolvedDt",
             ExtractDt = "ExtractDt",
-            FirstNm = "FirstNm",
-            MiddleNm = "MiddleNm",
-            LastNm = "LastNm",
-            Addr1 = "Addr1",
-            Addr2 = "Addr2",
-            CityNm = "CityNm",
-            StateNm = "StateNm",
-            PostalCd = "PostalCd",
-            CountryCd = "CountryCd",
-            Email = "Email",
-            OldAddr1 = "OldAddr1",
-            OldAddr2 = "OldAddr2",
-            OldCityNm = "OldCityNm",
-            OldStateNm = "OldStateNm",
-            OldPostalCd = "OldPostalCd",
-            OldCountryCd = "OldCountryCd",
-            OldEmail = "OldEmail",
             RequestAttributeId = "RequestAttributeId",
-            OldFirstNm = "OldFirstNm",
-            OldMiddleNm = "OldMiddleNm",
-            OldLastNm = "OldLastNm",
-            LastUpdated = "LastUpdated"
+            LastUpdated = "LastUpdated",
+            SystemMasterSystemDesc = "SystemMasterSystemDesc"
         }
     }
 }
@@ -1527,13 +1498,13 @@ declare namespace DAP.NCLHDSAR {
         ClientFirstName: Serenity.StringEditor;
         ClientLastName: Serenity.StringEditor;
         ClientEmailAddress: Serenity.StringEditor;
-        RecordTimeStamp: Serenity.DateEditor;
         ClientAddress: Serenity.StringEditor;
         ClientZipCode: Serenity.StringEditor;
         ClientLatitudesNumber: Serenity.StringEditor;
         ClientIsRelatedtoHousehold: Serenity.StringEditor;
         RequestType: Serenity.StringEditor;
         ClientGuestCategory: Serenity.StringEditor;
+        RecordTimeStamp: Serenity.DateEditor;
         LastUpdatedDt: Serenity.DateEditor;
         UpdatedBy: Serenity.StringEditor;
         AssigneeId: Serenity.LookupEditor;
@@ -1541,6 +1512,7 @@ declare namespace DAP.NCLHDSAR {
         ApiResponseId: Serenity.StringEditor;
         ApiResponse: Serenity.StringEditor;
         ApiResponseDepth: Serenity.StringEditor;
+        NoteList: NotesEditor;
     }
     class SwRequestForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1576,6 +1548,7 @@ declare namespace DAP.NCLHDSAR {
         DaysOld?: number;
         DaysLeft?: number;
         AttributeCount?: number;
+        NoteList?: NoteRow[];
     }
     namespace SwRequestRow {
         const idProperty = "RecordId";
@@ -1607,7 +1580,8 @@ declare namespace DAP.NCLHDSAR {
             StatusStatusOrder = "StatusStatusOrder",
             DaysOld = "DaysOld",
             DaysLeft = "DaysLeft",
-            AttributeCount = "AttributeCount"
+            AttributeCount = "AttributeCount",
+            NoteList = "NoteList"
         }
     }
 }
@@ -1709,6 +1683,8 @@ declare namespace DAP.NCLHODSSPENDVIS {
         FlexDim2Name?: string;
         FlexDim3Name?: string;
         FlexDim4Name?: string;
+        ModifiedDate?: string;
+        ModifiedBy?: string;
     }
     namespace AmoslevelRow {
         const idProperty = "IdNum";
@@ -1721,7 +1697,9 @@ declare namespace DAP.NCLHODSSPENDVIS {
             FlexDim1Name = "FlexDim1Name",
             FlexDim2Name = "FlexDim2Name",
             FlexDim3Name = "FlexDim3Name",
-            FlexDim4Name = "FlexDim4Name"
+            FlexDim4Name = "FlexDim4Name",
+            ModifiedDate = "ModifiedDate",
+            ModifiedBy = "ModifiedBy"
         }
     }
 }
@@ -2345,13 +2323,139 @@ declare namespace Serenity.Reporting {
 declare namespace DAP.SSISConfig {
 }
 declare namespace DAP.SSISConfig {
-    interface SsisConfigBaseForm {
-        ConfigurationFilter: Serenity.StringEditor;
+    interface INTConfigBaseForm {
+        ConfigurationFilter: Serenity.LookupEditor;
         PackagePath: Serenity.StringEditor;
         ConfiguredValueType: Serenity.StringEditor;
         ConfiguredValue: Serenity.StringEditor;
         EnvironmentEnum: Serenity.IntegerEditor;
         EnvironmentDesc: Serenity.StringEditor;
+        ConfigId: Serenity.IntegerEditor;
+        ModifiedBy: Serenity.StringEditor;
+        ModifiedOn: Serenity.DateEditor;
+    }
+    class INTConfigBaseForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface INTConfigBaseRow {
+        ConfigurationFilter?: string;
+        PackagePath?: string;
+        ConfiguredValueType?: string;
+        ConfiguredValue?: string;
+        EnvironmentEnum?: number;
+        EnvironmentDesc?: string;
+        ConfigId?: number;
+        ModifiedBy?: string;
+        ModifiedOn?: string;
+    }
+    namespace INTConfigBaseRow {
+        const idProperty = "ConfigId";
+        const nameProperty = "ConfigurationFilter";
+        const localTextPrefix = "SSISConfig.INTConfigBase";
+        const enum Fields {
+            ConfigurationFilter = "ConfigurationFilter",
+            PackagePath = "PackagePath",
+            ConfiguredValueType = "ConfiguredValueType",
+            ConfiguredValue = "ConfiguredValue",
+            EnvironmentEnum = "EnvironmentEnum",
+            EnvironmentDesc = "EnvironmentDesc",
+            ConfigId = "ConfigId",
+            ModifiedBy = "ModifiedBy",
+            ModifiedOn = "ModifiedOn"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    namespace INTConfigBaseService {
+        const baseUrl = "SSISConfig/INTConfigBase";
+        function Create(request: Serenity.SaveRequest<INTConfigBaseRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<INTConfigBaseRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<INTConfigBaseRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<INTConfigBaseRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SSISConfig/INTConfigBase/Create",
+            Update = "SSISConfig/INTConfigBase/Update",
+            Delete = "SSISConfig/INTConfigBase/Delete",
+            Retrieve = "SSISConfig/INTConfigBase/Retrieve",
+            List = "SSISConfig/INTConfigBase/List"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+}
+declare namespace DAP.SSISConfig {
+    interface PsInterfaceConfigForm {
+        ConfigSetting: Serenity.StringEditor;
+        DataType: Serenity.StringEditor;
+        ConfigValue: Serenity.StringEditor;
+        ConfigValueDate: Serenity.DateEditor;
+    }
+    class PsInterfaceConfigForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface PsInterfaceConfigRow {
+        SourceSystem?: string;
+        ConfigSetting?: string;
+        DataType?: string;
+        ConfigValue?: string;
+        ConfigValueDate?: string;
+        ConfigId?: number;
+        ModifiedDate?: string;
+        ModifiedBy?: string;
+    }
+    namespace PsInterfaceConfigRow {
+        const idProperty = "ConfigId";
+        const nameProperty = "SourceSystem";
+        const localTextPrefix = "SSISConfig.PsInterfaceConfig";
+        const enum Fields {
+            SourceSystem = "SourceSystem",
+            ConfigSetting = "ConfigSetting",
+            DataType = "DataType",
+            ConfigValue = "ConfigValue",
+            ConfigValueDate = "ConfigValueDate",
+            ConfigId = "ConfigId",
+            ModifiedDate = "ModifiedDate",
+            ModifiedBy = "ModifiedBy"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    namespace PsInterfaceConfigService {
+        const baseUrl = "SSISConfig/PsInterfaceConfig";
+        function Create(request: Serenity.SaveRequest<PsInterfaceConfigRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PsInterfaceConfigRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PsInterfaceConfigRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PsInterfaceConfigRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SSISConfig/PsInterfaceConfig/Create",
+            Update = "SSISConfig/PsInterfaceConfig/Update",
+            Delete = "SSISConfig/PsInterfaceConfig/Delete",
+            Retrieve = "SSISConfig/PsInterfaceConfig/Retrieve",
+            List = "SSISConfig/PsInterfaceConfig/List"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+}
+declare namespace DAP.SSISConfig {
+    interface SsisConfigBaseForm {
+        ConfigurationFilter: Serenity.LookupEditor;
+        PackagePath: Serenity.StringEditor;
+        ConfiguredValueType: Serenity.StringEditor;
+        ConfiguredValue: Serenity.StringEditor;
+        EnvironmentEnum: Serenity.IntegerEditor;
+        EnvironmentDesc: Serenity.StringEditor;
+        ConfigId: Serenity.IntegerEditor;
         ModifiedBy: Serenity.StringEditor;
         ModifiedOn: Serenity.DateEditor;
     }
@@ -3028,6 +3132,34 @@ declare namespace DAP.NCLHDSAR {
     }
 }
 declare namespace DAP.NCLHDSAR {
+    class NoteDialog extends Serenity.TemplatedDialog<any> {
+        private textEditor;
+        constructor();
+        protected getTemplate(): string;
+        protected getDialogOptions(): JQueryUI.DialogOptions;
+        text: string;
+        okClick: () => void;
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    class NotesEditor extends Serenity.TemplatedWidget<any> implements Serenity.IGetEditValue, Serenity.ISetEditValue {
+        private isDirty;
+        private items;
+        constructor(div: JQuery);
+        protected getTemplate(): string;
+        protected updateContent(): void;
+        protected addClick(): void;
+        protected editClick(e: any): void;
+        deleteClick(e: any): void;
+        value: NoteRow[];
+        getEditValue(prop: Serenity.PropertyItem, target: any): void;
+        setEditValue(source: any, prop: Serenity.PropertyItem): void;
+        get_isDirty(): boolean;
+        set_isDirty(value: any): void;
+        onChange: () => void;
+    }
+}
+declare namespace DAP.NCLHDSAR {
     class RequestAttributesDialog extends Serenity.EntityDialog<RequestAttributesRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3310,6 +3442,7 @@ declare namespace DAP.NCLHODSSPENDVIS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODS {
@@ -3555,6 +3688,55 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.SSISConfig {
+    class INTConfigBaseDialog extends Serenity.EntityDialog<INTConfigBaseRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: INTConfigBaseForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.SSISConfig {
+    class INTConfigBaseGrid extends Serenity.EntityGrid<INTConfigBaseRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof INTConfigBaseDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
+        protected createSlickGrid(): Slick.Grid;
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.SSISConfig {
+    class PsInterfaceConfigDialog extends Serenity.EntityDialog<PsInterfaceConfigRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: PsInterfaceConfigForm;
+        constructor();
+        protected afterLoadEntity(): void;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.SSISConfig {
+    class PsInterfaceConfigGrid extends Serenity.EntityGrid<PsInterfaceConfigRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PsInterfaceConfigDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.SSISConfig {
     class SsisConfigBaseDialog extends Serenity.EntityDialog<SsisConfigBaseRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3562,6 +3744,8 @@ declare namespace DAP.SSISConfig {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: SsisConfigBaseForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.SSISConfig {
@@ -3572,5 +3756,8 @@ declare namespace DAP.SSISConfig {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
+        protected createSlickGrid(): Slick.Grid;
+        protected getButtons(): Serenity.ToolButton[];
     }
 }

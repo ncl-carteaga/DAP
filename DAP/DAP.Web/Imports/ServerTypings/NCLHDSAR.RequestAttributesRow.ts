@@ -30,6 +30,8 @@
         SystemMasterSystemTable?: string;
         SystemMasterSystemDesc?: string;
         SystemMasterSystemActiveYn?: string;
+        ModifiedDate?: string;
+        ModifiedBy?: string;
     }
 
     export namespace RequestAttributesRow {
@@ -72,7 +74,9 @@
             SystemMasterSystemName = "SystemMasterSystemName",
             SystemMasterSystemTable = "SystemMasterSystemTable",
             SystemMasterSystemDesc = "SystemMasterSystemDesc",
-            SystemMasterSystemActiveYn = "SystemMasterSystemActiveYn"
+            SystemMasterSystemActiveYn = "SystemMasterSystemActiveYn",
+            ModifiedDate = "ModifiedDate",
+            ModifiedBy = "ModifiedBy"
         }
     }
 }

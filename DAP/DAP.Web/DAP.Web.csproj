@@ -894,6 +894,7 @@
     <Content Include="Imports\ServerTypings\NCLHDSAR.RequestTypeService.ts.gen.bak" />
     <Content Include="Imports\ServerTypings\NCLHDSAR.RequestTypeService.ts.orig" />
     <Content Include="Content\site\site.nclhdsar.less" />
+    <Content Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseIndex.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1120,6 +1121,7 @@
     <Content Include="Modules\NCLHDSAR\RequestStatus\RequestStatusIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\SwRequest\SwRequestIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesIndex.cshtml" />
+    <Content Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1144,6 +1146,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.NoteRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.RequestAttributesColumns.ts">
@@ -1242,6 +1247,21 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.INTConfigBaseColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.INTConfigBaseForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.INTConfigBaseRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.INTConfigBaseService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.PsInterfaceConfigColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.SsisConfigBaseColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1251,6 +1271,8 @@
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogDialog.ts" />
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogGrid.ts" />
     <Content Include="Modules\Membership\Account\LoginPanel.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NoteDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NotesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttibutesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesGrid.ts" />
@@ -1274,6 +1296,8 @@
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCompany\CompanyEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundNvsUsers\UsersEditor.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseGrid.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jqueryui\index.d.ts" />
     <TypeScriptCompile Include="node_modules\%40types\jquery.blockui\index.d.ts" />
@@ -1315,6 +1339,8 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequest\SwRequestGrid.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesGrid.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2225,6 +2251,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.SwRequestAttributesForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.PsInterfaceConfigRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.PsInterfaceConfigService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.PsInterfaceConfigForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2241,6 +2276,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\NCLHDSAR.NotesEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.RequestAttributesEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
@@ -2396,6 +2434,9 @@
     <Compile Include="Modules\Common\Helpers\GetNextNumberRequest.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARNavigation.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARPermissionKeys.cs" />
+    <Compile Include="Modules\NCLHDSAR\Note\NoteRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\Note\NoteRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\Note\NotesBehavior.cs" />
     <Compile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesColumns.cs" />
     <Compile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesEndpoint.cs" />
     <Compile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttributesForm.cs" />
@@ -2439,6 +2480,14 @@
     <Compile Include="Modules\PCHODS\OutboundNvsUsers\UsersLookup.cs" />
     <Compile Include="Modules\PCHODS\PCHODSNavigation.cs" />
     <Compile Include="Modules\PCHODS\PCHODSPermissionKeys.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigFilterLookup.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseColumns.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseForm.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBasePage.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseRepository.cs" />
+    <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseRow.cs" />
+    <Compile Include="Modules\SSISConfig\SsisConfigBase\ConfigurationFilterLookup.cs" />
     <Compile Include="Modules\SSISConfig\SSISConfigPermissionKeys.cs" />
     <Compile Include="Modules\Texts.cs" />
     <Compile Include="Modules\Membership\Account\AccountPage.cs" />
@@ -2572,6 +2621,12 @@
     <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesPage.cs" />
     <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesColumns.cs" />
     <Compile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesForm.cs" />
+    <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigRow.cs" />
+    <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigRepository.cs" />
+    <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigPage.cs" />
+    <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigColumns.cs" />
+    <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
