@@ -2246,7 +2246,7 @@ declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface SelectCompanyForm {
-        CompanyCd: CompanyEditor;
+        CompanyCd: SelectCompanyEditor;
     }
     class SelectCompanyForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -2318,6 +2318,135 @@ declare namespace Serenity.Reporting {
         Properties?: Serenity.PropertyItem[];
         InitialSettings?: any;
         IsDataOnlyReport?: boolean;
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface DataFlowForm {
+        Source: Serenity.StringEditor;
+        Name: Serenity.StringEditor;
+        ProcessYn: Serenity.StringEditor;
+        Target: Serenity.StringEditor;
+        Description: Serenity.StringEditor;
+        SourceDesc: Serenity.StringEditor;
+        TargetDesc: Serenity.StringEditor;
+        Package: Serenity.StringEditor;
+        Status: Serenity.IntegerEditor;
+        Lset: Serenity.DateEditor;
+        Cet: Serenity.DateEditor;
+    }
+    class DataFlowForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface DataFlowRow {
+        Key?: number;
+        Source?: string;
+        Name?: string;
+        ProcessYn?: string;
+        Target?: string;
+        Description?: string;
+        SourceDesc?: string;
+        TargetDesc?: string;
+        Package?: string;
+        Status?: number;
+        Lset?: string;
+        Cet?: string;
+    }
+    namespace DataFlowRow {
+        const idProperty = "Key";
+        const nameProperty = "Source";
+        const localTextPrefix = "SSISConfig.DataFlow";
+        const enum Fields {
+            Key = "Key",
+            Source = "Source",
+            Name = "Name",
+            ProcessYn = "ProcessYn",
+            Target = "Target",
+            Description = "Description",
+            SourceDesc = "SourceDesc",
+            TargetDesc = "TargetDesc",
+            Package = "Package",
+            Status = "Status",
+            Lset = "Lset",
+            Cet = "Cet"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    namespace DataFlowService {
+        const baseUrl = "SSISConfig/DataFlow";
+        function Create(request: Serenity.SaveRequest<DataFlowRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DataFlowRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DataFlowRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DataFlowRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SSISConfig/DataFlow/Create",
+            Update = "SSISConfig/DataFlow/Update",
+            Delete = "SSISConfig/DataFlow/Delete",
+            Retrieve = "SSISConfig/DataFlow/Retrieve",
+            List = "SSISConfig/DataFlow/List"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface GpInterfaceLogForm {
+        CompanyCd: PCHODS.CompanyEditor;
+        CruiseSegmentCd: Serenity.StringEditor;
+        ExpRevType: Serenity.StringEditor;
+        GpInterfaceInd: Serenity.StringEditor;
+        GpInterfacedDt: Serenity.DateEditor;
+        JournalNum: Serenity.IntegerEditor;
+    }
+    class GpInterfaceLogForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface GpInterfaceLogRow {
+        CompanyCd?: string;
+        CruiseSegmentCd?: string;
+        ExpRevType?: string;
+        GpInterfaceInd?: string;
+        GpInterfacedDt?: string;
+        JournalNum?: number;
+        InterfaceLogId?: number;
+    }
+    namespace GpInterfaceLogRow {
+        const idProperty = "InterfaceLogId";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "SSISConfig.GpInterfaceLog";
+        const enum Fields {
+            CompanyCd = "CompanyCd",
+            CruiseSegmentCd = "CruiseSegmentCd",
+            ExpRevType = "ExpRevType",
+            GpInterfaceInd = "GpInterfaceInd",
+            GpInterfacedDt = "GpInterfacedDt",
+            JournalNum = "JournalNum",
+            InterfaceLogId = "InterfaceLogId"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    namespace GpInterfaceLogService {
+        const baseUrl = "SSISConfig/GpInterfaceLog";
+        function Create(request: Serenity.SaveRequest<GpInterfaceLogRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GpInterfaceLogRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GpInterfaceLogRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GpInterfaceLogRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "SSISConfig/GpInterfaceLog/Create",
+            Update = "SSISConfig/GpInterfaceLog/Update",
+            Delete = "SSISConfig/GpInterfaceLog/Delete",
+            Retrieve = "SSISConfig/GpInterfaceLog/Retrieve",
+            List = "SSISConfig/GpInterfaceLog/List"
+        }
     }
 }
 declare namespace DAP.SSISConfig {
@@ -3559,6 +3688,7 @@ declare namespace DAP.PCHODS {
         private pendingChanges;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
+        private createNewBracketClick;
         protected onViewProcessData(response: any): Serenity.ListResponse<OutboundCommissionHistAuRow>;
         private setSaveButtonState;
         private getEffectiveValue;
@@ -3589,8 +3719,10 @@ declare namespace DAP.PCHODS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         private pendingChanges;
+        private AllowEdits;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
+        private createNewBracketClick;
         protected onViewProcessData(response: any): Serenity.ListResponse<OutboundCommissionHistBrRow>;
         private setSaveButtonState;
         private getEffectiveValue;
@@ -3688,6 +3820,49 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.SSISConfig {
+    class DataFlowDialog extends Serenity.EntityDialog<DataFlowRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: DataFlowForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.SSISConfig {
+    class DataFlowGrid extends Serenity.EntityGrid<DataFlowRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DataFlowDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.SSISConfig {
+    class GpInterfaceLogDialog extends Serenity.EntityDialog<GpInterfaceLogRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GpInterfaceLogForm;
+    }
+}
+declare namespace DAP.SSISConfig {
+    class GpInterfaceLogGrid extends Serenity.EntityGrid<GpInterfaceLogRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GpInterfaceLogDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.SSISConfig {
     class INTConfigBaseDialog extends Serenity.EntityDialog<INTConfigBaseRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -3760,4 +3935,20 @@ declare namespace DAP.SSISConfig {
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
     }
+}
+declare namespace DAP.PCHODS {
+    /**
+     * Our select editor with hardcoded values.
+     *
+     * When you define a new editor type, make sure you build
+     * and transform templates for it to be available
+     * in server side forms, e.g. [HardCodedValuesEditor]
+     */
+    class SelectCompanyEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.SSISConfig {
+}
+declare namespace DAP.SSISConfig {
 }

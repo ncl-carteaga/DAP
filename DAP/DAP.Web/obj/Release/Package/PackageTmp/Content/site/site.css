@@ -9492,6 +9492,18 @@ button.ui-button {
 .s-SSISConfig-PsInterfaceConfigDialog .caption {
   width: 150px;
 }
+.s-SSISConfig-DataFlowDialog > .size {
+  width: 650px;
+}
+.s-SSISConfig-DataFlowDialog .caption {
+  width: 150px;
+}
+.s-SSISConfig-GpInterfaceLogDialog > .size {
+  width: 650px;
+}
+.s-SSISConfig-GpInterfaceLogDialog .caption {
+  width: 150px;
+}
 .s-NCLHDSAR-SystemMasterDialog > .size {
   width: 650px;
 }

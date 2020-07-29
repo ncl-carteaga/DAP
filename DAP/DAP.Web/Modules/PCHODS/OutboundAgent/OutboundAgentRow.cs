@@ -33,7 +33,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [Expression("c.[Company_nm]")]
+        [Expression("c.[Company_nm]"), DisplayName("Company")]
         public string CompanyName
         {
             get { return Fields.CompanyName[this]; }
@@ -53,7 +53,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.PrimaryBrand[this] = value; }
         }
 
-        [Origin("b"), DisplayName("Brand")]
+        [Origin("b"), DisplayName(" Primary Brand")]
         public string Nm
         {
             get { return Fields.Nm[this];  }

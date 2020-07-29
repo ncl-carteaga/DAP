@@ -1122,6 +1122,8 @@
     <Content Include="Modules\NCLHDSAR\SwRequest\SwRequestIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesIndex.cshtml" />
     <Content Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigIndex.cshtml" />
+    <Content Include="Modules\SSISConfig\DataFlow\DataFlowIndex.cshtml" />
+    <Content Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1247,6 +1249,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.GpInterfaceLogColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.INTConfigBaseColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1292,6 +1300,7 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCompany\CompanyEditor.ts" />
@@ -1341,6 +1350,10 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SwRequestAttributes\SwRequestAttributesGrid.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigDialog.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigGrid.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\DataFlow\DataFlowDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\DataFlow\DataFlowGrid.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2260,6 +2273,24 @@
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.PsInterfaceConfigForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.GpInterfaceLogRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.GpInterfaceLogService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.GpInterfaceLogForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2299,6 +2330,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\PCHODS.OutboundAgentLocationEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\PCHODS.SelectCompanyEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\PCHODS.UsersEditorAttribute.cs">
@@ -2627,6 +2661,18 @@
     <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigPage.cs" />
     <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigColumns.cs" />
     <Compile Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigForm.cs" />
+    <Compile Include="Modules\SSISConfig\DataFlow\DataFlowRow.cs" />
+    <Compile Include="Modules\SSISConfig\DataFlow\DataFlowRepository.cs" />
+    <Compile Include="Modules\SSISConfig\DataFlow\DataFlowEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\DataFlow\DataFlowPage.cs" />
+    <Compile Include="Modules\SSISConfig\DataFlow\DataFlowColumns.cs" />
+    <Compile Include="Modules\SSISConfig\DataFlow\DataFlowForm.cs" />
+    <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogRow.cs" />
+    <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogRepository.cs" />
+    <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogPage.cs" />
+    <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogColumns.cs" />
+    <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

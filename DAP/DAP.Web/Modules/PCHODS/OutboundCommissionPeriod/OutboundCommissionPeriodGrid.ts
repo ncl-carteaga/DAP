@@ -77,8 +77,12 @@ namespace DAP.PCHODS {
                         crow.ClosedBy = null;
                         crow.OutboundCommissionPeriodID = null;
 
-                        let st = new Date(crow.StartDate);
-                        st.setMonth(st.getMonth() + 1);
+                        let stDate:Date = new Date(crow.StartDate);
+
+                        var st = new Date(stDate.getFullYear(), stDate.getMonth() +1, 1);
+
+                        //st.setDate(1);
+                        //st.setMonth(st.getMonth() + 1,1);
 
                         crow.StartDate = st;
                         crow.EndDate = new Date(st.getFullYear(), st.getMonth() + 1, 0);

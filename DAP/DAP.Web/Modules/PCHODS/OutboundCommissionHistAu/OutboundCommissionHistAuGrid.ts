@@ -32,7 +32,50 @@ namespace DAP.PCHODS {
                 separator: true
             });
 
+            buttons.push({
+                title: 'Create New Bracket',
+                cssClass: 'add-button',
+                onClick: e => this.createNewBracketClick(),
+                separator: true
+            });
+
             return buttons;
+        }
+
+        private createNewBracketClick() {
+
+            Q.confirm('Are you sure you want to create a new tear breakets?', () => {
+
+                var HistRow: OutboundCommissionHistAuRow[];
+                var equalFilter = { "CompanyCd": 111 };
+
+                PCHODS.OutboundCommissionHistAuService.List({
+                    EqualityFilter: equalFilter
+                }, response => {
+                    HistRow = response.Entities;
+                    for (let item of HistRow) {
+                        item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                        //Q.alert(item.InactiveDt);
+                        PCHODS.OutboundCommissionHistAuService.Update({
+                            EntityId: item.CommissionHistAuId,
+                            Entity: item
+                        }, response => {
+                            item.CommissionHistAuId = null;
+                            item.ActiveDt = item.InactiveDt;
+                            item.InactiveDt = null;
+                                PCHODS.OutboundCommissionHistAuService.Create({
+                                Entity: item
+                            }, response => {
+                                this.refresh();
+                            });
+                        });
+                    }
+                    Q.notifySuccess("Bracket Created Successfully!", '');
+
+                });
+
+            });
+
         }
 
         protected onViewProcessData(response) {

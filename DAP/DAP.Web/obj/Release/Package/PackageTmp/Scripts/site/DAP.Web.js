@@ -2002,7 +2002,7 @@ var DAP;
                 if (!SelectCompanyForm.init) {
                     SelectCompanyForm.init = true;
                     var s = Serenity;
-                    var w0 = PCHODS.CompanyEditor;
+                    var w0 = PCHODS.SelectCompanyEditor;
                     Q.initFormType(SelectCompanyForm, [
                         'CompanyCd', w0
                     ]);
@@ -2077,6 +2077,140 @@ var DAP;
             });
         })(NtrIntlDatelineCruisesService = PCHODSNVS.NtrIntlDatelineCruisesService || (PCHODSNVS.NtrIntlDatelineCruisesService = {}));
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowForm = /** @class */ (function (_super) {
+            __extends(DataFlowForm, _super);
+            function DataFlowForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DataFlowForm.init) {
+                    DataFlowForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(DataFlowForm, [
+                        'Source', w0,
+                        'Name', w0,
+                        'ProcessYn', w0,
+                        'Target', w0,
+                        'Description', w0,
+                        'SourceDesc', w0,
+                        'TargetDesc', w0,
+                        'Package', w0,
+                        'Status', w1,
+                        'Lset', w2,
+                        'Cet', w2
+                    ]);
+                }
+                return _this;
+            }
+            DataFlowForm.formKey = 'SSISConfig.DataFlow';
+            return DataFlowForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.DataFlowForm = DataFlowForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowRow;
+        (function (DataFlowRow) {
+            DataFlowRow.idProperty = 'Key';
+            DataFlowRow.nameProperty = 'Source';
+            DataFlowRow.localTextPrefix = 'SSISConfig.DataFlow';
+        })(DataFlowRow = SSISConfig.DataFlowRow || (SSISConfig.DataFlowRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowService;
+        (function (DataFlowService) {
+            DataFlowService.baseUrl = 'SSISConfig/DataFlow';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DataFlowService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DataFlowService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DataFlowService = SSISConfig.DataFlowService || (SSISConfig.DataFlowService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogForm = /** @class */ (function (_super) {
+            __extends(GpInterfaceLogForm, _super);
+            function GpInterfaceLogForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!GpInterfaceLogForm.init) {
+                    GpInterfaceLogForm.init = true;
+                    var s = Serenity;
+                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.IntegerEditor;
+                    Q.initFormType(GpInterfaceLogForm, [
+                        'CompanyCd', w0,
+                        'CruiseSegmentCd', w1,
+                        'ExpRevType', w1,
+                        'GpInterfaceInd', w1,
+                        'GpInterfacedDt', w2,
+                        'JournalNum', w3
+                    ]);
+                }
+                return _this;
+            }
+            GpInterfaceLogForm.formKey = 'SSISConfig.GpInterfaceLog';
+            return GpInterfaceLogForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.GpInterfaceLogForm = GpInterfaceLogForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogRow;
+        (function (GpInterfaceLogRow) {
+            GpInterfaceLogRow.idProperty = 'InterfaceLogId';
+            GpInterfaceLogRow.nameProperty = 'CompanyCd';
+            GpInterfaceLogRow.localTextPrefix = 'SSISConfig.GpInterfaceLog';
+        })(GpInterfaceLogRow = SSISConfig.GpInterfaceLogRow || (SSISConfig.GpInterfaceLogRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogService;
+        (function (GpInterfaceLogService) {
+            GpInterfaceLogService.baseUrl = 'SSISConfig/GpInterfaceLog';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                GpInterfaceLogService[x] = function (r, s, o) {
+                    return Q.serviceRequest(GpInterfaceLogService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(GpInterfaceLogService = SSISConfig.GpInterfaceLogService || (SSISConfig.GpInterfaceLogService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -2279,7 +2413,7 @@ var DAP;
 (function (DAP) {
     var Texts;
     (function (Texts) {
-        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, ModifiedBy: 1, ModifiedDate: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, NoteList: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { ExtractDt: 1, Id: 1, LastUpdated: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, SystemMasterId: 1, SystemMasterSystemDesc: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1, ModifiedBy: 1, ModifiedDate: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 } }, SSISConfig: { INTConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 }, PsInterfaceConfig: { ConfigId: 1, ConfigSetting: 1, ConfigValue: 1, ConfigValueDate: 1, DataType: 1, ModifiedBy: 1, ModifiedDate: 1, SourceSystem: 1 }, SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, ModifiedBy: 1, ModifiedDate: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, NoteList: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { ExtractDt: 1, Id: 1, LastUpdated: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, SystemMasterId: 1, SystemMasterSystemDesc: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1, ModifiedBy: 1, ModifiedDate: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 } }, SSISConfig: { DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 }, GpInterfaceLog: { CompanyCd: 1, CruiseSegmentCd: 1, ExpRevType: 1, GpInterfaceInd: 1, GpInterfacedDt: 1, InterfaceLogId: 1, JournalNum: 1 }, INTConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 }, PsInterfaceConfig: { ConfigId: 1, ConfigSetting: 1, ConfigValue: 1, ConfigValueDate: 1, DataType: 1, ModifiedBy: 1, ModifiedDate: 1, SourceSystem: 1 }, SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DAP.Texts || (DAP.Texts = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -6937,6 +7071,7 @@ var DAP;
                 this.view.setGrouping([{
                         getter: 'CompanyName'
                     }]);
+                this.view.collapseAllGroups(0);
                 return grid;
             };
             OutboundCommissionHistGrid.prototype.getSlickOptions = function () {
@@ -6978,7 +7113,7 @@ var DAP;
             }
             SelectComapanyDialog.prototype.getFormKey = function () { return PCHODS.SelectCompanyForm.formKey; };
             SelectComapanyDialog.prototype.createBracket = function () {
-                var HistRow, _a = {};
+                var HistRow;
                 var equalFilter = { "CompanyCd": this.form.CompanyCd.value };
                 PCHODS.OutboundCommissionHistService.List({
                     EqualityFilter: equalFilter
@@ -6999,7 +7134,8 @@ var DAP;
                                 Q.notifyError("Please select a Company!");
                                 return;
                             }
-                            var HistRow, _a = {};
+                            //var HistRow[] = <PCHODS.OutboundCommissionHistRow>{};
+                            var HistRow;
                             var equalFilter = { "CompanyCd": _this.form.CompanyCd.value };
                             PCHODS.OutboundCommissionHistService.List({
                                 EqualityFilter: equalFilter
@@ -7105,7 +7241,47 @@ var DAP;
                     onClick: function (e) { return _this.saveClick(); },
                     separator: true
                 });
+                buttons.push({
+                    title: 'Create New Bracket',
+                    cssClass: 'add-button',
+                    onClick: function (e) { return _this.createNewBracketClick(); },
+                    separator: true
+                });
                 return buttons;
+            };
+            OutboundCommissionHistAuGrid.prototype.createNewBracketClick = function () {
+                var _this = this;
+                Q.confirm('Are you sure you want to create a new tear breakets?', function () {
+                    var HistRow;
+                    var equalFilter = { "CompanyCd": 111 };
+                    PCHODS.OutboundCommissionHistAuService.List({
+                        EqualityFilter: equalFilter
+                    }, function (response) {
+                        HistRow = response.Entities;
+                        var _loop_2 = function (item) {
+                            item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                            //Q.alert(item.InactiveDt);
+                            PCHODS.OutboundCommissionHistAuService.Update({
+                                EntityId: item.CommissionHistAuId,
+                                Entity: item
+                            }, function (response) {
+                                item.CommissionHistAuId = null;
+                                item.ActiveDt = item.InactiveDt;
+                                item.InactiveDt = null;
+                                PCHODS.OutboundCommissionHistAuService.Create({
+                                    Entity: item
+                                }, function (response) {
+                                    _this.refresh();
+                                });
+                            });
+                        };
+                        for (var _i = 0, HistRow_2 = HistRow; _i < HistRow_2.length; _i++) {
+                            var item = HistRow_2[_i];
+                            _loop_2(item);
+                        }
+                        Q.notifySuccess("Bracket Created Successfully!", '');
+                    });
+                });
             };
             OutboundCommissionHistAuGrid.prototype.onViewProcessData = function (response) {
                 this.pendingChanges = {};
@@ -7281,6 +7457,7 @@ var DAP;
             function OutboundCommissionHistBrGrid(container) {
                 var _this = _super.call(this, container) || this;
                 _this.pendingChanges = {};
+                _this.AllowEdits = false;
                 _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
                 return _this;
             }
@@ -7300,7 +7477,48 @@ var DAP;
                     onClick: function (e) { return _this.saveClick(); },
                     separator: true
                 });
+                buttons.push({
+                    title: 'Create New Bracket',
+                    cssClass: 'add-button',
+                    onClick: function (e) { return _this.createNewBracketClick(); },
+                    separator: true
+                });
                 return buttons;
+            };
+            OutboundCommissionHistBrGrid.prototype.createNewBracketClick = function () {
+                var _this = this;
+                Q.confirm('Are you sure you want to create a new tear breakets?', function () {
+                    var HistRow;
+                    var equalFilter = { "CompanyCd": 111 };
+                    PCHODS.OutboundCommissionHistBrService.List({
+                        EqualityFilter: equalFilter
+                    }, function (response) {
+                        HistRow = response.Entities;
+                        var _loop_3 = function (item) {
+                            item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                            //Q.alert(item.InactiveDt);
+                            PCHODS.OutboundCommissionHistBrService.Update({
+                                EntityId: item.CommissionHistBrId,
+                                Entity: item
+                            }, function (response) {
+                                item.CommissionHistBrId = null;
+                                item.ActiveDt = item.InactiveDt;
+                                item.InactiveDt = null;
+                                PCHODS.OutboundCommissionHistBrService.Create({
+                                    Entity: item
+                                }, function (response) {
+                                    _this.AllowEdits = true;
+                                    _this.refresh();
+                                });
+                            });
+                        };
+                        for (var _i = 0, HistRow_3 = HistRow; _i < HistRow_3.length; _i++) {
+                            var item = HistRow_3[_i];
+                            _loop_3(item);
+                        }
+                        Q.notifySuccess("Bracket Created Successfully!", '');
+                    });
+                });
             };
             OutboundCommissionHistBrGrid.prototype.onViewProcessData = function (response) {
                 this.pendingChanges = {};
@@ -7396,6 +7614,11 @@ var DAP;
                 if (Object.keys(this.pendingChanges).length === 0) {
                     return;
                 }
+                //if (!this.AllowEdits) {
+                //    Q.notifyError(Q.text('Only new brackets could be editied!'), '', null);
+                //    this.refresh();
+                //    return;
+                //}
                 // this calls save service for all modified rows, one by one
                 // you could write a batch update service
                 var keys = Object.keys(this.pendingChanges);
@@ -7533,8 +7756,10 @@ var DAP;
                             crow.ClosedDate = null;
                             crow.ClosedBy = null;
                             crow.OutboundCommissionPeriodID = null;
-                            var st = new Date(crow.StartDate);
-                            st.setMonth(st.getMonth() + 1);
+                            var stDate = new Date(crow.StartDate);
+                            var st = new Date(stDate.getFullYear(), stDate.getMonth() + 1, 1);
+                            //st.setDate(1);
+                            //st.setMonth(st.getMonth() + 1,1);
                             crow.StartDate = st;
                             crow.EndDate = new Date(st.getFullYear(), st.getMonth() + 1, 0);
                             crow.PreviousMonth = crow.CurrentMonth;
@@ -7766,6 +7991,108 @@ var DAP;
 (function (DAP) {
     var SSISConfig;
     (function (SSISConfig) {
+        var DataFlowDialog = /** @class */ (function (_super) {
+            __extends(DataFlowDialog, _super);
+            function DataFlowDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new SSISConfig.DataFlowForm(_this.idPrefix);
+                return _this;
+            }
+            DataFlowDialog.prototype.getFormKey = function () { return SSISConfig.DataFlowForm.formKey; };
+            DataFlowDialog.prototype.getIdProperty = function () { return SSISConfig.DataFlowRow.idProperty; };
+            DataFlowDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.DataFlowRow.localTextPrefix; };
+            DataFlowDialog.prototype.getNameProperty = function () { return SSISConfig.DataFlowRow.nameProperty; };
+            DataFlowDialog.prototype.getService = function () { return SSISConfig.DataFlowService.baseUrl; };
+            DataFlowDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            DataFlowDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowDialog);
+            return DataFlowDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.DataFlowDialog = DataFlowDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowGrid = /** @class */ (function (_super) {
+            __extends(DataFlowGrid, _super);
+            function DataFlowGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DataFlowGrid.prototype.getColumnsKey = function () { return 'SSISConfig.DataFlow'; };
+            DataFlowGrid.prototype.getDialogType = function () { return SSISConfig.DataFlowDialog; };
+            DataFlowGrid.prototype.getIdProperty = function () { return SSISConfig.DataFlowRow.idProperty; };
+            DataFlowGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.DataFlowRow.localTextPrefix; };
+            DataFlowGrid.prototype.getService = function () { return SSISConfig.DataFlowService.baseUrl; };
+            DataFlowGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            DataFlowGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowGrid);
+            return DataFlowGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.DataFlowGrid = DataFlowGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogDialog = /** @class */ (function (_super) {
+            __extends(GpInterfaceLogDialog, _super);
+            function GpInterfaceLogDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new SSISConfig.GpInterfaceLogForm(_this.idPrefix);
+                return _this;
+            }
+            GpInterfaceLogDialog.prototype.getFormKey = function () { return SSISConfig.GpInterfaceLogForm.formKey; };
+            GpInterfaceLogDialog.prototype.getIdProperty = function () { return SSISConfig.GpInterfaceLogRow.idProperty; };
+            GpInterfaceLogDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.GpInterfaceLogRow.localTextPrefix; };
+            GpInterfaceLogDialog.prototype.getNameProperty = function () { return SSISConfig.GpInterfaceLogRow.nameProperty; };
+            GpInterfaceLogDialog.prototype.getService = function () { return SSISConfig.GpInterfaceLogService.baseUrl; };
+            GpInterfaceLogDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GpInterfaceLogDialog);
+            return GpInterfaceLogDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.GpInterfaceLogDialog = GpInterfaceLogDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogGrid = /** @class */ (function (_super) {
+            __extends(GpInterfaceLogGrid, _super);
+            function GpInterfaceLogGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            GpInterfaceLogGrid.prototype.getColumnsKey = function () { return 'SSISConfig.GpInterfaceLog'; };
+            GpInterfaceLogGrid.prototype.getDialogType = function () { return SSISConfig.GpInterfaceLogDialog; };
+            GpInterfaceLogGrid.prototype.getIdProperty = function () { return SSISConfig.GpInterfaceLogRow.idProperty; };
+            GpInterfaceLogGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.GpInterfaceLogRow.localTextPrefix; };
+            GpInterfaceLogGrid.prototype.getService = function () { return SSISConfig.GpInterfaceLogService.baseUrl; };
+            GpInterfaceLogGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GpInterfaceLogGrid);
+            return GpInterfaceLogGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.GpInterfaceLogGrid = GpInterfaceLogGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
         var INTConfigBaseDialog = /** @class */ (function (_super) {
             __extends(INTConfigBaseDialog, _super);
             function INTConfigBaseDialog() {
@@ -7973,5 +8300,47 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        /**
+         * Our select editor with hardcoded values.
+         *
+         * When you define a new editor type, make sure you build
+         * and transform templates for it to be available
+         * in server side forms, e.g. [HardCodedValuesEditor]
+         */
+        var SelectCompanyEditor = /** @class */ (function (_super) {
+            __extends(SelectCompanyEditor, _super);
+            function SelectCompanyEditor(container) {
+                var _this = _super.call(this, container, null) || this;
+                // add option accepts a key (id) value and display text value
+                _this.addOption("100", "Oceania Cruises");
+                _this.addOption("110", "Regent Seven Seas Cruises");
+                _this.addOption("111", "International");
+                _this.addOption("112", "Latam");
+                _this.addOption("113", "UK DE");
+                return _this;
+                // you may also use addItem which accepts a Select2Item parameter
+                //this.addItem({
+                //    id: "key3",
+                //    text: "Text 3"
+                //});
+                //// don't let selecting this one (disabled)
+                //this.addItem({
+                //    id: "key4",
+                //    text: "Text 4",
+                //    disabled: true
+                //});
+            }
+            SelectCompanyEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], SelectCompanyEditor);
+            return SelectCompanyEditor;
+        }(Serenity.Select2Editor));
+        PCHODS.SelectCompanyEditor = SelectCompanyEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

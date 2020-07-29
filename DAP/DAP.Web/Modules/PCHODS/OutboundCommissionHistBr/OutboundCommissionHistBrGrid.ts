@@ -12,11 +12,13 @@ namespace DAP.PCHODS {
         protected getService() { return OutboundCommissionHistBrService.baseUrl; }
 
         private pendingChanges: Q.Dictionary<any> = {};
+        private AllowEdits: boolean = false;
 
         constructor(container: JQuery) {
             super(container);
 
             this.slickContainer.on('change', '.edit:input', (e) => this.inputsChange(e));
+            
         }
 
         protected getButtons() {
@@ -32,7 +34,51 @@ namespace DAP.PCHODS {
                 separator: true
             });
 
+            buttons.push({
+                title: 'Create New Bracket',
+                cssClass: 'add-button',
+                onClick: e => this.createNewBracketClick(),
+                separator: true
+            });
+
             return buttons;
+        }
+
+        private createNewBracketClick() {
+
+            Q.confirm('Are you sure you want to create a new tear breakets?', () => {
+
+                var HistRow: OutboundCommissionHistBrRow[];
+                var equalFilter = { "CompanyCd": 111 };
+
+                PCHODS.OutboundCommissionHistBrService.List({
+                    EqualityFilter: equalFilter
+                }, response => {
+                    HistRow = response.Entities;
+                    for (let item of HistRow) {
+                        item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                        //Q.alert(item.InactiveDt);
+                        PCHODS.OutboundCommissionHistBrService.Update({
+                            EntityId: item.CommissionHistBrId,
+                            Entity: item
+                        }, response => {
+                            item.CommissionHistBrId = null;
+                            item.ActiveDt = item.InactiveDt;
+                            item.InactiveDt = null;
+                            PCHODS.OutboundCommissionHistBrService.Create({
+                                Entity: item
+                            }, response => {
+                                this.AllowEdits = true;
+                                this.refresh();
+                            });
+                        });
+                    }
+                    Q.notifySuccess("Bracket Created Successfully!", '');
+                    
+                });
+
+            });
+
         }
 
         protected onViewProcessData(response) {
@@ -84,11 +130,11 @@ namespace DAP.PCHODS {
             var columns = super.getColumns();
             var num = ctx => this.numericInputFormatter(ctx, 2);
             var num4 = ctx => this.numericInputFormatter(ctx, 4);
-
+           
             Q.first(columns, x => x.field === fld.LowNumBookings).format = num;
             Q.first(columns, x => x.field === fld.HighNumBookings).format = num;
             Q.first(columns, x => x.field === fld.CommissionRate).format = num4;
-
+           
             return columns;
         }
 
@@ -151,6 +197,12 @@ namespace DAP.PCHODS {
             if (Object.keys(this.pendingChanges).length === 0) {
                 return;
             }
+
+            //if (!this.AllowEdits) {
+            //    Q.notifyError(Q.text('Only new brackets could be editied!'), '', null);
+            //    this.refresh();
+            //    return;
+            //}
 
             // this calls save service for all modified rows, one by one
             // you could write a batch update service

@@ -75,7 +75,7 @@ namespace MVC
         {
             public static class Account
             {
-                public const string AccountLogin = "~/Modules/Membership/Account/AccountLogin.cshtml";                
+                public const string AccountLogin = "~/Modules/Membership/Account/AccountLogin.cshtml";
                 public const string AccountLogin_AdminLTE = "~/Modules/Membership/Account/AccountLogin.AdminLTE.cshtml";
                 public static class ChangePassword
                 {
@@ -218,6 +218,16 @@ namespace MVC
 
         public static class SSISConfig
         {
+            public static class DataFlow
+            {
+                public const string DataFlowIndex = "~/Modules/SSISConfig/DataFlow/DataFlowIndex.cshtml";
+            }
+
+            public static class GpInterfaceLog
+            {
+                public const string GpInterfaceLogIndex = "~/Modules/SSISConfig/GpInterfaceLog/GpInterfaceLogIndex.cshtml";
+            }
+
             public static class INTConfigBase
             {
                 public const string INTConfigBaseIndex = "~/Modules/SSISConfig/INTConfigBase/INTConfigBaseIndex.cshtml";

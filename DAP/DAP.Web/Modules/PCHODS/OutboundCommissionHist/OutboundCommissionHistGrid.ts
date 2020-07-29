@@ -195,6 +195,8 @@ namespace DAP.PCHODS {
                 getter: 'CompanyName'
             }]);
 
+            this.view.collapseAllGroups(0);
+
             return grid;
         }
 
