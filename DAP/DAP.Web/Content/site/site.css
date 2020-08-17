@@ -9465,6 +9465,12 @@ button.ui-button {
 .s-NCLHODSSPENDVIS-AmoslevelDialog .caption {
   width: 150px;
 }
+.s-NCLHODSSPENDVIS-DataFlowDialog > .size {
+  width: 650px;
+}
+.s-NCLHODSSPENDVIS-DataFlowDialog .caption {
+  width: 150px;
+}
 .s-Config-SsisConfigDialog > .size {
   width: 650px;
 }
@@ -9502,6 +9508,12 @@ button.ui-button {
   width: 650px;
 }
 .s-SSISConfig-GpInterfaceLogDialog .caption {
+  width: 150px;
+}
+.s-SSISConfig-MicrosDataFlowDialog > .size {
+  width: 650px;
+}
+.s-SSISConfig-MicrosDataFlowDialog .caption {
   width: 150px;
 }
 .s-NCLHDSAR-SystemMasterDialog > .size {
@@ -9608,4 +9620,16 @@ button.ui-button {
 }
 .s-NoteDialog .ui-dialog-content {
   padding-bottom: 10px;
+}
+.s-NCLHODSMICROS-DataFlowDialog > .size {
+  width: 650px;
+}
+.s-NCLHODSMICROS-DataFlowDialog .caption {
+  width: 150px;
+}
+.s-PCHDW-DimInvoiceDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-DimInvoiceDialog .caption {
+  width: 150px;
 }

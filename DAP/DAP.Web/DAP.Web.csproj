@@ -1124,6 +1124,12 @@
     <Content Include="Modules\SSISConfig\PsInterfaceConfig\PsInterfaceConfigIndex.cshtml" />
     <Content Include="Modules\SSISConfig\DataFlow\DataFlowIndex.cshtml" />
     <Content Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogIndex.cshtml" />
+    <Content Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowIndex.cshtml" />
+    <Content Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowIndex.cshtml" />
+    <Content Include="Modules\NCLHODSMICROS\DataFlow\DataFlowIndex.cshtml" />
+    <Content Include="Content\site\site.nclhodsmicros.less" />
+    <Content Include="Modules\PCHDW\DimInvoice\DimInvoiceIndex.cshtml" />
+    <Content Include="Content\site\site.pchdw.less" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1354,6 +1360,14 @@
     <TypeScriptCompile Include="Modules\SSISConfig\DataFlow\DataFlowGrid.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogDialog.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogGrid.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\DimInvoice\DimInvoiceDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\DimInvoice\DimInvoiceGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2291,6 +2305,42 @@
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.GpInterfaceLogForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.MicrosDataFlowRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.MicrosDataFlowService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.MicrosDataFlowForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.DataFlowRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.DataFlowService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.DataFlowForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSMICROS.DataFlowRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSMICROS.DataFlowService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSMICROS.DataFlowForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimInvoiceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimInvoiceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimInvoiceForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2499,7 +2549,9 @@
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterPage.cs" />
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRepository.cs" />
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRow.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\NCLHODSMICROSPermissionKeys.cs" />
     <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\PCHDWPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
@@ -2673,6 +2725,32 @@
     <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogPage.cs" />
     <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogColumns.cs" />
     <Compile Include="Modules\SSISConfig\GpInterfaceLog\GpInterfaceLogForm.cs" />
+    <Compile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowRow.cs" />
+    <Compile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowRepository.cs" />
+    <Compile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowPage.cs" />
+    <Compile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowColumns.cs" />
+    <Compile Include="Modules\SSISConfig\MicrosDataFlow\MicrosDataFlowForm.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowRow.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowRepository.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowEndpoint.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowPage.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowColumns.cs" />
+    <Compile Include="Modules\NCLHODSSPENDVIS\DataFlow\DataFlowForm.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowRow.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowRepository.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowEndpoint.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowPage.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowColumns.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowForm.cs" />
+    <Compile Include="Modules\NCLHODSMICROS\NCLHODSMICROSNavigation.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceRow.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceRepository.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceEndpoint.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\DimInvoicePage.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceColumns.cs" />
+    <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceForm.cs" />
+    <Compile Include="Modules\PCHDW\PCHDWNavigation.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
