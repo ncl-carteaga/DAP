@@ -872,6 +872,18 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var NoteRow;
+        (function (NoteRow) {
+            NoteRow.idProperty = 'NoteId';
+            NoteRow.nameProperty = 'EntityType';
+            NoteRow.localTextPrefix = 'NCLHDSAR.Note';
+        })(NoteRow = NCLHDSAR.NoteRow || (NCLHDSAR.NoteRow = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var RequestAttributesForm = /** @class */ (function (_super) {
             __extends(RequestAttributesForm, _super);
             function RequestAttributesForm(prefix) {
@@ -1193,27 +1205,7 @@ var DAP;
                         'SystemMasterId', w1,
                         'RequestValue', w0,
                         'ResolvedDt', w2,
-                        'ExtractDt', w2,
-                        'FirstNm', w0,
-                        'MiddleNm', w0,
-                        'LastNm', w0,
-                        'Addr1', w0,
-                        'Addr2', w0,
-                        'CityNm', w0,
-                        'StateNm', w0,
-                        'PostalCd', w0,
-                        'CountryCd', w0,
-                        'Email', w0,
-                        'OldFirstNm', w0,
-                        'OldMiddleNm', w0,
-                        'OldLastNm', w0,
-                        'OldAddr1', w0,
-                        'OldAddr2', w0,
-                        'OldCityNm', w0,
-                        'OldStateNm', w0,
-                        'OldPostalCd', w0,
-                        'OldCountryCd', w0,
-                        'OldEmail', w0
+                        'ExtractDt', w2
                     ]);
                 }
                 return _this;
@@ -1271,24 +1263,26 @@ var DAP;
                     var w0 = s.StringEditor;
                     var w1 = s.DateEditor;
                     var w2 = s.LookupEditor;
+                    var w3 = NCLHDSAR.NotesEditor;
                     Q.initFormType(SwRequestForm, [
                         'ClientFirstName', w0,
                         'ClientLastName', w0,
                         'ClientEmailAddress', w0,
-                        'RecordTimeStamp', w1,
                         'ClientAddress', w0,
                         'ClientZipCode', w0,
                         'ClientLatitudesNumber', w0,
                         'ClientIsRelatedtoHousehold', w0,
                         'RequestType', w0,
                         'ClientGuestCategory', w0,
+                        'RecordTimeStamp', w1,
                         'LastUpdatedDt', w1,
                         'UpdatedBy', w0,
                         'AssigneeId', w2,
                         'StatusId', w2,
                         'ApiResponseId', w0,
                         'ApiResponse', w0,
-                        'ApiResponseDepth', w0
+                        'ApiResponseDepth', w0,
+                        'NoteList', w3
                     ]);
                 }
                 return _this;
@@ -1399,6 +1393,94 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var NCLHODSMICROS;
+    (function (NCLHODSMICROS) {
+        var DataFlowForm = /** @class */ (function (_super) {
+            __extends(DataFlowForm, _super);
+            function DataFlowForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            DataFlowForm.formKey = 'NCLHODSMICROS.DataFlow';
+            return DataFlowForm;
+        }(Serenity.PrefixedContext));
+        NCLHODSMICROS.DataFlowForm = DataFlowForm;
+        [,
+            ['Source', function () { return Serenity.StringEditor; }],
+            ['Name', function () { return Serenity.StringEditor; }],
+            ['ProcessYn', function () { return Serenity.StringEditor; }],
+            ['Target', function () { return Serenity.StringEditor; }],
+            ['Description', function () { return Serenity.StringEditor; }],
+            ['SourceDesc', function () { return Serenity.StringEditor; }],
+            ['TargetDesc', function () { return Serenity.StringEditor; }],
+            ['Package', function () { return Serenity.StringEditor; }],
+            ['Status', function () { return Serenity.IntegerEditor; }],
+            ['Lset', function () { return Serenity.DateEditor; }],
+            ['Cet', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(DataFlowForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(NCLHODSMICROS = DAP.NCLHODSMICROS || (DAP.NCLHODSMICROS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSMICROS;
+    (function (NCLHODSMICROS) {
+        var DataFlowRow;
+        (function (DataFlowRow) {
+            DataFlowRow.idProperty = 'Key';
+            DataFlowRow.nameProperty = 'Source';
+            DataFlowRow.localTextPrefix = 'NCLHODSMICROS.DataFlow';
+            var Fields;
+            (function (Fields) {
+            })(Fields = DataFlowRow.Fields || (DataFlowRow.Fields = {}));
+            [
+                'Key',
+                'Source',
+                'Name',
+                'ProcessYn',
+                'Target',
+                'Description',
+                'SourceDesc',
+                'TargetDesc',
+                'Package',
+                'Status',
+                'Lset',
+                'Cet'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(DataFlowRow = NCLHODSMICROS.DataFlowRow || (NCLHODSMICROS.DataFlowRow = {}));
+    })(NCLHODSMICROS = DAP.NCLHODSMICROS || (DAP.NCLHODSMICROS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSMICROS;
+    (function (NCLHODSMICROS) {
+        var DataFlowService;
+        (function (DataFlowService) {
+            DataFlowService.baseUrl = 'NCLHODSMICROS/DataFlow';
+            var Methods;
+            (function (Methods) {
+            })(Methods = DataFlowService.Methods || (DataFlowService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DataFlowService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DataFlowService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = DataFlowService.baseUrl + '/' + x;
+            });
+        })(DataFlowService = NCLHODSMICROS.DataFlowService || (NCLHODSMICROS.DataFlowService = {}));
+    })(NCLHODSMICROS = DAP.NCLHODSMICROS || (DAP.NCLHODSMICROS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var NCLHODSSPENDVIS;
     (function (NCLHODSSPENDVIS) {
         var AmoslevelForm = /** @class */ (function (_super) {
@@ -1458,6 +1540,394 @@ var DAP;
             });
         })(AmoslevelService = NCLHODSSPENDVIS.AmoslevelService || (NCLHODSSPENDVIS.AmoslevelService = {}));
     })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var DataFlowForm = /** @class */ (function (_super) {
+            __extends(DataFlowForm, _super);
+            function DataFlowForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            DataFlowForm.formKey = 'NCLHODSSPENDVIS.DataFlow';
+            return DataFlowForm;
+        }(Serenity.PrefixedContext));
+        NCLHODSSPENDVIS.DataFlowForm = DataFlowForm;
+        [,
+            ['Source', function () { return Serenity.StringEditor; }],
+            ['Name', function () { return Serenity.StringEditor; }],
+            ['ProcessYn', function () { return Serenity.StringEditor; }],
+            ['Target', function () { return Serenity.StringEditor; }],
+            ['Description', function () { return Serenity.StringEditor; }],
+            ['Package', function () { return Serenity.StringEditor; }],
+            ['Status', function () { return Serenity.IntegerEditor; }],
+            ['Lset', function () { return Serenity.DateEditor; }],
+            ['Cet', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(DataFlowForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var DataFlowRow;
+        (function (DataFlowRow) {
+            DataFlowRow.idProperty = 'Key';
+            DataFlowRow.nameProperty = 'Source';
+            DataFlowRow.localTextPrefix = 'NCLHODSSPENDVIS.DataFlow';
+            var Fields;
+            (function (Fields) {
+            })(Fields = DataFlowRow.Fields || (DataFlowRow.Fields = {}));
+            [
+                'Key',
+                'Source',
+                'Name',
+                'ProcessYn',
+                'Target',
+                'Description',
+                'Package',
+                'Status',
+                'Lset',
+                'Cet'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(DataFlowRow = NCLHODSSPENDVIS.DataFlowRow || (NCLHODSSPENDVIS.DataFlowRow = {}));
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var DataFlowService;
+        (function (DataFlowService) {
+            DataFlowService.baseUrl = 'NCLHODSSPENDVIS/DataFlow';
+            var Methods;
+            (function (Methods) {
+            })(Methods = DataFlowService.Methods || (DataFlowService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DataFlowService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DataFlowService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = DataFlowService.baseUrl + '/' + x;
+            });
+        })(DataFlowService = NCLHODSSPENDVIS.DataFlowService || (NCLHODSSPENDVIS.DataFlowService = {}));
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimInvoiceForm = /** @class */ (function (_super) {
+            __extends(DimInvoiceForm, _super);
+            function DimInvoiceForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            DimInvoiceForm.formKey = 'PCHDW.DimInvoice';
+            return DimInvoiceForm;
+        }(Serenity.PrefixedContext));
+        PCHDW.DimInvoiceForm = DimInvoiceForm;
+        [,
+            ['InvoiceNum', function () { return Serenity.StringEditor; }],
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['PassengerQty', function () { return Serenity.IntegerEditor; }],
+            ['NonrevPassengerQty', function () { return Serenity.IntegerEditor; }],
+            ['NontaxPassengerQty', function () { return Serenity.IntegerEditor; }],
+            ['OfficeCd', function () { return Serenity.StringEditor; }],
+            ['OfficeDesc', function () { return Serenity.StringEditor; }],
+            ['CurrencyCd', function () { return Serenity.StringEditor; }],
+            ['CurrencyDesc', function () { return Serenity.StringEditor; }],
+            ['StatusCd', function () { return Serenity.StringEditor; }],
+            ['StatusDesc', function () { return Serenity.StringEditor; }],
+            ['ZipCd', function () { return Serenity.StringEditor; }],
+            ['CityName', function () { return Serenity.StringEditor; }],
+            ['StateCd', function () { return Serenity.StringEditor; }],
+            ['CountryName', function () { return Serenity.StringEditor; }],
+            ['CancellationDt', function () { return Serenity.DateEditor; }],
+            ['BonusSavingsCd', function () { return Serenity.StringEditor; }],
+            ['BonusSavingsDesc', function () { return Serenity.StringEditor; }],
+            ['AirParticipationInd', function () { return Serenity.BooleanEditor; }],
+            ['HotelParticipationInd', function () { return Serenity.BooleanEditor; }],
+            ['PaxAirClassCd', function () { return Serenity.StringEditor; }],
+            ['DepositDt', function () { return Serenity.DateEditor; }],
+            ['DepositAmt', function () { return Serenity.StringEditor; }],
+            ['UserId', function () { return Serenity.StringEditor; }],
+            ['Pax1FirstName', function () { return Serenity.StringEditor; }],
+            ['Pax1LastName', function () { return Serenity.StringEditor; }],
+            ['Pax2FirstName', function () { return Serenity.StringEditor; }],
+            ['Pax2LastName', function () { return Serenity.StringEditor; }],
+            ['CruiseTk', function () { return Serenity.IntegerEditor; }],
+            ['ChangeDt', function () { return Serenity.DateEditor; }],
+            ['CreateDt', function () { return Serenity.DateEditor; }],
+            ['FirstPaymentDt', function () { return Serenity.DateEditor; }],
+            ['FinalPaymentDueDt', function () { return Serenity.DateEditor; }],
+            ['InitialWaitlistInd', function () { return Serenity.BooleanEditor; }],
+            ['CancelBookingStatusCd', function () { return Serenity.StringEditor; }],
+            ['SalesSourceCd', function () { return Serenity.StringEditor; }],
+            ['SalesSourceDesc', function () { return Serenity.StringEditor; }],
+            ['OriginalConsortiumCd', function () { return Serenity.StringEditor; }],
+            ['OriginalConsortiumDesc', function () { return Serenity.StringEditor; }],
+            ['UserName', function () { return Serenity.StringEditor; }],
+            ['OriginalUserId', function () { return Serenity.StringEditor; }],
+            ['OriginalUserName', function () { return Serenity.StringEditor; }],
+            ['OriginalDeptCd', function () { return Serenity.StringEditor; }],
+            ['OriginalDeptName', function () { return Serenity.StringEditor; }],
+            ['OriginalUserActiveInd', function () { return Serenity.StringEditor; }],
+            ['WaitlistDt', function () { return Serenity.DateEditor; }],
+            ['FirstConfirmDt', function () { return Serenity.DateEditor; }],
+            ['PastGuestInd', function () { return Serenity.IntegerEditor; }],
+            ['DirectBookingInd', function () { return Serenity.StringEditor; }],
+            ['AttnName', function () { return Serenity.StringEditor; }],
+            ['ComboBookingInd', function () { return Serenity.StringEditor; }],
+            ['OnboardTypeDesc', function () { return Serenity.StringEditor; }],
+            ['CruiseSvcMgmtCrNum', function () { return Serenity.StringEditor; }],
+            ['PromoCd', function () { return Serenity.StringEditor; }],
+            ['GdsSystemCd', function () { return Serenity.StringEditor; }],
+            ['GdsSystemDesc', function () { return Serenity.StringEditor; }],
+            ['PromoDesc', function () { return Serenity.StringEditor; }],
+            ['CancellationType', function () { return Serenity.StringEditor; }],
+            ['ChannelTk', function () { return Serenity.IntegerEditor; }],
+            ['PromoBonusComm', function () { return Serenity.StringEditor; }],
+            ['PromoCommAmt', function () { return Serenity.DecimalEditor; }],
+            ['ComboLegQty', function () { return Serenity.DecimalEditor; }],
+            ['CancelReason', function () { return Serenity.StringEditor; }],
+            ['PaidClassCd', function () { return Serenity.StringEditor; }],
+            ['PaidClassCategoryDesc', function () { return Serenity.StringEditor; }],
+            ['OciOfficeCd', function () { return Serenity.StringEditor; }],
+            ['AirXferFeeAmt', function () { return Serenity.DecimalEditor; }],
+            ['CountryCd', function () { return Serenity.StringEditor; }],
+            ['FutureDepositFlag', function () { return Serenity.StringEditor; }],
+            ['PromotionalAmenityCd', function () { return Serenity.StringEditor; }],
+            ['CruiseCommissionAmt', function () { return Serenity.DecimalEditor; }],
+            ['PostedInvoiceDt', function () { return Serenity.DateEditor; }],
+            ['AgentTk', function () { return Serenity.IntegerEditor; }],
+            ['Cinvoice1Num', function () { return Serenity.StringEditor; }],
+            ['Cinvoice2Num', function () { return Serenity.StringEditor; }],
+            ['Cinvoice3Num', function () { return Serenity.StringEditor; }],
+            ['Cinvoice4Num', function () { return Serenity.StringEditor; }],
+            ['Cinvoice5Num', function () { return Serenity.StringEditor; }],
+            ['Cinvoice6Num', function () { return Serenity.StringEditor; }],
+            ['PackageCd', function () { return Serenity.StringEditor; }],
+            ['LandPackageParticipantQty', function () { return Serenity.IntegerEditor; }],
+            ['LandPackageParticipantInd', function () { return Serenity.StringEditor; }],
+            ['DptrFlightQty', function () { return Serenity.IntegerEditor; }],
+            ['RtrnFlightQty', function () { return Serenity.IntegerEditor; }],
+            ['DptrFlightClassCd', function () { return Serenity.StringEditor; }],
+            ['RtrnFlightClassCd', function () { return Serenity.StringEditor; }],
+            ['AirCostSourceCd', function () { return Serenity.StringEditor; }],
+            ['ChannelCountryCd', function () { return Serenity.StringEditor; }],
+            ['ChannelCountryName', function () { return Serenity.StringEditor; }],
+            ['Pax1AirportHome1Cd', function () { return Serenity.StringEditor; }],
+            ['Pax1AirportRtrn1Cd', function () { return Serenity.StringEditor; }],
+            ['Pax1FirstFlightClass', function () { return Serenity.StringEditor; }],
+            ['Pax1RtrnFlightClass', function () { return Serenity.StringEditor; }],
+            ['Pax2AirportHome1Cd', function () { return Serenity.StringEditor; }],
+            ['Pax2AirportRtrn1Cd', function () { return Serenity.StringEditor; }],
+            ['Pax2FirstFlightClass', function () { return Serenity.StringEditor; }],
+            ['Pax2RtrnFlightClass', function () { return Serenity.StringEditor; }],
+            ['Pax1LoyaltyLevelNm', function () { return Serenity.StringEditor; }],
+            ['Pax2LoyaltyLevelNm', function () { return Serenity.StringEditor; }],
+            ['InstallmentPlanInd', function () { return Serenity.StringEditor; }],
+            ['InstallmentPlanNum', function () { return Serenity.IntegerEditor; }],
+            ['CruiseSvcMgmtId', function () { return Serenity.StringEditor; }],
+            ['OutboundReportingRegionCd', function () { return Serenity.StringEditor; }],
+            ['CenturionCd', function () { return Serenity.StringEditor; }],
+            ['CenturionInd', function () { return Serenity.StringEditor; }],
+            ['PlatinumCd', function () { return Serenity.StringEditor; }],
+            ['PlatinumInd', function () { return Serenity.StringEditor; }],
+            ['DwPastGuestInd', function () { return Serenity.StringEditor; }],
+            ['DwPastGuest1Ind', function () { return Serenity.StringEditor; }],
+            ['DwPastGuest2Ind', function () { return Serenity.StringEditor; }],
+            ['Pax1NvsPgInd', function () { return Serenity.StringEditor; }],
+            ['Pax2NvsPgInd', function () { return Serenity.StringEditor; }],
+            ['NvsPgInd', function () { return Serenity.StringEditor; }],
+            ['CurrentPackageCd', function () { return Serenity.StringEditor; }],
+            ['MpcardNumPax1', function () { return Serenity.StringEditor; }],
+            ['CurrentLoyaltyLevelPax1', function () { return Serenity.StringEditor; }],
+            ['MpcardNumPax2', function () { return Serenity.StringEditor; }],
+            ['CurrentLoyaltyLevelPax2', function () { return Serenity.StringEditor; }],
+            ['FccDeferredInd', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(DimInvoiceForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimInvoiceRow;
+        (function (DimInvoiceRow) {
+            DimInvoiceRow.idProperty = 'InvoiceTk';
+            DimInvoiceRow.nameProperty = 'InvoiceNum';
+            DimInvoiceRow.localTextPrefix = 'PCHDW.DimInvoice';
+            var Fields;
+            (function (Fields) {
+            })(Fields = DimInvoiceRow.Fields || (DimInvoiceRow.Fields = {}));
+            [
+                'InvoiceTk',
+                'InvoiceNum',
+                'CompanyCd',
+                'PassengerQty',
+                'NonrevPassengerQty',
+                'NontaxPassengerQty',
+                'OfficeCd',
+                'OfficeDesc',
+                'CurrencyCd',
+                'CurrencyDesc',
+                'StatusCd',
+                'StatusDesc',
+                'ZipCd',
+                'CityName',
+                'StateCd',
+                'CountryName',
+                'CancellationDt',
+                'BonusSavingsCd',
+                'BonusSavingsDesc',
+                'AirParticipationInd',
+                'HotelParticipationInd',
+                'PaxAirClassCd',
+                'DepositDt',
+                'DepositAmt',
+                'UserId',
+                'Pax1FirstName',
+                'Pax1LastName',
+                'Pax2FirstName',
+                'Pax2LastName',
+                'CruiseTk',
+                'ChangeDt',
+                'CreateDt',
+                'FirstPaymentDt',
+                'FinalPaymentDueDt',
+                'InitialWaitlistInd',
+                'CancelBookingStatusCd',
+                'SalesSourceCd',
+                'SalesSourceDesc',
+                'OriginalConsortiumCd',
+                'OriginalConsortiumDesc',
+                'UserName',
+                'OriginalUserId',
+                'OriginalUserName',
+                'OriginalDeptCd',
+                'OriginalDeptName',
+                'OriginalUserActiveInd',
+                'WaitlistDt',
+                'FirstConfirmDt',
+                'PastGuestInd',
+                'DirectBookingInd',
+                'AttnName',
+                'ComboBookingInd',
+                'OnboardTypeDesc',
+                'CruiseSvcMgmtCrNum',
+                'PromoCd',
+                'GdsSystemCd',
+                'GdsSystemDesc',
+                'PromoDesc',
+                'CancellationType',
+                'ChannelTk',
+                'PromoBonusComm',
+                'PromoCommAmt',
+                'ComboLegQty',
+                'CancelReason',
+                'PaidClassCd',
+                'PaidClassCategoryDesc',
+                'OciOfficeCd',
+                'AirXferFeeAmt',
+                'CountryCd',
+                'FutureDepositFlag',
+                'PromotionalAmenityCd',
+                'CruiseCommissionAmt',
+                'PostedInvoiceDt',
+                'AgentTk',
+                'Cinvoice1Num',
+                'Cinvoice2Num',
+                'Cinvoice3Num',
+                'Cinvoice4Num',
+                'Cinvoice5Num',
+                'Cinvoice6Num',
+                'PackageCd',
+                'LandPackageParticipantQty',
+                'LandPackageParticipantInd',
+                'DptrFlightQty',
+                'RtrnFlightQty',
+                'DptrFlightClassCd',
+                'RtrnFlightClassCd',
+                'AirCostSourceCd',
+                'ChannelCountryCd',
+                'ChannelCountryName',
+                'Pax1AirportHome1Cd',
+                'Pax1AirportRtrn1Cd',
+                'Pax1FirstFlightClass',
+                'Pax1RtrnFlightClass',
+                'Pax2AirportHome1Cd',
+                'Pax2AirportRtrn1Cd',
+                'Pax2FirstFlightClass',
+                'Pax2RtrnFlightClass',
+                'Pax1LoyaltyLevelNm',
+                'Pax2LoyaltyLevelNm',
+                'InstallmentPlanInd',
+                'InstallmentPlanNum',
+                'CruiseSvcMgmtId',
+                'OutboundReportingRegionCd',
+                'CenturionCd',
+                'CenturionInd',
+                'PlatinumCd',
+                'PlatinumInd',
+                'DwPastGuestInd',
+                'DwPastGuest1Ind',
+                'DwPastGuest2Ind',
+                'Pax1NvsPgInd',
+                'Pax2NvsPgInd',
+                'NvsPgInd',
+                'CurrentPackageCd',
+                'MpcardNumPax1',
+                'CurrentLoyaltyLevelPax1',
+                'MpcardNumPax2',
+                'CurrentLoyaltyLevelPax2',
+                'FccDeferredInd'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(DimInvoiceRow = PCHDW.DimInvoiceRow || (PCHDW.DimInvoiceRow = {}));
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimInvoiceService;
+        (function (DimInvoiceService) {
+            DimInvoiceService.baseUrl = 'PCHDW/DimInvoice';
+            var Methods;
+            (function (Methods) {
+            })(Methods = DimInvoiceService.Methods || (DimInvoiceService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DimInvoiceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DimInvoiceService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = DimInvoiceService.baseUrl + '/' + x;
+            });
+        })(DimInvoiceService = PCHDW.DimInvoiceService || (PCHDW.DimInvoiceService = {}));
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -2008,7 +2478,7 @@ var DAP;
                 if (!SelectCompanyForm.init) {
                     SelectCompanyForm.init = true;
                     var s = Serenity;
-                    var w0 = PCHODS.CompanyEditor;
+                    var w0 = PCHODS.SelectCompanyEditor;
                     Q.initFormType(SelectCompanyForm, [
                         'CompanyCd', w0
                     ]);
@@ -2088,6 +2558,361 @@ var DAP;
 (function (DAP) {
     var SSISConfig;
     (function (SSISConfig) {
+        var DataFlowForm = /** @class */ (function (_super) {
+            __extends(DataFlowForm, _super);
+            function DataFlowForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DataFlowForm.init) {
+                    DataFlowForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(DataFlowForm, [
+                        'Source', w0,
+                        'Name', w0,
+                        'ProcessYn', w0,
+                        'Target', w0,
+                        'Description', w0,
+                        'SourceDesc', w0,
+                        'TargetDesc', w0,
+                        'Package', w0,
+                        'Status', w1,
+                        'Lset', w2,
+                        'Cet', w2
+                    ]);
+                }
+                return _this;
+            }
+            DataFlowForm.formKey = 'SSISConfig.DataFlow';
+            return DataFlowForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.DataFlowForm = DataFlowForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowRow;
+        (function (DataFlowRow) {
+            DataFlowRow.idProperty = 'Key';
+            DataFlowRow.nameProperty = 'Source';
+            DataFlowRow.localTextPrefix = 'SSISConfig.DataFlow';
+        })(DataFlowRow = SSISConfig.DataFlowRow || (SSISConfig.DataFlowRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowService;
+        (function (DataFlowService) {
+            DataFlowService.baseUrl = 'SSISConfig/DataFlow';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DataFlowService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DataFlowService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DataFlowService = SSISConfig.DataFlowService || (SSISConfig.DataFlowService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogForm = /** @class */ (function (_super) {
+            __extends(GpInterfaceLogForm, _super);
+            function GpInterfaceLogForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!GpInterfaceLogForm.init) {
+                    GpInterfaceLogForm.init = true;
+                    var s = Serenity;
+                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.IntegerEditor;
+                    Q.initFormType(GpInterfaceLogForm, [
+                        'CompanyCd', w0,
+                        'CruiseSegmentCd', w1,
+                        'ExpRevType', w1,
+                        'GpInterfaceInd', w1,
+                        'GpInterfacedDt', w2,
+                        'JournalNum', w3
+                    ]);
+                }
+                return _this;
+            }
+            GpInterfaceLogForm.formKey = 'SSISConfig.GpInterfaceLog';
+            return GpInterfaceLogForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.GpInterfaceLogForm = GpInterfaceLogForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogRow;
+        (function (GpInterfaceLogRow) {
+            GpInterfaceLogRow.idProperty = 'InterfaceLogId';
+            GpInterfaceLogRow.nameProperty = 'CompanyCd';
+            GpInterfaceLogRow.localTextPrefix = 'SSISConfig.GpInterfaceLog';
+        })(GpInterfaceLogRow = SSISConfig.GpInterfaceLogRow || (SSISConfig.GpInterfaceLogRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogService;
+        (function (GpInterfaceLogService) {
+            GpInterfaceLogService.baseUrl = 'SSISConfig/GpInterfaceLog';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                GpInterfaceLogService[x] = function (r, s, o) {
+                    return Q.serviceRequest(GpInterfaceLogService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(GpInterfaceLogService = SSISConfig.GpInterfaceLogService || (SSISConfig.GpInterfaceLogService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var INTConfigBaseForm = /** @class */ (function (_super) {
+            __extends(INTConfigBaseForm, _super);
+            function INTConfigBaseForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!INTConfigBaseForm.init) {
+                    INTConfigBaseForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(INTConfigBaseForm, [
+                        'ConfigurationFilter', w0,
+                        'PackagePath', w1,
+                        'ConfiguredValueType', w1,
+                        'ConfiguredValue', w1,
+                        'EnvironmentEnum', w2,
+                        'EnvironmentDesc', w1,
+                        'ConfigId', w2,
+                        'ModifiedBy', w1,
+                        'ModifiedOn', w3
+                    ]);
+                }
+                return _this;
+            }
+            INTConfigBaseForm.formKey = 'SSISConfig.INTConfigBase';
+            return INTConfigBaseForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.INTConfigBaseForm = INTConfigBaseForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var INTConfigBaseRow;
+        (function (INTConfigBaseRow) {
+            INTConfigBaseRow.idProperty = 'ConfigId';
+            INTConfigBaseRow.nameProperty = 'ConfigurationFilter';
+            INTConfigBaseRow.localTextPrefix = 'SSISConfig.INTConfigBase';
+        })(INTConfigBaseRow = SSISConfig.INTConfigBaseRow || (SSISConfig.INTConfigBaseRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var INTConfigBaseService;
+        (function (INTConfigBaseService) {
+            INTConfigBaseService.baseUrl = 'SSISConfig/INTConfigBase';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                INTConfigBaseService[x] = function (r, s, o) {
+                    return Q.serviceRequest(INTConfigBaseService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(INTConfigBaseService = SSISConfig.INTConfigBaseService || (SSISConfig.INTConfigBaseService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var MicrosDataFlowForm = /** @class */ (function (_super) {
+            __extends(MicrosDataFlowForm, _super);
+            function MicrosDataFlowForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            MicrosDataFlowForm.formKey = 'SSISConfig.MicrosDataFlow';
+            return MicrosDataFlowForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.MicrosDataFlowForm = MicrosDataFlowForm;
+        [,
+            ['Source', function () { return Serenity.StringEditor; }],
+            ['Name', function () { return Serenity.StringEditor; }],
+            ['ProcessYn', function () { return Serenity.StringEditor; }],
+            ['Target', function () { return Serenity.StringEditor; }],
+            ['Description', function () { return Serenity.StringEditor; }],
+            ['SourceDesc', function () { return Serenity.StringEditor; }],
+            ['TargetDesc', function () { return Serenity.StringEditor; }],
+            ['Package', function () { return Serenity.StringEditor; }],
+            ['Status', function () { return Serenity.IntegerEditor; }],
+            ['Lset', function () { return Serenity.DateEditor; }],
+            ['Cet', function () { return Serenity.DateEditor; }],
+            ['LseIndex', function () { return Serenity.IntegerEditor; }],
+            ['CeIndex', function () { return Serenity.IntegerEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(MicrosDataFlowForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var MicrosDataFlowRow;
+        (function (MicrosDataFlowRow) {
+            MicrosDataFlowRow.idProperty = 'Key';
+            MicrosDataFlowRow.nameProperty = 'Source';
+            MicrosDataFlowRow.localTextPrefix = 'SSISConfig.MicrosDataFlow';
+            var Fields;
+            (function (Fields) {
+            })(Fields = MicrosDataFlowRow.Fields || (MicrosDataFlowRow.Fields = {}));
+            [
+                'Key',
+                'Source',
+                'Name',
+                'ProcessYn',
+                'Target',
+                'Description',
+                'SourceDesc',
+                'TargetDesc',
+                'Package',
+                'Status',
+                'Lset',
+                'Cet',
+                'LseIndex',
+                'CeIndex'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(MicrosDataFlowRow = SSISConfig.MicrosDataFlowRow || (SSISConfig.MicrosDataFlowRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var MicrosDataFlowService;
+        (function (MicrosDataFlowService) {
+            MicrosDataFlowService.baseUrl = 'SSISConfig/MicrosDataFlow';
+            var Methods;
+            (function (Methods) {
+            })(Methods = MicrosDataFlowService.Methods || (MicrosDataFlowService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                MicrosDataFlowService[x] = function (r, s, o) {
+                    return Q.serviceRequest(MicrosDataFlowService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = MicrosDataFlowService.baseUrl + '/' + x;
+            });
+        })(MicrosDataFlowService = SSISConfig.MicrosDataFlowService || (SSISConfig.MicrosDataFlowService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var PsInterfaceConfigForm = /** @class */ (function (_super) {
+            __extends(PsInterfaceConfigForm, _super);
+            function PsInterfaceConfigForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!PsInterfaceConfigForm.init) {
+                    PsInterfaceConfigForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(PsInterfaceConfigForm, [
+                        'ConfigSetting', w0,
+                        'DataType', w0,
+                        'ConfigValue', w0,
+                        'ConfigValueDate', w1
+                    ]);
+                }
+                return _this;
+            }
+            PsInterfaceConfigForm.formKey = 'SSISConfig.PsInterfaceConfig';
+            return PsInterfaceConfigForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.PsInterfaceConfigForm = PsInterfaceConfigForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var PsInterfaceConfigRow;
+        (function (PsInterfaceConfigRow) {
+            PsInterfaceConfigRow.idProperty = 'ConfigId';
+            PsInterfaceConfigRow.nameProperty = 'SourceSystem';
+            PsInterfaceConfigRow.localTextPrefix = 'SSISConfig.PsInterfaceConfig';
+        })(PsInterfaceConfigRow = SSISConfig.PsInterfaceConfigRow || (SSISConfig.PsInterfaceConfigRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var PsInterfaceConfigService;
+        (function (PsInterfaceConfigService) {
+            PsInterfaceConfigService.baseUrl = 'SSISConfig/PsInterfaceConfig';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                PsInterfaceConfigService[x] = function (r, s, o) {
+                    return Q.serviceRequest(PsInterfaceConfigService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(PsInterfaceConfigService = SSISConfig.PsInterfaceConfigService || (SSISConfig.PsInterfaceConfigService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
         var SsisConfigBaseForm = /** @class */ (function (_super) {
             __extends(SsisConfigBaseForm, _super);
             function SsisConfigBaseForm(prefix) {
@@ -2095,18 +2920,20 @@ var DAP;
                 if (!SsisConfigBaseForm.init) {
                     SsisConfigBaseForm.init = true;
                     var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.DateEditor;
                     Q.initFormType(SsisConfigBaseForm, [
                         'ConfigurationFilter', w0,
-                        'PackagePath', w0,
-                        'ConfiguredValueType', w0,
-                        'ConfiguredValue', w0,
-                        'EnvironmentEnum', w1,
-                        'EnvironmentDesc', w0,
-                        'ModifiedBy', w0,
-                        'ModifiedOn', w2
+                        'PackagePath', w1,
+                        'ConfiguredValueType', w1,
+                        'ConfiguredValue', w1,
+                        'EnvironmentEnum', w2,
+                        'EnvironmentDesc', w1,
+                        'ConfigId', w2,
+                        'ModifiedBy', w1,
+                        'ModifiedOn', w3
                     ]);
                 }
                 return _this;
@@ -2154,7 +2981,7 @@ var DAP;
 (function (DAP) {
     var Texts;
     (function (Texts) {
-        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, LastUpdated: 1, MiddleNm: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 } }, SSISConfig: { SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, ModifiedBy: 1, ModifiedDate: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, NoteList: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { ExtractDt: 1, Id: 1, LastUpdated: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, SystemMasterId: 1, SystemMasterSystemDesc: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1, ModifiedBy: 1, ModifiedDate: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 } }, SSISConfig: { DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 }, GpInterfaceLog: { CompanyCd: 1, CruiseSegmentCd: 1, ExpRevType: 1, GpInterfaceInd: 1, GpInterfacedDt: 1, InterfaceLogId: 1, JournalNum: 1 }, INTConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 }, PsInterfaceConfig: { ConfigId: 1, ConfigSetting: 1, ConfigValue: 1, ConfigValueDate: 1, DataType: 1, ModifiedBy: 1, ModifiedDate: 1, SourceSystem: 1 }, SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DAP.Texts || (DAP.Texts = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -5104,6 +5931,190 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var NoteDialog = /** @class */ (function (_super) {
+            __extends(NoteDialog, _super);
+            function NoteDialog() {
+                var _this = _super.call(this) || this;
+                _this.textEditor = new Serenity.HtmlNoteContentEditor(_this.byId('Text'));
+                return _this;
+            }
+            NoteDialog.prototype.getTemplate = function () {
+                return ("<form id='~_Form' class='s-Form'>" +
+                    "<textarea id='~_Text' class='required'></textarea>" +
+                    "</form>");
+            };
+            NoteDialog.prototype.getDialogOptions = function () {
+                var _this = this;
+                var opt = _super.prototype.getDialogOptions.call(this);
+                opt.buttons = [{
+                        text: Q.text('Dialogs.OkButton'),
+                        click: function () {
+                            if (!_this.validateForm()) {
+                                return;
+                            }
+                            _this.okClick && _this.okClick();
+                        }
+                    }, {
+                        text: Q.text('Dialogs.CancelButton'),
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+                return opt;
+            };
+            Object.defineProperty(NoteDialog.prototype, "text", {
+                get: function () {
+                    return this.textEditor.value;
+                },
+                set: function (value) {
+                    this.textEditor.value = value;
+                },
+                enumerable: true,
+                configurable: true
+            });
+            NoteDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NoteDialog);
+            return NoteDialog;
+        }(Serenity.TemplatedDialog));
+        NCLHDSAR.NoteDialog = NoteDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var NotesEditor = /** @class */ (function (_super) {
+            __extends(NotesEditor, _super);
+            function NotesEditor(div) {
+                var _this = _super.call(this, div) || this;
+                new Serenity.Toolbar(_this.byId('Toolbar'), {
+                    buttons: [{
+                            title: 'Add Note',
+                            cssClass: 'add-button',
+                            onClick: function (e) {
+                                e.preventDefault();
+                                _this.addClick();
+                            }
+                        }]
+                });
+                return _this;
+            }
+            NotesEditor.prototype.getTemplate = function () {
+                return "<div><div id='~_Toolbar'></div><ul id='~_NoteList'></ul></div>";
+            };
+            NotesEditor.prototype.updateContent = function () {
+                var _this = this;
+                var noteList = this.byId('NoteList');
+                noteList.children().remove();
+                if (this.items) {
+                    var index = 0;
+                    for (var t1 = 0; t1 < this.items.length; t1++) {
+                        var item = this.items[t1];
+                        var li = $('<li/>');
+                        $('<div/>').addClass('note-text').html(Q.coalesce(item.Text, '')).appendTo(li);
+                        $('<a/>').attr('href', '#').addClass('note-date')
+                            .text(item.InsertUserDisplayName + ' - ' +
+                            Q.formatDate(item.InsertDate, 'g'))
+                            .data('index', index).appendTo(li).click(function (e) { return _this.editClick(e); });
+                        $('<a/>').attr('href', '#').addClass('note-delete')
+                            .attr('title', 'delete note').data('index', index)
+                            .appendTo(li).click(function (e) { return _this.deleteClick(e); });
+                        li.appendTo(noteList);
+                        index++;
+                    }
+                }
+            };
+            NotesEditor.prototype.addClick = function () {
+                var _this = this;
+                var dlg = new NCLHDSAR.NoteDialog();
+                dlg.dialogTitle = 'Add Note';
+                dlg.okClick = function () {
+                    var text = Q.trimToNull(dlg.text);
+                    if (text == null) {
+                        return;
+                    }
+                    _this.items = _this.items || [];
+                    Q.insert(_this.items, 0, {
+                        Text: text,
+                        InsertUserDisplayName: DAP.Authorization.userDefinition.DisplayName,
+                        InsertDate: Q.formatISODateTimeUTC(new Date())
+                    });
+                    _this.updateContent();
+                    dlg.dialogClose();
+                    _this.set_isDirty(true);
+                    _this.onChange && _this.onChange();
+                };
+                dlg.dialogOpen();
+            };
+            NotesEditor.prototype.editClick = function (e) {
+                var _this = this;
+                e.preventDefault();
+                var index = $(e.target).data('index');
+                var old = this.items[index];
+                var dlg = new NCLHDSAR.NoteDialog();
+                dlg.dialogTitle = 'Edit Note';
+                dlg.text = old.Text;
+                dlg.okClick = function () {
+                    var text = Q.trimToNull(dlg.text);
+                    if (!text) {
+                        return;
+                    }
+                    _this.items[index].Text = text;
+                    _this.updateContent();
+                    dlg.dialogClose();
+                    _this.set_isDirty(true);
+                    _this.onChange && _this.onChange();
+                };
+                dlg.dialogOpen();
+            };
+            NotesEditor.prototype.deleteClick = function (e) {
+                var _this = this;
+                e.preventDefault();
+                var index = $(e.target).data('index');
+                Q.confirm('Delete this note?', function () {
+                    _this.items.splice(index, 1);
+                    _this.updateContent();
+                    _this.set_isDirty(true);
+                    _this.onChange && _this.onChange();
+                });
+            };
+            Object.defineProperty(NotesEditor.prototype, "value", {
+                get: function () {
+                    return this.items;
+                },
+                set: function (value) {
+                    this.items = value || [];
+                    this.set_isDirty(false);
+                    this.updateContent();
+                },
+                enumerable: true,
+                configurable: true
+            });
+            NotesEditor.prototype.getEditValue = function (prop, target) {
+                target[prop.name] = this.value;
+            };
+            NotesEditor.prototype.setEditValue = function (source, prop) {
+                this.value = source[prop.name] || [];
+            };
+            NotesEditor.prototype.get_isDirty = function () {
+                return this.isDirty;
+            };
+            NotesEditor.prototype.set_isDirty = function (value) {
+                this.isDirty = value;
+            };
+            NotesEditor = __decorate([
+                Serenity.Decorators.registerEditor([Serenity.IGetEditValue, Serenity.ISetEditValue]),
+                Serenity.Decorators.element("<div/>")
+            ], NotesEditor);
+            return NotesEditor;
+        }(Serenity.TemplatedWidget));
+        NCLHDSAR.NotesEditor = NotesEditor;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var RequestAttributesDialog = /** @class */ (function (_super) {
             __extends(RequestAttributesDialog, _super);
             function RequestAttributesDialog() {
@@ -6041,6 +7052,7 @@ var DAP;
                 // which is set as default on OrderDialog with @panelAttribute
                 //this.aGrid.openDialogsAsPanel = true;
                 //this.byId('General').closest('.field').hide().end().appendTo(this.byId('TabDetails'));
+                _this.byId('NoteList').closest('.field').hide().end().appendTo(_this.byId('TabNotes'));
                 DAP.DialogUtils.pendingChangesConfirmation(_this.element, function () { return _this.getSaveState() != _this.loadedState; });
                 return _this;
             }
@@ -6263,6 +7275,62 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var NCLHODSMICROS;
+    (function (NCLHODSMICROS) {
+        var DataFlowDialog = /** @class */ (function (_super) {
+            __extends(DataFlowDialog, _super);
+            function DataFlowDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new NCLHODSMICROS.DataFlowForm(_this.idPrefix);
+                return _this;
+            }
+            DataFlowDialog.prototype.getFormKey = function () { return NCLHODSMICROS.DataFlowForm.formKey; };
+            DataFlowDialog.prototype.getIdProperty = function () { return NCLHODSMICROS.DataFlowRow.idProperty; };
+            DataFlowDialog.prototype.getLocalTextPrefix = function () { return NCLHODSMICROS.DataFlowRow.localTextPrefix; };
+            DataFlowDialog.prototype.getNameProperty = function () { return NCLHODSMICROS.DataFlowRow.nameProperty; };
+            DataFlowDialog.prototype.getService = function () { return NCLHODSMICROS.DataFlowService.baseUrl; };
+            DataFlowDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            DataFlowDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowDialog);
+            return DataFlowDialog;
+        }(Serenity.EntityDialog));
+        NCLHODSMICROS.DataFlowDialog = DataFlowDialog;
+    })(NCLHODSMICROS = DAP.NCLHODSMICROS || (DAP.NCLHODSMICROS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSMICROS;
+    (function (NCLHODSMICROS) {
+        var DataFlowGrid = /** @class */ (function (_super) {
+            __extends(DataFlowGrid, _super);
+            function DataFlowGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DataFlowGrid.prototype.getColumnsKey = function () { return 'NCLHODSMICROS.DataFlow'; };
+            DataFlowGrid.prototype.getDialogType = function () { return NCLHODSMICROS.DataFlowDialog; };
+            DataFlowGrid.prototype.getIdProperty = function () { return NCLHODSMICROS.DataFlowRow.idProperty; };
+            DataFlowGrid.prototype.getLocalTextPrefix = function () { return NCLHODSMICROS.DataFlowRow.localTextPrefix; };
+            DataFlowGrid.prototype.getService = function () { return NCLHODSMICROS.DataFlowService.baseUrl; };
+            DataFlowGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            DataFlowGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowGrid);
+            return DataFlowGrid;
+        }(Serenity.EntityGrid));
+        NCLHODSMICROS.DataFlowGrid = DataFlowGrid;
+    })(NCLHODSMICROS = DAP.NCLHODSMICROS || (DAP.NCLHODSMICROS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var NCLHODSSPENDVIS;
     (function (NCLHODSSPENDVIS) {
         var AmoslevelDialog = /** @class */ (function (_super) {
@@ -6299,6 +7367,21 @@ var DAP;
             AmoslevelGrid.prototype.getIdProperty = function () { return NCLHODSSPENDVIS.AmoslevelRow.idProperty; };
             AmoslevelGrid.prototype.getLocalTextPrefix = function () { return NCLHODSSPENDVIS.AmoslevelRow.localTextPrefix; };
             AmoslevelGrid.prototype.getService = function () { return NCLHODSSPENDVIS.AmoslevelService.baseUrl; };
+            AmoslevelGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: NCLHODSSPENDVIS.AmoslevelService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true
+                }));
+                //buttons.push(Common.PdfExportHelper.createToolButton({
+                //    grid: this,
+                //    onViewSubmit: () => this.onViewSubmit()
+                //}));
+                return buttons;
+            };
             AmoslevelGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], AmoslevelGrid);
@@ -6306,6 +7389,118 @@ var DAP;
         }(Serenity.EntityGrid));
         NCLHODSSPENDVIS.AmoslevelGrid = AmoslevelGrid;
     })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var DataFlowDialog = /** @class */ (function (_super) {
+            __extends(DataFlowDialog, _super);
+            function DataFlowDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new NCLHODSSPENDVIS.DataFlowForm(_this.idPrefix);
+                return _this;
+            }
+            DataFlowDialog.prototype.getFormKey = function () { return NCLHODSSPENDVIS.DataFlowForm.formKey; };
+            DataFlowDialog.prototype.getIdProperty = function () { return NCLHODSSPENDVIS.DataFlowRow.idProperty; };
+            DataFlowDialog.prototype.getLocalTextPrefix = function () { return NCLHODSSPENDVIS.DataFlowRow.localTextPrefix; };
+            DataFlowDialog.prototype.getNameProperty = function () { return NCLHODSSPENDVIS.DataFlowRow.nameProperty; };
+            DataFlowDialog.prototype.getService = function () { return NCLHODSSPENDVIS.DataFlowService.baseUrl; };
+            DataFlowDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            DataFlowDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowDialog);
+            return DataFlowDialog;
+        }(Serenity.EntityDialog));
+        NCLHODSSPENDVIS.DataFlowDialog = DataFlowDialog;
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHODSSPENDVIS;
+    (function (NCLHODSSPENDVIS) {
+        var DataFlowGrid = /** @class */ (function (_super) {
+            __extends(DataFlowGrid, _super);
+            function DataFlowGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DataFlowGrid.prototype.getColumnsKey = function () { return 'NCLHODSSPENDVIS.DataFlow'; };
+            DataFlowGrid.prototype.getDialogType = function () { return NCLHODSSPENDVIS.DataFlowDialog; };
+            DataFlowGrid.prototype.getIdProperty = function () { return NCLHODSSPENDVIS.DataFlowRow.idProperty; };
+            DataFlowGrid.prototype.getLocalTextPrefix = function () { return NCLHODSSPENDVIS.DataFlowRow.localTextPrefix; };
+            DataFlowGrid.prototype.getService = function () { return NCLHODSSPENDVIS.DataFlowService.baseUrl; };
+            DataFlowGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            DataFlowGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowGrid);
+            return DataFlowGrid;
+        }(Serenity.EntityGrid));
+        NCLHODSSPENDVIS.DataFlowGrid = DataFlowGrid;
+    })(NCLHODSSPENDVIS = DAP.NCLHODSSPENDVIS || (DAP.NCLHODSSPENDVIS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimInvoiceDialog = /** @class */ (function (_super) {
+            __extends(DimInvoiceDialog, _super);
+            function DimInvoiceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHDW.DimInvoiceForm(_this.idPrefix);
+                return _this;
+            }
+            DimInvoiceDialog.prototype.getFormKey = function () { return PCHDW.DimInvoiceForm.formKey; };
+            DimInvoiceDialog.prototype.getIdProperty = function () { return PCHDW.DimInvoiceRow.idProperty; };
+            DimInvoiceDialog.prototype.getLocalTextPrefix = function () { return PCHDW.DimInvoiceRow.localTextPrefix; };
+            DimInvoiceDialog.prototype.getNameProperty = function () { return PCHDW.DimInvoiceRow.nameProperty; };
+            DimInvoiceDialog.prototype.getService = function () { return PCHDW.DimInvoiceService.baseUrl; };
+            DimInvoiceDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            DimInvoiceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DimInvoiceDialog);
+            return DimInvoiceDialog;
+        }(Serenity.EntityDialog));
+        PCHDW.DimInvoiceDialog = DimInvoiceDialog;
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimInvoiceGrid = /** @class */ (function (_super) {
+            __extends(DimInvoiceGrid, _super);
+            function DimInvoiceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DimInvoiceGrid.prototype.getColumnsKey = function () { return 'PCHDW.DimInvoice'; };
+            DimInvoiceGrid.prototype.getDialogType = function () { return PCHDW.DimInvoiceDialog; };
+            DimInvoiceGrid.prototype.getIdProperty = function () { return PCHDW.DimInvoiceRow.idProperty; };
+            DimInvoiceGrid.prototype.getLocalTextPrefix = function () { return PCHDW.DimInvoiceRow.localTextPrefix; };
+            DimInvoiceGrid.prototype.getService = function () { return PCHDW.DimInvoiceService.baseUrl; };
+            DimInvoiceGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            DimInvoiceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DimInvoiceGrid);
+            return DimInvoiceGrid;
+        }(Serenity.EntityGrid));
+        PCHDW.DimInvoiceGrid = DimInvoiceGrid;
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -6612,6 +7807,7 @@ var DAP;
                 this.view.setGrouping([{
                         getter: 'CompanyName'
                     }]);
+                this.view.collapseAllGroups(0);
                 return grid;
             };
             OutboundCommissionHistGrid.prototype.getSlickOptions = function () {
@@ -6653,7 +7849,7 @@ var DAP;
             }
             SelectComapanyDialog.prototype.getFormKey = function () { return PCHODS.SelectCompanyForm.formKey; };
             SelectComapanyDialog.prototype.createBracket = function () {
-                var HistRow, _a = {};
+                var HistRow;
                 var equalFilter = { "CompanyCd": this.form.CompanyCd.value };
                 PCHODS.OutboundCommissionHistService.List({
                     EqualityFilter: equalFilter
@@ -6674,7 +7870,8 @@ var DAP;
                                 Q.notifyError("Please select a Company!");
                                 return;
                             }
-                            var HistRow, _a = {};
+                            //var HistRow[] = <PCHODS.OutboundCommissionHistRow>{};
+                            var HistRow;
                             var equalFilter = { "CompanyCd": _this.form.CompanyCd.value };
                             PCHODS.OutboundCommissionHistService.List({
                                 EqualityFilter: equalFilter
@@ -6732,6 +7929,48 @@ var DAP;
 (function (DAP) {
     var PCHODS;
     (function (PCHODS) {
+        /**
+         * Our select editor with hardcoded values.
+         *
+         * When you define a new editor type, make sure you build
+         * and transform templates for it to be available
+         * in server side forms, e.g. [HardCodedValuesEditor]
+         */
+        var SelectCompanyEditor = /** @class */ (function (_super) {
+            __extends(SelectCompanyEditor, _super);
+            function SelectCompanyEditor(container) {
+                var _this = _super.call(this, container, null) || this;
+                // add option accepts a key (id) value and display text value
+                _this.addOption("100", "Oceania Cruises");
+                _this.addOption("110", "Regent Seven Seas Cruises");
+                _this.addOption("111", "International");
+                _this.addOption("112", "Latam");
+                _this.addOption("113", "UK DE");
+                return _this;
+                // you may also use addItem which accepts a Select2Item parameter
+                //this.addItem({
+                //    id: "key3",
+                //    text: "Text 3"
+                //});
+                //// don't let selecting this one (disabled)
+                //this.addItem({
+                //    id: "key4",
+                //    text: "Text 4",
+                //    disabled: true
+                //});
+            }
+            SelectCompanyEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], SelectCompanyEditor);
+            return SelectCompanyEditor;
+        }(Serenity.Select2Editor));
+        PCHODS.SelectCompanyEditor = SelectCompanyEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
         var OutboundCommissionHistAuDialog = /** @class */ (function (_super) {
             __extends(OutboundCommissionHistAuDialog, _super);
             function OutboundCommissionHistAuDialog() {
@@ -6780,7 +8019,47 @@ var DAP;
                     onClick: function (e) { return _this.saveClick(); },
                     separator: true
                 });
+                buttons.push({
+                    title: 'Create New Bracket',
+                    cssClass: 'add-button',
+                    onClick: function (e) { return _this.createNewBracketClick(); },
+                    separator: true
+                });
                 return buttons;
+            };
+            OutboundCommissionHistAuGrid.prototype.createNewBracketClick = function () {
+                var _this = this;
+                Q.confirm('Are you sure you want to create a new tear breakets?', function () {
+                    var HistRow;
+                    var equalFilter = { "CompanyCd": 111 };
+                    PCHODS.OutboundCommissionHistAuService.List({
+                        EqualityFilter: equalFilter
+                    }, function (response) {
+                        HistRow = response.Entities;
+                        var _loop_2 = function (item) {
+                            item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                            //Q.alert(item.InactiveDt);
+                            PCHODS.OutboundCommissionHistAuService.Update({
+                                EntityId: item.CommissionHistAuId,
+                                Entity: item
+                            }, function (response) {
+                                item.CommissionHistAuId = null;
+                                item.ActiveDt = item.InactiveDt;
+                                item.InactiveDt = null;
+                                PCHODS.OutboundCommissionHistAuService.Create({
+                                    Entity: item
+                                }, function (response) {
+                                    _this.refresh();
+                                });
+                            });
+                        };
+                        for (var _i = 0, HistRow_2 = HistRow; _i < HistRow_2.length; _i++) {
+                            var item = HistRow_2[_i];
+                            _loop_2(item);
+                        }
+                        Q.notifySuccess("Bracket Created Successfully!", '');
+                    });
+                });
             };
             OutboundCommissionHistAuGrid.prototype.onViewProcessData = function (response) {
                 this.pendingChanges = {};
@@ -6956,6 +8235,7 @@ var DAP;
             function OutboundCommissionHistBrGrid(container) {
                 var _this = _super.call(this, container) || this;
                 _this.pendingChanges = {};
+                _this.AllowEdits = false;
                 _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
                 return _this;
             }
@@ -6975,7 +8255,48 @@ var DAP;
                     onClick: function (e) { return _this.saveClick(); },
                     separator: true
                 });
+                buttons.push({
+                    title: 'Create New Bracket',
+                    cssClass: 'add-button',
+                    onClick: function (e) { return _this.createNewBracketClick(); },
+                    separator: true
+                });
                 return buttons;
+            };
+            OutboundCommissionHistBrGrid.prototype.createNewBracketClick = function () {
+                var _this = this;
+                Q.confirm('Are you sure you want to create a new tear breakets?', function () {
+                    var HistRow;
+                    var equalFilter = { "CompanyCd": 111 };
+                    PCHODS.OutboundCommissionHistBrService.List({
+                        EqualityFilter: equalFilter
+                    }, function (response) {
+                        HistRow = response.Entities;
+                        var _loop_3 = function (item) {
+                            item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+                            //Q.alert(item.InactiveDt);
+                            PCHODS.OutboundCommissionHistBrService.Update({
+                                EntityId: item.CommissionHistBrId,
+                                Entity: item
+                            }, function (response) {
+                                item.CommissionHistBrId = null;
+                                item.ActiveDt = item.InactiveDt;
+                                item.InactiveDt = null;
+                                PCHODS.OutboundCommissionHistBrService.Create({
+                                    Entity: item
+                                }, function (response) {
+                                    _this.AllowEdits = true;
+                                    _this.refresh();
+                                });
+                            });
+                        };
+                        for (var _i = 0, HistRow_3 = HistRow; _i < HistRow_3.length; _i++) {
+                            var item = HistRow_3[_i];
+                            _loop_3(item);
+                        }
+                        Q.notifySuccess("Bracket Created Successfully!", '');
+                    });
+                });
             };
             OutboundCommissionHistBrGrid.prototype.onViewProcessData = function (response) {
                 this.pendingChanges = {};
@@ -7071,6 +8392,11 @@ var DAP;
                 if (Object.keys(this.pendingChanges).length === 0) {
                     return;
                 }
+                //if (!this.AllowEdits) {
+                //    Q.notifyError(Q.text('Only new brackets could be editied!'), '', null);
+                //    this.refresh();
+                //    return;
+                //}
                 // this calls save service for all modified rows, one by one
                 // you could write a batch update service
                 var keys = Object.keys(this.pendingChanges);
@@ -7208,8 +8534,10 @@ var DAP;
                             crow.ClosedDate = null;
                             crow.ClosedBy = null;
                             crow.OutboundCommissionPeriodID = null;
-                            var st = new Date(crow.StartDate);
-                            st.setMonth(st.getMonth() + 1);
+                            var stDate = new Date(crow.StartDate);
+                            var st = new Date(stDate.getFullYear(), stDate.getMonth() + 1, 1);
+                            //st.setDate(1);
+                            //st.setMonth(st.getMonth() + 1,1);
                             crow.StartDate = st;
                             crow.EndDate = new Date(st.getFullYear(), st.getMonth() + 1, 0);
                             crow.PreviousMonth = crow.CurrentMonth;
@@ -7441,10 +8769,307 @@ var DAP;
 (function (DAP) {
     var SSISConfig;
     (function (SSISConfig) {
+        var DataFlowDialog = /** @class */ (function (_super) {
+            __extends(DataFlowDialog, _super);
+            function DataFlowDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new SSISConfig.DataFlowForm(_this.idPrefix);
+                return _this;
+            }
+            DataFlowDialog.prototype.getFormKey = function () { return SSISConfig.DataFlowForm.formKey; };
+            DataFlowDialog.prototype.getIdProperty = function () { return SSISConfig.DataFlowRow.idProperty; };
+            DataFlowDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.DataFlowRow.localTextPrefix; };
+            DataFlowDialog.prototype.getNameProperty = function () { return SSISConfig.DataFlowRow.nameProperty; };
+            DataFlowDialog.prototype.getService = function () { return SSISConfig.DataFlowService.baseUrl; };
+            DataFlowDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            DataFlowDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowDialog);
+            return DataFlowDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.DataFlowDialog = DataFlowDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var DataFlowGrid = /** @class */ (function (_super) {
+            __extends(DataFlowGrid, _super);
+            function DataFlowGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DataFlowGrid.prototype.getColumnsKey = function () { return 'SSISConfig.DataFlow'; };
+            DataFlowGrid.prototype.getDialogType = function () { return SSISConfig.DataFlowDialog; };
+            DataFlowGrid.prototype.getIdProperty = function () { return SSISConfig.DataFlowRow.idProperty; };
+            DataFlowGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.DataFlowRow.localTextPrefix; };
+            DataFlowGrid.prototype.getService = function () { return SSISConfig.DataFlowService.baseUrl; };
+            DataFlowGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            DataFlowGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowGrid);
+            return DataFlowGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.DataFlowGrid = DataFlowGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogDialog = /** @class */ (function (_super) {
+            __extends(GpInterfaceLogDialog, _super);
+            function GpInterfaceLogDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new SSISConfig.GpInterfaceLogForm(_this.idPrefix);
+                return _this;
+            }
+            GpInterfaceLogDialog.prototype.getFormKey = function () { return SSISConfig.GpInterfaceLogForm.formKey; };
+            GpInterfaceLogDialog.prototype.getIdProperty = function () { return SSISConfig.GpInterfaceLogRow.idProperty; };
+            GpInterfaceLogDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.GpInterfaceLogRow.localTextPrefix; };
+            GpInterfaceLogDialog.prototype.getNameProperty = function () { return SSISConfig.GpInterfaceLogRow.nameProperty; };
+            GpInterfaceLogDialog.prototype.getService = function () { return SSISConfig.GpInterfaceLogService.baseUrl; };
+            GpInterfaceLogDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GpInterfaceLogDialog);
+            return GpInterfaceLogDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.GpInterfaceLogDialog = GpInterfaceLogDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var GpInterfaceLogGrid = /** @class */ (function (_super) {
+            __extends(GpInterfaceLogGrid, _super);
+            function GpInterfaceLogGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            GpInterfaceLogGrid.prototype.getColumnsKey = function () { return 'SSISConfig.GpInterfaceLog'; };
+            GpInterfaceLogGrid.prototype.getDialogType = function () { return SSISConfig.GpInterfaceLogDialog; };
+            GpInterfaceLogGrid.prototype.getIdProperty = function () { return SSISConfig.GpInterfaceLogRow.idProperty; };
+            GpInterfaceLogGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.GpInterfaceLogRow.localTextPrefix; };
+            GpInterfaceLogGrid.prototype.getService = function () { return SSISConfig.GpInterfaceLogService.baseUrl; };
+            GpInterfaceLogGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], GpInterfaceLogGrid);
+            return GpInterfaceLogGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.GpInterfaceLogGrid = GpInterfaceLogGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var INTConfigBaseDialog = /** @class */ (function (_super) {
+            __extends(INTConfigBaseDialog, _super);
+            function INTConfigBaseDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new SSISConfig.INTConfigBaseForm(_this.idPrefix);
+                return _this;
+            }
+            INTConfigBaseDialog.prototype.getFormKey = function () { return SSISConfig.INTConfigBaseForm.formKey; };
+            INTConfigBaseDialog.prototype.getIdProperty = function () { return SSISConfig.INTConfigBaseRow.idProperty; };
+            INTConfigBaseDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.INTConfigBaseRow.localTextPrefix; };
+            INTConfigBaseDialog.prototype.getNameProperty = function () { return SSISConfig.INTConfigBaseRow.nameProperty; };
+            INTConfigBaseDialog.prototype.getService = function () { return SSISConfig.INTConfigBaseService.baseUrl; };
+            INTConfigBaseDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            INTConfigBaseDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], INTConfigBaseDialog);
+            return INTConfigBaseDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.INTConfigBaseDialog = INTConfigBaseDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var INTConfigBaseGrid = /** @class */ (function (_super) {
+            __extends(INTConfigBaseGrid, _super);
+            function INTConfigBaseGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            INTConfigBaseGrid.prototype.getColumnsKey = function () { return 'SSISConfig.INTConfigBase'; };
+            INTConfigBaseGrid.prototype.getDialogType = function () { return SSISConfig.INTConfigBaseDialog; };
+            INTConfigBaseGrid.prototype.getIdProperty = function () { return SSISConfig.INTConfigBaseRow.idProperty; };
+            INTConfigBaseGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.INTConfigBaseRow.localTextPrefix; };
+            INTConfigBaseGrid.prototype.getService = function () { return SSISConfig.INTConfigBaseService.baseUrl; };
+            INTConfigBaseGrid.prototype.getQuickFilters = function () {
+                var flt = _super.prototype.getQuickFilters.call(this);
+                var Configfilter = Q.tryFirst(flt, function (f) { return f.field == "ConfigurationFilter" /* ConfigurationFilter */; });
+                Configfilter.cssClass = 'configfilter-filter';
+                return flt;
+            };
+            INTConfigBaseGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
+            INTConfigBaseGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            INTConfigBaseGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], INTConfigBaseGrid);
+            return INTConfigBaseGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.INTConfigBaseGrid = INTConfigBaseGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var MicrosDataFlowDialog = /** @class */ (function (_super) {
+            __extends(MicrosDataFlowDialog, _super);
+            function MicrosDataFlowDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new SSISConfig.MicrosDataFlowForm(_this.idPrefix);
+                return _this;
+            }
+            MicrosDataFlowDialog.prototype.getFormKey = function () { return SSISConfig.MicrosDataFlowForm.formKey; };
+            MicrosDataFlowDialog.prototype.getIdProperty = function () { return SSISConfig.MicrosDataFlowRow.idProperty; };
+            MicrosDataFlowDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.MicrosDataFlowRow.localTextPrefix; };
+            MicrosDataFlowDialog.prototype.getNameProperty = function () { return SSISConfig.MicrosDataFlowRow.nameProperty; };
+            MicrosDataFlowDialog.prototype.getService = function () { return SSISConfig.MicrosDataFlowService.baseUrl; };
+            MicrosDataFlowDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            MicrosDataFlowDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MicrosDataFlowDialog);
+            return MicrosDataFlowDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.MicrosDataFlowDialog = MicrosDataFlowDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var MicrosDataFlowGrid = /** @class */ (function (_super) {
+            __extends(MicrosDataFlowGrid, _super);
+            function MicrosDataFlowGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            MicrosDataFlowGrid.prototype.getColumnsKey = function () { return 'SSISConfig.MicrosDataFlow'; };
+            MicrosDataFlowGrid.prototype.getDialogType = function () { return SSISConfig.MicrosDataFlowDialog; };
+            MicrosDataFlowGrid.prototype.getIdProperty = function () { return SSISConfig.MicrosDataFlowRow.idProperty; };
+            MicrosDataFlowGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.MicrosDataFlowRow.localTextPrefix; };
+            MicrosDataFlowGrid.prototype.getService = function () { return SSISConfig.MicrosDataFlowService.baseUrl; };
+            MicrosDataFlowGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            MicrosDataFlowGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MicrosDataFlowGrid);
+            return MicrosDataFlowGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.MicrosDataFlowGrid = MicrosDataFlowGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var PsInterfaceConfigDialog = /** @class */ (function (_super) {
+            __extends(PsInterfaceConfigDialog, _super);
+            function PsInterfaceConfigDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new SSISConfig.PsInterfaceConfigForm(_this.idPrefix);
+                return _this;
+            }
+            PsInterfaceConfigDialog.prototype.getFormKey = function () { return SSISConfig.PsInterfaceConfigForm.formKey; };
+            PsInterfaceConfigDialog.prototype.getIdProperty = function () { return SSISConfig.PsInterfaceConfigRow.idProperty; };
+            PsInterfaceConfigDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.PsInterfaceConfigRow.localTextPrefix; };
+            PsInterfaceConfigDialog.prototype.getNameProperty = function () { return SSISConfig.PsInterfaceConfigRow.nameProperty; };
+            PsInterfaceConfigDialog.prototype.getService = function () { return SSISConfig.PsInterfaceConfigService.baseUrl; };
+            //validateEntity(row, id) {
+            //    row.ConfigurationValue = "03/26/2020";
+            //}
+            PsInterfaceConfigDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                if (this.form.DataType.value == "Date") {
+                    this.form.ConfigValue.getGridField().toggle(false);
+                    this.form.ConfigValueDate.getGridField().toggle(true);
+                }
+                else {
+                    this.form.ConfigValue.getGridField().toggle(true);
+                    this.form.ConfigValueDate.getGridField().toggle(false);
+                }
+            };
+            PsInterfaceConfigDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            PsInterfaceConfigDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PsInterfaceConfigDialog);
+            return PsInterfaceConfigDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.PsInterfaceConfigDialog = PsInterfaceConfigDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var PsInterfaceConfigGrid = /** @class */ (function (_super) {
+            __extends(PsInterfaceConfigGrid, _super);
+            function PsInterfaceConfigGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            PsInterfaceConfigGrid.prototype.getColumnsKey = function () { return 'SSISConfig.PsInterfaceConfig'; };
+            PsInterfaceConfigGrid.prototype.getDialogType = function () { return SSISConfig.PsInterfaceConfigDialog; };
+            PsInterfaceConfigGrid.prototype.getIdProperty = function () { return SSISConfig.PsInterfaceConfigRow.idProperty; };
+            PsInterfaceConfigGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.PsInterfaceConfigRow.localTextPrefix; };
+            PsInterfaceConfigGrid.prototype.getService = function () { return SSISConfig.PsInterfaceConfigService.baseUrl; };
+            PsInterfaceConfigGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            PsInterfaceConfigGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], PsInterfaceConfigGrid);
+            return PsInterfaceConfigGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.PsInterfaceConfigGrid = PsInterfaceConfigGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
         var SsisConfigBaseDialog = /** @class */ (function (_super) {
             __extends(SsisConfigBaseDialog, _super);
             function SsisConfigBaseDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new SSISConfig.SsisConfigBaseForm(_this.idPrefix);
                 return _this;
             }
@@ -7453,6 +9078,13 @@ var DAP;
             SsisConfigBaseDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.SsisConfigBaseRow.localTextPrefix; };
             SsisConfigBaseDialog.prototype.getNameProperty = function () { return SSISConfig.SsisConfigBaseRow.nameProperty; };
             SsisConfigBaseDialog.prototype.getService = function () { return SSISConfig.SsisConfigBaseService.baseUrl; };
+            SsisConfigBaseDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                if (!DAP.Authorization.hasPermission("SSISConfig:Config:Delete")) {
+                    b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                }
+                return b;
+            };
             SsisConfigBaseDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], SsisConfigBaseDialog);
@@ -7475,6 +9107,26 @@ var DAP;
             SsisConfigBaseGrid.prototype.getIdProperty = function () { return SSISConfig.SsisConfigBaseRow.idProperty; };
             SsisConfigBaseGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.SsisConfigBaseRow.localTextPrefix; };
             SsisConfigBaseGrid.prototype.getService = function () { return SSISConfig.SsisConfigBaseService.baseUrl; };
+            SsisConfigBaseGrid.prototype.getQuickFilters = function () {
+                var flt = _super.prototype.getQuickFilters.call(this);
+                var Configfilter = Q.tryFirst(flt, function (f) { return f.field == "ConfigurationFilter" /* ConfigurationFilter */; });
+                Configfilter.cssClass = 'configfilter-filter';
+                return flt;
+            };
+            SsisConfigBaseGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
+            SsisConfigBaseGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                if (!DAP.Authorization.hasPermission("SSISConfig:ConfigAdmin")) {
+                    buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                }
+                return buttons;
+            };
             SsisConfigBaseGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], SsisConfigBaseGrid);

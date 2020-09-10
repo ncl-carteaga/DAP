@@ -41,7 +41,7 @@ namespace DAP.NCLHDSAR {
             // make employee filter a textbox, instead of lookup, and search by starts with
             let filter = Q.first(filters, x => x.field == fld.LastName);
             filter.title = "Last Name Starts With";
-            filter.type = Serenity.StringEditor;
+            filter.type = Serenity.StringEditor;            
             filter.handler = h => {
                 if (h.active) {
                     h.request.Criteria = Serenity.Criteria.and(h.request.Criteria,

@@ -1,0 +1,30 @@
+﻿
+namespace DAP.SSISConfig {
+    export class GpInterfaceLogForm extends Serenity.PrefixedContext {
+        static formKey = 'SSISConfig.GpInterfaceLog';
+    }
+
+    export interface GpInterfaceLogForm {
+        CompanyCd: Serenity.StringEditor;
+        CruiseSegmentCd: Serenity.StringEditor;
+        ExpRevType: Serenity.StringEditor;
+        GpInterfaceInd: Serenity.StringEditor;
+        GpInterfacedDt: Serenity.DateEditor;
+        JournalNum: Serenity.IntegerEditor;
+    }
+
+    [
+        ['CompanyCd', () => Serenity.StringEditor],
+        ['CruiseSegmentCd', () => Serenity.StringEditor],
+        ['ExpRevType', () => Serenity.StringEditor],
+        ['GpInterfaceInd', () => Serenity.StringEditor],
+        ['GpInterfacedDt', () => Serenity.DateEditor],
+        ['JournalNum', () => Serenity.IntegerEditor]
+    ].forEach(x => Object.defineProperty(GpInterfaceLogForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

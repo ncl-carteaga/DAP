@@ -14,7 +14,7 @@ namespace DAP.PCHODS.Entities
     [ReadPermission(PermissionKeys.Outbound.View)]
     [ModifyPermission(PermissionKeys.Outbound.Modify)]
     [DeletePermission(PermissionKeys.Outbound.Delete)]
-    [LookupScript("PCHODS.Outbound_Company")]
+    [LookupScript("PCHODS.Outbound_Company", Permission = "*")]
     
     public sealed class OutboundCompanyRow : Row, IIdRow, INameRow
     {

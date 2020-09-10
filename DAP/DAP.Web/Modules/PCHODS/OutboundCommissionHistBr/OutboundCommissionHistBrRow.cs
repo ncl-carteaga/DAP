@@ -10,12 +10,12 @@ namespace DAP.PCHODS.Entities
     using System.IO;
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Outbound_Commission_Hist_br]")]
-    [DisplayName("Outbound Commission Hist Br"), InstanceName("Outbound Commission Hist Br")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
-    //[ReadPermission(PermissionKeys.Outbound.View)]
-    //[ModifyPermission(PermissionKeys.Outbound.Modify)]
-    //[DeletePermission(PermissionKeys.Outbound.Delete)]
+    [DisplayName("Commission Tiers BR"), InstanceName("Outbound Commission Hist Br")]
+    //[ReadPermission("Administration:General")]
+    //[ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     [LeftJoin("c", "Outbound_Company", "c.[Company_Cd] = T0.[Company_CD]")]
     [DataAuditLog]
     public sealed class OutboundCommissionHistBrRow : Row, IIdRow, INameRow

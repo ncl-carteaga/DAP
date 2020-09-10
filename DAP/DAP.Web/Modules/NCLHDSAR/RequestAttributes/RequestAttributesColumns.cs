@@ -31,7 +31,6 @@ namespace DAP.NCLHDSAR.Columns
         public String MiddleNm { get; set; }
         public String LastNm { get; set; }
 
-
         public String Addr1 { get; set; }
 
         public String Addr2 { get; set; }
@@ -45,7 +44,7 @@ namespace DAP.NCLHDSAR.Columns
         public String CountryCd { get; set; }
 
         public String Email1 { get; set; }
-        
+
         //public String OldAddr1 { get; set; }
 
         //public String OldAddr2 { get; set; }
@@ -59,6 +58,9 @@ namespace DAP.NCLHDSAR.Columns
         //public String OldCountryCd { get; set; }
 
         //public String OldEmail { get; set; }
+
+        public String ModifiedBy { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
     }
 }

@@ -1,0 +1,38 @@
+﻿
+namespace DAP.SSISConfig {
+    export interface GpInterfaceLogRow {
+        CompanyCd?: string;
+        CruiseSegmentCd?: string;
+        ExpRevType?: string;
+        GpInterfaceInd?: string;
+        GpInterfacedDt?: string;
+        JournalNum?: number;
+        InterfaceLogId?: number;
+    }
+
+    export namespace GpInterfaceLogRow {
+        export const idProperty = 'InterfaceLogId';
+        export const nameProperty = 'CompanyCd';
+        export const localTextPrefix = 'SSISConfig.GpInterfaceLog';
+
+        export namespace Fields {
+            export declare const CompanyCd;
+            export declare const CruiseSegmentCd;
+            export declare const ExpRevType;
+            export declare const GpInterfaceInd;
+            export declare const GpInterfacedDt;
+            export declare const JournalNum;
+            export declare const InterfaceLogId;
+        }
+
+        [
+            'CompanyCd',
+            'CruiseSegmentCd',
+            'ExpRevType',
+            'GpInterfaceInd',
+            'GpInterfacedDt',
+            'JournalNum',
+            'InterfaceLogId'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

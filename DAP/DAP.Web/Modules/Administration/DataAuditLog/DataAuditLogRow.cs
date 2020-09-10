@@ -9,8 +9,8 @@ namespace DAP.Administration.Entities
 
     [ConnectionKey("Default"), Module("Administration"), TableName("dbo.DataAuditLog")]
     [DisplayName("Data Audit Logs"), InstanceName("Data Audit Log"), TwoLevelCached]
-    [ReadPermission(PermissionKeys.Security)]
-    [ModifyPermission(PermissionKeys.Security)]
+    [ReadPermission(PermissionKeys.AuditLog)]
+    [ModifyPermission(PermissionKeys.AuditLog)]
     public sealed class DataAuditLogRow : Row, IIdRow
     {
         [DisplayName("Log Id"), Identity]
