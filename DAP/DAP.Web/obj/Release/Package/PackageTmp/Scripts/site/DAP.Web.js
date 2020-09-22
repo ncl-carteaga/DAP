@@ -6179,6 +6179,12 @@ var DAP;
             RequestAttributesDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.RequestAttributesRow.localTextPrefix; };
             RequestAttributesDialog.prototype.getNameProperty = function () { return NCLHDSAR.RequestAttributesRow.nameProperty; };
             RequestAttributesDialog.prototype.getService = function () { return NCLHDSAR.RequestAttributesService.baseUrl; };
+            RequestAttributesDialog.prototype.updateInterface = function () {
+                // by default cloneButton is hidden in base UpdateInterface method
+                _super.prototype.updateInterface.call(this);
+                // here we show it if it is edit mode (not new)
+                //this.cloneButton.toggle(this.isEditMode());
+            };
             RequestAttributesDialog.prototype.getToolbarButtons = function () {
                 var _this = this;
                 var btns = _super.prototype.getToolbarButtons.call(this);
@@ -6193,6 +6199,22 @@ var DAP;
                     }
                 };
                 btns.push(newBtn);
+                var dupBtn = {
+                    title: "Clone",
+                    onClick: function () {
+                        if (!_this.isEditMode()) {
+                            return;
+                        }
+                        var cloneEntity = _this.getCloningEntity();
+                        var ent = _this.getCloningEntity();
+                        ent.Id = Q.toId(_this.form.Id.value);
+                        ent.ResolvedDt = null;
+                        ent.RequestValue = null;
+                        _this.loadEntity(ent);
+                        Q.notifySuccess("Request Attribute cloned - Enter new ID.");
+                    }
+                };
+                btns.push(dupBtn);
                 return btns;
             };
             RequestAttributesDialog = __decorate([

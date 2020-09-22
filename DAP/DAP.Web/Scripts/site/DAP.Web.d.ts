@@ -3905,6 +3905,7 @@ declare namespace DAP.NCLHDSAR {
         protected getService(): string;
         protected form: RequestAttributesForm;
         constructor();
+        protected updateInterface(): void;
         protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
