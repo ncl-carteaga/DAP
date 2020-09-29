@@ -892,6 +892,98 @@ declare namespace DAP {
         ErrorList?: string[];
     }
 }
+declare namespace DAP.FINANCE {
+    class NtrComponentsForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface NtrComponentsForm {
+        SubcategoryDesc: Serenity.StringEditor;
+        GiftCd: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.FINANCE {
+    interface NtrComponentsRow {
+        CategoryDesc?: string;
+        SubcategoryDesc?: string;
+        GiftCd?: string;
+    }
+    namespace NtrComponentsRow {
+        const idProperty = "CategoryDesc";
+        const nameProperty = "CategoryDesc";
+        const localTextPrefix = "FINANCE.NtrComponents";
+        namespace Fields {
+            const CategoryDesc: any;
+            const SubcategoryDesc: any;
+            const GiftCd: any;
+        }
+    }
+}
+declare namespace DAP.FINANCE {
+    namespace NtrComponentsService {
+        const baseUrl = "FINANCE/NtrComponents";
+        function Create(request: Serenity.SaveRequest<NtrComponentsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NtrComponentsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrComponentsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrComponentsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.Finance {
+    class NtrRptCommentForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface NtrRptCommentForm {
+        CompanyCd: Serenity.StringEditor;
+        ReportDate: Serenity.DateEditor;
+        Comment: Serenity.StringEditor;
+        AccountPeriodNum: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.Finance {
+    interface NtrRptCommentRow {
+        CommentTk?: number;
+        CompanyCd?: string;
+        ReportDate?: string;
+        Comment?: string;
+        AccountPeriodNum?: string;
+    }
+    namespace NtrRptCommentRow {
+        const idProperty = "CommentTk";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "Finance.NtrRptComment";
+        namespace Fields {
+            const CommentTk: any;
+            const CompanyCd: any;
+            const ReportDate: any;
+            const Comment: any;
+            const AccountPeriodNum: any;
+        }
+    }
+}
+declare namespace DAP.Finance {
+    namespace NtrRptCommentService {
+        const baseUrl = "Finance/NtrRptComment";
+        function Create(request: Serenity.SaveRequest<NtrRptCommentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NtrRptCommentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrRptCommentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrRptCommentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace DAP {
     interface GetNextNumberRequest extends Serenity.ServiceRequest {
         Prefix?: string;
@@ -2783,6 +2875,61 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class NtrFcstForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface NtrFcstForm {
+        CompanyCd: Serenity.StringEditor;
+        AccountPeriodNum: Serenity.StringEditor;
+        NtrFcst: Serenity.DecimalEditor;
+        PdsFcstTotal: Serenity.DecimalEditor;
+        ApcdFinal: Serenity.DecimalEditor;
+        NtrFinancialBudget: Serenity.DecimalEditor;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrFcstRow {
+        CompanyCd?: string;
+        AccountPeriodNum?: string;
+        NtrFcst?: number;
+        PdsFcstTotal?: number;
+        ApcdFinal?: number;
+        NtrFinancialBudget?: number;
+        FcstTk?: number;
+    }
+    namespace NtrFcstRow {
+        const idProperty = "FcstTk";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "PCHODSNVS.NtrFcst";
+        namespace Fields {
+            const CompanyCd: any;
+            const AccountPeriodNum: any;
+            const NtrFcst: any;
+            const PdsFcstTotal: any;
+            const ApcdFinal: any;
+            const NtrFinancialBudget: any;
+            const FcstTk: any;
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace NtrFcstService {
+        const baseUrl = "PCHODSNVS/NtrFcst";
+        function Create(request: Serenity.SaveRequest<NtrFcstRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NtrFcstRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrFcstRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrFcstRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrIntlDatelineCruisesForm {
@@ -2838,6 +2985,55 @@ declare namespace DAP.PCHODSNVS {
         }
     }
 }
+declare namespace DAP.PCHODSNVS {
+    class NtrRptCommentForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface NtrRptCommentForm {
+        CompanyCd: Serenity.StringEditor;
+        ReportDate: Serenity.DateEditor;
+        Comment: Serenity.StringEditor;
+        AccountPeriodNum: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrRptCommentRow {
+        CommentTk?: number;
+        CompanyCd?: string;
+        ReportDate?: string;
+        Comment?: string;
+        AccountPeriodNum?: string;
+    }
+    namespace NtrRptCommentRow {
+        const idProperty = "CommentTk";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "PCHODSNVS.NtrRptComment";
+        namespace Fields {
+            const CommentTk: any;
+            const CompanyCd: any;
+            const ReportDate: any;
+            const Comment: any;
+            const AccountPeriodNum: any;
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace NtrRptCommentService {
+        const baseUrl = "PCHODSNVS/NtrRptComment";
+        function Create(request: Serenity.SaveRequest<NtrRptCommentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NtrRptCommentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrRptCommentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrRptCommentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace Serenity.Reporting {
     interface ReportRetrieveResult extends Serenity.ServiceResponse {
         IsExternalReport?: boolean;
@@ -2846,6 +3042,16 @@ declare namespace Serenity.Reporting {
         Properties?: Serenity.PropertyItem[];
         InitialSettings?: any;
         IsDataOnlyReport?: boolean;
+    }
+}
+declare namespace DAP {
+    interface ScriptUserDefinition {
+        Username?: string;
+        DisplayName?: string;
+        IsAdmin?: boolean;
+        Permissions?: {
+            [key: string]: boolean;
+        };
     }
 }
 declare namespace DAP.SSISConfig {
@@ -3248,17 +3454,12 @@ declare namespace DAP.SSISConfig {
         }
     }
 }
-declare namespace DAP {
-    interface ScriptUserDefinition {
-        Username?: string;
-        DisplayName?: string;
-        IsAdmin?: boolean;
-        Permissions?: {
-            [key: string]: boolean;
-        };
-    }
-}
 declare namespace DAP.Texts {
+}
+declare namespace DAP.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP.Administration {
     class DataAuditLogDialog extends Serenity.EntityDialog<DataAuditLogRow, any> {
@@ -3390,10 +3591,6 @@ declare namespace DAP.Administration {
         protected getColumns(): Slick.Column[];
     }
 }
-declare namespace DAP.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
-}
 declare namespace DAP.Administration {
     class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
         protected getIdProperty(): string;
@@ -3464,11 +3661,6 @@ declare namespace DAP.Administration {
         userID: number;
         username: string;
     }
-}
-declare namespace DAP.LanguageList {
-    function getValue(): string[][];
-}
-declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
@@ -3818,34 +4010,6 @@ declare namespace DAP.Membership {
         protected redirectToReturnUrl(): void;
         protected handleTwoFactorAuthentication(user: string, pass: string, twoFactorGuid: string, info: string): void;
         protected getTemplate(): string;
-    }
-}
-declare namespace DAP.Membership {
-    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -4487,6 +4651,26 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class NtrFcstDialog extends Serenity.EntityDialog<NtrFcstRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: NtrFcstForm;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class NtrFcstGrid extends Serenity.EntityGrid<NtrFcstRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NtrFcstDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrIntlDatelineCruisesDialog extends Serenity.EntityDialog<NtrIntlDatelineCruisesRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -4500,6 +4684,26 @@ declare namespace DAP.PCHODSNVS {
     class NtrIntlDatelineCruisesGrid extends Serenity.EntityGrid<NtrIntlDatelineCruisesRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof NtrIntlDatelineCruisesDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class NtrRptCommentDialog extends Serenity.EntityDialog<NtrRptCommentRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: NtrRptCommentForm;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class NtrRptCommentGrid extends Serenity.EntityGrid<NtrRptCommentRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NtrRptCommentDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -4643,5 +4847,37 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
+declare namespace DAP.Membership {
+    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
     }
 }

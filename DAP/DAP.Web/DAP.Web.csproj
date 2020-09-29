@@ -1130,6 +1130,9 @@
     <Content Include="Content\site\site.nclhodsmicros.less" />
     <Content Include="Modules\PCHDW\DimInvoice\DimInvoiceIndex.cshtml" />
     <Content Include="Content\site\site.pchdw.less" />
+    <Content Include="Content\site\site.finance.less" />
+    <Content Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\NtrFcst\NtrFcstIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1368,6 +1371,10 @@
     <TypeScriptCompile Include="Modules\NCLHODSMICROS\DataFlow\DataFlowGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimInvoice\DimInvoiceDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimInvoice\DimInvoiceGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2341,6 +2348,36 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimInvoiceForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\FINANCE.NtrComponentsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\FINANCE.NtrComponentsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\FINANCE.NtrComponentsForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Finance.NtrRptCommentRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Finance.NtrRptCommentService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Finance.NtrRptCommentForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2751,6 +2788,18 @@
     <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceColumns.cs" />
     <Compile Include="Modules\PCHDW\DimInvoice\DimInvoiceForm.cs" />
     <Compile Include="Modules\PCHDW\PCHDWNavigation.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
