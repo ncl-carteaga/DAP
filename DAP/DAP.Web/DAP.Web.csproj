@@ -1133,6 +1133,7 @@
     <Content Include="Content\site\site.finance.less" />
     <Content Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentIndex.cshtml" />
     <Content Include="Modules\PCHODSNVS\NtrFcst\NtrFcstIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1375,6 +1376,8 @@
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2378,6 +2381,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2800,6 +2806,12 @@
     <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstPage.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstColumns.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

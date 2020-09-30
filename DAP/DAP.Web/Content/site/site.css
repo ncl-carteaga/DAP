@@ -9465,6 +9465,12 @@ button.ui-button {
 .s-PCHODSNVS-NtrFcstDialog .caption {
   width: 150px;
 }
+.s-PCHODSNVS-NtrBudgetByChannelDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-NtrBudgetByChannelDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-FinReportPublishingSuppDialog > .size {
   width: 650px;
 }
