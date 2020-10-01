@@ -1134,6 +1134,8 @@
     <Content Include="Modules\PCHODSNVS\NtrRptComment\NtrRptCommentIndex.cshtml" />
     <Content Include="Modules\PCHODSNVS\NtrFcst\NtrFcstIndex.cshtml" />
     <Content Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1378,6 +1380,10 @@
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2384,6 +2390,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2812,6 +2824,18 @@
     <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelPage.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelColumns.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

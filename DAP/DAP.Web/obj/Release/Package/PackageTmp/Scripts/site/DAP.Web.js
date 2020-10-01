@@ -2639,6 +2639,164 @@ var DAP;
 (function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
+        var NtrBudgetByChannelForm = /** @class */ (function (_super) {
+            __extends(NtrBudgetByChannelForm, _super);
+            function NtrBudgetByChannelForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            NtrBudgetByChannelForm.formKey = 'PCHODSNVS.NtrBudgetByChannel';
+            return NtrBudgetByChannelForm;
+        }(Serenity.PrefixedContext));
+        PCHODSNVS.NtrBudgetByChannelForm = NtrBudgetByChannelForm;
+        [
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['AccountingYear', function () { return Serenity.IntegerEditor; }],
+            ['ChannelSummDesc', function () { return Serenity.StringEditor; }],
+            ['ChannelDesc', function () { return Serenity.StringEditor; }],
+            ['NtrBudget', function () { return Serenity.DecimalEditor; }],
+            ['PdsBudgetTotal', function () { return Serenity.DecimalEditor; }],
+            ['NpdBudget', function () { return Serenity.DecimalEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(NtrBudgetByChannelForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetByChannelRow;
+        (function (NtrBudgetByChannelRow) {
+            NtrBudgetByChannelRow.idProperty = 'BudgetbychannelTk';
+            NtrBudgetByChannelRow.nameProperty = 'CompanyCd';
+            NtrBudgetByChannelRow.localTextPrefix = 'PCHODSNVS.NtrBudgetByChannel';
+            var Fields;
+            (function (Fields) {
+            })(Fields = NtrBudgetByChannelRow.Fields || (NtrBudgetByChannelRow.Fields = {}));
+            [
+                'CompanyCd',
+                'AccountingYear',
+                'ChannelSummDesc',
+                'ChannelDesc',
+                'NtrBudget',
+                'PdsBudgetTotal',
+                'NpdBudget',
+                'BudgetbychannelTk'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(NtrBudgetByChannelRow = PCHODSNVS.NtrBudgetByChannelRow || (PCHODSNVS.NtrBudgetByChannelRow = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetByChannelService;
+        (function (NtrBudgetByChannelService) {
+            NtrBudgetByChannelService.baseUrl = 'PCHODSNVS/NtrBudgetByChannel';
+            var Methods;
+            (function (Methods) {
+            })(Methods = NtrBudgetByChannelService.Methods || (NtrBudgetByChannelService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                NtrBudgetByChannelService[x] = function (r, s, o) {
+                    return Q.serviceRequest(NtrBudgetByChannelService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = NtrBudgetByChannelService.baseUrl + '/' + x;
+            });
+        })(NtrBudgetByChannelService = PCHODSNVS.NtrBudgetByChannelService || (PCHODSNVS.NtrBudgetByChannelService = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetForm = /** @class */ (function (_super) {
+            __extends(NtrBudgetForm, _super);
+            function NtrBudgetForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            NtrBudgetForm.formKey = 'PCHODSNVS.NtrBudget';
+            return NtrBudgetForm;
+        }(Serenity.PrefixedContext));
+        PCHODSNVS.NtrBudgetForm = NtrBudgetForm;
+        [
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['AccountPeriodNum', function () { return Serenity.StringEditor; }],
+            ['NtrBudget', function () { return Serenity.DecimalEditor; }],
+            ['PdsBudgetTotal', function () { return Serenity.DecimalEditor; }],
+            ['ApcdFinal', function () { return Serenity.DecimalEditor; }],
+            ['NtrFinancialBudget', function () { return Serenity.DecimalEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(NtrBudgetForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetRow;
+        (function (NtrBudgetRow) {
+            NtrBudgetRow.idProperty = 'BudgetTk';
+            NtrBudgetRow.nameProperty = 'CompanyCd';
+            NtrBudgetRow.localTextPrefix = 'PCHODSNVS.NtrBudget';
+            var Fields;
+            (function (Fields) {
+            })(Fields = NtrBudgetRow.Fields || (NtrBudgetRow.Fields = {}));
+            [
+                'CompanyCd',
+                'AccountPeriodNum',
+                'NtrBudget',
+                'PdsBudgetTotal',
+                'ApcdFinal',
+                'NtrFinancialBudget',
+                'BudgetTk'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(NtrBudgetRow = PCHODSNVS.NtrBudgetRow || (PCHODSNVS.NtrBudgetRow = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetService;
+        (function (NtrBudgetService) {
+            NtrBudgetService.baseUrl = 'PCHODSNVS/NtrBudget';
+            var Methods;
+            (function (Methods) {
+            })(Methods = NtrBudgetService.Methods || (NtrBudgetService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                NtrBudgetService[x] = function (r, s, o) {
+                    return Q.serviceRequest(NtrBudgetService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = NtrBudgetService.baseUrl + '/' + x;
+            });
+        })(NtrBudgetService = PCHODSNVS.NtrBudgetService || (PCHODSNVS.NtrBudgetService = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
         var NtrFcstForm = /** @class */ (function (_super) {
             __extends(NtrFcstForm, _super);
             function NtrFcstForm() {
@@ -2774,6 +2932,92 @@ var DAP;
                 };
             });
         })(NtrIntlDatelineCruisesService = PCHODSNVS.NtrIntlDatelineCruisesService || (PCHODSNVS.NtrIntlDatelineCruisesService = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrPastMonthsActualForm = /** @class */ (function (_super) {
+            __extends(NtrPastMonthsActualForm, _super);
+            function NtrPastMonthsActualForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            NtrPastMonthsActualForm.formKey = 'PCHODSNVS.NtrPastMonthsActual';
+            return NtrPastMonthsActualForm;
+        }(Serenity.PrefixedContext));
+        PCHODSNVS.NtrPastMonthsActualForm = NtrPastMonthsActualForm;
+        [
+            ['CompanyCd', function () { return Serenity.StringEditor; }],
+            ['YearMonth', function () { return Serenity.StringEditor; }],
+            ['NtrFinal', function () { return Serenity.DecimalEditor; }],
+            ['CxRev', function () { return Serenity.DecimalEditor; }],
+            ['PdsFinalTotal', function () { return Serenity.DecimalEditor; }],
+            ['ApcdFinal', function () { return Serenity.DecimalEditor; }],
+            ['BookedNumOfCabins', function () { return Serenity.DecimalEditor; }],
+            ['AvailableNumOfCabins', function () { return Serenity.DecimalEditor; }],
+            ['StlyBookedNumOfCabins', function () { return Serenity.DecimalEditor; }],
+            ['StlyAvailableNumOfCabins', function () { return Serenity.DecimalEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(NtrPastMonthsActualForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrPastMonthsActualRow;
+        (function (NtrPastMonthsActualRow) {
+            NtrPastMonthsActualRow.idProperty = 'PastmonthactualTk';
+            NtrPastMonthsActualRow.nameProperty = 'CompanyCd';
+            NtrPastMonthsActualRow.localTextPrefix = 'PCHODSNVS.NtrPastMonthsActual';
+            var Fields;
+            (function (Fields) {
+            })(Fields = NtrPastMonthsActualRow.Fields || (NtrPastMonthsActualRow.Fields = {}));
+            [
+                'CompanyCd',
+                'YearMonth',
+                'NtrFinal',
+                'CxRev',
+                'PdsFinalTotal',
+                'ApcdFinal',
+                'BookedNumOfCabins',
+                'AvailableNumOfCabins',
+                'StlyBookedNumOfCabins',
+                'StlyAvailableNumOfCabins',
+                'PastmonthactualTk'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(NtrPastMonthsActualRow = PCHODSNVS.NtrPastMonthsActualRow || (PCHODSNVS.NtrPastMonthsActualRow = {}));
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrPastMonthsActualService;
+        (function (NtrPastMonthsActualService) {
+            NtrPastMonthsActualService.baseUrl = 'PCHODSNVS/NtrPastMonthsActual';
+            var Methods;
+            (function (Methods) {
+            })(Methods = NtrPastMonthsActualService.Methods || (NtrPastMonthsActualService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                NtrPastMonthsActualService[x] = function (r, s, o) {
+                    return Q.serviceRequest(NtrPastMonthsActualService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = NtrPastMonthsActualService.baseUrl + '/' + x;
+            });
+        })(NtrPastMonthsActualService = PCHODSNVS.NtrPastMonthsActualService || (PCHODSNVS.NtrPastMonthsActualService = {}));
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -8847,6 +9091,98 @@ var DAP;
 (function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
+        var NtrBudgetDialog = /** @class */ (function (_super) {
+            __extends(NtrBudgetDialog, _super);
+            function NtrBudgetDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODSNVS.NtrBudgetForm(_this.idPrefix);
+                return _this;
+            }
+            NtrBudgetDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrBudgetForm.formKey; };
+            NtrBudgetDialog.prototype.getIdProperty = function () { return PCHODSNVS.NtrBudgetRow.idProperty; };
+            NtrBudgetDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrBudgetRow.localTextPrefix; };
+            NtrBudgetDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrBudgetRow.nameProperty; };
+            NtrBudgetDialog.prototype.getService = function () { return PCHODSNVS.NtrBudgetService.baseUrl; };
+            NtrBudgetDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrBudgetDialog);
+            return NtrBudgetDialog;
+        }(Serenity.EntityDialog));
+        PCHODSNVS.NtrBudgetDialog = NtrBudgetDialog;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetGrid = /** @class */ (function (_super) {
+            __extends(NtrBudgetGrid, _super);
+            function NtrBudgetGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            NtrBudgetGrid.prototype.getColumnsKey = function () { return 'PCHODSNVS.NtrBudget'; };
+            NtrBudgetGrid.prototype.getDialogType = function () { return PCHODSNVS.NtrBudgetDialog; };
+            NtrBudgetGrid.prototype.getIdProperty = function () { return PCHODSNVS.NtrBudgetRow.idProperty; };
+            NtrBudgetGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrBudgetRow.localTextPrefix; };
+            NtrBudgetGrid.prototype.getService = function () { return PCHODSNVS.NtrBudgetService.baseUrl; };
+            NtrBudgetGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrBudgetGrid);
+            return NtrBudgetGrid;
+        }(Serenity.EntityGrid));
+        PCHODSNVS.NtrBudgetGrid = NtrBudgetGrid;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetByChannelDialog = /** @class */ (function (_super) {
+            __extends(NtrBudgetByChannelDialog, _super);
+            function NtrBudgetByChannelDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODSNVS.NtrBudgetByChannelForm(_this.idPrefix);
+                return _this;
+            }
+            NtrBudgetByChannelDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrBudgetByChannelForm.formKey; };
+            NtrBudgetByChannelDialog.prototype.getIdProperty = function () { return PCHODSNVS.NtrBudgetByChannelRow.idProperty; };
+            NtrBudgetByChannelDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrBudgetByChannelRow.localTextPrefix; };
+            NtrBudgetByChannelDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrBudgetByChannelRow.nameProperty; };
+            NtrBudgetByChannelDialog.prototype.getService = function () { return PCHODSNVS.NtrBudgetByChannelService.baseUrl; };
+            NtrBudgetByChannelDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrBudgetByChannelDialog);
+            return NtrBudgetByChannelDialog;
+        }(Serenity.EntityDialog));
+        PCHODSNVS.NtrBudgetByChannelDialog = NtrBudgetByChannelDialog;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrBudgetByChannelGrid = /** @class */ (function (_super) {
+            __extends(NtrBudgetByChannelGrid, _super);
+            function NtrBudgetByChannelGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            NtrBudgetByChannelGrid.prototype.getColumnsKey = function () { return 'PCHODSNVS.NtrBudgetByChannel'; };
+            NtrBudgetByChannelGrid.prototype.getDialogType = function () { return PCHODSNVS.NtrBudgetByChannelDialog; };
+            NtrBudgetByChannelGrid.prototype.getIdProperty = function () { return PCHODSNVS.NtrBudgetByChannelRow.idProperty; };
+            NtrBudgetByChannelGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrBudgetByChannelRow.localTextPrefix; };
+            NtrBudgetByChannelGrid.prototype.getService = function () { return PCHODSNVS.NtrBudgetByChannelService.baseUrl; };
+            NtrBudgetByChannelGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrBudgetByChannelGrid);
+            return NtrBudgetByChannelGrid;
+        }(Serenity.EntityGrid));
+        PCHODSNVS.NtrBudgetByChannelGrid = NtrBudgetByChannelGrid;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
         var NtrFcstDialog = /** @class */ (function (_super) {
             __extends(NtrFcstDialog, _super);
             function NtrFcstDialog() {
@@ -8933,6 +9269,52 @@ var DAP;
             return NtrIntlDatelineCruisesGrid;
         }(Serenity.EntityGrid));
         PCHODSNVS.NtrIntlDatelineCruisesGrid = NtrIntlDatelineCruisesGrid;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrPastMonthsActualDialog = /** @class */ (function (_super) {
+            __extends(NtrPastMonthsActualDialog, _super);
+            function NtrPastMonthsActualDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODSNVS.NtrPastMonthsActualForm(_this.idPrefix);
+                return _this;
+            }
+            NtrPastMonthsActualDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrPastMonthsActualForm.formKey; };
+            NtrPastMonthsActualDialog.prototype.getIdProperty = function () { return PCHODSNVS.NtrPastMonthsActualRow.idProperty; };
+            NtrPastMonthsActualDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrPastMonthsActualRow.localTextPrefix; };
+            NtrPastMonthsActualDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrPastMonthsActualRow.nameProperty; };
+            NtrPastMonthsActualDialog.prototype.getService = function () { return PCHODSNVS.NtrPastMonthsActualService.baseUrl; };
+            NtrPastMonthsActualDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrPastMonthsActualDialog);
+            return NtrPastMonthsActualDialog;
+        }(Serenity.EntityDialog));
+        PCHODSNVS.NtrPastMonthsActualDialog = NtrPastMonthsActualDialog;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var NtrPastMonthsActualGrid = /** @class */ (function (_super) {
+            __extends(NtrPastMonthsActualGrid, _super);
+            function NtrPastMonthsActualGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            NtrPastMonthsActualGrid.prototype.getColumnsKey = function () { return 'PCHODSNVS.NtrPastMonthsActual'; };
+            NtrPastMonthsActualGrid.prototype.getDialogType = function () { return PCHODSNVS.NtrPastMonthsActualDialog; };
+            NtrPastMonthsActualGrid.prototype.getIdProperty = function () { return PCHODSNVS.NtrPastMonthsActualRow.idProperty; };
+            NtrPastMonthsActualGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrPastMonthsActualRow.localTextPrefix; };
+            NtrPastMonthsActualGrid.prototype.getService = function () { return PCHODSNVS.NtrPastMonthsActualService.baseUrl; };
+            NtrPastMonthsActualGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NtrPastMonthsActualGrid);
+            return NtrPastMonthsActualGrid;
+        }(Serenity.EntityGrid));
+        PCHODSNVS.NtrPastMonthsActualGrid = NtrPastMonthsActualGrid;
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 var DAP;

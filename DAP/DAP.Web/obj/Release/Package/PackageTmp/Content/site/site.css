@@ -9465,6 +9465,24 @@ button.ui-button {
 .s-PCHODSNVS-NtrFcstDialog .caption {
   width: 150px;
 }
+.s-PCHODSNVS-NtrBudgetByChannelDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-NtrBudgetByChannelDialog .caption {
+  width: 150px;
+}
+.s-PCHODSNVS-NtrBudgetDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-NtrBudgetDialog .caption {
+  width: 150px;
+}
+.s-PCHODSNVS-NtrPastMonthsActualDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-NtrPastMonthsActualDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-FinReportPublishingSuppDialog > .size {
   width: 650px;
 }
