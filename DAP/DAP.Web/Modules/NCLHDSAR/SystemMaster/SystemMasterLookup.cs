@@ -13,6 +13,7 @@
         {
             base.PrepareQuery(query);
             var fld = SystemMasterRow.Fields;
+            query.Where(fld.SystemActiveYn == "Y");
             query.OrderBy(fld.Id);
         }
         public SystemMasterLookup()

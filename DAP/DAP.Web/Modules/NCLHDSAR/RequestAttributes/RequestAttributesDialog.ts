@@ -77,6 +77,14 @@ namespace DAP.NCLHDSAR {
 
         }
 
+        protected updateInterface() {
+
+            // by default cloneButton is hidden in base UpdateInterface method
+            super.updateInterface();
+
+            // here we show it if it is edit mode (not new)
+            //this.cloneButton.toggle(this.isEditMode());
+        }
 
         protected getToolbarButtons(): Serenity.ToolButton[] {
             let btns = super.getToolbarButtons();
@@ -94,6 +102,30 @@ namespace DAP.NCLHDSAR {
             }
 
             btns.push(newBtn);
+
+            let dupBtn: Serenity.ToolButton =
+            {
+                title: "Clone",               
+                onClick: () => {
+
+                    if (!this.isEditMode()) {
+                        return;
+                    } 
+
+                    var cloneEntity = this.getCloningEntity(); 
+                    let ent: RequestAttributesRow = this.getCloningEntity();       
+                    ent.Id = Q.toId(this.form.Id.value);
+
+                    ent.ResolvedDt = null;
+                    ent.RequestValue = null;
+                        
+                    this.loadEntity(ent);
+                    Q.notifySuccess("Request Attribute cloned - Enter new ID.");
+                }
+            }
+
+            btns.push(dupBtn);
+
             return btns;
         }
 
