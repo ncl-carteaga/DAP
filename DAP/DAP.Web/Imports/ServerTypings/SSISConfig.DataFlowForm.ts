@@ -9,8 +9,8 @@
         TargetDesc: Serenity.StringEditor;
         Package: Serenity.StringEditor;
         Status: Serenity.IntegerEditor;
-        Lset: Serenity.DateEditor;
-        Cet: Serenity.DateEditor;
+        Lset: Serenity.DateTimeEditor;
+        Cet: Serenity.DateTimeEditor;
     }
 
     export class DataFlowForm extends Serenity.PrefixedContext {
@@ -26,7 +26,7 @@
                 var s = Serenity;
                 var w0 = s.StringEditor;
                 var w1 = s.IntegerEditor;
-                var w2 = s.DateEditor;
+                var w2 = s.DateTimeEditor;
 
                 Q.initFormType(DataFlowForm, [
                     'Source', w0,

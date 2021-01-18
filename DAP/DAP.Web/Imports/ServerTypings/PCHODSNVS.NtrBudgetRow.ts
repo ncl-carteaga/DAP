@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export interface NtrBudgetRow {
         CompanyCd?: string;
         AccountPeriodNum?: string;
@@ -15,24 +14,15 @@ namespace DAP.PCHODSNVS {
         export const nameProperty = 'CompanyCd';
         export const localTextPrefix = 'PCHODSNVS.NtrBudget';
 
-        export namespace Fields {
-            export declare const CompanyCd;
-            export declare const AccountPeriodNum;
-            export declare const NtrBudget;
-            export declare const PdsBudgetTotal;
-            export declare const ApcdFinal;
-            export declare const NtrFinancialBudget;
-            export declare const BudgetTk;
+        export declare const enum Fields {
+            CompanyCd = "CompanyCd",
+            AccountPeriodNum = "AccountPeriodNum",
+            NtrBudget = "NtrBudget",
+            PdsBudgetTotal = "PdsBudgetTotal",
+            ApcdFinal = "ApcdFinal",
+            NtrFinancialBudget = "NtrFinancialBudget",
+            BudgetTk = "BudgetTk"
         }
-
-        [
-            'CompanyCd',
-            'AccountPeriodNum',
-            'NtrBudget',
-            'PdsBudgetTotal',
-            'ApcdFinal',
-            'NtrFinancialBudget',
-            'BudgetTk'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

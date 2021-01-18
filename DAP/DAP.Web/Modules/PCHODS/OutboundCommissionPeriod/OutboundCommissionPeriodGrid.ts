@@ -15,6 +15,16 @@ namespace DAP.PCHODS {
 
         protected createQuickSearchInput() { }
 
+        protected createSlickGrid() {
+            this.slickGrid = super.createSlickGrid();
+
+            new Serenity.AutoColumnWidthMixin({
+                grid: this
+            });
+
+            return this.slickGrid;
+        }      
+
         protected getColumns() {
             var columns = super.getColumns();
 

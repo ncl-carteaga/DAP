@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Accounting Year"), Column("accounting_year")]
+        [DisplayName("Accounting Year"), Column("accounting_year"), SortOrder(1, descending: true)]
         public Int32? AccountingYear
         {
             get { return Fields.AccountingYear[this]; }

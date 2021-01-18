@@ -1,0 +1,40 @@
+﻿
+namespace DAP.DWSupport.Columns
+{
+    using Serenity;
+    using Serenity.ComponentModel;
+    using Serenity.Data;
+    using System;
+    using System.ComponentModel;
+    using System.Collections.Generic;
+    using System.IO;
+
+    [ColumnsScript("DWSupport.DistrictMasterSupp")]
+    [BasedOnRow(typeof(Entities.DistrictMasterSuppRow), CheckNames = true)]
+    public class DistrictMasterSuppColumns
+    {
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        public Int64 DistrictMasterId { get; set; }
+        public Decimal DistrictSurKey { get; set; }
+        [EditLink]
+        public String DistrictNbr { get; set; }
+       // [QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Lookups.SalesRepLookup))]
+        public String SalesrepUserId { get; set; }
+       // [QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Lookups.GroupLookup))]
+        public String GroupCd { get; set; }
+        //[QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Lookups.SalesChannelLookup))]
+        public String SalesChannelCd { get; set; }
+        //[QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Lookups.ChannelLookup))]
+        public String RmChannelCd { get; set; }
+       // [QuickFilter(CssClass = "hidden-xs"), LookupEditor(typeof(Lookups.AreaLookup))]
+        public String AreaCd { get; set; }
+        public String PrimaryCrmSupportNam { get; set; }
+        public String SecondaryCrmSupportNam { get; set; }
+        public String GssChannelCd { get; set; }
+        public DateTime CreatedTs { get; set; }
+        public String CreatedByNam { get; set; }
+        public String ModifiedByNam { get; set; }
+        public DateTime ModifiedTs { get; set; }
+        public String ChannelCd { get; set; }
+    }
+}

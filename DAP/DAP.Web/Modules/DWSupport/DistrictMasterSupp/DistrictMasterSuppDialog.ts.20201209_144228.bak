@@ -1,0 +1,96 @@
+﻿
+namespace DAP.DWSupport {
+
+    @Serenity.Decorators.registerClass()
+    export class DistrictMasterSuppDialog extends Serenity.EntityDialog<DistrictMasterSuppRow, any> {
+        protected getFormKey() { return DistrictMasterSuppForm.formKey; }
+        protected getIdProperty() { return DistrictMasterSuppRow.idProperty; }
+        protected getLocalTextPrefix() { return DistrictMasterSuppRow.localTextPrefix; }
+        protected getNameProperty() { return DistrictMasterSuppRow.nameProperty; }
+        protected getService() { return DistrictMasterSuppService.baseUrl; }
+
+        protected form = new DistrictMasterSuppForm(this.idPrefix);
+
+    //    constructor() {
+    //        super();
+
+    //        this.form = new DistrictMasterSuppForm(this.idPrefix);
+    //    }
+
+    //    protected getToolbarButtons(): Serenity.ToolButton[] {
+    //        let btns = super.getToolbarButtons();
+
+    //    //        //var btnSave = Q.first(btns, x => x.cssClass == "save-and-close-button");
+    //    //        //var btnApply = Q.first(btns, x => x.cssClass == "apply-changes-button");
+
+    //    //        //var oldSaveClick = btnSave.onClick;
+    //    //        //var oldApplyClick = btnApply.onClick;
+
+    //    //        //btnSave.onClick = e => { this.confirmBeforeSave(oldSaveClick, e); };
+    //    //        //btnApply.onClick = e => { this.confirmBeforeSave(oldApplyClick, e); };
+
+
+    //            let dupBtn: Serenity.ToolButton =
+    //            {
+    //                title: "Clone",
+    //                onClick: () => {
+
+    //                    if (!this.isEditMode()) {
+    //                        return;
+    //                    }
+
+    //                    this.save(() => {
+    //                        let ent: DistrictMasterSuppRow = this.getCloningEntity();
+    //                        ent.DistrictMasterId = Q.toId(this.form.DistrictMasterId.value);
+
+    //                        ent.ModifiedTs = null;
+    //                        ent.ModifiedByNam = null;
+
+    //                        this.save(() => {
+    //                        });
+    //                        //this.loadEntity(ent);
+    //                    });
+
+    //    //                var cloneEntity = this.getCloningEntity();
+    //    //                let ent: DistrictMasterSuppRow = this.getCloningEntity();
+    //    //                ent.DistrictMasterId = Q.toId(this.form.DistrictMasterId.value);
+
+    //    //                ent.ModifiedTs = null;
+    //    //                ent.ModifiedByNam = null;
+
+    //    //               // this.loadEntity(ent);
+
+    //    //                this.save(() => {
+    //    //                    let ent: DistrictMasterSuppRow = {};
+    //    //                    ent.DistrictMasterId = Q.toId(this.form.DistrictMasterId.value);
+    //    //                    //this.loadEntity(ent);
+    //    //                });
+
+
+    //                }
+    //            }
+
+    //            btns.push(dupBtn);
+
+
+    //            return btns;
+    //        }
+
+    //    //    private confirmBeforeSave(oldEvt, e) {
+
+    //    //        let ent: DistrictMasterSuppRow = this.getCloningEntity();
+    //    //        ent.DistrictMasterId = Q.toId(this.form.Id.value);
+
+    //    //        ent.ModifiedTs = null;
+    //    //        ent.ModifiedByNam = null;
+
+    //    //        this.loadEntity(ent);
+
+    //    //        //oldEvt(e);
+
+    //    //    }
+
+    //    //}
+
+    //}    
+}

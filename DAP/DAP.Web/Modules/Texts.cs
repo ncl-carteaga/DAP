@@ -251,7 +251,7 @@ namespace DAP
 
             public static class Layout
             {
-                public static LocalText FooterCopyright = "Copyright (c) 2019 v1.12";
+                public static LocalText FooterCopyright = "Copyright (c) 2021 v1.15";
                 public static LocalText FooterInfo = "Serenity Platform";
                 public static LocalText FooterRights = "All rights reserved.";
                 public static LocalText GeneralSettings = "General Settings";

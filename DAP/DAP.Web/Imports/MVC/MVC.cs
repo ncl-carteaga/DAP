@@ -59,6 +59,11 @@ namespace MVC
 
         public static class DWSupport
         {
+            public static class DistrictMasterSupp
+            {
+                public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
+            }
+
             public static class FinReportPublishingSupp
             {
                 public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
@@ -149,11 +154,44 @@ namespace MVC
 
         }
 
+        public static class NCLHODSMICROS
+        {
+            public static class DataFlow
+            {
+                public const string DataFlowIndex = "~/Modules/NCLHODSMICROS/DataFlow/DataFlowIndex.cshtml";
+            }
+
+        }
+
         public static class NCLHODSSPENDVIS
         {
             public static class Amoslevel
             {
                 public const string AmoslevelIndex = "~/Modules/NCLHODSSPENDVIS/Amoslevel/AmoslevelIndex.cshtml";
+            }
+
+            public static class DataFlow
+            {
+                public const string DataFlowIndex = "~/Modules/NCLHODSSPENDVIS/DataFlow/DataFlowIndex.cshtml";
+            }
+
+        }
+
+        public static class PCHDW
+        {
+            public static class DimInvoice
+            {
+                public const string DimInvoiceIndex = "~/Modules/PCHDW/DimInvoice/DimInvoiceIndex.cshtml";
+            }
+
+            public static class ScheduledJob
+            {
+                public const string ScheduledJobIndex = "~/Modules/PCHDW/ScheduledJob/ScheduledJobIndex.cshtml";
+            }
+
+            public static class VwSqlJobList
+            {
+                public const string VwSqlJobListIndex = "~/Modules/PCHDW/VwSqlJobList/VwSqlJobListIndex.cshtml";
             }
 
         }
@@ -168,6 +206,11 @@ namespace MVC
             public static class OutboundAgentLocation
             {
                 public const string OutboundAgentLocationIndex = "~/Modules/PCHODS/OutboundAgentLocation/OutboundAgentLocationIndex.cshtml";
+            }
+
+            public static class OutboundCommissionBkGoal
+            {
+                public const string OutboundCommissionBkGoalIndex = "~/Modules/PCHODS/OutboundCommissionBkGoal/OutboundCommissionBkGoalIndex.cshtml";
             }
 
             public static class OutboundCommissionHist
@@ -199,9 +242,34 @@ namespace MVC
 
         public static class PCHODSNVS
         {
+            public static class NtrBudget
+            {
+                public const string NtrBudgetIndex = "~/Modules/PCHODSNVS/NtrBudget/NtrBudgetIndex.cshtml";
+            }
+
+            public static class NtrBudgetByChannel
+            {
+                public const string NtrBudgetByChannelIndex = "~/Modules/PCHODSNVS/NtrBudgetByChannel/NtrBudgetByChannelIndex.cshtml";
+            }
+
+            public static class NtrFcst
+            {
+                public const string NtrFcstIndex = "~/Modules/PCHODSNVS/NtrFcst/NtrFcstIndex.cshtml";
+            }
+
             public static class NtrIntlDatelineCruises
             {
                 public const string NtrIntlDatelineCruisesIndex = "~/Modules/PCHODSNVS/NtrIntlDatelineCruises/NtrIntlDatelineCruisesIndex.cshtml";
+            }
+
+            public static class NtrPastMonthsActual
+            {
+                public const string NtrPastMonthsActualIndex = "~/Modules/PCHODSNVS/NtrPastMonthsActual/NtrPastMonthsActualIndex.cshtml";
+            }
+
+            public static class NtrRptComment
+            {
+                public const string NtrRptCommentIndex = "~/Modules/PCHODSNVS/NtrRptComment/NtrRptCommentIndex.cshtml";
             }
         }
 
@@ -231,6 +299,11 @@ namespace MVC
             public static class INTConfigBase
             {
                 public const string INTConfigBaseIndex = "~/Modules/SSISConfig/INTConfigBase/INTConfigBaseIndex.cshtml";
+            }
+
+            public static class MicrosDataFlow
+            {
+                public const string MicrosDataFlowIndex = "~/Modules/SSISConfig/MicrosDataFlow/MicrosDataFlowIndex.cshtml";
             }
 
             public static class PsInterfaceConfig

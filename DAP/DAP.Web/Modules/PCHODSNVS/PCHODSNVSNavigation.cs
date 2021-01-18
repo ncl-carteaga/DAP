@@ -2,9 +2,10 @@
 using MyPages = DAP.PCHODSNVS.Pages;
 
 [assembly: NavigationMenu(int.MaxValue, "Brand Finance & Strategy", icon: "fa-bar-chart")]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Ntr Intl Dateline Cruises", typeof(MyPages.NtrIntlDatelineCruisesController), icon: "fa-calendar")]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Ntr Rpt Comment", typeof(MyPages.NtrRptCommentController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Ntr Fcst", typeof(MyPages.NtrFcstController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Ntr Budget By Channel", typeof(MyPages.NtrBudgetByChannelController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Ntr Budget", typeof(MyPages.NtrBudgetController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Ntr Past Months Actual", typeof(MyPages.NtrPastMonthsActualController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR Intl Dateline Cruises", typeof(MyPages.NtrIntlDatelineCruisesController), icon: "fa-calendar")]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR DR010 Comment", typeof(MyPages.NtrRptCommentController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR Forecast", typeof(MyPages.NtrFcstController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR Budget By Channel", typeof(MyPages.NtrBudgetByChannelController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR Budget", typeof(MyPages.NtrBudgetController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR Actuals", typeof(MyPages.NtrPastMonthsActualController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Supp Key Acct Target", typeof(MyPages.SuppKeyAcctTargetController), icon: null)]

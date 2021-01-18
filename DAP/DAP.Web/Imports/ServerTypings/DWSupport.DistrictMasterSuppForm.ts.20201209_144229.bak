@@ -1,0 +1,59 @@
+﻿namespace DAP.DWSupport {
+    export interface DistrictMasterSuppForm {
+        DistrictMasterId: Serenity.StringEditor;
+        DistrictSurKey: Serenity.DecimalEditor;
+        DistrictNbr: Serenity.StringEditor;
+        SalesrepUserId: Serenity.LookupEditor;
+        GroupCd: Serenity.LookupEditor;
+        SalesChannelCd: Serenity.LookupEditor;
+        RmChannelCd: Serenity.LookupEditor;
+        AreaCd: Serenity.LookupEditor;
+        PrimaryCrmSupportNam: Serenity.StringEditor;
+        SecondaryCrmSupportNam: Serenity.StringEditor;
+        GssChannelCd: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ChannelCd: Serenity.StringEditor;
+    }
+
+    export class DistrictMasterSuppForm extends Serenity.PrefixedContext {
+        static formKey = 'DWSupport.DistrictMasterSupp';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!DistrictMasterSuppForm.init)  {
+                DistrictMasterSuppForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.DecimalEditor;
+                var w2 = s.LookupEditor;
+                var w3 = s.DateEditor;
+
+                Q.initFormType(DistrictMasterSuppForm, [
+                    'DistrictMasterId', w0,
+                    'DistrictSurKey', w1,
+                    'DistrictNbr', w0,
+                    'SalesrepUserId', w2,
+                    'GroupCd', w2,
+                    'SalesChannelCd', w2,
+                    'RmChannelCd', w2,
+                    'AreaCd', w2,
+                    'PrimaryCrmSupportNam', w0,
+                    'SecondaryCrmSupportNam', w0,
+                    'GssChannelCd', w0,
+                    'CreatedTs', w3,
+                    'CreatedByNam', w0,
+                    'ModifiedByNam', w0,
+                    'ModifiedTs', w3,
+                    'ChannelCd', w0
+                ]);
+            }
+        }
+    }
+}
+

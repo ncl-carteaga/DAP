@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Account Period Num"), Column("account_period_num"), Size(255), NotNull]
+        [DisplayName("Account Period Num"), Column("account_period_num"), Size(255), NotNull, SortOrder(1, descending: true)]
         public String AccountPeriodNum
         {
             get { return Fields.AccountPeriodNum[this]; }

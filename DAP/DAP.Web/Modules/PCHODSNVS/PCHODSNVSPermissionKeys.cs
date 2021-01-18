@@ -19,6 +19,15 @@ namespace DAP.PCHODSNVS
 
         [Description("[General]")]
         public const string General = "PCHODSNVS:General";
+
+        [Description("Finance_100")]
+        public const string Finance100 = "PCHODSNVS:Finance100";
+
+        [Description("Finance_110")]
+        public const string Finance110 = "PCHODSNVS:Finance110";
+
+        [Description("Finance_KeyAcctTarget")]
+        public const string KeyAcctTarget = "PCHODSNVS:KeyAcctTarget";
     }
 
 }

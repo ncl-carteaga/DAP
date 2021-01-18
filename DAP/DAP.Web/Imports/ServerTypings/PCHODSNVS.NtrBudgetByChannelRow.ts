@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export interface NtrBudgetByChannelRow {
         CompanyCd?: string;
         AccountingYear?: number;
@@ -16,26 +15,16 @@ namespace DAP.PCHODSNVS {
         export const nameProperty = 'CompanyCd';
         export const localTextPrefix = 'PCHODSNVS.NtrBudgetByChannel';
 
-        export namespace Fields {
-            export declare const CompanyCd;
-            export declare const AccountingYear;
-            export declare const ChannelSummDesc;
-            export declare const ChannelDesc;
-            export declare const NtrBudget;
-            export declare const PdsBudgetTotal;
-            export declare const NpdBudget;
-            export declare const BudgetbychannelTk;
+        export declare const enum Fields {
+            CompanyCd = "CompanyCd",
+            AccountingYear = "AccountingYear",
+            ChannelSummDesc = "ChannelSummDesc",
+            ChannelDesc = "ChannelDesc",
+            NtrBudget = "NtrBudget",
+            PdsBudgetTotal = "PdsBudgetTotal",
+            NpdBudget = "NpdBudget",
+            BudgetbychannelTk = "BudgetbychannelTk"
         }
-
-        [
-            'CompanyCd',
-            'AccountingYear',
-            'ChannelSummDesc',
-            'ChannelDesc',
-            'NtrBudget',
-            'PdsBudgetTotal',
-            'NpdBudget',
-            'BudgetbychannelTk'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

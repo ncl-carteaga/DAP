@@ -9447,6 +9447,12 @@ button.ui-button {
 .s-PCHODS-VwOutboundMonthlyRptArchiveOverrideDialog .caption {
   width: 150px;
 }
+.s-PCHODS-OutboundCommissionBkGoalDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-OutboundCommissionBkGoalDialog .caption {
+  width: 150px;
+}
 .s-PCHODSNVS-NtrIntlDatelineCruisesDialog > .size {
   width: 650px;
 }
@@ -9483,10 +9489,22 @@ button.ui-button {
 .s-PCHODSNVS-NtrPastMonthsActualDialog .caption {
   width: 150px;
 }
+.s-PCHODSNVS-SuppKeyAcctTargetDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-SuppKeyAcctTargetDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-FinReportPublishingSuppDialog > .size {
   width: 650px;
 }
 .s-DWSupport-FinReportPublishingSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-DistrictMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-DistrictMasterSuppDialog .caption {
   width: 150px;
 }
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
@@ -9661,6 +9679,18 @@ button.ui-button {
   width: 650px;
 }
 .s-PCHDW-DimInvoiceDialog .caption {
+  width: 150px;
+}
+.s-PCHDW-VwSqlJobListDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-VwSqlJobListDialog .caption {
+  width: 150px;
+}
+.s-PCHDW-ScheduledJobDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-ScheduledJobDialog .caption {
   width: 150px;
 }
 .s-FINANCE-NtrComponentsDialog > .size {

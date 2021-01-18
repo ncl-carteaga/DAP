@@ -24,14 +24,14 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CommentTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, Updatable(false)]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Report Date"), Column("report_date")]
+        [DisplayName("Report Date"), Column("report_date"), SortOrder(1, descending: true)]
         public DateTime? ReportDate
         {
             get { return Fields.ReportDate[this]; }

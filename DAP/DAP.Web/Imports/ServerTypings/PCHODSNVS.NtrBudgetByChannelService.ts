@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export namespace NtrBudgetByChannelService {
         export const baseUrl = 'PCHODSNVS/NtrBudgetByChannel';
 
@@ -9,12 +8,12 @@ namespace DAP.PCHODSNVS {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrBudgetByChannelRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrBudgetByChannelRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "PCHODSNVS/NtrBudgetByChannel/Create",
+            Update = "PCHODSNVS/NtrBudgetByChannel/Update",
+            Delete = "PCHODSNVS/NtrBudgetByChannel/Delete",
+            Retrieve = "PCHODSNVS/NtrBudgetByChannel/Retrieve",
+            List = "PCHODSNVS/NtrBudgetByChannel/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.PCHODSNVS {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>NtrBudgetByChannelService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>NtrBudgetByChannelService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

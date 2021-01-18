@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export interface NtrPastMonthsActualRow {
         CompanyCd?: string;
         YearMonth?: string;
@@ -19,32 +18,19 @@ namespace DAP.PCHODSNVS {
         export const nameProperty = 'CompanyCd';
         export const localTextPrefix = 'PCHODSNVS.NtrPastMonthsActual';
 
-        export namespace Fields {
-            export declare const CompanyCd;
-            export declare const YearMonth;
-            export declare const NtrFinal;
-            export declare const CxRev;
-            export declare const PdsFinalTotal;
-            export declare const ApcdFinal;
-            export declare const BookedNumOfCabins;
-            export declare const AvailableNumOfCabins;
-            export declare const StlyBookedNumOfCabins;
-            export declare const StlyAvailableNumOfCabins;
-            export declare const PastmonthactualTk;
+        export declare const enum Fields {
+            CompanyCd = "CompanyCd",
+            YearMonth = "YearMonth",
+            NtrFinal = "NtrFinal",
+            CxRev = "CxRev",
+            PdsFinalTotal = "PdsFinalTotal",
+            ApcdFinal = "ApcdFinal",
+            BookedNumOfCabins = "BookedNumOfCabins",
+            AvailableNumOfCabins = "AvailableNumOfCabins",
+            StlyBookedNumOfCabins = "StlyBookedNumOfCabins",
+            StlyAvailableNumOfCabins = "StlyAvailableNumOfCabins",
+            PastmonthactualTk = "PastmonthactualTk"
         }
-
-        [
-            'CompanyCd',
-            'YearMonth',
-            'NtrFinal',
-            'CxRev',
-            'PdsFinalTotal',
-            'ApcdFinal',
-            'BookedNumOfCabins',
-            'AvailableNumOfCabins',
-            'StlyBookedNumOfCabins',
-            'StlyAvailableNumOfCabins',
-            'PastmonthactualTk'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

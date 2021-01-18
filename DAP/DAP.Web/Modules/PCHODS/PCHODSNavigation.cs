@@ -9,3 +9,4 @@ using MyPages = DAP.PCHODS.Pages;
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission Tiers AU", typeof(MyPages.OutboundCommissionHistAuController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission Tiers BR", typeof(MyPages.OutboundCommissionHistBrController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Outbound/Monthly Rpt Archive", typeof(MyPages.OutboundMonthlyRptArchiveOverrideController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Outbound/Commission Bk Goal", typeof(MyPages.OutboundCommissionBkGoalController), icon: null)]

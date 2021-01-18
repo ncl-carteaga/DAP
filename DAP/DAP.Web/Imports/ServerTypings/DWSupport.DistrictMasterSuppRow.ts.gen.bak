@@ -1,0 +1,62 @@
+﻿
+namespace DAP.DWSupport {
+    export interface DistrictMasterSuppRow {
+        DistrictSurKey?: number;
+        DistrictNbr?: string;
+        SalesrepUserId?: string;
+        GroupCd?: string;
+        SalesChannelCd?: string;
+        RmChannelCd?: string;
+        AreaCd?: string;
+        PrimaryCrmSupportNam?: string;
+        SecondaryCrmSupportNam?: string;
+        GssChannelCd?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        ChannelCd?: string;
+    }
+
+    export namespace DistrictMasterSuppRow {
+        export const idProperty = 'DistrictSurKey';
+        export const nameProperty = 'DistrictNbr';
+        export const localTextPrefix = 'DWSupport.DistrictMasterSupp';
+
+        export namespace Fields {
+            export declare const DistrictSurKey;
+            export declare const DistrictNbr;
+            export declare const SalesrepUserId;
+            export declare const GroupCd;
+            export declare const SalesChannelCd;
+            export declare const RmChannelCd;
+            export declare const AreaCd;
+            export declare const PrimaryCrmSupportNam;
+            export declare const SecondaryCrmSupportNam;
+            export declare const GssChannelCd;
+            export declare const CreatedTs;
+            export declare const CreatedByNam;
+            export declare const ModifiedByNam;
+            export declare const ModifiedTs;
+            export declare const ChannelCd;
+        }
+
+        [
+            'DistrictSurKey',
+            'DistrictNbr',
+            'SalesrepUserId',
+            'GroupCd',
+            'SalesChannelCd',
+            'RmChannelCd',
+            'AreaCd',
+            'PrimaryCrmSupportNam',
+            'SecondaryCrmSupportNam',
+            'GssChannelCd',
+            'CreatedTs',
+            'CreatedByNam',
+            'ModifiedByNam',
+            'ModifiedTs',
+            'ChannelCd'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

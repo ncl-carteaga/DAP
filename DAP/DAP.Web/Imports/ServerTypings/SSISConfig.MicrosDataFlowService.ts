@@ -1,5 +1,4 @@
-﻿
-namespace DAP.SSISConfig {
+﻿namespace DAP.SSISConfig {
     export namespace MicrosDataFlowService {
         export const baseUrl = 'SSISConfig/MicrosDataFlow';
 
@@ -9,12 +8,12 @@ namespace DAP.SSISConfig {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MicrosDataFlowRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MicrosDataFlowRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "SSISConfig/MicrosDataFlow/Create",
+            Update = "SSISConfig/MicrosDataFlow/Update",
+            Delete = "SSISConfig/MicrosDataFlow/Delete",
+            Retrieve = "SSISConfig/MicrosDataFlow/Retrieve",
+            List = "SSISConfig/MicrosDataFlow/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.SSISConfig {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>MicrosDataFlowService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>MicrosDataFlowService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+
