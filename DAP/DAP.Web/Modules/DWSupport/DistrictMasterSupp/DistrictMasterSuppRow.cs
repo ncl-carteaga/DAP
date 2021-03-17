@@ -115,7 +115,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ModifiedTs[this] = value; }
         }
 
-        [DisplayName("Channel Cd"), Column("CHANNEL_CD"), NotNull, Size(50), LookupEditor(typeof(Lookups.ChannelCdLookup), )]
+        [DisplayName("Channel Cd"), Column("CHANNEL_CD"), NotNull, Size(50), LookupEditor(typeof(Lookups.ChannelCdLookup))]
         public String ChannelCd
         {
             get { return Fields.ChannelCd[this]; }

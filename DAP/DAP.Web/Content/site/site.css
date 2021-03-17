@@ -9507,6 +9507,18 @@ button.ui-button {
 .s-DWSupport-DistrictMasterSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-GuestPreventDepartureDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-GuestPreventDepartureDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-SailingMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SailingMasterSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

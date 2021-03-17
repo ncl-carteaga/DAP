@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export namespace DistrictMasterSuppService {
         export const baseUrl = 'DWSupport/DistrictMasterSupp';
 
@@ -9,12 +8,12 @@ namespace DAP.DWSupport {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DistrictMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DistrictMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "DWSupport/DistrictMasterSupp/Create",
+            Update = "DWSupport/DistrictMasterSupp/Update",
+            Delete = "DWSupport/DistrictMasterSupp/Delete",
+            Retrieve = "DWSupport/DistrictMasterSupp/Retrieve",
+            List = "DWSupport/DistrictMasterSupp/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.DWSupport {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>DistrictMasterSuppService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>DistrictMasterSuppService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

@@ -1141,6 +1141,8 @@
     <Content Include="Modules\DWSupport\DistrictMasterSupp\DistrictMasterSuppIndex.cshtml" />
     <Content Include="Modules\PCHODS\OutboundCommissionBkGoal\OutboundCommissionBkGoalIndex.cshtml" />
     <Content Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetIndex.cshtml" />
+    <Content Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureIndex.cshtml" />
+    <Content Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1174,6 +1176,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinReportPublishingSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
@@ -1293,6 +1301,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.SelectCompanyForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.KeyAcctTargetExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1309,6 +1320,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.SuppKeyAcctTargetColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowColumns.ts">
@@ -1363,6 +1377,7 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyEditor.ts" />
@@ -1447,6 +1462,10 @@
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionBkGoal\OutboundCommissionBkGoalGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2501,6 +2520,24 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.SuppKeyAcctTargetForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2601,6 +2638,8 @@
     <Compile Include="Modules\Common\EmailClient\HtmlPreviewVisitor.cs" />
     <Compile Include="Modules\Common\EmailClient\HtmlReplyVisitor.cs" />
     <Compile Include="Modules\Common\EmailClient\RijndaelSimple.cs" />
+    <Compile Include="Modules\Common\Helpers\myImportFields.cs" />
+    <Compile Include="Modules\Common\Helpers\myImportHelper.cs" />
     <Compile Include="Modules\Common\Helpers\SingleLineTextFormatterAttribute.cs" />
     <Compile Include="Modules\Common\Helpers\RequireHttpsWithConfig.cs" />
     <Compile Include="Modules\Common\Mail\MailColumns.cs" />
@@ -2666,6 +2705,7 @@
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesChannelLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesRepLookup.cs" />
     <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -2719,6 +2759,7 @@
     <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
     <Compile Include="Modules\PCHDW\DimInvoice\PCHDWPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
+    <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodColumns.cs" />
@@ -2977,6 +3018,18 @@
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetPage.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetColumns.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetForm.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureRow.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureRepository.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDeparturePage.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureColumns.cs" />
+    <Compile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureForm.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

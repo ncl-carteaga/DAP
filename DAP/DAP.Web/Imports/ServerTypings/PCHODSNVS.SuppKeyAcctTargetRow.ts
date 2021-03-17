@@ -1,8 +1,8 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export interface SuppKeyAcctTargetRow {
         KeyAcctTk?: number;
         CompanyCd?: number;
+        Year?: number;
         KeyAcctLink?: string;
         AccountType?: string;
         CcfTargetQ1?: number;
@@ -53,100 +53,54 @@ namespace DAP.PCHODSNVS {
         export const nameProperty = 'KeyAcctLink';
         export const localTextPrefix = 'PCHODSNVS.SuppKeyAcctTarget';
 
-        export namespace Fields {
-            export declare const KeyAcctTk;
-            export declare const CompanyCd;
-            export declare const KeyAcctLink;
-            export declare const AccountType;
-            export declare const CcfTargetQ1;
-            export declare const CcfTargetQ12;
-            export declare const CcfTargetQ13;
-            export declare const CcfTargetQ14;
-            export declare const CcfTargetQ15;
-            export declare const CcfTargetQ2;
-            export declare const CcfTargetQ22;
-            export declare const CcfTargetQ23;
-            export declare const CcfTargetQ24;
-            export declare const CcfTargetQ25;
-            export declare const CcfTargetQ3;
-            export declare const CcfTargetQ32;
-            export declare const CcfTargetQ33;
-            export declare const CcfTargetQ34;
-            export declare const CcfTargetQ35;
-            export declare const CcfTargetQ4;
-            export declare const CcfTargetQ42;
-            export declare const CcfTargetQ43;
-            export declare const CcfTargetQ44;
-            export declare const CcfTargetQ45;
-            export declare const PrctTargetQ1;
-            export declare const PrctTargetQ12;
-            export declare const PrctTargetQ13;
-            export declare const PrctTargetQ14;
-            export declare const PrctTargetQ15;
-            export declare const PrctTargetQ2;
-            export declare const PrctTargetQ22;
-            export declare const PrctTargetQ23;
-            export declare const PrctTargetQ24;
-            export declare const PrctTargetQ25;
-            export declare const PrctTargetQ3;
-            export declare const PrctTargetQ32;
-            export declare const PrctTargetQ33;
-            export declare const PrctTargetQ34;
-            export declare const PrctTargetQ35;
-            export declare const PrctTargetQ4;
-            export declare const PrctTargetQ42;
-            export declare const PrctTargetQ43;
-            export declare const PrctTargetQ44;
-            export declare const PrctTargetQ45;
-            export declare const LoadDt;
+        export declare const enum Fields {
+            KeyAcctTk = "KeyAcctTk",
+            CompanyCd = "CompanyCd",
+            Year = "Year",
+            KeyAcctLink = "KeyAcctLink",
+            AccountType = "AccountType",
+            CcfTargetQ1 = "CcfTargetQ1",
+            CcfTargetQ12 = "CcfTargetQ12",
+            CcfTargetQ13 = "CcfTargetQ13",
+            CcfTargetQ14 = "CcfTargetQ14",
+            CcfTargetQ15 = "CcfTargetQ15",
+            CcfTargetQ2 = "CcfTargetQ2",
+            CcfTargetQ22 = "CcfTargetQ22",
+            CcfTargetQ23 = "CcfTargetQ23",
+            CcfTargetQ24 = "CcfTargetQ24",
+            CcfTargetQ25 = "CcfTargetQ25",
+            CcfTargetQ3 = "CcfTargetQ3",
+            CcfTargetQ32 = "CcfTargetQ32",
+            CcfTargetQ33 = "CcfTargetQ33",
+            CcfTargetQ34 = "CcfTargetQ34",
+            CcfTargetQ35 = "CcfTargetQ35",
+            CcfTargetQ4 = "CcfTargetQ4",
+            CcfTargetQ42 = "CcfTargetQ42",
+            CcfTargetQ43 = "CcfTargetQ43",
+            CcfTargetQ44 = "CcfTargetQ44",
+            CcfTargetQ45 = "CcfTargetQ45",
+            PrctTargetQ1 = "PrctTargetQ1",
+            PrctTargetQ12 = "PrctTargetQ12",
+            PrctTargetQ13 = "PrctTargetQ13",
+            PrctTargetQ14 = "PrctTargetQ14",
+            PrctTargetQ15 = "PrctTargetQ15",
+            PrctTargetQ2 = "PrctTargetQ2",
+            PrctTargetQ22 = "PrctTargetQ22",
+            PrctTargetQ23 = "PrctTargetQ23",
+            PrctTargetQ24 = "PrctTargetQ24",
+            PrctTargetQ25 = "PrctTargetQ25",
+            PrctTargetQ3 = "PrctTargetQ3",
+            PrctTargetQ32 = "PrctTargetQ32",
+            PrctTargetQ33 = "PrctTargetQ33",
+            PrctTargetQ34 = "PrctTargetQ34",
+            PrctTargetQ35 = "PrctTargetQ35",
+            PrctTargetQ4 = "PrctTargetQ4",
+            PrctTargetQ42 = "PrctTargetQ42",
+            PrctTargetQ43 = "PrctTargetQ43",
+            PrctTargetQ44 = "PrctTargetQ44",
+            PrctTargetQ45 = "PrctTargetQ45",
+            LoadDt = "LoadDt"
         }
-
-        [
-            'KeyAcctTk',
-            'CompanyCd',
-            'KeyAcctLink',
-            'AccountType',
-            'CcfTargetQ1',
-            'CcfTargetQ12',
-            'CcfTargetQ13',
-            'CcfTargetQ14',
-            'CcfTargetQ15',
-            'CcfTargetQ2',
-            'CcfTargetQ22',
-            'CcfTargetQ23',
-            'CcfTargetQ24',
-            'CcfTargetQ25',
-            'CcfTargetQ3',
-            'CcfTargetQ32',
-            'CcfTargetQ33',
-            'CcfTargetQ34',
-            'CcfTargetQ35',
-            'CcfTargetQ4',
-            'CcfTargetQ42',
-            'CcfTargetQ43',
-            'CcfTargetQ44',
-            'CcfTargetQ45',
-            'PrctTargetQ1',
-            'PrctTargetQ12',
-            'PrctTargetQ13',
-            'PrctTargetQ14',
-            'PrctTargetQ15',
-            'PrctTargetQ2',
-            'PrctTargetQ22',
-            'PrctTargetQ23',
-            'PrctTargetQ24',
-            'PrctTargetQ25',
-            'PrctTargetQ3',
-            'PrctTargetQ32',
-            'PrctTargetQ33',
-            'PrctTargetQ34',
-            'PrctTargetQ35',
-            'PrctTargetQ4',
-            'PrctTargetQ42',
-            'PrctTargetQ43',
-            'PrctTargetQ44',
-            'PrctTargetQ45',
-            'LoadDt'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

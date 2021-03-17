@@ -22,40 +22,23 @@
         export const nameProperty = 'DistrictNbr';
         export const localTextPrefix = 'DWSupport.DistrictMasterSupp';
 
-        export namespace Fields {
-            export declare const DistrictSurKey;
-            export declare const DistrictNbr;
-            export declare const SalesrepUserId;
-            export declare const GroupCd;
-            export declare const SalesChannelCd;
-            export declare const RmChannelCd;
-            export declare const AreaCd;
-            export declare const PrimaryCrmSupportNam;
-            export declare const SecondaryCrmSupportNam;
-            export declare const GssChannelCd;
-            export declare const CreatedTs;
-            export declare const CreatedByNam;
-            export declare const ModifiedByNam;
-            export declare const ModifiedTs;
-            export declare const ChannelCd;
+        export declare const enum Fields {
+            DistrictSurKey = "DistrictSurKey",
+            DistrictNbr = "DistrictNbr",
+            SalesrepUserId = "SalesrepUserId",
+            GroupCd = "GroupCd",
+            SalesChannelCd = "SalesChannelCd",
+            RmChannelCd = "RmChannelCd",
+            AreaCd = "AreaCd",
+            PrimaryCrmSupportNam = "PrimaryCrmSupportNam",
+            SecondaryCrmSupportNam = "SecondaryCrmSupportNam",
+            GssChannelCd = "GssChannelCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            ChannelCd = "ChannelCd"
         }
-
-        [
-            'DistrictSurKey',
-            'DistrictNbr',
-            'SalesrepUserId',
-            'GroupCd',
-            'SalesChannelCd',
-            'RmChannelCd',
-            'AreaCd',
-            'PrimaryCrmSupportNam',
-            'SecondaryCrmSupportNam',
-            'GssChannelCd',
-            'CreatedTs',
-            'CreatedByNam',
-            'ModifiedByNam',
-            'ModifiedTs',
-            'ChannelCd'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

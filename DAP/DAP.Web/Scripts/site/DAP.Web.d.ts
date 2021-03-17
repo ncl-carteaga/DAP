@@ -634,7 +634,6 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface DistrictMasterSuppForm {
-        DistrictSurKey: Serenity.DecimalEditor;
         DistrictNbr: Serenity.StringEditor;
         SalesrepUserId: Serenity.LookupEditor;
         GroupCd: Serenity.LookupEditor;
@@ -648,7 +647,7 @@ declare namespace DAP.DWSupport {
         CreatedByNam: Serenity.StringEditor;
         ModifiedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
-        ChannelCd: Serenity.StringEditor;
+        ChannelCd: Serenity.LookupEditor;
     }
     class DistrictMasterSuppForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -678,22 +677,22 @@ declare namespace DAP.DWSupport {
         const idProperty = "DistrictSurKey";
         const nameProperty = "DistrictNbr";
         const localTextPrefix = "DWSupport.DistrictMasterSupp";
-        namespace Fields {
-            const DistrictSurKey: any;
-            const DistrictNbr: any;
-            const SalesrepUserId: any;
-            const GroupCd: any;
-            const SalesChannelCd: any;
-            const RmChannelCd: any;
-            const AreaCd: any;
-            const PrimaryCrmSupportNam: any;
-            const SecondaryCrmSupportNam: any;
-            const GssChannelCd: any;
-            const CreatedTs: any;
-            const CreatedByNam: any;
-            const ModifiedByNam: any;
-            const ModifiedTs: any;
-            const ChannelCd: any;
+        const enum Fields {
+            DistrictSurKey = "DistrictSurKey",
+            DistrictNbr = "DistrictNbr",
+            SalesrepUserId = "SalesrepUserId",
+            GroupCd = "GroupCd",
+            SalesChannelCd = "SalesChannelCd",
+            RmChannelCd = "RmChannelCd",
+            AreaCd = "AreaCd",
+            PrimaryCrmSupportNam = "PrimaryCrmSupportNam",
+            SecondaryCrmSupportNam = "SecondaryCrmSupportNam",
+            GssChannelCd = "GssChannelCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            ChannelCd = "ChannelCd"
         }
     }
 }
@@ -705,12 +704,12 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DistrictMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DistrictMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "DWSupport/DistrictMasterSupp/Create",
+            Update = "DWSupport/DistrictMasterSupp/Update",
+            Delete = "DWSupport/DistrictMasterSupp/Delete",
+            Retrieve = "DWSupport/DistrictMasterSupp/Retrieve",
+            List = "DWSupport/DistrictMasterSupp/List"
         }
     }
 }
@@ -776,6 +775,327 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/FinReportPublishingSupp/Delete",
             Retrieve = "DWSupport/FinReportPublishingSupp/Retrieve",
             List = "DWSupport/FinReportPublishingSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface GuestPreventDepartureForm {
+        GuestFirstNam: Serenity.StringEditor;
+        GuestLastNam: Serenity.StringEditor;
+        NameTypeDesc: Serenity.StringEditor;
+        FromReportNbr: Serenity.IntegerEditor;
+        InternalExternalCd: Serenity.StringEditor;
+        TypeCd: Serenity.LookupEditor;
+        SirsNbrTxt: Serenity.StringEditor;
+        IncidentReportedDat: Serenity.DateEditor;
+        BoardingDenialReasonDesc: Serenity.StringEditor;
+        CasinoIncidentNbrTxt: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+    }
+    class GuestPreventDepartureForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface GuestPreventDepartureRow {
+        GuestPreventDepartureKey?: number;
+        GuestFirstNam?: string;
+        GuestLastNam?: string;
+        NameTypeDesc?: string;
+        FromReportNbr?: number;
+        InternalExternalCd?: string;
+        TypeCd?: string;
+        SirsNbrTxt?: string;
+        IncidentReportedDat?: string;
+        BoardingDenialReasonDesc?: string;
+        CasinoIncidentNbrTxt?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+    }
+    namespace GuestPreventDepartureRow {
+        const idProperty = "GuestPreventDepartureKey";
+        const nameProperty = "GuestFirstNam";
+        const localTextPrefix = "DWSupport.GuestPreventDeparture";
+        const enum Fields {
+            GuestPreventDepartureKey = "GuestPreventDepartureKey",
+            GuestFirstNam = "GuestFirstNam",
+            GuestLastNam = "GuestLastNam",
+            NameTypeDesc = "NameTypeDesc",
+            FromReportNbr = "FromReportNbr",
+            InternalExternalCd = "InternalExternalCd",
+            TypeCd = "TypeCd",
+            SirsNbrTxt = "SirsNbrTxt",
+            IncidentReportedDat = "IncidentReportedDat",
+            BoardingDenialReasonDesc = "BoardingDenialReasonDesc",
+            CasinoIncidentNbrTxt = "CasinoIncidentNbrTxt",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace GuestPreventDepartureService {
+        const baseUrl = "DWSupport/GuestPreventDeparture";
+        function Create(request: Serenity.SaveRequest<GuestPreventDepartureRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GuestPreventDepartureRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GuestPreventDepartureRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GuestPreventDepartureRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/GuestPreventDeparture/Create",
+            Update = "DWSupport/GuestPreventDeparture/Update",
+            Delete = "DWSupport/GuestPreventDeparture/Delete",
+            Retrieve = "DWSupport/GuestPreventDeparture/Retrieve",
+            List = "DWSupport/GuestPreventDeparture/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface SailingMasterSuppForm {
+        SailId: Serenity.IntegerEditor;
+        PackageTypeCd: Serenity.StringEditor;
+        ValidVoyageCd: Serenity.StringEditor;
+        ShipCd: Serenity.StringEditor;
+        SailDat: Serenity.DateEditor;
+        ProductCd: Serenity.StringEditor;
+        LatitudeCruiseCd: Serenity.StringEditor;
+        FareFeedIncludeCd: Serenity.StringEditor;
+        InactiveCd: Serenity.StringEditor;
+        ShipNbr: Serenity.StringEditor;
+        AmenityPtsQty: Serenity.DecimalEditor;
+        RmsForecastCd: Serenity.IntegerEditor;
+        RmsParentSail1Id: Serenity.IntegerEditor;
+        RmsParentSail2Id: Serenity.IntegerEditor;
+        RmsParentSail3Id: Serenity.IntegerEditor;
+        RmsSeasonCd: Serenity.StringEditor;
+        RmsColorNameDesc: Serenity.StringEditor;
+        RmsRefLinkSailId: Serenity.IntegerEditor;
+        BackToBackCd: Serenity.StringEditor;
+        MainVoyageCd: Serenity.StringEditor;
+        SlProductCd: Serenity.StringEditor;
+        MandateWeeksQty: Serenity.IntegerEditor;
+        InterportCd: Serenity.StringEditor;
+        JonesActSailId: Serenity.IntegerEditor;
+        RmsParentSail4Id: Serenity.IntegerEditor;
+        RmsParentSail5Id: Serenity.IntegerEditor;
+        RmsParentSail6Id: Serenity.IntegerEditor;
+        RmsParentSail7Id: Serenity.IntegerEditor;
+        RmsParentSail8Id: Serenity.IntegerEditor;
+        RmsParentSail9Id: Serenity.IntegerEditor;
+        RmsParentSail10Id: Serenity.IntegerEditor;
+        RmsParentSail11Id: Serenity.IntegerEditor;
+        RmsParentSail12Id: Serenity.IntegerEditor;
+        RmsParentSail13Id: Serenity.IntegerEditor;
+        RmsParentSail14Id: Serenity.IntegerEditor;
+        RmsParentSail15Id: Serenity.IntegerEditor;
+        FsGrpAmenityAmt: Serenity.DecimalEditor;
+        ObrTradeCd: Serenity.StringEditor;
+        ObrSubTradeCd: Serenity.StringEditor;
+        ObrSeasonCd: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ProxySailId: Serenity.IntegerEditor;
+        OnSaleDat: Serenity.DateEditor;
+        SeasonYearCd: Serenity.StringEditor;
+        IsVoyageExceptionCd: Serenity.StringEditor;
+        VoyageExceptionDesc: Serenity.StringEditor;
+        ItineraryChangedDat: Serenity.DateEditor;
+        CharterCd: Serenity.StringEditor;
+        IsHolidayCd: Serenity.StringEditor;
+        ProxyBudgetSailId: Serenity.IntegerEditor;
+        ProxyMetaWeightSailId: Serenity.IntegerEditor;
+        IsFreeOpenBarCd: Serenity.StringEditor;
+        CasinoCabinCapacityQty: Serenity.IntegerEditor;
+        IsExtraordinaryCd: Serenity.StringEditor;
+    }
+    class SailingMasterSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface SailingMasterSuppRow {
+        SailSurKey?: number;
+        SailId?: number;
+        PackageTypeCd?: string;
+        ValidVoyageCd?: string;
+        ShipCd?: string;
+        SailDat?: string;
+        ProductCd?: string;
+        LatitudeCruiseCd?: string;
+        FareFeedIncludeCd?: string;
+        InactiveCd?: string;
+        ShipNbr?: string;
+        AmenityPtsQty?: number;
+        RmsForecastCd?: number;
+        RmsParentSail1Id?: number;
+        RmsParentSail2Id?: number;
+        RmsParentSail3Id?: number;
+        RmsSeasonCd?: string;
+        RmsColorNameDesc?: string;
+        RmsRefLinkSailId?: number;
+        BackToBackCd?: string;
+        MainVoyageCd?: string;
+        SlProductCd?: string;
+        MandateWeeksQty?: number;
+        InterportCd?: string;
+        JonesActSailId?: number;
+        RmsParentSail4Id?: number;
+        RmsParentSail5Id?: number;
+        RmsParentSail6Id?: number;
+        RmsParentSail7Id?: number;
+        RmsParentSail8Id?: number;
+        RmsParentSail9Id?: number;
+        RmsParentSail10Id?: number;
+        RmsParentSail11Id?: number;
+        RmsParentSail12Id?: number;
+        RmsParentSail13Id?: number;
+        RmsParentSail14Id?: number;
+        RmsParentSail15Id?: number;
+        FsGrpAmenityAmt?: number;
+        ObrTradeCd?: string;
+        ObrSubTradeCd?: string;
+        ObrSeasonCd?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        ProxySailId?: number;
+        OnSaleDat?: string;
+        SeasonYearCd?: string;
+        IsVoyageExceptionCd?: string;
+        VoyageExceptionDesc?: string;
+        ItineraryChangedDat?: string;
+        CharterCd?: string;
+        IsHolidayCd?: string;
+        ProxyBudgetSailId?: number;
+        ProxyMetaWeightSailId?: number;
+        IsFreeOpenBarCd?: string;
+        CasinoCabinCapacityQty?: number;
+        IsExtraordinaryCd?: string;
+        ProductCdProductSurKey?: number;
+        ProductCdProductDesc?: string;
+        ProductCdProductCodeId?: number;
+        ProductCdCreatedByName?: string;
+        ProductCdCreatedTs?: string;
+        ProductCdModifiedByName?: string;
+        ProductCdModifiedTs?: string;
+        SlProductCdSlProductSurKey?: number;
+        SlProductCdSlProductDesc?: string;
+        SlProductCdCreatedByName?: string;
+        SlProductCdCreatedTs?: string;
+        SlProductCdModifiedByName?: string;
+        SlProductCdModifiedTs?: string;
+    }
+    namespace SailingMasterSuppRow {
+        const idProperty = "SailSurKey";
+        const nameProperty = "PackageTypeCd";
+        const localTextPrefix = "DWSupport.SailingMasterSupp";
+        const enum Fields {
+            SailSurKey = "SailSurKey",
+            SailId = "SailId",
+            PackageTypeCd = "PackageTypeCd",
+            ValidVoyageCd = "ValidVoyageCd",
+            ShipCd = "ShipCd",
+            SailDat = "SailDat",
+            ProductCd = "ProductCd",
+            LatitudeCruiseCd = "LatitudeCruiseCd",
+            FareFeedIncludeCd = "FareFeedIncludeCd",
+            InactiveCd = "InactiveCd",
+            ShipNbr = "ShipNbr",
+            AmenityPtsQty = "AmenityPtsQty",
+            RmsForecastCd = "RmsForecastCd",
+            RmsParentSail1Id = "RmsParentSail1Id",
+            RmsParentSail2Id = "RmsParentSail2Id",
+            RmsParentSail3Id = "RmsParentSail3Id",
+            RmsSeasonCd = "RmsSeasonCd",
+            RmsColorNameDesc = "RmsColorNameDesc",
+            RmsRefLinkSailId = "RmsRefLinkSailId",
+            BackToBackCd = "BackToBackCd",
+            MainVoyageCd = "MainVoyageCd",
+            SlProductCd = "SlProductCd",
+            MandateWeeksQty = "MandateWeeksQty",
+            InterportCd = "InterportCd",
+            JonesActSailId = "JonesActSailId",
+            RmsParentSail4Id = "RmsParentSail4Id",
+            RmsParentSail5Id = "RmsParentSail5Id",
+            RmsParentSail6Id = "RmsParentSail6Id",
+            RmsParentSail7Id = "RmsParentSail7Id",
+            RmsParentSail8Id = "RmsParentSail8Id",
+            RmsParentSail9Id = "RmsParentSail9Id",
+            RmsParentSail10Id = "RmsParentSail10Id",
+            RmsParentSail11Id = "RmsParentSail11Id",
+            RmsParentSail12Id = "RmsParentSail12Id",
+            RmsParentSail13Id = "RmsParentSail13Id",
+            RmsParentSail14Id = "RmsParentSail14Id",
+            RmsParentSail15Id = "RmsParentSail15Id",
+            FsGrpAmenityAmt = "FsGrpAmenityAmt",
+            ObrTradeCd = "ObrTradeCd",
+            ObrSubTradeCd = "ObrSubTradeCd",
+            ObrSeasonCd = "ObrSeasonCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            ProxySailId = "ProxySailId",
+            OnSaleDat = "OnSaleDat",
+            SeasonYearCd = "SeasonYearCd",
+            IsVoyageExceptionCd = "IsVoyageExceptionCd",
+            VoyageExceptionDesc = "VoyageExceptionDesc",
+            ItineraryChangedDat = "ItineraryChangedDat",
+            CharterCd = "CharterCd",
+            IsHolidayCd = "IsHolidayCd",
+            ProxyBudgetSailId = "ProxyBudgetSailId",
+            ProxyMetaWeightSailId = "ProxyMetaWeightSailId",
+            IsFreeOpenBarCd = "IsFreeOpenBarCd",
+            CasinoCabinCapacityQty = "CasinoCabinCapacityQty",
+            IsExtraordinaryCd = "IsExtraordinaryCd",
+            ProductCdProductSurKey = "ProductCdProductSurKey",
+            ProductCdProductDesc = "ProductCdProductDesc",
+            ProductCdProductCodeId = "ProductCdProductCodeId",
+            ProductCdCreatedByName = "ProductCdCreatedByName",
+            ProductCdCreatedTs = "ProductCdCreatedTs",
+            ProductCdModifiedByName = "ProductCdModifiedByName",
+            ProductCdModifiedTs = "ProductCdModifiedTs",
+            SlProductCdSlProductSurKey = "SlProductCdSlProductSurKey",
+            SlProductCdSlProductDesc = "SlProductCdSlProductDesc",
+            SlProductCdCreatedByName = "SlProductCdCreatedByName",
+            SlProductCdCreatedTs = "SlProductCdCreatedTs",
+            SlProductCdModifiedByName = "SlProductCdModifiedByName",
+            SlProductCdModifiedTs = "SlProductCdModifiedTs"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace SailingMasterSuppService {
+        const baseUrl = "DWSupport/SailingMasterSupp";
+        function Create(request: Serenity.SaveRequest<SailingMasterSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SailingMasterSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SailingMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SailingMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/SailingMasterSupp/Create",
+            Update = "DWSupport/SailingMasterSupp/Update",
+            Delete = "DWSupport/SailingMasterSupp/Delete",
+            Retrieve = "DWSupport/SailingMasterSupp/Retrieve",
+            List = "DWSupport/SailingMasterSupp/List"
         }
     }
 }
@@ -3038,6 +3358,16 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    interface KeyAcctTargetExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class KeyAcctTargetExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrBudgetByChannelForm {
@@ -3398,60 +3728,66 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
-    class SuppKeyAcctTargetForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace DAP.PCHODSNVS {
     interface SuppKeyAcctTargetForm {
         CompanyCd: Serenity.DecimalEditor;
+        Year: Serenity.IntegerEditor;
         KeyAcctLink: Serenity.StringEditor;
         AccountType: Serenity.StringEditor;
-        CcfTargetQ1: Serenity.DecimalEditor;
-        CcfTargetQ12: Serenity.DecimalEditor;
-        CcfTargetQ13: Serenity.DecimalEditor;
-        CcfTargetQ14: Serenity.DecimalEditor;
-        CcfTargetQ15: Serenity.DecimalEditor;
-        CcfTargetQ2: Serenity.DecimalEditor;
-        CcfTargetQ22: Serenity.DecimalEditor;
-        CcfTargetQ23: Serenity.DecimalEditor;
-        CcfTargetQ24: Serenity.DecimalEditor;
-        CcfTargetQ25: Serenity.DecimalEditor;
-        CcfTargetQ3: Serenity.DecimalEditor;
-        CcfTargetQ32: Serenity.DecimalEditor;
-        CcfTargetQ33: Serenity.DecimalEditor;
-        CcfTargetQ34: Serenity.DecimalEditor;
-        CcfTargetQ35: Serenity.DecimalEditor;
-        CcfTargetQ4: Serenity.DecimalEditor;
-        CcfTargetQ42: Serenity.DecimalEditor;
-        CcfTargetQ43: Serenity.DecimalEditor;
-        CcfTargetQ44: Serenity.DecimalEditor;
-        CcfTargetQ45: Serenity.DecimalEditor;
-        PrctTargetQ1: Serenity.DecimalEditor;
-        PrctTargetQ12: Serenity.DecimalEditor;
-        PrctTargetQ13: Serenity.DecimalEditor;
-        PrctTargetQ14: Serenity.DecimalEditor;
-        PrctTargetQ15: Serenity.DecimalEditor;
-        PrctTargetQ2: Serenity.DecimalEditor;
-        PrctTargetQ22: Serenity.DecimalEditor;
-        PrctTargetQ23: Serenity.DecimalEditor;
-        PrctTargetQ24: Serenity.DecimalEditor;
-        PrctTargetQ25: Serenity.DecimalEditor;
-        PrctTargetQ3: Serenity.DecimalEditor;
-        PrctTargetQ32: Serenity.DecimalEditor;
-        PrctTargetQ33: Serenity.DecimalEditor;
-        PrctTargetQ34: Serenity.DecimalEditor;
-        PrctTargetQ35: Serenity.DecimalEditor;
-        PrctTargetQ4: Serenity.DecimalEditor;
-        PrctTargetQ42: Serenity.DecimalEditor;
-        PrctTargetQ43: Serenity.DecimalEditor;
-        PrctTargetQ44: Serenity.DecimalEditor;
-        PrctTargetQ45: Serenity.DecimalEditor;
         LoadDt: Serenity.DateEditor;
+        CcfTargetQ1: Serenity.DecimalEditor;
+        PrctTargetQ1: Serenity.DecimalEditor;
+        CcfTargetQ12: Serenity.DecimalEditor;
+        PrctTargetQ12: Serenity.DecimalEditor;
+        CcfTargetQ13: Serenity.DecimalEditor;
+        PrctTargetQ13: Serenity.DecimalEditor;
+        CcfTargetQ14: Serenity.DecimalEditor;
+        PrctTargetQ14: Serenity.DecimalEditor;
+        CcfTargetQ15: Serenity.DecimalEditor;
+        PrctTargetQ15: Serenity.DecimalEditor;
+        CcfTargetQ2: Serenity.DecimalEditor;
+        PrctTargetQ2: Serenity.DecimalEditor;
+        CcfTargetQ22: Serenity.DecimalEditor;
+        PrctTargetQ22: Serenity.DecimalEditor;
+        CcfTargetQ23: Serenity.DecimalEditor;
+        PrctTargetQ23: Serenity.DecimalEditor;
+        CcfTargetQ24: Serenity.DecimalEditor;
+        PrctTargetQ24: Serenity.DecimalEditor;
+        CcfTargetQ25: Serenity.DecimalEditor;
+        PrctTargetQ25: Serenity.DecimalEditor;
+        CcfTargetQ3: Serenity.DecimalEditor;
+        PrctTargetQ3: Serenity.DecimalEditor;
+        CcfTargetQ32: Serenity.DecimalEditor;
+        PrctTargetQ32: Serenity.DecimalEditor;
+        CcfTargetQ33: Serenity.DecimalEditor;
+        PrctTargetQ33: Serenity.DecimalEditor;
+        CcfTargetQ34: Serenity.DecimalEditor;
+        PrctTargetQ34: Serenity.DecimalEditor;
+        CcfTargetQ35: Serenity.DecimalEditor;
+        PrctTargetQ35: Serenity.DecimalEditor;
+        CcfTargetQ4: Serenity.DecimalEditor;
+        PrctTargetQ4: Serenity.DecimalEditor;
+        CcfTargetQ42: Serenity.DecimalEditor;
+        PrctTargetQ42: Serenity.DecimalEditor;
+        CcfTargetQ43: Serenity.DecimalEditor;
+        PrctTargetQ43: Serenity.DecimalEditor;
+        CcfTargetQ44: Serenity.DecimalEditor;
+        PrctTargetQ44: Serenity.DecimalEditor;
+        CcfTargetQ45: Serenity.DecimalEditor;
+        PrctTargetQ45: Serenity.DecimalEditor;
+    }
+    class SuppKeyAcctTargetForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.PCHODSNVS {
     interface SuppKeyAcctTargetRow {
         KeyAcctTk?: number;
         CompanyCd?: number;
+        Year?: number;
         KeyAcctLink?: string;
         AccountType?: string;
         CcfTargetQ1?: number;
@@ -3500,52 +3836,53 @@ declare namespace DAP.PCHODSNVS {
         const idProperty = "KeyAcctTk";
         const nameProperty = "KeyAcctLink";
         const localTextPrefix = "PCHODSNVS.SuppKeyAcctTarget";
-        namespace Fields {
-            const KeyAcctTk: any;
-            const CompanyCd: any;
-            const KeyAcctLink: any;
-            const AccountType: any;
-            const CcfTargetQ1: any;
-            const CcfTargetQ12: any;
-            const CcfTargetQ13: any;
-            const CcfTargetQ14: any;
-            const CcfTargetQ15: any;
-            const CcfTargetQ2: any;
-            const CcfTargetQ22: any;
-            const CcfTargetQ23: any;
-            const CcfTargetQ24: any;
-            const CcfTargetQ25: any;
-            const CcfTargetQ3: any;
-            const CcfTargetQ32: any;
-            const CcfTargetQ33: any;
-            const CcfTargetQ34: any;
-            const CcfTargetQ35: any;
-            const CcfTargetQ4: any;
-            const CcfTargetQ42: any;
-            const CcfTargetQ43: any;
-            const CcfTargetQ44: any;
-            const CcfTargetQ45: any;
-            const PrctTargetQ1: any;
-            const PrctTargetQ12: any;
-            const PrctTargetQ13: any;
-            const PrctTargetQ14: any;
-            const PrctTargetQ15: any;
-            const PrctTargetQ2: any;
-            const PrctTargetQ22: any;
-            const PrctTargetQ23: any;
-            const PrctTargetQ24: any;
-            const PrctTargetQ25: any;
-            const PrctTargetQ3: any;
-            const PrctTargetQ32: any;
-            const PrctTargetQ33: any;
-            const PrctTargetQ34: any;
-            const PrctTargetQ35: any;
-            const PrctTargetQ4: any;
-            const PrctTargetQ42: any;
-            const PrctTargetQ43: any;
-            const PrctTargetQ44: any;
-            const PrctTargetQ45: any;
-            const LoadDt: any;
+        const enum Fields {
+            KeyAcctTk = "KeyAcctTk",
+            CompanyCd = "CompanyCd",
+            Year = "Year",
+            KeyAcctLink = "KeyAcctLink",
+            AccountType = "AccountType",
+            CcfTargetQ1 = "CcfTargetQ1",
+            CcfTargetQ12 = "CcfTargetQ12",
+            CcfTargetQ13 = "CcfTargetQ13",
+            CcfTargetQ14 = "CcfTargetQ14",
+            CcfTargetQ15 = "CcfTargetQ15",
+            CcfTargetQ2 = "CcfTargetQ2",
+            CcfTargetQ22 = "CcfTargetQ22",
+            CcfTargetQ23 = "CcfTargetQ23",
+            CcfTargetQ24 = "CcfTargetQ24",
+            CcfTargetQ25 = "CcfTargetQ25",
+            CcfTargetQ3 = "CcfTargetQ3",
+            CcfTargetQ32 = "CcfTargetQ32",
+            CcfTargetQ33 = "CcfTargetQ33",
+            CcfTargetQ34 = "CcfTargetQ34",
+            CcfTargetQ35 = "CcfTargetQ35",
+            CcfTargetQ4 = "CcfTargetQ4",
+            CcfTargetQ42 = "CcfTargetQ42",
+            CcfTargetQ43 = "CcfTargetQ43",
+            CcfTargetQ44 = "CcfTargetQ44",
+            CcfTargetQ45 = "CcfTargetQ45",
+            PrctTargetQ1 = "PrctTargetQ1",
+            PrctTargetQ12 = "PrctTargetQ12",
+            PrctTargetQ13 = "PrctTargetQ13",
+            PrctTargetQ14 = "PrctTargetQ14",
+            PrctTargetQ15 = "PrctTargetQ15",
+            PrctTargetQ2 = "PrctTargetQ2",
+            PrctTargetQ22 = "PrctTargetQ22",
+            PrctTargetQ23 = "PrctTargetQ23",
+            PrctTargetQ24 = "PrctTargetQ24",
+            PrctTargetQ25 = "PrctTargetQ25",
+            PrctTargetQ3 = "PrctTargetQ3",
+            PrctTargetQ32 = "PrctTargetQ32",
+            PrctTargetQ33 = "PrctTargetQ33",
+            PrctTargetQ34 = "PrctTargetQ34",
+            PrctTargetQ35 = "PrctTargetQ35",
+            PrctTargetQ4 = "PrctTargetQ4",
+            PrctTargetQ42 = "PrctTargetQ42",
+            PrctTargetQ43 = "PrctTargetQ43",
+            PrctTargetQ44 = "PrctTargetQ44",
+            PrctTargetQ45 = "PrctTargetQ45",
+            LoadDt = "LoadDt"
         }
     }
 }
@@ -3557,12 +3894,16 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SuppKeyAcctTargetRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SuppKeyAcctTargetRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport2(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/SuppKeyAcctTarget/Create",
+            Update = "PCHODSNVS/SuppKeyAcctTarget/Update",
+            Delete = "PCHODSNVS/SuppKeyAcctTarget/Delete",
+            Retrieve = "PCHODSNVS/SuppKeyAcctTarget/Retrieve",
+            List = "PCHODSNVS/SuppKeyAcctTarget/List",
+            ExcelImport = "PCHODSNVS/SuppKeyAcctTarget/ExcelImport",
+            ExcelImport2 = "PCHODSNVS/SuppKeyAcctTarget/ExcelImport2"
         }
     }
 }
@@ -4565,6 +4906,46 @@ declare namespace DAP.DWSupport {
         protected getButtons(): Serenity.ToolButton[];
     }
 }
+declare namespace DAP.DWSupport {
+    class GuestPreventDepartureDialog extends Serenity.EntityDialog<GuestPreventDepartureRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GuestPreventDepartureForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class GuestPreventDepartureGrid extends Serenity.EntityGrid<GuestPreventDepartureRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GuestPreventDepartureDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class SailingMasterSuppDialog extends Serenity.EntityDialog<SailingMasterSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SailingMasterSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class SailingMasterSuppGrid extends Serenity.EntityGrid<SailingMasterSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SailingMasterSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
 declare namespace DAP.Membership {
     class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
         protected getFormKey(): string;
@@ -5435,6 +5816,14 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class KeyAcctTargetExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
     }
 }
 declare namespace DAP.PCHODSNVS {

@@ -68,6 +68,16 @@ namespace MVC
             {
                 public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
             }
+
+            public static class GuestPreventDeparture
+            {
+                public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";
+            }
+
+            public static class SailingMasterSupp
+            {
+                public const string SailingMasterSuppIndex = "~/Modules/DWSupport/SailingMasterSupp/SailingMasterSuppIndex.cshtml";
+            }
         }
 
         public static class Errors
@@ -270,6 +280,11 @@ namespace MVC
             public static class NtrRptComment
             {
                 public const string NtrRptCommentIndex = "~/Modules/PCHODSNVS/NtrRptComment/NtrRptCommentIndex.cshtml";
+            }
+
+            public static class SuppKeyAcctTarget
+            {
+                public const string SuppKeyAcctTargetIndex = "~/Modules/PCHODSNVS/SuppKeyAcctTarget/SuppKeyAcctTargetIndex.cshtml";
             }
         }
 

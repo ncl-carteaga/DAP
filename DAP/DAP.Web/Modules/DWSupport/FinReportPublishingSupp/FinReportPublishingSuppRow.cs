@@ -11,9 +11,8 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[FIN_REPORT_PUBLISHING_SUPP]")]
     [DisplayName("Financial Report Publishing"), InstanceName("Fin Report Publishing Supp")]
-    [ReadPermission(PermissionKeys.DWSupport.View)]
-    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
-    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
     [DataAuditLog]
     public sealed class FinReportPublishingSuppRow : Row, IIdRow, INameRow
     {

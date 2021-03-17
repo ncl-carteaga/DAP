@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export namespace SuppKeyAcctTargetService {
         export const baseUrl = 'PCHODSNVS/SuppKeyAcctTarget';
 
@@ -8,13 +7,17 @@ namespace DAP.PCHODSNVS {
         export declare function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SuppKeyAcctTargetRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SuppKeyAcctTargetRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function ExcelImport2(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "PCHODSNVS/SuppKeyAcctTarget/Create",
+            Update = "PCHODSNVS/SuppKeyAcctTarget/Update",
+            Delete = "PCHODSNVS/SuppKeyAcctTarget/Delete",
+            Retrieve = "PCHODSNVS/SuppKeyAcctTarget/Retrieve",
+            List = "PCHODSNVS/SuppKeyAcctTarget/List",
+            ExcelImport = "PCHODSNVS/SuppKeyAcctTarget/ExcelImport",
+            ExcelImport2 = "PCHODSNVS/SuppKeyAcctTarget/ExcelImport2"
         }
 
         [
@@ -22,12 +25,14 @@ namespace DAP.PCHODSNVS {
             'Update', 
             'Delete', 
             'Retrieve', 
-            'List'
+            'List', 
+            'ExcelImport', 
+            'ExcelImport2'
         ].forEach(x => {
-            (<any>SuppKeyAcctTargetService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>SuppKeyAcctTargetService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+
