@@ -6,7 +6,8 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/DistrictMasterSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.DistrictMasterSuppRow))]
+    //[PageAuthorize(typeof(Entities.DistrictMasterSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.DistrictMasterSupp)]
     public class DistrictMasterSuppController : Controller
     {
         public ActionResult Index()

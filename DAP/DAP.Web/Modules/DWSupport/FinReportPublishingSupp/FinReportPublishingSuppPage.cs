@@ -6,7 +6,8 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/FinReportPublishingSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.FinReportPublishingSuppRow))]
+    //[PageAuthorize(typeof(Entities.FinReportPublishingSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.FinReportPublishingSupp)]
     public class FinReportPublishingSuppController : Controller
     {
         public ActionResult Index()

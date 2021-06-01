@@ -90,6 +90,66 @@
             }
         }
 
+        namespace Avaya {
+
+            namespace Brand {
+                export const Brand: string;
+                export const BrandTk: string;
+            }
+
+            namespace CallType {
+                export const Type: string;
+                export const TypeTk: string;
+            }
+
+            namespace Department {
+                export const Department: string;
+                export const DepartmentTk: string;
+            }
+
+            namespace Group {
+                export const Cd: string;
+                export const Tk: string;
+            }
+
+            namespace Region {
+                export const Region: string;
+                export const RegionTk: string;
+            }
+
+            namespace SkillSplitMapping {
+                export const AcdNo: string;
+                export const Brand: string;
+                export const BrandBrandTk: string;
+                export const CallType: string;
+                export const CallTypeTypeTk: string;
+                export const CmsNo: string;
+                export const Department: string;
+                export const DepartmentDepartmentTk: string;
+                export const GroupCd: string;
+                export const GroupCdTk: string;
+                export const Region: string;
+                export const RegionRegionTk: string;
+                export const SkillName: string;
+                export const SkillSplitTk: string;
+                export const SplitNo: string;
+                export const Status: string;
+                export const StatusStatusTk: string;
+                export const SupportChannel: string;
+                export const SupportChannelSuppChannelTk: string;
+            }
+
+            namespace Status {
+                export const StatusDesc: string;
+                export const StatusTk: string;
+            }
+
+            namespace SupportChannel {
+                export const SuppChannelTk: string;
+                export const SupportChannel: string;
+            }
+        }
+
         namespace Common {
 
             namespace BackgroundTaskLog {
@@ -455,6 +515,79 @@
 
         namespace PCHDW {
 
+            namespace DimCruise {
+                export const AmenityPointsAllowedQty: string;
+                export const CappedCapacity: string;
+                export const CharterInd: string;
+                export const ColorInd: string;
+                export const CompanyCd: string;
+                export const CpvTaxAmt: string;
+                export const CpvTaxInd: string;
+                export const CruiseCd: string;
+                export const CruiseDaysQty: string;
+                export const CruiseFromDt: string;
+                export const CruiseFromDtMmddyyyy: string;
+                export const CruiseName: string;
+                export const CruiseSailingStatusDesc: string;
+                export const CruiseSegmentCd: string;
+                export const CruiseSegmentDaysQty: string;
+                export const CruiseSegmentFromDt: string;
+                export const CruiseSegmentName: string;
+                export const CruiseSegmentToDt: string;
+                export const CruiseStatusCd: string;
+                export const CruiseTk: string;
+                export const CruiseToDt: string;
+                export const CruiseToDtMmddyyyy: string;
+                export const DrydockInd: string;
+                export const FinancialSuppressInd: string;
+                export const FromPortCd: string;
+                export const FromPortName: string;
+                export const HighlightInd: string;
+                export const HmfFeeInd: string;
+                export const HmfPct: string;
+                export const IrsTaxAmt: string;
+                export const IrsTaxInd: string;
+                export const IufExemptFeeAmt: string;
+                export const IufExemptFeeInd: string;
+                export const IufExemptQty: string;
+                export const IufNonexemptFeeAmt: string;
+                export const IufNonexemptFeeInd: string;
+                export const IufNonexemptQty: string;
+                export const LocationName: string;
+                export const MarketName: string;
+                export const MinisegInd: string;
+                export const OnboardAcctTrandate: string;
+                export const OnbrdAvgPaxQty: string;
+                export const PpfExemptFeeAmt: string;
+                export const PpfExemptInd: string;
+                export const PpfNonexemptFeeAmt: string;
+                export const PpfNonexemptInd: string;
+                export const RevenueMgmtMarketSegment: string;
+                export const RouteName: string;
+                export const SeasonName: string;
+                export const SegmentFromDtMmddyyyy: string;
+                export const SegmentFromPortCd: string;
+                export const SegmentFromPortName: string;
+                export const SegmentLocationName: string;
+                export const SegmentMarketName: string;
+                export const SegmentOnboardAcctTrandate: string;
+                export const SegmentRouteName: string;
+                export const SegmentSeasonName: string;
+                export const SegmentSuperMarketCd: string;
+                export const SegmentSuperMarketDesc: string;
+                export const SegmentToDtMmddyyyy: string;
+                export const SegmentToPortCd: string;
+                export const SegmentToPortName: string;
+                export const ShipCd: string;
+                export const ShowInReport: string;
+                export const StatedCapacity: string;
+                export const SuperMarketCd: string;
+                export const SuperMarketDesc: string;
+                export const ToPortCd: string;
+                export const ToPortName: string;
+                export const VarToCurve: string;
+            }
+
             namespace DimInvoice {
                 export const AgentTk: string;
                 export const AirCostSourceCd: string;
@@ -576,6 +709,18 @@
                 export const UserName: string;
                 export const WaitlistDt: string;
                 export const ZipCd: string;
+            }
+
+            namespace RevenueAdhocManagement {
+                export const AdhocDate: string;
+                export const AdhocDateTk: string;
+                export const AdhocStlydate: string;
+                export const AdhocStlydateTk: string;
+                export const CubeId: string;
+                export const DatabaseId: string;
+                export const Key: string;
+                export const LastProcessedDateTime: string;
+                export const MeasuregroupId: string;
             }
 
             namespace ScheduledJob {
@@ -702,6 +847,141 @@
         }
 
         namespace PCHODSNVS {
+
+            namespace Agency {
+                export const ActiveInd: string;
+                export const Addr1: string;
+                export const Addr2: string;
+                export const Addr3: string;
+                export const AgencyCd: string;
+                export const AgencyCdName: string;
+                export const AgencyCreateDt: string;
+                export const AgencyDefaultStatusInd: string;
+                export const AgencyEmail: string;
+                export const AgencyNameDesc: string;
+                export const AgencyStatusCd: string;
+                export const AgencyWebAddress: string;
+                export const AgentLinkDesc: string;
+                export const AgentNum: string;
+                export const AllowBankInd: string;
+                export const AllowGpInd: string;
+                export const AllowPlatInd: string;
+                export const AllowSdbdInd: string;
+                export const ApolloInd: string;
+                export const AttnDesc: string;
+                export const AutoCxlInd: string;
+                export const AutoEnvoInd: string;
+                export const BankAccountBalAmt: string;
+                export const BankAcct2Amt: string;
+                export const BdmCd: string;
+                export const BdmRepCd: string;
+                export const CityName: string;
+                export const CliaNum: string;
+                export const Comment1Desc: string;
+                export const Comment2Desc: string;
+                export const CommissionPct: string;
+                export const CompanyCd: string;
+                export const ConsortRgnNum: string;
+                export const ConsortiumAddedDt: string;
+                export const ConsortiumCd: string;
+                export const ConsortiumRegionAddedDt: string;
+                export const ConsortiumRegionCd: string;
+                export const CorpComDesc: string;
+                export const CorporationInd: string;
+                export const Country: string;
+                export const CreditAgtInd: string;
+                export const CurrencyCd: string;
+                export const CurrentYearSalesAmt: string;
+                export const EMemberDesc: string;
+                export const FaxNum: string;
+                export const FinHoldInd: string;
+                export const FinalDaysQty: string;
+                export const FirstBookingDt: string;
+                export const GdsSysCd: string;
+                export const GsaInd: string;
+                export const GsaPriceLevelAmt: string;
+                export const IataNum: string;
+                export const InsDefaultCd: string;
+                export const Key1: string;
+                export const KeyAcctInd: string;
+                export const L7daysNum: string;
+                export const LastUpdated: string;
+                export const LastYearKeyAcctCd: string;
+                export const LastYearSalesAmt: string;
+                export const MahanaClubInd: string;
+                export const MasterAgencyInd: string;
+                export const McActiveInd: string;
+                export const NactaNum: string;
+                export const NationalAcctInd: string;
+                export const NvsKeyAcctInd: string;
+                export const OfficeCd: string;
+                export const Option1DueDaysQty: string;
+                export const Option2DueDaysQty: string;
+                export const OverVacSummInd: string;
+                export const OverrideFinalDaysInd: string;
+                export const OverrideOption1DaysInd: string;
+                export const OverrideOption2DaysInd: string;
+                export const OwnerCd: string;
+                export const PaymentViaWireInd: string;
+                export const Phone1Num: string;
+                export const Phone2Num: string;
+                export const PinClubInd: string;
+                export const PreferredCommunicationCd: string;
+                export const PreferredLanguageDesc: string;
+                export const PreviousYrPaxQty: string;
+                export const PreviousYrRevAmt: string;
+                export const PromoAdInd: string;
+                export const Prt1099Ind: string;
+                export const PrtD1099Dt: string;
+                export const PseudoCityCd: string;
+                export const RequiredSecondaryAgentInd: string;
+                export const RevLabelCd: string;
+                export const SalesRegionCd: string;
+                export const SecondaryCurrencyCd: string;
+                export const SelfBillInd: string;
+                export const SendCustInvInd: string;
+                export const SiblingId: string;
+                export const SsrRepCd: string;
+                export const StateNm: string;
+                export const TaxIdNum: string;
+                export const TaxInfoReceivedDt: string;
+                export const TaxPayer1099Name: string;
+                export const UserInUseById: string;
+                export const VacSummEmailDesc: string;
+                export const VatId: string;
+                export const Zip2Cd: string;
+                export const ZipCd: string;
+            }
+
+            namespace ConsortiumExceptionList {
+                export const CombineInd: string;
+                export const CompanyCd: string;
+                export const ConsortiumExceptionListTk: string;
+                export const ExcludeInd: string;
+                export const ItemCd: string;
+                export const ItemName: string;
+                export const ItemType: string;
+                export const ItemTypeTypeTk: string;
+                export const LoadDt: string;
+                export const NewItemName: string;
+                export const NewItemType: string;
+                export const NewItemTypeTypeTk: string;
+            }
+
+            namespace GsaDistributionList {
+                export const AccountName: string;
+                export const AgencyCd: string;
+                export const CompanyCd: string;
+                export const ContactName: string;
+                export const Email: string;
+                export const GsaDistributionListTk: string;
+                export const LoadDt: string;
+            }
+
+            namespace ItemType {
+                export const Type: string;
+                export const TypeTk: string;
+            }
 
             namespace NtrBudget {
                 export const AccountPeriodNum: string;
@@ -1140,6 +1420,6 @@
         export const SavePrimaryKeyError: string;
     }
 
-    DAP['Texts'] = Q.proxyTexts(Texts, '', {Db:{Administration:{DataAuditLog:{FieldName:1,LogDate:1,LogId:1,LogType:1,NewValue:1,OldValue:1,RecordId:1,Tablename:1,UserDisplayName:1,UserId:1,Username:1},Language:{Id:1,LanguageId:1,LanguageName:1},Role:{RoleId:1,RoleKey:1,RoleName:1},RolePermission:{PermissionKey:1,RoleId:1,RolePermissionId:1,RoleRoleName:1},Translation:{CustomText:1,EntityPlural:1,Key:1,OverrideConfirmation:1,SaveChangesButton:1,SourceLanguage:1,SourceText:1,TargetLanguage:1,TargetText:1},User:{DisplayName:1,Email:1,ImpersonationToken:1,InsertDate:1,InsertUserId:1,IsActive:1,LastDirectoryUpdate:1,MobilePhoneNumber:1,MobilePhoneVerified:1,Password:1,PasswordConfirm:1,PasswordHash:1,PasswordSalt:1,Source:1,TwoFactorAuth:1,UpdateDate:1,UpdateUserId:1,UserId:1,UserImage:1,Username:1},UserPermission:{Granted:1,PermissionKey:1,User:1,UserId:1,UserPermissionId:1,Username:1},UserRole:{RoleId:1,User:1,UserId:1,UserRoleId:1,Username:1}},Common:{BackgroundTaskLog:{LogId:1,Message:1,RunAt:1,Server:1,Status:1,TaskKey:1},Mail:{Bcc:1,Body:1,Cc:1,ErrorMessage:1,InsertDate:1,InsertUser:1,InsertUserId:1,LockExpiration:1,MailFrom:1,MailId:1,MailTo:1,Priority:1,ReplyTo:1,RetryCount:1,SentDate:1,Status:1,Subject:1,Uid:1},UserPreference:{Name:1,PreferenceType:1,UserId:1,UserPreferenceId:1,Value:1}},DWSupport:{DistrictMasterSupp:{AreaCd:1,ChannelCd:1,CreatedByNam:1,CreatedTs:1,DistrictNbr:1,DistrictSurKey:1,GroupCd:1,GssChannelCd:1,ModifiedByNam:1,ModifiedTs:1,PrimaryCrmSupportNam:1,RmChannelCd:1,SalesChannelCd:1,SalesrepUserId:1,SecondaryCrmSupportNam:1},FinReportPublishingSupp:{CreatedByNam:1,CreatedTs:1,FinReportPublishingSurKey:1,ModifiedByNam:1,ModifiedTs:1,ProcessedDateTs:1,PublishCd:1,PublishCommentsTxt:1,PublishDat:1},GuestPreventDeparture:{BoardingDenialReasonDesc:1,CasinoIncidentNbrTxt:1,CreatedByNam:1,CreatedTs:1,FromReportNbr:1,GuestFirstNam:1,GuestLastNam:1,GuestPreventDepartureKey:1,IncidentReportedDat:1,InternalExternalCd:1,ModifiedByNam:1,ModifiedTs:1,NameTypeDesc:1,SirsNbrTxt:1,TypeCd:1},SailingMasterSupp:{AmenityPtsQty:1,BackToBackCd:1,CasinoCabinCapacityQty:1,CharterCd:1,CreatedByNam:1,CreatedTs:1,FareFeedIncludeCd:1,FsGrpAmenityAmt:1,InactiveCd:1,InterportCd:1,IsExtraordinaryCd:1,IsFreeOpenBarCd:1,IsHolidayCd:1,IsVoyageExceptionCd:1,ItineraryChangedDat:1,JonesActSailId:1,LatitudeCruiseCd:1,MainVoyageCd:1,MandateWeeksQty:1,ModifiedByNam:1,ModifiedTs:1,ObrSeasonCd:1,ObrSubTradeCd:1,ObrTradeCd:1,OnSaleDat:1,PackageTypeCd:1,ProductCd:1,ProductCdCreatedByName:1,ProductCdCreatedTs:1,ProductCdModifiedByName:1,ProductCdModifiedTs:1,ProductCdProductCodeId:1,ProductCdProductDesc:1,ProductCdProductSurKey:1,ProxyBudgetSailId:1,ProxyMetaWeightSailId:1,ProxySailId:1,RmsColorNameDesc:1,RmsForecastCd:1,RmsParentSail10Id:1,RmsParentSail11Id:1,RmsParentSail12Id:1,RmsParentSail13Id:1,RmsParentSail14Id:1,RmsParentSail15Id:1,RmsParentSail1Id:1,RmsParentSail2Id:1,RmsParentSail3Id:1,RmsParentSail4Id:1,RmsParentSail5Id:1,RmsParentSail6Id:1,RmsParentSail7Id:1,RmsParentSail8Id:1,RmsParentSail9Id:1,RmsRefLinkSailId:1,RmsSeasonCd:1,SailDat:1,SailId:1,SailSurKey:1,SeasonYearCd:1,ShipCd:1,ShipNbr:1,SlProductCd:1,SlProductCdCreatedByName:1,SlProductCdCreatedTs:1,SlProductCdModifiedByName:1,SlProductCdModifiedTs:1,SlProductCdSlProductDesc:1,SlProductCdSlProductSurKey:1,ValidVoyageCd:1,VoyageExceptionDesc:1}},NCLHDSAR:{Assignee:{AssigneeId:1,FullName:1,IsActive:1},Note:{EntityId:1,EntityType:1,InsertDate:1,InsertUserDisplayName:1,InsertUserId:1,NoteId:1,Text:1},Request:{Address1:1,AttrCount:1,City:1,Country:1,CreatedDt:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,Email:1,FirstName:1,FullName:1,Id:1,IdentityVerificationOptOuts:1,IdentityVerificationOtherRequests:1,LastName:1,LastUpdatedDt:1,LatitudesNum:1,LoadDt:1,NclYn:1,OceaniaMpCardNum:1,OceaniaYn:1,ProcessDt:1,RegentMpCardNum:1,RegentYn:1,ReqApprover:1,ReqDetails:1,ReqExtended:1,ReqStage:1,ReqStatus:1,RequestType:1,RequestTypeNum:1,RequestTypeNumDesc:1,SixthmanYn:1,SubjectType:1},RequestAttributes:{Addr1:1,Addr2:1,CityNm:1,CountryCd:1,Email1:1,ExtractDt:1,FirstNm:1,Id:1,LastNm:1,MiddleNm:1,ModifiedBy:1,ModifiedDate:1,OldAddr1:1,OldAddr2:1,OldCityNm:1,OldCountryCd:1,OldEmail:1,OldFirstNm:1,OldLastNm:1,OldMiddleNm:1,OldPostalCd:1,OldStateNm:1,PostalCd:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,StateNm:1,SystemMasterId:1,SystemMasterSystemActiveYn:1,SystemMasterSystemDesc:1,SystemMasterSystemName:1,SystemMasterSystemTable:1},RequestStatus:{StatusDescription:1,StatusId:1,StatusOrder:1},RequestType:{Desc:1,Type:1},SwRequest:{ApiResponse:1,ApiResponseDepth:1,ApiResponseId:1,AssigneeFullName:1,AssigneeId:1,AssigneeIsActive:1,AttributeCount:1,ClientAddress:1,ClientEmailAddress:1,ClientFirstName:1,ClientGuestCategory:1,ClientIsRelatedtoHousehold:1,ClientLastName:1,ClientLatitudesNumber:1,ClientZipCode:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,LastUpdatedDt:1,NoteList:1,RecordId:1,RecordTimeStamp:1,RequestType:1,StatusId:1,StatusStatusDescription:1,StatusStatusOrder:1,UpdatedBy:1},SwRequestAttributes:{ExtractDt:1,Id:1,LastUpdated:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,SystemMasterId:1,SystemMasterSystemDesc:1},SystemMaster:{Id:1,SystemActiveYn:1,SystemDesc:1,SystemName:1,SystemTable:1}},NCLHODSMICROS:{DataFlow:{Cet:1,Description:1,Key:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,SourceDesc:1,Status:1,Target:1,TargetDesc:1}},NCLHODSSPENDVIS:{Amoslevel:{AccountId:1,Descr:1,FlexDim1Name:1,FlexDim2Name:1,FlexDim3Name:1,FlexDim4Name:1,IdNum:1,ModifiedBy:1,ModifiedDate:1},DataFlow:{Cet:1,Description:1,Key:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,Status:1,Target:1}},PCHDW:{DimInvoice:{AgentTk:1,AirCostSourceCd:1,AirParticipationInd:1,AirXferFeeAmt:1,AttnName:1,BonusSavingsCd:1,BonusSavingsDesc:1,CancelBookingStatusCd:1,CancelReason:1,CancellationDt:1,CancellationType:1,CenturionCd:1,CenturionInd:1,ChangeDt:1,ChannelCountryCd:1,ChannelCountryName:1,ChannelTk:1,Cinvoice1Num:1,Cinvoice2Num:1,Cinvoice3Num:1,Cinvoice4Num:1,Cinvoice5Num:1,Cinvoice6Num:1,CityName:1,ComboBookingInd:1,ComboLegQty:1,CompanyCd:1,CountryCd:1,CountryName:1,CreateDt:1,CruiseCommissionAmt:1,CruiseSvcMgmtCrNum:1,CruiseSvcMgmtId:1,CruiseTk:1,CurrencyCd:1,CurrencyDesc:1,CurrentLoyaltyLevelPax1:1,CurrentLoyaltyLevelPax2:1,CurrentPackageCd:1,DepositAmt:1,DepositDt:1,DirectBookingInd:1,DptrFlightClassCd:1,DptrFlightQty:1,DwPastGuest1Ind:1,DwPastGuest2Ind:1,DwPastGuestInd:1,FccDeferredInd:1,FinalPaymentDueDt:1,FirstConfirmDt:1,FirstPaymentDt:1,FutureDepositFlag:1,GdsSystemCd:1,GdsSystemDesc:1,HotelParticipationInd:1,InitialWaitlistInd:1,InstallmentPlanInd:1,InstallmentPlanNum:1,InvoiceNum:1,InvoiceTk:1,LandPackageParticipantInd:1,LandPackageParticipantQty:1,MpcardNumPax1:1,MpcardNumPax2:1,NonrevPassengerQty:1,NontaxPassengerQty:1,NvsPgInd:1,OciOfficeCd:1,OfficeCd:1,OfficeDesc:1,OnboardTypeDesc:1,OriginalConsortiumCd:1,OriginalConsortiumDesc:1,OriginalDeptCd:1,OriginalDeptName:1,OriginalUserActiveInd:1,OriginalUserId:1,OriginalUserName:1,OutboundReportingRegionCd:1,PackageCd:1,PaidClassCategoryDesc:1,PaidClassCd:1,PassengerQty:1,PastGuestInd:1,Pax1AirportHome1Cd:1,Pax1AirportRtrn1Cd:1,Pax1FirstFlightClass:1,Pax1FirstName:1,Pax1LastName:1,Pax1LoyaltyLevelNm:1,Pax1NvsPgInd:1,Pax1RtrnFlightClass:1,Pax2AirportHome1Cd:1,Pax2AirportRtrn1Cd:1,Pax2FirstFlightClass:1,Pax2FirstName:1,Pax2LastName:1,Pax2LoyaltyLevelNm:1,Pax2NvsPgInd:1,Pax2RtrnFlightClass:1,PaxAirClassCd:1,PlatinumCd:1,PlatinumInd:1,PostedInvoiceDt:1,PromoBonusComm:1,PromoCd:1,PromoCommAmt:1,PromoDesc:1,PromotionalAmenityCd:1,RtrnFlightClassCd:1,RtrnFlightQty:1,SalesSourceCd:1,SalesSourceDesc:1,StateCd:1,StatusCd:1,StatusDesc:1,UserId:1,UserName:1,WaitlistDt:1,ZipCd:1},ScheduledJob:{JobDescription:1,JobName:1,ScheduledJobId:1},VwSqlJobList:{DateCreated:1,DateModified:1,Enabled:1,JobDescription:1,Name:1}},PCHODS:{OutboundAgent:{AgentId:1,AgentLocationDescription:1,AgentLocationId:1,CompanyCd:1,CompanyName:1,Nm:1,NvsUserId:1,PrimaryBrand:1,StartInactiveDt:1},OutboundAgentLocation:{AgentLocationId:1,Description:1},OutboundCommissionBkGoal:{CommissionMonth:1,CommissionTk:1,CompanyCd:1,CompanyName:1,LoadDt:1,NumOfBkGoal:1},OutboundCommissionHist:{ActiveDt:1,CommissionHistId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistAu:{ActiveDt:1,CommissionHistAuId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistBr:{ActiveDt:1,CommissionHistBrId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionPeriod:{ClosedBy:1,ClosedDate:1,CurrentMonth:1,EndDate:1,IsOpen:1,OutboundCommissionPeriodId:1,PreviousMonth:1,StartDate:1},OutboundCompany:{Cd:1,Nm:1},OutboundMonthlyRptArchiveOverride:{NclId:1,OciAdjustdomestic:1,OciPrevMonthDomestic:1,OciPrevMonthInternational:1,OciPrevMonthRevDomestic:1,OciPrevMonthRevInternational:1,OriginalUserName:1,OutboundMonth:1,OutboundMonthlyRptArchiveId:1,SscAdjustdomestic:1,SscPrevMonthDomestic:1,SscPrevMonthInternational:1,SscPrevMonthRevDomestic:1,SscPrevMonthRevInternational:1},OutboundNvsUsers:{ActiveInd:1,CompanyCd:1,DepartmentCd:1,DepartmentDesc:1,UserFirstName:1,UserId:1,UserLastName:1}},PCHODSNVS:{NtrBudget:{AccountPeriodNum:1,ApcdFinal:1,BudgetTk:1,CompanyCd:1,NtrBudget:1,NtrFinancialBudget:1,PdsBudgetTotal:1},NtrBudgetByChannel:{AccountingYear:1,BudgetbychannelTk:1,ChannelDesc:1,ChannelSummDesc:1,CompanyCd:1,NpdBudget:1,NtrBudget:1,PdsBudgetTotal:1},NtrFcst:{AccountPeriodNum:1,ApcdFinal:1,CompanyCd:1,FcstTk:1,NtrFcst:1,NtrFinancialBudget:1,PdsFcstTotal:1},NtrIntlDatelineCruises:{CompanyCd:1,CruiseCalendarDaysQty:1,CruiseDaysQty:1,CruiseIntlTk:1,CruiseSegmentCd:1,LoadDt:1},NtrPastMonthsActual:{ApcdFinal:1,AvailableNumOfCabins:1,BookedNumOfCabins:1,CompanyCd:1,CxRev:1,NtrFinal:1,PastmonthactualTk:1,PdsFinalTotal:1,StlyAvailableNumOfCabins:1,StlyBookedNumOfCabins:1,YearMonth:1},NtrRptComment:{AccountPeriodNum:1,Comment:1,CommentTk:1,CompanyCd:1,ReportDate:1},SuppKeyAcctTarget:{AccountType:1,CcfTargetQ1:1,CcfTargetQ12:1,CcfTargetQ13:1,CcfTargetQ14:1,CcfTargetQ15:1,CcfTargetQ2:1,CcfTargetQ22:1,CcfTargetQ23:1,CcfTargetQ24:1,CcfTargetQ25:1,CcfTargetQ3:1,CcfTargetQ32:1,CcfTargetQ33:1,CcfTargetQ34:1,CcfTargetQ35:1,CcfTargetQ4:1,CcfTargetQ42:1,CcfTargetQ43:1,CcfTargetQ44:1,CcfTargetQ45:1,CompanyCd:1,KeyAcctLink:1,KeyAcctTk:1,LoadDt:1,PrctTargetQ1:1,PrctTargetQ12:1,PrctTargetQ13:1,PrctTargetQ14:1,PrctTargetQ15:1,PrctTargetQ2:1,PrctTargetQ22:1,PrctTargetQ23:1,PrctTargetQ24:1,PrctTargetQ25:1,PrctTargetQ3:1,PrctTargetQ32:1,PrctTargetQ33:1,PrctTargetQ34:1,PrctTargetQ35:1,PrctTargetQ4:1,PrctTargetQ42:1,PrctTargetQ43:1,PrctTargetQ44:1,PrctTargetQ45:1,Year:1}},SSISConfig:{DataFlow:{Cet:1,Description:1,Key:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,SourceDesc:1,Status:1,Target:1,TargetDesc:1},GpInterfaceLog:{CompanyCd:1,CruiseSegmentCd:1,ExpRevType:1,GpInterfaceInd:1,GpInterfacedDt:1,InterfaceLogId:1,JournalNum:1},INTConfigBase:{ConfigId:1,ConfigurationFilter:1,ConfiguredValue:1,ConfiguredValueType:1,EnvironmentDesc:1,EnvironmentEnum:1,ModifiedBy:1,ModifiedOn:1,PackagePath:1},MicrosDataFlow:{CeIndex:1,Cet:1,Description:1,Key:1,LseIndex:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,SourceDesc:1,Status:1,Target:1,TargetDesc:1},PsInterfaceConfig:{ConfigId:1,ConfigSetting:1,ConfigValue:1,ConfigValueDate:1,DataType:1,ModifiedBy:1,ModifiedDate:1,SourceSystem:1},SsisConfigBase:{ConfigId:1,ConfigurationFilter:1,ConfiguredValue:1,ConfiguredValueType:1,EnvironmentDesc:1,EnvironmentEnum:1,ModifiedBy:1,ModifiedOn:1,PackagePath:1}}},Forms:{Membership:{ChangePassword:{FormTitle:1,SubmitButton:1,Success:1},ForgotPassword:{BackToLogin:1,FormInfo:1,FormTitle:1,SubmitButton:1,Success:1},Login:{FacebookButton:1,ForgotPassword:1,FormTitle:1,GoogleButton:1,OR:1,RememberMe:1,SignInButton:1,SignUpButton:1},ResetPassword:{BackToLogin:1,EmailSubject:1,FormTitle:1,SubmitButton:1,Success:1},SignUp:{AcceptTerms:1,ActivateEmailSubject:1,ActivationCompleteMessage:1,BackToLogin:1,ConfirmEmail:1,ConfirmPassword:1,DisplayName:1,Email:1,FormInfo:1,FormTitle:1,Password:1,SubmitButton:1,Success:1}}},Site:{AccessDenied:{ClickToChangeUser:1,ClickToLogin:1,LackPermissions:1,NotLoggedIn:1,PageTitle:1},BasicProgressDialog:{CancelTitle:1,PleaseWait:1},BulkServiceAction:{AllHadErrorsFormat:1,AllSuccessFormat:1,ConfirmationFormat:1,ErrorCount:1,NothingToProcess:1,SomeHadErrorsFormat:1,SuccessCount:1},CardViewMixin:{CardView:1,ListView:1},Dashboard:{ContentDescription:1},Dialogs:{PendingChangesConfirmation:1},DraggableGroupingMixin:{CollapseAllButton:1,DropPlaceholder:1,ExpandAllButton:1},EmailClient:{BackButton:1,CCLabel:1,CancelButton:1,ComposeButton:1,DeleteButton:1,DeleteMessageConfirmation:1,DeleteMessageSuccess:1,DeleteNoSelectionWarning:1,DeleteSelectedConfirmation:1,DeleteSelectedSuccess:1,FolderNames:{drafts:1,inbox:1,junk:1,sent:1,trash:1},FoldersTitle:1,ForwardButton:1,ImapHost:1,ImapPassword:1,ImapPort:1,ImapUsername:1,LoginButton:1,LoginTitle:1,MoveMessageSuccess:1,MoveNoSelectionWarning:1,MoveSelectedSuccess:1,MoveToFolder:1,NewEmailDialogTitle:1,PageTitle:1,QuickSettings:1,RefreshButton:1,ReplyAllButton:1,ReplyButton:1,ReplyEmailDialogTitle:1,SearchPlaceholder:1,SendButton:1,SignoutButton:1,SmtpHost:1,SmtpPassword:1,SmtpPort:1,SmtpUsername:1,ToLabel:1,ToggleReadButton:1,ToggleSeenNoSelectionWarning:1},FavoriteViewsMixin:{DeleteButtonHint:1,DeleteSuccessMessage:1,EmptyNameError:1,FavoriteViews:1,LoadedViewMessage:1,SaveButton:1,SaveSuccessMessage:1,SaveView:1},HeaderFiltersMixin:{CancelButton:1,ClearButton:1,OkButton:1,Search:1,SelectAll:1},Layout:{FooterCopyright:1,FooterInfo:1,FooterRights:1,GeneralSettings:1,Language:1,Theme:1,ThemeAzure:1,ThemeAzureLight:1,ThemeBlack:1,ThemeBlackLight:1,ThemeBlue:1,ThemeBlueLight:1,ThemeCosmos:1,ThemeCosmosLight:1,ThemeGlassy:1,ThemeGlassyLight:1,ThemeGreen:1,ThemeGreenLight:1,ThemePurple:1,ThemePurpleLight:1,ThemeRed:1,ThemeRedLight:1,ThemeYellow:1,ThemeYellowLight:1},RolePermissionDialog:{DialogTitle:1,EditButton:1,SaveSuccess:1},UserDialog:{EditPermissionsButton:1,EditRolesButton:1},UserPermissionDialog:{DialogTitle:1,Grant:1,Permission:1,Revoke:1,SaveSuccess:1},UserRoleDialog:{DialogTitle:1,SaveSuccess:1},ValidationError:{Title:1},WizardDialog:{BackButton:1,CancelMessage:1,FinishButton:1,NextButton:1}},Validation:{AuthenticationError:1,CantFindUserWithEmail:1,CurrentPasswordMismatch:1,DeleteForeignKeyError:1,EmailConfirm:1,EmailInUse:1,InvalidActivateToken:1,InvalidResetToken:1,MinRequiredPasswordLength:1,SavePrimaryKeyError:1}});
+    DAP['Texts'] = Q.proxyTexts(Texts, '', {Db:{Administration:{DataAuditLog:{FieldName:1,LogDate:1,LogId:1,LogType:1,NewValue:1,OldValue:1,RecordId:1,Tablename:1,UserDisplayName:1,UserId:1,Username:1},Language:{Id:1,LanguageId:1,LanguageName:1},Role:{RoleId:1,RoleKey:1,RoleName:1},RolePermission:{PermissionKey:1,RoleId:1,RolePermissionId:1,RoleRoleName:1},Translation:{CustomText:1,EntityPlural:1,Key:1,OverrideConfirmation:1,SaveChangesButton:1,SourceLanguage:1,SourceText:1,TargetLanguage:1,TargetText:1},User:{DisplayName:1,Email:1,ImpersonationToken:1,InsertDate:1,InsertUserId:1,IsActive:1,LastDirectoryUpdate:1,MobilePhoneNumber:1,MobilePhoneVerified:1,Password:1,PasswordConfirm:1,PasswordHash:1,PasswordSalt:1,Source:1,TwoFactorAuth:1,UpdateDate:1,UpdateUserId:1,UserId:1,UserImage:1,Username:1},UserPermission:{Granted:1,PermissionKey:1,User:1,UserId:1,UserPermissionId:1,Username:1},UserRole:{RoleId:1,User:1,UserId:1,UserRoleId:1,Username:1}},Avaya:{Brand:{Brand:1,BrandTk:1},CallType:{Type:1,TypeTk:1},Department:{Department:1,DepartmentTk:1},Group:{Cd:1,Tk:1},Region:{Region:1,RegionTk:1},SkillSplitMapping:{AcdNo:1,Brand:1,BrandBrandTk:1,CallType:1,CallTypeTypeTk:1,CmsNo:1,Department:1,DepartmentDepartmentTk:1,GroupCd:1,GroupCdTk:1,Region:1,RegionRegionTk:1,SkillName:1,SkillSplitTk:1,SplitNo:1,Status:1,StatusStatusTk:1,SupportChannel:1,SupportChannelSuppChannelTk:1},Status:{StatusDesc:1,StatusTk:1},SupportChannel:{SuppChannelTk:1,SupportChannel:1}},Common:{BackgroundTaskLog:{LogId:1,Message:1,RunAt:1,Server:1,Status:1,TaskKey:1},Mail:{Bcc:1,Body:1,Cc:1,ErrorMessage:1,InsertDate:1,InsertUser:1,InsertUserId:1,LockExpiration:1,MailFrom:1,MailId:1,MailTo:1,Priority:1,ReplyTo:1,RetryCount:1,SentDate:1,Status:1,Subject:1,Uid:1},UserPreference:{Name:1,PreferenceType:1,UserId:1,UserPreferenceId:1,Value:1}},DWSupport:{DistrictMasterSupp:{AreaCd:1,ChannelCd:1,CreatedByNam:1,CreatedTs:1,DistrictNbr:1,DistrictSurKey:1,GroupCd:1,GssChannelCd:1,ModifiedByNam:1,ModifiedTs:1,PrimaryCrmSupportNam:1,RmChannelCd:1,SalesChannelCd:1,SalesrepUserId:1,SecondaryCrmSupportNam:1},FinReportPublishingSupp:{CreatedByNam:1,CreatedTs:1,FinReportPublishingSurKey:1,ModifiedByNam:1,ModifiedTs:1,ProcessedDateTs:1,PublishCd:1,PublishCommentsTxt:1,PublishDat:1},GuestPreventDeparture:{BoardingDenialReasonDesc:1,CasinoIncidentNbrTxt:1,CreatedByNam:1,CreatedTs:1,FromReportNbr:1,GuestFirstNam:1,GuestLastNam:1,GuestPreventDepartureKey:1,IncidentReportedDat:1,InternalExternalCd:1,ModifiedByNam:1,ModifiedTs:1,NameTypeDesc:1,SirsNbrTxt:1,TypeCd:1},SailingMasterSupp:{AmenityPtsQty:1,BackToBackCd:1,CasinoCabinCapacityQty:1,CharterCd:1,CreatedByNam:1,CreatedTs:1,FareFeedIncludeCd:1,FsGrpAmenityAmt:1,InactiveCd:1,InterportCd:1,IsExtraordinaryCd:1,IsFreeOpenBarCd:1,IsHolidayCd:1,IsVoyageExceptionCd:1,ItineraryChangedDat:1,JonesActSailId:1,LatitudeCruiseCd:1,MainVoyageCd:1,MandateWeeksQty:1,ModifiedByNam:1,ModifiedTs:1,ObrSeasonCd:1,ObrSubTradeCd:1,ObrTradeCd:1,OnSaleDat:1,PackageTypeCd:1,ProductCd:1,ProductCdCreatedByName:1,ProductCdCreatedTs:1,ProductCdModifiedByName:1,ProductCdModifiedTs:1,ProductCdProductCodeId:1,ProductCdProductDesc:1,ProductCdProductSurKey:1,ProxyBudgetSailId:1,ProxyMetaWeightSailId:1,ProxySailId:1,RmsColorNameDesc:1,RmsForecastCd:1,RmsParentSail10Id:1,RmsParentSail11Id:1,RmsParentSail12Id:1,RmsParentSail13Id:1,RmsParentSail14Id:1,RmsParentSail15Id:1,RmsParentSail1Id:1,RmsParentSail2Id:1,RmsParentSail3Id:1,RmsParentSail4Id:1,RmsParentSail5Id:1,RmsParentSail6Id:1,RmsParentSail7Id:1,RmsParentSail8Id:1,RmsParentSail9Id:1,RmsRefLinkSailId:1,RmsSeasonCd:1,SailDat:1,SailId:1,SailSurKey:1,SeasonYearCd:1,ShipCd:1,ShipNbr:1,SlProductCd:1,SlProductCdCreatedByName:1,SlProductCdCreatedTs:1,SlProductCdModifiedByName:1,SlProductCdModifiedTs:1,SlProductCdSlProductDesc:1,SlProductCdSlProductSurKey:1,ValidVoyageCd:1,VoyageExceptionDesc:1}},NCLHDSAR:{Assignee:{AssigneeId:1,FullName:1,IsActive:1},Note:{EntityId:1,EntityType:1,InsertDate:1,InsertUserDisplayName:1,InsertUserId:1,NoteId:1,Text:1},Request:{Address1:1,AttrCount:1,City:1,Country:1,CreatedDt:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,Email:1,FirstName:1,FullName:1,Id:1,IdentityVerificationOptOuts:1,IdentityVerificationOtherRequests:1,LastName:1,LastUpdatedDt:1,LatitudesNum:1,LoadDt:1,NclYn:1,OceaniaMpCardNum:1,OceaniaYn:1,ProcessDt:1,RegentMpCardNum:1,RegentYn:1,ReqApprover:1,ReqDetails:1,ReqExtended:1,ReqStage:1,ReqStatus:1,RequestType:1,RequestTypeNum:1,RequestTypeNumDesc:1,SixthmanYn:1,SubjectType:1},RequestAttributes:{Addr1:1,Addr2:1,CityNm:1,CountryCd:1,Email1:1,ExtractDt:1,FirstNm:1,Id:1,LastNm:1,MiddleNm:1,ModifiedBy:1,ModifiedDate:1,OldAddr1:1,OldAddr2:1,OldCityNm:1,OldCountryCd:1,OldEmail:1,OldFirstNm:1,OldLastNm:1,OldMiddleNm:1,OldPostalCd:1,OldStateNm:1,PostalCd:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,StateNm:1,SystemMasterId:1,SystemMasterSystemActiveYn:1,SystemMasterSystemDesc:1,SystemMasterSystemName:1,SystemMasterSystemTable:1},RequestStatus:{StatusDescription:1,StatusId:1,StatusOrder:1},RequestType:{Desc:1,Type:1},SwRequest:{ApiResponse:1,ApiResponseDepth:1,ApiResponseId:1,AssigneeFullName:1,AssigneeId:1,AssigneeIsActive:1,AttributeCount:1,ClientAddress:1,ClientEmailAddress:1,ClientFirstName:1,ClientGuestCategory:1,ClientIsRelatedtoHousehold:1,ClientLastName:1,ClientLatitudesNumber:1,ClientZipCode:1,DaysLeft:1,DaysOld:1,DeadlineDt:1,LastUpdatedDt:1,NoteList:1,RecordId:1,RecordTimeStamp:1,RequestType:1,StatusId:1,StatusStatusDescription:1,StatusStatusOrder:1,UpdatedBy:1},SwRequestAttributes:{ExtractDt:1,Id:1,LastUpdated:1,RequestAttributeId:1,RequestValue:1,ResolvedDt:1,SystemMasterId:1,SystemMasterSystemDesc:1},SystemMaster:{Id:1,SystemActiveYn:1,SystemDesc:1,SystemName:1,SystemTable:1}},NCLHODSMICROS:{DataFlow:{Cet:1,Description:1,Key:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,SourceDesc:1,Status:1,Target:1,TargetDesc:1}},NCLHODSSPENDVIS:{Amoslevel:{AccountId:1,Descr:1,FlexDim1Name:1,FlexDim2Name:1,FlexDim3Name:1,FlexDim4Name:1,IdNum:1,ModifiedBy:1,ModifiedDate:1},DataFlow:{Cet:1,Description:1,Key:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,Status:1,Target:1}},PCHDW:{DimCruise:{AmenityPointsAllowedQty:1,CappedCapacity:1,CharterInd:1,ColorInd:1,CompanyCd:1,CpvTaxAmt:1,CpvTaxInd:1,CruiseCd:1,CruiseDaysQty:1,CruiseFromDt:1,CruiseFromDtMmddyyyy:1,CruiseName:1,CruiseSailingStatusDesc:1,CruiseSegmentCd:1,CruiseSegmentDaysQty:1,CruiseSegmentFromDt:1,CruiseSegmentName:1,CruiseSegmentToDt:1,CruiseStatusCd:1,CruiseTk:1,CruiseToDt:1,CruiseToDtMmddyyyy:1,DrydockInd:1,FinancialSuppressInd:1,FromPortCd:1,FromPortName:1,HighlightInd:1,HmfFeeInd:1,HmfPct:1,IrsTaxAmt:1,IrsTaxInd:1,IufExemptFeeAmt:1,IufExemptFeeInd:1,IufExemptQty:1,IufNonexemptFeeAmt:1,IufNonexemptFeeInd:1,IufNonexemptQty:1,LocationName:1,MarketName:1,MinisegInd:1,OnboardAcctTrandate:1,OnbrdAvgPaxQty:1,PpfExemptFeeAmt:1,PpfExemptInd:1,PpfNonexemptFeeAmt:1,PpfNonexemptInd:1,RevenueMgmtMarketSegment:1,RouteName:1,SeasonName:1,SegmentFromDtMmddyyyy:1,SegmentFromPortCd:1,SegmentFromPortName:1,SegmentLocationName:1,SegmentMarketName:1,SegmentOnboardAcctTrandate:1,SegmentRouteName:1,SegmentSeasonName:1,SegmentSuperMarketCd:1,SegmentSuperMarketDesc:1,SegmentToDtMmddyyyy:1,SegmentToPortCd:1,SegmentToPortName:1,ShipCd:1,ShowInReport:1,StatedCapacity:1,SuperMarketCd:1,SuperMarketDesc:1,ToPortCd:1,ToPortName:1,VarToCurve:1},DimInvoice:{AgentTk:1,AirCostSourceCd:1,AirParticipationInd:1,AirXferFeeAmt:1,AttnName:1,BonusSavingsCd:1,BonusSavingsDesc:1,CancelBookingStatusCd:1,CancelReason:1,CancellationDt:1,CancellationType:1,CenturionCd:1,CenturionInd:1,ChangeDt:1,ChannelCountryCd:1,ChannelCountryName:1,ChannelTk:1,Cinvoice1Num:1,Cinvoice2Num:1,Cinvoice3Num:1,Cinvoice4Num:1,Cinvoice5Num:1,Cinvoice6Num:1,CityName:1,ComboBookingInd:1,ComboLegQty:1,CompanyCd:1,CountryCd:1,CountryName:1,CreateDt:1,CruiseCommissionAmt:1,CruiseSvcMgmtCrNum:1,CruiseSvcMgmtId:1,CruiseTk:1,CurrencyCd:1,CurrencyDesc:1,CurrentLoyaltyLevelPax1:1,CurrentLoyaltyLevelPax2:1,CurrentPackageCd:1,DepositAmt:1,DepositDt:1,DirectBookingInd:1,DptrFlightClassCd:1,DptrFlightQty:1,DwPastGuest1Ind:1,DwPastGuest2Ind:1,DwPastGuestInd:1,FccDeferredInd:1,FinalPaymentDueDt:1,FirstConfirmDt:1,FirstPaymentDt:1,FutureDepositFlag:1,GdsSystemCd:1,GdsSystemDesc:1,HotelParticipationInd:1,InitialWaitlistInd:1,InstallmentPlanInd:1,InstallmentPlanNum:1,InvoiceNum:1,InvoiceTk:1,LandPackageParticipantInd:1,LandPackageParticipantQty:1,MpcardNumPax1:1,MpcardNumPax2:1,NonrevPassengerQty:1,NontaxPassengerQty:1,NvsPgInd:1,OciOfficeCd:1,OfficeCd:1,OfficeDesc:1,OnboardTypeDesc:1,OriginalConsortiumCd:1,OriginalConsortiumDesc:1,OriginalDeptCd:1,OriginalDeptName:1,OriginalUserActiveInd:1,OriginalUserId:1,OriginalUserName:1,OutboundReportingRegionCd:1,PackageCd:1,PaidClassCategoryDesc:1,PaidClassCd:1,PassengerQty:1,PastGuestInd:1,Pax1AirportHome1Cd:1,Pax1AirportRtrn1Cd:1,Pax1FirstFlightClass:1,Pax1FirstName:1,Pax1LastName:1,Pax1LoyaltyLevelNm:1,Pax1NvsPgInd:1,Pax1RtrnFlightClass:1,Pax2AirportHome1Cd:1,Pax2AirportRtrn1Cd:1,Pax2FirstFlightClass:1,Pax2FirstName:1,Pax2LastName:1,Pax2LoyaltyLevelNm:1,Pax2NvsPgInd:1,Pax2RtrnFlightClass:1,PaxAirClassCd:1,PlatinumCd:1,PlatinumInd:1,PostedInvoiceDt:1,PromoBonusComm:1,PromoCd:1,PromoCommAmt:1,PromoDesc:1,PromotionalAmenityCd:1,RtrnFlightClassCd:1,RtrnFlightQty:1,SalesSourceCd:1,SalesSourceDesc:1,StateCd:1,StatusCd:1,StatusDesc:1,UserId:1,UserName:1,WaitlistDt:1,ZipCd:1},RevenueAdhocManagement:{AdhocDate:1,AdhocDateTk:1,AdhocStlydate:1,AdhocStlydateTk:1,CubeId:1,DatabaseId:1,Key:1,LastProcessedDateTime:1,MeasuregroupId:1},ScheduledJob:{JobDescription:1,JobName:1,ScheduledJobId:1},VwSqlJobList:{DateCreated:1,DateModified:1,Enabled:1,JobDescription:1,Name:1}},PCHODS:{OutboundAgent:{AgentId:1,AgentLocationDescription:1,AgentLocationId:1,CompanyCd:1,CompanyName:1,Nm:1,NvsUserId:1,PrimaryBrand:1,StartInactiveDt:1},OutboundAgentLocation:{AgentLocationId:1,Description:1},OutboundCommissionBkGoal:{CommissionMonth:1,CommissionTk:1,CompanyCd:1,CompanyName:1,LoadDt:1,NumOfBkGoal:1},OutboundCommissionHist:{ActiveDt:1,CommissionHistId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistAu:{ActiveDt:1,CommissionHistAuId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionHistBr:{ActiveDt:1,CommissionHistBrId:1,CommissionId:1,CommissionRate:1,CompanyCd:1,CompanyName:1,HighNumBookings:1,InactiveDt:1,LowNumBookings:1},OutboundCommissionPeriod:{ClosedBy:1,ClosedDate:1,CurrentMonth:1,EndDate:1,IsOpen:1,OutboundCommissionPeriodId:1,PreviousMonth:1,StartDate:1},OutboundCompany:{Cd:1,Nm:1},OutboundMonthlyRptArchiveOverride:{NclId:1,OciAdjustdomestic:1,OciPrevMonthDomestic:1,OciPrevMonthInternational:1,OciPrevMonthRevDomestic:1,OciPrevMonthRevInternational:1,OriginalUserName:1,OutboundMonth:1,OutboundMonthlyRptArchiveId:1,SscAdjustdomestic:1,SscPrevMonthDomestic:1,SscPrevMonthInternational:1,SscPrevMonthRevDomestic:1,SscPrevMonthRevInternational:1},OutboundNvsUsers:{ActiveInd:1,CompanyCd:1,DepartmentCd:1,DepartmentDesc:1,UserFirstName:1,UserId:1,UserLastName:1}},PCHODSNVS:{Agency:{ActiveInd:1,Addr1:1,Addr2:1,Addr3:1,AgencyCd:1,AgencyCdName:1,AgencyCreateDt:1,AgencyDefaultStatusInd:1,AgencyEmail:1,AgencyNameDesc:1,AgencyStatusCd:1,AgencyWebAddress:1,AgentLinkDesc:1,AgentNum:1,AllowBankInd:1,AllowGpInd:1,AllowPlatInd:1,AllowSdbdInd:1,ApolloInd:1,AttnDesc:1,AutoCxlInd:1,AutoEnvoInd:1,BankAccountBalAmt:1,BankAcct2Amt:1,BdmCd:1,BdmRepCd:1,CityName:1,CliaNum:1,Comment1Desc:1,Comment2Desc:1,CommissionPct:1,CompanyCd:1,ConsortRgnNum:1,ConsortiumAddedDt:1,ConsortiumCd:1,ConsortiumRegionAddedDt:1,ConsortiumRegionCd:1,CorpComDesc:1,CorporationInd:1,Country:1,CreditAgtInd:1,CurrencyCd:1,CurrentYearSalesAmt:1,EMemberDesc:1,FaxNum:1,FinHoldInd:1,FinalDaysQty:1,FirstBookingDt:1,GdsSysCd:1,GsaInd:1,GsaPriceLevelAmt:1,IataNum:1,InsDefaultCd:1,Key1:1,KeyAcctInd:1,L7daysNum:1,LastUpdated:1,LastYearKeyAcctCd:1,LastYearSalesAmt:1,MahanaClubInd:1,MasterAgencyInd:1,McActiveInd:1,NactaNum:1,NationalAcctInd:1,NvsKeyAcctInd:1,OfficeCd:1,Option1DueDaysQty:1,Option2DueDaysQty:1,OverVacSummInd:1,OverrideFinalDaysInd:1,OverrideOption1DaysInd:1,OverrideOption2DaysInd:1,OwnerCd:1,PaymentViaWireInd:1,Phone1Num:1,Phone2Num:1,PinClubInd:1,PreferredCommunicationCd:1,PreferredLanguageDesc:1,PreviousYrPaxQty:1,PreviousYrRevAmt:1,PromoAdInd:1,Prt1099Ind:1,PrtD1099Dt:1,PseudoCityCd:1,RequiredSecondaryAgentInd:1,RevLabelCd:1,SalesRegionCd:1,SecondaryCurrencyCd:1,SelfBillInd:1,SendCustInvInd:1,SiblingId:1,SsrRepCd:1,StateNm:1,TaxIdNum:1,TaxInfoReceivedDt:1,TaxPayer1099Name:1,UserInUseById:1,VacSummEmailDesc:1,VatId:1,Zip2Cd:1,ZipCd:1},ConsortiumExceptionList:{CombineInd:1,CompanyCd:1,ConsortiumExceptionListTk:1,ExcludeInd:1,ItemCd:1,ItemName:1,ItemType:1,ItemTypeTypeTk:1,LoadDt:1,NewItemName:1,NewItemType:1,NewItemTypeTypeTk:1},GsaDistributionList:{AccountName:1,AgencyCd:1,CompanyCd:1,ContactName:1,Email:1,GsaDistributionListTk:1,LoadDt:1},ItemType:{Type:1,TypeTk:1},NtrBudget:{AccountPeriodNum:1,ApcdFinal:1,BudgetTk:1,CompanyCd:1,NtrBudget:1,NtrFinancialBudget:1,PdsBudgetTotal:1},NtrBudgetByChannel:{AccountingYear:1,BudgetbychannelTk:1,ChannelDesc:1,ChannelSummDesc:1,CompanyCd:1,NpdBudget:1,NtrBudget:1,PdsBudgetTotal:1},NtrFcst:{AccountPeriodNum:1,ApcdFinal:1,CompanyCd:1,FcstTk:1,NtrFcst:1,NtrFinancialBudget:1,PdsFcstTotal:1},NtrIntlDatelineCruises:{CompanyCd:1,CruiseCalendarDaysQty:1,CruiseDaysQty:1,CruiseIntlTk:1,CruiseSegmentCd:1,LoadDt:1},NtrPastMonthsActual:{ApcdFinal:1,AvailableNumOfCabins:1,BookedNumOfCabins:1,CompanyCd:1,CxRev:1,NtrFinal:1,PastmonthactualTk:1,PdsFinalTotal:1,StlyAvailableNumOfCabins:1,StlyBookedNumOfCabins:1,YearMonth:1},NtrRptComment:{AccountPeriodNum:1,Comment:1,CommentTk:1,CompanyCd:1,ReportDate:1},SuppKeyAcctTarget:{AccountType:1,CcfTargetQ1:1,CcfTargetQ12:1,CcfTargetQ13:1,CcfTargetQ14:1,CcfTargetQ15:1,CcfTargetQ2:1,CcfTargetQ22:1,CcfTargetQ23:1,CcfTargetQ24:1,CcfTargetQ25:1,CcfTargetQ3:1,CcfTargetQ32:1,CcfTargetQ33:1,CcfTargetQ34:1,CcfTargetQ35:1,CcfTargetQ4:1,CcfTargetQ42:1,CcfTargetQ43:1,CcfTargetQ44:1,CcfTargetQ45:1,CompanyCd:1,KeyAcctLink:1,KeyAcctTk:1,LoadDt:1,PrctTargetQ1:1,PrctTargetQ12:1,PrctTargetQ13:1,PrctTargetQ14:1,PrctTargetQ15:1,PrctTargetQ2:1,PrctTargetQ22:1,PrctTargetQ23:1,PrctTargetQ24:1,PrctTargetQ25:1,PrctTargetQ3:1,PrctTargetQ32:1,PrctTargetQ33:1,PrctTargetQ34:1,PrctTargetQ35:1,PrctTargetQ4:1,PrctTargetQ42:1,PrctTargetQ43:1,PrctTargetQ44:1,PrctTargetQ45:1,Year:1}},SSISConfig:{DataFlow:{Cet:1,Description:1,Key:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,SourceDesc:1,Status:1,Target:1,TargetDesc:1},GpInterfaceLog:{CompanyCd:1,CruiseSegmentCd:1,ExpRevType:1,GpInterfaceInd:1,GpInterfacedDt:1,InterfaceLogId:1,JournalNum:1},INTConfigBase:{ConfigId:1,ConfigurationFilter:1,ConfiguredValue:1,ConfiguredValueType:1,EnvironmentDesc:1,EnvironmentEnum:1,ModifiedBy:1,ModifiedOn:1,PackagePath:1},MicrosDataFlow:{CeIndex:1,Cet:1,Description:1,Key:1,LseIndex:1,Lset:1,Name:1,Package:1,ProcessYn:1,Source:1,SourceDesc:1,Status:1,Target:1,TargetDesc:1},PsInterfaceConfig:{ConfigId:1,ConfigSetting:1,ConfigValue:1,ConfigValueDate:1,DataType:1,ModifiedBy:1,ModifiedDate:1,SourceSystem:1},SsisConfigBase:{ConfigId:1,ConfigurationFilter:1,ConfiguredValue:1,ConfiguredValueType:1,EnvironmentDesc:1,EnvironmentEnum:1,ModifiedBy:1,ModifiedOn:1,PackagePath:1}}},Forms:{Membership:{ChangePassword:{FormTitle:1,SubmitButton:1,Success:1},ForgotPassword:{BackToLogin:1,FormInfo:1,FormTitle:1,SubmitButton:1,Success:1},Login:{FacebookButton:1,ForgotPassword:1,FormTitle:1,GoogleButton:1,OR:1,RememberMe:1,SignInButton:1,SignUpButton:1},ResetPassword:{BackToLogin:1,EmailSubject:1,FormTitle:1,SubmitButton:1,Success:1},SignUp:{AcceptTerms:1,ActivateEmailSubject:1,ActivationCompleteMessage:1,BackToLogin:1,ConfirmEmail:1,ConfirmPassword:1,DisplayName:1,Email:1,FormInfo:1,FormTitle:1,Password:1,SubmitButton:1,Success:1}}},Site:{AccessDenied:{ClickToChangeUser:1,ClickToLogin:1,LackPermissions:1,NotLoggedIn:1,PageTitle:1},BasicProgressDialog:{CancelTitle:1,PleaseWait:1},BulkServiceAction:{AllHadErrorsFormat:1,AllSuccessFormat:1,ConfirmationFormat:1,ErrorCount:1,NothingToProcess:1,SomeHadErrorsFormat:1,SuccessCount:1},CardViewMixin:{CardView:1,ListView:1},Dashboard:{ContentDescription:1},Dialogs:{PendingChangesConfirmation:1},DraggableGroupingMixin:{CollapseAllButton:1,DropPlaceholder:1,ExpandAllButton:1},EmailClient:{BackButton:1,CCLabel:1,CancelButton:1,ComposeButton:1,DeleteButton:1,DeleteMessageConfirmation:1,DeleteMessageSuccess:1,DeleteNoSelectionWarning:1,DeleteSelectedConfirmation:1,DeleteSelectedSuccess:1,FolderNames:{drafts:1,inbox:1,junk:1,sent:1,trash:1},FoldersTitle:1,ForwardButton:1,ImapHost:1,ImapPassword:1,ImapPort:1,ImapUsername:1,LoginButton:1,LoginTitle:1,MoveMessageSuccess:1,MoveNoSelectionWarning:1,MoveSelectedSuccess:1,MoveToFolder:1,NewEmailDialogTitle:1,PageTitle:1,QuickSettings:1,RefreshButton:1,ReplyAllButton:1,ReplyButton:1,ReplyEmailDialogTitle:1,SearchPlaceholder:1,SendButton:1,SignoutButton:1,SmtpHost:1,SmtpPassword:1,SmtpPort:1,SmtpUsername:1,ToLabel:1,ToggleReadButton:1,ToggleSeenNoSelectionWarning:1},FavoriteViewsMixin:{DeleteButtonHint:1,DeleteSuccessMessage:1,EmptyNameError:1,FavoriteViews:1,LoadedViewMessage:1,SaveButton:1,SaveSuccessMessage:1,SaveView:1},HeaderFiltersMixin:{CancelButton:1,ClearButton:1,OkButton:1,Search:1,SelectAll:1},Layout:{FooterCopyright:1,FooterInfo:1,FooterRights:1,GeneralSettings:1,Language:1,Theme:1,ThemeAzure:1,ThemeAzureLight:1,ThemeBlack:1,ThemeBlackLight:1,ThemeBlue:1,ThemeBlueLight:1,ThemeCosmos:1,ThemeCosmosLight:1,ThemeGlassy:1,ThemeGlassyLight:1,ThemeGreen:1,ThemeGreenLight:1,ThemePurple:1,ThemePurpleLight:1,ThemeRed:1,ThemeRedLight:1,ThemeYellow:1,ThemeYellowLight:1},RolePermissionDialog:{DialogTitle:1,EditButton:1,SaveSuccess:1},UserDialog:{EditPermissionsButton:1,EditRolesButton:1},UserPermissionDialog:{DialogTitle:1,Grant:1,Permission:1,Revoke:1,SaveSuccess:1},UserRoleDialog:{DialogTitle:1,SaveSuccess:1},ValidationError:{Title:1},WizardDialog:{BackButton:1,CancelMessage:1,FinishButton:1,NextButton:1}},Validation:{AuthenticationError:1,CantFindUserWithEmail:1,CurrentPasswordMismatch:1,DeleteForeignKeyError:1,EmailConfirm:1,EmailInUse:1,InvalidActivateToken:1,InvalidResetToken:1,MinRequiredPasswordLength:1,SavePrimaryKeyError:1}});
 }
 

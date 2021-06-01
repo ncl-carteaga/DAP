@@ -11,8 +11,9 @@ namespace DAP.PCHDW.Entities
 
     [ConnectionKey("PCH_DW"), Module("PCHDW"), TableName("[dbo].[ScheduledJob]")]
     [DisplayName("Scheduled Job"), InstanceName("Scheduled Job")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.EDMSupport.View)]
+    [ModifyPermission(PermissionKeys.EDMSupport.Modify)]
+    [DeletePermission(PermissionKeys.EDMSupport.Delete)]
     [DataAuditLog]
     public sealed class ScheduledJobRow : Row, IIdRow, INameRow
     {

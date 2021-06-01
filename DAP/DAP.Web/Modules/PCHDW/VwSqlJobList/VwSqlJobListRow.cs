@@ -11,8 +11,9 @@ namespace DAP.PCHDW.Entities
 
     [ConnectionKey("PCH_DW"), Module("PCHDW"), TableName("[dbo].[vw_SQLJobList]")]
     [DisplayName("Vw Sql Job List"), InstanceName("Vw Sql Job List")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.EDMSupport.View)]
+    [ModifyPermission(PermissionKeys.EDMSupport.Modify)]
+    [DeletePermission(PermissionKeys.EDMSupport.Delete)]
     public sealed class VwSqlJobListRow : Row, IIdRow, INameRow
     {
         [DisplayName("Job Name"), Column("name"), Size(128), NotNull, QuickSearch]

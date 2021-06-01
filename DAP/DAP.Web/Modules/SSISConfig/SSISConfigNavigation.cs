@@ -12,3 +12,4 @@ using MyPages3 = DAP.NCLHODSSPENDVIS.Pages;
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/GSC Micros Data Flow", typeof(MyPages.MicrosDataFlowController), icon: "fa fa-wrench")]
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/CBS FR Data Flow", typeof(MyPages2.DataFlowController), icon: "fa fa-wrench")]
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/SAP ARIBA Data Flow", typeof(MyPages3.DataFlowController), icon: "fa fa-wrench")]
+[assembly: NavigationLink(int.MaxValue, "SSISConfig/Nclh Ship", typeof(MyPages.NclhShipController), icon: null)]

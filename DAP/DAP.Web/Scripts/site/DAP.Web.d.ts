@@ -452,6 +452,332 @@ declare namespace DAP.Administration {
         }
     }
 }
+declare namespace DAP.Avaya {
+    interface BrandRow {
+        BrandTk?: number;
+        Brand?: string;
+    }
+    namespace BrandRow {
+        const idProperty = "Brand";
+        const nameProperty = "Brand";
+        const localTextPrefix = "Avaya.Brand";
+        const lookupKey = "Avaya.Brand";
+        function getLookup(): Q.Lookup<BrandRow>;
+        const enum Fields {
+            BrandTk = "BrandTk",
+            Brand = "Brand"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace BrandService {
+        const baseUrl = "Avaya/Brand";
+        function Create(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<BrandRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<BrandRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/Brand/Create",
+            Update = "Avaya/Brand/Update",
+            Delete = "Avaya/Brand/Delete",
+            Retrieve = "Avaya/Brand/Retrieve",
+            List = "Avaya/Brand/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    interface CallTypeRow {
+        TypeTk?: number;
+        Type?: string;
+    }
+    namespace CallTypeRow {
+        const idProperty = "Type";
+        const nameProperty = "Type";
+        const localTextPrefix = "Avaya.CallType";
+        const lookupKey = "Avaya.Call_Type";
+        function getLookup(): Q.Lookup<CallTypeRow>;
+        const enum Fields {
+            TypeTk = "TypeTk",
+            Type = "Type"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace CallTypeService {
+        const baseUrl = "Avaya/CallType";
+        function Create(request: Serenity.SaveRequest<CallTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CallTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CallTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CallTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/CallType/Create",
+            Update = "Avaya/CallType/Update",
+            Delete = "Avaya/CallType/Delete",
+            Retrieve = "Avaya/CallType/Retrieve",
+            List = "Avaya/CallType/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    interface DepartmentRow {
+        DepartmentTk?: number;
+        Department?: string;
+    }
+    namespace DepartmentRow {
+        const idProperty = "Department";
+        const nameProperty = "Department";
+        const localTextPrefix = "Avaya.Department";
+        const lookupKey = "Avaya.Department";
+        function getLookup(): Q.Lookup<DepartmentRow>;
+        const enum Fields {
+            DepartmentTk = "DepartmentTk",
+            Department = "Department"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace DepartmentService {
+        const baseUrl = "Avaya/Department";
+        function Create(request: Serenity.SaveRequest<DepartmentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DepartmentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DepartmentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DepartmentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/Department/Create",
+            Update = "Avaya/Department/Update",
+            Delete = "Avaya/Department/Delete",
+            Retrieve = "Avaya/Department/Retrieve",
+            List = "Avaya/Department/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    interface GroupRow {
+        Tk?: number;
+        Cd?: string;
+    }
+    namespace GroupRow {
+        const idProperty = "Cd";
+        const nameProperty = "Cd";
+        const localTextPrefix = "Avaya.Group";
+        const lookupKey = "Avaya.Group";
+        function getLookup(): Q.Lookup<GroupRow>;
+        const enum Fields {
+            Tk = "Tk",
+            Cd = "Cd"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace GroupService {
+        const baseUrl = "Avaya/Group";
+        function Create(request: Serenity.SaveRequest<GroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GroupRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GroupRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/Group/Create",
+            Update = "Avaya/Group/Update",
+            Delete = "Avaya/Group/Delete",
+            Retrieve = "Avaya/Group/Retrieve",
+            List = "Avaya/Group/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    interface RegionRow {
+        RegionTk?: number;
+        Region?: string;
+    }
+    namespace RegionRow {
+        const idProperty = "Region";
+        const nameProperty = "Region";
+        const localTextPrefix = "Avaya.Region";
+        const lookupKey = "Avaya.Region";
+        function getLookup(): Q.Lookup<RegionRow>;
+        const enum Fields {
+            RegionTk = "RegionTk",
+            Region = "Region"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace RegionService {
+        const baseUrl = "Avaya/Region";
+        function Create(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/Region/Create",
+            Update = "Avaya/Region/Update",
+            Delete = "Avaya/Region/Delete",
+            Retrieve = "Avaya/Region/Retrieve",
+            List = "Avaya/Region/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+}
+declare namespace DAP.Avaya {
+    interface SkillSplitMappingForm {
+        CmsNo: Serenity.IntegerEditor;
+        AcdNo: Serenity.IntegerEditor;
+        SplitNo: Serenity.IntegerEditor;
+        SkillName: Serenity.StringEditor;
+        Brand: Serenity.LookupEditor;
+        Status: Serenity.LookupEditor;
+        GroupCd: Serenity.LookupEditor;
+        Region: Serenity.LookupEditor;
+        SupportChannel: Serenity.LookupEditor;
+        Department: Serenity.LookupEditor;
+        CallType: Serenity.LookupEditor;
+    }
+    class SkillSplitMappingForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.Avaya {
+    interface SkillSplitMappingRow {
+        SkillSplitTk?: number;
+        CmsNo?: number;
+        AcdNo?: number;
+        SplitNo?: number;
+        SkillName?: string;
+        Brand?: string;
+        Status?: string;
+        GroupCd?: string;
+        Region?: string;
+        SupportChannel?: string;
+        Department?: string;
+        CallType?: string;
+        BrandBrandTk?: number;
+        StatusStatusTk?: number;
+        GroupCdTk?: number;
+        RegionRegionTk?: number;
+        SupportChannelSuppChannelTk?: number;
+        DepartmentDepartmentTk?: number;
+        CallTypeTypeTk?: number;
+    }
+    namespace SkillSplitMappingRow {
+        const idProperty = "SkillSplitTk";
+        const nameProperty = "SkillName";
+        const localTextPrefix = "Avaya.SkillSplitMapping";
+        const enum Fields {
+            SkillSplitTk = "SkillSplitTk",
+            CmsNo = "CmsNo",
+            AcdNo = "AcdNo",
+            SplitNo = "SplitNo",
+            SkillName = "SkillName",
+            Brand = "Brand",
+            Status = "Status",
+            GroupCd = "GroupCd",
+            Region = "Region",
+            SupportChannel = "SupportChannel",
+            Department = "Department",
+            CallType = "CallType",
+            BrandBrandTk = "BrandBrandTk",
+            StatusStatusTk = "StatusStatusTk",
+            GroupCdTk = "GroupCdTk",
+            RegionRegionTk = "RegionRegionTk",
+            SupportChannelSuppChannelTk = "SupportChannelSuppChannelTk",
+            DepartmentDepartmentTk = "DepartmentDepartmentTk",
+            CallTypeTypeTk = "CallTypeTypeTk"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace SkillSplitMappingService {
+        const baseUrl = "Avaya/SkillSplitMapping";
+        function Create(request: Serenity.SaveRequest<SkillSplitMappingRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SkillSplitMappingRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SkillSplitMappingRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SkillSplitMappingRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/SkillSplitMapping/Create",
+            Update = "Avaya/SkillSplitMapping/Update",
+            Delete = "Avaya/SkillSplitMapping/Delete",
+            Retrieve = "Avaya/SkillSplitMapping/Retrieve",
+            List = "Avaya/SkillSplitMapping/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    interface StatusRow {
+        StatusTk?: number;
+        StatusDesc?: string;
+    }
+    namespace StatusRow {
+        const idProperty = "StatusDesc";
+        const nameProperty = "StatusDesc";
+        const localTextPrefix = "Avaya.Status";
+        const lookupKey = "Avaya.Status";
+        function getLookup(): Q.Lookup<StatusRow>;
+        const enum Fields {
+            StatusTk = "StatusTk",
+            StatusDesc = "StatusDesc"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace StatusService {
+        const baseUrl = "Avaya/Status";
+        function Create(request: Serenity.SaveRequest<StatusRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<StatusRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<StatusRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<StatusRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/Status/Create",
+            Update = "Avaya/Status/Update",
+            Delete = "Avaya/Status/Delete",
+            Retrieve = "Avaya/Status/Retrieve",
+            List = "Avaya/Status/List"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    interface SupportChannelRow {
+        SuppChannelTk?: number;
+        SupportChannel?: string;
+    }
+    namespace SupportChannelRow {
+        const idProperty = "SupportChannel";
+        const nameProperty = "SupportChannel";
+        const localTextPrefix = "Avaya.SupportChannel";
+        const lookupKey = "Avaya.Support_Channel";
+        function getLookup(): Q.Lookup<SupportChannelRow>;
+        const enum Fields {
+            SuppChannelTk = "SuppChannelTk",
+            SupportChannel = "SupportChannel"
+        }
+    }
+}
+declare namespace DAP.Avaya {
+    namespace SupportChannelService {
+        const baseUrl = "Avaya/SupportChannel";
+        function Create(request: Serenity.SaveRequest<SupportChannelRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SupportChannelRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SupportChannelRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SupportChannelRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Avaya/SupportChannel/Create",
+            Update = "Avaya/SupportChannel/Update",
+            Delete = "Avaya/SupportChannel/Delete",
+            Retrieve = "Avaya/SupportChannel/Retrieve",
+            List = "Avaya/SupportChannel/List"
+        }
+    }
+}
 declare namespace DAP.Common {
     interface BackgroundTaskLogRow {
         LogId?: number;
@@ -790,7 +1116,7 @@ declare namespace DAP.DWSupport {
         TypeCd: Serenity.LookupEditor;
         SirsNbrTxt: Serenity.StringEditor;
         IncidentReportedDat: Serenity.DateEditor;
-        BoardingDenialReasonDesc: Serenity.StringEditor;
+        BoardingDenialReasonDesc: Serenity.TextAreaEditor;
         CasinoIncidentNbrTxt: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -2271,6 +2597,266 @@ declare namespace DAP.NCLHODSSPENDVIS {
 declare namespace DAP.PCHDW {
 }
 declare namespace DAP.PCHDW {
+    interface DimCruiseExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class DimCruiseExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHDW {
+    interface DimCruiseForm {
+        CruiseCd: Serenity.StringEditor;
+        CruiseSegmentCd: Serenity.StringEditor;
+        CruiseName: Serenity.StringEditor;
+        LocationName: Serenity.StringEditor;
+        SeasonName: Serenity.StringEditor;
+        RouteName: Serenity.StringEditor;
+        MarketName: Serenity.StringEditor;
+        CruiseDaysQty: Serenity.IntegerEditor;
+        CruiseFromDt: Serenity.DateEditor;
+        CruiseToDt: Serenity.DateEditor;
+        CruiseSegmentDaysQty: Serenity.IntegerEditor;
+        CruiseSegmentFromDt: Serenity.DateEditor;
+        CruiseSegmentToDt: Serenity.DateEditor;
+        IrsTaxInd: Serenity.BooleanEditor;
+        IrsTaxAmt: Serenity.DecimalEditor;
+        IufExemptFeeInd: Serenity.BooleanEditor;
+        IufExemptQty: Serenity.IntegerEditor;
+        IufExemptFeeAmt: Serenity.DecimalEditor;
+        IufNonexemptFeeInd: Serenity.BooleanEditor;
+        IufNonexemptQty: Serenity.IntegerEditor;
+        IufNonexemptFeeAmt: Serenity.DecimalEditor;
+        PpfExemptInd: Serenity.BooleanEditor;
+        PpfExemptFeeAmt: Serenity.DecimalEditor;
+        PpfNonexemptInd: Serenity.BooleanEditor;
+        PpfNonexemptFeeAmt: Serenity.DecimalEditor;
+        HmfFeeInd: Serenity.BooleanEditor;
+        HmfPct: Serenity.DecimalEditor;
+        CpvTaxInd: Serenity.BooleanEditor;
+        CpvTaxAmt: Serenity.DecimalEditor;
+        CruiseSailingStatusDesc: Serenity.StringEditor;
+        FromPortCd: Serenity.StringEditor;
+        ToPortCd: Serenity.StringEditor;
+        FromPortName: Serenity.StringEditor;
+        ToPortName: Serenity.StringEditor;
+        SegmentFromPortCd: Serenity.StringEditor;
+        SegmentToPortCd: Serenity.StringEditor;
+        SegmentFromPortName: Serenity.StringEditor;
+        SegmentToPortName: Serenity.StringEditor;
+        SuperMarketCd: Serenity.StringEditor;
+        SuperMarketDesc: Serenity.StringEditor;
+        CruiseSegmentName: Serenity.StringEditor;
+        SegmentLocationName: Serenity.StringEditor;
+        SegmentSeasonName: Serenity.StringEditor;
+        SegmentRouteName: Serenity.StringEditor;
+        SegmentMarketName: Serenity.StringEditor;
+        SegmentSuperMarketCd: Serenity.StringEditor;
+        SegmentSuperMarketDesc: Serenity.StringEditor;
+        CharterInd: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        StatedCapacity: Serenity.IntegerEditor;
+        CappedCapacity: Serenity.IntegerEditor;
+        CruiseStatusCd: Serenity.StringEditor;
+        ShipCd: Serenity.StringEditor;
+        ShowInReport: Serenity.StringEditor;
+        CruiseFromDtMmddyyyy: Serenity.StringEditor;
+        CruiseToDtMmddyyyy: Serenity.StringEditor;
+        SegmentFromDtMmddyyyy: Serenity.StringEditor;
+        SegmentToDtMmddyyyy: Serenity.StringEditor;
+        MinisegInd: Serenity.StringEditor;
+        OnboardAcctTrandate: Serenity.StringEditor;
+        SegmentOnboardAcctTrandate: Serenity.StringEditor;
+        OnbrdAvgPaxQty: Serenity.IntegerEditor;
+        HighlightInd: Serenity.IntegerEditor;
+        ColorInd: Serenity.StringEditor;
+        DrydockInd: Serenity.IntegerEditor;
+        AmenityPointsAllowedQty: Serenity.IntegerEditor;
+        VarToCurve: Serenity.DecimalEditor;
+        RevenueMgmtMarketSegment: Serenity.StringEditor;
+        FinancialSuppressInd: Serenity.StringEditor;
+    }
+    class DimCruiseForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHDW {
+    interface DimCruiseRow {
+        CruiseTk?: number;
+        CruiseCd?: string;
+        CruiseSegmentCd?: string;
+        CruiseName?: string;
+        LocationName?: string;
+        SeasonName?: string;
+        RouteName?: string;
+        MarketName?: string;
+        CruiseDaysQty?: number;
+        CruiseFromDt?: string;
+        CruiseToDt?: string;
+        CruiseSegmentDaysQty?: number;
+        CruiseSegmentFromDt?: string;
+        CruiseSegmentToDt?: string;
+        IrsTaxInd?: boolean;
+        IrsTaxAmt?: number;
+        IufExemptFeeInd?: boolean;
+        IufExemptQty?: number;
+        IufExemptFeeAmt?: number;
+        IufNonexemptFeeInd?: boolean;
+        IufNonexemptQty?: number;
+        IufNonexemptFeeAmt?: number;
+        PpfExemptInd?: boolean;
+        PpfExemptFeeAmt?: number;
+        PpfNonexemptInd?: boolean;
+        PpfNonexemptFeeAmt?: number;
+        HmfFeeInd?: boolean;
+        HmfPct?: number;
+        CpvTaxInd?: boolean;
+        CpvTaxAmt?: number;
+        CruiseSailingStatusDesc?: string;
+        FromPortCd?: string;
+        ToPortCd?: string;
+        FromPortName?: string;
+        ToPortName?: string;
+        SegmentFromPortCd?: string;
+        SegmentToPortCd?: string;
+        SegmentFromPortName?: string;
+        SegmentToPortName?: string;
+        SuperMarketCd?: string;
+        SuperMarketDesc?: string;
+        CruiseSegmentName?: string;
+        SegmentLocationName?: string;
+        SegmentSeasonName?: string;
+        SegmentRouteName?: string;
+        SegmentMarketName?: string;
+        SegmentSuperMarketCd?: string;
+        SegmentSuperMarketDesc?: string;
+        CharterInd?: string;
+        CompanyCd?: string;
+        StatedCapacity?: number;
+        CappedCapacity?: number;
+        CruiseStatusCd?: string;
+        ShipCd?: string;
+        ShowInReport?: string;
+        CruiseFromDtMmddyyyy?: string;
+        CruiseToDtMmddyyyy?: string;
+        SegmentFromDtMmddyyyy?: string;
+        SegmentToDtMmddyyyy?: string;
+        MinisegInd?: string;
+        OnboardAcctTrandate?: string;
+        SegmentOnboardAcctTrandate?: string;
+        OnbrdAvgPaxQty?: number;
+        HighlightInd?: number;
+        ColorInd?: string;
+        DrydockInd?: number;
+        AmenityPointsAllowedQty?: number;
+        VarToCurve?: number;
+        RevenueMgmtMarketSegment?: string;
+        FinancialSuppressInd?: string;
+    }
+    namespace DimCruiseRow {
+        const idProperty = "CruiseTk";
+        const nameProperty = "CruiseCd";
+        const localTextPrefix = "PCHDW.DimCruise";
+        const enum Fields {
+            CruiseTk = "CruiseTk",
+            CruiseCd = "CruiseCd",
+            CruiseSegmentCd = "CruiseSegmentCd",
+            CruiseName = "CruiseName",
+            LocationName = "LocationName",
+            SeasonName = "SeasonName",
+            RouteName = "RouteName",
+            MarketName = "MarketName",
+            CruiseDaysQty = "CruiseDaysQty",
+            CruiseFromDt = "CruiseFromDt",
+            CruiseToDt = "CruiseToDt",
+            CruiseSegmentDaysQty = "CruiseSegmentDaysQty",
+            CruiseSegmentFromDt = "CruiseSegmentFromDt",
+            CruiseSegmentToDt = "CruiseSegmentToDt",
+            IrsTaxInd = "IrsTaxInd",
+            IrsTaxAmt = "IrsTaxAmt",
+            IufExemptFeeInd = "IufExemptFeeInd",
+            IufExemptQty = "IufExemptQty",
+            IufExemptFeeAmt = "IufExemptFeeAmt",
+            IufNonexemptFeeInd = "IufNonexemptFeeInd",
+            IufNonexemptQty = "IufNonexemptQty",
+            IufNonexemptFeeAmt = "IufNonexemptFeeAmt",
+            PpfExemptInd = "PpfExemptInd",
+            PpfExemptFeeAmt = "PpfExemptFeeAmt",
+            PpfNonexemptInd = "PpfNonexemptInd",
+            PpfNonexemptFeeAmt = "PpfNonexemptFeeAmt",
+            HmfFeeInd = "HmfFeeInd",
+            HmfPct = "HmfPct",
+            CpvTaxInd = "CpvTaxInd",
+            CpvTaxAmt = "CpvTaxAmt",
+            CruiseSailingStatusDesc = "CruiseSailingStatusDesc",
+            FromPortCd = "FromPortCd",
+            ToPortCd = "ToPortCd",
+            FromPortName = "FromPortName",
+            ToPortName = "ToPortName",
+            SegmentFromPortCd = "SegmentFromPortCd",
+            SegmentToPortCd = "SegmentToPortCd",
+            SegmentFromPortName = "SegmentFromPortName",
+            SegmentToPortName = "SegmentToPortName",
+            SuperMarketCd = "SuperMarketCd",
+            SuperMarketDesc = "SuperMarketDesc",
+            CruiseSegmentName = "CruiseSegmentName",
+            SegmentLocationName = "SegmentLocationName",
+            SegmentSeasonName = "SegmentSeasonName",
+            SegmentRouteName = "SegmentRouteName",
+            SegmentMarketName = "SegmentMarketName",
+            SegmentSuperMarketCd = "SegmentSuperMarketCd",
+            SegmentSuperMarketDesc = "SegmentSuperMarketDesc",
+            CharterInd = "CharterInd",
+            CompanyCd = "CompanyCd",
+            StatedCapacity = "StatedCapacity",
+            CappedCapacity = "CappedCapacity",
+            CruiseStatusCd = "CruiseStatusCd",
+            ShipCd = "ShipCd",
+            ShowInReport = "ShowInReport",
+            CruiseFromDtMmddyyyy = "CruiseFromDtMmddyyyy",
+            CruiseToDtMmddyyyy = "CruiseToDtMmddyyyy",
+            SegmentFromDtMmddyyyy = "SegmentFromDtMmddyyyy",
+            SegmentToDtMmddyyyy = "SegmentToDtMmddyyyy",
+            MinisegInd = "MinisegInd",
+            OnboardAcctTrandate = "OnboardAcctTrandate",
+            SegmentOnboardAcctTrandate = "SegmentOnboardAcctTrandate",
+            OnbrdAvgPaxQty = "OnbrdAvgPaxQty",
+            HighlightInd = "HighlightInd",
+            ColorInd = "ColorInd",
+            DrydockInd = "DrydockInd",
+            AmenityPointsAllowedQty = "AmenityPointsAllowedQty",
+            VarToCurve = "VarToCurve",
+            RevenueMgmtMarketSegment = "RevenueMgmtMarketSegment",
+            FinancialSuppressInd = "FinancialSuppressInd"
+        }
+    }
+}
+declare namespace DAP.PCHDW {
+    namespace DimCruiseService {
+        const baseUrl = "PCHDW/DimCruise";
+        function Create(request: Serenity.SaveRequest<DimCruiseRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DimCruiseRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DimCruiseRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DimCruiseRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHDW/DimCruise/Create",
+            Update = "PCHDW/DimCruise/Update",
+            Delete = "PCHDW/DimCruise/Delete",
+            Retrieve = "PCHDW/DimCruise/Retrieve",
+            List = "PCHDW/DimCruise/List",
+            ExcelImport = "PCHDW/DimCruise/ExcelImport"
+        }
+    }
+}
+declare namespace DAP.PCHDW {
+}
+declare namespace DAP.PCHDW {
     interface DimInvoiceForm {
         InvoiceNum: Serenity.StringEditor;
         CompanyCd: Serenity.StringEditor;
@@ -2663,6 +3249,54 @@ declare namespace DAP.PCHDW {
             Delete = "PCHDW/DimInvoice/Delete",
             Retrieve = "PCHDW/DimInvoice/Retrieve",
             List = "PCHDW/DimInvoice/List"
+        }
+    }
+}
+declare namespace DAP.PCHDW {
+}
+declare namespace DAP.PCHDW {
+    interface RevenueAdhocManagementForm {
+        DatabaseId: Serenity.StringEditor;
+        CubeId: Serenity.StringEditor;
+        MeasuregroupId: Serenity.StringEditor;
+        AdhocDate: Serenity.DateEditor;
+        AdhocDateTk: Serenity.IntegerEditor;
+        AdhocStlydate: Serenity.DateEditor;
+        AdhocStlydateTk: Serenity.IntegerEditor;
+        LastProcessedDateTime: Serenity.DateEditor;
+    }
+    class RevenueAdhocManagementForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHDW {
+    interface RevenueAdhocManagementRow {
+        Key?: number;
+        DatabaseId?: string;
+        CubeId?: string;
+        MeasuregroupId?: string;
+        AdhocDate?: string;
+        AdhocDateTk?: number;
+        AdhocStlydate?: string;
+        AdhocStlydateTk?: number;
+        LastProcessedDateTime?: string;
+    }
+    namespace RevenueAdhocManagementRow {
+        const idProperty = "Key";
+        const nameProperty = "DatabaseId";
+        const localTextPrefix = "PCHDW.RevenueAdhocManagement";
+        const enum Fields {
+            Key = "Key",
+            DatabaseId = "DatabaseId",
+            CubeId = "CubeId",
+            MeasuregroupId = "MeasuregroupId",
+            AdhocDate = "AdhocDate",
+            AdhocDateTk = "AdhocDateTk",
+            AdhocStlydate = "AdhocStlydate",
+            AdhocStlydateTk = "AdhocStlydateTk",
+            LastProcessedDateTime = "LastProcessedDateTime"
         }
     }
 }
@@ -3355,6 +3989,405 @@ declare namespace DAP.PCHODS {
         static formKey: string;
         private static init;
         constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface AgencyRow {
+        CompanyCd?: string;
+        AgencyCd?: string;
+        AttnDesc?: string;
+        AgencyNameDesc?: string;
+        Addr1?: string;
+        Addr2?: string;
+        Addr3?: string;
+        CityName?: string;
+        StateNm?: string;
+        ZipCd?: string;
+        Zip2Cd?: string;
+        Phone1Num?: string;
+        Phone2Num?: string;
+        FaxNum?: string;
+        CommissionPct?: number;
+        GsaInd?: string;
+        NationalAcctInd?: string;
+        GsaPriceLevelAmt?: number;
+        Comment1Desc?: string;
+        Comment2Desc?: string;
+        ConsortiumCd?: string;
+        IataNum?: string;
+        CliaNum?: string;
+        PreviousYrPaxQty?: number;
+        PreviousYrRevAmt?: number;
+        LastYearSalesAmt?: number;
+        CurrentYearSalesAmt?: number;
+        UserInUseById?: string;
+        KeyAcctInd?: string;
+        AgencyDefaultStatusInd?: string;
+        LastYearKeyAcctCd?: string;
+        SalesRegionCd?: string;
+        RevLabelCd?: string;
+        PseudoCityCd?: string;
+        ApolloInd?: string;
+        Country?: string;
+        CorporationInd?: string;
+        TaxIdNum?: string;
+        CorpComDesc?: string;
+        Prt1099Ind?: string;
+        PrtD1099Dt?: string;
+        TaxInfoReceivedDt?: string;
+        InsDefaultCd?: string;
+        GdsSysCd?: string;
+        AllowPlatInd?: string;
+        AllowSdbdInd?: string;
+        AllowGpInd?: string;
+        MahanaClubInd?: string;
+        McActiveInd?: string;
+        EMemberDesc?: string;
+        AgencyStatusCd?: string;
+        CurrencyCd?: string;
+        SecondaryCurrencyCd?: string;
+        OfficeCd?: string;
+        AgencyEmail?: string;
+        AgencyWebAddress?: string;
+        PromoAdInd?: string;
+        VatId?: string;
+        SelfBillInd?: string;
+        PreferredCommunicationCd?: string;
+        PreferredLanguageDesc?: string;
+        NactaNum?: string;
+        ActiveInd?: string;
+        BdmCd?: string;
+        SendCustInvInd?: string;
+        CreditAgtInd?: string;
+        AgentNum?: string;
+        PinClubInd?: string;
+        FinHoldInd?: string;
+        L7daysNum?: number;
+        Option1DueDaysQty?: number;
+        Option2DueDaysQty?: number;
+        AutoCxlInd?: string;
+        ConsortiumAddedDt?: string;
+        MasterAgencyInd?: string;
+        OwnerCd?: string;
+        AutoEnvoInd?: string;
+        OverVacSummInd?: string;
+        VacSummEmailDesc?: string;
+        TaxPayer1099Name?: string;
+        AgentLinkDesc?: string;
+        AllowBankInd?: string;
+        BankAccountBalAmt?: number;
+        BankAcct2Amt?: number;
+        PaymentViaWireInd?: string;
+        ConsortiumRegionCd?: string;
+        ConsortRgnNum?: string;
+        ConsortiumRegionAddedDt?: string;
+        RequiredSecondaryAgentInd?: string;
+        OverrideFinalDaysInd?: string;
+        FinalDaysQty?: number;
+        OverrideOption1DaysInd?: string;
+        OverrideOption2DaysInd?: string;
+        FirstBookingDt?: string;
+        AgencyCreateDt?: string;
+        BdmRepCd?: string;
+        SsrRepCd?: string;
+        NvsKeyAcctInd?: string;
+        LastUpdated?: string;
+        Key1?: string;
+        SiblingId?: number;
+        AgencyCdName?: string;
+    }
+    namespace AgencyRow {
+        const idProperty = "AgencyCd";
+        const nameProperty = "AgencyCdName";
+        const localTextPrefix = "PCHODSNVS.Agency";
+        const lookupKey = "PCHODSNVS.Agency";
+        function getLookup(): Q.Lookup<AgencyRow>;
+        const enum Fields {
+            CompanyCd = "CompanyCd",
+            AgencyCd = "AgencyCd",
+            AttnDesc = "AttnDesc",
+            AgencyNameDesc = "AgencyNameDesc",
+            Addr1 = "Addr1",
+            Addr2 = "Addr2",
+            Addr3 = "Addr3",
+            CityName = "CityName",
+            StateNm = "StateNm",
+            ZipCd = "ZipCd",
+            Zip2Cd = "Zip2Cd",
+            Phone1Num = "Phone1Num",
+            Phone2Num = "Phone2Num",
+            FaxNum = "FaxNum",
+            CommissionPct = "CommissionPct",
+            GsaInd = "GsaInd",
+            NationalAcctInd = "NationalAcctInd",
+            GsaPriceLevelAmt = "GsaPriceLevelAmt",
+            Comment1Desc = "Comment1Desc",
+            Comment2Desc = "Comment2Desc",
+            ConsortiumCd = "ConsortiumCd",
+            IataNum = "IataNum",
+            CliaNum = "CliaNum",
+            PreviousYrPaxQty = "PreviousYrPaxQty",
+            PreviousYrRevAmt = "PreviousYrRevAmt",
+            LastYearSalesAmt = "LastYearSalesAmt",
+            CurrentYearSalesAmt = "CurrentYearSalesAmt",
+            UserInUseById = "UserInUseById",
+            KeyAcctInd = "KeyAcctInd",
+            AgencyDefaultStatusInd = "AgencyDefaultStatusInd",
+            LastYearKeyAcctCd = "LastYearKeyAcctCd",
+            SalesRegionCd = "SalesRegionCd",
+            RevLabelCd = "RevLabelCd",
+            PseudoCityCd = "PseudoCityCd",
+            ApolloInd = "ApolloInd",
+            Country = "Country",
+            CorporationInd = "CorporationInd",
+            TaxIdNum = "TaxIdNum",
+            CorpComDesc = "CorpComDesc",
+            Prt1099Ind = "Prt1099Ind",
+            PrtD1099Dt = "PrtD1099Dt",
+            TaxInfoReceivedDt = "TaxInfoReceivedDt",
+            InsDefaultCd = "InsDefaultCd",
+            GdsSysCd = "GdsSysCd",
+            AllowPlatInd = "AllowPlatInd",
+            AllowSdbdInd = "AllowSdbdInd",
+            AllowGpInd = "AllowGpInd",
+            MahanaClubInd = "MahanaClubInd",
+            McActiveInd = "McActiveInd",
+            EMemberDesc = "EMemberDesc",
+            AgencyStatusCd = "AgencyStatusCd",
+            CurrencyCd = "CurrencyCd",
+            SecondaryCurrencyCd = "SecondaryCurrencyCd",
+            OfficeCd = "OfficeCd",
+            AgencyEmail = "AgencyEmail",
+            AgencyWebAddress = "AgencyWebAddress",
+            PromoAdInd = "PromoAdInd",
+            VatId = "VatId",
+            SelfBillInd = "SelfBillInd",
+            PreferredCommunicationCd = "PreferredCommunicationCd",
+            PreferredLanguageDesc = "PreferredLanguageDesc",
+            NactaNum = "NactaNum",
+            ActiveInd = "ActiveInd",
+            BdmCd = "BdmCd",
+            SendCustInvInd = "SendCustInvInd",
+            CreditAgtInd = "CreditAgtInd",
+            AgentNum = "AgentNum",
+            PinClubInd = "PinClubInd",
+            FinHoldInd = "FinHoldInd",
+            L7daysNum = "L7daysNum",
+            Option1DueDaysQty = "Option1DueDaysQty",
+            Option2DueDaysQty = "Option2DueDaysQty",
+            AutoCxlInd = "AutoCxlInd",
+            ConsortiumAddedDt = "ConsortiumAddedDt",
+            MasterAgencyInd = "MasterAgencyInd",
+            OwnerCd = "OwnerCd",
+            AutoEnvoInd = "AutoEnvoInd",
+            OverVacSummInd = "OverVacSummInd",
+            VacSummEmailDesc = "VacSummEmailDesc",
+            TaxPayer1099Name = "TaxPayer1099Name",
+            AgentLinkDesc = "AgentLinkDesc",
+            AllowBankInd = "AllowBankInd",
+            BankAccountBalAmt = "BankAccountBalAmt",
+            BankAcct2Amt = "BankAcct2Amt",
+            PaymentViaWireInd = "PaymentViaWireInd",
+            ConsortiumRegionCd = "ConsortiumRegionCd",
+            ConsortRgnNum = "ConsortRgnNum",
+            ConsortiumRegionAddedDt = "ConsortiumRegionAddedDt",
+            RequiredSecondaryAgentInd = "RequiredSecondaryAgentInd",
+            OverrideFinalDaysInd = "OverrideFinalDaysInd",
+            FinalDaysQty = "FinalDaysQty",
+            OverrideOption1DaysInd = "OverrideOption1DaysInd",
+            OverrideOption2DaysInd = "OverrideOption2DaysInd",
+            FirstBookingDt = "FirstBookingDt",
+            AgencyCreateDt = "AgencyCreateDt",
+            BdmRepCd = "BdmRepCd",
+            SsrRepCd = "SsrRepCd",
+            NvsKeyAcctInd = "NvsKeyAcctInd",
+            LastUpdated = "LastUpdated",
+            Key1 = "Key1",
+            SiblingId = "SiblingId",
+            AgencyCdName = "AgencyCdName"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace AgencyService {
+        const baseUrl = "PCHODSNVS/Agency";
+        function Create(request: Serenity.SaveRequest<AgencyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AgencyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AgencyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AgencyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/Agency/Create",
+            Update = "PCHODSNVS/Agency/Update",
+            Delete = "PCHODSNVS/Agency/Delete",
+            Retrieve = "PCHODSNVS/Agency/Retrieve",
+            List = "PCHODSNVS/Agency/List"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+}
+declare namespace DAP.PCHODSNVS {
+    interface ConsortiumExceptionListForm {
+        CompanyCd: Serenity.StringEditor;
+        NewItemType: Serenity.LookupEditor;
+        NewItemName: Serenity.StringEditor;
+        ItemType: Serenity.LookupEditor;
+        ItemCd: Serenity.IntegerEditor;
+        ItemName: Serenity.StringEditor;
+        ExcludeInd: Serenity.BooleanEditor;
+        CombineInd: Serenity.BooleanEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class ConsortiumExceptionListForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface ConsortiumExceptionListRow {
+        ConsortiumExceptionListTk?: number;
+        CompanyCd?: string;
+        NewItemType?: string;
+        NewItemName?: string;
+        ItemType?: string;
+        ItemCd?: number;
+        ItemName?: string;
+        ExcludeInd?: boolean;
+        CombineInd?: boolean;
+        LoadDt?: string;
+        NewItemTypeTypeTk?: number;
+        ItemTypeTypeTk?: number;
+    }
+    namespace ConsortiumExceptionListRow {
+        const idProperty = "ConsortiumExceptionListTk";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "PCHODSNVS.ConsortiumExceptionList";
+        const enum Fields {
+            ConsortiumExceptionListTk = "ConsortiumExceptionListTk",
+            CompanyCd = "CompanyCd",
+            NewItemType = "NewItemType",
+            NewItemName = "NewItemName",
+            ItemType = "ItemType",
+            ItemCd = "ItemCd",
+            ItemName = "ItemName",
+            ExcludeInd = "ExcludeInd",
+            CombineInd = "CombineInd",
+            LoadDt = "LoadDt",
+            NewItemTypeTypeTk = "NewItemTypeTypeTk",
+            ItemTypeTypeTk = "ItemTypeTypeTk"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace ConsortiumExceptionListService {
+        const baseUrl = "PCHODSNVS/ConsortiumExceptionList";
+        function Create(request: Serenity.SaveRequest<ConsortiumExceptionListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ConsortiumExceptionListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ConsortiumExceptionListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ConsortiumExceptionListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/ConsortiumExceptionList/Create",
+            Update = "PCHODSNVS/ConsortiumExceptionList/Update",
+            Delete = "PCHODSNVS/ConsortiumExceptionList/Delete",
+            Retrieve = "PCHODSNVS/ConsortiumExceptionList/Retrieve",
+            List = "PCHODSNVS/ConsortiumExceptionList/List"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+}
+declare namespace DAP.PCHODSNVS {
+    interface GsaDistributionListForm {
+        CompanyCd: Serenity.StringEditor;
+        AgencyCd: Serenity.LookupEditor;
+        AccountName: Serenity.StringEditor;
+        ContactName: Serenity.StringEditor;
+        Email: Serenity.StringEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class GsaDistributionListForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface GsaDistributionListRow {
+        GsaDistributionListTk?: number;
+        CompanyCd?: string;
+        AgencyCd?: string;
+        AccountName?: string;
+        ContactName?: string;
+        Email?: string;
+        LoadDt?: string;
+    }
+    namespace GsaDistributionListRow {
+        const idProperty = "GsaDistributionListTk";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "PCHODSNVS.GsaDistributionList";
+        const enum Fields {
+            GsaDistributionListTk = "GsaDistributionListTk",
+            CompanyCd = "CompanyCd",
+            AgencyCd = "AgencyCd",
+            AccountName = "AccountName",
+            ContactName = "ContactName",
+            Email = "Email",
+            LoadDt = "LoadDt"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace GsaDistributionListService {
+        const baseUrl = "PCHODSNVS/GsaDistributionList";
+        function Create(request: Serenity.SaveRequest<GsaDistributionListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GsaDistributionListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GsaDistributionListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GsaDistributionListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/GsaDistributionList/Create",
+            Update = "PCHODSNVS/GsaDistributionList/Update",
+            Delete = "PCHODSNVS/GsaDistributionList/Delete",
+            Retrieve = "PCHODSNVS/GsaDistributionList/Retrieve",
+            List = "PCHODSNVS/GsaDistributionList/List"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface ItemTypeRow {
+        TypeTk?: number;
+        Type?: string;
+    }
+    namespace ItemTypeRow {
+        const idProperty = "Type";
+        const nameProperty = "Type";
+        const localTextPrefix = "PCHODSNVS.ItemType";
+        const lookupKey = "PCHODSNVS.Item_Type";
+        function getLookup(): Q.Lookup<ItemTypeRow>;
+        const enum Fields {
+            TypeTk = "TypeTk",
+            Type = "Type"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace ItemTypeService {
+        const baseUrl = "PCHODSNVS/ItemType";
+        function Create(request: Serenity.SaveRequest<ItemTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ItemTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ItemTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ItemTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/ItemType/Create",
+            Update = "PCHODSNVS/ItemType/Update",
+            Delete = "PCHODSNVS/ItemType/Delete",
+            Retrieve = "PCHODSNVS/ItemType/Retrieve",
+            List = "PCHODSNVS/ItemType/List"
+        }
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -4538,6 +5571,26 @@ declare namespace DAP.Administration {
         username: string;
     }
 }
+declare namespace DAP.Avaya {
+    class SkillSplitMappingDialog extends Serenity.EntityDialog<SkillSplitMappingRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: SkillSplitMappingForm;
+    }
+}
+declare namespace DAP.Avaya {
+    class SkillSplitMappingGrid extends Serenity.EntityGrid<SkillSplitMappingRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SkillSplitMappingDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
 declare namespace DAP.LanguageList {
     function getValue(): string[][];
 }
@@ -4924,6 +5977,7 @@ declare namespace DAP.DWSupport {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -5363,6 +6417,38 @@ declare namespace DAP.NCLHODSSPENDVIS {
     }
 }
 declare namespace DAP.PCHDW {
+    class DimCruiseDialog extends Serenity.EntityDialog<DimCruiseRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: DimCruiseForm;
+        protected updateInterface(): void;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.PCHDW {
+    class DimCruiseExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHDW {
+    class DimCruiseGrid extends Serenity.EntityGrid<DimCruiseRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DimCruiseDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.PCHDW {
     class DimInvoiceDialog extends Serenity.EntityDialog<DimInvoiceRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -5382,6 +6468,30 @@ declare namespace DAP.PCHDW {
         protected getService(): string;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.PCHDW {
+    class RevenueAdhocManagementDialog extends Serenity.EntityDialog<RevenueAdhocManagementRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RevenueAdhocManagementForm;
+        protected afterLoadEntity(): void;
+    }
+}
+declare namespace DAP.PCHDW {
+    class RevenueAdhocManagementGrid extends Serenity.EntityGrid<RevenueAdhocManagementRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RevenueAdhocManagementDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace DAP.PCHDW {
@@ -5687,6 +6797,46 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class ConsortiumExceptionListDialog extends Serenity.EntityDialog<ConsortiumExceptionListRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ConsortiumExceptionListForm;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class ConsortiumExceptionListGrid extends Serenity.EntityGrid<ConsortiumExceptionListRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ConsortiumExceptionListDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class GsaDistributionListDialog extends Serenity.EntityDialog<GsaDistributionListRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GsaDistributionListForm;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class GsaDistributionListGrid extends Serenity.EntityGrid<GsaDistributionListRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GsaDistributionListDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrBudgetDialog extends Serenity.EntityDialog<NtrBudgetRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -5985,5 +7135,105 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.PCHDW {
+    namespace RevenueAdhocManagementService {
+        const baseUrl = "PCHDW/RevenueAdhocManagement";
+        function Create(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RevenueAdhocManagementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RevenueAdhocManagementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExecuteSP(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHDW/RevenueAdhocManagement/Create",
+            Update = "PCHDW/RevenueAdhocManagement/Update",
+            Delete = "PCHDW/RevenueAdhocManagement/Delete",
+            Retrieve = "PCHDW/RevenueAdhocManagement/Retrieve",
+            List = "PCHDW/RevenueAdhocManagement/List",
+            ExecuteSP = "PCHDW/RevenueAdhocManagement/ExecuteSP"
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    class NclhShipForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface NclhShipForm {
+        ShipAbbreviation: Serenity.StringEditor;
+        ShipFullName: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        DepartmentCd: Serenity.StringEditor;
+        LocationCd: Serenity.StringEditor;
+        IsActive: Serenity.BooleanEditor;
+        ShipTk: Serenity.IntegerEditor;
+        HasMerged: Serenity.BooleanEditor;
+    }
+}
+declare namespace DAP.SSISConfig {
+    interface NclhShipRow {
+        ShipId?: number;
+        ShipAbbreviation?: string;
+        ShipFullName?: string;
+        CompanyCd?: string;
+        DepartmentCd?: string;
+        LocationCd?: string;
+        IsActive?: boolean;
+        ShipTk?: number;
+        HasMerged?: boolean;
+    }
+    namespace NclhShipRow {
+        const idProperty = "ShipId";
+        const nameProperty = "ShipAbbreviation";
+        const localTextPrefix = "SSISConfig.NclhShip";
+        namespace Fields {
+            const ShipId: any;
+            const ShipAbbreviation: any;
+            const ShipFullName: any;
+            const CompanyCd: any;
+            const DepartmentCd: any;
+            const LocationCd: any;
+            const IsActive: any;
+            const ShipTk: any;
+            const HasMerged: any;
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    namespace NclhShipService {
+        const baseUrl = "SSISConfig/NclhShip";
+        function Create(request: Serenity.SaveRequest<NclhShipRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<NclhShipRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NclhShipRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NclhShipRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.SSISConfig {
+    class NclhShipDialog extends Serenity.EntityDialog<NclhShipRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: NclhShipForm;
+    }
+}
+declare namespace DAP.SSISConfig {
+    class NclhShipGrid extends Serenity.EntityGrid<NclhShipRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof NclhShipDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }

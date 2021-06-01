@@ -35,19 +35,21 @@ namespace DAP.PCHODSNVS {
             }));
 
             // add our import button
-            //buttons.push({
-            //    title: 'Import From Excel',
-            //    cssClass: 'export-xlsx-button',
-            //    onClick: () => {
-            //        // open import dialog, let it handle rest
-            //        var dialog = new KeyAcctTargetExcelImportDialog();
-            //        dialog.element.on('dialogclose', () => {
-            //            this.refresh();
-            //            dialog = null;
-            //        });
-            //        dialog.dialogOpen();
-            //    }
-            //});
+            buttons.push({
+                title: 'Import From Excel',                
+                cssClass: 'export-xlsx-button',
+                onClick: () => {
+                    // open import dialog, let it handle rest
+                    var dialog = new KeyAcctTargetExcelImportDialog();
+                    dialog.element.on('dialogclose', () => {
+                        this.refresh();
+                        dialog = null;
+                    });
+                    dialog.dialogOpen();
+                }
+            });
+
+            buttons.splice(Q.indexOf(buttons, x => x.title == "Import From Excel"), 1);
 
             //buttons.push(Common.PdfExportHelper.createToolButton({
             //    grid: this,

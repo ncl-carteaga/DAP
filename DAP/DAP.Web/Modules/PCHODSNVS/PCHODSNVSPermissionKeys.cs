@@ -26,8 +26,21 @@ namespace DAP.PCHODSNVS
         [Description("Finance_110")]
         public const string Finance110 = "PCHODSNVS:Finance110";
 
-        [Description("Finance_KeyAcctTarget")]
-        public const string KeyAcctTarget = "PCHODSNVS:KeyAcctTarget";
+        [DisplayName("Page")]
+        public class PagePermission
+        {
+            public const string KeyAcctTarget = "PCHODSNVS:Page:KeyAcctTarget";
+            public const string GSADistributionList = "PCHODSNVS:Page:GSADistributionList";
+            public const string ConsortiumExceptionList = "PCHODSNVS:Page:ConsortiumExceptionList";
+            public const string NTRIntlDatelineCruises = "PCHODSNVS:Page:NTRIntlDatelineCruises";
+            public const string NTRDR010Comment = "PCHODSNVS:Page:NTRDR010Comment";
+            public const string NTRForecast = "PCHODSNVS:Page:NTRForecast";
+            public const string NTRBudgetByChannel = "PCHODSNVS:Page:NTRBudgetByChannel";
+            public const string NTRBudget = "PCHODSNVS:Page:NTRBudget";
+            public const string NTRActuals = "PCHODSNVS:Page:NTRActuals";
+
+        }
+
     }
 
 }

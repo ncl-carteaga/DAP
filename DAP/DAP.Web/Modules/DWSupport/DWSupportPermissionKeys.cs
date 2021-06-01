@@ -20,5 +20,16 @@ namespace DAP.DWSupport
 
         [Description("[General]")]
         public const string General = "DWSupport:General";
+
+        [DisplayName("Page")]
+        public class PagePermission
+        {
+            public const string GuestPreventDeparture = "DWSupp:Page:GuestPreventDeparture";
+            public const string DistrictMasterSupp = "DWSupp:Page:DistrictMasterSupp";
+            public const string FinReportPublishingSupp = "DWSupp:Page:FinReportPublishingSupp";
+            public const string SailingMasterSupp = "DWSupp:Page:SailingMasterSupp";
+        }
     }
+
+    
 }

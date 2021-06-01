@@ -6,7 +6,8 @@ namespace DAP.PCHODSNVS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODSNVS/NtrPastMonthsActual"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.NtrPastMonthsActualRow))]
+    //[PageAuthorize(typeof(Entities.NtrPastMonthsActualRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.NTRActuals)]
     public class NtrPastMonthsActualController : Controller
     {
         public ActionResult Index()

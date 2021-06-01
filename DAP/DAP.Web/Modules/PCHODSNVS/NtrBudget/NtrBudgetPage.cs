@@ -6,7 +6,8 @@ namespace DAP.PCHODSNVS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODSNVS/NtrBudget"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.NtrBudgetRow))]
+    //[PageAuthorize(typeof(Entities.NtrBudgetRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.NTRBudget)]
     public class NtrBudgetController : Controller
     {
         public ActionResult Index()

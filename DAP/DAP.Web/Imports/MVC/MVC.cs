@@ -33,6 +33,15 @@ namespace MVC
 
         }
 
+        public static class Avaya
+        {
+            public static class SkillSplitMapping
+            {
+                public const string SkillSplitMappingIndex = "~/Modules/Avaya/SkillSplitMapping/SkillSplitMappingIndex.cshtml";
+            }
+
+        }
+
         public static class Common
         {
             public static class Dashboard
@@ -189,9 +198,19 @@ namespace MVC
 
         public static class PCHDW
         {
+            public static class DimCruise
+            {
+                public const string DimCruiseIndex = "~/Modules/PCHDW/DimCruise/DimCruiseIndex.cshtml";
+            }
+
             public static class DimInvoice
             {
                 public const string DimInvoiceIndex = "~/Modules/PCHDW/DimInvoice/DimInvoiceIndex.cshtml";
+            }
+
+            public static class RevenueAdhocManagement
+            {
+                public const string RevenueAdhocManagementIndex = "~/Modules/PCHDW/RevenueAdhocManagement/RevenueAdhocManagementIndex.cshtml";
             }
 
             public static class ScheduledJob
@@ -252,6 +271,16 @@ namespace MVC
 
         public static class PCHODSNVS
         {
+            public static class ConsortiumExceptionList
+            {
+                public const string ConsortiumExceptionListIndex = "~/Modules/PCHODSNVS/ConsortiumExceptionList/ConsortiumExceptionListIndex.cshtml";
+            }
+
+            public static class GsaDistributionList
+            {
+                public const string GsaDistributionListIndex = "~/Modules/PCHODSNVS/GsaDistributionList/GsaDistributionListIndex.cshtml";
+            }
+
             public static class NtrBudget
             {
                 public const string NtrBudgetIndex = "~/Modules/PCHODSNVS/NtrBudget/NtrBudgetIndex.cshtml";

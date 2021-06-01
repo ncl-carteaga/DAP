@@ -6,7 +6,8 @@ namespace DAP.PCHODSNVS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODSNVS/SuppKeyAcctTarget"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.SuppKeyAcctTargetRow))]
+    //[PageAuthorize(typeof(Entities.SuppKeyAcctTargetRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.KeyAcctTarget)]
     public class SuppKeyAcctTargetController : Controller
     {
         public ActionResult Index()

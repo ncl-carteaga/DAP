@@ -6,7 +6,8 @@ namespace DAP.PCHDW.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHDW/VwSqlJobList"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.VwSqlJobListRow))]
+    //[PageAuthorize(typeof(Entities.VwSqlJobListRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.SqlJobList)]
     public class VwSqlJobListController : Controller
     {
         public ActionResult Index()

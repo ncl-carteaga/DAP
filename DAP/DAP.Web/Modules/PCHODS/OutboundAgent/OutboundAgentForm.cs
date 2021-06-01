@@ -16,6 +16,8 @@ namespace DAP.PCHODS.Forms
         public String NvsUserId { get; set; }
         public String CompanyCd { get; set; }        
         public String PrimaryBrand { get; set; }
+        public string CobrandInd { get; set; }
+        public string TeamCompanyCd { get; set; }
         public String AgentLocationId { get; set; }
         public DateTime StartInactiveDt { get; set; }
     }

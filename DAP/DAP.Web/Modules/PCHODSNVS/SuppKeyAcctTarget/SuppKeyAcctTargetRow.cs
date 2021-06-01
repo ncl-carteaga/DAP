@@ -11,8 +11,9 @@ namespace DAP.PCHODSNVS.Entities
 
     [ConnectionKey("PCH_ODS_NVS"), Module("PCHODSNVS"), TableName("[dap].[supp_key_acct_target]")]
     [DisplayName("Supp Key Acct Target"), InstanceName("Supp Key Acct Target")]
-    [ReadPermission(PermissionKeys.KeyAcctTarget)]
-    [ModifyPermission(PermissionKeys.KeyAcctTarget)]
+    [ReadPermission(PermissionKeys.Finance.View)]
+    [ModifyPermission(PermissionKeys.Finance.Modify)]
+    [DeletePermission(PermissionKeys.Finance.Delete)]
     [DataAuditLog]
     public sealed class SuppKeyAcctTargetRow : Row, IIdRow, INameRow
     {

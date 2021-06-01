@@ -1143,6 +1143,13 @@
     <Content Include="Modules\PCHODSNVS\SuppKeyAcctTarget\SuppKeyAcctTargetIndex.cshtml" />
     <Content Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureIndex.cshtml" />
     <Content Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListIndex.cshtml" />
+    <Content Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingIndex.cshtml" />
+    <Content Include="Content\site\site.avaya.less" />
+    <Content Include="Modules\PCHDW\DimCruise\DimCruiseIndex.cshtml" />
+    <Content Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementIndex.cshtml" />
+    <Content Include="Modules\SSISConfig\NclhShip\NclhShipIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1161,6 +1168,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.UserListRequest.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SkillSplitMappingColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DistrictMasterSuppColumns.ts">
@@ -1256,7 +1266,19 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHODSSPENDVIS.DataFlowColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCruiseColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCruiseExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimInvoiceColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.ScheduledJobColumns.ts">
@@ -1299,6 +1321,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.SelectCompanyForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.ConsortiumExceptionListColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.GsaDistributionListColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.KeyAcctTargetExcelImportForm.ts">
@@ -1377,6 +1405,7 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyDialog.ts" />
@@ -1466,6 +1495,18 @@
     <TypeScriptCompile Include="Modules\DWSupport\GuestPreventDeparture\GuestPreventDepartureGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListGrid.ts" />
+    <TypeScriptCompile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingDialog.ts" />
+    <TypeScriptCompile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementGrid.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\NclhShip\NclhShipDialog.ts" />
+    <TypeScriptCompile Include="Modules\SSISConfig\NclhShip\NclhShipGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2538,6 +2579,105 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.GsaDistributionListRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.GsaDistributionListService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.GsaDistributionListForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.AgencyRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.AgencyService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.ConsortiumExceptionListRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.ConsortiumExceptionListService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.ConsortiumExceptionListForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.ItemTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.ItemTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SkillSplitMappingRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SkillSplitMappingService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SkillSplitMappingForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.BrandRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.BrandService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.CallTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.CallTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.DepartmentRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.DepartmentService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.GroupRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.GroupService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.RegionRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.RegionService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.StatusRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.StatusService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SupportChannelRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SupportChannelService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCruiseRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCruiseService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCruiseForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2624,6 +2764,7 @@
     <Compile Include="Modules\Administration\User\UserColumns.cs" />
     <Compile Include="Modules\Administration\User\UserDataScript.cs" />
     <Compile Include="Modules\Administration\User\UserListRequest.cs" />
+    <Compile Include="Modules\Avaya\AvayaPermissionKeys.cs" />
     <Compile Include="Modules\Common\BackgroundTasks\BackgroundTaskManager.cs" />
     <Compile Include="Modules\Common\BackgroundTasks\BackgroundTaskRow.cs" />
     <Compile Include="Modules\Common\BackgroundTasks\BackgroundTaskStatus.cs" />
@@ -2757,7 +2898,8 @@
     <Compile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterRow.cs" />
     <Compile Include="Modules\NCLHODSMICROS\NCLHODSMICROSPermissionKeys.cs" />
     <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
-    <Compile Include="Modules\PCHDW\DimInvoice\PCHDWPermissionKeys.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImportForm.cs" />
+    <Compile Include="Modules\PCHDW\PCHDWPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
@@ -3030,6 +3172,70 @@
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppPage.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\GsaDistributionList\GsaDistributionListForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\Agency\AgencyRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\Agency\AgencyRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\Agency\AgencyEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\ConsortiumExceptionList\ConsortiumExceptionListForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\ItemType\ItemTypeRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\ItemType\ItemTypeRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\ItemType\ItemTypeEndpoint.cs" />
+    <Compile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingRow.cs" />
+    <Compile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingRepository.cs" />
+    <Compile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingEndpoint.cs" />
+    <Compile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingPage.cs" />
+    <Compile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingColumns.cs" />
+    <Compile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingForm.cs" />
+    <Compile Include="Modules\Avaya\AvayaNavigation.cs" />
+    <Compile Include="Modules\Avaya\Brand\BrandRow.cs" />
+    <Compile Include="Modules\Avaya\Brand\BrandRepository.cs" />
+    <Compile Include="Modules\Avaya\Brand\BrandEndpoint.cs" />
+    <Compile Include="Modules\Avaya\CallType\CallTypeRow.cs" />
+    <Compile Include="Modules\Avaya\CallType\CallTypeRepository.cs" />
+    <Compile Include="Modules\Avaya\CallType\CallTypeEndpoint.cs" />
+    <Compile Include="Modules\Avaya\Department\DepartmentRow.cs" />
+    <Compile Include="Modules\Avaya\Department\DepartmentRepository.cs" />
+    <Compile Include="Modules\Avaya\Department\DepartmentEndpoint.cs" />
+    <Compile Include="Modules\Avaya\Group\GroupRow.cs" />
+    <Compile Include="Modules\Avaya\Group\GroupRepository.cs" />
+    <Compile Include="Modules\Avaya\Group\GroupEndpoint.cs" />
+    <Compile Include="Modules\Avaya\Region\RegionRow.cs" />
+    <Compile Include="Modules\Avaya\Region\RegionRepository.cs" />
+    <Compile Include="Modules\Avaya\Region\RegionEndpoint.cs" />
+    <Compile Include="Modules\Avaya\Status\StatusRow.cs" />
+    <Compile Include="Modules\Avaya\Status\StatusRepository.cs" />
+    <Compile Include="Modules\Avaya\Status\StatusEndpoint.cs" />
+    <Compile Include="Modules\Avaya\SupportChannel\SupportChannelRow.cs" />
+    <Compile Include="Modules\Avaya\SupportChannel\SupportChannelRepository.cs" />
+    <Compile Include="Modules\Avaya\SupportChannel\SupportChannelEndpoint.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruiseRow.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruiseRepository.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruiseEndpoint.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruisePage.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruiseColumns.cs" />
+    <Compile Include="Modules\PCHDW\DimCruise\DimCruiseForm.cs" />
+    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementRow.cs" />
+    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementRepository.cs" />
+    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementEndpoint.cs" />
+    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementPage.cs" />
+    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementColumns.cs" />
+    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementForm.cs" />
+    <Compile Include="Modules\SSISConfig\NclhShip\NclhShipRow.cs" />
+    <Compile Include="Modules\SSISConfig\NclhShip\NclhShipRepository.cs" />
+    <Compile Include="Modules\SSISConfig\NclhShip\NclhShipEndpoint.cs" />
+    <Compile Include="Modules\SSISConfig\NclhShip\NclhShipPage.cs" />
+    <Compile Include="Modules\SSISConfig\NclhShip\NclhShipColumns.cs" />
+    <Compile Include="Modules\SSISConfig\NclhShip\NclhShipForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

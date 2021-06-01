@@ -11,8 +11,9 @@ namespace DAP.PCHDW.Entities
 
     [ConnectionKey("PCH_DW"), Module("PCHDW"), TableName("[dbo].[dim_invoice]")]
     [DisplayName("Dim Invoice"), InstanceName("Dim Invoice")]
-    [ReadPermission(PermissionKeys.ConfigAdmin)]
-    [ModifyPermission(PermissionKeys.ConfigAdmin)]
+    [ReadPermission(PermissionKeys.EDMSupport.View)]
+    [ModifyPermission(PermissionKeys.EDMSupport.Modify)]
+    [DeletePermission(PermissionKeys.EDMSupport.Delete)]
     [DataAuditLog]
     public sealed class DimInvoiceRow : Row, IIdRow, INameRow
     {

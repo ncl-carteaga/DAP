@@ -55,6 +55,7 @@ namespace DAP.PCHODSNVS.Endpoints
             return new MyRepository().List(connection, request);
         }
 
+        [HttpPost]
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
         {
             var data = List(connection, request).Entities;
@@ -197,6 +198,23 @@ namespace DAP.PCHODSNVS.Endpoints
                 importedHeaders.Add(q.Text);
             }
 
+            if (!importedHeaders.Contains("CompanyCd", StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column CompanyCd");
+            }
+            if (!importedHeaders.Contains("Year", StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column Year");
+            }
+            if (!importedHeaders.Contains("KeyAcctLink", StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column KeyAcctLink");
+            }
+
+            if (response.ErrorList.Count > 0)
+            {
+                return response;
+            }
             /*  Add system headers to proper list while also adding 'ID' to the list. 'ID'
              *  is the key field from exported files and needs to be mapped manually */
             systemHeaders.Add("ID");

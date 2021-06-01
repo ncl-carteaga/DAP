@@ -46,14 +46,14 @@ namespace DAP.PCHODS.Entities
             set { Fields.NvsUserId[this] = value; }
         }
 
-        [DisplayName("Primary Brand"), Column("primary_brand"), NotNull, ForeignKey(typeof(OutboundCompanyRow), "Company_Cd"), LeftJoin("b"), CompanyEditor]
+        [DisplayName("Comm Rate"), Column("primary_brand"), NotNull, ForeignKey(typeof(OutboundCompanyRow), "Company_Cd"), LeftJoin("b"), CompanyEditor]
         public String PrimaryBrand
         {
             get { return Fields.PrimaryBrand[this]; }
             set { Fields.PrimaryBrand[this] = value; }
         }
 
-        [Origin("b"), DisplayName(" Primary Brand")]
+        [Origin("b"), DisplayName("Comm Rate")]
         public string Nm
         {
             get { return Fields.Nm[this];  }
@@ -64,6 +64,28 @@ namespace DAP.PCHODS.Entities
         {
             get { return Fields.StartInactiveDt[this]; }
             set { Fields.StartInactiveDt[this] = value; }
+        }
+
+
+        [DisplayName("Report Region"), Column("Cobrand_Ind"), Size(1)]
+        public String CobrandInd
+        {
+            get { return Fields.CobrandInd[this]; }
+            set { Fields.CobrandInd[this] = value; }
+        }
+
+
+        [DisplayName("Team Filter"), Column("Team_Company_Cd"), Size(3), ForeignKey(typeof(OutboundCompanyRow), "Company_Cd"), LeftJoin("d"), CompanyEditor]
+        public String TeamCompanyCd
+        {
+            get { return Fields.TeamCompanyCd[this]; }
+            set { Fields.TeamCompanyCd[this] = value; }
+        }
+
+        [Expression("d.[Company_nm]"), DisplayName("Team Filter")]
+        public string TeamCompanyName
+        {
+            get { return Fields.TeamCompanyName[this]; }
         }
 
         [DisplayName("Agent Location"), Column("AgentLocationID"), NotNull, ForeignKey("[dbo].[Outbound_AgentLocation]", "AgentLocationID"), LeftJoin("jAgentLocation"), OutboundAgentLocationEditor]        
@@ -106,9 +128,14 @@ namespace DAP.PCHODS.Entities
             public DateTimeField StartInactiveDt;
             public Int32Field AgentLocationId;
 
+            public StringField CobrandInd;
+            public StringField TeamCompanyCd;
+
             public StringField AgentLocationDescription;            
             public StringField Nm;
             public StringField CompanyName;
+
+            public StringField TeamCompanyName;
 
 
         }
