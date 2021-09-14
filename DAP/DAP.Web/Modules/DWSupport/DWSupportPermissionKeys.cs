@@ -28,6 +28,8 @@ namespace DAP.DWSupport
             public const string DistrictMasterSupp = "DWSupp:Page:DistrictMasterSupp";
             public const string FinReportPublishingSupp = "DWSupp:Page:FinReportPublishingSupp";
             public const string SailingMasterSupp = "DWSupp:Page:SailingMasterSupp";
+            public const string SurveyFilterExclusionSupp = "DWSupp:Page:SurveyFilterExclusionSupp";
+            public const string TblStrategicPriceControl = "DWSupp:Page:TblStrategicPriceControl";
         }
     }
 

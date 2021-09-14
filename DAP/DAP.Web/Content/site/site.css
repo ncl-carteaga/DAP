@@ -9531,6 +9531,30 @@ button.ui-button {
 .s-DWSupport-SailingMasterSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-SurveyFilterExclusionSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SurveyFilterExclusionSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-TblStrategicPriceControlDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-TblStrategicPriceControlDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-ProductCodeSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-ProductCodeSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-SlProductCodeSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SlProductCodeSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

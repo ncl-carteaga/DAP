@@ -15,6 +15,7 @@ namespace DAP.DWSupport.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int64 SailSurKey { get; set; }
+        [EditLink]
         public Int32 SailId { get; set; }
         [EditLink]
         public String PackageTypeCd { get; set; }
@@ -56,10 +57,7 @@ namespace DAP.DWSupport.Columns
         public String ObrTradeCd { get; set; }
         public String ObrSubTradeCd { get; set; }
         public String ObrSeasonCd { get; set; }
-        public DateTime CreatedTs { get; set; }
-        public String CreatedByNam { get; set; }
-        public String ModifiedByNam { get; set; }
-        public DateTime ModifiedTs { get; set; }
+        
         public Int32 ProxySailId { get; set; }
         public DateTime OnSaleDat { get; set; }
         public String SeasonYearCd { get; set; }
@@ -73,5 +71,10 @@ namespace DAP.DWSupport.Columns
         public String IsFreeOpenBarCd { get; set; }
         public Int32 CasinoCabinCapacityQty { get; set; }
         public String IsExtraordinaryCd { get; set; }
+
+        public DateTime CreatedTs { get; set; }
+        public String CreatedByNam { get; set; }
+        public String ModifiedByNam { get; set; }
+        public DateTime ModifiedTs { get; set; }
     }
 }

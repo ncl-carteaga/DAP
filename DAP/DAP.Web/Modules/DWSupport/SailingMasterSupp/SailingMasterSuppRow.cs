@@ -23,14 +23,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.SailSurKey[this] = value; }
         }
 
-        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull]
+        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull, QuickSearch]
         public Int32? SailId
         {
             get { return Fields.SailId[this]; }
             set { Fields.SailId[this] = value; }
         }
 
-        [DisplayName("Package Type Cd"), Column("PACKAGE_TYPE_CD"), Size(15), NotNull, QuickSearch]
+        [DisplayName("Package Type Cd"), Column("PACKAGE_TYPE_CD"), Size(15), NotNull, QuickFilter, LookupEditor("DWSupport.PackageTypeCodeSupp")]
         public String PackageTypeCd
         {
             get { return Fields.PackageTypeCd[this]; }
@@ -44,7 +44,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ValidVoyageCd[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickFilter]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }
@@ -58,7 +58,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.SailDat[this] = value; }
         }
 
-        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc")]
+        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp", InplaceAdd = true)]
         public String ProductCd
         {
             get { return Fields.ProductCd[this]; }
@@ -163,7 +163,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.MainVoyageCd[this] = value; }
         }
 
-        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc")]
+        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp", InplaceAdd = true)]
         public String SlProductCd
         {
             get { return Fields.SlProductCd[this]; }
@@ -303,28 +303,28 @@ namespace DAP.DWSupport.Entities
             set { Fields.ObrSeasonCd[this] = value; }
         }
 
-        [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull]
+        [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull, Updatable(false), Insertable(false)]
         public DateTime? CreatedTs
         {
             get { return Fields.CreatedTs[this]; }
             set { Fields.CreatedTs[this] = value; }
         }
 
-        [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull]
+        [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull, Updatable(false), Insertable(false)]
         public String CreatedByNam
         {
             get { return Fields.CreatedByNam[this]; }
             set { Fields.CreatedByNam[this] = value; }
         }
 
-        [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50)]
+        [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50), Updatable(false), Insertable(false)]
         public String ModifiedByNam
         {
             get { return Fields.ModifiedByNam[this]; }
             set { Fields.ModifiedByNam[this] = value; }
         }
 
-        [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull]
+        [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull, Updatable(false), Insertable(false)]
         public DateTime? ModifiedTs
         {
             get { return Fields.ModifiedTs[this]; }

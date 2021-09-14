@@ -23,6 +23,16 @@ namespace DAP.PCHDW {
             return this.slickGrid;
         }
 
+        protected getButtons(): Serenity.ToolButton[] {
+            var buttons = super.getButtons();
+
+            if (!Authorization.hasPermission("PCHDW:EDMSupportAdmin")) {
+                buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
+            }
+
+            return buttons;
+        }
+
         protected getColumns() {
             var columns = super.getColumns();
 
@@ -63,16 +73,23 @@ namespace DAP.PCHDW {
                 e.preventDefault();
 
                 if (target.hasClass('start-job')) {
-                    Q.confirm('Are you sure you want to run this Cube?', () => {
+                    Q.confirm('Are you sure you want to refresh this Cube?', () => {
                        var crow = Q.deepClone(this.itemAt(row));
                        RevenueAdhocManagementService.ExecuteSP({
                             Entity: crow
-                        }, response => {
+                       }, response => {
+                            crow.LastUpdatedBy = Q.Authorization.username;
+
+                            PCHDW.RevenueAdhocManagementService.Update({
+                                   Entity: crow
+                            }, response => {
+                                   this.refresh();
+                            });
                             this.refresh();                          
                         });
                        
                         Q.notifySuccess("Job Started Successfully.  This Job will take about 15 miunutes to complete.  Wait for email confirmation.");
-                        
+                       
 
                     });
                 }

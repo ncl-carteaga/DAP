@@ -20,6 +20,9 @@ namespace DAP.PCHDW
         [Description("[General]")]
         public const string General = "PCHDW:General";
 
+        [Description("[EDMSupportAdmin]")]
+        public const string ConfigAdmin = "PCHDW:EDMSupportAdmin";
+
         [DisplayName("Page")]
         public class PagePermission
         {

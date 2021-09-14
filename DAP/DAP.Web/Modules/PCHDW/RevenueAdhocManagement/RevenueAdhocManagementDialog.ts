@@ -11,15 +11,26 @@ namespace DAP.PCHDW {
 
         protected form = new RevenueAdhocManagementForm(this.idPrefix);
 
+        constructor() {
+            super();
+           
+        }
+
+        protected getToolbarButtons(): Serenity.ToolButton[] {
+            var b = super.getToolbarButtons();
+
+            if (!Authorization.hasPermission("PCHDW:EDMSupportAdmin")) {
+                b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+            }
+
+            return b;
+        }
 
         protected afterLoadEntity() {
             super.afterLoadEntity();
 
-            if (this.form.DatabaseId.value != "Reporting_stly") {
-                Serenity.EditorUtils.setReadOnly(this.form.AdhocStlydate, true);
-            }
-            else {
-                Serenity.EditorUtils.setReadOnly(this.form.AdhocStlydate, false);
+            if (!Authorization.hasPermission("PCHDW:EDMSupportAdmin")) {
+                Serenity.EditorUtils.setReadOnly(this.form.SqlJobName, true);
             }
             
         }

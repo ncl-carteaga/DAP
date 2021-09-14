@@ -1150,6 +1150,10 @@
     <Content Include="Modules\PCHDW\DimCruise\DimCruiseIndex.cshtml" />
     <Content Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementIndex.cshtml" />
     <Content Include="Modules\SSISConfig\NclhShip\NclhShipIndex.cshtml" />
+    <Content Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlIndex.cshtml" />
+    <Content Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1191,7 +1195,19 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
@@ -1374,6 +1390,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.MicrosDataFlowColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.PsInterfaceConfigColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1507,6 +1526,14 @@
     <TypeScriptCompile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementGrid.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\NclhShip\NclhShipDialog.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\NclhShip\NclhShipGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2675,9 +2702,57 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PackageTypeCodeSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PackageTypeCodeSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2847,6 +2922,8 @@
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesRepLookup.cs" />
     <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\SLProductCode.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -3236,6 +3313,33 @@
     <Compile Include="Modules\SSISConfig\NclhShip\NclhShipPage.cs" />
     <Compile Include="Modules\SSISConfig\NclhShip\NclhShipColumns.cs" />
     <Compile Include="Modules\SSISConfig\NclhShip\NclhShipForm.cs" />
+    <Compile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlRow.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlRepository.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlPage.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlColumns.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlForm.cs" />
+    <Compile Include="Modules\DWSupport\PackageTypeCodeSupp\PackageTypeCodeSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\PackageTypeCodeSupp\PackageTypeCodeSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\PackageTypeCodeSupp\PackageTypeCodeSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

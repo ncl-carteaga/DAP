@@ -47,7 +47,7 @@ namespace DAP.PCHDW.Endpoints
 
 
         [HttpPost, AuthorizeCreate(typeof(MyRow))]
-        public int ExecuteSP(SaveRequest<MyRow> request)
+        public SaveResponse ExecuteSP(SaveRequest<MyRow> request)
         {
             int? KeyValue;
             KeyValue = request.Entity.Key;
@@ -66,7 +66,7 @@ namespace DAP.PCHDW.Endpoints
                     commandType: CommandType.StoredProcedure);
 
                 uow.Commit();
-                return rv;
+                return new MyRepository().Update(uow, request); 
             }
             
         }

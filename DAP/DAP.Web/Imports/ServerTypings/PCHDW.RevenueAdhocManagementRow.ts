@@ -3,11 +3,10 @@
         Key?: number;
         DatabaseId?: string;
         CubeId?: string;
-        MeasuregroupId?: string;
         AdhocDate?: string;
         AdhocDateTk?: number;
-        AdhocStlydate?: string;
-        AdhocStlydateTk?: number;
+        LastUpdatedBy?: string;
+        SqlJobName?: string;
         LastProcessedDateTime?: string;
     }
 
@@ -20,11 +19,10 @@
             Key = "Key",
             DatabaseId = "DatabaseId",
             CubeId = "CubeId",
-            MeasuregroupId = "MeasuregroupId",
             AdhocDate = "AdhocDate",
             AdhocDateTk = "AdhocDateTk",
-            AdhocStlydate = "AdhocStlydate",
-            AdhocStlydateTk = "AdhocStlydateTk",
+            LastUpdatedBy = "LastUpdatedBy",
+            SqlJobName = "SqlJobName",
             LastProcessedDateTime = "LastProcessedDateTime"
         }
     }

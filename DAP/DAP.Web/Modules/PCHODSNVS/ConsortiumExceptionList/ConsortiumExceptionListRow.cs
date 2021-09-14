@@ -53,7 +53,7 @@ namespace DAP.PCHODSNVS.Entities
         }
 
         [DisplayName("Item Cd"), Column("item_cd")]
-        public Int32? ItemCd
+        public String ItemCd
         {
             get { return Fields.ItemCd[this]; }
             set { Fields.ItemCd[this] = value; }
@@ -125,7 +125,7 @@ namespace DAP.PCHODSNVS.Entities
             public StringField NewItemType;
             public StringField NewItemName;
             public StringField ItemType;
-            public Int32Field ItemCd;
+            public StringField ItemCd;
             public StringField ItemName;
             public BooleanField ExcludeInd;
             public BooleanField CombineInd;

@@ -14,6 +14,7 @@ namespace DAP.DWSupport.Entities
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class GuestPreventDepartureRow : Row, IIdRow, INameRow
     {
         [DisplayName("Guest Prevent Departure Key"), Column("GUEST_PREVENT_DEPARTURE_KEY"), Identity]
@@ -58,7 +59,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InternalExternalCd[this] = value; }
         }
 
-        [DisplayName("Type Cd"), Column("TYPE_CD"), Size(50), LookupEditor(typeof(Lookups.TypeLookup))]
+        [DisplayName("Type Cd"), Column("TYPE_CD"), Size(50), LookupEditor(typeof(Lookups.TypeLookup)), NotNull]
         public String TypeCd
         {
             get { return Fields.TypeCd[this]; }

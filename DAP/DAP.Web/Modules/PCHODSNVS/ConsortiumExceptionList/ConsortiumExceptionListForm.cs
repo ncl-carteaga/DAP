@@ -17,7 +17,7 @@ namespace DAP.PCHODSNVS.Forms
         public String NewItemType { get; set; }
         public String NewItemName { get; set; }
         public String ItemType { get; set; }
-        public Int32 ItemCd { get; set; }
+        public String ItemCd { get; set; }
         public String ItemName { get; set; }
         public Boolean ExcludeInd { get; set; }
         public Boolean CombineInd { get; set; }

@@ -4,7 +4,7 @@
         NewItemType: Serenity.LookupEditor;
         NewItemName: Serenity.StringEditor;
         ItemType: Serenity.LookupEditor;
-        ItemCd: Serenity.IntegerEditor;
+        ItemCd: Serenity.StringEditor;
         ItemName: Serenity.StringEditor;
         ExcludeInd: Serenity.BooleanEditor;
         CombineInd: Serenity.BooleanEditor;
@@ -24,20 +24,19 @@
                 var s = Serenity;
                 var w0 = s.StringEditor;
                 var w1 = s.LookupEditor;
-                var w2 = s.IntegerEditor;
-                var w3 = s.BooleanEditor;
-                var w4 = s.DateEditor;
+                var w2 = s.BooleanEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(ConsortiumExceptionListForm, [
                     'CompanyCd', w0,
                     'NewItemType', w1,
                     'NewItemName', w0,
                     'ItemType', w1,
-                    'ItemCd', w2,
+                    'ItemCd', w0,
                     'ItemName', w0,
-                    'ExcludeInd', w3,
-                    'CombineInd', w3,
-                    'LoadDt', w4
+                    'ExcludeInd', w2,
+                    'CombineInd', w2,
+                    'LoadDt', w3
                 ]);
             }
         }

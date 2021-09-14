@@ -1,5 +1,4 @@
-﻿
-namespace DAP.SSISConfig {
+﻿namespace DAP.SSISConfig {
     export interface NclhShipRow {
         ShipId?: number;
         ShipAbbreviation?: string;
@@ -17,28 +16,17 @@ namespace DAP.SSISConfig {
         export const nameProperty = 'ShipAbbreviation';
         export const localTextPrefix = 'SSISConfig.NclhShip';
 
-        export namespace Fields {
-            export declare const ShipId;
-            export declare const ShipAbbreviation;
-            export declare const ShipFullName;
-            export declare const CompanyCd;
-            export declare const DepartmentCd;
-            export declare const LocationCd;
-            export declare const IsActive;
-            export declare const ShipTk;
-            export declare const HasMerged;
+        export declare const enum Fields {
+            ShipId = "ShipId",
+            ShipAbbreviation = "ShipAbbreviation",
+            ShipFullName = "ShipFullName",
+            CompanyCd = "CompanyCd",
+            DepartmentCd = "DepartmentCd",
+            LocationCd = "LocationCd",
+            IsActive = "IsActive",
+            ShipTk = "ShipTk",
+            HasMerged = "HasMerged"
         }
-
-        [
-            'ShipId',
-            'ShipAbbreviation',
-            'ShipFullName',
-            'CompanyCd',
-            'DepartmentCd',
-            'LocationCd',
-            'IsActive',
-            'ShipTk',
-            'HasMerged'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

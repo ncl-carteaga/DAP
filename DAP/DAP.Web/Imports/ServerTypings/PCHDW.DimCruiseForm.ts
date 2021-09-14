@@ -30,6 +30,18 @@
         CpvTaxInd: Serenity.BooleanEditor;
         CpvTaxAmt: Serenity.DecimalEditor;
         CruiseSailingStatusDesc: Serenity.StringEditor;
+        CharterInd: Serenity.StringEditor;
+        StatedCapacity: Serenity.IntegerEditor;
+        CappedCapacity: Serenity.IntegerEditor;
+        CruiseStatusCd: Serenity.StringEditor;
+        MinisegInd: Serenity.StringEditor;
+        OnbrdAvgPaxQty: Serenity.IntegerEditor;
+        HighlightInd: Serenity.IntegerEditor;
+        ColorInd: Serenity.StringEditor;
+        DrydockInd: Serenity.IntegerEditor;
+        AmenityPointsAllowedQty: Serenity.IntegerEditor;
+        VarToCurve: Serenity.DecimalEditor;
+        FinancialSuppressInd: Serenity.StringEditor;
         FromPortCd: Serenity.StringEditor;
         ToPortCd: Serenity.StringEditor;
         FromPortName: Serenity.StringEditor;
@@ -47,28 +59,16 @@
         SegmentMarketName: Serenity.StringEditor;
         SegmentSuperMarketCd: Serenity.StringEditor;
         SegmentSuperMarketDesc: Serenity.StringEditor;
-        CharterInd: Serenity.StringEditor;
         CompanyCd: Serenity.StringEditor;
-        StatedCapacity: Serenity.IntegerEditor;
-        CappedCapacity: Serenity.IntegerEditor;
-        CruiseStatusCd: Serenity.StringEditor;
         ShipCd: Serenity.StringEditor;
         ShowInReport: Serenity.StringEditor;
         CruiseFromDtMmddyyyy: Serenity.StringEditor;
         CruiseToDtMmddyyyy: Serenity.StringEditor;
         SegmentFromDtMmddyyyy: Serenity.StringEditor;
         SegmentToDtMmddyyyy: Serenity.StringEditor;
-        MinisegInd: Serenity.StringEditor;
         OnboardAcctTrandate: Serenity.StringEditor;
         SegmentOnboardAcctTrandate: Serenity.StringEditor;
-        OnbrdAvgPaxQty: Serenity.IntegerEditor;
-        HighlightInd: Serenity.IntegerEditor;
-        ColorInd: Serenity.StringEditor;
-        DrydockInd: Serenity.IntegerEditor;
-        AmenityPointsAllowedQty: Serenity.IntegerEditor;
-        VarToCurve: Serenity.DecimalEditor;
         RevenueMgmtMarketSegment: Serenity.StringEditor;
-        FinancialSuppressInd: Serenity.StringEditor;
     }
 
     export class DimCruiseForm extends Serenity.PrefixedContext {
@@ -119,6 +119,18 @@
                     'CpvTaxInd', w3,
                     'CpvTaxAmt', w4,
                     'CruiseSailingStatusDesc', w0,
+                    'CharterInd', w0,
+                    'StatedCapacity', w1,
+                    'CappedCapacity', w1,
+                    'CruiseStatusCd', w0,
+                    'MinisegInd', w0,
+                    'OnbrdAvgPaxQty', w1,
+                    'HighlightInd', w1,
+                    'ColorInd', w0,
+                    'DrydockInd', w1,
+                    'AmenityPointsAllowedQty', w1,
+                    'VarToCurve', w4,
+                    'FinancialSuppressInd', w0,
                     'FromPortCd', w0,
                     'ToPortCd', w0,
                     'FromPortName', w0,
@@ -136,28 +148,16 @@
                     'SegmentMarketName', w0,
                     'SegmentSuperMarketCd', w0,
                     'SegmentSuperMarketDesc', w0,
-                    'CharterInd', w0,
                     'CompanyCd', w0,
-                    'StatedCapacity', w1,
-                    'CappedCapacity', w1,
-                    'CruiseStatusCd', w0,
                     'ShipCd', w0,
                     'ShowInReport', w0,
                     'CruiseFromDtMmddyyyy', w0,
                     'CruiseToDtMmddyyyy', w0,
                     'SegmentFromDtMmddyyyy', w0,
                     'SegmentToDtMmddyyyy', w0,
-                    'MinisegInd', w0,
                     'OnboardAcctTrandate', w0,
                     'SegmentOnboardAcctTrandate', w0,
-                    'OnbrdAvgPaxQty', w1,
-                    'HighlightInd', w1,
-                    'ColorInd', w0,
-                    'DrydockInd', w1,
-                    'AmenityPointsAllowedQty', w1,
-                    'VarToCurve', w4,
-                    'RevenueMgmtMarketSegment', w0,
-                    'FinancialSuppressInd', w0
+                    'RevenueMgmtMarketSegment', w0
                 ]);
             }
         }

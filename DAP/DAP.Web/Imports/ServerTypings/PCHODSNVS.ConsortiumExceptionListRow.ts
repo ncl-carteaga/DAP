@@ -5,7 +5,7 @@
         NewItemType?: string;
         NewItemName?: string;
         ItemType?: string;
-        ItemCd?: number;
+        ItemCd?: string;
         ItemName?: string;
         ExcludeInd?: boolean;
         CombineInd?: boolean;

@@ -83,9 +83,29 @@ namespace MVC
                 public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";
             }
 
+            public static class ProductCodeSupp
+            {
+                public const string ProductCodeSuppIndex = "~/Modules/DWSupport/ProductCodeSupp/ProductCodeSuppIndex.cshtml";
+            }
+
             public static class SailingMasterSupp
             {
                 public const string SailingMasterSuppIndex = "~/Modules/DWSupport/SailingMasterSupp/SailingMasterSuppIndex.cshtml";
+            }
+
+            public static class SlProductCodeSupp
+            {
+                public const string SlProductCodeSuppIndex = "~/Modules/DWSupport/SlProductCodeSupp/SlProductCodeSuppIndex.cshtml";
+            }
+
+            public static class SurveyFilterExclusionSupp
+            {
+                public const string SurveyFilterExclusionSuppIndex = "~/Modules/DWSupport/SurveyFilterExclusionSupp/SurveyFilterExclusionSuppIndex.cshtml";
+            }
+
+            public static class TblStrategicPriceControl
+            {
+                public const string TblStrategicPriceControlIndex = "~/Modules/DWSupport/TblStrategicPriceControl/TblStrategicPriceControlIndex.cshtml";
             }
         }
 
@@ -348,6 +368,11 @@ namespace MVC
             public static class MicrosDataFlow
             {
                 public const string MicrosDataFlowIndex = "~/Modules/SSISConfig/MicrosDataFlow/MicrosDataFlowIndex.cshtml";
+            }
+
+            public static class NclhShip
+            {
+                public const string NclhShipIndex = "~/Modules/SSISConfig/NclhShip/NclhShipIndex.cshtml";
             }
 
             public static class PsInterfaceConfig

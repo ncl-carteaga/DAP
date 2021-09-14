@@ -15,11 +15,9 @@ namespace DAP.PCHDW.Forms
     {
         public String DatabaseId { get; set; }
         public String CubeId { get; set; }
-        public String MeasuregroupId { get; set; }
         public DateTime AdhocDate { get; set; }
         public Int32 AdhocDateTk { get; set; }
-        public DateTime AdhocStlydate { get; set; }
-        public Int32 AdhocStlydateTk { get; set; }
+        public String SqlJobName { get; set; }
         public DateTime LastProcessedDateTime { get; set; }
     }
 }

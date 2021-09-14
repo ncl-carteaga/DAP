@@ -1096,6 +1096,114 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var PackageTypeCodeSuppRow;
+        (function (PackageTypeCodeSuppRow) {
+            PackageTypeCodeSuppRow.idProperty = 'TypeCode';
+            PackageTypeCodeSuppRow.nameProperty = 'TypeCode';
+            PackageTypeCodeSuppRow.localTextPrefix = 'DWSupport.PackageTypeCodeSupp';
+            PackageTypeCodeSuppRow.lookupKey = 'DWSupport.PackageTypeCodeSupp';
+            function getLookup() {
+                return Q.getLookup('DWSupport.PackageTypeCodeSupp');
+            }
+            PackageTypeCodeSuppRow.getLookup = getLookup;
+        })(PackageTypeCodeSuppRow = DWSupport.PackageTypeCodeSuppRow || (DWSupport.PackageTypeCodeSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var PackageTypeCodeSuppService;
+        (function (PackageTypeCodeSuppService) {
+            PackageTypeCodeSuppService.baseUrl = 'DWSupport/PackageTypeCodeSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                PackageTypeCodeSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(PackageTypeCodeSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(PackageTypeCodeSuppService = DWSupport.PackageTypeCodeSuppService || (DWSupport.PackageTypeCodeSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ProductCodeSuppForm = /** @class */ (function (_super) {
+            __extends(ProductCodeSuppForm, _super);
+            function ProductCodeSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ProductCodeSuppForm.init) {
+                    ProductCodeSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(ProductCodeSuppForm, [
+                        'ProductCd', w0,
+                        'ProductDesc', w0,
+                        'ProductCodeId', w1,
+                        'CreatedTs', w2,
+                        'CreatedByName', w0,
+                        'ModifiedByName', w0,
+                        'ModifiedTs', w2
+                    ]);
+                }
+                return _this;
+            }
+            ProductCodeSuppForm.formKey = 'DWSupport.ProductCodeSupp';
+            return ProductCodeSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.ProductCodeSuppForm = ProductCodeSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ProductCodeSuppRow;
+        (function (ProductCodeSuppRow) {
+            ProductCodeSuppRow.idProperty = 'ProductCd';
+            ProductCodeSuppRow.nameProperty = 'ProductDesc';
+            ProductCodeSuppRow.localTextPrefix = 'DWSupport.ProductCodeSupp';
+            ProductCodeSuppRow.lookupKey = 'DWSupport.ProductCodeSupp';
+            function getLookup() {
+                return Q.getLookup('DWSupport.ProductCodeSupp');
+            }
+            ProductCodeSuppRow.getLookup = getLookup;
+        })(ProductCodeSuppRow = DWSupport.ProductCodeSuppRow || (DWSupport.ProductCodeSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ProductCodeSuppService;
+        (function (ProductCodeSuppService) {
+            ProductCodeSuppService.baseUrl = 'DWSupport/ProductCodeSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ProductCodeSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ProductCodeSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ProductCodeSuppService = DWSupport.ProductCodeSuppService || (DWSupport.ProductCodeSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var SailingMasterSuppForm = /** @class */ (function (_super) {
             __extends(SailingMasterSuppForm, _super);
             function SailingMasterSuppForm(prefix) {
@@ -1104,34 +1212,30 @@ var DAP;
                     SailingMasterSuppForm.init = true;
                     var s = Serenity;
                     var w0 = s.IntegerEditor;
-                    var w1 = s.StringEditor;
-                    var w2 = s.DateEditor;
-                    var w3 = s.DecimalEditor;
+                    var w1 = s.LookupEditor;
+                    var w2 = s.StringEditor;
+                    var w3 = s.DateEditor;
+                    var w4 = s.DecimalEditor;
                     Q.initFormType(SailingMasterSuppForm, [
                         'SailId', w0,
                         'PackageTypeCd', w1,
-                        'ValidVoyageCd', w1,
-                        'ShipCd', w1,
-                        'SailDat', w2,
+                        'ValidVoyageCd', w2,
+                        'ShipCd', w2,
+                        'SailDat', w3,
                         'ProductCd', w1,
-                        'LatitudeCruiseCd', w1,
-                        'FareFeedIncludeCd', w1,
-                        'InactiveCd', w1,
-                        'ShipNbr', w1,
-                        'AmenityPtsQty', w3,
+                        'SlProductCd', w1,
+                        'LatitudeCruiseCd', w2,
+                        'FareFeedIncludeCd', w2,
+                        'InactiveCd', w2,
+                        'ShipNbr', w2,
+                        'AmenityPtsQty', w4,
                         'RmsForecastCd', w0,
+                        'RmsSeasonCd', w2,
+                        'RmsColorNameDesc', w2,
+                        'RmsRefLinkSailId', w0,
                         'RmsParentSail1Id', w0,
                         'RmsParentSail2Id', w0,
                         'RmsParentSail3Id', w0,
-                        'RmsSeasonCd', w1,
-                        'RmsColorNameDesc', w1,
-                        'RmsRefLinkSailId', w0,
-                        'BackToBackCd', w1,
-                        'MainVoyageCd', w1,
-                        'SlProductCd', w1,
-                        'MandateWeeksQty', w0,
-                        'InterportCd', w1,
-                        'JonesActSailId', w0,
                         'RmsParentSail4Id', w0,
                         'RmsParentSail5Id', w0,
                         'RmsParentSail6Id', w0,
@@ -1144,27 +1248,28 @@ var DAP;
                         'RmsParentSail13Id', w0,
                         'RmsParentSail14Id', w0,
                         'RmsParentSail15Id', w0,
-                        'FsGrpAmenityAmt', w3,
-                        'ObrTradeCd', w1,
-                        'ObrSubTradeCd', w1,
-                        'ObrSeasonCd', w1,
-                        'CreatedTs', w2,
-                        'CreatedByNam', w1,
-                        'ModifiedByNam', w1,
-                        'ModifiedTs', w2,
+                        'BackToBackCd', w2,
+                        'MainVoyageCd', w2,
+                        'MandateWeeksQty', w0,
+                        'InterportCd', w2,
+                        'JonesActSailId', w0,
+                        'FsGrpAmenityAmt', w4,
+                        'ObrTradeCd', w2,
+                        'ObrSubTradeCd', w2,
+                        'ObrSeasonCd', w2,
                         'ProxySailId', w0,
-                        'OnSaleDat', w2,
-                        'SeasonYearCd', w1,
-                        'IsVoyageExceptionCd', w1,
-                        'VoyageExceptionDesc', w1,
-                        'ItineraryChangedDat', w2,
-                        'CharterCd', w1,
-                        'IsHolidayCd', w1,
+                        'OnSaleDat', w3,
+                        'SeasonYearCd', w2,
+                        'IsVoyageExceptionCd', w2,
+                        'VoyageExceptionDesc', w2,
+                        'ItineraryChangedDat', w3,
+                        'CharterCd', w2,
+                        'IsHolidayCd', w2,
                         'ProxyBudgetSailId', w0,
                         'ProxyMetaWeightSailId', w0,
-                        'IsFreeOpenBarCd', w1,
+                        'IsFreeOpenBarCd', w2,
                         'CasinoCabinCapacityQty', w0,
-                        'IsExtraordinaryCd', w1
+                        'IsExtraordinaryCd', w2
                     ]);
                 }
                 return _this;
@@ -1206,6 +1311,208 @@ var DAP;
                 };
             });
         })(SailingMasterSuppService = DWSupport.SailingMasterSuppService || (DWSupport.SailingMasterSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SlProductCodeSuppForm = /** @class */ (function (_super) {
+            __extends(SlProductCodeSuppForm, _super);
+            function SlProductCodeSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SlProductCodeSuppForm.init) {
+                    SlProductCodeSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(SlProductCodeSuppForm, [
+                        'SlProductCd', w0,
+                        'SlProductDesc', w0,
+                        'CreatedTs', w1,
+                        'CreatedByName', w0,
+                        'ModifiedByName', w0,
+                        'ModifiedTs', w1
+                    ]);
+                }
+                return _this;
+            }
+            SlProductCodeSuppForm.formKey = 'DWSupport.SlProductCodeSupp';
+            return SlProductCodeSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.SlProductCodeSuppForm = SlProductCodeSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SlProductCodeSuppRow;
+        (function (SlProductCodeSuppRow) {
+            SlProductCodeSuppRow.idProperty = 'SlProductCd';
+            SlProductCodeSuppRow.nameProperty = 'SlProductDesc';
+            SlProductCodeSuppRow.localTextPrefix = 'DWSupport.SlProductCodeSupp';
+            SlProductCodeSuppRow.lookupKey = 'DWSupport.SlProductCodeSupp';
+            function getLookup() {
+                return Q.getLookup('DWSupport.SlProductCodeSupp');
+            }
+            SlProductCodeSuppRow.getLookup = getLookup;
+        })(SlProductCodeSuppRow = DWSupport.SlProductCodeSuppRow || (DWSupport.SlProductCodeSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SlProductCodeSuppService;
+        (function (SlProductCodeSuppService) {
+            SlProductCodeSuppService.baseUrl = 'DWSupport/SlProductCodeSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SlProductCodeSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SlProductCodeSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SlProductCodeSuppService = DWSupport.SlProductCodeSuppService || (DWSupport.SlProductCodeSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SurveyFilterExclusionSuppForm = /** @class */ (function (_super) {
+            __extends(SurveyFilterExclusionSuppForm, _super);
+            function SurveyFilterExclusionSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SurveyFilterExclusionSuppForm.init) {
+                    SurveyFilterExclusionSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(SurveyFilterExclusionSuppForm, [
+                        'SurveyExclusionId', w0,
+                        'ReasonDesc', w0,
+                        'CommentsTxt', w0,
+                        'SailId', w1,
+                        'GuestId', w1,
+                        'CreatedTs', w2,
+                        'CreatedByNam', w0,
+                        'ModifiedByNam', w0,
+                        'ModifiedTs', w2
+                    ]);
+                }
+                return _this;
+            }
+            SurveyFilterExclusionSuppForm.formKey = 'DWSupport.SurveyFilterExclusionSupp';
+            return SurveyFilterExclusionSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.SurveyFilterExclusionSuppForm = SurveyFilterExclusionSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SurveyFilterExclusionSuppRow;
+        (function (SurveyFilterExclusionSuppRow) {
+            SurveyFilterExclusionSuppRow.idProperty = 'SurveyExclusionSurKey';
+            SurveyFilterExclusionSuppRow.nameProperty = 'ReasonDesc';
+            SurveyFilterExclusionSuppRow.localTextPrefix = 'DWSupport.SurveyFilterExclusionSupp';
+        })(SurveyFilterExclusionSuppRow = DWSupport.SurveyFilterExclusionSuppRow || (DWSupport.SurveyFilterExclusionSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SurveyFilterExclusionSuppService;
+        (function (SurveyFilterExclusionSuppService) {
+            SurveyFilterExclusionSuppService.baseUrl = 'DWSupport/SurveyFilterExclusionSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                SurveyFilterExclusionSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SurveyFilterExclusionSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SurveyFilterExclusionSuppService = DWSupport.SurveyFilterExclusionSuppService || (DWSupport.SurveyFilterExclusionSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var TblStrategicPriceControlForm = /** @class */ (function (_super) {
+            __extends(TblStrategicPriceControlForm, _super);
+            function TblStrategicPriceControlForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!TblStrategicPriceControlForm.init) {
+                    TblStrategicPriceControlForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.IntegerEditor;
+                    Q.initFormType(TblStrategicPriceControlForm, [
+                        'SailId', w0,
+                        'CategoryCd', w0,
+                        'EffectiveFromDat', w1,
+                        'EffectiveToDat', w1,
+                        'DiscPct', w2,
+                        'CreatedDat', w1,
+                        'CreatedByNam', w0,
+                        'ModifiedDat', w1,
+                        'ModifiedByNam', w0
+                    ]);
+                }
+                return _this;
+            }
+            TblStrategicPriceControlForm.formKey = 'DWSupport.TblStrategicPriceControl';
+            return TblStrategicPriceControlForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.TblStrategicPriceControlForm = TblStrategicPriceControlForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var TblStrategicPriceControlRow;
+        (function (TblStrategicPriceControlRow) {
+            TblStrategicPriceControlRow.idProperty = 'StrategicPriceControlId';
+            TblStrategicPriceControlRow.nameProperty = 'CategoryCd';
+            TblStrategicPriceControlRow.localTextPrefix = 'DWSupport.TblStrategicPriceControl';
+        })(TblStrategicPriceControlRow = DWSupport.TblStrategicPriceControlRow || (DWSupport.TblStrategicPriceControlRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var TblStrategicPriceControlService;
+        (function (TblStrategicPriceControlService) {
+            TblStrategicPriceControlService.baseUrl = 'DWSupport/TblStrategicPriceControl';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                TblStrategicPriceControlService[x] = function (r, s, o) {
+                    return Q.serviceRequest(TblStrategicPriceControlService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(TblStrategicPriceControlService = DWSupport.TblStrategicPriceControlService || (DWSupport.TblStrategicPriceControlService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var Serenity;
@@ -2258,6 +2565,18 @@ var DAP;
                         'CpvTaxInd', w3,
                         'CpvTaxAmt', w4,
                         'CruiseSailingStatusDesc', w0,
+                        'CharterInd', w0,
+                        'StatedCapacity', w1,
+                        'CappedCapacity', w1,
+                        'CruiseStatusCd', w0,
+                        'MinisegInd', w0,
+                        'OnbrdAvgPaxQty', w1,
+                        'HighlightInd', w1,
+                        'ColorInd', w0,
+                        'DrydockInd', w1,
+                        'AmenityPointsAllowedQty', w1,
+                        'VarToCurve', w4,
+                        'FinancialSuppressInd', w0,
                         'FromPortCd', w0,
                         'ToPortCd', w0,
                         'FromPortName', w0,
@@ -2275,28 +2594,16 @@ var DAP;
                         'SegmentMarketName', w0,
                         'SegmentSuperMarketCd', w0,
                         'SegmentSuperMarketDesc', w0,
-                        'CharterInd', w0,
                         'CompanyCd', w0,
-                        'StatedCapacity', w1,
-                        'CappedCapacity', w1,
-                        'CruiseStatusCd', w0,
                         'ShipCd', w0,
                         'ShowInReport', w0,
                         'CruiseFromDtMmddyyyy', w0,
                         'CruiseToDtMmddyyyy', w0,
                         'SegmentFromDtMmddyyyy', w0,
                         'SegmentToDtMmddyyyy', w0,
-                        'MinisegInd', w0,
                         'OnboardAcctTrandate', w0,
                         'SegmentOnboardAcctTrandate', w0,
-                        'OnbrdAvgPaxQty', w1,
-                        'HighlightInd', w1,
-                        'ColorInd', w0,
-                        'DrydockInd', w1,
-                        'AmenityPointsAllowedQty', w1,
-                        'VarToCurve', w4,
-                        'RevenueMgmtMarketSegment', w0,
-                        'FinancialSuppressInd', w0
+                        'RevenueMgmtMarketSegment', w0
                     ]);
                 }
                 return _this;
@@ -2537,11 +2844,9 @@ var DAP;
                     Q.initFormType(RevenueAdhocManagementForm, [
                         'DatabaseId', w0,
                         'CubeId', w0,
-                        'MeasuregroupId', w0,
                         'AdhocDate', w1,
                         'AdhocDateTk', w2,
-                        'AdhocStlydate', w1,
-                        'AdhocStlydateTk', w2,
+                        'SqlJobName', w0,
                         'LastProcessedDateTime', w1
                     ]);
                 }
@@ -2563,6 +2868,28 @@ var DAP;
             RevenueAdhocManagementRow.nameProperty = 'DatabaseId';
             RevenueAdhocManagementRow.localTextPrefix = 'PCHDW.RevenueAdhocManagement';
         })(RevenueAdhocManagementRow = PCHDW.RevenueAdhocManagementRow || (PCHDW.RevenueAdhocManagementRow = {}));
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var RevenueAdhocManagementService;
+        (function (RevenueAdhocManagementService) {
+            RevenueAdhocManagementService.baseUrl = 'PCHDW/RevenueAdhocManagement';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List',
+                'ExecuteSP'
+            ].forEach(function (x) {
+                RevenueAdhocManagementService[x] = function (r, s, o) {
+                    return Q.serviceRequest(RevenueAdhocManagementService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(RevenueAdhocManagementService = PCHDW.RevenueAdhocManagementService || (PCHDW.RevenueAdhocManagementService = {}));
     })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -2698,14 +3025,17 @@ var DAP;
                     var s = Serenity;
                     var w0 = PCHODS.UsersEditor;
                     var w1 = PCHODS.CompanyEditor;
-                    var w2 = PCHODS.OutboundAgentLocationEditor;
-                    var w3 = s.DateEditor;
+                    var w2 = s.StringEditor;
+                    var w3 = PCHODS.OutboundAgentLocationEditor;
+                    var w4 = s.DateEditor;
                     Q.initFormType(OutboundAgentForm, [
                         'NvsUserId', w0,
                         'CompanyCd', w1,
                         'PrimaryBrand', w1,
-                        'AgentLocationId', w2,
-                        'StartInactiveDt', w3
+                        'CobrandInd', w2,
+                        'TeamCompanyCd', w1,
+                        'AgentLocationId', w3,
+                        'StartInactiveDt', w4
                     ]);
                 }
                 return _this;
@@ -3364,19 +3694,18 @@ var DAP;
                     var s = Serenity;
                     var w0 = s.StringEditor;
                     var w1 = s.LookupEditor;
-                    var w2 = s.IntegerEditor;
-                    var w3 = s.BooleanEditor;
-                    var w4 = s.DateEditor;
+                    var w2 = s.BooleanEditor;
+                    var w3 = s.DateEditor;
                     Q.initFormType(ConsortiumExceptionListForm, [
                         'CompanyCd', w0,
                         'NewItemType', w1,
                         'NewItemName', w0,
                         'ItemType', w1,
-                        'ItemCd', w2,
+                        'ItemCd', w0,
                         'ItemName', w0,
-                        'ExcludeInd', w3,
-                        'CombineInd', w3,
-                        'LoadDt', w4
+                        'ExcludeInd', w2,
+                        'CombineInd', w2,
+                        'LoadDt', w3
                     ]);
                 }
                 return _this;
@@ -4312,6 +4641,72 @@ var DAP;
 (function (DAP) {
     var SSISConfig;
     (function (SSISConfig) {
+        var NclhShipForm = /** @class */ (function (_super) {
+            __extends(NclhShipForm, _super);
+            function NclhShipForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!NclhShipForm.init) {
+                    NclhShipForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.BooleanEditor;
+                    var w2 = s.IntegerEditor;
+                    Q.initFormType(NclhShipForm, [
+                        'ShipAbbreviation', w0,
+                        'ShipFullName', w0,
+                        'CompanyCd', w0,
+                        'DepartmentCd', w0,
+                        'LocationCd', w0,
+                        'IsActive', w1,
+                        'ShipTk', w2,
+                        'HasMerged', w1
+                    ]);
+                }
+                return _this;
+            }
+            NclhShipForm.formKey = 'SSISConfig.NclhShip';
+            return NclhShipForm;
+        }(Serenity.PrefixedContext));
+        SSISConfig.NclhShipForm = NclhShipForm;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var NclhShipRow;
+        (function (NclhShipRow) {
+            NclhShipRow.idProperty = 'ShipId';
+            NclhShipRow.nameProperty = 'ShipAbbreviation';
+            NclhShipRow.localTextPrefix = 'SSISConfig.NclhShip';
+        })(NclhShipRow = SSISConfig.NclhShipRow || (SSISConfig.NclhShipRow = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var NclhShipService;
+        (function (NclhShipService) {
+            NclhShipService.baseUrl = 'SSISConfig/NclhShip';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                NclhShipService[x] = function (r, s, o) {
+                    return Q.serviceRequest(NclhShipService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(NclhShipService = SSISConfig.NclhShipService || (SSISConfig.NclhShipService = {}));
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
         var PsInterfaceConfigForm = /** @class */ (function (_super) {
             __extends(PsInterfaceConfigForm, _super);
             function PsInterfaceConfigForm(prefix) {
@@ -4441,7 +4836,7 @@ var DAP;
 (function (DAP) {
     var Texts;
     (function (Texts) {
-        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Avaya: { Brand: { Brand: 1, BrandTk: 1 }, CallType: { Type: 1, TypeTk: 1 }, Department: { Department: 1, DepartmentTk: 1 }, Group: { Cd: 1, Tk: 1 }, Region: { Region: 1, RegionTk: 1 }, SkillSplitMapping: { AcdNo: 1, Brand: 1, BrandBrandTk: 1, CallType: 1, CallTypeTypeTk: 1, CmsNo: 1, Department: 1, DepartmentDepartmentTk: 1, GroupCd: 1, GroupCdTk: 1, Region: 1, RegionRegionTk: 1, SkillName: 1, SkillSplitTk: 1, SplitNo: 1, Status: 1, StatusStatusTk: 1, SupportChannel: 1, SupportChannelSuppChannelTk: 1 }, Status: { StatusDesc: 1, StatusTk: 1 }, SupportChannel: { SuppChannelTk: 1, SupportChannel: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { DistrictMasterSupp: { AreaCd: 1, ChannelCd: 1, CreatedByNam: 1, CreatedTs: 1, DistrictNbr: 1, DistrictSurKey: 1, GroupCd: 1, GssChannelCd: 1, ModifiedByNam: 1, ModifiedTs: 1, PrimaryCrmSupportNam: 1, RmChannelCd: 1, SalesChannelCd: 1, SalesrepUserId: 1, SecondaryCrmSupportNam: 1 }, FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 }, GuestPreventDeparture: { BoardingDenialReasonDesc: 1, CasinoIncidentNbrTxt: 1, CreatedByNam: 1, CreatedTs: 1, FromReportNbr: 1, GuestFirstNam: 1, GuestLastNam: 1, GuestPreventDepartureKey: 1, IncidentReportedDat: 1, InternalExternalCd: 1, ModifiedByNam: 1, ModifiedTs: 1, NameTypeDesc: 1, SirsNbrTxt: 1, TypeCd: 1 }, SailingMasterSupp: { AmenityPtsQty: 1, BackToBackCd: 1, CasinoCabinCapacityQty: 1, CharterCd: 1, CreatedByNam: 1, CreatedTs: 1, FareFeedIncludeCd: 1, FsGrpAmenityAmt: 1, InactiveCd: 1, InterportCd: 1, IsExtraordinaryCd: 1, IsFreeOpenBarCd: 1, IsHolidayCd: 1, IsVoyageExceptionCd: 1, ItineraryChangedDat: 1, JonesActSailId: 1, LatitudeCruiseCd: 1, MainVoyageCd: 1, MandateWeeksQty: 1, ModifiedByNam: 1, ModifiedTs: 1, ObrSeasonCd: 1, ObrSubTradeCd: 1, ObrTradeCd: 1, OnSaleDat: 1, PackageTypeCd: 1, ProductCd: 1, ProductCdCreatedByName: 1, ProductCdCreatedTs: 1, ProductCdModifiedByName: 1, ProductCdModifiedTs: 1, ProductCdProductCodeId: 1, ProductCdProductDesc: 1, ProductCdProductSurKey: 1, ProxyBudgetSailId: 1, ProxyMetaWeightSailId: 1, ProxySailId: 1, RmsColorNameDesc: 1, RmsForecastCd: 1, RmsParentSail10Id: 1, RmsParentSail11Id: 1, RmsParentSail12Id: 1, RmsParentSail13Id: 1, RmsParentSail14Id: 1, RmsParentSail15Id: 1, RmsParentSail1Id: 1, RmsParentSail2Id: 1, RmsParentSail3Id: 1, RmsParentSail4Id: 1, RmsParentSail5Id: 1, RmsParentSail6Id: 1, RmsParentSail7Id: 1, RmsParentSail8Id: 1, RmsParentSail9Id: 1, RmsRefLinkSailId: 1, RmsSeasonCd: 1, SailDat: 1, SailId: 1, SailSurKey: 1, SeasonYearCd: 1, ShipCd: 1, ShipNbr: 1, SlProductCd: 1, SlProductCdCreatedByName: 1, SlProductCdCreatedTs: 1, SlProductCdModifiedByName: 1, SlProductCdModifiedTs: 1, SlProductCdSlProductDesc: 1, SlProductCdSlProductSurKey: 1, ValidVoyageCd: 1, VoyageExceptionDesc: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, ModifiedBy: 1, ModifiedDate: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, NoteList: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { ExtractDt: 1, Id: 1, LastUpdated: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, SystemMasterId: 1, SystemMasterSystemDesc: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSMICROS: { DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1, ModifiedBy: 1, ModifiedDate: 1 }, DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, Status: 1, Target: 1 } }, PCHDW: { DimCruise: { AmenityPointsAllowedQty: 1, CappedCapacity: 1, CharterInd: 1, ColorInd: 1, CompanyCd: 1, CpvTaxAmt: 1, CpvTaxInd: 1, CruiseCd: 1, CruiseDaysQty: 1, CruiseFromDt: 1, CruiseFromDtMmddyyyy: 1, CruiseName: 1, CruiseSailingStatusDesc: 1, CruiseSegmentCd: 1, CruiseSegmentDaysQty: 1, CruiseSegmentFromDt: 1, CruiseSegmentName: 1, CruiseSegmentToDt: 1, CruiseStatusCd: 1, CruiseTk: 1, CruiseToDt: 1, CruiseToDtMmddyyyy: 1, DrydockInd: 1, FinancialSuppressInd: 1, FromPortCd: 1, FromPortName: 1, HighlightInd: 1, HmfFeeInd: 1, HmfPct: 1, IrsTaxAmt: 1, IrsTaxInd: 1, IufExemptFeeAmt: 1, IufExemptFeeInd: 1, IufExemptQty: 1, IufNonexemptFeeAmt: 1, IufNonexemptFeeInd: 1, IufNonexemptQty: 1, LocationName: 1, MarketName: 1, MinisegInd: 1, OnboardAcctTrandate: 1, OnbrdAvgPaxQty: 1, PpfExemptFeeAmt: 1, PpfExemptInd: 1, PpfNonexemptFeeAmt: 1, PpfNonexemptInd: 1, RevenueMgmtMarketSegment: 1, RouteName: 1, SeasonName: 1, SegmentFromDtMmddyyyy: 1, SegmentFromPortCd: 1, SegmentFromPortName: 1, SegmentLocationName: 1, SegmentMarketName: 1, SegmentOnboardAcctTrandate: 1, SegmentRouteName: 1, SegmentSeasonName: 1, SegmentSuperMarketCd: 1, SegmentSuperMarketDesc: 1, SegmentToDtMmddyyyy: 1, SegmentToPortCd: 1, SegmentToPortName: 1, ShipCd: 1, ShowInReport: 1, StatedCapacity: 1, SuperMarketCd: 1, SuperMarketDesc: 1, ToPortCd: 1, ToPortName: 1, VarToCurve: 1 }, DimInvoice: { AgentTk: 1, AirCostSourceCd: 1, AirParticipationInd: 1, AirXferFeeAmt: 1, AttnName: 1, BonusSavingsCd: 1, BonusSavingsDesc: 1, CancelBookingStatusCd: 1, CancelReason: 1, CancellationDt: 1, CancellationType: 1, CenturionCd: 1, CenturionInd: 1, ChangeDt: 1, ChannelCountryCd: 1, ChannelCountryName: 1, ChannelTk: 1, Cinvoice1Num: 1, Cinvoice2Num: 1, Cinvoice3Num: 1, Cinvoice4Num: 1, Cinvoice5Num: 1, Cinvoice6Num: 1, CityName: 1, ComboBookingInd: 1, ComboLegQty: 1, CompanyCd: 1, CountryCd: 1, CountryName: 1, CreateDt: 1, CruiseCommissionAmt: 1, CruiseSvcMgmtCrNum: 1, CruiseSvcMgmtId: 1, CruiseTk: 1, CurrencyCd: 1, CurrencyDesc: 1, CurrentLoyaltyLevelPax1: 1, CurrentLoyaltyLevelPax2: 1, CurrentPackageCd: 1, DepositAmt: 1, DepositDt: 1, DirectBookingInd: 1, DptrFlightClassCd: 1, DptrFlightQty: 1, DwPastGuest1Ind: 1, DwPastGuest2Ind: 1, DwPastGuestInd: 1, FccDeferredInd: 1, FinalPaymentDueDt: 1, FirstConfirmDt: 1, FirstPaymentDt: 1, FutureDepositFlag: 1, GdsSystemCd: 1, GdsSystemDesc: 1, HotelParticipationInd: 1, InitialWaitlistInd: 1, InstallmentPlanInd: 1, InstallmentPlanNum: 1, InvoiceNum: 1, InvoiceTk: 1, LandPackageParticipantInd: 1, LandPackageParticipantQty: 1, MpcardNumPax1: 1, MpcardNumPax2: 1, NonrevPassengerQty: 1, NontaxPassengerQty: 1, NvsPgInd: 1, OciOfficeCd: 1, OfficeCd: 1, OfficeDesc: 1, OnboardTypeDesc: 1, OriginalConsortiumCd: 1, OriginalConsortiumDesc: 1, OriginalDeptCd: 1, OriginalDeptName: 1, OriginalUserActiveInd: 1, OriginalUserId: 1, OriginalUserName: 1, OutboundReportingRegionCd: 1, PackageCd: 1, PaidClassCategoryDesc: 1, PaidClassCd: 1, PassengerQty: 1, PastGuestInd: 1, Pax1AirportHome1Cd: 1, Pax1AirportRtrn1Cd: 1, Pax1FirstFlightClass: 1, Pax1FirstName: 1, Pax1LastName: 1, Pax1LoyaltyLevelNm: 1, Pax1NvsPgInd: 1, Pax1RtrnFlightClass: 1, Pax2AirportHome1Cd: 1, Pax2AirportRtrn1Cd: 1, Pax2FirstFlightClass: 1, Pax2FirstName: 1, Pax2LastName: 1, Pax2LoyaltyLevelNm: 1, Pax2NvsPgInd: 1, Pax2RtrnFlightClass: 1, PaxAirClassCd: 1, PlatinumCd: 1, PlatinumInd: 1, PostedInvoiceDt: 1, PromoBonusComm: 1, PromoCd: 1, PromoCommAmt: 1, PromoDesc: 1, PromotionalAmenityCd: 1, RtrnFlightClassCd: 1, RtrnFlightQty: 1, SalesSourceCd: 1, SalesSourceDesc: 1, StateCd: 1, StatusCd: 1, StatusDesc: 1, UserId: 1, UserName: 1, WaitlistDt: 1, ZipCd: 1 }, RevenueAdhocManagement: { AdhocDate: 1, AdhocDateTk: 1, AdhocStlydate: 1, AdhocStlydateTk: 1, CubeId: 1, DatabaseId: 1, Key: 1, LastProcessedDateTime: 1, MeasuregroupId: 1 }, ScheduledJob: { JobDescription: 1, JobName: 1, ScheduledJobId: 1 }, VwSqlJobList: { DateCreated: 1, DateModified: 1, Enabled: 1, JobDescription: 1, Name: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionBkGoal: { CommissionMonth: 1, CommissionTk: 1, CompanyCd: 1, CompanyName: 1, LoadDt: 1, NumOfBkGoal: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { Agency: { ActiveInd: 1, Addr1: 1, Addr2: 1, Addr3: 1, AgencyCd: 1, AgencyCdName: 1, AgencyCreateDt: 1, AgencyDefaultStatusInd: 1, AgencyEmail: 1, AgencyNameDesc: 1, AgencyStatusCd: 1, AgencyWebAddress: 1, AgentLinkDesc: 1, AgentNum: 1, AllowBankInd: 1, AllowGpInd: 1, AllowPlatInd: 1, AllowSdbdInd: 1, ApolloInd: 1, AttnDesc: 1, AutoCxlInd: 1, AutoEnvoInd: 1, BankAccountBalAmt: 1, BankAcct2Amt: 1, BdmCd: 1, BdmRepCd: 1, CityName: 1, CliaNum: 1, Comment1Desc: 1, Comment2Desc: 1, CommissionPct: 1, CompanyCd: 1, ConsortRgnNum: 1, ConsortiumAddedDt: 1, ConsortiumCd: 1, ConsortiumRegionAddedDt: 1, ConsortiumRegionCd: 1, CorpComDesc: 1, CorporationInd: 1, Country: 1, CreditAgtInd: 1, CurrencyCd: 1, CurrentYearSalesAmt: 1, EMemberDesc: 1, FaxNum: 1, FinHoldInd: 1, FinalDaysQty: 1, FirstBookingDt: 1, GdsSysCd: 1, GsaInd: 1, GsaPriceLevelAmt: 1, IataNum: 1, InsDefaultCd: 1, Key1: 1, KeyAcctInd: 1, L7daysNum: 1, LastUpdated: 1, LastYearKeyAcctCd: 1, LastYearSalesAmt: 1, MahanaClubInd: 1, MasterAgencyInd: 1, McActiveInd: 1, NactaNum: 1, NationalAcctInd: 1, NvsKeyAcctInd: 1, OfficeCd: 1, Option1DueDaysQty: 1, Option2DueDaysQty: 1, OverVacSummInd: 1, OverrideFinalDaysInd: 1, OverrideOption1DaysInd: 1, OverrideOption2DaysInd: 1, OwnerCd: 1, PaymentViaWireInd: 1, Phone1Num: 1, Phone2Num: 1, PinClubInd: 1, PreferredCommunicationCd: 1, PreferredLanguageDesc: 1, PreviousYrPaxQty: 1, PreviousYrRevAmt: 1, PromoAdInd: 1, Prt1099Ind: 1, PrtD1099Dt: 1, PseudoCityCd: 1, RequiredSecondaryAgentInd: 1, RevLabelCd: 1, SalesRegionCd: 1, SecondaryCurrencyCd: 1, SelfBillInd: 1, SendCustInvInd: 1, SiblingId: 1, SsrRepCd: 1, StateNm: 1, TaxIdNum: 1, TaxInfoReceivedDt: 1, TaxPayer1099Name: 1, UserInUseById: 1, VacSummEmailDesc: 1, VatId: 1, Zip2Cd: 1, ZipCd: 1 }, ConsortiumExceptionList: { CombineInd: 1, CompanyCd: 1, ConsortiumExceptionListTk: 1, ExcludeInd: 1, ItemCd: 1, ItemName: 1, ItemType: 1, ItemTypeTypeTk: 1, LoadDt: 1, NewItemName: 1, NewItemType: 1, NewItemTypeTypeTk: 1 }, GsaDistributionList: { AccountName: 1, AgencyCd: 1, CompanyCd: 1, ContactName: 1, Email: 1, GsaDistributionListTk: 1, LoadDt: 1 }, ItemType: { Type: 1, TypeTk: 1 }, NtrBudget: { AccountPeriodNum: 1, ApcdFinal: 1, BudgetTk: 1, CompanyCd: 1, NtrBudget: 1, NtrFinancialBudget: 1, PdsBudgetTotal: 1 }, NtrBudgetByChannel: { AccountingYear: 1, BudgetbychannelTk: 1, ChannelDesc: 1, ChannelSummDesc: 1, CompanyCd: 1, NpdBudget: 1, NtrBudget: 1, PdsBudgetTotal: 1 }, NtrFcst: { AccountPeriodNum: 1, ApcdFinal: 1, CompanyCd: 1, FcstTk: 1, NtrFcst: 1, NtrFinancialBudget: 1, PdsFcstTotal: 1 }, NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 }, NtrPastMonthsActual: { ApcdFinal: 1, AvailableNumOfCabins: 1, BookedNumOfCabins: 1, CompanyCd: 1, CxRev: 1, NtrFinal: 1, PastmonthactualTk: 1, PdsFinalTotal: 1, StlyAvailableNumOfCabins: 1, StlyBookedNumOfCabins: 1, YearMonth: 1 }, NtrRptComment: { AccountPeriodNum: 1, Comment: 1, CommentTk: 1, CompanyCd: 1, ReportDate: 1 }, SuppKeyAcctTarget: { AccountType: 1, CcfTargetQ1: 1, CcfTargetQ12: 1, CcfTargetQ13: 1, CcfTargetQ14: 1, CcfTargetQ15: 1, CcfTargetQ2: 1, CcfTargetQ22: 1, CcfTargetQ23: 1, CcfTargetQ24: 1, CcfTargetQ25: 1, CcfTargetQ3: 1, CcfTargetQ32: 1, CcfTargetQ33: 1, CcfTargetQ34: 1, CcfTargetQ35: 1, CcfTargetQ4: 1, CcfTargetQ42: 1, CcfTargetQ43: 1, CcfTargetQ44: 1, CcfTargetQ45: 1, CompanyCd: 1, KeyAcctLink: 1, KeyAcctTk: 1, LoadDt: 1, PrctTargetQ1: 1, PrctTargetQ12: 1, PrctTargetQ13: 1, PrctTargetQ14: 1, PrctTargetQ15: 1, PrctTargetQ2: 1, PrctTargetQ22: 1, PrctTargetQ23: 1, PrctTargetQ24: 1, PrctTargetQ25: 1, PrctTargetQ3: 1, PrctTargetQ32: 1, PrctTargetQ33: 1, PrctTargetQ34: 1, PrctTargetQ35: 1, PrctTargetQ4: 1, PrctTargetQ42: 1, PrctTargetQ43: 1, PrctTargetQ44: 1, PrctTargetQ45: 1, Year: 1 } }, SSISConfig: { DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 }, GpInterfaceLog: { CompanyCd: 1, CruiseSegmentCd: 1, ExpRevType: 1, GpInterfaceInd: 1, GpInterfacedDt: 1, InterfaceLogId: 1, JournalNum: 1 }, INTConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 }, MicrosDataFlow: { CeIndex: 1, Cet: 1, Description: 1, Key: 1, LseIndex: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 }, PsInterfaceConfig: { ConfigId: 1, ConfigSetting: 1, ConfigValue: 1, ConfigValueDate: 1, DataType: 1, ModifiedBy: 1, ModifiedDate: 1, SourceSystem: 1 }, SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
+        DAP['Texts'] = Q.proxyTexts(Texts, '', { Db: { Administration: { DataAuditLog: { FieldName: 1, LogDate: 1, LogId: 1, LogType: 1, NewValue: 1, OldValue: 1, RecordId: 1, Tablename: 1, UserDisplayName: 1, UserId: 1, Username: 1 }, Language: { Id: 1, LanguageId: 1, LanguageName: 1 }, Role: { RoleId: 1, RoleKey: 1, RoleName: 1 }, RolePermission: { PermissionKey: 1, RoleId: 1, RolePermissionId: 1, RoleRoleName: 1 }, Translation: { CustomText: 1, EntityPlural: 1, Key: 1, OverrideConfirmation: 1, SaveChangesButton: 1, SourceLanguage: 1, SourceText: 1, TargetLanguage: 1, TargetText: 1 }, User: { DisplayName: 1, Email: 1, ImpersonationToken: 1, InsertDate: 1, InsertUserId: 1, IsActive: 1, LastDirectoryUpdate: 1, MobilePhoneNumber: 1, MobilePhoneVerified: 1, Password: 1, PasswordConfirm: 1, PasswordHash: 1, PasswordSalt: 1, Source: 1, TwoFactorAuth: 1, UpdateDate: 1, UpdateUserId: 1, UserId: 1, UserImage: 1, Username: 1 }, UserPermission: { Granted: 1, PermissionKey: 1, User: 1, UserId: 1, UserPermissionId: 1, Username: 1 }, UserRole: { RoleId: 1, User: 1, UserId: 1, UserRoleId: 1, Username: 1 } }, Avaya: { Brand: { Brand: 1, BrandTk: 1 }, CallType: { Type: 1, TypeTk: 1 }, Department: { Department: 1, DepartmentTk: 1 }, Group: { Cd: 1, Tk: 1 }, Region: { Region: 1, RegionTk: 1 }, SkillSplitMapping: { AcdNo: 1, Brand: 1, BrandBrandTk: 1, CallType: 1, CallTypeTypeTk: 1, CmsNo: 1, Department: 1, DepartmentDepartmentTk: 1, GroupCd: 1, GroupCdTk: 1, Region: 1, RegionRegionTk: 1, SkillName: 1, SkillSplitTk: 1, SplitNo: 1, Status: 1, StatusStatusTk: 1, SupportChannel: 1, SupportChannelSuppChannelTk: 1 }, Status: { StatusDesc: 1, StatusTk: 1 }, SupportChannel: { SuppChannelTk: 1, SupportChannel: 1 } }, Common: { BackgroundTaskLog: { LogId: 1, Message: 1, RunAt: 1, Server: 1, Status: 1, TaskKey: 1 }, Mail: { Bcc: 1, Body: 1, Cc: 1, ErrorMessage: 1, InsertDate: 1, InsertUser: 1, InsertUserId: 1, LockExpiration: 1, MailFrom: 1, MailId: 1, MailTo: 1, Priority: 1, ReplyTo: 1, RetryCount: 1, SentDate: 1, Status: 1, Subject: 1, Uid: 1 }, UserPreference: { Name: 1, PreferenceType: 1, UserId: 1, UserPreferenceId: 1, Value: 1 } }, DWSupport: { DistrictMasterSupp: { AreaCd: 1, ChannelCd: 1, CreatedByNam: 1, CreatedTs: 1, DistrictNbr: 1, DistrictSurKey: 1, GroupCd: 1, GssChannelCd: 1, ModifiedByNam: 1, ModifiedTs: 1, PrimaryCrmSupportNam: 1, RmChannelCd: 1, SalesChannelCd: 1, SalesrepUserId: 1, SecondaryCrmSupportNam: 1 }, FinReportPublishingSupp: { CreatedByNam: 1, CreatedTs: 1, FinReportPublishingSurKey: 1, ModifiedByNam: 1, ModifiedTs: 1, ProcessedDateTs: 1, PublishCd: 1, PublishCommentsTxt: 1, PublishDat: 1 }, GuestPreventDeparture: { BoardingDenialReasonDesc: 1, CasinoIncidentNbrTxt: 1, CreatedByNam: 1, CreatedTs: 1, FromReportNbr: 1, GuestFirstNam: 1, GuestLastNam: 1, GuestPreventDepartureKey: 1, IncidentReportedDat: 1, InternalExternalCd: 1, ModifiedByNam: 1, ModifiedTs: 1, NameTypeDesc: 1, SirsNbrTxt: 1, TypeCd: 1 }, PackageTypeCodeSupp: { TypeCode: 1, TypeId: 1 }, ProductCodeSupp: { CreatedByName: 1, CreatedTs: 1, ModifiedByName: 1, ModifiedTs: 1, ProductCd: 1, ProductCodeId: 1, ProductDesc: 1, ProductSurKey: 1 }, SailingMasterSupp: { AmenityPtsQty: 1, BackToBackCd: 1, CasinoCabinCapacityQty: 1, CharterCd: 1, CreatedByNam: 1, CreatedTs: 1, FareFeedIncludeCd: 1, FsGrpAmenityAmt: 1, InactiveCd: 1, InterportCd: 1, IsExtraordinaryCd: 1, IsFreeOpenBarCd: 1, IsHolidayCd: 1, IsVoyageExceptionCd: 1, ItineraryChangedDat: 1, JonesActSailId: 1, LatitudeCruiseCd: 1, MainVoyageCd: 1, MandateWeeksQty: 1, ModifiedByNam: 1, ModifiedTs: 1, ObrSeasonCd: 1, ObrSubTradeCd: 1, ObrTradeCd: 1, OnSaleDat: 1, PackageTypeCd: 1, ProductCd: 1, ProductCdCreatedByName: 1, ProductCdCreatedTs: 1, ProductCdModifiedByName: 1, ProductCdModifiedTs: 1, ProductCdProductCodeId: 1, ProductCdProductDesc: 1, ProductCdProductSurKey: 1, ProxyBudgetSailId: 1, ProxyMetaWeightSailId: 1, ProxySailId: 1, RmsColorNameDesc: 1, RmsForecastCd: 1, RmsParentSail10Id: 1, RmsParentSail11Id: 1, RmsParentSail12Id: 1, RmsParentSail13Id: 1, RmsParentSail14Id: 1, RmsParentSail15Id: 1, RmsParentSail1Id: 1, RmsParentSail2Id: 1, RmsParentSail3Id: 1, RmsParentSail4Id: 1, RmsParentSail5Id: 1, RmsParentSail6Id: 1, RmsParentSail7Id: 1, RmsParentSail8Id: 1, RmsParentSail9Id: 1, RmsRefLinkSailId: 1, RmsSeasonCd: 1, SailDat: 1, SailId: 1, SailSurKey: 1, SeasonYearCd: 1, ShipCd: 1, ShipNbr: 1, SlProductCd: 1, SlProductCdCreatedByName: 1, SlProductCdCreatedTs: 1, SlProductCdModifiedByName: 1, SlProductCdModifiedTs: 1, SlProductCdSlProductDesc: 1, SlProductCdSlProductSurKey: 1, ValidVoyageCd: 1, VoyageExceptionDesc: 1 }, SlProductCodeSupp: { CreatedByName: 1, CreatedTs: 1, ModifiedByName: 1, ModifiedTs: 1, SlProductCd: 1, SlProductDesc: 1, SlProductSurKey: 1 }, SurveyFilterExclusionSupp: { CommentsTxt: 1, CreatedByNam: 1, CreatedTs: 1, GuestId: 1, ModifiedByNam: 1, ModifiedTs: 1, ReasonDesc: 1, SailId: 1, SurveyExclusionId: 1, SurveyExclusionSurKey: 1 }, TblStrategicPriceControl: { CategoryCd: 1, CreatedByNam: 1, CreatedDat: 1, DiscPct: 1, EffectiveFromDat: 1, EffectiveToDat: 1, ModifiedByNam: 1, ModifiedDat: 1, SailId: 1, StrategicPriceControlId: 1 } }, NCLHDSAR: { Assignee: { AssigneeId: 1, FullName: 1, IsActive: 1 }, Note: { EntityId: 1, EntityType: 1, InsertDate: 1, InsertUserDisplayName: 1, InsertUserId: 1, NoteId: 1, Text: 1 }, Request: { Address1: 1, AttrCount: 1, City: 1, Country: 1, CreatedDt: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, Email: 1, FirstName: 1, FullName: 1, Id: 1, IdentityVerificationOptOuts: 1, IdentityVerificationOtherRequests: 1, LastName: 1, LastUpdatedDt: 1, LatitudesNum: 1, LoadDt: 1, NclYn: 1, OceaniaMpCardNum: 1, OceaniaYn: 1, ProcessDt: 1, RegentMpCardNum: 1, RegentYn: 1, ReqApprover: 1, ReqDetails: 1, ReqExtended: 1, ReqStage: 1, ReqStatus: 1, RequestType: 1, RequestTypeNum: 1, RequestTypeNumDesc: 1, SixthmanYn: 1, SubjectType: 1 }, RequestAttributes: { Addr1: 1, Addr2: 1, CityNm: 1, CountryCd: 1, Email1: 1, ExtractDt: 1, FirstNm: 1, Id: 1, LastNm: 1, MiddleNm: 1, ModifiedBy: 1, ModifiedDate: 1, OldAddr1: 1, OldAddr2: 1, OldCityNm: 1, OldCountryCd: 1, OldEmail: 1, OldFirstNm: 1, OldLastNm: 1, OldMiddleNm: 1, OldPostalCd: 1, OldStateNm: 1, PostalCd: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, StateNm: 1, SystemMasterId: 1, SystemMasterSystemActiveYn: 1, SystemMasterSystemDesc: 1, SystemMasterSystemName: 1, SystemMasterSystemTable: 1 }, RequestStatus: { StatusDescription: 1, StatusId: 1, StatusOrder: 1 }, RequestType: { Desc: 1, Type: 1 }, SwRequest: { ApiResponse: 1, ApiResponseDepth: 1, ApiResponseId: 1, AssigneeFullName: 1, AssigneeId: 1, AssigneeIsActive: 1, AttributeCount: 1, ClientAddress: 1, ClientEmailAddress: 1, ClientFirstName: 1, ClientGuestCategory: 1, ClientIsRelatedtoHousehold: 1, ClientLastName: 1, ClientLatitudesNumber: 1, ClientZipCode: 1, DaysLeft: 1, DaysOld: 1, DeadlineDt: 1, LastUpdatedDt: 1, NoteList: 1, RecordId: 1, RecordTimeStamp: 1, RequestType: 1, StatusId: 1, StatusStatusDescription: 1, StatusStatusOrder: 1, UpdatedBy: 1 }, SwRequestAttributes: { ExtractDt: 1, Id: 1, LastUpdated: 1, RequestAttributeId: 1, RequestValue: 1, ResolvedDt: 1, SystemMasterId: 1, SystemMasterSystemDesc: 1 }, SystemMaster: { Id: 1, SystemActiveYn: 1, SystemDesc: 1, SystemName: 1, SystemTable: 1 } }, NCLHODSMICROS: { DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 } }, NCLHODSSPENDVIS: { Amoslevel: { AccountId: 1, Descr: 1, FlexDim1Name: 1, FlexDim2Name: 1, FlexDim3Name: 1, FlexDim4Name: 1, IdNum: 1, ModifiedBy: 1, ModifiedDate: 1 }, DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, Status: 1, Target: 1 } }, PCHDW: { DimCruise: { AmenityPointsAllowedQty: 1, CappedCapacity: 1, CharterInd: 1, ColorInd: 1, CompanyCd: 1, CpvTaxAmt: 1, CpvTaxInd: 1, CruiseCd: 1, CruiseDaysQty: 1, CruiseFromDt: 1, CruiseFromDtMmddyyyy: 1, CruiseName: 1, CruiseSailingStatusDesc: 1, CruiseSegmentCd: 1, CruiseSegmentDaysQty: 1, CruiseSegmentFromDt: 1, CruiseSegmentName: 1, CruiseSegmentToDt: 1, CruiseStatusCd: 1, CruiseTk: 1, CruiseToDt: 1, CruiseToDtMmddyyyy: 1, DrydockInd: 1, FinancialSuppressInd: 1, FromPortCd: 1, FromPortName: 1, HighlightInd: 1, HmfFeeInd: 1, HmfPct: 1, IrsTaxAmt: 1, IrsTaxInd: 1, IufExemptFeeAmt: 1, IufExemptFeeInd: 1, IufExemptQty: 1, IufNonexemptFeeAmt: 1, IufNonexemptFeeInd: 1, IufNonexemptQty: 1, LocationName: 1, MarketName: 1, MinisegInd: 1, OnboardAcctTrandate: 1, OnbrdAvgPaxQty: 1, PpfExemptFeeAmt: 1, PpfExemptInd: 1, PpfNonexemptFeeAmt: 1, PpfNonexemptInd: 1, RevenueMgmtMarketSegment: 1, RouteName: 1, SeasonName: 1, SegmentFromDtMmddyyyy: 1, SegmentFromPortCd: 1, SegmentFromPortName: 1, SegmentLocationName: 1, SegmentMarketName: 1, SegmentOnboardAcctTrandate: 1, SegmentRouteName: 1, SegmentSeasonName: 1, SegmentSuperMarketCd: 1, SegmentSuperMarketDesc: 1, SegmentToDtMmddyyyy: 1, SegmentToPortCd: 1, SegmentToPortName: 1, ShipCd: 1, ShowInReport: 1, StatedCapacity: 1, SuperMarketCd: 1, SuperMarketDesc: 1, ToPortCd: 1, ToPortName: 1, VarToCurve: 1 }, DimInvoice: { AgentTk: 1, AirCostSourceCd: 1, AirParticipationInd: 1, AirXferFeeAmt: 1, AttnName: 1, BonusSavingsCd: 1, BonusSavingsDesc: 1, CancelBookingStatusCd: 1, CancelReason: 1, CancellationDt: 1, CancellationType: 1, CenturionCd: 1, CenturionInd: 1, ChangeDt: 1, ChannelCountryCd: 1, ChannelCountryName: 1, ChannelTk: 1, Cinvoice1Num: 1, Cinvoice2Num: 1, Cinvoice3Num: 1, Cinvoice4Num: 1, Cinvoice5Num: 1, Cinvoice6Num: 1, CityName: 1, ComboBookingInd: 1, ComboLegQty: 1, CompanyCd: 1, CountryCd: 1, CountryName: 1, CreateDt: 1, CruiseCommissionAmt: 1, CruiseSvcMgmtCrNum: 1, CruiseSvcMgmtId: 1, CruiseTk: 1, CurrencyCd: 1, CurrencyDesc: 1, CurrentLoyaltyLevelPax1: 1, CurrentLoyaltyLevelPax2: 1, CurrentPackageCd: 1, DepositAmt: 1, DepositDt: 1, DirectBookingInd: 1, DptrFlightClassCd: 1, DptrFlightQty: 1, DwPastGuest1Ind: 1, DwPastGuest2Ind: 1, DwPastGuestInd: 1, FccDeferredInd: 1, FinalPaymentDueDt: 1, FirstConfirmDt: 1, FirstPaymentDt: 1, FutureDepositFlag: 1, GdsSystemCd: 1, GdsSystemDesc: 1, HotelParticipationInd: 1, InitialWaitlistInd: 1, InstallmentPlanInd: 1, InstallmentPlanNum: 1, InvoiceNum: 1, InvoiceTk: 1, LandPackageParticipantInd: 1, LandPackageParticipantQty: 1, MpcardNumPax1: 1, MpcardNumPax2: 1, NonrevPassengerQty: 1, NontaxPassengerQty: 1, NvsPgInd: 1, OciOfficeCd: 1, OfficeCd: 1, OfficeDesc: 1, OnboardTypeDesc: 1, OriginalConsortiumCd: 1, OriginalConsortiumDesc: 1, OriginalDeptCd: 1, OriginalDeptName: 1, OriginalUserActiveInd: 1, OriginalUserId: 1, OriginalUserName: 1, OutboundReportingRegionCd: 1, PackageCd: 1, PaidClassCategoryDesc: 1, PaidClassCd: 1, PassengerQty: 1, PastGuestInd: 1, Pax1AirportHome1Cd: 1, Pax1AirportRtrn1Cd: 1, Pax1FirstFlightClass: 1, Pax1FirstName: 1, Pax1LastName: 1, Pax1LoyaltyLevelNm: 1, Pax1NvsPgInd: 1, Pax1RtrnFlightClass: 1, Pax2AirportHome1Cd: 1, Pax2AirportRtrn1Cd: 1, Pax2FirstFlightClass: 1, Pax2FirstName: 1, Pax2LastName: 1, Pax2LoyaltyLevelNm: 1, Pax2NvsPgInd: 1, Pax2RtrnFlightClass: 1, PaxAirClassCd: 1, PlatinumCd: 1, PlatinumInd: 1, PostedInvoiceDt: 1, PromoBonusComm: 1, PromoCd: 1, PromoCommAmt: 1, PromoDesc: 1, PromotionalAmenityCd: 1, RtrnFlightClassCd: 1, RtrnFlightQty: 1, SalesSourceCd: 1, SalesSourceDesc: 1, StateCd: 1, StatusCd: 1, StatusDesc: 1, UserId: 1, UserName: 1, WaitlistDt: 1, ZipCd: 1 }, RevenueAdhocManagement: { AdhocDate: 1, AdhocDateTk: 1, CubeId: 1, DatabaseId: 1, Key: 1, LastProcessedDateTime: 1, LastUpdatedBy: 1, SqlJobName: 1 }, ScheduledJob: { JobDescription: 1, JobName: 1, ScheduledJobId: 1 }, VwSqlJobList: { DateCreated: 1, DateModified: 1, Enabled: 1, JobDescription: 1, Name: 1 } }, PCHODS: { OutboundAgent: { AgentId: 1, AgentLocationDescription: 1, AgentLocationId: 1, CobrandInd: 1, CompanyCd: 1, CompanyName: 1, Nm: 1, NvsUserId: 1, PrimaryBrand: 1, StartInactiveDt: 1, TeamCompanyCd: 1, TeamCompanyName: 1 }, OutboundAgentLocation: { AgentLocationId: 1, Description: 1 }, OutboundCommissionBkGoal: { CommissionMonth: 1, CommissionTk: 1, CompanyCd: 1, CompanyName: 1, LoadDt: 1, NumOfBkGoal: 1 }, OutboundCommissionHist: { ActiveDt: 1, CommissionHistId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistAu: { ActiveDt: 1, CommissionHistAuId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionHistBr: { ActiveDt: 1, CommissionHistBrId: 1, CommissionId: 1, CommissionRate: 1, CompanyCd: 1, CompanyName: 1, HighNumBookings: 1, InactiveDt: 1, LowNumBookings: 1 }, OutboundCommissionPeriod: { ClosedBy: 1, ClosedDate: 1, CurrentMonth: 1, EndDate: 1, IsOpen: 1, OutboundCommissionPeriodId: 1, PreviousMonth: 1, StartDate: 1 }, OutboundCompany: { Cd: 1, Nm: 1 }, OutboundMonthlyRptArchiveOverride: { NclId: 1, OciAdjustdomestic: 1, OciPrevMonthDomestic: 1, OciPrevMonthInternational: 1, OciPrevMonthRevDomestic: 1, OciPrevMonthRevInternational: 1, OriginalUserName: 1, OutboundMonth: 1, OutboundMonthlyRptArchiveId: 1, SscAdjustdomestic: 1, SscPrevMonthDomestic: 1, SscPrevMonthInternational: 1, SscPrevMonthRevDomestic: 1, SscPrevMonthRevInternational: 1 }, OutboundNvsUsers: { ActiveInd: 1, CompanyCd: 1, DepartmentCd: 1, DepartmentDesc: 1, UserFirstName: 1, UserId: 1, UserLastName: 1 } }, PCHODSNVS: { Agency: { ActiveInd: 1, Addr1: 1, Addr2: 1, Addr3: 1, AgencyCd: 1, AgencyCdName: 1, AgencyCreateDt: 1, AgencyDefaultStatusInd: 1, AgencyEmail: 1, AgencyNameDesc: 1, AgencyStatusCd: 1, AgencyWebAddress: 1, AgentLinkDesc: 1, AgentNum: 1, AllowBankInd: 1, AllowGpInd: 1, AllowPlatInd: 1, AllowSdbdInd: 1, ApolloInd: 1, AttnDesc: 1, AutoCxlInd: 1, AutoEnvoInd: 1, BankAccountBalAmt: 1, BankAcct2Amt: 1, BdmCd: 1, BdmRepCd: 1, CityName: 1, CliaNum: 1, Comment1Desc: 1, Comment2Desc: 1, CommissionPct: 1, CompanyCd: 1, ConsortRgnNum: 1, ConsortiumAddedDt: 1, ConsortiumCd: 1, ConsortiumRegionAddedDt: 1, ConsortiumRegionCd: 1, CorpComDesc: 1, CorporationInd: 1, Country: 1, CreditAgtInd: 1, CurrencyCd: 1, CurrentYearSalesAmt: 1, EMemberDesc: 1, FaxNum: 1, FinHoldInd: 1, FinalDaysQty: 1, FirstBookingDt: 1, GdsSysCd: 1, GsaInd: 1, GsaPriceLevelAmt: 1, IataNum: 1, InsDefaultCd: 1, Key1: 1, KeyAcctInd: 1, L7daysNum: 1, LastUpdated: 1, LastYearKeyAcctCd: 1, LastYearSalesAmt: 1, MahanaClubInd: 1, MasterAgencyInd: 1, McActiveInd: 1, NactaNum: 1, NationalAcctInd: 1, NvsKeyAcctInd: 1, OfficeCd: 1, Option1DueDaysQty: 1, Option2DueDaysQty: 1, OverVacSummInd: 1, OverrideFinalDaysInd: 1, OverrideOption1DaysInd: 1, OverrideOption2DaysInd: 1, OwnerCd: 1, PaymentViaWireInd: 1, Phone1Num: 1, Phone2Num: 1, PinClubInd: 1, PreferredCommunicationCd: 1, PreferredLanguageDesc: 1, PreviousYrPaxQty: 1, PreviousYrRevAmt: 1, PromoAdInd: 1, Prt1099Ind: 1, PrtD1099Dt: 1, PseudoCityCd: 1, RequiredSecondaryAgentInd: 1, RevLabelCd: 1, SalesRegionCd: 1, SecondaryCurrencyCd: 1, SelfBillInd: 1, SendCustInvInd: 1, SiblingId: 1, SsrRepCd: 1, StateNm: 1, TaxIdNum: 1, TaxInfoReceivedDt: 1, TaxPayer1099Name: 1, UserInUseById: 1, VacSummEmailDesc: 1, VatId: 1, Zip2Cd: 1, ZipCd: 1 }, ConsortiumExceptionList: { CombineInd: 1, CompanyCd: 1, ConsortiumExceptionListTk: 1, ExcludeInd: 1, ItemCd: 1, ItemName: 1, ItemType: 1, ItemTypeTypeTk: 1, LoadDt: 1, NewItemName: 1, NewItemType: 1, NewItemTypeTypeTk: 1 }, GsaDistributionList: { AccountName: 1, AgencyCd: 1, CompanyCd: 1, ContactName: 1, Email: 1, GsaDistributionListTk: 1, LoadDt: 1 }, ItemType: { Type: 1, TypeTk: 1 }, NtrBudget: { AccountPeriodNum: 1, ApcdFinal: 1, BudgetTk: 1, CompanyCd: 1, NtrBudget: 1, NtrFinancialBudget: 1, PdsBudgetTotal: 1 }, NtrBudgetByChannel: { AccountingYear: 1, BudgetbychannelTk: 1, ChannelDesc: 1, ChannelSummDesc: 1, CompanyCd: 1, NpdBudget: 1, NtrBudget: 1, PdsBudgetTotal: 1 }, NtrFcst: { AccountPeriodNum: 1, ApcdFinal: 1, CompanyCd: 1, FcstTk: 1, NtrFcst: 1, NtrFinancialBudget: 1, PdsFcstTotal: 1 }, NtrIntlDatelineCruises: { CompanyCd: 1, CruiseCalendarDaysQty: 1, CruiseDaysQty: 1, CruiseIntlTk: 1, CruiseSegmentCd: 1, LoadDt: 1 }, NtrPastMonthsActual: { ApcdFinal: 1, AvailableNumOfCabins: 1, BookedNumOfCabins: 1, CompanyCd: 1, CxRev: 1, NtrFinal: 1, PastmonthactualTk: 1, PdsFinalTotal: 1, StlyAvailableNumOfCabins: 1, StlyBookedNumOfCabins: 1, YearMonth: 1 }, NtrRptComment: { AccountPeriodNum: 1, Comment: 1, CommentTk: 1, CompanyCd: 1, ReportDate: 1 }, SuppKeyAcctTarget: { AccountType: 1, CcfTargetQ1: 1, CcfTargetQ12: 1, CcfTargetQ13: 1, CcfTargetQ14: 1, CcfTargetQ15: 1, CcfTargetQ2: 1, CcfTargetQ22: 1, CcfTargetQ23: 1, CcfTargetQ24: 1, CcfTargetQ25: 1, CcfTargetQ3: 1, CcfTargetQ32: 1, CcfTargetQ33: 1, CcfTargetQ34: 1, CcfTargetQ35: 1, CcfTargetQ4: 1, CcfTargetQ42: 1, CcfTargetQ43: 1, CcfTargetQ44: 1, CcfTargetQ45: 1, CompanyCd: 1, KeyAcctLink: 1, KeyAcctTk: 1, LoadDt: 1, PrctTargetQ1: 1, PrctTargetQ12: 1, PrctTargetQ13: 1, PrctTargetQ14: 1, PrctTargetQ15: 1, PrctTargetQ2: 1, PrctTargetQ22: 1, PrctTargetQ23: 1, PrctTargetQ24: 1, PrctTargetQ25: 1, PrctTargetQ3: 1, PrctTargetQ32: 1, PrctTargetQ33: 1, PrctTargetQ34: 1, PrctTargetQ35: 1, PrctTargetQ4: 1, PrctTargetQ42: 1, PrctTargetQ43: 1, PrctTargetQ44: 1, PrctTargetQ45: 1, Year: 1 } }, SSISConfig: { DataFlow: { Cet: 1, Description: 1, Key: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 }, GpInterfaceLog: { CompanyCd: 1, CruiseSegmentCd: 1, ExpRevType: 1, GpInterfaceInd: 1, GpInterfacedDt: 1, InterfaceLogId: 1, JournalNum: 1 }, INTConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 }, MicrosDataFlow: { CeIndex: 1, Cet: 1, Description: 1, Key: 1, LseIndex: 1, Lset: 1, Name: 1, Package: 1, ProcessYn: 1, Source: 1, SourceDesc: 1, Status: 1, Target: 1, TargetDesc: 1 }, NclhShip: { CompanyCd: 1, DepartmentCd: 1, HasMerged: 1, IsActive: 1, LocationCd: 1, ShipAbbreviation: 1, ShipFullName: 1, ShipId: 1, ShipTk: 1 }, PsInterfaceConfig: { ConfigId: 1, ConfigSetting: 1, ConfigValue: 1, ConfigValueDate: 1, DataType: 1, ModifiedBy: 1, ModifiedDate: 1, SourceSystem: 1 }, SsisConfigBase: { ConfigId: 1, ConfigurationFilter: 1, ConfiguredValue: 1, ConfiguredValueType: 1, EnvironmentDesc: 1, EnvironmentEnum: 1, ModifiedBy: 1, ModifiedOn: 1, PackagePath: 1 } } }, Forms: { Membership: { ChangePassword: { FormTitle: 1, SubmitButton: 1, Success: 1 }, ForgotPassword: { BackToLogin: 1, FormInfo: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, Login: { FacebookButton: 1, ForgotPassword: 1, FormTitle: 1, GoogleButton: 1, OR: 1, RememberMe: 1, SignInButton: 1, SignUpButton: 1 }, ResetPassword: { BackToLogin: 1, EmailSubject: 1, FormTitle: 1, SubmitButton: 1, Success: 1 }, SignUp: { AcceptTerms: 1, ActivateEmailSubject: 1, ActivationCompleteMessage: 1, BackToLogin: 1, ConfirmEmail: 1, ConfirmPassword: 1, DisplayName: 1, Email: 1, FormInfo: 1, FormTitle: 1, Password: 1, SubmitButton: 1, Success: 1 } } }, Site: { AccessDenied: { ClickToChangeUser: 1, ClickToLogin: 1, LackPermissions: 1, NotLoggedIn: 1, PageTitle: 1 }, BasicProgressDialog: { CancelTitle: 1, PleaseWait: 1 }, BulkServiceAction: { AllHadErrorsFormat: 1, AllSuccessFormat: 1, ConfirmationFormat: 1, ErrorCount: 1, NothingToProcess: 1, SomeHadErrorsFormat: 1, SuccessCount: 1 }, CardViewMixin: { CardView: 1, ListView: 1 }, Dashboard: { ContentDescription: 1 }, Dialogs: { PendingChangesConfirmation: 1 }, DraggableGroupingMixin: { CollapseAllButton: 1, DropPlaceholder: 1, ExpandAllButton: 1 }, EmailClient: { BackButton: 1, CCLabel: 1, CancelButton: 1, ComposeButton: 1, DeleteButton: 1, DeleteMessageConfirmation: 1, DeleteMessageSuccess: 1, DeleteNoSelectionWarning: 1, DeleteSelectedConfirmation: 1, DeleteSelectedSuccess: 1, FolderNames: { drafts: 1, inbox: 1, junk: 1, sent: 1, trash: 1 }, FoldersTitle: 1, ForwardButton: 1, ImapHost: 1, ImapPassword: 1, ImapPort: 1, ImapUsername: 1, LoginButton: 1, LoginTitle: 1, MoveMessageSuccess: 1, MoveNoSelectionWarning: 1, MoveSelectedSuccess: 1, MoveToFolder: 1, NewEmailDialogTitle: 1, PageTitle: 1, QuickSettings: 1, RefreshButton: 1, ReplyAllButton: 1, ReplyButton: 1, ReplyEmailDialogTitle: 1, SearchPlaceholder: 1, SendButton: 1, SignoutButton: 1, SmtpHost: 1, SmtpPassword: 1, SmtpPort: 1, SmtpUsername: 1, ToLabel: 1, ToggleReadButton: 1, ToggleSeenNoSelectionWarning: 1 }, FavoriteViewsMixin: { DeleteButtonHint: 1, DeleteSuccessMessage: 1, EmptyNameError: 1, FavoriteViews: 1, LoadedViewMessage: 1, SaveButton: 1, SaveSuccessMessage: 1, SaveView: 1 }, HeaderFiltersMixin: { CancelButton: 1, ClearButton: 1, OkButton: 1, Search: 1, SelectAll: 1 }, Layout: { FooterCopyright: 1, FooterInfo: 1, FooterRights: 1, GeneralSettings: 1, Language: 1, Theme: 1, ThemeAzure: 1, ThemeAzureLight: 1, ThemeBlack: 1, ThemeBlackLight: 1, ThemeBlue: 1, ThemeBlueLight: 1, ThemeCosmos: 1, ThemeCosmosLight: 1, ThemeGlassy: 1, ThemeGlassyLight: 1, ThemeGreen: 1, ThemeGreenLight: 1, ThemePurple: 1, ThemePurpleLight: 1, ThemeRed: 1, ThemeRedLight: 1, ThemeYellow: 1, ThemeYellowLight: 1 }, RolePermissionDialog: { DialogTitle: 1, EditButton: 1, SaveSuccess: 1 }, UserDialog: { EditPermissionsButton: 1, EditRolesButton: 1 }, UserPermissionDialog: { DialogTitle: 1, Grant: 1, Permission: 1, Revoke: 1, SaveSuccess: 1 }, UserRoleDialog: { DialogTitle: 1, SaveSuccess: 1 }, ValidationError: { Title: 1 }, WizardDialog: { BackButton: 1, CancelMessage: 1, FinishButton: 1, NextButton: 1 } }, Validation: { AuthenticationError: 1, CantFindUserWithEmail: 1, CurrentPasswordMismatch: 1, DeleteForeignKeyError: 1, EmailConfirm: 1, EmailInUse: 1, InvalidActivateToken: 1, InvalidResetToken: 1, MinRequiredPasswordLength: 1, SavePrimaryKeyError: 1 } });
     })(Texts = DAP.Texts || (DAP.Texts = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -7186,6 +7581,75 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var ProductCodeSuppDialog = /** @class */ (function (_super) {
+            __extends(ProductCodeSuppDialog, _super);
+            function ProductCodeSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.ProductCodeSuppForm(_this.idPrefix);
+                return _this;
+            }
+            ProductCodeSuppDialog.prototype.getFormKey = function () { return DWSupport.ProductCodeSuppForm.formKey; };
+            ProductCodeSuppDialog.prototype.getIdProperty = function () { return DWSupport.ProductCodeSuppRow.idProperty; };
+            ProductCodeSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.ProductCodeSuppRow.localTextPrefix; };
+            ProductCodeSuppDialog.prototype.getNameProperty = function () { return DWSupport.ProductCodeSuppRow.nameProperty; };
+            ProductCodeSuppDialog.prototype.getService = function () { return DWSupport.ProductCodeSuppService.baseUrl; };
+            ProductCodeSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductCodeSuppDialog);
+            return ProductCodeSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.ProductCodeSuppDialog = ProductCodeSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ProductCodeSuppGrid = /** @class */ (function (_super) {
+            __extends(ProductCodeSuppGrid, _super);
+            function ProductCodeSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ProductCodeSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.ProductCodeSupp'; };
+            ProductCodeSuppGrid.prototype.getDialogType = function () { return DWSupport.ProductCodeSuppDialog; };
+            ProductCodeSuppGrid.prototype.getIdProperty = function () { return DWSupport.ProductCodeSuppRow.idProperty; };
+            ProductCodeSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.ProductCodeSuppRow.localTextPrefix; };
+            ProductCodeSuppGrid.prototype.getService = function () { return DWSupport.ProductCodeSuppService.baseUrl; };
+            ProductCodeSuppGrid.prototype.getColumns = function () {
+                var columns = _super.prototype.getColumns.call(this);
+                Q.first(columns, function (x) { return x.field == "ProductCd" /* ProductCd */; }).format =
+                    function (ctx) { return "<a href=\"javascript:;\" class=\"product-link\">" + Q.htmlEncode(ctx.value) + "</a>"; };
+                return columns;
+            };
+            ProductCodeSuppGrid.prototype.onClick = function (e, row, cell) {
+                // let base grid handle clicks for its edit links
+                _super.prototype.onClick.call(this, e, row, cell);
+                // if base grid already handled, we shouldn"t handle it again
+                if (e.isDefaultPrevented()) {
+                    return;
+                }
+                // get reference to current item
+                var item = this.itemAt(row);
+                // get reference to clicked element
+                var target = $(e.target);
+                if (target.hasClass("product-link")) {
+                    e.preventDefault();
+                    var productCode = Q.first(DWSupport.ProductCodeSuppRow.getLookup().items, function (x) { return x.ProductCd == item.ProductCd; });
+                    new DWSupport.ProductCodeSuppDialog().loadByIdAndOpenDialog(productCode.ProductCd);
+                }
+            };
+            ProductCodeSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ProductCodeSuppGrid);
+            return ProductCodeSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.ProductCodeSuppGrid = ProductCodeSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var SailingMasterSuppDialog = /** @class */ (function (_super) {
             __extends(SailingMasterSuppDialog, _super);
             function SailingMasterSuppDialog() {
@@ -7198,6 +7662,11 @@ var DAP;
             SailingMasterSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.SailingMasterSuppRow.localTextPrefix; };
             SailingMasterSuppDialog.prototype.getNameProperty = function () { return DWSupport.SailingMasterSuppRow.nameProperty; };
             SailingMasterSuppDialog.prototype.getService = function () { return DWSupport.SailingMasterSuppService.baseUrl; };
+            SailingMasterSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
             SailingMasterSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], SailingMasterSuppDialog);
@@ -7220,12 +7689,165 @@ var DAP;
             SailingMasterSuppGrid.prototype.getIdProperty = function () { return DWSupport.SailingMasterSuppRow.idProperty; };
             SailingMasterSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.SailingMasterSuppRow.localTextPrefix; };
             SailingMasterSuppGrid.prototype.getService = function () { return DWSupport.SailingMasterSuppService.baseUrl; };
+            SailingMasterSuppGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
             SailingMasterSuppGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], SailingMasterSuppGrid);
             return SailingMasterSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.SailingMasterSuppGrid = SailingMasterSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SlProductCodeSuppDialog = /** @class */ (function (_super) {
+            __extends(SlProductCodeSuppDialog, _super);
+            function SlProductCodeSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.SlProductCodeSuppForm(_this.idPrefix);
+                return _this;
+            }
+            SlProductCodeSuppDialog.prototype.getFormKey = function () { return DWSupport.SlProductCodeSuppForm.formKey; };
+            SlProductCodeSuppDialog.prototype.getIdProperty = function () { return DWSupport.SlProductCodeSuppRow.idProperty; };
+            SlProductCodeSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.SlProductCodeSuppRow.localTextPrefix; };
+            SlProductCodeSuppDialog.prototype.getNameProperty = function () { return DWSupport.SlProductCodeSuppRow.nameProperty; };
+            SlProductCodeSuppDialog.prototype.getService = function () { return DWSupport.SlProductCodeSuppService.baseUrl; };
+            SlProductCodeSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SlProductCodeSuppDialog);
+            return SlProductCodeSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.SlProductCodeSuppDialog = SlProductCodeSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SlProductCodeSuppGrid = /** @class */ (function (_super) {
+            __extends(SlProductCodeSuppGrid, _super);
+            function SlProductCodeSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SlProductCodeSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.SlProductCodeSupp'; };
+            SlProductCodeSuppGrid.prototype.getDialogType = function () { return DWSupport.SlProductCodeSuppDialog; };
+            SlProductCodeSuppGrid.prototype.getIdProperty = function () { return DWSupport.SlProductCodeSuppRow.idProperty; };
+            SlProductCodeSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.SlProductCodeSuppRow.localTextPrefix; };
+            SlProductCodeSuppGrid.prototype.getService = function () { return DWSupport.SlProductCodeSuppService.baseUrl; };
+            SlProductCodeSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SlProductCodeSuppGrid);
+            return SlProductCodeSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.SlProductCodeSuppGrid = SlProductCodeSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SurveyFilterExclusionSuppDialog = /** @class */ (function (_super) {
+            __extends(SurveyFilterExclusionSuppDialog, _super);
+            function SurveyFilterExclusionSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.SurveyFilterExclusionSuppForm(_this.idPrefix);
+                return _this;
+                //protected getToolbarButtons(): Serenity.ToolButton[] {
+                //    var b = super.getToolbarButtons();
+                //    b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+                //    return b;
+                //}
+            }
+            SurveyFilterExclusionSuppDialog.prototype.getFormKey = function () { return DWSupport.SurveyFilterExclusionSuppForm.formKey; };
+            SurveyFilterExclusionSuppDialog.prototype.getIdProperty = function () { return DWSupport.SurveyFilterExclusionSuppRow.idProperty; };
+            SurveyFilterExclusionSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.SurveyFilterExclusionSuppRow.localTextPrefix; };
+            SurveyFilterExclusionSuppDialog.prototype.getNameProperty = function () { return DWSupport.SurveyFilterExclusionSuppRow.nameProperty; };
+            SurveyFilterExclusionSuppDialog.prototype.getService = function () { return DWSupport.SurveyFilterExclusionSuppService.baseUrl; };
+            SurveyFilterExclusionSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SurveyFilterExclusionSuppDialog);
+            return SurveyFilterExclusionSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.SurveyFilterExclusionSuppDialog = SurveyFilterExclusionSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SurveyFilterExclusionSuppGrid = /** @class */ (function (_super) {
+            __extends(SurveyFilterExclusionSuppGrid, _super);
+            function SurveyFilterExclusionSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SurveyFilterExclusionSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.SurveyFilterExclusionSupp'; };
+            SurveyFilterExclusionSuppGrid.prototype.getDialogType = function () { return DWSupport.SurveyFilterExclusionSuppDialog; };
+            SurveyFilterExclusionSuppGrid.prototype.getIdProperty = function () { return DWSupport.SurveyFilterExclusionSuppRow.idProperty; };
+            SurveyFilterExclusionSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.SurveyFilterExclusionSuppRow.localTextPrefix; };
+            SurveyFilterExclusionSuppGrid.prototype.getService = function () { return DWSupport.SurveyFilterExclusionSuppService.baseUrl; };
+            SurveyFilterExclusionSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SurveyFilterExclusionSuppGrid);
+            return SurveyFilterExclusionSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.SurveyFilterExclusionSuppGrid = SurveyFilterExclusionSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var TblStrategicPriceControlDialog = /** @class */ (function (_super) {
+            __extends(TblStrategicPriceControlDialog, _super);
+            function TblStrategicPriceControlDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.TblStrategicPriceControlForm(_this.idPrefix);
+                return _this;
+            }
+            TblStrategicPriceControlDialog.prototype.getFormKey = function () { return DWSupport.TblStrategicPriceControlForm.formKey; };
+            TblStrategicPriceControlDialog.prototype.getIdProperty = function () { return DWSupport.TblStrategicPriceControlRow.idProperty; };
+            TblStrategicPriceControlDialog.prototype.getLocalTextPrefix = function () { return DWSupport.TblStrategicPriceControlRow.localTextPrefix; };
+            TblStrategicPriceControlDialog.prototype.getNameProperty = function () { return DWSupport.TblStrategicPriceControlRow.nameProperty; };
+            TblStrategicPriceControlDialog.prototype.getService = function () { return DWSupport.TblStrategicPriceControlService.baseUrl; };
+            TblStrategicPriceControlDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            TblStrategicPriceControlDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TblStrategicPriceControlDialog);
+            return TblStrategicPriceControlDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.TblStrategicPriceControlDialog = TblStrategicPriceControlDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var TblStrategicPriceControlGrid = /** @class */ (function (_super) {
+            __extends(TblStrategicPriceControlGrid, _super);
+            function TblStrategicPriceControlGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            TblStrategicPriceControlGrid.prototype.getColumnsKey = function () { return 'DWSupport.TblStrategicPriceControl'; };
+            TblStrategicPriceControlGrid.prototype.getDialogType = function () { return DWSupport.TblStrategicPriceControlDialog; };
+            TblStrategicPriceControlGrid.prototype.getIdProperty = function () { return DWSupport.TblStrategicPriceControlRow.idProperty; };
+            TblStrategicPriceControlGrid.prototype.getLocalTextPrefix = function () { return DWSupport.TblStrategicPriceControlRow.localTextPrefix; };
+            TblStrategicPriceControlGrid.prototype.getService = function () { return DWSupport.TblStrategicPriceControlService.baseUrl; };
+            TblStrategicPriceControlGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TblStrategicPriceControlGrid);
+            return TblStrategicPriceControlGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.TblStrategicPriceControlGrid = TblStrategicPriceControlGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -9362,7 +9984,7 @@ var DAP;
         var RevenueAdhocManagementDialog = /** @class */ (function (_super) {
             __extends(RevenueAdhocManagementDialog, _super);
             function RevenueAdhocManagementDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHDW.RevenueAdhocManagementForm(_this.idPrefix);
                 return _this;
             }
@@ -9371,13 +9993,17 @@ var DAP;
             RevenueAdhocManagementDialog.prototype.getLocalTextPrefix = function () { return PCHDW.RevenueAdhocManagementRow.localTextPrefix; };
             RevenueAdhocManagementDialog.prototype.getNameProperty = function () { return PCHDW.RevenueAdhocManagementRow.nameProperty; };
             RevenueAdhocManagementDialog.prototype.getService = function () { return PCHDW.RevenueAdhocManagementService.baseUrl; };
+            RevenueAdhocManagementDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                if (!DAP.Authorization.hasPermission("PCHDW:EDMSupportAdmin")) {
+                    b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                }
+                return b;
+            };
             RevenueAdhocManagementDialog.prototype.afterLoadEntity = function () {
                 _super.prototype.afterLoadEntity.call(this);
-                if (this.form.DatabaseId.value != "Reporting_stly") {
-                    Serenity.EditorUtils.setReadOnly(this.form.AdhocStlydate, true);
-                }
-                else {
-                    Serenity.EditorUtils.setReadOnly(this.form.AdhocStlydate, false);
+                if (!DAP.Authorization.hasPermission("PCHDW:EDMSupportAdmin")) {
+                    Serenity.EditorUtils.setReadOnly(this.form.SqlJobName, true);
                 }
             };
             RevenueAdhocManagementDialog = __decorate([
@@ -9408,6 +10034,13 @@ var DAP;
                     grid: this
                 });
                 return this.slickGrid;
+            };
+            RevenueAdhocManagementGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                if (!DAP.Authorization.hasPermission("PCHDW:EDMSupportAdmin")) {
+                    buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                }
+                return buttons;
             };
             RevenueAdhocManagementGrid.prototype.getColumns = function () {
                 var columns = _super.prototype.getColumns.call(this);
@@ -9440,11 +10073,17 @@ var DAP;
                 if (target.hasClass('inline-action')) {
                     e.preventDefault();
                     if (target.hasClass('start-job')) {
-                        Q.confirm('Are you sure you want to run this Cube?', function () {
+                        Q.confirm('Are you sure you want to refresh this Cube?', function () {
                             var crow = Q.deepClone(_this.itemAt(row));
                             PCHDW.RevenueAdhocManagementService.ExecuteSP({
                                 Entity: crow
                             }, function (response) {
+                                crow.LastUpdatedBy = Q.Authorization.username;
+                                PCHDW.RevenueAdhocManagementService.Update({
+                                    Entity: crow
+                                }, function (response) {
+                                    _this.refresh();
+                                });
                                 _this.refresh();
                             });
                             Q.notifySuccess("Job Started Successfully.  This Job will take about 15 miunutes to complete.  Wait for email confirmation.");
@@ -11781,6 +12420,52 @@ var DAP;
 (function (DAP) {
     var SSISConfig;
     (function (SSISConfig) {
+        var NclhShipDialog = /** @class */ (function (_super) {
+            __extends(NclhShipDialog, _super);
+            function NclhShipDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new SSISConfig.NclhShipForm(_this.idPrefix);
+                return _this;
+            }
+            NclhShipDialog.prototype.getFormKey = function () { return SSISConfig.NclhShipForm.formKey; };
+            NclhShipDialog.prototype.getIdProperty = function () { return SSISConfig.NclhShipRow.idProperty; };
+            NclhShipDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.NclhShipRow.localTextPrefix; };
+            NclhShipDialog.prototype.getNameProperty = function () { return SSISConfig.NclhShipRow.nameProperty; };
+            NclhShipDialog.prototype.getService = function () { return SSISConfig.NclhShipService.baseUrl; };
+            NclhShipDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NclhShipDialog);
+            return NclhShipDialog;
+        }(Serenity.EntityDialog));
+        SSISConfig.NclhShipDialog = NclhShipDialog;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
+        var NclhShipGrid = /** @class */ (function (_super) {
+            __extends(NclhShipGrid, _super);
+            function NclhShipGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            NclhShipGrid.prototype.getColumnsKey = function () { return 'SSISConfig.NclhShip'; };
+            NclhShipGrid.prototype.getDialogType = function () { return SSISConfig.NclhShipDialog; };
+            NclhShipGrid.prototype.getIdProperty = function () { return SSISConfig.NclhShipRow.idProperty; };
+            NclhShipGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.NclhShipRow.localTextPrefix; };
+            NclhShipGrid.prototype.getService = function () { return SSISConfig.NclhShipService.baseUrl; };
+            NclhShipGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], NclhShipGrid);
+            return NclhShipGrid;
+        }(Serenity.EntityGrid));
+        SSISConfig.NclhShipGrid = NclhShipGrid;
+    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var SSISConfig;
+    (function (SSISConfig) {
         var PsInterfaceConfigDialog = /** @class */ (function (_super) {
             __extends(PsInterfaceConfigDialog, _super);
             function PsInterfaceConfigDialog() {
@@ -11918,156 +12603,6 @@ var DAP;
             return SsisConfigBaseGrid;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
-    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHDW;
-    (function (PCHDW) {
-        var RevenueAdhocManagementService;
-        (function (RevenueAdhocManagementService) {
-            RevenueAdhocManagementService.baseUrl = 'PCHDW/RevenueAdhocManagement';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List',
-                'ExecuteSP'
-            ].forEach(function (x) {
-                RevenueAdhocManagementService[x] = function (r, s, o) {
-                    return Q.serviceRequest(RevenueAdhocManagementService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(RevenueAdhocManagementService = PCHDW.RevenueAdhocManagementService || (PCHDW.RevenueAdhocManagementService = {}));
-    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var SSISConfig;
-    (function (SSISConfig) {
-        var NclhShipForm = /** @class */ (function (_super) {
-            __extends(NclhShipForm, _super);
-            function NclhShipForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
-            }
-            NclhShipForm.formKey = 'SSISConfig.NclhShip';
-            return NclhShipForm;
-        }(Serenity.PrefixedContext));
-        SSISConfig.NclhShipForm = NclhShipForm;
-        [,
-            ['ShipAbbreviation', function () { return Serenity.StringEditor; }],
-            ['ShipFullName', function () { return Serenity.StringEditor; }],
-            ['CompanyCd', function () { return Serenity.StringEditor; }],
-            ['DepartmentCd', function () { return Serenity.StringEditor; }],
-            ['LocationCd', function () { return Serenity.StringEditor; }],
-            ['IsActive', function () { return Serenity.BooleanEditor; }],
-            ['ShipTk', function () { return Serenity.IntegerEditor; }],
-            ['HasMerged', function () { return Serenity.BooleanEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(NclhShipForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
-    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var SSISConfig;
-    (function (SSISConfig) {
-        var NclhShipRow;
-        (function (NclhShipRow) {
-            NclhShipRow.idProperty = 'ShipId';
-            NclhShipRow.nameProperty = 'ShipAbbreviation';
-            NclhShipRow.localTextPrefix = 'SSISConfig.NclhShip';
-            var Fields;
-            (function (Fields) {
-            })(Fields = NclhShipRow.Fields || (NclhShipRow.Fields = {}));
-            [
-                'ShipId',
-                'ShipAbbreviation',
-                'ShipFullName',
-                'CompanyCd',
-                'DepartmentCd',
-                'LocationCd',
-                'IsActive',
-                'ShipTk',
-                'HasMerged'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(NclhShipRow = SSISConfig.NclhShipRow || (SSISConfig.NclhShipRow = {}));
-    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var SSISConfig;
-    (function (SSISConfig) {
-        var NclhShipService;
-        (function (NclhShipService) {
-            NclhShipService.baseUrl = 'SSISConfig/NclhShip';
-            var Methods;
-            (function (Methods) {
-            })(Methods = NclhShipService.Methods || (NclhShipService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                NclhShipService[x] = function (r, s, o) {
-                    return Q.serviceRequest(NclhShipService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = NclhShipService.baseUrl + '/' + x;
-            });
-        })(NclhShipService = SSISConfig.NclhShipService || (SSISConfig.NclhShipService = {}));
-    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var SSISConfig;
-    (function (SSISConfig) {
-        var NclhShipDialog = /** @class */ (function (_super) {
-            __extends(NclhShipDialog, _super);
-            function NclhShipDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new SSISConfig.NclhShipForm(_this.idPrefix);
-                return _this;
-            }
-            NclhShipDialog.prototype.getFormKey = function () { return SSISConfig.NclhShipForm.formKey; };
-            NclhShipDialog.prototype.getIdProperty = function () { return SSISConfig.NclhShipRow.idProperty; };
-            NclhShipDialog.prototype.getLocalTextPrefix = function () { return SSISConfig.NclhShipRow.localTextPrefix; };
-            NclhShipDialog.prototype.getNameProperty = function () { return SSISConfig.NclhShipRow.nameProperty; };
-            NclhShipDialog.prototype.getService = function () { return SSISConfig.NclhShipService.baseUrl; };
-            NclhShipDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], NclhShipDialog);
-            return NclhShipDialog;
-        }(Serenity.EntityDialog));
-        SSISConfig.NclhShipDialog = NclhShipDialog;
-    })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var SSISConfig;
-    (function (SSISConfig) {
-        var NclhShipGrid = /** @class */ (function (_super) {
-            __extends(NclhShipGrid, _super);
-            function NclhShipGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            NclhShipGrid.prototype.getColumnsKey = function () { return 'SSISConfig.NclhShip'; };
-            NclhShipGrid.prototype.getDialogType = function () { return SSISConfig.NclhShipDialog; };
-            NclhShipGrid.prototype.getIdProperty = function () { return SSISConfig.NclhShipRow.idProperty; };
-            NclhShipGrid.prototype.getLocalTextPrefix = function () { return SSISConfig.NclhShipRow.localTextPrefix; };
-            NclhShipGrid.prototype.getService = function () { return SSISConfig.NclhShipService.baseUrl; };
-            NclhShipGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], NclhShipGrid);
-            return NclhShipGrid;
-        }(Serenity.EntityGrid));
-        SSISConfig.NclhShipGrid = NclhShipGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

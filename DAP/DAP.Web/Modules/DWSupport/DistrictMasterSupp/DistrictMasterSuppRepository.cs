@@ -51,6 +51,8 @@ namespace DAP.DWSupport.Repositories
                 {
                     Row.ModifiedByNam = user.Username.ToUpper();
                     Row.ModifiedTs = DateTime.Now;
+
+                    //Database trigger will create a new record at the same time
                 }
             }
 

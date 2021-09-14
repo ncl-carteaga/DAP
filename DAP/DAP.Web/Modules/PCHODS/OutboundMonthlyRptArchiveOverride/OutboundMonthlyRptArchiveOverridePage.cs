@@ -6,7 +6,8 @@ namespace DAP.PCHODS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODS/OutboundMonthlyRptArchiveOverride"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.OutboundMonthlyRptArchiveOverrideRow))]
+    //[PageAuthorize(typeof(Entities.OutboundMonthlyRptArchiveOverrideRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.OutboundMonthlyRptArchiveOverride)]
     public class OutboundMonthlyRptArchiveOverrideController : Controller
     {
         public ActionResult Index()

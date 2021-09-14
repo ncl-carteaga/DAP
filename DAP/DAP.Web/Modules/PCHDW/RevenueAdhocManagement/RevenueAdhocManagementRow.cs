@@ -38,12 +38,6 @@ namespace DAP.PCHDW.Entities
             set { Fields.CubeId[this] = value; }
         }
 
-        [DisplayName("Measuregroup Id"), Column("measuregroup_id"), Size(50), Visible(false)]
-        public String MeasuregroupId
-        {
-            get { return Fields.MeasuregroupId[this]; }
-            set { Fields.MeasuregroupId[this] = value; }
-        }
 
         [DisplayName("Adhoc Date"), Column("adhoc_date"), NotNull]
         public DateTime? AdhocDate
@@ -59,21 +53,21 @@ namespace DAP.PCHDW.Entities
             set { Fields.AdhocDateTk[this] = value; }
         }
 
-        [DisplayName("Adhoc Stlydate"), Column("adhoc_stlydate"), NotNull]
-        public DateTime? AdhocStlydate
+        [DisplayName("Sql Job Name"), Column("Sql_Job_Name"), NotNull]
+        public String SqlJobName
         {
-            get { return Fields.AdhocStlydate[this]; }
-            set { Fields.AdhocStlydate[this] = value; }
+            get { return Fields.SqlJobName[this]; }
+            set { Fields.SqlJobName[this] = value; }
         }
 
-        [DisplayName("Adhoc Stlydate Tk"), Column("adhoc_stlydate_tk"), NotNull, Updatable(false)]
-        public Int32? AdhocStlydateTk
+        [DisplayName("Last Updated By"), Column("Last_Updated_By") ]
+        public String LastUpdatedBy
         {
-            get { return Fields.AdhocStlydateTk[this]; }
-            set { Fields.AdhocStlydateTk[this] = value; }
+            get { return Fields.LastUpdatedBy[this]; }
+            set { Fields.LastUpdatedBy[this] = value; }
         }
 
-        [DisplayName("Last Processed Date Time"), Column("last_processed_date_time"), Updatable(false), Insertable(false)]
+        [DisplayName("Last Processed Date Time"), Column("last_processed_date_time"), Updatable(false), Insertable(false), DisplayFormat("g")]
         public DateTime? LastProcessedDateTime
         {
             get { return Fields.LastProcessedDateTime[this]; }
@@ -102,11 +96,11 @@ namespace DAP.PCHDW.Entities
             public Int32Field Key;
             public StringField DatabaseId;
             public StringField CubeId;
-            public StringField MeasuregroupId;
+
             public DateTimeField AdhocDate;
             public Int32Field AdhocDateTk;
-            public DateTimeField AdhocStlydate;
-            public Int32Field AdhocStlydateTk;
+            public StringField LastUpdatedBy;
+            public StringField SqlJobName;
             public DateTimeField LastProcessedDateTime;
         }
     }

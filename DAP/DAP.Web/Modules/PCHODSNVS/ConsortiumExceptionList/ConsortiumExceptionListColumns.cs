@@ -22,7 +22,7 @@ namespace DAP.PCHODSNVS.Columns
         public String ItemName { get; set; }
 
         public String ItemType { get; set; }
-        public Int32 ItemCd { get; set; }
+        public String ItemCd { get; set; }
         public Boolean ExcludeInd { get; set; }
         public Boolean CombineInd { get; set; }
         public DateTime LoadDt { get; set; }
