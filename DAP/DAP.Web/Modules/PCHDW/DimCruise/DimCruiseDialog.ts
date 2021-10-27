@@ -11,6 +11,19 @@ namespace DAP.PCHDW {
 
         protected form = new DimCruiseForm(this.idPrefix);
 
+        constructor() {
+            super();
+
+            this.form.CruiseSegmentToDt.addValidationRule(this.uniqueName, e => {
+                    var startDate = new Date(this.form.CruiseSegmentFromDt.value);
+                    var endDate = new Date(this.form.CruiseSegmentToDt.value);
+                    if (endDate < startDate) {
+                        return "Invalid Cruise Segment Dates!";
+                    }
+                });
+
+        }
+
         protected updateInterface() {
 
             // by default cloneButton is hidden in base UpdateInterface method

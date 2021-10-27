@@ -1716,6 +1716,46 @@ declare namespace DAP.DWSupport {
         }
     }
 }
+declare namespace DAP.DWSupport {
+    interface VwGetSeaSalesRepIdRow {
+        UserId?: number;
+        UserLoginName?: string;
+        UserFullName?: string;
+        Comments?: string;
+        OfficeCode?: string;
+    }
+    namespace VwGetSeaSalesRepIdRow {
+        const idProperty = "UserLoginName";
+        const nameProperty = "UserLoginName";
+        const localTextPrefix = "DWSupport.VwGetSeaSalesRepId";
+        const lookupKey = "DWSupport.LoginName";
+        function getLookup(): Q.Lookup<VwGetSeaSalesRepIdRow>;
+        const enum Fields {
+            UserId = "UserId",
+            UserLoginName = "UserLoginName",
+            UserFullName = "UserFullName",
+            Comments = "Comments",
+            OfficeCode = "OfficeCode"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace VwGetSeaSalesRepIdService {
+        const baseUrl = "DWSupport/VwGetSeaSalesRepId";
+        function Create(request: Serenity.SaveRequest<VwGetSeaSalesRepIdRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<VwGetSeaSalesRepIdRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<VwGetSeaSalesRepIdRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<VwGetSeaSalesRepIdRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/VwGetSeaSalesRepId/Create",
+            Update = "DWSupport/VwGetSeaSalesRepId/Update",
+            Delete = "DWSupport/VwGetSeaSalesRepId/Delete",
+            Retrieve = "DWSupport/VwGetSeaSalesRepId/Retrieve",
+            List = "DWSupport/VwGetSeaSalesRepId/List"
+        }
+    }
+}
 declare namespace Serenity.EmailClient {
     interface EmailAttachment {
         Key?: number;
@@ -3546,69 +3586,6 @@ declare namespace DAP.PCHDW {
 declare namespace DAP.PCHDW {
 }
 declare namespace DAP.PCHDW {
-    interface RevenueAdhocManagementForm {
-        DatabaseId: Serenity.StringEditor;
-        CubeId: Serenity.StringEditor;
-        AdhocDate: Serenity.DateEditor;
-        AdhocDateTk: Serenity.IntegerEditor;
-        SqlJobName: Serenity.StringEditor;
-        LastProcessedDateTime: Serenity.DateEditor;
-    }
-    class RevenueAdhocManagementForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.PCHDW {
-    interface RevenueAdhocManagementRow {
-        Key?: number;
-        DatabaseId?: string;
-        CubeId?: string;
-        AdhocDate?: string;
-        AdhocDateTk?: number;
-        LastUpdatedBy?: string;
-        SqlJobName?: string;
-        LastProcessedDateTime?: string;
-    }
-    namespace RevenueAdhocManagementRow {
-        const idProperty = "Key";
-        const nameProperty = "DatabaseId";
-        const localTextPrefix = "PCHDW.RevenueAdhocManagement";
-        const enum Fields {
-            Key = "Key",
-            DatabaseId = "DatabaseId",
-            CubeId = "CubeId",
-            AdhocDate = "AdhocDate",
-            AdhocDateTk = "AdhocDateTk",
-            LastUpdatedBy = "LastUpdatedBy",
-            SqlJobName = "SqlJobName",
-            LastProcessedDateTime = "LastProcessedDateTime"
-        }
-    }
-}
-declare namespace DAP.PCHDW {
-    namespace RevenueAdhocManagementService {
-        const baseUrl = "PCHDW/RevenueAdhocManagement";
-        function Create(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RevenueAdhocManagementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RevenueAdhocManagementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function ExecuteSP(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "PCHDW/RevenueAdhocManagement/Create",
-            Update = "PCHDW/RevenueAdhocManagement/Update",
-            Delete = "PCHDW/RevenueAdhocManagement/Delete",
-            Retrieve = "PCHDW/RevenueAdhocManagement/Retrieve",
-            List = "PCHDW/RevenueAdhocManagement/List",
-            ExecuteSP = "PCHDW/RevenueAdhocManagement/ExecuteSP"
-        }
-    }
-}
-declare namespace DAP.PCHDW {
-}
-declare namespace DAP.PCHDW {
     interface ScheduledJobForm {
         JobName: Serenity.StringEditor;
         JobDescription: Serenity.TextAreaEditor;
@@ -4296,8 +4273,20 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+    interface SelectCompanyAuForm {
+        CompanyCd: SelectCompanyAUEditor;
+        EffectiveDt: Serenity.DateEditor;
+    }
+    class SelectCompanyAuForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODS {
     interface SelectCompanyForm {
         CompanyCd: SelectCompanyEditor;
+        EffectiveDt: Serenity.DateEditor;
     }
     class SelectCompanyForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -4718,7 +4707,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrBudgetByChannelForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         AccountingYear: Serenity.IntegerEditor;
         ChannelSummDesc: Serenity.StringEditor;
         ChannelDesc: Serenity.StringEditor;
@@ -4780,7 +4769,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrBudgetForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         AccountPeriodNum: Serenity.StringEditor;
         NtrBudget: Serenity.DecimalEditor;
         PdsBudgetTotal: Serenity.DecimalEditor;
@@ -4839,7 +4828,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrFcstForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         AccountPeriodNum: Serenity.StringEditor;
         NtrFcst: Serenity.DecimalEditor;
         PdsFcstTotal: Serenity.DecimalEditor;
@@ -4898,7 +4887,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrIntlDatelineCruisesForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         CruiseSegmentCd: Serenity.StringEditor;
         CruiseDaysQty: Serenity.IntegerEditor;
         CruiseCalendarDaysQty: Serenity.IntegerEditor;
@@ -4954,7 +4943,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrPastMonthsActualForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         YearMonth: Serenity.StringEditor;
         NtrFinal: Serenity.DecimalEditor;
         CxRev: Serenity.DecimalEditor;
@@ -5025,7 +5014,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrRptCommentForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         ReportDate: Serenity.DateEditor;
         Comment: Serenity.TextAreaEditor;
         AccountPeriodNum: Serenity.StringEditor;
@@ -5071,6 +5060,69 @@ declare namespace DAP.PCHODSNVS {
             Delete = "PCHODSNVS/NtrRptComment/Delete",
             Retrieve = "PCHODSNVS/NtrRptComment/Retrieve",
             List = "PCHODSNVS/NtrRptComment/List"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+}
+declare namespace DAP.PCHODSNVS {
+    interface RevenueAdhocManagementForm {
+        DatabaseId: Serenity.StringEditor;
+        CubeId: Serenity.StringEditor;
+        AdhocDate: Serenity.DateEditor;
+        AdhocDateTk: Serenity.IntegerEditor;
+        SqlJobName: Serenity.StringEditor;
+        LastProcessedDateTime: Serenity.DateEditor;
+    }
+    class RevenueAdhocManagementForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    interface RevenueAdhocManagementRow {
+        Key?: number;
+        DatabaseId?: string;
+        CubeId?: string;
+        AdhocDate?: string;
+        AdhocDateTk?: number;
+        LastUpdatedBy?: string;
+        SqlJobName?: string;
+        LastProcessedDateTime?: string;
+    }
+    namespace RevenueAdhocManagementRow {
+        const idProperty = "Key";
+        const nameProperty = "DatabaseId";
+        const localTextPrefix = "PCHODSNVS.RevenueAdhocManagement";
+        const enum Fields {
+            Key = "Key",
+            DatabaseId = "DatabaseId",
+            CubeId = "CubeId",
+            AdhocDate = "AdhocDate",
+            AdhocDateTk = "AdhocDateTk",
+            LastUpdatedBy = "LastUpdatedBy",
+            SqlJobName = "SqlJobName",
+            LastProcessedDateTime = "LastProcessedDateTime"
+        }
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    namespace RevenueAdhocManagementService {
+        const baseUrl = "PCHODSNVS/RevenueAdhocManagement";
+        function Create(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RevenueAdhocManagementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RevenueAdhocManagementRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExecuteSP(request: Serenity.SaveRequest<RevenueAdhocManagementRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODSNVS/RevenueAdhocManagement/Create",
+            Update = "PCHODSNVS/RevenueAdhocManagement/Update",
+            Delete = "PCHODSNVS/RevenueAdhocManagement/Delete",
+            Retrieve = "PCHODSNVS/RevenueAdhocManagement/Retrieve",
+            List = "PCHODSNVS/RevenueAdhocManagement/List",
+            ExecuteSP = "PCHODSNVS/RevenueAdhocManagement/ExecuteSP"
         }
     }
 }
@@ -6888,6 +6940,7 @@ declare namespace DAP.PCHDW {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: DimCruiseForm;
+        constructor();
         protected updateInterface(): void;
         protected getToolbarButtons(): Serenity.ToolButton[];
     }
@@ -6932,33 +6985,6 @@ declare namespace DAP.PCHDW {
         protected getService(): string;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.PCHDW {
-    class RevenueAdhocManagementDialog extends Serenity.EntityDialog<RevenueAdhocManagementRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: RevenueAdhocManagementForm;
-        constructor();
-        protected getToolbarButtons(): Serenity.ToolButton[];
-        protected afterLoadEntity(): void;
-    }
-}
-declare namespace DAP.PCHDW {
-    class RevenueAdhocManagementGrid extends Serenity.EntityGrid<RevenueAdhocManagementRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof RevenueAdhocManagementDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected createSlickGrid(): Slick.Grid;
-        protected getButtons(): Serenity.ToolButton[];
-        protected getColumns(): Slick.Column[];
-        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace DAP.PCHDW {
@@ -7149,6 +7175,7 @@ declare namespace DAP.PCHODS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         private pendingChanges;
+        private _CompanyID;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
         private createNewBracketClick;
@@ -7162,6 +7189,30 @@ declare namespace DAP.PCHODS {
         protected createSlickGrid(): Slick.Grid;
         protected getSlickOptions(): Slick.GridOptions;
         protected usePager(): boolean;
+    }
+}
+declare namespace DAP.PCHODS {
+    class SelectComapanyAUDialog extends Serenity.PropertyDialog<any, any> {
+        protected getFormKey(): string;
+        returnData: (dataList: string) => void;
+        protected form: SelectCompanyAuForm;
+        constructor();
+        createBracket(): void;
+        protected getDialogButtons(): Serenity.DialogButton[];
+        protected getDialogOptions(): JQueryUI.DialogOptions;
+        protected onDialogClose(): void;
+    }
+}
+declare namespace DAP.PCHODS {
+    /**
+     * Our select editor with hardcoded values.
+     *
+     * When you define a new editor type, make sure you build
+     * and transform templates for it to be available
+     * in server side forms, e.g. [HardCodedValuesEditor]
+     */
+    class SelectCompanyAUEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.PCHODS {
@@ -7433,6 +7484,33 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class RevenueAdhocManagementDialog extends Serenity.EntityDialog<RevenueAdhocManagementRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RevenueAdhocManagementForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+        protected afterLoadEntity(): void;
+    }
+}
+declare namespace DAP.PCHODSNVS {
+    class RevenueAdhocManagementGrid extends Serenity.EntityGrid<RevenueAdhocManagementRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RevenueAdhocManagementDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
+        protected getButtons(): Serenity.ToolButton[];
+        protected getColumns(): Slick.Column[];
+        protected onClick(e: JQueryEventObject, row: number, cell: number): void;
     }
 }
 declare namespace DAP.PCHODSNVS {

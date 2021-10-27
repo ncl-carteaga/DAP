@@ -11,8 +11,9 @@ namespace DAP.SSISConfig.Entities
 
     [ConnectionKey("PSConfig"), Module("SSISConfig"), TableName("[dbo].[NCLH_SHIP]")]
     [DisplayName("Nclh Ship"), InstanceName("Nclh Ship")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.SSISConfig.View)]
+    [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
+    [DeletePermission(PermissionKeys.SSISConfig.Delete)]
     public sealed class NclhShipRow : Row, IIdRow, INameRow
     {
         [DisplayName("Ship Id"), Identity]

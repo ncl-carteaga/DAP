@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrIntlDatelineCruisesForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         CruiseSegmentCd: Serenity.StringEditor;
         CruiseDaysQty: Serenity.IntegerEditor;
         CruiseCalendarDaysQty: Serenity.IntegerEditor;
@@ -18,16 +18,17 @@
                 NtrIntlDatelineCruisesForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
-                var w2 = s.DateEditor;
+                var w0 = PCHODS.CompanyEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.IntegerEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(NtrIntlDatelineCruisesForm, [
                     'CompanyCd', w0,
-                    'CruiseSegmentCd', w0,
-                    'CruiseDaysQty', w1,
-                    'CruiseCalendarDaysQty', w1,
-                    'LoadDt', w2
+                    'CruiseSegmentCd', w1,
+                    'CruiseDaysQty', w2,
+                    'CruiseCalendarDaysQty', w2,
+                    'LoadDt', w3
                 ]);
             }
         }

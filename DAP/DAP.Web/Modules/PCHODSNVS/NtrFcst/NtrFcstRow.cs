@@ -17,7 +17,7 @@ namespace DAP.PCHODSNVS.Entities
     [DataAuditLog]
     public sealed class NtrFcstRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), NotNull, QuickSearch]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), NotNull, QuickSearch, DAP.PCHODS.CompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

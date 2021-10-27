@@ -6,7 +6,7 @@ namespace DAP.SSISConfig.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("SSISConfig/NclhShip"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.NclhShipRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.NCLShip)]
     public class NclhShipController : Controller
     {
         public ActionResult Index()

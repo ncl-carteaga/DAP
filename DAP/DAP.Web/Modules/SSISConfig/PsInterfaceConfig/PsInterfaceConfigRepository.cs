@@ -73,7 +73,7 @@ namespace DAP.SSISConfig.Repositories
             {
                 base.ApplyFilters(query);
 
-                if (!Authorization.HasPermission("SSISConfig:Config:Modify"))
+                if (Authorization.HasPermission("SSISConfig:PSConfig"))
                 {
                     query.Where(fld.DataType == "Date");
                 }

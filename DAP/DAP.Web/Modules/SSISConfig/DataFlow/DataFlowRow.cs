@@ -11,8 +11,9 @@ namespace DAP.SSISConfig.Entities
 
     [ConnectionKey("PCH_ODS_FIDELIO"), Module("SSISConfig"), TableName("[etl].[Data_Flow]")]
     [DisplayName("Fidelio Data Flow"), InstanceName("Data Flow")]
-    [ReadPermission(PermissionKeys.ConfigAdmin)]
-    [ModifyPermission(PermissionKeys.ConfigAdmin)]
+    [ReadPermission(PermissionKeys.SSISConfig.View)]
+    [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
+    [DeletePermission(PermissionKeys.SSISConfig.Delete)]
     [DataAuditLog]
     public sealed class DataFlowRow : Row, IIdRow, INameRow
     {

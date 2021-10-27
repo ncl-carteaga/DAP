@@ -1148,7 +1148,7 @@
     <Content Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingIndex.cshtml" />
     <Content Include="Content\site\site.avaya.less" />
     <Content Include="Modules\PCHDW\DimCruise\DimCruiseIndex.cshtml" />
-    <Content Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementIndex.cshtml" />
     <Content Include="Modules\SSISConfig\NclhShip\NclhShipIndex.cshtml" />
     <Content Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlIndex.cshtml" />
@@ -1291,12 +1291,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimInvoiceColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.ScheduledJobColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1336,6 +1330,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.OutboundMonthlyRptArchiveOverrideColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.SelectCompanyAuForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.SelectCompanyForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1364,6 +1361,18 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.RevenueAdhocManagementColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.RevenueAdhocManagementForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.RevenueAdhocManagementRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.RevenueAdhocManagementService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.SuppKeyAcctTargetColumns.ts">
@@ -1427,6 +1436,8 @@
     <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodDialog.ts" />
@@ -1522,8 +1533,8 @@
     <TypeScriptCompile Include="Modules\Avaya\SkillSplitMapping\SkillSplitMappingGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseGrid.ts" />
-    <TypeScriptCompile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementDialog.ts" />
-    <TypeScriptCompile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementGrid.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\NclhShip\NclhShipDialog.ts" />
     <TypeScriptCompile Include="Modules\SSISConfig\NclhShip\NclhShipGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SurveyFilterExclusionSupp\SurveyFilterExclusionSuppDialog.ts" />
@@ -2696,12 +2707,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCruiseForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.RevenueAdhocManagementForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.NclhShipRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -2753,6 +2758,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VwGetSeaSalesRepIdRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VwGetSeaSalesRepIdService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2792,6 +2803,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\PCHODS.OutboundAgentLocationEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\PCHODS.SelectCompanyAUEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\PCHODS.SelectCompanyEditorAttribute.cs">
@@ -2980,6 +2994,7 @@
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
+    <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodColumns.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionPeriod\OutboundCommissionPeriodEndpoint.cs" />
@@ -3301,12 +3316,12 @@
     <Compile Include="Modules\PCHDW\DimCruise\DimCruisePage.cs" />
     <Compile Include="Modules\PCHDW\DimCruise\DimCruiseColumns.cs" />
     <Compile Include="Modules\PCHDW\DimCruise\DimCruiseForm.cs" />
-    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementRow.cs" />
-    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementRepository.cs" />
-    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementEndpoint.cs" />
-    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementPage.cs" />
-    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementColumns.cs" />
-    <Compile Include="Modules\PCHDW\RevenueAdhocManagement\RevenueAdhocManagementForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\RevenueAdhocManagement\RevenueAdhocManagementForm.cs" />
     <Compile Include="Modules\SSISConfig\NclhShip\NclhShipRow.cs" />
     <Compile Include="Modules\SSISConfig\NclhShip\NclhShipRepository.cs" />
     <Compile Include="Modules\SSISConfig\NclhShip\NclhShipEndpoint.cs" />
@@ -3340,6 +3355,9 @@
     <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppPage.cs" />
     <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\VwGetSeaSalesRepId\VwGetSeaSalesRepIdRow.cs" />
+    <Compile Include="Modules\DWSupport\VwGetSeaSalesRepId\VwGetSeaSalesRepIdRepository.cs" />
+    <Compile Include="Modules\DWSupport\VwGetSeaSalesRepId\VwGetSeaSalesRepIdEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

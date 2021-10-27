@@ -15,5 +15,7 @@ namespace DAP.PCHODS.Forms
     {
         [DisplayName("Please select the Company:"),SelectCompanyEditor ,LabelWidth(200)]
         public String CompanyCd { get; set; }
+        [DisplayName("Effective Date"), LabelWidth(200)]
+        public DateTime EffectiveDt { get; set; }
     }
 }

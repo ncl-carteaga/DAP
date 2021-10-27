@@ -11,3 +11,4 @@ using MyPages = DAP.PCHODSNVS.Pages;
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Supp Key Acct Target", typeof(MyPages.SuppKeyAcctTargetController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/GSA Distribution List", typeof(MyPages.GsaDistributionListController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Consortium Exception List", typeof(MyPages.ConsortiumExceptionListController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Revenue Adhoc Management", typeof(MyPages.RevenueAdhocManagementController), icon: null)]

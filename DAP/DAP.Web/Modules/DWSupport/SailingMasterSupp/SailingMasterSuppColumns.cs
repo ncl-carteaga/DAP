@@ -56,8 +56,7 @@ namespace DAP.DWSupport.Columns
         public Decimal FsGrpAmenityAmt { get; set; }
         public String ObrTradeCd { get; set; }
         public String ObrSubTradeCd { get; set; }
-        public String ObrSeasonCd { get; set; }
-        
+        public String ObrSeasonCd { get; set; }        
         public Int32 ProxySailId { get; set; }
         public DateTime OnSaleDat { get; set; }
         public String SeasonYearCd { get; set; }

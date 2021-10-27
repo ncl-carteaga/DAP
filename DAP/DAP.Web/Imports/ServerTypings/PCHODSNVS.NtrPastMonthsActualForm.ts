@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrPastMonthsActualForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         YearMonth: Serenity.StringEditor;
         NtrFinal: Serenity.DecimalEditor;
         CxRev: Serenity.DecimalEditor;
@@ -23,20 +23,21 @@
                 NtrPastMonthsActualForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.DecimalEditor;
+                var w0 = PCHODS.CompanyEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.DecimalEditor;
 
                 Q.initFormType(NtrPastMonthsActualForm, [
                     'CompanyCd', w0,
-                    'YearMonth', w0,
-                    'NtrFinal', w1,
-                    'CxRev', w1,
-                    'PdsFinalTotal', w1,
-                    'ApcdFinal', w1,
-                    'BookedNumOfCabins', w1,
-                    'AvailableNumOfCabins', w1,
-                    'StlyBookedNumOfCabins', w1,
-                    'StlyAvailableNumOfCabins', w1
+                    'YearMonth', w1,
+                    'NtrFinal', w2,
+                    'CxRev', w2,
+                    'PdsFinalTotal', w2,
+                    'ApcdFinal', w2,
+                    'BookedNumOfCabins', w2,
+                    'AvailableNumOfCabins', w2,
+                    'StlyBookedNumOfCabins', w2,
+                    'StlyAvailableNumOfCabins', w2
                 ]);
             }
         }

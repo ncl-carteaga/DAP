@@ -11,8 +11,9 @@ namespace DAP.SSISConfig.Entities
 
     [ConnectionKey("PSConfig"), Module("SSISConfig"), TableName("[dbo].[PSInterface_Config]")]
     [DisplayName("ADMIN AP PS Interface (Port & PP voucher) Closing Date"), InstanceName("Ps Interface Config")]
-    [ReadPermission(PermissionKeys.PSConfig)]
-    [ModifyPermission(PermissionKeys.PSConfig)]
+    [ReadPermission(PermissionKeys.SSISConfig.View)]
+    [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
+    [DeletePermission(PermissionKeys.SSISConfig.Delete)]
     [DataAuditLog]
     public sealed class PsInterfaceConfigRow : Row, IIdRow, INameRow
     {

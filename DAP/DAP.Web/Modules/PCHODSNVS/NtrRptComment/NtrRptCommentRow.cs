@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CommentTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, Updatable(false)]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, Updatable(false), DAP.PCHODS.CompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

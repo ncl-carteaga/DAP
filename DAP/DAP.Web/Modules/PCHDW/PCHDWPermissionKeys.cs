@@ -30,7 +30,7 @@ namespace DAP.PCHDW
             public const string DimCruise = "PCHDW:Page:DimCruise";
             public const string SqlJobList = "PCHDW:Page:SqlJobList";
             public const string ScheduledJob = "PCHDW:Page:ScheduledJob";
-            public const string RevenueAdhocManagement = "PCHDW:Page:RevenueAdhocManagement";
+            
             
 
         }

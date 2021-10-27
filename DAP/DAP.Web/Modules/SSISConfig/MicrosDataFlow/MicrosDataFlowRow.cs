@@ -11,8 +11,9 @@ namespace DAP.SSISConfig.Entities
 
     [ConnectionKey("PCH_ODS_STG"), Module("SSISConfig"), TableName("[etl].[Data_Flow]")]
     [DisplayName("GSC Micros Data Flow"), InstanceName("Micros Data Flow")]
-    [ReadPermission(PermissionKeys.ConfigAdmin)]
-    [ModifyPermission(PermissionKeys.ConfigAdmin)]
+    [ReadPermission(PermissionKeys.SSISConfig.View)]
+    [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
+    [DeletePermission(PermissionKeys.SSISConfig.Delete)]
     [DataAuditLog]
     public sealed class MicrosDataFlowRow : Row, IIdRow, INameRow
     {

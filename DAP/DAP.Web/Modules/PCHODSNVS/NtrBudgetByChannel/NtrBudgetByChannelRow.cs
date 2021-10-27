@@ -17,7 +17,7 @@ namespace DAP.PCHODSNVS.Entities
     [DataAuditLog]
     public sealed class NtrBudgetByChannelRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, DAP.PCHODS.CompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

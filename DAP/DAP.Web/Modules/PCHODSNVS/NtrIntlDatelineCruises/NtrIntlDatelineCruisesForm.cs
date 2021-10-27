@@ -17,6 +17,7 @@ namespace DAP.PCHODSNVS.Forms
         public String CruiseSegmentCd { get; set; }
         public Int32 CruiseDaysQty { get; set; }
         public Int32 CruiseCalendarDaysQty { get; set; }
+        [DefaultValue("now")]
         public DateTime LoadDt { get; set; }
     }
 }

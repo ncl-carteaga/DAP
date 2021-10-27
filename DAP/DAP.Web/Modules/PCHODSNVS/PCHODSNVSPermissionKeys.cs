@@ -38,6 +38,7 @@ namespace DAP.PCHODSNVS
             public const string NTRBudgetByChannel = "PCHODSNVS:Page:NTRBudgetByChannel";
             public const string NTRBudget = "PCHODSNVS:Page:NTRBudget";
             public const string NTRActuals = "PCHODSNVS:Page:NTRActuals";
+            public const string RevenueAdhocManagement = "PCHODSNVS:Page:RevenueAdhocManagement";
 
         }
 

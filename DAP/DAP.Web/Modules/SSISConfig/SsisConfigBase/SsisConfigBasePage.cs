@@ -6,7 +6,7 @@ namespace DAP.SSISConfig.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("SSISConfig/SsisConfigBase"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.SsisConfigBaseRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.DWHConfigBase)]
     public class SsisConfigBaseController : Controller
     {
         public ActionResult Index()

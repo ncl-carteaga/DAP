@@ -37,7 +37,26 @@ namespace DAP.PCHDW.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> { }
+        private class MySaveHandler : SaveRequestHandler<MyRow> {
+
+            protected override void BeforeSave() 
+
+
+            {
+                base.BeforeSave();
+                
+                if (this.Row.CruiseToDt < this.Row.CruiseFromDt)
+                {
+                    throw new ValidationError("Invalid Cruise Dates; End Date set before the Start Date.");
+                }
+
+                if (this.Row.CruiseSegmentToDt < this.Row.CruiseSegmentFromDt)
+                {
+                    throw new ValidationError("Invalid Cruise Segment Dates; End Date set before the Start Date.");
+                }
+            }
+
+        }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
         private class MyListHandler : ListRequestHandler<MyRow> { }

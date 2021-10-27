@@ -17,17 +17,7 @@ namespace DAP.SSISConfig
             public const string Modify = "SSISConfig:Config:Modify";
             public const string View = "SSISConfig:Config:View";
         }
-
-        [DisplayName("INTConfig")]
-        public class INTConfig
-        {
-            [ImplicitPermission(General), ImplicitPermission(View)]
-            public const string Delete = "SSISConfig:INTConfig:Delete";
-            [Description("Create/Update"), ImplicitPermission(General), ImplicitPermission(View)]
-            public const string Modify = "SSISConfig:INTConfig:Modify";
-            public const string View = "SSISConfig:INTConfig:View";
-        }
-
+        
         [Description("[ConfigAdmin]")]
         public const string ConfigAdmin = "SSISConfig:ConfigAdmin";
 
@@ -36,5 +26,18 @@ namespace DAP.SSISConfig
 
         [Description("PSConfig")]
         public const string PSConfig = "SSISConfig:PSConfig";
+
+        [DisplayName("Page")]
+        public class PagePermission
+        {
+            public const string FidelioDataFlow = "SSISConfig:Page:FidelioDataFlow";
+            public const string GpInterfaceLog = "SSISConfig:Page:GpInterfaceLog";
+            public const string INTConfigBase = "SSISConfig:Page:INTConfigBase";
+            public const string MicrosDataFlow = "SSISConfig:Page:MicrosDataFlow";
+            public const string NCLShip = "SSISConfig:Page:NCLShip";
+            public const string PSInterfaceConfig = "SSISConfig:Page:PSInterfaceConfig";
+            public const string DWHConfigBase = "SSISConfig:Page:DWHConfigBase";
+        }
+
     }
 }

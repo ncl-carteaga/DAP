@@ -228,11 +228,6 @@ namespace MVC
                 public const string DimInvoiceIndex = "~/Modules/PCHDW/DimInvoice/DimInvoiceIndex.cshtml";
             }
 
-            public static class RevenueAdhocManagement
-            {
-                public const string RevenueAdhocManagementIndex = "~/Modules/PCHDW/RevenueAdhocManagement/RevenueAdhocManagementIndex.cshtml";
-            }
-
             public static class ScheduledJob
             {
                 public const string ScheduledJobIndex = "~/Modules/PCHDW/ScheduledJob/ScheduledJobIndex.cshtml";
@@ -329,6 +324,11 @@ namespace MVC
             public static class NtrRptComment
             {
                 public const string NtrRptCommentIndex = "~/Modules/PCHODSNVS/NtrRptComment/NtrRptCommentIndex.cshtml";
+            }
+
+            public static class RevenueAdhocManagement
+            {
+                public const string RevenueAdhocManagementIndex = "~/Modules/PCHODSNVS/RevenueAdhocManagement/RevenueAdhocManagementIndex.cshtml";
             }
 
             public static class SuppKeyAcctTarget

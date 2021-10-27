@@ -31,7 +31,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.DistrictNbr[this] = value; }
         }
 
-        [DisplayName("Salesrep User Id"), Column("SALESREP_USER_ID"), Size(35), NotNull, QuickFilter, LookupEditor(typeof(Lookups.SalesRepLookup))]
+        [DisplayName("Salesrep User Id"), Column("SALESREP_USER_ID"), Size(35), NotNull, QuickFilter, LookupEditor("DWSupport.LoginName")]
         public String SalesrepUserId
         {
             get { return Fields.SalesrepUserId[this]; }
