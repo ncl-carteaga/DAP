@@ -17,14 +17,14 @@ namespace DAP.PCHODSNVS.Entities
     [DataAuditLog]
     public sealed class NtrPastMonthsActualRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, QuickSearch]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, QuickSearch, DAP.PCHODS.CompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Year Month"), Column("year_month"), Size(255), PrimaryKey]
+        [DisplayName("Year Month"), Column("year_month"), Size(255), PrimaryKey, SortOrder(1, descending: true)]
         public String YearMonth
         {
             get { return Fields.YearMonth[this]; }

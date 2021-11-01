@@ -6,7 +6,7 @@ namespace DAP.SSISConfig.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("SSISConfig/MicrosDataFlow"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.MicrosDataFlowRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.MicrosDataFlow)]
     public class MicrosDataFlowController : Controller
     {
         public ActionResult Index()

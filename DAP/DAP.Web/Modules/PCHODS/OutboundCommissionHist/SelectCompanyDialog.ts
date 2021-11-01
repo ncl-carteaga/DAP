@@ -41,6 +41,13 @@
                             return;
                         }
 
+
+                        if (this.form.EffectiveDt.value == null ||
+                            Q.isEmptyOrNull(this.form.EffectiveDt.value)) {
+                            Q.notifyError("Please enter an effective date!");
+                            return;
+                        }
+
                         //var HistRow[] = <PCHODS.OutboundCommissionHistRow>{};
 
                         var HistRow: OutboundCommissionHistRow[];
@@ -51,14 +58,16 @@
                         }, response => {
                                 HistRow = response.Entities;
                                 for (let item of HistRow) {
-                                    item.InactiveDt = Q.formatDate(new Date(), "MM/dd/yyyy");
+
+                                    item.InactiveDt = Q.formatDate(this.form.EffectiveDt.value, "MM/dd/yyyy");
+                                     
                                     //Q.alert(item.InactiveDt);
                                     PCHODS.OutboundCommissionHistService.Update({
                                         EntityId: item.CommissionHistId,
                                         Entity: item
                                     }, response => {
                                             item.CommissionHistId = null;
-                                            item.ActiveDt = item.InactiveDt;
+                                            item.ActiveDt = this.form.EffectiveDt.value;
                                             item.InactiveDt = null;
                                             PCHODS.OutboundCommissionHistService.Create({                                                
                                                 Entity: item

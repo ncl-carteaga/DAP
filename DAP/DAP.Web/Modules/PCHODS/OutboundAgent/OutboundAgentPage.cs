@@ -6,7 +6,8 @@ namespace DAP.PCHODS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODS/OutboundAgent"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.OutboundAgentRow))]
+    //[PageAuthorize(typeof(Entities.OutboundAgentRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.OutboundAgent)]
     public class OutboundAgentController : Controller
     {
         public ActionResult Index()

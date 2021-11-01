@@ -6,7 +6,8 @@ namespace DAP.PCHDW.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHDW/DimInvoice"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.DimInvoiceRow))]
+    //[PageAuthorize(typeof(Entities.DimInvoiceRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.DimInvoice)]
     public class DimInvoiceController : Controller
     {
         public ActionResult Index()

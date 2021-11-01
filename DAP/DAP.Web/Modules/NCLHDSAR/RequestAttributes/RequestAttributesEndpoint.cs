@@ -24,7 +24,29 @@ namespace DAP.NCLHDSAR.Endpoints
         {
             return new MyRepository().Update(uow, request);
         }
- 
+
+        [HttpPost, AuthorizeUpdate(typeof(MyRow))]
+        public SaveResponse UpdateSP(SaveRequest<MyRow> request)
+        {
+            //return new MyRepository().Update(uow, request);
+            using (var connection = SqlConnections.NewByKey("PCH_ODS"))
+
+            using (var uow = new UnitOfWork(connection))
+            {
+
+                uow.Connection.Execute("dbo.usp_EnableDisableSQLJob ",
+                    param: new
+                    {
+                        JobName = "!PCH DW Load",
+                        Enabled = 0
+                    },
+                    commandType: CommandType.StoredProcedure);
+
+                uow.Commit();
+                return new SaveResponse();
+            }
+        }
+
         [HttpPost, AuthorizeDelete(typeof(MyRow))]
         public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request)
         {

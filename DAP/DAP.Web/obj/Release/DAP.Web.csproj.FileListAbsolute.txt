@@ -57,4 +57,3 @@ C:\Git\DAP\DAP\DAP.Web\obj\Release\DAP.Web.csproj.CoreCompileInputs.cache
 C:\Git\DAP\DAP\DAP.Web\obj\Release\DAP.Web.csproj.CopyComplete
 C:\Git\DAP\DAP\DAP.Web\obj\Release\DAP.Web.dll
 C:\Git\DAP\DAP\DAP.Web\obj\Release\DAP.Web.pdb
-C:\Git\DAP\DAP\DAP.Web\obj\Release\DAP.Web.csprojAssemblyReference.cache

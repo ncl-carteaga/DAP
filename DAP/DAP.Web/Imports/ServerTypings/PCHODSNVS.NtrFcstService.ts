@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODSNVS {
+﻿namespace DAP.PCHODSNVS {
     export namespace NtrFcstService {
         export const baseUrl = 'PCHODSNVS/NtrFcst';
 
@@ -9,12 +8,12 @@ namespace DAP.PCHODSNVS {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrFcstRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrFcstRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "PCHODSNVS/NtrFcst/Create",
+            Update = "PCHODSNVS/NtrFcst/Update",
+            Delete = "PCHODSNVS/NtrFcst/Delete",
+            Retrieve = "PCHODSNVS/NtrFcst/Retrieve",
+            List = "PCHODSNVS/NtrFcst/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.PCHODSNVS {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>NtrFcstService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>NtrFcstService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

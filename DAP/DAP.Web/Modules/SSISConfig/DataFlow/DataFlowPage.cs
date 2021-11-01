@@ -6,7 +6,7 @@ namespace DAP.SSISConfig.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("SSISConfig/DataFlow"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.DataFlowRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.FidelioDataFlow)]
     public class DataFlowController : Controller
     {
         public ActionResult Index()

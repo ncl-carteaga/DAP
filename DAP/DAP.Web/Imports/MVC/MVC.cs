@@ -33,6 +33,15 @@ namespace MVC
 
         }
 
+        public static class Avaya
+        {
+            public static class SkillSplitMapping
+            {
+                public const string SkillSplitMappingIndex = "~/Modules/Avaya/SkillSplitMapping/SkillSplitMappingIndex.cshtml";
+            }
+
+        }
+
         public static class Common
         {
             public static class Dashboard
@@ -59,9 +68,44 @@ namespace MVC
 
         public static class DWSupport
         {
+            public static class DistrictMasterSupp
+            {
+                public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
+            }
+
             public static class FinReportPublishingSupp
             {
                 public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
+            }
+
+            public static class GuestPreventDeparture
+            {
+                public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";
+            }
+
+            public static class ProductCodeSupp
+            {
+                public const string ProductCodeSuppIndex = "~/Modules/DWSupport/ProductCodeSupp/ProductCodeSuppIndex.cshtml";
+            }
+
+            public static class SailingMasterSupp
+            {
+                public const string SailingMasterSuppIndex = "~/Modules/DWSupport/SailingMasterSupp/SailingMasterSuppIndex.cshtml";
+            }
+
+            public static class SlProductCodeSupp
+            {
+                public const string SlProductCodeSuppIndex = "~/Modules/DWSupport/SlProductCodeSupp/SlProductCodeSuppIndex.cshtml";
+            }
+
+            public static class SurveyFilterExclusionSupp
+            {
+                public const string SurveyFilterExclusionSuppIndex = "~/Modules/DWSupport/SurveyFilterExclusionSupp/SurveyFilterExclusionSuppIndex.cshtml";
+            }
+
+            public static class TblStrategicPriceControl
+            {
+                public const string TblStrategicPriceControlIndex = "~/Modules/DWSupport/TblStrategicPriceControl/TblStrategicPriceControlIndex.cshtml";
             }
         }
 
@@ -149,11 +193,49 @@ namespace MVC
 
         }
 
+        public static class NCLHODSMICROS
+        {
+            public static class DataFlow
+            {
+                public const string DataFlowIndex = "~/Modules/NCLHODSMICROS/DataFlow/DataFlowIndex.cshtml";
+            }
+
+        }
+
         public static class NCLHODSSPENDVIS
         {
             public static class Amoslevel
             {
                 public const string AmoslevelIndex = "~/Modules/NCLHODSSPENDVIS/Amoslevel/AmoslevelIndex.cshtml";
+            }
+
+            public static class DataFlow
+            {
+                public const string DataFlowIndex = "~/Modules/NCLHODSSPENDVIS/DataFlow/DataFlowIndex.cshtml";
+            }
+
+        }
+
+        public static class PCHDW
+        {
+            public static class DimCruise
+            {
+                public const string DimCruiseIndex = "~/Modules/PCHDW/DimCruise/DimCruiseIndex.cshtml";
+            }
+
+            public static class DimInvoice
+            {
+                public const string DimInvoiceIndex = "~/Modules/PCHDW/DimInvoice/DimInvoiceIndex.cshtml";
+            }
+
+            public static class ScheduledJob
+            {
+                public const string ScheduledJobIndex = "~/Modules/PCHDW/ScheduledJob/ScheduledJobIndex.cshtml";
+            }
+
+            public static class VwSqlJobList
+            {
+                public const string VwSqlJobListIndex = "~/Modules/PCHDW/VwSqlJobList/VwSqlJobListIndex.cshtml";
             }
 
         }
@@ -168,6 +250,11 @@ namespace MVC
             public static class OutboundAgentLocation
             {
                 public const string OutboundAgentLocationIndex = "~/Modules/PCHODS/OutboundAgentLocation/OutboundAgentLocationIndex.cshtml";
+            }
+
+            public static class OutboundCommissionBkGoal
+            {
+                public const string OutboundCommissionBkGoalIndex = "~/Modules/PCHODS/OutboundCommissionBkGoal/OutboundCommissionBkGoalIndex.cshtml";
             }
 
             public static class OutboundCommissionHist
@@ -199,9 +286,54 @@ namespace MVC
 
         public static class PCHODSNVS
         {
+            public static class ConsortiumExceptionList
+            {
+                public const string ConsortiumExceptionListIndex = "~/Modules/PCHODSNVS/ConsortiumExceptionList/ConsortiumExceptionListIndex.cshtml";
+            }
+
+            public static class GsaDistributionList
+            {
+                public const string GsaDistributionListIndex = "~/Modules/PCHODSNVS/GsaDistributionList/GsaDistributionListIndex.cshtml";
+            }
+
+            public static class NtrBudget
+            {
+                public const string NtrBudgetIndex = "~/Modules/PCHODSNVS/NtrBudget/NtrBudgetIndex.cshtml";
+            }
+
+            public static class NtrBudgetByChannel
+            {
+                public const string NtrBudgetByChannelIndex = "~/Modules/PCHODSNVS/NtrBudgetByChannel/NtrBudgetByChannelIndex.cshtml";
+            }
+
+            public static class NtrFcst
+            {
+                public const string NtrFcstIndex = "~/Modules/PCHODSNVS/NtrFcst/NtrFcstIndex.cshtml";
+            }
+
             public static class NtrIntlDatelineCruises
             {
                 public const string NtrIntlDatelineCruisesIndex = "~/Modules/PCHODSNVS/NtrIntlDatelineCruises/NtrIntlDatelineCruisesIndex.cshtml";
+            }
+
+            public static class NtrPastMonthsActual
+            {
+                public const string NtrPastMonthsActualIndex = "~/Modules/PCHODSNVS/NtrPastMonthsActual/NtrPastMonthsActualIndex.cshtml";
+            }
+
+            public static class NtrRptComment
+            {
+                public const string NtrRptCommentIndex = "~/Modules/PCHODSNVS/NtrRptComment/NtrRptCommentIndex.cshtml";
+            }
+
+            public static class RevenueAdhocManagement
+            {
+                public const string RevenueAdhocManagementIndex = "~/Modules/PCHODSNVS/RevenueAdhocManagement/RevenueAdhocManagementIndex.cshtml";
+            }
+
+            public static class SuppKeyAcctTarget
+            {
+                public const string SuppKeyAcctTargetIndex = "~/Modules/PCHODSNVS/SuppKeyAcctTarget/SuppKeyAcctTargetIndex.cshtml";
             }
         }
 
@@ -231,6 +363,16 @@ namespace MVC
             public static class INTConfigBase
             {
                 public const string INTConfigBaseIndex = "~/Modules/SSISConfig/INTConfigBase/INTConfigBaseIndex.cshtml";
+            }
+
+            public static class MicrosDataFlow
+            {
+                public const string MicrosDataFlowIndex = "~/Modules/SSISConfig/MicrosDataFlow/MicrosDataFlowIndex.cshtml";
+            }
+
+            public static class NclhShip
+            {
+                public const string NclhShipIndex = "~/Modules/SSISConfig/NclhShip/NclhShipIndex.cshtml";
             }
 
             public static class PsInterfaceConfig

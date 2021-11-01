@@ -1,11 +1,6 @@
-﻿
-namespace DAP.PCHODSNVS {
-    export class NtrFcstForm extends Serenity.PrefixedContext {
-        static formKey = 'PCHODSNVS.NtrFcst';
-    }
-
+﻿namespace DAP.PCHODSNVS {
     export interface NtrFcstForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         AccountPeriodNum: Serenity.StringEditor;
         NtrFcst: Serenity.DecimalEditor;
         PdsFcstTotal: Serenity.DecimalEditor;
@@ -13,18 +8,31 @@ namespace DAP.PCHODSNVS {
         NtrFinancialBudget: Serenity.DecimalEditor;
     }
 
-    [
-        ['CompanyCd', () => Serenity.StringEditor],
-        ['AccountPeriodNum', () => Serenity.StringEditor],
-        ['NtrFcst', () => Serenity.DecimalEditor],
-        ['PdsFcstTotal', () => Serenity.DecimalEditor],
-        ['ApcdFinal', () => Serenity.DecimalEditor],
-        ['NtrFinancialBudget', () => Serenity.DecimalEditor]
-    ].forEach(x => Object.defineProperty(NtrFcstForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class NtrFcstForm extends Serenity.PrefixedContext {
+        static formKey = 'PCHODSNVS.NtrFcst';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!NtrFcstForm.init)  {
+                NtrFcstForm.init = true;
+
+                var s = Serenity;
+                var w0 = PCHODS.CompanyEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.DecimalEditor;
+
+                Q.initFormType(NtrFcstForm, [
+                    'CompanyCd', w0,
+                    'AccountPeriodNum', w1,
+                    'NtrFcst', w2,
+                    'PdsFcstTotal', w2,
+                    'ApcdFinal', w2,
+                    'NtrFinancialBudget', w2
+                ]);
+            }
+        }
+    }
 }
+

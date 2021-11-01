@@ -1,0 +1,46 @@
+﻿
+namespace DAP.DWSupport {
+    export class DistrictMasterSuppForm extends Serenity.PrefixedContext {
+        static formKey = 'DWSupport.DistrictMasterSupp';
+    }
+
+    export interface DistrictMasterSuppForm {
+        DistrictNbr: Serenity.StringEditor;
+        SalesrepUserId: Serenity.StringEditor;
+        GroupCd: Serenity.StringEditor;
+        SalesChannelCd: Serenity.StringEditor;
+        RmChannelCd: Serenity.StringEditor;
+        AreaCd: Serenity.StringEditor;
+        PrimaryCrmSupportNam: Serenity.StringEditor;
+        SecondaryCrmSupportNam: Serenity.StringEditor;
+        GssChannelCd: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ChannelCd: Serenity.StringEditor;
+    }
+
+    [,
+        ['DistrictNbr', () => Serenity.StringEditor],
+        ['SalesrepUserId', () => Serenity.StringEditor],
+        ['GroupCd', () => Serenity.StringEditor],
+        ['SalesChannelCd', () => Serenity.StringEditor],
+        ['RmChannelCd', () => Serenity.StringEditor],
+        ['AreaCd', () => Serenity.StringEditor],
+        ['PrimaryCrmSupportNam', () => Serenity.StringEditor],
+        ['SecondaryCrmSupportNam', () => Serenity.StringEditor],
+        ['GssChannelCd', () => Serenity.StringEditor],
+        ['CreatedTs', () => Serenity.DateEditor],
+        ['CreatedByNam', () => Serenity.StringEditor],
+        ['ModifiedByNam', () => Serenity.StringEditor],
+        ['ModifiedTs', () => Serenity.DateEditor],
+        ['ChannelCd', () => Serenity.StringEditor]
+    ].forEach(x => Object.defineProperty(DistrictMasterSuppForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

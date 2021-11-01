@@ -6,7 +6,7 @@ namespace DAP.SSISConfig.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("SSISConfig/PsInterfaceConfig"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.PsInterfaceConfigRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.PSInterfaceConfig)]
     public class PsInterfaceConfigController : Controller
     {
         public ActionResult Index()

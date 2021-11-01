@@ -11,8 +11,9 @@ namespace DAP.SSISConfig.Entities
 
     [ConnectionKey("PCH_ODS_FIDELIO"), Module("SSISConfig"), TableName("[fms].[gp_interface_log]")]
     [DisplayName("GP Interface Log"), InstanceName("Gp Interface Log")]
-    [ReadPermission(PermissionKeys.ConfigAdmin)]
-    [ModifyPermission(PermissionKeys.ConfigAdmin)]
+    [ReadPermission(PermissionKeys.SSISConfig.View)]
+    [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
+    [DeletePermission(PermissionKeys.SSISConfig.Delete)]
     [DataAuditLog]
     public sealed class GpInterfaceLogRow : Row, IIdRow, INameRow
     {

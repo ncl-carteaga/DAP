@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CruiseIntlTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, Updatable(false)]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, Updatable(false), DAP.PCHODS.CompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
@@ -52,7 +52,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CruiseCalendarDaysQty[this] = value; }
         }
 
-        [DisplayName("Load Dt"), Column("load_dt"), Updatable(false)]
+        [DisplayName("Load Dt"), Column("load_dt"), Updatable(false), Insertable(false)]
         public DateTime? LoadDt
         {
             get { return Fields.LoadDt[this]; }

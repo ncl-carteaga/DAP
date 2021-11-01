@@ -17,9 +17,10 @@ namespace DAP.PCHODS.Lookups
         public Int32 AgentId { get; set; }
         [EditLink]
         public String NvsUserId { get; set; }
-        public String CompanyName { get; set; }        
-        
+        public String CompanyName { get; set; }                
         public String Nm { get; set; }
+        public String CobrandInd { get; set; }
+        public String TeamCompanyName { get; set; }
         [DisplayName("Location")]
         public String AgentLocationDescription { get; set; }
         public DateTime StartInactiveDt { get; set; }

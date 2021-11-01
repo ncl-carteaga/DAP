@@ -1,5 +1,4 @@
-﻿
-namespace DAP.SSISConfig {
+﻿namespace DAP.SSISConfig {
     export interface MicrosDataFlowRow {
         Key?: number;
         Source?: string;
@@ -22,38 +21,22 @@ namespace DAP.SSISConfig {
         export const nameProperty = 'Source';
         export const localTextPrefix = 'SSISConfig.MicrosDataFlow';
 
-        export namespace Fields {
-            export declare const Key;
-            export declare const Source;
-            export declare const Name;
-            export declare const ProcessYn;
-            export declare const Target;
-            export declare const Description;
-            export declare const SourceDesc;
-            export declare const TargetDesc;
-            export declare const Package;
-            export declare const Status;
-            export declare const Lset;
-            export declare const Cet;
-            export declare const LseIndex;
-            export declare const CeIndex;
+        export declare const enum Fields {
+            Key = "Key",
+            Source = "Source",
+            Name = "Name",
+            ProcessYn = "ProcessYn",
+            Target = "Target",
+            Description = "Description",
+            SourceDesc = "SourceDesc",
+            TargetDesc = "TargetDesc",
+            Package = "Package",
+            Status = "Status",
+            Lset = "Lset",
+            Cet = "Cet",
+            LseIndex = "LseIndex",
+            CeIndex = "CeIndex"
         }
-
-        [
-            'Key',
-            'Source',
-            'Name',
-            'ProcessYn',
-            'Target',
-            'Description',
-            'SourceDesc',
-            'TargetDesc',
-            'Package',
-            'Status',
-            'Lset',
-            'Cet',
-            'LseIndex',
-            'CeIndex'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

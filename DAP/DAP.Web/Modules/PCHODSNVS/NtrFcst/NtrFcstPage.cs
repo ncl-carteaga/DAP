@@ -6,7 +6,8 @@ namespace DAP.PCHODSNVS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODSNVS/NtrFcst"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.NtrFcstRow))]
+    //[PageAuthorize(typeof(Entities.NtrFcstRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.NTRForecast)]
     public class NtrFcstController : Controller
     {
         public ActionResult Index()

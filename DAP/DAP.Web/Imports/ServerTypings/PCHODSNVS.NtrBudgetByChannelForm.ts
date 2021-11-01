@@ -1,11 +1,6 @@
-﻿
-namespace DAP.PCHODSNVS {
-    export class NtrBudgetByChannelForm extends Serenity.PrefixedContext {
-        static formKey = 'PCHODSNVS.NtrBudgetByChannel';
-    }
-
+﻿namespace DAP.PCHODSNVS {
     export interface NtrBudgetByChannelForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         AccountingYear: Serenity.IntegerEditor;
         ChannelSummDesc: Serenity.StringEditor;
         ChannelDesc: Serenity.StringEditor;
@@ -14,19 +9,33 @@ namespace DAP.PCHODSNVS {
         NpdBudget: Serenity.DecimalEditor;
     }
 
-    [
-        ['CompanyCd', () => Serenity.StringEditor],
-        ['AccountingYear', () => Serenity.IntegerEditor],
-        ['ChannelSummDesc', () => Serenity.StringEditor],
-        ['ChannelDesc', () => Serenity.StringEditor],
-        ['NtrBudget', () => Serenity.DecimalEditor],
-        ['PdsBudgetTotal', () => Serenity.DecimalEditor],
-        ['NpdBudget', () => Serenity.DecimalEditor]
-    ].forEach(x => Object.defineProperty(NtrBudgetByChannelForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class NtrBudgetByChannelForm extends Serenity.PrefixedContext {
+        static formKey = 'PCHODSNVS.NtrBudgetByChannel';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!NtrBudgetByChannelForm.init)  {
+                NtrBudgetByChannelForm.init = true;
+
+                var s = Serenity;
+                var w0 = PCHODS.CompanyEditor;
+                var w1 = s.IntegerEditor;
+                var w2 = s.StringEditor;
+                var w3 = s.DecimalEditor;
+
+                Q.initFormType(NtrBudgetByChannelForm, [
+                    'CompanyCd', w0,
+                    'AccountingYear', w1,
+                    'ChannelSummDesc', w2,
+                    'ChannelDesc', w2,
+                    'NtrBudget', w3,
+                    'PdsBudgetTotal', w3,
+                    'NpdBudget', w3
+                ]);
+            }
+        }
+    }
 }
+

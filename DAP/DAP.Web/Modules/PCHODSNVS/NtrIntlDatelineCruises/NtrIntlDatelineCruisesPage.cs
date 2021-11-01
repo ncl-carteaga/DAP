@@ -6,7 +6,8 @@ namespace DAP.PCHODSNVS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODSNVS/NtrIntlDatelineCruises"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.NtrIntlDatelineCruisesRow))]
+    //[PageAuthorize(typeof(Entities.NtrIntlDatelineCruisesRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.NTRIntlDatelineCruises)]
     public class NtrIntlDatelineCruisesController : Controller
     {
         public ActionResult Index()

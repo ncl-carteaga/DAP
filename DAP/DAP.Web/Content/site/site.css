@@ -9447,6 +9447,12 @@ button.ui-button {
 .s-PCHODS-VwOutboundMonthlyRptArchiveOverrideDialog .caption {
   width: 150px;
 }
+.s-PCHODS-OutboundCommissionBkGoalDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-OutboundCommissionBkGoalDialog .caption {
+  width: 150px;
+}
 .s-PCHODSNVS-NtrIntlDatelineCruisesDialog > .size {
   width: 650px;
 }
@@ -9483,10 +9489,70 @@ button.ui-button {
 .s-PCHODSNVS-NtrPastMonthsActualDialog .caption {
   width: 150px;
 }
+.s-PCHODSNVS-SuppKeyAcctTargetDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-SuppKeyAcctTargetDialog .caption {
+  width: 150px;
+}
+.s-PCHODSNVS-GsaDistributionListDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-GsaDistributionListDialog .caption {
+  width: 150px;
+}
+.s-PCHODSNVS-ConsortiumExceptionListDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-ConsortiumExceptionListDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-FinReportPublishingSuppDialog > .size {
   width: 650px;
 }
 .s-DWSupport-FinReportPublishingSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-DistrictMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-DistrictMasterSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-GuestPreventDepartureDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-GuestPreventDepartureDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-SailingMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SailingMasterSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-SurveyFilterExclusionSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SurveyFilterExclusionSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-TblStrategicPriceControlDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-TblStrategicPriceControlDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-ProductCodeSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-ProductCodeSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-SlProductCodeSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SlProductCodeSuppDialog .caption {
   width: 150px;
 }
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
@@ -9544,6 +9610,12 @@ button.ui-button {
   width: 650px;
 }
 .s-SSISConfig-MicrosDataFlowDialog .caption {
+  width: 150px;
+}
+.s-SSISConfig-NclhShipDialog > .size {
+  width: 650px;
+}
+.s-SSISConfig-NclhShipDialog .caption {
   width: 150px;
 }
 .s-NCLHDSAR-SystemMasterDialog > .size {
@@ -9663,6 +9735,30 @@ button.ui-button {
 .s-PCHDW-DimInvoiceDialog .caption {
   width: 150px;
 }
+.s-PCHDW-VwSqlJobListDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-VwSqlJobListDialog .caption {
+  width: 150px;
+}
+.s-PCHDW-ScheduledJobDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-ScheduledJobDialog .caption {
+  width: 150px;
+}
+.s-PCHDW-DimCruiseDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-DimCruiseDialog .caption {
+  width: 150px;
+}
+.s-PCHDW-RevenueAdhocManagementDialog > .size {
+  width: 650px;
+}
+.s-PCHDW-RevenueAdhocManagementDialog .caption {
+  width: 150px;
+}
 .s-FINANCE-NtrComponentsDialog > .size {
   width: 650px;
 }
@@ -9673,5 +9769,11 @@ button.ui-button {
   width: 650px;
 }
 .s-Finance-NtrRptCommentDialog .caption {
+  width: 150px;
+}
+.s-Avaya-SkillSplitMappingDialog > .size {
+  width: 650px;
+}
+.s-Avaya-SkillSplitMappingDialog .caption {
   width: 150px;
 }

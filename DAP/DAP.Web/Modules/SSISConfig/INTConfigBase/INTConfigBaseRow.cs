@@ -11,9 +11,9 @@ namespace DAP.SSISConfig.Entities
 
     [ConnectionKey("INTConfig"), Module("SSISConfig"), TableName("[dbo].[SSIS_Config_base]")]
     [DisplayName("SSIS Config Base (INT)"), InstanceName("INT Config Base")]
-    [ReadPermission(PermissionKeys.INTConfig.View)]
-    [ModifyPermission(PermissionKeys.INTConfig.Modify)]
-    [DeletePermission(PermissionKeys.INTConfig.Delete)]
+    [ReadPermission(PermissionKeys.SSISConfig.View)]
+    [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
+    [DeletePermission(PermissionKeys.SSISConfig.Delete)]
     [DataAuditLog]
     public sealed class INTConfigBaseRow : Row, IIdRow, INameRow
     {

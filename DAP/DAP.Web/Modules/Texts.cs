@@ -1,5 +1,7 @@
 ﻿using Serenity;
 using Serenity.Extensibility;
+using System.Configuration;
+using System.Web.Configuration;
 
 namespace DAP
 {
@@ -56,7 +58,7 @@ namespace DAP
 
                 public static class Login
                 {
-                    public static LocalText FormTitle = "Welcome to NCLH Data Automation Portal (DAP)";
+                    public static LocalText FormTitle = "Welcome to NCLH Data Access Portal (DAP)";
                     public static LocalText SignInButton = "Sign In";
                     public static LocalText ForgotPassword = "Forgot password?";
                     public static LocalText SignUpButton = "Register a new account";
@@ -251,7 +253,7 @@ namespace DAP
 
             public static class Layout
             {
-                public static LocalText FooterCopyright = "Copyright (c) 2019 v1.12";
+                public static LocalText FooterCopyright = "Copyright (c) 2021 v1.30";
                 public static LocalText FooterInfo = "Serenity Platform";
                 public static LocalText FooterRights = "All rights reserved.";
                 public static LocalText GeneralSettings = "General Settings";

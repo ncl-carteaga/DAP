@@ -20,5 +20,19 @@ namespace DAP.PCHODS
 
         [Description("[General]")]
         public const string General = "PCHODS:General";
+
+        [DisplayName("Page")]
+        public class PagePermission
+        {
+            public const string OutboundAgent = "PCHODS:Page:OutboundAgent";
+            public const string OutboundAgentLocation = "PCHODS:Page:OutboundAgentLocation";
+            public const string OutboundCommissionBkGoal = "PCHODS:Page:OutboundCommissionBkGoal";
+            public const string OutboundCommissionHist = "PCHODS:Page:OutboundCommissionHist";
+            public const string OutboundCommissionHistAu = "PCHODS:Page:OutboundCommissionHistAu";
+            public const string OutboundCommissionHistBr = "PCHODS:Page:OutboundCommissionHistBr";
+            public const string OutboundCommissionPeriod = "PCHODS:Page:OutboundCommissionPeriod";
+            public const string OutboundMonthlyRptArchiveOverride = "PCHODS:Page:OutboundMonthlyRptArchiveOverride";
+        }
+
     }
 }

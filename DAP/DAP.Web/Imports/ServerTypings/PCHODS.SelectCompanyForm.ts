@@ -1,6 +1,7 @@
 ﻿namespace DAP.PCHODS {
     export interface SelectCompanyForm {
         CompanyCd: SelectCompanyEditor;
+        EffectiveDt: Serenity.DateEditor;
     }
 
     export class SelectCompanyForm extends Serenity.PrefixedContext {
@@ -15,9 +16,11 @@
 
                 var s = Serenity;
                 var w0 = SelectCompanyEditor;
+                var w1 = s.DateEditor;
 
                 Q.initFormType(SelectCompanyForm, [
-                    'CompanyCd', w0
+                    'CompanyCd', w0,
+                    'EffectiveDt', w1
                 ]);
             }
         }

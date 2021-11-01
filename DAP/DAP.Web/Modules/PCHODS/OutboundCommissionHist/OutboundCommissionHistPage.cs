@@ -6,7 +6,8 @@ namespace DAP.PCHODS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODS/OutboundCommissionHist"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.OutboundCommissionHistRow))]
+    //[PageAuthorize(typeof(Entities.OutboundCommissionHistRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.OutboundCommissionHist)]
     public class OutboundCommissionHistController : Controller
     {
         public ActionResult Index()

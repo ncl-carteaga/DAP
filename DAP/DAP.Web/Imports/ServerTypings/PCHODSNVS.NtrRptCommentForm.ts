@@ -1,26 +1,35 @@
-﻿
-namespace DAP.PCHODSNVS {
-    export class NtrRptCommentForm extends Serenity.PrefixedContext {
-        static formKey = 'PCHODSNVS.NtrRptComment';
-    }
-
+﻿namespace DAP.PCHODSNVS {
     export interface NtrRptCommentForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: PCHODS.CompanyEditor;
         ReportDate: Serenity.DateEditor;
-        Comment: Serenity.StringEditor;
+        Comment: Serenity.TextAreaEditor;
         AccountPeriodNum: Serenity.StringEditor;
     }
 
-    [,
-        ['CompanyCd', () => Serenity.StringEditor],
-        ['ReportDate', () => Serenity.DateEditor],
-        ['Comment', () => Serenity.StringEditor],
-        ['AccountPeriodNum', () => Serenity.StringEditor]
-    ].forEach(x => Object.defineProperty(NtrRptCommentForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class NtrRptCommentForm extends Serenity.PrefixedContext {
+        static formKey = 'PCHODSNVS.NtrRptComment';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!NtrRptCommentForm.init)  {
+                NtrRptCommentForm.init = true;
+
+                var s = Serenity;
+                var w0 = PCHODS.CompanyEditor;
+                var w1 = s.DateEditor;
+                var w2 = s.TextAreaEditor;
+                var w3 = s.StringEditor;
+
+                Q.initFormType(NtrRptCommentForm, [
+                    'CompanyCd', w0,
+                    'ReportDate', w1,
+                    'Comment', w2,
+                    'AccountPeriodNum', w3
+                ]);
+            }
+        }
+    }
 }
+

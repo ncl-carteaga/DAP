@@ -6,7 +6,7 @@ namespace DAP.SSISConfig.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("SSISConfig/GpInterfaceLog"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.GpInterfaceLogRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.GpInterfaceLog)]
     public class GpInterfaceLogController : Controller
     {
         public ActionResult Index()

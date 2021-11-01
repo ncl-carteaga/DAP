@@ -6,9 +6,12 @@
         PrimaryBrand?: string;
         StartInactiveDt?: string;
         AgentLocationId?: number;
+        CobrandInd?: string;
+        TeamCompanyCd?: string;
         AgentLocationDescription?: string;
         Nm?: string;
         CompanyName?: string;
+        TeamCompanyName?: string;
     }
 
     export namespace OutboundAgentRow {
@@ -28,9 +31,12 @@
             PrimaryBrand = "PrimaryBrand",
             StartInactiveDt = "StartInactiveDt",
             AgentLocationId = "AgentLocationId",
+            CobrandInd = "CobrandInd",
+            TeamCompanyCd = "TeamCompanyCd",
             AgentLocationDescription = "AgentLocationDescription",
             Nm = "Nm",
-            CompanyName = "CompanyName"
+            CompanyName = "CompanyName",
+            TeamCompanyName = "TeamCompanyName"
         }
     }
 }
