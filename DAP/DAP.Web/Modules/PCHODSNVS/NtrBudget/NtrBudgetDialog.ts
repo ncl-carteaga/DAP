@@ -20,12 +20,15 @@ namespace DAP.PCHODSNVS {
 
             var btnSave = Q.first(btns, x => x.cssClass == "save-and-close-button");
             var btnApply = Q.first(btns, x => x.cssClass == "apply-changes-button");
+            var btnDelete = Q.first(btns, x => x.cssClass == "delete-button");
 
             var oldSaveClick = btnSave.onClick;
             var oldApplyClick = btnApply.onClick;
+            var oldDeleteClick = btnDelete.onClick;
 
             btnSave.onClick = e => { this.confirmBeforeSave(oldSaveClick, e); };
             btnApply.onClick = e => { this.confirmBeforeSave(oldApplyClick, e); };
+            btnDelete.onClick = e => { this.confirmBeforeSave(oldDeleteClick, e); };
 
             return btns;
         }
@@ -34,21 +37,19 @@ namespace DAP.PCHODSNVS {
             switch (this.form.CompanyCd.value) {
                 case "100":
                     if (!Authorization.hasPermission("PCHODSNVS:Finance100")) {
-                        Q.notifyError("User not Authorize to change company 100");
+                        Q.notifyError("User not Authorize to make any changes to company 100");
                         return;
                     }
                     break;
                 case "110":
                     if (!Authorization.hasPermission("PCHODSNVS:Finance110")) {
-                        Q.notifyError("User not Authorize to change company 110");
+                        Q.notifyError("User not Authorize to make any changes to company 110");
                         return;
                     }
                     break;
             }
 
-            //Q.confirm("Here is confirm message?", () => {
             oldEvt(e);
-            //});
 
         }
 

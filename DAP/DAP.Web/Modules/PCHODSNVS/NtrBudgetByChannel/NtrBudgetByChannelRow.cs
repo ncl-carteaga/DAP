@@ -17,14 +17,14 @@ namespace DAP.PCHODSNVS.Entities
     [DataAuditLog]
     public sealed class NtrBudgetByChannelRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, DAP.PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Accounting Year"), Column("accounting_year"), SortOrder(1, descending: true)]
+        [DisplayName("Accounting Year (YYYY)"), Column("accounting_year"), SortOrder(1, descending: true), Size(4)]
         public Int32? AccountingYear
         {
             get { return Fields.AccountingYear[this]; }

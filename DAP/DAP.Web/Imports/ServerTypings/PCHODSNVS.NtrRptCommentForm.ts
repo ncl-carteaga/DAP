@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrRptCommentForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         ReportDate: Serenity.DateEditor;
         Comment: Serenity.TextAreaEditor;
         AccountPeriodNum: Serenity.StringEditor;
@@ -17,7 +17,7 @@
                 NtrRptCommentForm.init = true;
 
                 var s = Serenity;
-                var w0 = PCHODS.CompanyEditor;
+                var w0 = SelectPCHCompanyEditor;
                 var w1 = s.DateEditor;
                 var w2 = s.TextAreaEditor;
                 var w3 = s.StringEditor;

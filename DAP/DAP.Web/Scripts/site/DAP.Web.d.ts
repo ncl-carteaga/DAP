@@ -1291,14 +1291,14 @@ declare namespace DAP.DWSupport {
     interface SailingMasterSuppForm {
         SailId: Serenity.IntegerEditor;
         PackageTypeCd: Serenity.LookupEditor;
-        ValidVoyageCd: Serenity.StringEditor;
+        ValidVoyageCd: SelectYNEditor;
         ShipCd: Serenity.StringEditor;
         SailDat: Serenity.DateEditor;
         ProductCd: Serenity.LookupEditor;
         SlProductCd: Serenity.LookupEditor;
         LatitudeCruiseCd: Serenity.StringEditor;
-        FareFeedIncludeCd: Serenity.StringEditor;
-        InactiveCd: Serenity.StringEditor;
+        FareFeedIncludeCd: SelectYNEditor;
+        InactiveCd: SelectYNEditor;
         ShipNbr: Serenity.StringEditor;
         AmenityPtsQty: Serenity.DecimalEditor;
         RmsForecastCd: Serenity.IntegerEditor;
@@ -1320,10 +1320,10 @@ declare namespace DAP.DWSupport {
         RmsParentSail13Id: Serenity.IntegerEditor;
         RmsParentSail14Id: Serenity.IntegerEditor;
         RmsParentSail15Id: Serenity.IntegerEditor;
-        BackToBackCd: Serenity.StringEditor;
-        MainVoyageCd: Serenity.StringEditor;
+        BackToBackCd: SelectYNEditor;
+        MainVoyageCd: SelectYNEditor;
         MandateWeeksQty: Serenity.IntegerEditor;
-        InterportCd: Serenity.StringEditor;
+        InterportCd: SelectYNEditor;
         JonesActSailId: Serenity.IntegerEditor;
         FsGrpAmenityAmt: Serenity.DecimalEditor;
         ObrTradeCd: Serenity.StringEditor;
@@ -1332,16 +1332,16 @@ declare namespace DAP.DWSupport {
         ProxySailId: Serenity.IntegerEditor;
         OnSaleDat: Serenity.DateEditor;
         SeasonYearCd: Serenity.StringEditor;
-        IsVoyageExceptionCd: Serenity.StringEditor;
+        IsVoyageExceptionCd: SelectYNEditor;
         VoyageExceptionDesc: Serenity.StringEditor;
         ItineraryChangedDat: Serenity.DateEditor;
-        CharterCd: Serenity.StringEditor;
-        IsHolidayCd: Serenity.StringEditor;
+        CharterCd: SelectYNEditor;
+        IsHolidayCd: SelectYNEditor;
         ProxyBudgetSailId: Serenity.IntegerEditor;
         ProxyMetaWeightSailId: Serenity.IntegerEditor;
         IsFreeOpenBarCd: Serenity.StringEditor;
         CasinoCabinCapacityQty: Serenity.IntegerEditor;
-        IsExtraordinaryCd: Serenity.StringEditor;
+        IsExtraordinaryCd: SelectYNEditor;
     }
     class SailingMasterSuppForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -4707,7 +4707,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrBudgetByChannelForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AccountingYear: Serenity.IntegerEditor;
         ChannelSummDesc: Serenity.StringEditor;
         ChannelDesc: Serenity.StringEditor;
@@ -4769,7 +4769,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrBudgetForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AccountPeriodNum: Serenity.StringEditor;
         NtrBudget: Serenity.DecimalEditor;
         PdsBudgetTotal: Serenity.DecimalEditor;
@@ -4828,7 +4828,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrFcstForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AccountPeriodNum: Serenity.StringEditor;
         NtrFcst: Serenity.DecimalEditor;
         PdsFcstTotal: Serenity.DecimalEditor;
@@ -4887,7 +4887,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrIntlDatelineCruisesForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         CruiseSegmentCd: Serenity.StringEditor;
         CruiseDaysQty: Serenity.IntegerEditor;
         CruiseCalendarDaysQty: Serenity.IntegerEditor;
@@ -4943,7 +4943,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrPastMonthsActualForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         YearMonth: Serenity.StringEditor;
         NtrFinal: Serenity.DecimalEditor;
         CxRev: Serenity.DecimalEditor;
@@ -5014,7 +5014,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrRptCommentForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         ReportDate: Serenity.DateEditor;
         Comment: Serenity.TextAreaEditor;
         AccountPeriodNum: Serenity.StringEditor;
@@ -6350,6 +6350,7 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: DistrictMasterSuppForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -6483,6 +6484,7 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: SurveyFilterExclusionSuppForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -7355,6 +7357,18 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    /**
+    * Our select editor with hardcoded values.
+    *
+    * When you define a new editor type, make sure you build
+    * and transform templates for it to be available
+    * in server side forms, e.g. [HardCodedValuesEditor]
+    */
+    class SelectPCHCompanyEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrBudgetDialog extends Serenity.EntityDialog<NtrBudgetRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -7385,6 +7399,7 @@ declare namespace DAP.PCHODSNVS {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: NtrBudgetByChannelForm;
+        constructor();
         protected getToolbarButtons(): Serenity.ToolButton[];
         private confirmBeforeSave;
     }
@@ -7407,6 +7422,7 @@ declare namespace DAP.PCHODSNVS {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: NtrFcstForm;
+        constructor();
         protected getToolbarButtons(): Serenity.ToolButton[];
         private confirmBeforeSave;
     }
@@ -7429,6 +7445,9 @@ declare namespace DAP.PCHODSNVS {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: NtrIntlDatelineCruisesForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+        private confirmBeforeSave;
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -7449,6 +7468,7 @@ declare namespace DAP.PCHODSNVS {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: NtrPastMonthsActualForm;
+        constructor();
         protected getToolbarButtons(): Serenity.ToolButton[];
         private confirmBeforeSave;
     }
@@ -7700,5 +7720,17 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    /**
+     * Our select editor with hardcoded values.
+     *
+     * When you define a new editor type, make sure you build
+     * and transform templates for it to be available
+     * in server side forms, e.g. [HardCodedValuesEditor]
+     */
+    class SelectYNEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
     }
 }

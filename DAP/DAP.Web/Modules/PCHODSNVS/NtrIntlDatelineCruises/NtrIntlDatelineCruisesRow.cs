@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CruiseIntlTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, Updatable(false), DAP.PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, Updatable(false), SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

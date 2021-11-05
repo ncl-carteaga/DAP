@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrPastMonthsActualForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         YearMonth: Serenity.StringEditor;
         NtrFinal: Serenity.DecimalEditor;
         CxRev: Serenity.DecimalEditor;
@@ -23,7 +23,7 @@
                 NtrPastMonthsActualForm.init = true;
 
                 var s = Serenity;
-                var w0 = PCHODS.CompanyEditor;
+                var w0 = SelectPCHCompanyEditor;
                 var w1 = s.StringEditor;
                 var w2 = s.DecimalEditor;
 

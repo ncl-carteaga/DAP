@@ -17,14 +17,14 @@ namespace DAP.PCHODSNVS.Entities
     [DataAuditLog]
     public sealed class NtrFcstRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), NotNull, QuickSearch, DAP.PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), NotNull, QuickSearch, SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Account Period Num"), Column("account_period_num"), Size(255), NotNull, SortOrder(1, descending: true)]
+        [DisplayName("Account Period (YYYYMM)"), Column("account_period_num"), Size(6), NotNull, SortOrder(1, descending: true), Hint("YYYYMM")]
         public String AccountPeriodNum
         {
             get { return Fields.AccountPeriodNum[this]; }

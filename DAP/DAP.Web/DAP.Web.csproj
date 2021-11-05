@@ -1414,6 +1414,7 @@
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogDialog.ts" />
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogGrid.ts" />
     <Content Include="Modules\Membership\Account\LoginPanel.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SelectYNEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NoteDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NotesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttibutesEditor.ts" />
@@ -1434,6 +1435,7 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\CompanyPCHEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
@@ -2781,6 +2783,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Imports\ClientTypes\DWSupport.SelectYNEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.NotesEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
@@ -2812,6 +2817,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\PCHODS.UsersEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\PCHODSNVS.SelectPCHCompanyEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DefaultDB\DefaultDB_20170211_152700_Mailing.cs" />
@@ -2991,6 +2999,7 @@
     <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
     <Compile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImportForm.cs" />
     <Compile Include="Modules\PCHDW\PCHDWPermissionKeys.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\CompanyLookupPCH.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />

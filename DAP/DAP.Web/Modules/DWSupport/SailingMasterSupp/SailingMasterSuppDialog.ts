@@ -15,6 +15,7 @@ namespace DAP.DWSupport {
             var b = super.getToolbarButtons();
 
             b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+            b.splice(Q.indexOf(b, x => x.cssClass == "apply-changes-button"), 1);
             return b;
         }
     }

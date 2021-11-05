@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrFcstForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AccountPeriodNum: Serenity.StringEditor;
         NtrFcst: Serenity.DecimalEditor;
         PdsFcstTotal: Serenity.DecimalEditor;
@@ -19,7 +19,7 @@
                 NtrFcstForm.init = true;
 
                 var s = Serenity;
-                var w0 = PCHODS.CompanyEditor;
+                var w0 = SelectPCHCompanyEditor;
                 var w1 = s.StringEditor;
                 var w2 = s.DecimalEditor;
 

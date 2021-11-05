@@ -1213,25 +1213,26 @@ var DAP;
                     var s = Serenity;
                     var w0 = s.IntegerEditor;
                     var w1 = s.LookupEditor;
-                    var w2 = s.StringEditor;
-                    var w3 = s.DateEditor;
-                    var w4 = s.DecimalEditor;
+                    var w2 = DWSupport.SelectYNEditor;
+                    var w3 = s.StringEditor;
+                    var w4 = s.DateEditor;
+                    var w5 = s.DecimalEditor;
                     Q.initFormType(SailingMasterSuppForm, [
                         'SailId', w0,
                         'PackageTypeCd', w1,
                         'ValidVoyageCd', w2,
-                        'ShipCd', w2,
-                        'SailDat', w3,
+                        'ShipCd', w3,
+                        'SailDat', w4,
                         'ProductCd', w1,
                         'SlProductCd', w1,
-                        'LatitudeCruiseCd', w2,
+                        'LatitudeCruiseCd', w3,
                         'FareFeedIncludeCd', w2,
                         'InactiveCd', w2,
-                        'ShipNbr', w2,
-                        'AmenityPtsQty', w4,
+                        'ShipNbr', w3,
+                        'AmenityPtsQty', w5,
                         'RmsForecastCd', w0,
-                        'RmsSeasonCd', w2,
-                        'RmsColorNameDesc', w2,
+                        'RmsSeasonCd', w3,
+                        'RmsColorNameDesc', w3,
                         'RmsRefLinkSailId', w0,
                         'RmsParentSail1Id', w0,
                         'RmsParentSail2Id', w0,
@@ -1253,21 +1254,21 @@ var DAP;
                         'MandateWeeksQty', w0,
                         'InterportCd', w2,
                         'JonesActSailId', w0,
-                        'FsGrpAmenityAmt', w4,
-                        'ObrTradeCd', w2,
-                        'ObrSubTradeCd', w2,
-                        'ObrSeasonCd', w2,
+                        'FsGrpAmenityAmt', w5,
+                        'ObrTradeCd', w3,
+                        'ObrSubTradeCd', w3,
+                        'ObrSeasonCd', w3,
                         'ProxySailId', w0,
-                        'OnSaleDat', w3,
-                        'SeasonYearCd', w2,
+                        'OnSaleDat', w4,
+                        'SeasonYearCd', w3,
                         'IsVoyageExceptionCd', w2,
-                        'VoyageExceptionDesc', w2,
-                        'ItineraryChangedDat', w3,
+                        'VoyageExceptionDesc', w3,
+                        'ItineraryChangedDat', w4,
                         'CharterCd', w2,
                         'IsHolidayCd', w2,
                         'ProxyBudgetSailId', w0,
                         'ProxyMetaWeightSailId', w0,
-                        'IsFreeOpenBarCd', w2,
+                        'IsFreeOpenBarCd', w3,
                         'CasinoCabinCapacityQty', w0,
                         'IsExtraordinaryCd', w2
                     ]);
@@ -3887,7 +3888,7 @@ var DAP;
                 if (!NtrBudgetByChannelForm.init) {
                     NtrBudgetByChannelForm.init = true;
                     var s = Serenity;
-                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w0 = PCHODSNVS.SelectPCHCompanyEditor;
                     var w1 = s.IntegerEditor;
                     var w2 = s.StringEditor;
                     var w3 = s.DecimalEditor;
@@ -3953,7 +3954,7 @@ var DAP;
                 if (!NtrBudgetForm.init) {
                     NtrBudgetForm.init = true;
                     var s = Serenity;
-                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w0 = PCHODSNVS.SelectPCHCompanyEditor;
                     var w1 = s.StringEditor;
                     var w2 = s.DecimalEditor;
                     Q.initFormType(NtrBudgetForm, [
@@ -4017,7 +4018,7 @@ var DAP;
                 if (!NtrFcstForm.init) {
                     NtrFcstForm.init = true;
                     var s = Serenity;
-                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w0 = PCHODSNVS.SelectPCHCompanyEditor;
                     var w1 = s.StringEditor;
                     var w2 = s.DecimalEditor;
                     Q.initFormType(NtrFcstForm, [
@@ -4081,7 +4082,7 @@ var DAP;
                 if (!NtrIntlDatelineCruisesForm.init) {
                     NtrIntlDatelineCruisesForm.init = true;
                     var s = Serenity;
-                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w0 = PCHODSNVS.SelectPCHCompanyEditor;
                     var w1 = s.StringEditor;
                     var w2 = s.IntegerEditor;
                     var w3 = s.DateEditor;
@@ -4145,7 +4146,7 @@ var DAP;
                 if (!NtrPastMonthsActualForm.init) {
                     NtrPastMonthsActualForm.init = true;
                     var s = Serenity;
-                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w0 = PCHODSNVS.SelectPCHCompanyEditor;
                     var w1 = s.StringEditor;
                     var w2 = s.DecimalEditor;
                     Q.initFormType(NtrPastMonthsActualForm, [
@@ -4213,7 +4214,7 @@ var DAP;
                 if (!NtrRptCommentForm.init) {
                     NtrRptCommentForm.init = true;
                     var s = Serenity;
-                    var w0 = DAP.PCHODS.CompanyEditor;
+                    var w0 = PCHODSNVS.SelectPCHCompanyEditor;
                     var w1 = s.DateEditor;
                     var w2 = s.TextAreaEditor;
                     var w3 = s.StringEditor;
@@ -7451,6 +7452,12 @@ var DAP;
             DistrictMasterSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.DistrictMasterSuppRow.localTextPrefix; };
             DistrictMasterSuppDialog.prototype.getNameProperty = function () { return DWSupport.DistrictMasterSuppRow.nameProperty; };
             DistrictMasterSuppDialog.prototype.getService = function () { return DWSupport.DistrictMasterSuppService.baseUrl; };
+            DistrictMasterSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                // b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "apply-changes-button"; }), 1);
+                return b;
+            };
             DistrictMasterSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], DistrictMasterSuppDialog);
@@ -7737,6 +7744,7 @@ var DAP;
             SailingMasterSuppDialog.prototype.getToolbarButtons = function () {
                 var b = _super.prototype.getToolbarButtons.call(this);
                 b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "apply-changes-button"; }), 1);
                 return b;
             };
             SailingMasterSuppDialog = __decorate([
@@ -7830,17 +7838,18 @@ var DAP;
                 var _this = _super !== null && _super.apply(this, arguments) || this;
                 _this.form = new DWSupport.SurveyFilterExclusionSuppForm(_this.idPrefix);
                 return _this;
-                //protected getToolbarButtons(): Serenity.ToolButton[] {
-                //    var b = super.getToolbarButtons();
-                //    b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
-                //    return b;
-                //}
             }
             SurveyFilterExclusionSuppDialog.prototype.getFormKey = function () { return DWSupport.SurveyFilterExclusionSuppForm.formKey; };
             SurveyFilterExclusionSuppDialog.prototype.getIdProperty = function () { return DWSupport.SurveyFilterExclusionSuppRow.idProperty; };
             SurveyFilterExclusionSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.SurveyFilterExclusionSuppRow.localTextPrefix; };
             SurveyFilterExclusionSuppDialog.prototype.getNameProperty = function () { return DWSupport.SurveyFilterExclusionSuppRow.nameProperty; };
             SurveyFilterExclusionSuppDialog.prototype.getService = function () { return DWSupport.SurveyFilterExclusionSuppService.baseUrl; };
+            SurveyFilterExclusionSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                //b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "apply-changes-button"; }), 1);
+                return b;
+            };
             SurveyFilterExclusionSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], SurveyFilterExclusionSuppDialog);
@@ -11733,6 +11742,34 @@ var DAP;
 (function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
+        /**
+        * Our select editor with hardcoded values.
+        *
+        * When you define a new editor type, make sure you build
+        * and transform templates for it to be available
+        * in server side forms, e.g. [HardCodedValuesEditor]
+        */
+        var SelectPCHCompanyEditor = /** @class */ (function (_super) {
+            __extends(SelectPCHCompanyEditor, _super);
+            function SelectPCHCompanyEditor(container) {
+                var _this = _super.call(this, container, null) || this;
+                // add option accepts a key (id) value and display text value
+                _this.addOption("100", "100 (Oceania Cruises)");
+                _this.addOption("110", "110 (Regent Seven Seas Cruises)");
+                return _this;
+            }
+            SelectPCHCompanyEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], SelectPCHCompanyEditor);
+            return SelectPCHCompanyEditor;
+        }(Serenity.Select2Editor));
+        PCHODSNVS.SelectPCHCompanyEditor = SelectPCHCompanyEditor;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
         var NtrBudgetDialog = /** @class */ (function (_super) {
             __extends(NtrBudgetDialog, _super);
             function NtrBudgetDialog() {
@@ -11750,30 +11787,31 @@ var DAP;
                 var btns = _super.prototype.getToolbarButtons.call(this);
                 var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
                 var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var btnDelete = Q.first(btns, function (x) { return x.cssClass == "delete-button"; });
                 var oldSaveClick = btnSave.onClick;
                 var oldApplyClick = btnApply.onClick;
+                var oldDeleteClick = btnDelete.onClick;
                 btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
                 btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                btnDelete.onClick = function (e) { _this.confirmBeforeSave(oldDeleteClick, e); };
                 return btns;
             };
             NtrBudgetDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
                 switch (this.form.CompanyCd.value) {
                     case "100":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance100")) {
-                            Q.notifyError("User not Authorize to change company 100");
+                            Q.notifyError("User not Authorize to make any changes to company 100");
                             return;
                         }
                         break;
                     case "110":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance110")) {
-                            Q.notifyError("User not Authorize to change company 110");
+                            Q.notifyError("User not Authorize to make any changes to company 110");
                             return;
                         }
                         break;
                 }
-                //Q.confirm("Here is confirm message?", () => {
                 oldEvt(e);
-                //});
             };
             NtrBudgetDialog = __decorate([
                 Serenity.Decorators.registerClass()
@@ -11812,8 +11850,15 @@ var DAP;
         var NtrBudgetByChannelDialog = /** @class */ (function (_super) {
             __extends(NtrBudgetByChannelDialog, _super);
             function NtrBudgetByChannelDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHODSNVS.NtrBudgetByChannelForm(_this.idPrefix);
+                _this.form.AccountingYear.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.AccountingYear.value != null) {
+                        if ((_this.form.AccountingYear.value.length > 4) || (!(/(20[0-4]\d)/.test(_this.form.AccountingYear.value)))) {
+                            return "Invalid Accounting Year Format. It should be YYYY.";
+                        }
+                    }
+                });
                 return _this;
             }
             NtrBudgetByChannelDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrBudgetByChannelForm.formKey; };
@@ -11826,30 +11871,31 @@ var DAP;
                 var btns = _super.prototype.getToolbarButtons.call(this);
                 var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
                 var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var btnDelete = Q.first(btns, function (x) { return x.cssClass == "delete-button"; });
                 var oldSaveClick = btnSave.onClick;
                 var oldApplyClick = btnApply.onClick;
+                var oldDeleteClick = btnDelete.onClick;
                 btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
                 btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                btnDelete.onClick = function (e) { _this.confirmBeforeSave(oldDeleteClick, e); };
                 return btns;
             };
             NtrBudgetByChannelDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
                 switch (this.form.CompanyCd.value) {
                     case "100":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance100")) {
-                            Q.notifyError("User not Authorize to change company 100");
+                            Q.notifyError("User not Authorize to make any changes to company 100");
                             return;
                         }
                         break;
                     case "110":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance110")) {
-                            Q.notifyError("User not Authorize to change company 110");
+                            Q.notifyError("User not Authorize to make any changes to company 110");
                             return;
                         }
                         break;
                 }
-                //Q.confirm("Here is confirm message?", () => {
                 oldEvt(e);
-                //});
             };
             NtrBudgetByChannelDialog = __decorate([
                 Serenity.Decorators.registerClass()
@@ -11888,8 +11934,15 @@ var DAP;
         var NtrFcstDialog = /** @class */ (function (_super) {
             __extends(NtrFcstDialog, _super);
             function NtrFcstDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHODSNVS.NtrFcstForm(_this.idPrefix);
+                _this.form.AccountPeriodNum.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.AccountPeriodNum.value != null) {
+                        if ((_this.form.AccountPeriodNum.value.length > 6) || (!(/(20[0-4]\d)(0[1-9]|1[0-2])/.test(_this.form.AccountPeriodNum.value)))) {
+                            return "Invalid Account Period Format. It should be YYYYMM.";
+                        }
+                    }
+                });
                 return _this;
             }
             NtrFcstDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrFcstForm.formKey; };
@@ -11902,30 +11955,31 @@ var DAP;
                 var btns = _super.prototype.getToolbarButtons.call(this);
                 var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
                 var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var btnDelete = Q.first(btns, function (x) { return x.cssClass == "delete-button"; });
                 var oldSaveClick = btnSave.onClick;
                 var oldApplyClick = btnApply.onClick;
+                var oldDeleteClick = btnDelete.onClick;
                 btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
                 btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                btnDelete.onClick = function (e) { _this.confirmBeforeSave(oldDeleteClick, e); };
                 return btns;
             };
             NtrFcstDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
                 switch (this.form.CompanyCd.value) {
                     case "100":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance100")) {
-                            Q.notifyError("User not Authorize to change company 100");
+                            Q.notifyError("User not Authorize to make any changes to company 100");
                             return;
                         }
                         break;
                     case "110":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance110")) {
-                            Q.notifyError("User not Authorize to change company 110");
+                            Q.notifyError("User not Authorize to make any changes to company 110");
                             return;
                         }
                         break;
                 }
-                //Q.confirm("Here is confirm message?", () => {
                 oldEvt(e);
-                //});
             };
             NtrFcstDialog = __decorate([
                 Serenity.Decorators.registerClass()
@@ -11964,7 +12018,7 @@ var DAP;
         var NtrIntlDatelineCruisesDialog = /** @class */ (function (_super) {
             __extends(NtrIntlDatelineCruisesDialog, _super);
             function NtrIntlDatelineCruisesDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHODSNVS.NtrIntlDatelineCruisesForm(_this.idPrefix);
                 return _this;
             }
@@ -11973,6 +12027,37 @@ var DAP;
             NtrIntlDatelineCruisesDialog.prototype.getLocalTextPrefix = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.localTextPrefix; };
             NtrIntlDatelineCruisesDialog.prototype.getNameProperty = function () { return PCHODSNVS.NtrIntlDatelineCruisesRow.nameProperty; };
             NtrIntlDatelineCruisesDialog.prototype.getService = function () { return PCHODSNVS.NtrIntlDatelineCruisesService.baseUrl; };
+            NtrIntlDatelineCruisesDialog.prototype.getToolbarButtons = function () {
+                var _this = this;
+                var btns = _super.prototype.getToolbarButtons.call(this);
+                var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
+                var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var btnDelete = Q.first(btns, function (x) { return x.cssClass == "delete-button"; });
+                var oldSaveClick = btnSave.onClick;
+                var oldApplyClick = btnApply.onClick;
+                var oldDeleteClick = btnDelete.onClick;
+                btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
+                btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                btnDelete.onClick = function (e) { _this.confirmBeforeSave(oldDeleteClick, e); };
+                return btns;
+            };
+            NtrIntlDatelineCruisesDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
+                switch (this.form.CompanyCd.value) {
+                    case "100":
+                        if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance100")) {
+                            Q.notifyError("User not Authorize to make any changes to company 100");
+                            return;
+                        }
+                        break;
+                    case "110":
+                        if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance110")) {
+                            Q.notifyError("User not Authorize to make any changes to company 110");
+                            return;
+                        }
+                        break;
+                }
+                oldEvt(e);
+            };
             NtrIntlDatelineCruisesDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], NtrIntlDatelineCruisesDialog);
@@ -12010,8 +12095,15 @@ var DAP;
         var NtrPastMonthsActualDialog = /** @class */ (function (_super) {
             __extends(NtrPastMonthsActualDialog, _super);
             function NtrPastMonthsActualDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHODSNVS.NtrPastMonthsActualForm(_this.idPrefix);
+                _this.form.YearMonth.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.YearMonth.value != null) {
+                        if ((_this.form.YearMonth.value.length > 6) || (!(/(20[0-4]\d)(0[1-9]|1[0-2])/.test(_this.form.YearMonth.value)))) {
+                            return "Invalid Year Month Format. It should be YYYYMM.";
+                        }
+                    }
+                });
                 return _this;
             }
             NtrPastMonthsActualDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrPastMonthsActualForm.formKey; };
@@ -12024,30 +12116,31 @@ var DAP;
                 var btns = _super.prototype.getToolbarButtons.call(this);
                 var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
                 var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var btnDelete = Q.first(btns, function (x) { return x.cssClass == "delete-button"; });
                 var oldSaveClick = btnSave.onClick;
                 var oldApplyClick = btnApply.onClick;
+                var oldDeleteClick = btnDelete.onClick;
                 btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
                 btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                btnDelete.onClick = function (e) { _this.confirmBeforeSave(oldDeleteClick, e); };
                 return btns;
             };
             NtrPastMonthsActualDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
                 switch (this.form.CompanyCd.value) {
                     case "100":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance100")) {
-                            Q.notifyError("User not Authorize to change company 100");
+                            Q.notifyError("User not Authorize to make any changes to company 100");
                             return;
                         }
                         break;
                     case "110":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance110")) {
-                            Q.notifyError("User not Authorize to change company 110");
+                            Q.notifyError("User not Authorize to make any changes to company 110");
                             return;
                         }
                         break;
                 }
-                //Q.confirm("Here is confirm message?", () => {
                 oldEvt(e);
-                //});
             };
             NtrPastMonthsActualDialog = __decorate([
                 Serenity.Decorators.registerClass()
@@ -12088,6 +12181,13 @@ var DAP;
             function NtrRptCommentDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new PCHODSNVS.NtrRptCommentForm(_this.idPrefix);
+                _this.form.AccountPeriodNum.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.AccountPeriodNum.value != null) {
+                        if ((_this.form.AccountPeriodNum.value.length > 6) || (!(/(20[0-4]\d)(0[1-9]|1[0-2])/.test(_this.form.AccountPeriodNum.value)))) {
+                            return "Invalid Account Period Format. It should be YYYYMM.";
+                        }
+                    }
+                });
                 return _this;
             }
             NtrRptCommentDialog.prototype.getFormKey = function () { return PCHODSNVS.NtrRptCommentForm.formKey; };
@@ -12100,30 +12200,31 @@ var DAP;
                 var btns = _super.prototype.getToolbarButtons.call(this);
                 var btnSave = Q.first(btns, function (x) { return x.cssClass == "save-and-close-button"; });
                 var btnApply = Q.first(btns, function (x) { return x.cssClass == "apply-changes-button"; });
+                var btnDelete = Q.first(btns, function (x) { return x.cssClass == "delete-button"; });
                 var oldSaveClick = btnSave.onClick;
                 var oldApplyClick = btnApply.onClick;
+                var oldDeleteClick = btnDelete.onClick;
                 btnSave.onClick = function (e) { _this.confirmBeforeSave(oldSaveClick, e); };
                 btnApply.onClick = function (e) { _this.confirmBeforeSave(oldApplyClick, e); };
+                btnDelete.onClick = function (e) { _this.confirmBeforeSave(oldDeleteClick, e); };
                 return btns;
             };
             NtrRptCommentDialog.prototype.confirmBeforeSave = function (oldEvt, e) {
                 switch (this.form.CompanyCd.value) {
                     case "100":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance100")) {
-                            Q.notifyError("User not Authorize to change company 100");
+                            Q.notifyError("User not Authorize to make any changes to company 100");
                             return;
                         }
                         break;
                     case "110":
                         if (!DAP.Authorization.hasPermission("PCHODSNVS:Finance110")) {
-                            Q.notifyError("User not Authorize to change company 110");
+                            Q.notifyError("User not Authorize to make any changes to company 110");
                             return;
                         }
                         break;
                 }
-                //Q.confirm("Here is confirm message?", () => {
                 oldEvt(e);
-                //});
             };
             NtrRptCommentDialog = __decorate([
                 Serenity.Decorators.registerClass()
@@ -12829,5 +12930,33 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        /**
+         * Our select editor with hardcoded values.
+         *
+         * When you define a new editor type, make sure you build
+         * and transform templates for it to be available
+         * in server side forms, e.g. [HardCodedValuesEditor]
+         */
+        var SelectYNEditor = /** @class */ (function (_super) {
+            __extends(SelectYNEditor, _super);
+            function SelectYNEditor(container) {
+                var _this = _super.call(this, container, null) || this;
+                // add option accepts a key (id) value and display text value
+                _this.addOption("Y", "Yes");
+                _this.addOption("N", "No");
+                return _this;
+            }
+            SelectYNEditor = __decorate([
+                Serenity.Decorators.registerEditor()
+            ], SelectYNEditor);
+            return SelectYNEditor;
+        }(Serenity.Select2Editor));
+        DWSupport.SelectYNEditor = SelectYNEditor;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
