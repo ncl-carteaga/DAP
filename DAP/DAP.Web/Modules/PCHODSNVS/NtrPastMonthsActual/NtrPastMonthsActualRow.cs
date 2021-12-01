@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Year Month (YYYYMM)"), Column("year_month"), Size(6), PrimaryKey, SortOrder(1, descending: true)]
+        [DisplayName("Year Month"), Column("year_month"), Size(6), PrimaryKey, SortOrder(1, descending: true)]
         public String YearMonth
         {
             get { return Fields.YearMonth[this]; }

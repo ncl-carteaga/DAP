@@ -31,7 +31,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), PrimaryKey, QuickSearch, Updatable(false)]
+        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), PrimaryKey, QuickSearch, Updatable(false), LookupEditor(typeof(Lookups.SegmentLookup))]
         public String CruiseSegmentCd
         {
             get { return Fields.CruiseSegmentCd[this]; }

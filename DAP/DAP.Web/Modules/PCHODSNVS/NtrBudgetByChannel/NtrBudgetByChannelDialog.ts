@@ -17,11 +17,12 @@ namespace DAP.PCHODSNVS {
             this.form.AccountingYear.addValidationRule(this.uniqueName, e => {
                 if (this.form.AccountingYear.value != null) {
 
-                    if ((this.form.AccountingYear.value.length > 4) || (!(/(20[0-4]\d)/.test(this.form.AccountingYear.value)))) {
-                        return "Invalid Accounting Year Format. It should be YYYY.";
+                    if ((this.form.AccountingYear.value > 2100) || (this.form.AccountingYear.value < 2000)) {
+                        return "Invalid Account Year Format.";
                     }
                 }
-            }
+            });
+
         }
 
         protected getToolbarButtons(): Serenity.ToolButton[] {

@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.GsaDistributionListTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("Company_cd"), Size(3), NotNull]
+        [DisplayName("Company Cd"), Column("Company_cd"), Size(3), NotNull, SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

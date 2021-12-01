@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.KeyAcctTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("Company_cd")]
+        [DisplayName("Company Cd"), Column("Company_cd"), SelectPCHCompanyEditor]
         public Double? CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
@@ -339,6 +339,14 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.Year[this] = value; }
         }
 
+        [DisplayName("Agency Cd"), Column("Agency_Cd"), Size(6), LookupEditor("PCHODSNVS.Agency"), QuickSearch]
+        public String AgencyCd
+        {
+            get { return Fields.AgencyCd[this]; }
+            set { Fields.AgencyCd[this] = value; }
+        }
+
+
         IIdField IIdRow.IdField
         {
             get { return Fields.KeyAcctTk; }
@@ -360,6 +368,9 @@ namespace DAP.PCHODSNVS.Entities
         {
             public Int32Field KeyAcctTk;
             public DoubleField CompanyCd;
+
+            public StringField AgencyCd;
+
             public Int16Field Year;
             public StringField KeyAcctLink;
             public StringField AccountType;

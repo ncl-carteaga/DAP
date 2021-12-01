@@ -16,6 +16,8 @@ namespace DAP.PCHODSNVS.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 Key { get; set; }
         [EditLink]
+        public String CompanyCd { get; set; }
+        [EditLink]
         public String DatabaseId { get; set; }
         public String CubeId { get; set; }
         public DateTime AdhocDate { get; set; }

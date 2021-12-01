@@ -1,7 +1,7 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrIntlDatelineCruisesForm {
         CompanyCd: SelectPCHCompanyEditor;
-        CruiseSegmentCd: Serenity.StringEditor;
+        CruiseSegmentCd: Serenity.LookupEditor;
         CruiseDaysQty: Serenity.IntegerEditor;
         CruiseCalendarDaysQty: Serenity.IntegerEditor;
         LoadDt: Serenity.DateEditor;
@@ -19,7 +19,7 @@
 
                 var s = Serenity;
                 var w0 = SelectPCHCompanyEditor;
-                var w1 = s.StringEditor;
+                var w1 = s.LookupEditor;
                 var w2 = s.IntegerEditor;
                 var w3 = s.DateEditor;
 

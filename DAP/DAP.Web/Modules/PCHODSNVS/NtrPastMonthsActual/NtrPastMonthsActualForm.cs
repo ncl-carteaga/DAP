@@ -14,6 +14,7 @@ namespace DAP.PCHODSNVS.Forms
     public class NtrPastMonthsActualForm
     {
         public String CompanyCd { get; set; }
+        [DisplayFormat("Year Month (YYYYMM)")]
         public String YearMonth { get; set; }
         public Double NtrFinal { get; set; }
         public Double CxRev { get; set; }

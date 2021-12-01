@@ -1348,16 +1348,28 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentColumns.ts">
@@ -1435,7 +1447,11 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\CompanyPCHEditor.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
@@ -2999,7 +3015,12 @@
     <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
     <Compile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImportForm.cs" />
     <Compile Include="Modules\PCHDW\PCHDWPermissionKeys.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\NtrBudget\CompanyLookupPCH.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\SegmentLookup.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />

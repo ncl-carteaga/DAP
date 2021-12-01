@@ -1,6 +1,7 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface SuppKeyAcctTargetForm {
-        CompanyCd: Serenity.DecimalEditor;
+        CompanyCd: SelectPCHCompanyEditor;
+        AgencyCd: Serenity.LookupEditor;
         Year: Serenity.IntegerEditor;
         KeyAcctLink: Serenity.StringEditor;
         AccountType: Serenity.StringEditor;
@@ -58,57 +59,60 @@
                 SuppKeyAcctTargetForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.DecimalEditor;
-                var w1 = s.IntegerEditor;
-                var w2 = s.StringEditor;
-                var w3 = s.DateEditor;
+                var w0 = SelectPCHCompanyEditor;
+                var w1 = s.LookupEditor;
+                var w2 = s.IntegerEditor;
+                var w3 = s.StringEditor;
+                var w4 = s.DateEditor;
+                var w5 = s.DecimalEditor;
 
                 Q.initFormType(SuppKeyAcctTargetForm, [
                     'CompanyCd', w0,
-                    'Year', w1,
-                    'KeyAcctLink', w2,
-                    'AccountType', w2,
-                    'LoadDt', w3,
-                    'CcfTargetQ1', w0,
-                    'PrctTargetQ1', w0,
-                    'CcfTargetQ12', w0,
-                    'PrctTargetQ12', w0,
-                    'CcfTargetQ13', w0,
-                    'PrctTargetQ13', w0,
-                    'CcfTargetQ14', w0,
-                    'PrctTargetQ14', w0,
-                    'CcfTargetQ15', w0,
-                    'PrctTargetQ15', w0,
-                    'CcfTargetQ2', w0,
-                    'PrctTargetQ2', w0,
-                    'CcfTargetQ22', w0,
-                    'PrctTargetQ22', w0,
-                    'CcfTargetQ23', w0,
-                    'PrctTargetQ23', w0,
-                    'CcfTargetQ24', w0,
-                    'PrctTargetQ24', w0,
-                    'CcfTargetQ25', w0,
-                    'PrctTargetQ25', w0,
-                    'CcfTargetQ3', w0,
-                    'PrctTargetQ3', w0,
-                    'CcfTargetQ32', w0,
-                    'PrctTargetQ32', w0,
-                    'CcfTargetQ33', w0,
-                    'PrctTargetQ33', w0,
-                    'CcfTargetQ34', w0,
-                    'PrctTargetQ34', w0,
-                    'CcfTargetQ35', w0,
-                    'PrctTargetQ35', w0,
-                    'CcfTargetQ4', w0,
-                    'PrctTargetQ4', w0,
-                    'CcfTargetQ42', w0,
-                    'PrctTargetQ42', w0,
-                    'CcfTargetQ43', w0,
-                    'PrctTargetQ43', w0,
-                    'CcfTargetQ44', w0,
-                    'PrctTargetQ44', w0,
-                    'CcfTargetQ45', w0,
-                    'PrctTargetQ45', w0
+                    'AgencyCd', w1,
+                    'Year', w2,
+                    'KeyAcctLink', w3,
+                    'AccountType', w3,
+                    'LoadDt', w4,
+                    'CcfTargetQ1', w5,
+                    'PrctTargetQ1', w5,
+                    'CcfTargetQ12', w5,
+                    'PrctTargetQ12', w5,
+                    'CcfTargetQ13', w5,
+                    'PrctTargetQ13', w5,
+                    'CcfTargetQ14', w5,
+                    'PrctTargetQ14', w5,
+                    'CcfTargetQ15', w5,
+                    'PrctTargetQ15', w5,
+                    'CcfTargetQ2', w5,
+                    'PrctTargetQ2', w5,
+                    'CcfTargetQ22', w5,
+                    'PrctTargetQ22', w5,
+                    'CcfTargetQ23', w5,
+                    'PrctTargetQ23', w5,
+                    'CcfTargetQ24', w5,
+                    'PrctTargetQ24', w5,
+                    'CcfTargetQ25', w5,
+                    'PrctTargetQ25', w5,
+                    'CcfTargetQ3', w5,
+                    'PrctTargetQ3', w5,
+                    'CcfTargetQ32', w5,
+                    'PrctTargetQ32', w5,
+                    'CcfTargetQ33', w5,
+                    'PrctTargetQ33', w5,
+                    'CcfTargetQ34', w5,
+                    'PrctTargetQ34', w5,
+                    'CcfTargetQ35', w5,
+                    'PrctTargetQ35', w5,
+                    'CcfTargetQ4', w5,
+                    'PrctTargetQ4', w5,
+                    'CcfTargetQ42', w5,
+                    'PrctTargetQ42', w5,
+                    'CcfTargetQ43', w5,
+                    'PrctTargetQ43', w5,
+                    'CcfTargetQ44', w5,
+                    'PrctTargetQ44', w5,
+                    'CcfTargetQ45', w5,
+                    'PrctTargetQ45', w5
                 ]);
             }
         }

@@ -21,7 +21,7 @@ namespace DAP.PCHODSNVS {
                         return "Invalid Account Period Format. It should be YYYYMM.";
                     }
                 }
-            }
+            });
         }
 
         protected getToolbarButtons(): Serenity.ToolButton[] {

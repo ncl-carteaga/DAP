@@ -74,7 +74,12 @@ namespace DAP.PCHODSNVS {
 
                 if (target.hasClass('start-job')) {
                     Q.confirm('Are you sure you want to refresh this Cube?', () => {
-                       var crow = Q.deepClone(this.itemAt(row));
+                        var crow = Q.deepClone(this.itemAt(row));
+                        if ((!Authorization.hasPermission("PCHODSNVS:Finance100") && crow.CompanyCd == "100") || (!Authorization.hasPermission("PCHODSNVS:Finance110") && crow.CompanyCd == "110")) {
+                            Q.notifyError("User not Authorize to run this cube");
+                            return;
+                        }
+                      
                        RevenueAdhocManagementService.ExecuteSP({
                             Entity: crow
                        }, response => {

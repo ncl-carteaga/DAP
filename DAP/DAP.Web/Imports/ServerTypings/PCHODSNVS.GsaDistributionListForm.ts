@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface GsaDistributionListForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AgencyCd: Serenity.LookupEditor;
         AccountName: Serenity.StringEditor;
         ContactName: Serenity.StringEditor;
@@ -19,17 +19,18 @@
                 GsaDistributionListForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
+                var w0 = SelectPCHCompanyEditor;
                 var w1 = s.LookupEditor;
-                var w2 = s.DateEditor;
+                var w2 = s.StringEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(GsaDistributionListForm, [
                     'CompanyCd', w0,
                     'AgencyCd', w1,
-                    'AccountName', w0,
-                    'ContactName', w0,
-                    'Email', w0,
-                    'LoadDt', w2
+                    'AccountName', w2,
+                    'ContactName', w2,
+                    'Email', w2,
+                    'LoadDt', w3
                 ]);
             }
         }

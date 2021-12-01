@@ -14,6 +14,7 @@ namespace DAP.PCHODSNVS.Forms
     public class NtrBudgetByChannelForm
     {
         public String CompanyCd { get; set; }
+        [DisplayFormat("Accounting Year (YYYY)")]
         public Int32 AccountingYear { get; set; }
         public String ChannelSummDesc { get; set; }
         public String ChannelDesc { get; set; }

@@ -24,21 +24,21 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Accounting Year (YYYY)"), Column("accounting_year"), SortOrder(1, descending: true), Size(4)]
+        [DisplayName("Accounting Year"), Column("accounting_year"), SortOrder(1, descending: true)]
         public Int32? AccountingYear
         {
             get { return Fields.AccountingYear[this]; }
             set { Fields.AccountingYear[this] = value; }
         }
 
-        [DisplayName("Channel Summ Desc"), Column("channel_summ_desc"), Size(25)]
+        [DisplayName("Channel Summ Desc"), Column("channel_summ_desc"), Size(25), QuickFilter]
         public String ChannelSummDesc
         {
             get { return Fields.ChannelSummDesc[this]; }
             set { Fields.ChannelSummDesc[this] = value; }
         }
 
-        [DisplayName("Channel Desc"), Column("channel_desc"), Size(50)]
+        [DisplayName("Channel Desc"), Column("channel_desc"), Size(50), QuickFilter]
         public String ChannelDesc
         {
             get { return Fields.ChannelDesc[this]; }

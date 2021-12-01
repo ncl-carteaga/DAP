@@ -15,6 +15,7 @@ namespace DAP.PCHODSNVS.Forms
     {
         [Category("Account")]
         public Double CompanyCd { get; set; }
+        public String AgencyCd { get; set; }
         public Int16 Year { get; set; }
         public String KeyAcctLink { get; set; }
         public String AccountType { get; set; }

@@ -4532,7 +4532,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface ConsortiumExceptionListForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         NewItemType: Serenity.LookupEditor;
         NewItemName: Serenity.StringEditor;
         ItemType: Serenity.LookupEditor;
@@ -4604,7 +4604,7 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface GsaDistributionListForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AgencyCd: Serenity.LookupEditor;
         AccountName: Serenity.StringEditor;
         ContactName: Serenity.StringEditor;
@@ -4706,6 +4706,16 @@ declare namespace DAP.PCHODSNVS {
 declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
+    interface NtrBudgetByChannelExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class NtrBudgetByChannelExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     interface NtrBudgetByChannelForm {
         CompanyCd: SelectPCHCompanyEditor;
         AccountingYear: Serenity.IntegerEditor;
@@ -4756,16 +4766,28 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrBudgetByChannelRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrBudgetByChannelRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODSNVS/NtrBudgetByChannel/Create",
             Update = "PCHODSNVS/NtrBudgetByChannel/Update",
             Delete = "PCHODSNVS/NtrBudgetByChannel/Delete",
             Retrieve = "PCHODSNVS/NtrBudgetByChannel/Retrieve",
-            List = "PCHODSNVS/NtrBudgetByChannel/List"
+            List = "PCHODSNVS/NtrBudgetByChannel/List",
+            ExcelImport = "PCHODSNVS/NtrBudgetByChannel/ExcelImport"
         }
     }
 }
 declare namespace DAP.PCHODSNVS {
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrBudgetExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class NtrBudgetExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrBudgetForm {
@@ -4815,16 +4837,28 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrBudgetRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrBudgetRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODSNVS/NtrBudget/Create",
             Update = "PCHODSNVS/NtrBudget/Update",
             Delete = "PCHODSNVS/NtrBudget/Delete",
             Retrieve = "PCHODSNVS/NtrBudget/Retrieve",
-            List = "PCHODSNVS/NtrBudget/List"
+            List = "PCHODSNVS/NtrBudget/List",
+            ExcelImport = "PCHODSNVS/NtrBudget/ExcelImport"
         }
     }
 }
 declare namespace DAP.PCHODSNVS {
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrFcstExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class NtrFcstExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrFcstForm {
@@ -4874,12 +4908,14 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrFcstRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrFcstRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODSNVS/NtrFcst/Create",
             Update = "PCHODSNVS/NtrFcst/Update",
             Delete = "PCHODSNVS/NtrFcst/Delete",
             Retrieve = "PCHODSNVS/NtrFcst/Retrieve",
-            List = "PCHODSNVS/NtrFcst/List"
+            List = "PCHODSNVS/NtrFcst/List",
+            ExcelImport = "PCHODSNVS/NtrFcst/ExcelImport"
         }
     }
 }
@@ -4888,7 +4924,7 @@ declare namespace DAP.PCHODSNVS {
 declare namespace DAP.PCHODSNVS {
     interface NtrIntlDatelineCruisesForm {
         CompanyCd: SelectPCHCompanyEditor;
-        CruiseSegmentCd: Serenity.StringEditor;
+        CruiseSegmentCd: Serenity.LookupEditor;
         CruiseDaysQty: Serenity.IntegerEditor;
         CruiseCalendarDaysQty: Serenity.IntegerEditor;
         LoadDt: Serenity.DateEditor;
@@ -4940,6 +4976,16 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+}
+declare namespace DAP.PCHODSNVS {
+    interface NtrPastMonthsActualExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class NtrPastMonthsActualExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
 }
 declare namespace DAP.PCHODSNVS {
     interface NtrPastMonthsActualForm {
@@ -5001,12 +5047,14 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrPastMonthsActualRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrPastMonthsActualRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODSNVS/NtrPastMonthsActual/Create",
             Update = "PCHODSNVS/NtrPastMonthsActual/Update",
             Delete = "PCHODSNVS/NtrPastMonthsActual/Delete",
             Retrieve = "PCHODSNVS/NtrPastMonthsActual/Retrieve",
-            List = "PCHODSNVS/NtrPastMonthsActual/List"
+            List = "PCHODSNVS/NtrPastMonthsActual/List",
+            ExcelImport = "PCHODSNVS/NtrPastMonthsActual/ExcelImport"
         }
     }
 }
@@ -5069,6 +5117,7 @@ declare namespace DAP.PCHODSNVS {
     interface RevenueAdhocManagementForm {
         DatabaseId: Serenity.StringEditor;
         CubeId: Serenity.StringEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AdhocDate: Serenity.DateEditor;
         AdhocDateTk: Serenity.IntegerEditor;
         SqlJobName: Serenity.StringEditor;
@@ -5090,6 +5139,7 @@ declare namespace DAP.PCHODSNVS {
         LastUpdatedBy?: string;
         SqlJobName?: string;
         LastProcessedDateTime?: string;
+        CompanyCd?: string;
     }
     namespace RevenueAdhocManagementRow {
         const idProperty = "Key";
@@ -5103,7 +5153,8 @@ declare namespace DAP.PCHODSNVS {
             AdhocDateTk = "AdhocDateTk",
             LastUpdatedBy = "LastUpdatedBy",
             SqlJobName = "SqlJobName",
-            LastProcessedDateTime = "LastProcessedDateTime"
+            LastProcessedDateTime = "LastProcessedDateTime",
+            CompanyCd = "CompanyCd"
         }
     }
 }
@@ -5130,7 +5181,8 @@ declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
     interface SuppKeyAcctTargetForm {
-        CompanyCd: Serenity.DecimalEditor;
+        CompanyCd: SelectPCHCompanyEditor;
+        AgencyCd: Serenity.LookupEditor;
         Year: Serenity.IntegerEditor;
         KeyAcctLink: Serenity.StringEditor;
         AccountType: Serenity.StringEditor;
@@ -5186,6 +5238,7 @@ declare namespace DAP.PCHODSNVS {
     interface SuppKeyAcctTargetRow {
         KeyAcctTk?: number;
         CompanyCd?: number;
+        AgencyCd?: string;
         Year?: number;
         KeyAcctLink?: string;
         AccountType?: string;
@@ -5238,6 +5291,7 @@ declare namespace DAP.PCHODSNVS {
         const enum Fields {
             KeyAcctTk = "KeyAcctTk",
             CompanyCd = "CompanyCd",
+            AgencyCd = "AgencyCd",
             Year = "Year",
             KeyAcctLink = "KeyAcctLink",
             AccountType = "AccountType",
@@ -6457,6 +6511,18 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    /**
+     * Our select editor with hardcoded values.
+     *
+     * When you define a new editor type, make sure you build
+     * and transform templates for it to be available
+     * in server side forms, e.g. [HardCodedValuesEditor]
+     */
+    class SelectYNEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
     class SlProductCodeSuppDialog extends Serenity.EntityDialog<SlProductCodeSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -7382,6 +7448,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class NtrBudgetExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrBudgetGrid extends Serenity.EntityGrid<NtrBudgetRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof NtrBudgetDialog;
@@ -7389,6 +7463,7 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -7405,6 +7480,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class NtrBudgetByChannelExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrBudgetByChannelGrid extends Serenity.EntityGrid<NtrBudgetByChannelRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof NtrBudgetByChannelDialog;
@@ -7412,6 +7495,7 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -7428,6 +7512,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class NtrFcstExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrFcstGrid extends Serenity.EntityGrid<NtrFcstRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof NtrFcstDialog;
@@ -7435,6 +7527,7 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -7474,6 +7567,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class NtrPastMonthsActualExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class NtrPastMonthsActualGrid extends Serenity.EntityGrid<NtrPastMonthsActualRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof NtrPastMonthsActualDialog;
@@ -7481,6 +7582,7 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -7516,6 +7618,7 @@ declare namespace DAP.PCHODSNVS {
         protected form: RevenueAdhocManagementForm;
         constructor();
         protected getToolbarButtons(): Serenity.ToolButton[];
+        private confirmBeforeSave;
         protected afterLoadEntity(): void;
     }
 }
@@ -7720,17 +7823,5 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.DWSupport {
-    /**
-     * Our select editor with hardcoded values.
-     *
-     * When you define a new editor type, make sure you build
-     * and transform templates for it to be available
-     * in server side forms, e.g. [HardCodedValuesEditor]
-     */
-    class SelectYNEditor extends Serenity.Select2Editor<any, any> {
-        constructor(container: JQuery);
     }
 }

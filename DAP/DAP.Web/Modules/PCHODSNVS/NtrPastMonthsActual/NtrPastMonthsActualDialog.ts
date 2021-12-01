@@ -21,7 +21,7 @@ namespace DAP.PCHODSNVS {
                         return "Invalid Year Month Format. It should be YYYYMM.";
                     }
                 }
-            }
+            });
         }
 
         protected getToolbarButtons(): Serenity.ToolButton[] {
