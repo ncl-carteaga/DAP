@@ -33,8 +33,8 @@ namespace DAP.PCHDW {
             this.form.SegmentToDtMmddyyyy.addValidationRule(this.uniqueName, e => {
                 if (this.form.SegmentToDtMmddyyyy.value != null) {
 
-                    if ((this.form.SegmentToDtMmddyyyy.value.length > 8) || (!(/(0[1-9]|1[0-2])(1[0-9]|2[0-9]|3[0-1])(19|20)\d\d/.test(this.form.SegmentToDtMmddyyyy.value)))) {
-                        return "Invalid Segment to Format. It should be ddmmyyyy.";
+                    if ((this.form.SegmentToDtMmddyyyy.value.length > 10) || (!(/(0[1-9]|1[0-2])[- \/.](1[0-9]|2[0-9]|3[0-1])[- \/.](19|20)\d\d/.test(this.form.SegmentToDtMmddyyyy.value)))) {
+                        return "Invalid Segment to Format. It should be dd/mm/yyyy.";
                     }
                 }
             });
@@ -42,8 +42,8 @@ namespace DAP.PCHDW {
             this.form.CruiseToDtMmddyyyy.addValidationRule(this.uniqueName, e => {
                 if (this.form.CruiseToDtMmddyyyy.value != null) {
 
-                    if ((this.form.CruiseToDtMmddyyyy.value.length > 8) || (!(/(0[1-9]|1[0-2])(1[0-9]|2[0-9]|3[0-1])(19|20)\d\d/.test(this.form.CruiseToDtMmddyyyy.value)))) {
-                        return "Invalid Cruise to Format. It should be ddmmyyyy.";
+                    if ((this.form.CruiseToDtMmddyyyy.value.length > 10) || (!(/(0[1-9]|1[0-2])[- \/.](1[0-9]|2[0-9]|3[0-1])[- \/.](19|20)\d\d/.test(this.form.CruiseToDtMmddyyyy.value)))) {
+                        return "Invalid Cruise to Format. It should be dd/mm/yyyy.";
                     }
                 }
             });

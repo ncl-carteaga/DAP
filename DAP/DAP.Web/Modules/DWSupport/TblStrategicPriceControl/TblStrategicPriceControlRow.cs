@@ -26,14 +26,14 @@ namespace DAP.DWSupport.Entities
         }
 
 
-        [DisplayName("Sail Id"), Column("SAIL_ID"), Updatable(false)]
+        [DisplayName("Sail Id"), Column("SAIL_ID"), Updatable(false), QuickSearch]
         public Int64? SailId
         {
             get { return Fields.SailId[this]; }
             set { Fields.SailId[this] = value; }
         }
 
-        [DisplayName("Category Cd"), Column("CATEGORY_CD"), Size(4), QuickSearch, Updatable(false)]
+        [DisplayName("Category Cd"), Column("CATEGORY_CD"), Size(4), QuickFilter, Updatable(false)]
         public String CategoryCd
         {
             get { return Fields.CategoryCd[this]; }

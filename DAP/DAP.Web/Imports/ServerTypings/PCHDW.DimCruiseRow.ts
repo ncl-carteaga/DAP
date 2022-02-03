@@ -76,6 +76,11 @@
         export const idProperty = 'CruiseTk';
         export const nameProperty = 'CruiseCd';
         export const localTextPrefix = 'PCHDW.DimCruise';
+        export const lookupKey = 'PCHDW.GetDimCruise';
+
+        export function getLookup(): Q.Lookup<DimCruiseRow> {
+            return Q.getLookup<DimCruiseRow>('PCHDW.GetDimCruise');
+        }
 
         export declare const enum Fields {
             CruiseTk = "CruiseTk",

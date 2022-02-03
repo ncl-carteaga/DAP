@@ -39,6 +39,24 @@ namespace DAP.DWSupport.Repositories
 
         private class MySaveHandler : SaveRequestHandler<MyRow> {
 
+            protected override void BeforeSave()
+            {
+                base.BeforeSave();
+
+                this.Row.CategoryCd = this.Row.CategoryCd.ToUpper();
+
+                if(this.Row.EffectiveFromDat == null || this.Row.EffectiveToDat == null)
+                {
+                    throw new ValidationError("Effective Dates are required.");
+                }
+
+
+                if (this.Row.EffectiveToDat < this.Row.EffectiveFromDat)
+                {
+                    throw new ValidationError("Invalid Effective Dates; End Date set before the Start Date.");
+                }
+            }
+
             protected override void SetInternalFields()
             {
                 base.SetInternalFields();

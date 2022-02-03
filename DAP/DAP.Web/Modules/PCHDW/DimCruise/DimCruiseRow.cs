@@ -14,6 +14,7 @@ namespace DAP.PCHDW.Entities
     [ReadPermission(PermissionKeys.EDMSupport.View)]
     [ModifyPermission(PermissionKeys.EDMSupport.Modify)]
     [DeletePermission(PermissionKeys.EDMSupport.Delete)]
+    [LookupScript("PCHDW.GetDimCruise")]
     [DataAuditLog]
     public sealed class DimCruiseRow : Row, IIdRow, INameRow
     {
@@ -31,7 +32,7 @@ namespace DAP.PCHDW.Entities
             set { Fields.CruiseCd[this] = value; }
         }
 
-        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), NotNull]
+        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), NotNull, LookupInclude]
         public String CruiseSegmentCd
         {
             get { return Fields.CruiseSegmentCd[this]; }
@@ -66,7 +67,7 @@ namespace DAP.PCHDW.Entities
             set { Fields.RouteName[this] = value; }
         }
 
-        [DisplayName("Market Name"), Column("market_name"), Size(20)]
+        [DisplayName("Market Name"), Column("market_name"), Size(20), LookupInclude]
         public String MarketName
         {
             get { return Fields.MarketName[this]; }

@@ -30,6 +30,7 @@ namespace DAP.DWSupport
             public const string SailingMasterSupp = "DWSupp:Page:SailingMasterSupp";
             public const string SurveyFilterExclusionSupp = "DWSupp:Page:SurveyFilterExclusionSupp";
             public const string TblStrategicPriceControl = "DWSupp:Page:TblStrategicPriceControl";
+            public const string PortSubstitutionSupp = "DWSupp:Page:PortSubstitutionSupp";
         }
     }
 
