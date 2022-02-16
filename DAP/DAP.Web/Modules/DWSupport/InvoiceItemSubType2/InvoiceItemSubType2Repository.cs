@@ -6,9 +6,9 @@ namespace DAP.DWSupport.Repositories
     using Serenity.Services;
     using System;
     using System.Data;
-    using MyRow = Entities.InvoiceItemTypeMasterSuppRow;
+    using MyRow = Entities.InvoiceItemSubType2Row;
 
-    public class InvoiceItemTypeMasterSuppRepository
+    public class InvoiceItemSubType2Repository
     {
         private static MyRow.RowFields fld { get { return MyRow.Fields; } }
 
@@ -37,26 +37,7 @@ namespace DAP.DWSupport.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> {
-
-            protected override void SetInternalFields()
-            {
-                base.SetInternalFields();
-
-                var user = (UserDefinition)Authorization.UserDefinition;
-
-                Row.CreatedByNam = user.Username.ToUpper();
-                Row.CreatedTs = DateTime.Now;
-                if (IsUpdate)
-                {
-                    Row.ModifiedByNam = user.Username.ToUpper();
-                    Row.ModifiedTs = DateTime.Now;
-
-                    //Database trigger will create a new record at the same time
-                }
-            }
-
-        }
+        private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
         private class MyListHandler : ListRequestHandler<MyRow> { }

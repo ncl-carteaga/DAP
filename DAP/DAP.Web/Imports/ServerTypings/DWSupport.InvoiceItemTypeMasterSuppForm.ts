@@ -5,7 +5,7 @@
         InvoiceItemSubType2Cd: Serenity.StringEditor;
         InvoiceItemSubType3Cd: Serenity.StringEditor;
         InvoiceItemSourceCd: Serenity.StringEditor;
-        MasterComponentCd: Serenity.StringEditor;
+        MasterComponentCd: Serenity.LookupEditor;
         CommentsTxt: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -25,7 +25,8 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.DateEditor;
+                var w1 = s.LookupEditor;
+                var w2 = s.DateEditor;
 
                 Q.initFormType(InvoiceItemTypeMasterSuppForm, [
                     'InvoiceItemTypeCd', w0,
@@ -33,12 +34,12 @@
                     'InvoiceItemSubType2Cd', w0,
                     'InvoiceItemSubType3Cd', w0,
                     'InvoiceItemSourceCd', w0,
-                    'MasterComponentCd', w0,
+                    'MasterComponentCd', w1,
                     'CommentsTxt', w0,
-                    'CreatedTs', w1,
+                    'CreatedTs', w2,
                     'CreatedByNam', w0,
                     'ModifiedByNam', w0,
-                    'ModifiedTs', w1
+                    'ModifiedTs', w2
                 ]);
             }
         }

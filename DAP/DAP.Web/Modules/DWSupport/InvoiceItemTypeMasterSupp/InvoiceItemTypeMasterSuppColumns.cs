@@ -14,6 +14,10 @@ namespace DAP.DWSupport.Columns
     public class InvoiceItemTypeMasterSuppColumns
     {
         [EditLink]
+        public String MasterComponentCd { get; set; }
+        [EditLink]
+        public String InvoiceItemSourceCd { get; set; }
+        [EditLink]
         public String InvoiceItemTypeCd { get; set; }
         [EditLink]
         public String InvoiceItemSubTypeCd { get; set; }
@@ -21,10 +25,8 @@ namespace DAP.DWSupport.Columns
         public String InvoiceItemSubType2Cd { get; set; }
         [EditLink]
         public String InvoiceItemSubType3Cd { get; set; }
-        [EditLink]
-        public String InvoiceItemSourceCd { get; set; }
-        [EditLink]
-        public String MasterComponentCd { get; set; }
+
+
         public String CommentsTxt { get; set; }
         public DateTime CreatedTs { get; set; }
         public String CreatedByNam { get; set; }

@@ -959,59 +959,6 @@ declare namespace DAP.Common {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
-    interface DetailForm {
-        Key1: Serenity.IntegerEditor;
-        Key2: Serenity.IntegerEditor;
-        Value1: Serenity.StringEditor;
-        Value2: Serenity.StringEditor;
-    }
-    class DetailForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.DWSupport {
-    interface DetailRow {
-        DetailId?: number;
-        Key1?: number;
-        Key2?: number;
-        Value1?: string;
-        Value2?: string;
-    }
-    namespace DetailRow {
-        const idProperty = "DetailId";
-        const nameProperty = "Value1";
-        const localTextPrefix = "DWSupport.Detail";
-        const enum Fields {
-            DetailId = "DetailId",
-            Key1 = "Key1",
-            Key2 = "Key2",
-            Value1 = "Value1",
-            Value2 = "Value2"
-        }
-    }
-}
-declare namespace DAP.DWSupport {
-    namespace DetailService {
-        const baseUrl = "DWSupport/Detail";
-        function Create(request: Serenity.SaveRequest<DetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<DetailRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DetailRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "DWSupport/Detail/Create",
-            Update = "DWSupport/Detail/Update",
-            Delete = "DWSupport/Detail/Delete",
-            Retrieve = "DWSupport/Detail/Retrieve",
-            List = "DWSupport/Detail/List"
-        }
-    }
-}
-declare namespace DAP.DWSupport {
-}
-declare namespace DAP.DWSupport {
     interface DistrictMasterSuppForm {
         DistrictNbr: Serenity.StringEditor;
         SalesrepUserId: Serenity.LookupEditor;
@@ -1241,6 +1188,126 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    interface InvoiceItemSourceRow {
+        ItemSourceCd?: string;
+    }
+    namespace InvoiceItemSourceRow {
+        const idProperty = "ItemSourceCd";
+        const nameProperty = "ItemSourceCd";
+        const localTextPrefix = "DWSupport.InvoiceItemSource";
+        namespace Fields {
+            const ItemSourceCd: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace InvoiceItemSourceService {
+        const baseUrl = "DWSupport/InvoiceItemSource";
+        function Create(request: Serenity.SaveRequest<InvoiceItemSourceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InvoiceItemSourceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InvoiceItemSourceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InvoiceItemSourceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    interface InvoiceItemSubType2Row {
+        ItemSubType2Cd?: string;
+    }
+    namespace InvoiceItemSubType2Row {
+        const idProperty = "ItemSubType2Cd";
+        const nameProperty = "ItemSubType2Cd";
+        const localTextPrefix = "DWSupport.InvoiceItemSubType2";
+        namespace Fields {
+            const ItemSubType2Cd: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace InvoiceItemSubType2Service {
+        const baseUrl = "DWSupport/InvoiceItemSubType2";
+        function Create(request: Serenity.SaveRequest<InvoiceItemSubType2Row>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InvoiceItemSubType2Row>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InvoiceItemSubType2Row>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InvoiceItemSubType2Row>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    interface InvoiceItemSubType3Row {
+        ItemSubType3Cd?: string;
+    }
+    namespace InvoiceItemSubType3Row {
+        const idProperty = "ItemSubType3Cd";
+        const nameProperty = "ItemSubType3Cd";
+        const localTextPrefix = "DWSupport.InvoiceItemSubType3";
+        namespace Fields {
+            const ItemSubType3Cd: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace InvoiceItemSubType3Service {
+        const baseUrl = "DWSupport/InvoiceItemSubType3";
+        function Create(request: Serenity.SaveRequest<InvoiceItemSubType3Row>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InvoiceItemSubType3Row>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InvoiceItemSubType3Row>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InvoiceItemSubType3Row>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    interface InvoiceItemSubTypeRow {
+        ItemSubTypeCd?: string;
+    }
+    namespace InvoiceItemSubTypeRow {
+        const idProperty = "ItemSubTypeCd";
+        const nameProperty = "ItemSubTypeCd";
+        const localTextPrefix = "DWSupport.InvoiceItemSubType";
+        namespace Fields {
+            const ItemSubTypeCd: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace InvoiceItemSubTypeService {
+        const baseUrl = "DWSupport/InvoiceItemSubType";
+        function Create(request: Serenity.SaveRequest<InvoiceItemSubTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InvoiceItemSubTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InvoiceItemSubTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InvoiceItemSubTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface InvoiceItemTypeMasterSuppForm {
@@ -1249,7 +1316,7 @@ declare namespace DAP.DWSupport {
         InvoiceItemSubType2Cd: Serenity.StringEditor;
         InvoiceItemSubType3Cd: Serenity.StringEditor;
         InvoiceItemSourceCd: Serenity.StringEditor;
-        MasterComponentCd: Serenity.StringEditor;
+        MasterComponentCd: Serenity.LookupEditor;
         CommentsTxt: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -1315,52 +1382,64 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-}
-declare namespace DAP.DWSupport {
-    interface MasterForm {
-        Key1: Serenity.IntegerEditor;
-        Key2: Serenity.IntegerEditor;
-        Comment: Serenity.StringEditor;
+    interface InvoiceItemTypeRow {
+        ItemTypeCd?: string;
     }
-    class MasterForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.DWSupport {
-    interface MasterRow {
-        MasterId?: number;
-        Key1?: number;
-        Key2?: number;
-        Comment?: string;
-    }
-    namespace MasterRow {
-        const idProperty = "MasterId";
-        const nameProperty = "Comment";
-        const localTextPrefix = "DWSupport.Master";
-        const enum Fields {
-            MasterId = "MasterId",
-            Key1 = "Key1",
-            Key2 = "Key2",
-            Comment = "Comment"
+    namespace InvoiceItemTypeRow {
+        const idProperty = "ItemTypeCd";
+        const nameProperty = "ItemTypeCd";
+        const localTextPrefix = "DWSupport.InvoiceItemType";
+        namespace Fields {
+            const ItemTypeCd: any;
         }
     }
 }
 declare namespace DAP.DWSupport {
-    namespace MasterService {
-        const baseUrl = "DWSupport/Master";
-        function Create(request: Serenity.SaveRequest<MasterRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<MasterRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+    namespace InvoiceItemTypeService {
+        const baseUrl = "DWSupport/InvoiceItemType";
+        function Create(request: Serenity.SaveRequest<InvoiceItemTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<InvoiceItemTypeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MasterRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MasterRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InvoiceItemTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InvoiceItemTypeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    interface MasterComponentRow {
+        MasterComponentCd?: string;
+    }
+    namespace MasterComponentRow {
+        const idProperty = "MasterComponentCd";
+        const nameProperty = "MasterComponentCd";
+        const localTextPrefix = "DWSupport.MasterComponent";
+        const lookupKey = "DWSupport.GetMasterComponent";
+        function getLookup(): Q.Lookup<MasterComponentRow>;
+        const enum Fields {
+            MasterComponentCd = "MasterComponentCd"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace MasterComponentService {
+        const baseUrl = "DWSupport/MasterComponent";
+        function Create(request: Serenity.SaveRequest<MasterComponentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MasterComponentRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MasterComponentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MasterComponentRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
-            Create = "DWSupport/Master/Create",
-            Update = "DWSupport/Master/Update",
-            Delete = "DWSupport/Master/Delete",
-            Retrieve = "DWSupport/Master/Retrieve",
-            List = "DWSupport/Master/List"
+            Create = "DWSupport/MasterComponent/Create",
+            Update = "DWSupport/MasterComponent/Update",
+            Delete = "DWSupport/MasterComponent/Delete",
+            Retrieve = "DWSupport/MasterComponent/Retrieve",
+            List = "DWSupport/MasterComponent/List"
         }
     }
 }
@@ -1533,18 +1612,21 @@ declare namespace DAP.DWSupport {
     interface SailingMasterSuppForm {
         SailId: Serenity.IntegerEditor;
         PackageTypeCd: Serenity.LookupEditor;
-        ValidVoyageCd: SelectYNEditor;
-        ShipCd: Serenity.StringEditor;
         SailDat: Serenity.DateEditor;
+        ShipCd: Serenity.StringEditor;
+        ShipNbr: Serenity.StringEditor;
+        MandateWeeksQty: Serenity.IntegerEditor;
+        ValidVoyageCd: SelectYNEditor;
         ProductCd: Serenity.LookupEditor;
         SlProductCd: Serenity.LookupEditor;
         LatitudeCruiseCd: Serenity.StringEditor;
         FareFeedIncludeCd: SelectYNEditor;
         InactiveCd: SelectYNEditor;
-        ShipNbr: Serenity.StringEditor;
-        AmenityPtsQty: Serenity.DecimalEditor;
-        RmsForecastCd: Serenity.IntegerEditor;
         RmsSeasonCd: Serenity.StringEditor;
+        MainVoyageCd: SelectYNEditor;
+        InterportCd: SelectYNEditor;
+        CharterCd: SelectYNEditor;
+        RmsForecastCd: Serenity.IntegerEditor;
         RmsColorNameDesc: Serenity.StringEditor;
         RmsRefLinkSailId: Serenity.IntegerEditor;
         RmsParentSail1Id: Serenity.IntegerEditor;
@@ -1563,9 +1645,7 @@ declare namespace DAP.DWSupport {
         RmsParentSail14Id: Serenity.IntegerEditor;
         RmsParentSail15Id: Serenity.IntegerEditor;
         BackToBackCd: SelectYNEditor;
-        MainVoyageCd: SelectYNEditor;
-        MandateWeeksQty: Serenity.IntegerEditor;
-        InterportCd: SelectYNEditor;
+        AmenityPtsQty: Serenity.DecimalEditor;
         JonesActSailId: Serenity.IntegerEditor;
         FsGrpAmenityAmt: Serenity.DecimalEditor;
         ObrTradeCd: Serenity.StringEditor;
@@ -1577,7 +1657,6 @@ declare namespace DAP.DWSupport {
         IsVoyageExceptionCd: SelectYNEditor;
         VoyageExceptionDesc: Serenity.StringEditor;
         ItineraryChangedDat: Serenity.DateEditor;
-        CharterCd: SelectYNEditor;
         IsHolidayCd: SelectYNEditor;
         ProxyBudgetSailId: Serenity.IntegerEditor;
         ProxyMetaWeightSailId: Serenity.IntegerEditor;
@@ -5754,6 +5833,16 @@ declare namespace Serenity.Reporting {
         IsDataOnlyReport?: boolean;
     }
 }
+declare namespace DAP {
+    interface ScriptUserDefinition {
+        Username?: string;
+        DisplayName?: string;
+        IsAdmin?: boolean;
+        Permissions?: {
+            [key: string]: boolean;
+        };
+    }
+}
 declare namespace DAP.SSISConfig {
 }
 declare namespace DAP.SSISConfig {
@@ -6223,17 +6312,12 @@ declare namespace DAP.SSISConfig {
         }
     }
 }
-declare namespace DAP {
-    interface ScriptUserDefinition {
-        Username?: string;
-        DisplayName?: string;
-        IsAdmin?: boolean;
-        Permissions?: {
-            [key: string]: boolean;
-        };
-    }
-}
 declare namespace DAP.Texts {
+}
+declare namespace DAP.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP.Administration {
     class DataAuditLogDialog extends Serenity.EntityDialog<DataAuditLogRow, any> {
@@ -6365,10 +6449,6 @@ declare namespace DAP.Administration {
         protected getColumns(): Slick.Column[];
     }
 }
-declare namespace DAP.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
-}
 declare namespace DAP.Administration {
     class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
         protected getIdProperty(): string;
@@ -6459,11 +6539,6 @@ declare namespace DAP.Avaya {
         protected getService(): string;
         constructor(container: JQuery);
     }
-}
-declare namespace DAP.LanguageList {
-    function getValue(): string[][];
-}
-declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
@@ -6781,26 +6856,6 @@ declare namespace DAP.Common {
     }
 }
 declare namespace DAP.DWSupport {
-    class DetailDialog extends Serenity.EntityDialog<DetailRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: DetailForm;
-    }
-}
-declare namespace DAP.DWSupport {
-    class DetailGrid extends Serenity.EntityGrid<DetailRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof DetailDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.DWSupport {
     class DistrictMasterSuppDialog extends Serenity.EntityDialog<DistrictMasterSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -6884,26 +6939,6 @@ declare namespace DAP.DWSupport {
     class InvoiceItemTypeMasterSuppGrid extends Serenity.EntityGrid<InvoiceItemTypeMasterSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof InvoiceItemTypeMasterSuppDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.DWSupport {
-    class MasterDialog extends Serenity.EntityDialog<MasterRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: MasterForm;
-    }
-}
-declare namespace DAP.DWSupport {
-    class MasterGrid extends Serenity.EntityGrid<MasterRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof MasterDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -7009,24 +7044,6 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-    class SplitDetailGrid extends DWSupport.DetailGrid {
-        constructor(container: JQuery);
-        protected usePager(): boolean;
-    }
-}
-declare namespace DAP.DWSupport {
-    class SplitMasterDetailPane extends Serenity.Widget<any> {
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.DWSupport {
-    class SplitMasterGrid extends MasterGrid {
-        constructor(container: JQuery);
-        protected getSlickOptions(): Slick.GridOptions;
-        protected createSlickGrid(): Slick.Grid;
-    }
-}
-declare namespace DAP.DWSupport {
     class SurveyFilterExclusionSuppDialog extends Serenity.EntityDialog<SurveyFilterExclusionSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -7085,34 +7102,6 @@ declare namespace DAP.Membership {
         protected redirectToReturnUrl(): void;
         protected handleTwoFactorAuthentication(user: string, pass: string, twoFactorGuid: string, info: string): void;
         protected getTemplate(): string;
-    }
-}
-declare namespace DAP.Membership {
-    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -8338,5 +8327,37 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
+declare namespace DAP.Membership {
+    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
     }
 }

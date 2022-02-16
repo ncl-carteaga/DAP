@@ -13,12 +13,12 @@ namespace DAP.DWSupport.Forms
     [BasedOnRow(typeof(Entities.InvoiceItemTypeMasterSuppRow), CheckNames = true)]
     public class InvoiceItemTypeMasterSuppForm
     {
+        public String MasterComponentCd { get; set; }
+        public String InvoiceItemSourceCd { get; set; }
         public String InvoiceItemTypeCd { get; set; }
         public String InvoiceItemSubTypeCd { get; set; }
         public String InvoiceItemSubType2Cd { get; set; }
         public String InvoiceItemSubType3Cd { get; set; }
-        public String InvoiceItemSourceCd { get; set; }
-        public String MasterComponentCd { get; set; }
         public String CommentsTxt { get; set; }
         public DateTime CreatedTs { get; set; }
         public String CreatedByNam { get; set; }

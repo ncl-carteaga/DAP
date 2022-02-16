@@ -18,5 +18,7 @@ namespace DAP.DWSupport {
             b.splice(Q.indexOf(b, x => x.cssClass == "apply-changes-button"), 1);
             return b;
         }
+
+        
     }
 }

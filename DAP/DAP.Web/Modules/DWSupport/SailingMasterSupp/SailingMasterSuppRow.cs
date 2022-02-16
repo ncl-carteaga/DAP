@@ -14,16 +14,17 @@ namespace DAP.DWSupport.Entities
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class SailingMasterSuppRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Sail Sur Key"), Column("SAIL_SUR_KEY"), Identity]
+        [DisplayName("Sail Sur Key"), Column("SAIL_SUR_KEY"), Identity, Visible(false)]
         public Int64? SailSurKey
         {
             get { return Fields.SailSurKey[this]; }
             set { Fields.SailSurKey[this] = value; }
         }
 
-        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull, QuickSearch]
+        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull, QuickSearch, Updatable(false)]
         public Int32? SailId
         {
             get { return Fields.SailId[this]; }
@@ -58,7 +59,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.SailDat[this] = value; }
         }
 
-        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp", InplaceAdd = true)]
+        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp")]
         public String ProductCd
         {
             get { return Fields.ProductCd[this]; }
@@ -163,7 +164,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.MainVoyageCd[this] = value; }
         }
 
-        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp", InplaceAdd = true)]
+        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp")]
         public String SlProductCd
         {
             get { return Fields.SlProductCd[this]; }
