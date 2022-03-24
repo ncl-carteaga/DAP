@@ -9453,6 +9453,18 @@ button.ui-button {
 .s-PCHODS-OutboundCommissionBkGoalDialog .caption {
   width: 150px;
 }
+.s-PCHODS-UarSrDirAboveListDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-UarSrDirAboveListDialog .caption {
+  width: 150px;
+}
+.s-PCHODS-UarUnknownReviewerDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-UarUnknownReviewerDialog .caption {
+  width: 150px;
+}
 .s-PCHODSNVS-NtrIntlDatelineCruisesDialog > .size {
   width: 650px;
 }

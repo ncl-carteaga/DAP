@@ -31,6 +31,7 @@ namespace DAP.DWSupport
             public const string SurveyFilterExclusionSupp = "DWSupp:Page:SurveyFilterExclusionSupp";
             public const string TblStrategicPriceControl = "DWSupp:Page:TblStrategicPriceControl";
             public const string PortSubstitutionSupp = "DWSupp:Page:PortSubstitutionSupp";
+            public const string InvoiceItemMasterSupp = "DWSupp:Page:InvoiceItemMasterSupp";
         }
     }
 

@@ -17,7 +17,7 @@ namespace DAP.DWSupport.Entities
     [DataAuditLog]
     public sealed class PortSubstitutionSuppRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Port Substituton Sur Key"), Column("PORT_SUBSTITUTON_SUR_KEY"), Identity, Visible(false), QuickSearch]
+        [DisplayName("Port Substituton Sur Key"), Column("PORT_SUBSTITUTON_SUR_KEY"), Identity, Visible(false)]
         public Int64? PortSubstitutonSurKey
         {
             get { return Fields.PortSubstitutonSurKey[this]; }

@@ -4665,6 +4665,173 @@ declare namespace DAP.PCHODS {
         constructor(prefix: string);
     }
 }
+declare namespace DAP.PCHODS {
+    class UarSrDirAboveListForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface UarSrDirAboveListForm {
+        Jobtitle: Serenity.StringEditor;
+        IsSrDirAbove: Serenity.IntegerEditor;
+        DateEffective: Serenity.DateEditor;
+        DateExpires: Serenity.DateEditor;
+        RowChangeReason: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.PCHODS {
+    interface UarSrDirAboveListRow {
+        Id?: number;
+        Jobtitle?: string;
+        IsSrDirAbove?: number;
+        DateEffective?: string;
+        DateExpires?: string;
+        RowChangeReason?: string;
+    }
+    namespace UarSrDirAboveListRow {
+        const idProperty = "Id";
+        const nameProperty = "Jobtitle";
+        const localTextPrefix = "PCHODS.UarSrDirAboveList";
+        namespace Fields {
+            const Id: any;
+            const Jobtitle: any;
+            const IsSrDirAbove: any;
+            const DateEffective: any;
+            const DateExpires: any;
+            const RowChangeReason: any;
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace UarSrDirAboveListService {
+        const baseUrl = "PCHODS/UarSrDirAboveList";
+        function Create(request: Serenity.SaveRequest<UarSrDirAboveListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UarSrDirAboveListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UarSrDirAboveListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UarSrDirAboveListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    class UarUnknownReviewerForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface UarUnknownReviewerForm {
+        EmployeeId: Serenity.StringEditor;
+        UserLoginName: Serenity.StringEditor;
+        UserFullName: Serenity.StringEditor;
+        Firstname: Serenity.StringEditor;
+        Middlename: Serenity.StringEditor;
+        Lastname: Serenity.StringEditor;
+        OfficeCode: Serenity.StringEditor;
+        Department: Serenity.StringEditor;
+        Comments: Serenity.StringEditor;
+        UserGroupId: Serenity.StringEditor;
+        UserGroupName: Serenity.StringEditor;
+        GroupDescription: Serenity.StringEditor;
+        UserGroupRights: Serenity.StringEditor;
+        TaskId: Serenity.StringEditor;
+        TaskName: Serenity.StringEditor;
+        CriticalFuction: Serenity.StringEditor;
+        Accesstype: Serenity.StringEditor;
+        SupEmployeeid: Serenity.StringEditor;
+        ReviewerFirstname: Serenity.StringEditor;
+        ReviewerLastname: Serenity.StringEditor;
+        HowFound: Serenity.StringEditor;
+        AdManager: Serenity.StringEditor;
+        AdActiveStatus: Serenity.StringEditor;
+        HrEmpStatus: Serenity.StringEditor;
+        AdDescription: Serenity.StringEditor;
+        ReviewerItCompliance: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.PCHODS {
+    interface UarUnknownReviewerRow {
+        Id?: number;
+        EmployeeId?: string;
+        UserLoginName?: string;
+        UserFullName?: string;
+        Firstname?: string;
+        Middlename?: string;
+        Lastname?: string;
+        OfficeCode?: string;
+        Department?: string;
+        Comments?: string;
+        UserGroupId?: string;
+        UserGroupName?: string;
+        GroupDescription?: string;
+        UserGroupRights?: string;
+        TaskId?: string;
+        TaskName?: string;
+        CriticalFuction?: string;
+        Accesstype?: string;
+        SupEmployeeid?: string;
+        ReviewerFirstname?: string;
+        ReviewerLastname?: string;
+        HowFound?: string;
+        AdManager?: string;
+        AdActiveStatus?: string;
+        HrEmpStatus?: string;
+        AdDescription?: string;
+        ReviewerItCompliance?: string;
+    }
+    namespace UarUnknownReviewerRow {
+        const idProperty = "Id";
+        const nameProperty = "EmployeeId";
+        const localTextPrefix = "PCHODS.UarUnknownReviewer";
+        namespace Fields {
+            const Id: any;
+            const EmployeeId: any;
+            const UserLoginName: any;
+            const UserFullName: any;
+            const Firstname: any;
+            const Middlename: any;
+            const Lastname: any;
+            const OfficeCode: any;
+            const Department: any;
+            const Comments: any;
+            const UserGroupId: any;
+            const UserGroupName: any;
+            const GroupDescription: any;
+            const UserGroupRights: any;
+            const TaskId: any;
+            const TaskName: any;
+            const CriticalFuction: any;
+            const Accesstype: any;
+            const SupEmployeeid: any;
+            const ReviewerFirstname: any;
+            const ReviewerLastname: any;
+            const HowFound: any;
+            const AdManager: any;
+            const AdActiveStatus: any;
+            const HrEmpStatus: any;
+            const AdDescription: any;
+            const ReviewerItCompliance: any;
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace UarUnknownReviewerService {
+        const baseUrl = "PCHODS/UarUnknownReviewer";
+        function Create(request: Serenity.SaveRequest<UarUnknownReviewerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UarUnknownReviewerRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UarUnknownReviewerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UarUnknownReviewerRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
 declare namespace DAP.PCHODSNVS {
     interface AgencyRow {
         CompanyCd?: string;
@@ -6997,6 +7164,7 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: SailingMasterSuppForm;
+        constructor();
         protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
@@ -7007,8 +7175,20 @@ declare namespace DAP.DWSupport {
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
+        private pendingChanges;
         constructor(container: JQuery);
+        protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+        protected onViewProcessData(response: any): Serenity.ListResponse<SailingMasterSuppRow>;
+        private setSaveButtonState;
+        private getEffectiveValue;
+        private numericInputFormatter;
+        private stringInputFormatter;
+        private selectYNFormatter;
+        private selectFormatter;
+        protected getColumns(): Slick.Column[];
+        private inputsChange;
+        private saveClick;
     }
 }
 declare namespace DAP.DWSupport {
@@ -7863,6 +8043,46 @@ declare namespace DAP.PCHODS {
         constructor(hidden: JQuery);
         protected getLookupKey(): string;
         protected getItemText(item: PCHODS.OutboundNvsUsersRow, lookup: Q.Lookup<PCHODS.OutboundNvsUsersRow>): string;
+    }
+}
+declare namespace DAP.PCHODS {
+    class UarSrDirAboveListDialog extends Serenity.EntityDialog<UarSrDirAboveListRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: UarSrDirAboveListForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class UarSrDirAboveListGrid extends Serenity.EntityGrid<UarSrDirAboveListRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UarSrDirAboveListDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHODS {
+    class UarUnknownReviewerDialog extends Serenity.EntityDialog<UarUnknownReviewerRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: UarUnknownReviewerForm;
+    }
+}
+declare namespace DAP.PCHODS {
+    class UarUnknownReviewerGrid extends Serenity.EntityGrid<UarUnknownReviewerRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UarUnknownReviewerDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.PCHODSNVS {

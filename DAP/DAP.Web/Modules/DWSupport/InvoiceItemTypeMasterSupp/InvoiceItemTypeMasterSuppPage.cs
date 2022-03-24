@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/InvoiceItemTypeMasterSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.InvoiceItemTypeMasterSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.InvoiceItemMasterSupp)]
     public class InvoiceItemTypeMasterSuppController : Controller
     {
         public ActionResult Index()

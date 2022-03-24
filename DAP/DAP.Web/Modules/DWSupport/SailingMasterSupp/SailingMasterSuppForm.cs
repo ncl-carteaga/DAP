@@ -18,23 +18,27 @@ namespace DAP.DWSupport.Forms
         public Int32 SailId { get; set; }
         [FormCssClass("line-break-sm")]
         public String PackageTypeCd { get; set; }
-        [HalfWidth(UntilNext = true)]
+        [HalfWidth(UntilNext = true), ReadOnly(true)]
         public DateTime SailDat { get; set; }
-        [FormCssClass("line-break-sm")]
+        [FormCssClass("line-break-sm"), ReadOnly(true)]
         public String ShipCd { get; set; }
+        [ReadOnly(true)]
         public String ShipNbr { get; set; }
         public Int32 MandateWeeksQty { get; set; }
         public String ValidVoyageCd { get; set; }
+        [FullWidth]
         public String ProductCd { get; set; }
+        [FormCssClass("line-break-sm")]
         public String SlProductCd { get; set; }
-        public String LatitudeCruiseCd { get; set; }
+        [HalfWidth(UntilNext = true)]
+
         public String FareFeedIncludeCd { get; set; }
         public String InactiveCd { get; set; }
 
         public String RmsSeasonCd { get; set; }
         public String MainVoyageCd { get; set; }
         public String InterportCd { get; set; }
-
+        [ReadOnly(true)]
         public String CharterCd { get; set; }
 
         [Tab("RMS"), ReadOnly(true)]        
@@ -74,7 +78,9 @@ namespace DAP.DWSupport.Forms
         [ReadOnly(true)]
         public Int32 RmsParentSail15Id { get; set; }
 
-        [Tab("MISC"), ReadOnly(true)]       
+        [Tab("MISC"), ReadOnly(true)]
+        public String LatitudeCruiseCd { get; set; }
+        [ReadOnly(true)]
         public String BackToBackCd { get; set; }
         [ReadOnly(true)]
         public Decimal AmenityPtsQty { get; set; }

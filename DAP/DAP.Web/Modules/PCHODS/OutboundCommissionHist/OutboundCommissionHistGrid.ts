@@ -19,6 +19,7 @@ namespace DAP.PCHODS {
 
             this.slickContainer.on('change', '.edit:input', (e) => this.inputsChange(e));
         }
+    
 
         protected getButtons() {
             var buttons = super.getButtons();

@@ -11,6 +11,19 @@ namespace DAP.DWSupport {
 
         protected form = new SailingMasterSuppForm(this.idPrefix);
 
+        constructor() {
+            super();
+
+            this.form.RmsSeasonCd.addValidationRule(this.uniqueName, e => {
+                if (this.form.RmsSeasonCd.value != null) {
+
+                    if ((this.form.RmsSeasonCd.value.length > 30) || (!(/[A-Za-z]/.test(this.form.RmsSeasonCd.value)))) {
+                        return "Rm_Season_Cd Only accepts letters.";
+                    }
+                }
+            });
+        }
+
         protected getToolbarButtons(): Serenity.ToolButton[] {
             var b = super.getToolbarButtons();
 

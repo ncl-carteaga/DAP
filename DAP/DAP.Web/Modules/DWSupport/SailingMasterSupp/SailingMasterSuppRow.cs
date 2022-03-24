@@ -52,21 +52,21 @@ namespace DAP.DWSupport.Entities
             set { Fields.ShipCd[this] = value; }
         }
 
-        [DisplayName("Sail Dat"), Column("SAIL_DAT"), NotNull]
+        [DisplayName("Sail Dat"), Column("SAIL_DAT"), NotNull, QuickFilter]
         public DateTime? SailDat
         {
             get { return Fields.SailDat[this]; }
             set { Fields.SailDat[this] = value; }
         }
 
-        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp")]
+        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp"), QuickFilter]
         public String ProductCd
         {
             get { return Fields.ProductCd[this]; }
             set { Fields.ProductCd[this] = value; }
         }
 
-        [DisplayName("Latitude Cruise Cd"), Column("LATITUDE_CRUISE_CD"), Size(1), NotNull]
+        [DisplayName("Latitude Cruise Cd"), Column("LATITUDE_CRUISE_CD"), Size(1), NotNull, SelectYNEditor]
         public String LatitudeCruiseCd
         {
             get { return Fields.LatitudeCruiseCd[this]; }
@@ -87,7 +87,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InactiveCd[this] = value; }
         }
 
-        [DisplayName("Ship Nbr"), Column("SHIP_NBR"), Size(2)]
+        [DisplayName("Ship Nbr"), Column("SHIP_NBR"), Size(2), MaskedEditor(Mask ="99")]
         public String ShipNbr
         {
             get { return Fields.ShipNbr[this]; }
@@ -164,7 +164,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.MainVoyageCd[this] = value; }
         }
 
-        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp")]
+        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp"), QuickFilter]
         public String SlProductCd
         {
             get { return Fields.SlProductCd[this]; }

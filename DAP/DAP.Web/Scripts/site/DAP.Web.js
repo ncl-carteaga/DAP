@@ -4103,6 +4103,200 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListForm = /** @class */ (function (_super) {
+            __extends(UarSrDirAboveListForm, _super);
+            function UarSrDirAboveListForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            UarSrDirAboveListForm.formKey = 'PCHODS.UarSrDirAboveList';
+            return UarSrDirAboveListForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.UarSrDirAboveListForm = UarSrDirAboveListForm;
+        [,
+            ['Jobtitle', function () { return Serenity.StringEditor; }],
+            ['IsSrDirAbove', function () { return Serenity.IntegerEditor; }],
+            ['DateEffective', function () { return Serenity.DateEditor; }],
+            ['DateExpires', function () { return Serenity.DateEditor; }],
+            ['RowChangeReason', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(UarSrDirAboveListForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListRow;
+        (function (UarSrDirAboveListRow) {
+            UarSrDirAboveListRow.idProperty = 'Id';
+            UarSrDirAboveListRow.nameProperty = 'Jobtitle';
+            UarSrDirAboveListRow.localTextPrefix = 'PCHODS.UarSrDirAboveList';
+            var Fields;
+            (function (Fields) {
+            })(Fields = UarSrDirAboveListRow.Fields || (UarSrDirAboveListRow.Fields = {}));
+            [
+                'Id',
+                'Jobtitle',
+                'IsSrDirAbove',
+                'DateEffective',
+                'DateExpires',
+                'RowChangeReason'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(UarSrDirAboveListRow = PCHODS.UarSrDirAboveListRow || (PCHODS.UarSrDirAboveListRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListService;
+        (function (UarSrDirAboveListService) {
+            UarSrDirAboveListService.baseUrl = 'PCHODS/UarSrDirAboveList';
+            var Methods;
+            (function (Methods) {
+            })(Methods = UarSrDirAboveListService.Methods || (UarSrDirAboveListService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                UarSrDirAboveListService[x] = function (r, s, o) {
+                    return Q.serviceRequest(UarSrDirAboveListService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = UarSrDirAboveListService.baseUrl + '/' + x;
+            });
+        })(UarSrDirAboveListService = PCHODS.UarSrDirAboveListService || (PCHODS.UarSrDirAboveListService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerForm = /** @class */ (function (_super) {
+            __extends(UarUnknownReviewerForm, _super);
+            function UarUnknownReviewerForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            UarUnknownReviewerForm.formKey = 'PCHODS.UarUnknownReviewer';
+            return UarUnknownReviewerForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.UarUnknownReviewerForm = UarUnknownReviewerForm;
+        [,
+            ['EmployeeId', function () { return Serenity.StringEditor; }],
+            ['UserLoginName', function () { return Serenity.StringEditor; }],
+            ['UserFullName', function () { return Serenity.StringEditor; }],
+            ['Firstname', function () { return Serenity.StringEditor; }],
+            ['Middlename', function () { return Serenity.StringEditor; }],
+            ['Lastname', function () { return Serenity.StringEditor; }],
+            ['OfficeCode', function () { return Serenity.StringEditor; }],
+            ['Department', function () { return Serenity.StringEditor; }],
+            ['Comments', function () { return Serenity.StringEditor; }],
+            ['UserGroupId', function () { return Serenity.StringEditor; }],
+            ['UserGroupName', function () { return Serenity.StringEditor; }],
+            ['GroupDescription', function () { return Serenity.StringEditor; }],
+            ['UserGroupRights', function () { return Serenity.StringEditor; }],
+            ['TaskId', function () { return Serenity.StringEditor; }],
+            ['TaskName', function () { return Serenity.StringEditor; }],
+            ['CriticalFuction', function () { return Serenity.StringEditor; }],
+            ['Accesstype', function () { return Serenity.StringEditor; }],
+            ['SupEmployeeid', function () { return Serenity.StringEditor; }],
+            ['ReviewerFirstname', function () { return Serenity.StringEditor; }],
+            ['ReviewerLastname', function () { return Serenity.StringEditor; }],
+            ['HowFound', function () { return Serenity.StringEditor; }],
+            ['AdManager', function () { return Serenity.StringEditor; }],
+            ['AdActiveStatus', function () { return Serenity.StringEditor; }],
+            ['HrEmpStatus', function () { return Serenity.StringEditor; }],
+            ['AdDescription', function () { return Serenity.StringEditor; }],
+            ['ReviewerItCompliance', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(UarUnknownReviewerForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerRow;
+        (function (UarUnknownReviewerRow) {
+            UarUnknownReviewerRow.idProperty = 'Id';
+            UarUnknownReviewerRow.nameProperty = 'EmployeeId';
+            UarUnknownReviewerRow.localTextPrefix = 'PCHODS.UarUnknownReviewer';
+            var Fields;
+            (function (Fields) {
+            })(Fields = UarUnknownReviewerRow.Fields || (UarUnknownReviewerRow.Fields = {}));
+            [
+                'Id',
+                'EmployeeId',
+                'UserLoginName',
+                'UserFullName',
+                'Firstname',
+                'Middlename',
+                'Lastname',
+                'OfficeCode',
+                'Department',
+                'Comments',
+                'UserGroupId',
+                'UserGroupName',
+                'GroupDescription',
+                'UserGroupRights',
+                'TaskId',
+                'TaskName',
+                'CriticalFuction',
+                'Accesstype',
+                'SupEmployeeid',
+                'ReviewerFirstname',
+                'ReviewerLastname',
+                'HowFound',
+                'AdManager',
+                'AdActiveStatus',
+                'HrEmpStatus',
+                'AdDescription',
+                'ReviewerItCompliance'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(UarUnknownReviewerRow = PCHODS.UarUnknownReviewerRow || (PCHODS.UarUnknownReviewerRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerService;
+        (function (UarUnknownReviewerService) {
+            UarUnknownReviewerService.baseUrl = 'PCHODS/UarUnknownReviewer';
+            var Methods;
+            (function (Methods) {
+            })(Methods = UarUnknownReviewerService.Methods || (UarUnknownReviewerService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                UarUnknownReviewerService[x] = function (r, s, o) {
+                    return Q.serviceRequest(UarUnknownReviewerService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = UarUnknownReviewerService.baseUrl + '/' + x;
+            });
+        })(UarUnknownReviewerService = PCHODS.UarUnknownReviewerService || (PCHODS.UarUnknownReviewerService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
         var AgencyRow;
@@ -8485,8 +8679,15 @@ var DAP;
         var SailingMasterSuppDialog = /** @class */ (function (_super) {
             __extends(SailingMasterSuppDialog, _super);
             function SailingMasterSuppDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new DWSupport.SailingMasterSuppForm(_this.idPrefix);
+                _this.form.RmsSeasonCd.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.RmsSeasonCd.value != null) {
+                        if ((_this.form.RmsSeasonCd.value.length > 30) || (!(/[A-Za-z]/.test(_this.form.RmsSeasonCd.value)))) {
+                            return "Rm_Season_Cd Only accepts letters.";
+                        }
+                    }
+                });
                 return _this;
             }
             SailingMasterSuppDialog.prototype.getFormKey = function () { return DWSupport.SailingMasterSuppForm.formKey; };
@@ -8515,17 +8716,251 @@ var DAP;
         var SailingMasterSuppGrid = /** @class */ (function (_super) {
             __extends(SailingMasterSuppGrid, _super);
             function SailingMasterSuppGrid(container) {
-                return _super.call(this, container) || this;
+                var _this = _super.call(this, container) || this;
+                _this.pendingChanges = {};
+                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
+                return _this;
             }
             SailingMasterSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.SailingMasterSupp'; };
             SailingMasterSuppGrid.prototype.getDialogType = function () { return DWSupport.SailingMasterSuppDialog; };
             SailingMasterSuppGrid.prototype.getIdProperty = function () { return DWSupport.SailingMasterSuppRow.idProperty; };
             SailingMasterSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.SailingMasterSuppRow.localTextPrefix; };
             SailingMasterSuppGrid.prototype.getService = function () { return DWSupport.SailingMasterSuppService.baseUrl; };
+            SailingMasterSuppGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
             SailingMasterSuppGrid.prototype.getButtons = function () {
+                var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
                 buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                // buttons.splice(Q.indexOf(buttons, x => x.cssClass == "column-picker"), 1);
+                buttons.push({
+                    title: 'Save Changes',
+                    cssClass: 'apply-changes-button disabled',
+                    onClick: function (e) { return _this.saveClick(); },
+                    separator: true
+                });
                 return buttons;
+            };
+            SailingMasterSuppGrid.prototype.onViewProcessData = function (response) {
+                this.pendingChanges = {};
+                this.setSaveButtonState();
+                return _super.prototype.onViewProcessData.call(this, response);
+            };
+            SailingMasterSuppGrid.prototype.setSaveButtonState = function () {
+                this.toolbar.findButton('apply-changes-button').toggleClass('disabled', Object.keys(this.pendingChanges).length === 0);
+            };
+            SailingMasterSuppGrid.prototype.getEffectiveValue = function (item, field) {
+                var pending = this.pendingChanges[item.SailSurKey];
+                if (pending && pending[field] !== undefined) {
+                    return pending[field];
+                }
+                return item[field];
+            };
+            SailingMasterSuppGrid.prototype.numericInputFormatter = function (ctx, num_dec) {
+                var klass = 'edit numeric';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.SailSurKey];
+                if (pending && pending[ctx.column.field] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, ctx.column.field);
+                if (num_dec == 2) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.##') + "'/>";
+                }
+                else if (num_dec == 4) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0.####') + "'/>";
+                }
+                else if (num_dec == 0) {
+                    return "<input type='text' class='" + klass +
+                        "' data-field='" + ctx.column.field +
+                        "' value='" + Q.formatNumber(value, '0') + "'/>";
+                }
+            };
+            SailingMasterSuppGrid.prototype.stringInputFormatter = function (ctx) {
+                var klass = 'edit string';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.SailSurKey];
+                var column = ctx.column;
+                if (pending && pending[column.field] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, column.field);
+                return "<input type='text' class='" + klass +
+                    "' data-field='" + column.field +
+                    "' value='" + Q.attrEncode(value) +
+                    "' maxlength='" + column.sourceItem.maxLength + "'/>";
+            };
+            SailingMasterSuppGrid.prototype.selectYNFormatter = function (ctx, idField) {
+                var klass = 'edit';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.SailSurKey];
+                var column = ctx.column;
+                if (pending && pending[idField] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, idField);
+                var markup = "<select class='" + klass +
+                    "' data-field='" + idField +
+                    "' style='width: 60%; max-width: 60%'>";
+                var id = 'Y';
+                markup += "<option value='" + Q.attrEncode(id) + "'";
+                if (id == value) {
+                    markup += " selected";
+                }
+                markup += ">Yes</option>";
+                id = 'N';
+                markup += "<option value='" + Q.attrEncode(id) + "'";
+                if (id == value) {
+                    markup += " selected";
+                }
+                markup += ">No</option>";
+                return markup + "</select>";
+            };
+            SailingMasterSuppGrid.prototype.selectFormatter = function (ctx, idField, lookup) {
+                var klass = 'edit';
+                var item = ctx.item;
+                var pending = this.pendingChanges[item.SailSurKey];
+                var column = ctx.column;
+                if (pending && pending[idField] !== undefined) {
+                    klass += ' dirty';
+                }
+                var value = this.getEffectiveValue(item, idField);
+                var markup = "<select class='" + klass +
+                    "' data-field='" + idField +
+                    "' style='width: 100%; max-width: 100%'>";
+                for (var _i = 0, _a = lookup.items; _i < _a.length; _i++) {
+                    var c = _a[_i];
+                    var id = c[lookup.idField];
+                    markup += "<option value='" + Q.attrEncode(id) + "'";
+                    if (id == value) {
+                        markup += " selected";
+                    }
+                    markup += ">" + Q.htmlEncode(c[lookup.textField]) + "</option>";
+                }
+                return markup + "</select>";
+            };
+            SailingMasterSuppGrid.prototype.getColumns = function () {
+                var _this = this;
+                var columns = _super.prototype.getColumns.call(this);
+                var str = function (ctx) { return _this.stringInputFormatter(ctx); };
+                var num = function (ctx) { return _this.numericInputFormatter(ctx, 0); };
+                //var num4 = ctx => this.numericInputFormatter(ctx, 4);
+                //Q.first(columns, x => x.field === fld.ShipNbr).format = num;
+                Q.first(columns, function (x) { return x.field === "MandateWeeksQty" /* MandateWeeksQty */; }).format = num;
+                Q.first(columns, function (x) { return x.field === "RmsSeasonCd" /* RmsSeasonCd */; }).format = str;
+                //Q.first(columns, x => x.field === fld.CommissionRate).format = num4;
+                var packagecd = Q.first(columns, function (x) { return x.field === "PackageTypeCd" /* PackageTypeCd */; });
+                packagecd.referencedFields = ["PackageTypeCd" /* PackageTypeCd */];
+                packagecd.format = function (ctx) { return _this.selectFormatter(ctx, "PackageTypeCd" /* PackageTypeCd */, DWSupport.PackageTypeCodeSuppRow.getLookup()); };
+                var productcd = Q.first(columns, function (x) { return x.field === "ProductCd" /* ProductCd */; });
+                productcd.referencedFields = ["ProductCd" /* ProductCd */];
+                productcd.format = function (ctx) { return _this.selectFormatter(ctx, "ProductCd" /* ProductCd */, DWSupport.ProductCodeSuppRow.getLookup()); };
+                var slproductcd = Q.first(columns, function (x) { return x.field === "SlProductCd" /* SlProductCd */; });
+                slproductcd.referencedFields = ["SlProductCd" /* SlProductCd */];
+                slproductcd.format = function (ctx) { return _this.selectFormatter(ctx, "SlProductCd" /* SlProductCd */, DWSupport.SlProductCodeSuppRow.getLookup()); };
+                var validvoyagecd = Q.first(columns, function (x) { return x.field === "ValidVoyageCd" /* ValidVoyageCd */; });
+                validvoyagecd.referencedFields = ["ValidVoyageCd" /* ValidVoyageCd */];
+                validvoyagecd.format = function (ctx) { return _this.selectYNFormatter(ctx, "ValidVoyageCd" /* ValidVoyageCd */); };
+                //var latitudecruisecd = Q.first(columns, x => x.field === fld.LatitudeCruiseCd);
+                //latitudecruisecd.referencedFields = [fld.LatitudeCruiseCd];
+                //latitudecruisecd.format = ctx => this.selectYNFormatter(ctx, fld.LatitudeCruiseCd);
+                var farefeedincludecd = Q.first(columns, function (x) { return x.field === "FareFeedIncludeCd" /* FareFeedIncludeCd */; });
+                farefeedincludecd.referencedFields = ["FareFeedIncludeCd" /* FareFeedIncludeCd */];
+                farefeedincludecd.format = function (ctx) { return _this.selectYNFormatter(ctx, "FareFeedIncludeCd" /* FareFeedIncludeCd */); };
+                var inactivecd = Q.first(columns, function (x) { return x.field === "InactiveCd" /* InactiveCd */; });
+                inactivecd.referencedFields = ["InactiveCd" /* InactiveCd */];
+                inactivecd.format = function (ctx) { return _this.selectYNFormatter(ctx, "InactiveCd" /* InactiveCd */); };
+                var mainvoyagecd = Q.first(columns, function (x) { return x.field === "MainVoyageCd" /* MainVoyageCd */; });
+                mainvoyagecd.referencedFields = ["MainVoyageCd" /* MainVoyageCd */];
+                mainvoyagecd.format = function (ctx) { return _this.selectYNFormatter(ctx, "MainVoyageCd" /* MainVoyageCd */); };
+                var interportcd = Q.first(columns, function (x) { return x.field === "InterportCd" /* InterportCd */; });
+                interportcd.referencedFields = ["InterportCd" /* InterportCd */];
+                interportcd.format = function (ctx) { return _this.selectYNFormatter(ctx, "InterportCd" /* InterportCd */); };
+                //var chartercd = Q.first(columns, x => x.field === fld.CharterCd);
+                //chartercd.referencedFields = [fld.CharterCd];
+                //chartercd.format = ctx => this.selectYNFormatter(ctx, fld.CharterCd);
+                return columns;
+            };
+            SailingMasterSuppGrid.prototype.inputsChange = function (e) {
+                var cell = this.slickGrid.getCellFromEvent(e);
+                var item = this.itemAt(cell.row);
+                var input = $(e.target);
+                var field = input.data('field');
+                var text = Q.coalesce(Q.trimToNull(input.val()), '0');
+                var pending = this.pendingChanges[item.SailSurKey];
+                var effective = this.getEffectiveValue(item, field);
+                var oldText;
+                if (input.hasClass("numeric"))
+                    oldText = Q.formatNumber(effective, '0');
+                else
+                    oldText = effective;
+                var value;
+                if (field === 'CommissionRate' || field == 'LowNumBookings' || field == 'HighNumBookings') {
+                    value = Q.parseDecimal(text);
+                    if (value == null || isNaN(value)) {
+                        Q.notifyError(Q.text('Validation.Decimal'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                }
+                else if (input.hasClass("numeric")) {
+                    var i = Q.parseInteger(text);
+                    if (isNaN(i) || i > 32767 || i < 0) {
+                        Q.notifyError(Q.text('Validation.Integer'), '', null);
+                        input.val(oldText);
+                        input.focus();
+                        return;
+                    }
+                    value = i;
+                }
+                else
+                    value = text;
+                if (!pending) {
+                    this.pendingChanges[item.SailSurKey] = pending = {};
+                }
+                pending[field] = value;
+                item[field] = value;
+                this.view.refresh();
+                if (input.hasClass("numeric"))
+                    value = Q.formatNumber(value, '0');
+                input.val(value).addClass('dirty');
+                this.setSaveButtonState();
+            };
+            SailingMasterSuppGrid.prototype.saveClick = function () {
+                if (Object.keys(this.pendingChanges).length === 0) {
+                    return;
+                }
+                // this calls save service for all modified rows, one by one
+                // you could write a batch update service
+                var keys = Object.keys(this.pendingChanges);
+                var current = -1;
+                var self = this;
+                (function saveNext() {
+                    if (++current >= keys.length) {
+                        self.refresh();
+                        return;
+                    }
+                    var key = keys[current];
+                    var entity = Q.deepClone(self.pendingChanges[key]);
+                    entity.SailSurKey = key;
+                    Q.serviceRequest('DWSupport/SailingMasterSupp/Update', {
+                        EntityId: key,
+                        Entity: entity
+                    }, function (response) {
+                        delete self.pendingChanges[key];
+                        saveNext();
+                    });
+                })();
             };
             SailingMasterSuppGrid = __decorate([
                 Serenity.Decorators.registerClass()
@@ -12363,6 +12798,98 @@ var DAP;
             return UsersEditor;
         }(Serenity.LookupEditorBase));
         PCHODS.UsersEditor = UsersEditor;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListDialog = /** @class */ (function (_super) {
+            __extends(UarSrDirAboveListDialog, _super);
+            function UarSrDirAboveListDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.UarSrDirAboveListForm(_this.idPrefix);
+                return _this;
+            }
+            UarSrDirAboveListDialog.prototype.getFormKey = function () { return PCHODS.UarSrDirAboveListForm.formKey; };
+            UarSrDirAboveListDialog.prototype.getIdProperty = function () { return PCHODS.UarSrDirAboveListRow.idProperty; };
+            UarSrDirAboveListDialog.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
+            UarSrDirAboveListDialog.prototype.getNameProperty = function () { return PCHODS.UarSrDirAboveListRow.nameProperty; };
+            UarSrDirAboveListDialog.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
+            UarSrDirAboveListDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarSrDirAboveListDialog);
+            return UarSrDirAboveListDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.UarSrDirAboveListDialog = UarSrDirAboveListDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListGrid = /** @class */ (function (_super) {
+            __extends(UarSrDirAboveListGrid, _super);
+            function UarSrDirAboveListGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            UarSrDirAboveListGrid.prototype.getColumnsKey = function () { return 'PCHODS.UarSrDirAboveList'; };
+            UarSrDirAboveListGrid.prototype.getDialogType = function () { return PCHODS.UarSrDirAboveListDialog; };
+            UarSrDirAboveListGrid.prototype.getIdProperty = function () { return PCHODS.UarSrDirAboveListRow.idProperty; };
+            UarSrDirAboveListGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
+            UarSrDirAboveListGrid.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
+            UarSrDirAboveListGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarSrDirAboveListGrid);
+            return UarSrDirAboveListGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.UarSrDirAboveListGrid = UarSrDirAboveListGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerDialog = /** @class */ (function (_super) {
+            __extends(UarUnknownReviewerDialog, _super);
+            function UarUnknownReviewerDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.UarUnknownReviewerForm(_this.idPrefix);
+                return _this;
+            }
+            UarUnknownReviewerDialog.prototype.getFormKey = function () { return PCHODS.UarUnknownReviewerForm.formKey; };
+            UarUnknownReviewerDialog.prototype.getIdProperty = function () { return PCHODS.UarUnknownReviewerRow.idProperty; };
+            UarUnknownReviewerDialog.prototype.getLocalTextPrefix = function () { return PCHODS.UarUnknownReviewerRow.localTextPrefix; };
+            UarUnknownReviewerDialog.prototype.getNameProperty = function () { return PCHODS.UarUnknownReviewerRow.nameProperty; };
+            UarUnknownReviewerDialog.prototype.getService = function () { return PCHODS.UarUnknownReviewerService.baseUrl; };
+            UarUnknownReviewerDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarUnknownReviewerDialog);
+            return UarUnknownReviewerDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.UarUnknownReviewerDialog = UarUnknownReviewerDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerGrid = /** @class */ (function (_super) {
+            __extends(UarUnknownReviewerGrid, _super);
+            function UarUnknownReviewerGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            UarUnknownReviewerGrid.prototype.getColumnsKey = function () { return 'PCHODS.UarUnknownReviewer'; };
+            UarUnknownReviewerGrid.prototype.getDialogType = function () { return PCHODS.UarUnknownReviewerDialog; };
+            UarUnknownReviewerGrid.prototype.getIdProperty = function () { return PCHODS.UarUnknownReviewerRow.idProperty; };
+            UarUnknownReviewerGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarUnknownReviewerRow.localTextPrefix; };
+            UarUnknownReviewerGrid.prototype.getService = function () { return PCHODS.UarUnknownReviewerService.baseUrl; };
+            UarUnknownReviewerGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarUnknownReviewerGrid);
+            return UarUnknownReviewerGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.UarUnknownReviewerGrid = UarUnknownReviewerGrid;
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
