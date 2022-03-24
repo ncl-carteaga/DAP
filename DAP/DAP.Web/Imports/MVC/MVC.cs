@@ -83,6 +83,16 @@ namespace MVC
                 public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";
             }
 
+            public static class InvoiceItemTypeMasterSupp
+            {
+                public const string InvoiceItemTypeMasterSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml";
+            }
+
+            public static class PortSubstitutionSupp
+            {
+                public const string PortSubstitutionSuppIndex = "~/Modules/DWSupport/PortSubstitutionSupp/PortSubstitutionSuppIndex.cshtml";
+            }
+
             public static class ProductCodeSupp
             {
                 public const string ProductCodeSuppIndex = "~/Modules/DWSupport/ProductCodeSupp/ProductCodeSuppIndex.cshtml";
@@ -334,6 +344,11 @@ namespace MVC
             public static class SuppKeyAcctTarget
             {
                 public const string SuppKeyAcctTargetIndex = "~/Modules/PCHODSNVS/SuppKeyAcctTarget/SuppKeyAcctTargetIndex.cshtml";
+            }
+
+            public static class TransferEstimateOciAmt
+            {
+                public const string TransferEstimateOciAmtIndex = "~/Modules/PCHODSNVS/TransferEstimateOciAmt/TransferEstimateOciAmtIndex.cshtml";
             }
         }
 

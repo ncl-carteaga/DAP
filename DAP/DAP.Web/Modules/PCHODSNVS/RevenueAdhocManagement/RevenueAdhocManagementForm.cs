@@ -15,6 +15,8 @@ namespace DAP.PCHODSNVS.Forms
     {
         public String DatabaseId { get; set; }
         public String CubeId { get; set; }
+
+        public String CompanyCd { get; set; }
         public DateTime AdhocDate { get; set; }
         public Int32 AdhocDateTk { get; set; }
         public String SqlJobName { get; set; }

@@ -7,13 +7,15 @@
         export declare function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<NtrPastMonthsActualRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<NtrPastMonthsActualRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
         export declare const enum Methods {
             Create = "PCHODSNVS/NtrPastMonthsActual/Create",
             Update = "PCHODSNVS/NtrPastMonthsActual/Update",
             Delete = "PCHODSNVS/NtrPastMonthsActual/Delete",
             Retrieve = "PCHODSNVS/NtrPastMonthsActual/Retrieve",
-            List = "PCHODSNVS/NtrPastMonthsActual/List"
+            List = "PCHODSNVS/NtrPastMonthsActual/List",
+            ExcelImport = "PCHODSNVS/NtrPastMonthsActual/ExcelImport"
         }
 
         [
@@ -21,7 +23,8 @@
             'Update', 
             'Delete', 
             'Retrieve', 
-            'List'
+            'List', 
+            'ExcelImport'
         ].forEach(x => {
             (<any>NtrPastMonthsActualService)[x] = function (r, s, o) {
                 return Q.serviceRequest(baseUrl + '/' + x, r, s, o);

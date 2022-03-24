@@ -2,6 +2,7 @@
     export interface RevenueAdhocManagementForm {
         DatabaseId: Serenity.StringEditor;
         CubeId: Serenity.StringEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AdhocDate: Serenity.DateEditor;
         AdhocDateTk: Serenity.IntegerEditor;
         SqlJobName: Serenity.StringEditor;
@@ -20,16 +21,18 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.DateEditor;
-                var w2 = s.IntegerEditor;
+                var w1 = SelectPCHCompanyEditor;
+                var w2 = s.DateEditor;
+                var w3 = s.IntegerEditor;
 
                 Q.initFormType(RevenueAdhocManagementForm, [
                     'DatabaseId', w0,
                     'CubeId', w0,
-                    'AdhocDate', w1,
-                    'AdhocDateTk', w2,
+                    'CompanyCd', w1,
+                    'AdhocDate', w2,
+                    'AdhocDateTk', w3,
                     'SqlJobName', w0,
-                    'LastProcessedDateTime', w1
+                    'LastProcessedDateTime', w2
                 ]);
             }
         }

@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.DWSupport.Repositories
 {
+    using DAP.DWSupport.Entities;
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
@@ -39,6 +40,44 @@ namespace DAP.DWSupport.Repositories
 
         private class MySaveHandler : SaveRequestHandler<MyRow> {
 
+            protected override void BeforeSave()
+            {
+                base.BeforeSave();
+
+               //Sail dates of a main voyage sailing for a ship should not overlap with another main voyage of the same ship
+
+                //SELECT SHIP_CD, SAIL_DAT, MAIN_VOYAGE_CD, *
+                //  FROM[DW_Support].[dbo].[SAILING_MASTER_SUPP]
+                //WHERE INACTIVE_CD = 'N'
+                //AND MAIN_VOYAGE_CD = 'Y'
+
+                //if (IsUpdate)
+                //{
+                //    if (this.Connection.Exists<SailingMasterSuppRow>(MyRow.Fields.ShipCd == Row.ShipCd && 
+                //                                                     MyRow.Fields.SailDat == Row.SailDat.Value && 
+                //                                                     MyRow.Fields.MainVoyageCd == Row.MainVoyageCd && 
+                //                                                     MyRow.Fields.InactiveCd == Row.InactiveCd &&
+                //                                                     MyRow.Fields.ModifiedTs == "12/31/9999" &&
+                //                                                     MyRow.Fields.SailSurKey != Row.SailSurKey.Value) && Row.MainVoyageCd == "Y" && Row.InactiveCd == "N")
+                //    {
+                //        throw new ValidationError("Main Voyage Already Exists for this hip on this Sail Date");
+                //    }
+                //}
+
+                //if (IsCreate)
+                //{
+                //    if (this.Connection.Exists<SailingMasterSuppRow>(MyRow.Fields.ShipCd == Row.ShipCd &&
+                //                                                     MyRow.Fields.SailDat == Row.SailDat.Value &&
+                //                                                     MyRow.Fields.MainVoyageCd == Row.MainVoyageCd &&
+                //                                                     MyRow.Fields.InactiveCd == Row.InactiveCd) && Row.MainVoyageCd == "Y" && Row.InactiveCd == "N")
+                //    {
+                //        throw new ValidationError("Main Voyage Already Exists for this hip on this Sail Date");
+                //    }
+                //}
+
+
+            }
+
             protected override void SetInternalFields()
             {
                 base.SetInternalFields();
@@ -66,6 +105,8 @@ namespace DAP.DWSupport.Repositories
                 base.ApplyFilters(query);
 
                 query.Where(fld.ModifiedTs == new DateTime(9999, 12, 31));
+                query.Where(fld.SailDat > DateTime.Now);
+               
 
             }
 

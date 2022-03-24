@@ -14,16 +14,17 @@ namespace DAP.DWSupport.Entities
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class SailingMasterSuppRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Sail Sur Key"), Column("SAIL_SUR_KEY"), Identity]
+        [DisplayName("Sail Sur Key"), Column("SAIL_SUR_KEY"), Identity, Visible(false)]
         public Int64? SailSurKey
         {
             get { return Fields.SailSurKey[this]; }
             set { Fields.SailSurKey[this] = value; }
         }
 
-        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull, QuickSearch]
+        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull, QuickSearch, Updatable(false)]
         public Int32? SailId
         {
             get { return Fields.SailId[this]; }
@@ -37,7 +38,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.PackageTypeCd[this] = value; }
         }
 
-        [DisplayName("Valid Voyage Cd"), Column("VALID_VOYAGE_CD"), Size(1), NotNull]
+        [DisplayName("Valid Voyage"), Column("VALID_VOYAGE_CD"), Size(1), NotNull, SelectYNEditor]
         public String ValidVoyageCd
         {
             get { return Fields.ValidVoyageCd[this]; }
@@ -51,42 +52,42 @@ namespace DAP.DWSupport.Entities
             set { Fields.ShipCd[this] = value; }
         }
 
-        [DisplayName("Sail Dat"), Column("SAIL_DAT"), NotNull]
+        [DisplayName("Sail Dat"), Column("SAIL_DAT"), NotNull, QuickFilter]
         public DateTime? SailDat
         {
             get { return Fields.SailDat[this]; }
             set { Fields.SailDat[this] = value; }
         }
 
-        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp", InplaceAdd = true)]
+        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(4), NotNull, ForeignKey("[dbo].[PRODUCT_CODE_SUPP]", "PRODUCT_CD"), LeftJoin("jProductCd"), TextualField("ProductCdProductDesc"), LookupEditor("DWSupport.ProductCodeSupp"), QuickFilter]
         public String ProductCd
         {
             get { return Fields.ProductCd[this]; }
             set { Fields.ProductCd[this] = value; }
         }
 
-        [DisplayName("Latitude Cruise Cd"), Column("LATITUDE_CRUISE_CD"), Size(1), NotNull]
+        [DisplayName("Latitude Cruise Cd"), Column("LATITUDE_CRUISE_CD"), Size(1), NotNull, SelectYNEditor]
         public String LatitudeCruiseCd
         {
             get { return Fields.LatitudeCruiseCd[this]; }
             set { Fields.LatitudeCruiseCd[this] = value; }
         }
 
-        [DisplayName("Fare Feed Include Cd"), Column("FARE_FEED_INCLUDE_CD"), Size(1), NotNull]
+        [DisplayName("Fare Feed Include"), Column("FARE_FEED_INCLUDE_CD"), Size(1), NotNull, SelectYNEditor]
         public String FareFeedIncludeCd
         {
             get { return Fields.FareFeedIncludeCd[this]; }
             set { Fields.FareFeedIncludeCd[this] = value; }
         }
 
-        [DisplayName("Inactive Cd"), Column("INACTIVE_CD"), Size(1), NotNull]
+        [DisplayName("Inactive"), Column("INACTIVE_CD"), Size(1), NotNull, SelectYNEditor]
         public String InactiveCd
         {
             get { return Fields.InactiveCd[this]; }
             set { Fields.InactiveCd[this] = value; }
         }
 
-        [DisplayName("Ship Nbr"), Column("SHIP_NBR"), Size(2)]
+        [DisplayName("Ship Nbr"), Column("SHIP_NBR"), Size(2), MaskedEditor(Mask ="99")]
         public String ShipNbr
         {
             get { return Fields.ShipNbr[this]; }
@@ -149,21 +150,21 @@ namespace DAP.DWSupport.Entities
             set { Fields.RmsRefLinkSailId[this] = value; }
         }
 
-        [DisplayName("Back To Back Cd"), Column("BACK_TO_BACK_CD"), Size(1)]
+        [DisplayName("Back To Back"), Column("BACK_TO_BACK_CD"), Size(1), SelectYNEditor]
         public String BackToBackCd
         {
             get { return Fields.BackToBackCd[this]; }
             set { Fields.BackToBackCd[this] = value; }
         }
 
-        [DisplayName("Main Voyage Cd"), Column("MAIN_VOYAGE_CD"), Size(1)]
+        [DisplayName("Main Voyage"), Column("MAIN_VOYAGE_CD"), Size(1), SelectYNEditor]
         public String MainVoyageCd
         {
             get { return Fields.MainVoyageCd[this]; }
             set { Fields.MainVoyageCd[this] = value; }
         }
 
-        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp", InplaceAdd = true)]
+        [DisplayName("Sl Product Cd"), Column("SL_PRODUCT_CD"), Size(4), ForeignKey("[dbo].[SL_PRODUCT_CODE_SUPP]", "SL_PRODUCT_CD"), LeftJoin("jSlProductCd"), TextualField("SlProductCdSlProductDesc"), LookupEditor("DWSupport.SlProductCodeSupp"), QuickFilter]
         public String SlProductCd
         {
             get { return Fields.SlProductCd[this]; }
@@ -177,7 +178,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.MandateWeeksQty[this] = value; }
         }
 
-        [DisplayName("Interport Cd"), Column("INTERPORT_CD"), Size(1)]
+        [DisplayName("Interport"), Column("INTERPORT_CD"), Size(1), SelectYNEditor]
         public String InterportCd
         {
             get { return Fields.InterportCd[this]; }
@@ -352,7 +353,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.SeasonYearCd[this] = value; }
         }
 
-        [DisplayName("Is Voyage Exception Cd"), Column("IS_VOYAGE_EXCEPTION_CD"), Size(1)]
+        [DisplayName("Is Voyage Exception"), Column("IS_VOYAGE_EXCEPTION_CD"), Size(1), SelectYNEditor]
         public String IsVoyageExceptionCd
         {
             get { return Fields.IsVoyageExceptionCd[this]; }
@@ -373,14 +374,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.ItineraryChangedDat[this] = value; }
         }
 
-        [DisplayName("Charter Cd"), Column("CHARTER_CD"), Size(1)]
+        [DisplayName("Charter"), Column("CHARTER_CD"), Size(1), SelectYNEditor]
         public String CharterCd
         {
             get { return Fields.CharterCd[this]; }
             set { Fields.CharterCd[this] = value; }
         }
 
-        [DisplayName("Is Holiday Cd"), Column("IS_HOLIDAY_CD"), Size(1)]
+        [DisplayName("Is Holiday"), Column("IS_HOLIDAY_CD"), Size(1), SelectYNEditor]
         public String IsHolidayCd
         {
             get { return Fields.IsHolidayCd[this]; }
@@ -415,7 +416,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CasinoCabinCapacityQty[this] = value; }
         }
 
-        [DisplayName("Is Extraordinary Cd"), Column("IS_EXTRAORDINARY_CD"), Size(1)]
+        [DisplayName("Is Extraordinary"), Column("IS_EXTRAORDINARY_CD"), Size(1), SelectYNEditor]
         public String IsExtraordinaryCd
         {
             get { return Fields.IsExtraordinaryCd[this]; }

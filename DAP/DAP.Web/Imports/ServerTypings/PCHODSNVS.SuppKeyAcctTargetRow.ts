@@ -2,6 +2,7 @@
     export interface SuppKeyAcctTargetRow {
         KeyAcctTk?: number;
         CompanyCd?: number;
+        AgencyCd?: string;
         Year?: number;
         KeyAcctLink?: string;
         AccountType?: string;
@@ -56,6 +57,7 @@
         export declare const enum Fields {
             KeyAcctTk = "KeyAcctTk",
             CompanyCd = "CompanyCd",
+            AgencyCd = "AgencyCd",
             Year = "Year",
             KeyAcctLink = "KeyAcctLink",
             AccountType = "AccountType",

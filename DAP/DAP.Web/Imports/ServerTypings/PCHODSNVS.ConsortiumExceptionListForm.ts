@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface ConsortiumExceptionListForm {
-        CompanyCd: Serenity.StringEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         NewItemType: Serenity.LookupEditor;
         NewItemName: Serenity.StringEditor;
         ItemType: Serenity.LookupEditor;
@@ -22,21 +22,22 @@
                 ConsortiumExceptionListForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
+                var w0 = SelectPCHCompanyEditor;
                 var w1 = s.LookupEditor;
-                var w2 = s.BooleanEditor;
-                var w3 = s.DateEditor;
+                var w2 = s.StringEditor;
+                var w3 = s.BooleanEditor;
+                var w4 = s.DateEditor;
 
                 Q.initFormType(ConsortiumExceptionListForm, [
                     'CompanyCd', w0,
                     'NewItemType', w1,
-                    'NewItemName', w0,
+                    'NewItemName', w2,
                     'ItemType', w1,
-                    'ItemCd', w0,
-                    'ItemName', w0,
-                    'ExcludeInd', w2,
-                    'CombineInd', w2,
-                    'LoadDt', w3
+                    'ItemCd', w2,
+                    'ItemName', w2,
+                    'ExcludeInd', w3,
+                    'CombineInd', w3,
+                    'LoadDt', w4
                 ]);
             }
         }

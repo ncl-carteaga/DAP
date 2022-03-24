@@ -14,6 +14,7 @@ namespace DAP.SSISConfig.Entities
     [ReadPermission(PermissionKeys.SSISConfig.View)]
     [ModifyPermission(PermissionKeys.SSISConfig.Modify)]
     [DeletePermission(PermissionKeys.SSISConfig.Delete)]
+    [DataAuditLog]
     public sealed class NclhShipRow : Row, IIdRow, INameRow
     {
         [DisplayName("Ship Id"), Identity]

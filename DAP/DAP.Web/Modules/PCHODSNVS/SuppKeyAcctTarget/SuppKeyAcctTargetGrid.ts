@@ -49,7 +49,7 @@ namespace DAP.PCHODSNVS {
                 }
             });
 
-            buttons.splice(Q.indexOf(buttons, x => x.title == "Import From Excel"), 1);
+            //buttons.splice(Q.indexOf(buttons, x => x.title == "Import From Excel"), 1);
 
             //buttons.push(Common.PdfExportHelper.createToolButton({
             //    grid: this,

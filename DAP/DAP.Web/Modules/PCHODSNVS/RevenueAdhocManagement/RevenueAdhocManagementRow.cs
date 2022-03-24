@@ -74,6 +74,13 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.LastProcessedDateTime[this] = value; }
         }
 
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), NotNull, SelectPCHCompanyEditor]
+        public String CompanyCd
+        {
+            get { return Fields.CompanyCd[this]; }
+            set { Fields.CompanyCd[this] = value; }
+        }
+
         IIdField IIdRow.IdField
         {
             get { return Fields.Key; }
@@ -102,6 +109,7 @@ namespace DAP.PCHODSNVS.Entities
             public StringField LastUpdatedBy;
             public StringField SqlJobName;
             public DateTimeField LastProcessedDateTime;
+            public StringField CompanyCd;
         }
     }
 }

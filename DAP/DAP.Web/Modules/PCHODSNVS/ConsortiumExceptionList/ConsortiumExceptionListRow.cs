@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.ConsortiumExceptionListTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

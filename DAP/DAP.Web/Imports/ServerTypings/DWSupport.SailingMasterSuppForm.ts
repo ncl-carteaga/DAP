@@ -2,18 +2,21 @@
     export interface SailingMasterSuppForm {
         SailId: Serenity.IntegerEditor;
         PackageTypeCd: Serenity.LookupEditor;
-        ValidVoyageCd: Serenity.StringEditor;
-        ShipCd: Serenity.StringEditor;
         SailDat: Serenity.DateEditor;
+        ShipCd: Serenity.StringEditor;
+        ShipNbr: Serenity.StringEditor;
+        MandateWeeksQty: Serenity.IntegerEditor;
+        ValidVoyageCd: SelectYNEditor;
         ProductCd: Serenity.LookupEditor;
         SlProductCd: Serenity.LookupEditor;
         LatitudeCruiseCd: Serenity.StringEditor;
-        FareFeedIncludeCd: Serenity.StringEditor;
-        InactiveCd: Serenity.StringEditor;
-        ShipNbr: Serenity.StringEditor;
-        AmenityPtsQty: Serenity.DecimalEditor;
-        RmsForecastCd: Serenity.IntegerEditor;
+        FareFeedIncludeCd: SelectYNEditor;
+        InactiveCd: SelectYNEditor;
         RmsSeasonCd: Serenity.StringEditor;
+        MainVoyageCd: SelectYNEditor;
+        InterportCd: SelectYNEditor;
+        CharterCd: SelectYNEditor;
+        RmsForecastCd: Serenity.IntegerEditor;
         RmsColorNameDesc: Serenity.StringEditor;
         RmsRefLinkSailId: Serenity.IntegerEditor;
         RmsParentSail1Id: Serenity.IntegerEditor;
@@ -31,10 +34,8 @@
         RmsParentSail13Id: Serenity.IntegerEditor;
         RmsParentSail14Id: Serenity.IntegerEditor;
         RmsParentSail15Id: Serenity.IntegerEditor;
-        BackToBackCd: Serenity.StringEditor;
-        MainVoyageCd: Serenity.StringEditor;
-        MandateWeeksQty: Serenity.IntegerEditor;
-        InterportCd: Serenity.StringEditor;
+        BackToBackCd: SelectYNEditor;
+        AmenityPtsQty: Serenity.DecimalEditor;
         JonesActSailId: Serenity.IntegerEditor;
         FsGrpAmenityAmt: Serenity.DecimalEditor;
         ObrTradeCd: Serenity.StringEditor;
@@ -43,16 +44,15 @@
         ProxySailId: Serenity.IntegerEditor;
         OnSaleDat: Serenity.DateEditor;
         SeasonYearCd: Serenity.StringEditor;
-        IsVoyageExceptionCd: Serenity.StringEditor;
+        IsVoyageExceptionCd: SelectYNEditor;
         VoyageExceptionDesc: Serenity.StringEditor;
         ItineraryChangedDat: Serenity.DateEditor;
-        CharterCd: Serenity.StringEditor;
-        IsHolidayCd: Serenity.StringEditor;
+        IsHolidayCd: SelectYNEditor;
         ProxyBudgetSailId: Serenity.IntegerEditor;
         ProxyMetaWeightSailId: Serenity.IntegerEditor;
         IsFreeOpenBarCd: Serenity.StringEditor;
         CasinoCabinCapacityQty: Serenity.IntegerEditor;
-        IsExtraordinaryCd: Serenity.StringEditor;
+        IsExtraordinaryCd: SelectYNEditor;
     }
 
     export class SailingMasterSuppForm extends Serenity.PrefixedContext {
@@ -68,26 +68,30 @@
                 var s = Serenity;
                 var w0 = s.IntegerEditor;
                 var w1 = s.LookupEditor;
-                var w2 = s.StringEditor;
-                var w3 = s.DateEditor;
-                var w4 = s.DecimalEditor;
+                var w2 = s.DateEditor;
+                var w3 = s.StringEditor;
+                var w4 = SelectYNEditor;
+                var w5 = s.DecimalEditor;
 
                 Q.initFormType(SailingMasterSuppForm, [
                     'SailId', w0,
                     'PackageTypeCd', w1,
-                    'ValidVoyageCd', w2,
-                    'ShipCd', w2,
-                    'SailDat', w3,
+                    'SailDat', w2,
+                    'ShipCd', w3,
+                    'ShipNbr', w3,
+                    'MandateWeeksQty', w0,
+                    'ValidVoyageCd', w4,
                     'ProductCd', w1,
                     'SlProductCd', w1,
-                    'LatitudeCruiseCd', w2,
-                    'FareFeedIncludeCd', w2,
-                    'InactiveCd', w2,
-                    'ShipNbr', w2,
-                    'AmenityPtsQty', w4,
+                    'LatitudeCruiseCd', w3,
+                    'FareFeedIncludeCd', w4,
+                    'InactiveCd', w4,
+                    'RmsSeasonCd', w3,
+                    'MainVoyageCd', w4,
+                    'InterportCd', w4,
+                    'CharterCd', w4,
                     'RmsForecastCd', w0,
-                    'RmsSeasonCd', w2,
-                    'RmsColorNameDesc', w2,
+                    'RmsColorNameDesc', w3,
                     'RmsRefLinkSailId', w0,
                     'RmsParentSail1Id', w0,
                     'RmsParentSail2Id', w0,
@@ -104,28 +108,25 @@
                     'RmsParentSail13Id', w0,
                     'RmsParentSail14Id', w0,
                     'RmsParentSail15Id', w0,
-                    'BackToBackCd', w2,
-                    'MainVoyageCd', w2,
-                    'MandateWeeksQty', w0,
-                    'InterportCd', w2,
+                    'BackToBackCd', w4,
+                    'AmenityPtsQty', w5,
                     'JonesActSailId', w0,
-                    'FsGrpAmenityAmt', w4,
-                    'ObrTradeCd', w2,
-                    'ObrSubTradeCd', w2,
-                    'ObrSeasonCd', w2,
+                    'FsGrpAmenityAmt', w5,
+                    'ObrTradeCd', w3,
+                    'ObrSubTradeCd', w3,
+                    'ObrSeasonCd', w3,
                     'ProxySailId', w0,
-                    'OnSaleDat', w3,
-                    'SeasonYearCd', w2,
-                    'IsVoyageExceptionCd', w2,
-                    'VoyageExceptionDesc', w2,
-                    'ItineraryChangedDat', w3,
-                    'CharterCd', w2,
-                    'IsHolidayCd', w2,
+                    'OnSaleDat', w2,
+                    'SeasonYearCd', w3,
+                    'IsVoyageExceptionCd', w4,
+                    'VoyageExceptionDesc', w3,
+                    'ItineraryChangedDat', w2,
+                    'IsHolidayCd', w4,
                     'ProxyBudgetSailId', w0,
                     'ProxyMetaWeightSailId', w0,
-                    'IsFreeOpenBarCd', w2,
+                    'IsFreeOpenBarCd', w3,
                     'CasinoCabinCapacityQty', w0,
-                    'IsExtraordinaryCd', w2
+                    'IsExtraordinaryCd', w4
                 ]);
             }
         }

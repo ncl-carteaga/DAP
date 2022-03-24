@@ -1154,6 +1154,11 @@
     <Content Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlIndex.cshtml" />
     <Content Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppIndex.cshtml" />
+    <Content Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtIndex.cshtml" />
+    <Content Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListIndex.cshtml" />
+    <Content Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1195,6 +1200,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeMasterSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PortSubstitutionSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1208,6 +1219,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
@@ -1348,16 +1362,28 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetByChannelExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrBudgetExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrFcstExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrIntlDatelineCruisesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrPastMonthsActualExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.NtrRptCommentColumns.ts">
@@ -1376,6 +1402,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.SuppKeyAcctTargetColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowColumns.ts">
@@ -1414,6 +1443,8 @@
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogDialog.ts" />
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogGrid.ts" />
     <Content Include="Modules\Membership\Account\LoginPanel.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SelectYNEditor.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImport.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NoteDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NotesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttibutesEditor.ts" />
@@ -1434,6 +1465,11 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\SystemMaster\SystemMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\CompanyPCHEditor.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
@@ -1545,6 +1581,16 @@
     <TypeScriptCompile Include="Modules\DWSupport\ProductCodeSupp\ProductCodeSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SlProductCodeSupp\SlProductCodeSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListGrid.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2764,6 +2810,87 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VwGetSeaSalesRepIdService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PortSubstitutionSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PortSubstitutionSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PortSubstitutionSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VwGetSeaPortCodeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VwGetSeaPortCodeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeMasterSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeMasterSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeMasterSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.GetCruiseSegmentRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.GetCruiseSegmentService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MasterComponentRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MasterComponentService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSourceRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSourceService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSubTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSubTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSubType2Row.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSubType2Service.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSubType3Row.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemSubType3Service.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarSrDirAboveListRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarSrDirAboveListService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarSrDirAboveListForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarUnknownReviewerRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarUnknownReviewerService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarUnknownReviewerForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -2780,6 +2907,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\DWSupport.SelectYNEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\NCLHDSAR.NotesEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
@@ -2812,6 +2942,9 @@
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\PCHODS.UsersEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\PCHODSNVS.SelectPCHCompanyEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DefaultDB\DefaultDB_20170211_152700_Mailing.cs" />
@@ -2938,6 +3071,7 @@
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SLProductCode.cs" />
+    <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImportForm.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />
     <Compile Include="Modules\Membership\Account\EnvironmentSettings.cs" />
     <Compile Include="Modules\Membership\Account\ForgotPassword\AccountPage.ForgotPassword.cs" />
@@ -2991,6 +3125,12 @@
     <Compile Include="Modules\NCLHODSSPENDVIS\NCLHODSSPENDVISPermissionKeys.cs" />
     <Compile Include="Modules\PCHDW\DimCruise\DimCruiseExcelImportForm.cs" />
     <Compile Include="Modules\PCHDW\PCHDWPermissionKeys.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudgetByChannel\NtrBudgetByChannelExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\CompanyLookupPCH.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrBudget\NtrBudgetExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrIntlDatelineCruises\SegmentLookup.cs" />
+    <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
@@ -3358,6 +3498,60 @@
     <Compile Include="Modules\DWSupport\VwGetSeaSalesRepId\VwGetSeaSalesRepIdRow.cs" />
     <Compile Include="Modules\DWSupport\VwGetSeaSalesRepId\VwGetSeaSalesRepIdRepository.cs" />
     <Compile Include="Modules\DWSupport\VwGetSeaSalesRepId\VwGetSeaSalesRepIdEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\PortSubstitutionSupp\PortSubstitutionSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\VwGetSeaPortCode\VwGetSeaPortCodeRow.cs" />
+    <Compile Include="Modules\DWSupport\VwGetSeaPortCode\VwGetSeaPortCodeRepository.cs" />
+    <Compile Include="Modules\DWSupport\VwGetSeaPortCode\VwGetSeaPortCodeEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeMasterSupp\InvoiceItemTypeMasterSuppForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtEndpoint.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtPage.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtColumns.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\GetCruiseSegment\GetCruiseSegmentRow.cs" />
+    <Compile Include="Modules\PCHODSNVS\GetCruiseSegment\GetCruiseSegmentRepository.cs" />
+    <Compile Include="Modules\PCHODSNVS\GetCruiseSegment\GetCruiseSegmentEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\MasterComponent\MasterComponentRow.cs" />
+    <Compile Include="Modules\DWSupport\MasterComponent\MasterComponentRepository.cs" />
+    <Compile Include="Modules\DWSupport\MasterComponent\MasterComponentEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSource\InvoiceItemSourceRow.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSource\InvoiceItemSourceRepository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSource\InvoiceItemSourceEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType\InvoiceItemSubTypeRow.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType\InvoiceItemSubTypeRepository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType\InvoiceItemSubTypeEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType2\InvoiceItemSubType2Row.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType2\InvoiceItemSubType2Repository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType2\InvoiceItemSubType2Endpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType3\InvoiceItemSubType3Row.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType3\InvoiceItemSubType3Repository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemSubType3\InvoiceItemSubType3Endpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemType\InvoiceItemTypeRow.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemType\InvoiceItemTypeRepository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemType\InvoiceItemTypeEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListRow.cs" />
+    <Compile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListRepository.cs" />
+    <Compile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListPage.cs" />
+    <Compile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListColumns.cs" />
+    <Compile Include="Modules\PCHODS\UarSrDirAboveList\UarSrDirAboveListForm.cs" />
+    <Compile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerRow.cs" />
+    <Compile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerRepository.cs" />
+    <Compile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerPage.cs" />
+    <Compile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerColumns.cs" />
+    <Compile Include="Modules\PCHODS\UarUnknownReviewer\UarUnknownReviewerForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

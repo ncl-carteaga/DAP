@@ -1,0 +1,20 @@
+﻿
+namespace DAP.NCLHDSAR {
+    export class RequestTypeForm extends Serenity.PrefixedContext {
+        static formKey = 'NCLHDSAR.RequestType';
+    }
+
+    export interface RequestTypeForm {
+        Desc: Serenity.StringEditor;
+    }
+
+    [,
+        ['Desc', () => Serenity.StringEditor]
+    ].forEach(x => Object.defineProperty(RequestTypeForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}

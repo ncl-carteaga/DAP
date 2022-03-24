@@ -8,6 +8,7 @@
         LastUpdatedBy?: string;
         SqlJobName?: string;
         LastProcessedDateTime?: string;
+        CompanyCd?: string;
     }
 
     export namespace RevenueAdhocManagementRow {
@@ -23,7 +24,8 @@
             AdhocDateTk = "AdhocDateTk",
             LastUpdatedBy = "LastUpdatedBy",
             SqlJobName = "SqlJobName",
-            LastProcessedDateTime = "LastProcessedDateTime"
+            LastProcessedDateTime = "LastProcessedDateTime",
+            CompanyCd = "CompanyCd"
         }
     }
 }

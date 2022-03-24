@@ -198,7 +198,7 @@ namespace DAP.PCHODSNVS.Endpoints
                 importedHeaders.Add(q.Text);
             }
 
-            if (!importedHeaders.Contains("CompanyCd", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains("Company Cd", StringComparer.OrdinalIgnoreCase) == true)
             {
                 response.ErrorList.Add("Missing Required Column CompanyCd");
             }
@@ -206,7 +206,7 @@ namespace DAP.PCHODSNVS.Endpoints
             {
                 response.ErrorList.Add("Missing Required Column Year");
             }
-            if (!importedHeaders.Contains("KeyAcctLink", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains("Key Acct Link", StringComparer.OrdinalIgnoreCase) == true)
             {
                 response.ErrorList.Add("Missing Required Column KeyAcctLink");
             }
@@ -325,7 +325,39 @@ namespace DAP.PCHODSNVS.Endpoints
                     //--------------------------Merge Imported Fields ------------------------------------------------------------//
 
                     #region "Value Fields"
-                    
+
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.AgencyCd.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.AgencyCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.AccountType.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.AccountType = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
                     entType = jImpHelp.entryType.Decimal; //designate the type of item
                     fieldTitle = myFields.CcfTargetQ1.Title; //designate the field to be looked at
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);

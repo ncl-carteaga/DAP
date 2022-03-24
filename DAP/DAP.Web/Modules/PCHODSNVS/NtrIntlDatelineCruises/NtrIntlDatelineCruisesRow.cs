@@ -24,14 +24,14 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CruiseIntlTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, Updatable(false), DAP.PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), PrimaryKey, Updatable(false), SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), PrimaryKey, QuickSearch, Updatable(false)]
+        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), PrimaryKey, QuickSearch, Updatable(false), LookupEditor(typeof(Lookups.SegmentLookup))]
         public String CruiseSegmentCd
         {
             get { return Fields.CruiseSegmentCd[this]; }

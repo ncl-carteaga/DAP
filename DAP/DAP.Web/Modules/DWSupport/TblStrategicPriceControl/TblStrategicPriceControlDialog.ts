@@ -11,6 +11,24 @@ namespace DAP.DWSupport {
 
         protected form = new TblStrategicPriceControlForm(this.idPrefix);
 
+        constructor() {
+            super();
+
+            this.form.CategoryCd.change(e => {
+                let t = this.form.CategoryCd;
+                this.form.CategoryCd.value = t.value.toUpperCase();
+            })
+
+            this.form.EffectiveToDat.addValidationRule(this.uniqueName, e => {
+                var startDate = new Date(this.form.EffectiveFromDat.value);
+                var endDate = new Date(this.form.EffectiveToDat.value);
+                if (endDate < startDate) {
+                    return "Invalid Effective Dates!";
+                }
+            });
+
+        }
+
         protected getToolbarButtons(): Serenity.ToolButton[] {
             var b = super.getToolbarButtons();
 

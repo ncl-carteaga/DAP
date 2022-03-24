@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODSNVS {
     export interface NtrBudgetByChannelForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: SelectPCHCompanyEditor;
         AccountingYear: Serenity.IntegerEditor;
         ChannelSummDesc: Serenity.StringEditor;
         ChannelDesc: Serenity.StringEditor;
@@ -20,7 +20,7 @@
                 NtrBudgetByChannelForm.init = true;
 
                 var s = Serenity;
-                var w0 = PCHODS.CompanyEditor;
+                var w0 = SelectPCHCompanyEditor;
                 var w1 = s.IntegerEditor;
                 var w2 = s.StringEditor;
                 var w3 = s.DecimalEditor;

@@ -9453,6 +9453,18 @@ button.ui-button {
 .s-PCHODS-OutboundCommissionBkGoalDialog .caption {
   width: 150px;
 }
+.s-PCHODS-UarSrDirAboveListDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-UarSrDirAboveListDialog .caption {
+  width: 150px;
+}
+.s-PCHODS-UarUnknownReviewerDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-UarUnknownReviewerDialog .caption {
+  width: 150px;
+}
 .s-PCHODSNVS-NtrIntlDatelineCruisesDialog > .size {
   width: 650px;
 }
@@ -9507,6 +9519,12 @@ button.ui-button {
 .s-PCHODSNVS-ConsortiumExceptionListDialog .caption {
   width: 150px;
 }
+.s-PCHODSNVS-TransferEstimateOciAmtDialog > .size {
+  width: 650px;
+}
+.s-PCHODSNVS-TransferEstimateOciAmtDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-FinReportPublishingSuppDialog > .size {
   width: 650px;
 }
@@ -9553,6 +9571,30 @@ button.ui-button {
   width: 650px;
 }
 .s-DWSupport-SlProductCodeSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-PortSubstitutionSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-PortSubstitutionSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-InvoiceItemTypeMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-InvoiceItemTypeMasterSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-DetailDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-DetailDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-MasterDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-MasterDialog .caption {
   width: 150px;
 }
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {

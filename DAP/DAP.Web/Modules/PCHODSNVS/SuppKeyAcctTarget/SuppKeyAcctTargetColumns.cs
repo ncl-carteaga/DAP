@@ -18,6 +18,8 @@ namespace DAP.PCHODSNVS.Columns
         [EditLink]
         public Double CompanyCd { get; set; }
         [EditLink]
+        public String AgencyCd { get; set; }
+        [EditLink]
         public Int16 Year { get; set; }
         [EditLink]
         public String KeyAcctLink { get; set; }

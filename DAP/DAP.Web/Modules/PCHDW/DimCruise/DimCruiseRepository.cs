@@ -54,6 +54,22 @@ namespace DAP.PCHDW.Repositories
                 {
                     throw new ValidationError("Invalid Cruise Segment Dates; End Date set before the Start Date.");
                 }
+
+                if (DateTime.ParseExact(this.Row.CruiseFromDtMmddyyyy, "MM/dd/yyyy", null) > DateTime.ParseExact(this.Row.CruiseToDtMmddyyyy, "MM/dd/yyyy", null))
+                {
+
+                    throw new ValidationError("Invalid CruiseToDtMmddyyyy Date set before the CruiseFromDtMmddyyyy Date.");
+
+                }
+
+                if (DateTime.ParseExact(this.Row.SegmentFromDtMmddyyyy, "MM/dd/yyyy", null) > DateTime.ParseExact(this.Row.SegmentToDtMmddyyyy, "MM/dd/yyyy", null))
+                {
+
+                    throw new ValidationError("Invalid SegmentToDtMmddyyyy Date set before the CruiseFromDtMmddyyyy Date.");
+
+                }
+
+
             }
 
         }

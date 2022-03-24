@@ -17,7 +17,7 @@ namespace DAP.PCHODSNVS.Entities
     [DataAuditLog]
     public sealed class NtrBudgetByChannelRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, DAP.PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
@@ -31,14 +31,14 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.AccountingYear[this] = value; }
         }
 
-        [DisplayName("Channel Summ Desc"), Column("channel_summ_desc"), Size(25)]
+        [DisplayName("Channel Summ Desc"), Column("channel_summ_desc"), Size(25), QuickFilter]
         public String ChannelSummDesc
         {
             get { return Fields.ChannelSummDesc[this]; }
             set { Fields.ChannelSummDesc[this] = value; }
         }
 
-        [DisplayName("Channel Desc"), Column("channel_desc"), Size(50)]
+        [DisplayName("Channel Desc"), Column("channel_desc"), Size(50), QuickFilter]
         public String ChannelDesc
         {
             get { return Fields.ChannelDesc[this]; }

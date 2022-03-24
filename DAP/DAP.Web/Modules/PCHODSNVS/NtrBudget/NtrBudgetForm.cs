@@ -14,6 +14,7 @@ namespace DAP.PCHODSNVS.Forms
     public class NtrBudgetForm
     {
         public String CompanyCd { get; set; }
+        [DisplayFormat("Account Period (YYYYMM)")]
         public String AccountPeriodNum { get; set; }
         public Double NtrBudget { get; set; }
         public Double PdsBudgetTotal { get; set; }

@@ -10,3 +10,5 @@ using MyPages = DAP.PCHODS.Pages;
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission Tiers BR", typeof(MyPages.OutboundCommissionHistBrController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Outbound/Monthly Rpt Archive", typeof(MyPages.OutboundMonthlyRptArchiveOverrideController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Outbound/Commission Bk Goal", typeof(MyPages.OutboundCommissionBkGoalController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "PCHODS/Uar Sr Dir Above List", typeof(MyPages.UarSrDirAboveListController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "PCHODS/Uar Unknown Reviewer", typeof(MyPages.UarUnknownReviewerController), icon: null)]

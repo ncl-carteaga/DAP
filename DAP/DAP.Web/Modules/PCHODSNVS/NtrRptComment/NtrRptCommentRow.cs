@@ -24,7 +24,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.CommentTk[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, Updatable(false), DAP.PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("company_cd"), Size(3), QuickSearch, Updatable(false), SelectPCHCompanyEditor]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
@@ -45,7 +45,7 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.Comment[this] = value; }
         }
 
-        [DisplayName("Account Period Num"), Column("account_period_num"), Size(10)]
+        [DisplayName("Account Period (YYYYMM)"), Column("account_period_num"), Size(6), Hint("YYYYMM")]
         public String AccountPeriodNum
         {
             get { return Fields.AccountPeriodNum[this]; }
