@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface InvoiceItemSourceRow {
         ItemSourceCd?: string;
     }
@@ -8,13 +7,15 @@ namespace DAP.DWSupport {
         export const idProperty = 'ItemSourceCd';
         export const nameProperty = 'ItemSourceCd';
         export const localTextPrefix = 'DWSupport.InvoiceItemSource';
+        export const lookupKey = 'DWSupport.GetInvoiceItemSource';
 
-        export namespace Fields {
-            export declare const ItemSourceCd;
+        export function getLookup(): Q.Lookup<InvoiceItemSourceRow> {
+            return Q.getLookup<InvoiceItemSourceRow>('DWSupport.GetInvoiceItemSource');
         }
 
-        [
-            'ItemSourceCd'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            ItemSourceCd = "ItemSourceCd"
+        }
     }
 }
+

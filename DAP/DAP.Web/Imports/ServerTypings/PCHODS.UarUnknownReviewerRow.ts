@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODS {
+﻿namespace DAP.PCHODS {
     export interface UarUnknownReviewerRow {
         Id?: number;
         EmployeeId?: string;
@@ -35,64 +34,35 @@ namespace DAP.PCHODS {
         export const nameProperty = 'EmployeeId';
         export const localTextPrefix = 'PCHODS.UarUnknownReviewer';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const EmployeeId;
-            export declare const UserLoginName;
-            export declare const UserFullName;
-            export declare const Firstname;
-            export declare const Middlename;
-            export declare const Lastname;
-            export declare const OfficeCode;
-            export declare const Department;
-            export declare const Comments;
-            export declare const UserGroupId;
-            export declare const UserGroupName;
-            export declare const GroupDescription;
-            export declare const UserGroupRights;
-            export declare const TaskId;
-            export declare const TaskName;
-            export declare const CriticalFuction;
-            export declare const Accesstype;
-            export declare const SupEmployeeid;
-            export declare const ReviewerFirstname;
-            export declare const ReviewerLastname;
-            export declare const HowFound;
-            export declare const AdManager;
-            export declare const AdActiveStatus;
-            export declare const HrEmpStatus;
-            export declare const AdDescription;
-            export declare const ReviewerItCompliance;
+        export declare const enum Fields {
+            Id = "Id",
+            EmployeeId = "EmployeeId",
+            UserLoginName = "UserLoginName",
+            UserFullName = "UserFullName",
+            Firstname = "Firstname",
+            Middlename = "Middlename",
+            Lastname = "Lastname",
+            OfficeCode = "OfficeCode",
+            Department = "Department",
+            Comments = "Comments",
+            UserGroupId = "UserGroupId",
+            UserGroupName = "UserGroupName",
+            GroupDescription = "GroupDescription",
+            UserGroupRights = "UserGroupRights",
+            TaskId = "TaskId",
+            TaskName = "TaskName",
+            CriticalFuction = "CriticalFuction",
+            Accesstype = "Accesstype",
+            SupEmployeeid = "SupEmployeeid",
+            ReviewerFirstname = "ReviewerFirstname",
+            ReviewerLastname = "ReviewerLastname",
+            HowFound = "HowFound",
+            AdManager = "AdManager",
+            AdActiveStatus = "AdActiveStatus",
+            HrEmpStatus = "HrEmpStatus",
+            AdDescription = "AdDescription",
+            ReviewerItCompliance = "ReviewerItCompliance"
         }
-
-        [
-            'Id',
-            'EmployeeId',
-            'UserLoginName',
-            'UserFullName',
-            'Firstname',
-            'Middlename',
-            'Lastname',
-            'OfficeCode',
-            'Department',
-            'Comments',
-            'UserGroupId',
-            'UserGroupName',
-            'GroupDescription',
-            'UserGroupRights',
-            'TaskId',
-            'TaskName',
-            'CriticalFuction',
-            'Accesstype',
-            'SupEmployeeid',
-            'ReviewerFirstname',
-            'ReviewerLastname',
-            'HowFound',
-            'AdManager',
-            'AdActiveStatus',
-            'HrEmpStatus',
-            'AdDescription',
-            'ReviewerItCompliance'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

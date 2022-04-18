@@ -4103,6 +4103,200 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListForm = /** @class */ (function (_super) {
+            __extends(UarSrDirAboveListForm, _super);
+            function UarSrDirAboveListForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            UarSrDirAboveListForm.formKey = 'PCHODS.UarSrDirAboveList';
+            return UarSrDirAboveListForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.UarSrDirAboveListForm = UarSrDirAboveListForm;
+        [,
+            ['Jobtitle', function () { return Serenity.StringEditor; }],
+            ['IsSrDirAbove', function () { return Serenity.IntegerEditor; }],
+            ['DateEffective', function () { return Serenity.DateEditor; }],
+            ['DateExpires', function () { return Serenity.DateEditor; }],
+            ['RowChangeReason', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(UarSrDirAboveListForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListRow;
+        (function (UarSrDirAboveListRow) {
+            UarSrDirAboveListRow.idProperty = 'Id';
+            UarSrDirAboveListRow.nameProperty = 'Jobtitle';
+            UarSrDirAboveListRow.localTextPrefix = 'PCHODS.UarSrDirAboveList';
+            var Fields;
+            (function (Fields) {
+            })(Fields = UarSrDirAboveListRow.Fields || (UarSrDirAboveListRow.Fields = {}));
+            [
+                'Id',
+                'Jobtitle',
+                'IsSrDirAbove',
+                'DateEffective',
+                'DateExpires',
+                'RowChangeReason'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(UarSrDirAboveListRow = PCHODS.UarSrDirAboveListRow || (PCHODS.UarSrDirAboveListRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListService;
+        (function (UarSrDirAboveListService) {
+            UarSrDirAboveListService.baseUrl = 'PCHODS/UarSrDirAboveList';
+            var Methods;
+            (function (Methods) {
+            })(Methods = UarSrDirAboveListService.Methods || (UarSrDirAboveListService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                UarSrDirAboveListService[x] = function (r, s, o) {
+                    return Q.serviceRequest(UarSrDirAboveListService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = UarSrDirAboveListService.baseUrl + '/' + x;
+            });
+        })(UarSrDirAboveListService = PCHODS.UarSrDirAboveListService || (PCHODS.UarSrDirAboveListService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerForm = /** @class */ (function (_super) {
+            __extends(UarUnknownReviewerForm, _super);
+            function UarUnknownReviewerForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            UarUnknownReviewerForm.formKey = 'PCHODS.UarUnknownReviewer';
+            return UarUnknownReviewerForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.UarUnknownReviewerForm = UarUnknownReviewerForm;
+        [,
+            ['EmployeeId', function () { return Serenity.StringEditor; }],
+            ['UserLoginName', function () { return Serenity.StringEditor; }],
+            ['UserFullName', function () { return Serenity.StringEditor; }],
+            ['Firstname', function () { return Serenity.StringEditor; }],
+            ['Middlename', function () { return Serenity.StringEditor; }],
+            ['Lastname', function () { return Serenity.StringEditor; }],
+            ['OfficeCode', function () { return Serenity.StringEditor; }],
+            ['Department', function () { return Serenity.StringEditor; }],
+            ['Comments', function () { return Serenity.StringEditor; }],
+            ['UserGroupId', function () { return Serenity.StringEditor; }],
+            ['UserGroupName', function () { return Serenity.StringEditor; }],
+            ['GroupDescription', function () { return Serenity.StringEditor; }],
+            ['UserGroupRights', function () { return Serenity.StringEditor; }],
+            ['TaskId', function () { return Serenity.StringEditor; }],
+            ['TaskName', function () { return Serenity.StringEditor; }],
+            ['CriticalFuction', function () { return Serenity.StringEditor; }],
+            ['Accesstype', function () { return Serenity.StringEditor; }],
+            ['SupEmployeeid', function () { return Serenity.StringEditor; }],
+            ['ReviewerFirstname', function () { return Serenity.StringEditor; }],
+            ['ReviewerLastname', function () { return Serenity.StringEditor; }],
+            ['HowFound', function () { return Serenity.StringEditor; }],
+            ['AdManager', function () { return Serenity.StringEditor; }],
+            ['AdActiveStatus', function () { return Serenity.StringEditor; }],
+            ['HrEmpStatus', function () { return Serenity.StringEditor; }],
+            ['AdDescription', function () { return Serenity.StringEditor; }],
+            ['ReviewerItCompliance', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(UarUnknownReviewerForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerRow;
+        (function (UarUnknownReviewerRow) {
+            UarUnknownReviewerRow.idProperty = 'Id';
+            UarUnknownReviewerRow.nameProperty = 'EmployeeId';
+            UarUnknownReviewerRow.localTextPrefix = 'PCHODS.UarUnknownReviewer';
+            var Fields;
+            (function (Fields) {
+            })(Fields = UarUnknownReviewerRow.Fields || (UarUnknownReviewerRow.Fields = {}));
+            [
+                'Id',
+                'EmployeeId',
+                'UserLoginName',
+                'UserFullName',
+                'Firstname',
+                'Middlename',
+                'Lastname',
+                'OfficeCode',
+                'Department',
+                'Comments',
+                'UserGroupId',
+                'UserGroupName',
+                'GroupDescription',
+                'UserGroupRights',
+                'TaskId',
+                'TaskName',
+                'CriticalFuction',
+                'Accesstype',
+                'SupEmployeeid',
+                'ReviewerFirstname',
+                'ReviewerLastname',
+                'HowFound',
+                'AdManager',
+                'AdActiveStatus',
+                'HrEmpStatus',
+                'AdDescription',
+                'ReviewerItCompliance'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(UarUnknownReviewerRow = PCHODS.UarUnknownReviewerRow || (PCHODS.UarUnknownReviewerRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerService;
+        (function (UarUnknownReviewerService) {
+            UarUnknownReviewerService.baseUrl = 'PCHODS/UarUnknownReviewer';
+            var Methods;
+            (function (Methods) {
+            })(Methods = UarUnknownReviewerService.Methods || (UarUnknownReviewerService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                UarUnknownReviewerService[x] = function (r, s, o) {
+                    return Q.serviceRequest(UarUnknownReviewerService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = UarUnknownReviewerService.baseUrl + '/' + x;
+            });
+        })(UarUnknownReviewerService = PCHODS.UarUnknownReviewerService || (PCHODS.UarUnknownReviewerService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
         var AgencyRow;
@@ -5578,6 +5772,53 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var LanguageList;
+    (function (LanguageList) {
+        function getValue() {
+            var result = [];
+            for (var _i = 0, _a = DAP.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
+                var k = _a[_i];
+                if (k.LanguageId !== 'en') {
+                    result.push([k.Id.toString(), k.LanguageName]);
+                }
+            }
+            return result;
+        }
+        LanguageList.getValue = getValue;
+    })(LanguageList = DAP.LanguageList || (DAP.LanguageList = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../Common/Helpers/LanguageList.ts" />
+var DAP;
+(function (DAP) {
+    var ScriptInitialization;
+    (function (ScriptInitialization) {
+        Q.Config.responsiveDialogs = true;
+        Q.Config.rootNamespaces.push('DAP');
+        Serenity.EntityDialog.defaultLanguageList = DAP.LanguageList.getValue;
+        Serenity.DataGrid.defaultPersistanceStorage = window.localStorage;
+        if ($.fn['colorbox']) {
+            $.fn['colorbox'].settings.maxWidth = "95%";
+            $.fn['colorbox'].settings.maxHeight = "95%";
+        }
+        Serenity.setupUIOverrides();
+        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
+        $(function () {
+            // let demo page use its own settings for idle timeout
+            if (window.location.pathname.indexOf('Samples/IdleTimeout') > 0)
+                return;
+            var meta = $('meta[name=username]');
+            if ((meta.length && meta.attr('content')) ||
+                (!meta.length && Q.Authorization.isLoggedIn)) {
+                new Serenity.IdleTimeout({
+                    activityTimeout: 60 * 60,
+                    warningDuration: 5 * 60
+                });
+            }
+        });
+    })(ScriptInitialization = DAP.ScriptInitialization || (DAP.ScriptInitialization = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var Administration;
     (function (Administration) {
         var DataAuditLogDialog = /** @class */ (function (_super) {
@@ -6139,22 +6380,6 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
-    var Authorization;
-    (function (Authorization) {
-        Object.defineProperty(Authorization, 'userDefinition', {
-            get: function () {
-                return Q.getRemoteData('UserData');
-            }
-        });
-        function hasPermission(permissionKey) {
-            var ud = Authorization.userDefinition;
-            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
-        }
-        Authorization.hasPermission = hasPermission;
-    })(Authorization = DAP.Authorization || (DAP.Authorization = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
     var Administration;
     (function (Administration) {
         var PermissionCheckEditor = /** @class */ (function (_super) {
@@ -6670,53 +6895,6 @@ var DAP;
         }(Serenity.EntityGrid));
         Avaya.SkillSplitMappingGrid = SkillSplitMappingGrid;
     })(Avaya = DAP.Avaya || (DAP.Avaya = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var LanguageList;
-    (function (LanguageList) {
-        function getValue() {
-            var result = [];
-            for (var _i = 0, _a = DAP.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
-                var k = _a[_i];
-                if (k.LanguageId !== 'en') {
-                    result.push([k.Id.toString(), k.LanguageName]);
-                }
-            }
-            return result;
-        }
-        LanguageList.getValue = getValue;
-    })(LanguageList = DAP.LanguageList || (DAP.LanguageList = {}));
-})(DAP || (DAP = {}));
-/// <reference path="../Common/Helpers/LanguageList.ts" />
-var DAP;
-(function (DAP) {
-    var ScriptInitialization;
-    (function (ScriptInitialization) {
-        Q.Config.responsiveDialogs = true;
-        Q.Config.rootNamespaces.push('DAP');
-        Serenity.EntityDialog.defaultLanguageList = DAP.LanguageList.getValue;
-        Serenity.DataGrid.defaultPersistanceStorage = window.localStorage;
-        if ($.fn['colorbox']) {
-            $.fn['colorbox'].settings.maxWidth = "95%";
-            $.fn['colorbox'].settings.maxHeight = "95%";
-        }
-        Serenity.setupUIOverrides();
-        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
-        $(function () {
-            // let demo page use its own settings for idle timeout
-            if (window.location.pathname.indexOf('Samples/IdleTimeout') > 0)
-                return;
-            var meta = $('meta[name=username]');
-            if ((meta.length && meta.attr('content')) ||
-                (!meta.length && Q.Authorization.isLoggedIn)) {
-                new Serenity.IdleTimeout({
-                    activityTimeout: 60 * 60,
-                    warningDuration: 5 * 60
-                });
-            }
-        });
-    })(ScriptInitialization = DAP.ScriptInitialization || (DAP.ScriptInitialization = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -9206,184 +9384,6 @@ var DAP;
             return LoginPanel;
         }(Serenity.PropertyPanel));
         Membership.LoginPanel = LoginPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var ChangePasswordPanel = /** @class */ (function (_super) {
-            __extends(ChangePasswordPanel, _super);
-            function ChangePasswordPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.ChangePasswordForm(_this.idPrefix);
-                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.w('ConfirmPassword', Serenity.PasswordEditor).value.length < 7) {
-                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
-                    }
-                });
-                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
-                        return Q.text('Validation.PasswordConfirm');
-                    }
-                });
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/ChangePassword'),
-                        request: request,
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.ChangePassword.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
-            ChangePasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ChangePasswordPanel);
-            return ChangePasswordPanel;
-        }(Serenity.PropertyPanel));
-        Membership.ChangePasswordPanel = ChangePasswordPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var ForgotPasswordPanel = /** @class */ (function (_super) {
-            __extends(ForgotPasswordPanel, _super);
-            function ForgotPasswordPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.ForgotPasswordForm(_this.idPrefix);
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/ForgotPassword'),
-                        request: request,
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.ForgotPassword.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
-            ForgotPasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ForgotPasswordPanel);
-            return ForgotPasswordPanel;
-        }(Serenity.PropertyPanel));
-        Membership.ForgotPasswordPanel = ForgotPasswordPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var ResetPasswordPanel = /** @class */ (function (_super) {
-            __extends(ResetPasswordPanel, _super);
-            function ResetPasswordPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.ResetPasswordForm(_this.idPrefix);
-                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value.length < 7) {
-                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
-                    }
-                });
-                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
-                        return Q.text('Validation.PasswordConfirm');
-                    }
-                });
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    request.Token = _this.byId('Token').val();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/ResetPassword'),
-                        request: request,
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.ResetPassword.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/Account/Login');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
-            ResetPasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ResetPasswordPanel);
-            return ResetPasswordPanel;
-        }(Serenity.PropertyPanel));
-        Membership.ResetPasswordPanel = ResetPasswordPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var SignUpPanel = /** @class */ (function (_super) {
-            __extends(SignUpPanel, _super);
-            function SignUpPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.SignUpForm(_this.idPrefix);
-                _this.form.ConfirmEmail.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmEmail.value !== _this.form.Email.value) {
-                        return Q.text('Validation.EmailConfirm');
-                    }
-                });
-                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value !== _this.form.Password.value) {
-                        return Q.text('Validation.PasswordConfirm');
-                    }
-                });
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/SignUp'),
-                        request: {
-                            DisplayName: _this.form.DisplayName.value,
-                            Email: _this.form.Email.value,
-                            Password: _this.form.Password.value
-                        },
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.SignUp.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
-            SignUpPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SignUpPanel);
-            return SignUpPanel;
-        }(Serenity.PropertyPanel));
-        Membership.SignUpPanel = SignUpPanel;
     })(Membership = DAP.Membership || (DAP.Membership = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -12802,6 +12802,98 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListDialog = /** @class */ (function (_super) {
+            __extends(UarSrDirAboveListDialog, _super);
+            function UarSrDirAboveListDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.UarSrDirAboveListForm(_this.idPrefix);
+                return _this;
+            }
+            UarSrDirAboveListDialog.prototype.getFormKey = function () { return PCHODS.UarSrDirAboveListForm.formKey; };
+            UarSrDirAboveListDialog.prototype.getIdProperty = function () { return PCHODS.UarSrDirAboveListRow.idProperty; };
+            UarSrDirAboveListDialog.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
+            UarSrDirAboveListDialog.prototype.getNameProperty = function () { return PCHODS.UarSrDirAboveListRow.nameProperty; };
+            UarSrDirAboveListDialog.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
+            UarSrDirAboveListDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarSrDirAboveListDialog);
+            return UarSrDirAboveListDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.UarSrDirAboveListDialog = UarSrDirAboveListDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarSrDirAboveListGrid = /** @class */ (function (_super) {
+            __extends(UarSrDirAboveListGrid, _super);
+            function UarSrDirAboveListGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            UarSrDirAboveListGrid.prototype.getColumnsKey = function () { return 'PCHODS.UarSrDirAboveList'; };
+            UarSrDirAboveListGrid.prototype.getDialogType = function () { return PCHODS.UarSrDirAboveListDialog; };
+            UarSrDirAboveListGrid.prototype.getIdProperty = function () { return PCHODS.UarSrDirAboveListRow.idProperty; };
+            UarSrDirAboveListGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
+            UarSrDirAboveListGrid.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
+            UarSrDirAboveListGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarSrDirAboveListGrid);
+            return UarSrDirAboveListGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.UarSrDirAboveListGrid = UarSrDirAboveListGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerDialog = /** @class */ (function (_super) {
+            __extends(UarUnknownReviewerDialog, _super);
+            function UarUnknownReviewerDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.UarUnknownReviewerForm(_this.idPrefix);
+                return _this;
+            }
+            UarUnknownReviewerDialog.prototype.getFormKey = function () { return PCHODS.UarUnknownReviewerForm.formKey; };
+            UarUnknownReviewerDialog.prototype.getIdProperty = function () { return PCHODS.UarUnknownReviewerRow.idProperty; };
+            UarUnknownReviewerDialog.prototype.getLocalTextPrefix = function () { return PCHODS.UarUnknownReviewerRow.localTextPrefix; };
+            UarUnknownReviewerDialog.prototype.getNameProperty = function () { return PCHODS.UarUnknownReviewerRow.nameProperty; };
+            UarUnknownReviewerDialog.prototype.getService = function () { return PCHODS.UarUnknownReviewerService.baseUrl; };
+            UarUnknownReviewerDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarUnknownReviewerDialog);
+            return UarUnknownReviewerDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.UarUnknownReviewerDialog = UarUnknownReviewerDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarUnknownReviewerGrid = /** @class */ (function (_super) {
+            __extends(UarUnknownReviewerGrid, _super);
+            function UarUnknownReviewerGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            UarUnknownReviewerGrid.prototype.getColumnsKey = function () { return 'PCHODS.UarUnknownReviewer'; };
+            UarUnknownReviewerGrid.prototype.getDialogType = function () { return PCHODS.UarUnknownReviewerDialog; };
+            UarUnknownReviewerGrid.prototype.getIdProperty = function () { return PCHODS.UarUnknownReviewerRow.idProperty; };
+            UarUnknownReviewerGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarUnknownReviewerRow.localTextPrefix; };
+            UarUnknownReviewerGrid.prototype.getService = function () { return PCHODS.UarUnknownReviewerService.baseUrl; };
+            UarUnknownReviewerGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UarUnknownReviewerGrid);
+            return UarUnknownReviewerGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.UarUnknownReviewerGrid = UarUnknownReviewerGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var PCHODSNVS;
     (function (PCHODSNVS) {
         var ConsortiumExceptionListDialog = /** @class */ (function (_super) {
@@ -14506,5 +14598,199 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Authorization;
+    (function (Authorization) {
+        Object.defineProperty(Authorization, 'userDefinition', {
+            get: function () {
+                return Q.getRemoteData('UserData');
+            }
+        });
+        function hasPermission(permissionKey) {
+            var ud = Authorization.userDefinition;
+            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
+        }
+        Authorization.hasPermission = hasPermission;
+    })(Authorization = DAP.Authorization || (DAP.Authorization = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var ChangePasswordPanel = /** @class */ (function (_super) {
+            __extends(ChangePasswordPanel, _super);
+            function ChangePasswordPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.ChangePasswordForm(_this.idPrefix);
+                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.w('ConfirmPassword', Serenity.PasswordEditor).value.length < 7) {
+                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
+                    }
+                });
+                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
+                        return Q.text('Validation.PasswordConfirm');
+                    }
+                });
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    var request = _this.getSaveEntity();
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/ChangePassword'),
+                        request: request,
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.ChangePassword.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
+            ChangePasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ChangePasswordPanel);
+            return ChangePasswordPanel;
+        }(Serenity.PropertyPanel));
+        Membership.ChangePasswordPanel = ChangePasswordPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var ForgotPasswordPanel = /** @class */ (function (_super) {
+            __extends(ForgotPasswordPanel, _super);
+            function ForgotPasswordPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.ForgotPasswordForm(_this.idPrefix);
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    var request = _this.getSaveEntity();
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/ForgotPassword'),
+                        request: request,
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.ForgotPassword.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
+            ForgotPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ForgotPasswordPanel);
+            return ForgotPasswordPanel;
+        }(Serenity.PropertyPanel));
+        Membership.ForgotPasswordPanel = ForgotPasswordPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var ResetPasswordPanel = /** @class */ (function (_super) {
+            __extends(ResetPasswordPanel, _super);
+            function ResetPasswordPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.ResetPasswordForm(_this.idPrefix);
+                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value.length < 7) {
+                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
+                    }
+                });
+                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
+                        return Q.text('Validation.PasswordConfirm');
+                    }
+                });
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    var request = _this.getSaveEntity();
+                    request.Token = _this.byId('Token').val();
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/ResetPassword'),
+                        request: request,
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.ResetPassword.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/Account/Login');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
+            ResetPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResetPasswordPanel);
+            return ResetPasswordPanel;
+        }(Serenity.PropertyPanel));
+        Membership.ResetPasswordPanel = ResetPasswordPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var SignUpPanel = /** @class */ (function (_super) {
+            __extends(SignUpPanel, _super);
+            function SignUpPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.SignUpForm(_this.idPrefix);
+                _this.form.ConfirmEmail.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmEmail.value !== _this.form.Email.value) {
+                        return Q.text('Validation.EmailConfirm');
+                    }
+                });
+                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value !== _this.form.Password.value) {
+                        return Q.text('Validation.PasswordConfirm');
+                    }
+                });
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/SignUp'),
+                        request: {
+                            DisplayName: _this.form.DisplayName.value,
+                            Email: _this.form.Email.value,
+                            Password: _this.form.Password.value
+                        },
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.SignUp.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
+            SignUpPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SignUpPanel);
+            return SignUpPanel;
+        }(Serenity.PropertyPanel));
+        Membership.SignUpPanel = SignUpPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface InvoiceItemSubType2Row {
         ItemSubType2Cd?: string;
     }
@@ -8,13 +7,15 @@ namespace DAP.DWSupport {
         export const idProperty = 'ItemSubType2Cd';
         export const nameProperty = 'ItemSubType2Cd';
         export const localTextPrefix = 'DWSupport.InvoiceItemSubType2';
+        export const lookupKey = 'DWSupport.GetInvoiceItemSubType2';
 
-        export namespace Fields {
-            export declare const ItemSubType2Cd;
+        export function getLookup(): Q.Lookup<InvoiceItemSubType2Row> {
+            return Q.getLookup<InvoiceItemSubType2Row>('DWSupport.GetInvoiceItemSubType2');
         }
 
-        [
-            'ItemSubType2Cd'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            ItemSubType2Cd = "ItemSubType2Cd"
+        }
     }
 }
+

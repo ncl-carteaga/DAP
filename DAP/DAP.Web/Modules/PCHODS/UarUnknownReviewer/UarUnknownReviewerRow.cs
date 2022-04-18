@@ -10,9 +10,11 @@ namespace DAP.PCHODS.Entities
     using System.IO;
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[UAR_UNKNOWN_REVIEWER]")]
-    [DisplayName("Uar Unknown Reviewer"), InstanceName("Uar Unknown Reviewer")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [DisplayName("Unknown Reviewer"), InstanceName("Uar Unknown Reviewer")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
+    [DataAuditLog]
     public sealed class UarUnknownReviewerRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("ID"), Identity]

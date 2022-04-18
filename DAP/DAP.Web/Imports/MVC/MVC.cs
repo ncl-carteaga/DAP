@@ -68,6 +68,21 @@ namespace MVC
 
         public static class DWSupport
         {
+            public static class AmenitiesSupp
+            {
+                public const string AmenitiesSuppIndex = "~/Modules/DWSupport/AmenitiesSupp/AmenitiesSuppIndex.cshtml";
+            }
+
+            public static class AmenityDetailsSupp
+            {
+                public const string AmenityDetailsSuppIndex = "~/Modules/DWSupport/AmenityDetailsSupp/AmenityDetailsSuppIndex.cshtml";
+            }
+
+            public static class AmenityMasterDetail
+            {
+                public const string Index = "~/Modules/DWSupport/AmenityMasterDetail/Index.cshtml";
+            }
+
             public static class DistrictMasterSupp
             {
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
@@ -290,6 +305,16 @@ namespace MVC
             public static class OutboundMonthlyRptArchiveOverride
             {
                 public const string OutboundMonthlyRptArchiveOverrideIndex = "~/Modules/PCHODS/OutboundMonthlyRptArchiveOverride/OutboundMonthlyRptArchiveOverrideIndex.cshtml";
+            }
+
+            public static class UarSrDirAboveList
+            {
+                public const string UarSrDirAboveListIndex = "~/Modules/PCHODS/UarSrDirAboveList/UarSrDirAboveListIndex.cshtml";
+            }
+
+            public static class UarUnknownReviewer
+            {
+                public const string UarUnknownReviewerIndex = "~/Modules/PCHODS/UarUnknownReviewer/UarUnknownReviewerIndex.cshtml";
             }
 
         }

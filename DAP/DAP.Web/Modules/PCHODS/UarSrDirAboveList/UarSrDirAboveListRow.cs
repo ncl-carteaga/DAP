@@ -10,9 +10,11 @@ namespace DAP.PCHODS.Entities
     using System.IO;
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[UAR_Sr_Dir_above_list]")]
-    [DisplayName("Uar Sr Dir Above List"), InstanceName("Uar Sr Dir Above List")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [DisplayName("Sr. Dir. Above List"), InstanceName("Uar Sr Dir Above List")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
+    [DataAuditLog]
     public sealed class UarSrDirAboveListRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("ID"), Identity]

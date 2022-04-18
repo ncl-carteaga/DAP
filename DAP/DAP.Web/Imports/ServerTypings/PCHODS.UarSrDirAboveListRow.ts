@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODS {
+﻿namespace DAP.PCHODS {
     export interface UarSrDirAboveListRow {
         Id?: number;
         Jobtitle?: string;
@@ -14,22 +13,14 @@ namespace DAP.PCHODS {
         export const nameProperty = 'Jobtitle';
         export const localTextPrefix = 'PCHODS.UarSrDirAboveList';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Jobtitle;
-            export declare const IsSrDirAbove;
-            export declare const DateEffective;
-            export declare const DateExpires;
-            export declare const RowChangeReason;
+        export declare const enum Fields {
+            Id = "Id",
+            Jobtitle = "Jobtitle",
+            IsSrDirAbove = "IsSrDirAbove",
+            DateEffective = "DateEffective",
+            DateExpires = "DateExpires",
+            RowChangeReason = "RowChangeReason"
         }
-
-        [
-            'Id',
-            'Jobtitle',
-            'IsSrDirAbove',
-            'DateEffective',
-            'DateExpires',
-            'RowChangeReason'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

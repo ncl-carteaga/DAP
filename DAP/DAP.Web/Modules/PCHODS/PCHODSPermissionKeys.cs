@@ -32,6 +32,8 @@ namespace DAP.PCHODS
             public const string OutboundCommissionHistBr = "PCHODS:Page:OutboundCommissionHistBr";
             public const string OutboundCommissionPeriod = "PCHODS:Page:OutboundCommissionPeriod";
             public const string OutboundMonthlyRptArchiveOverride = "PCHODS:Page:OutboundMonthlyRptArchiveOverride";
+            public const string UarSrDirAboveListController = "PCHODS:Page:UarSrDirAboveListController";
+            public const string UarUnknownReviewerController = "PCHODS:Page:UarUnknownReviewerController";
         }
 
     }
