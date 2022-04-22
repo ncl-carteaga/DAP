@@ -2951,6 +2951,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityDetailsSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityCategoryRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityCategoryService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityOfficeRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityOfficeService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCurrencyRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCurrencyService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3627,6 +3633,15 @@
     <Compile Include="Modules\DWSupport\AmenityDetailsSupp\AmenityDetailsSuppPage.cs" />
     <Compile Include="Modules\DWSupport\AmenityDetailsSupp\AmenityDetailsSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\AmenityDetailsSupp\AmenityDetailsSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\AmenityCategory\AmenityCategoryRow.cs" />
+    <Compile Include="Modules\DWSupport\AmenityCategory\AmenityCategoryRepository.cs" />
+    <Compile Include="Modules\DWSupport\AmenityCategory\AmenityCategoryEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\AmenityOffice\AmenityOfficeRow.cs" />
+    <Compile Include="Modules\DWSupport\AmenityOffice\AmenityOfficeRepository.cs" />
+    <Compile Include="Modules\DWSupport\AmenityOffice\AmenityOfficeEndpoint.cs" />
+    <Compile Include="Modules\PCHDW\DimCurrency\DimCurrencyRow.cs" />
+    <Compile Include="Modules\PCHDW\DimCurrency\DimCurrencyRepository.cs" />
+    <Compile Include="Modules\PCHDW\DimCurrency\DimCurrencyEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

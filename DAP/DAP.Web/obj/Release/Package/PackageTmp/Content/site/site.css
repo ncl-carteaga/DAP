@@ -9597,6 +9597,18 @@ button.ui-button {
 .s-DWSupport-MasterDialog .caption {
   width: 150px;
 }
+.s-DWSupport-AmenitiesSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AmenitiesSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-AmenityDetailsSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AmenityDetailsSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

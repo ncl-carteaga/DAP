@@ -963,14 +963,14 @@ declare namespace DAP.DWSupport {
         AmenityCd: Serenity.StringEditor;
         AmenityTypeId: Serenity.LookupEditor;
         AmenityDesc: Serenity.StringEditor;
-        AmenityCategoryCd: Serenity.StringEditor;
+        AmenityCategoryCd: Serenity.LookupEditor;
         DisplayOrderCd: Serenity.IntegerEditor;
-        ConditionDesc: Serenity.StringEditor;
-        CommentTxt: Serenity.StringEditor;
         AmenityCostAmt: Serenity.DecimalEditor;
         AmenityAddonAmt: Serenity.DecimalEditor;
-        IsPerDiemCd: Serenity.StringEditor;
+        IsPerDiemCd: SelectYNEditor;
         CurrencyCd: Serenity.StringEditor;
+        ConditionDesc: Serenity.TextAreaEditor;
+        CommentTxt: Serenity.TextAreaEditor;
         CreatedDat: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedDat: Serenity.DateEditor;
@@ -1061,18 +1061,50 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    interface AmenityCategoryRow {
+        CategoryCd?: string;
+    }
+    namespace AmenityCategoryRow {
+        const idProperty = "CategoryCd";
+        const nameProperty = "CategoryCd";
+        const localTextPrefix = "DWSupport.AmenityCategory";
+        const lookupKey = "DWSupport.AmenityCategory";
+        function getLookup(): Q.Lookup<AmenityCategoryRow>;
+        const enum Fields {
+            CategoryCd = "CategoryCd"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace AmenityCategoryService {
+        const baseUrl = "DWSupport/AmenityCategory";
+        function Create(request: Serenity.SaveRequest<AmenityCategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AmenityCategoryRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AmenityCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AmenityCategoryRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/AmenityCategory/Create",
+            Update = "DWSupport/AmenityCategory/Update",
+            Delete = "DWSupport/AmenityCategory/Delete",
+            Retrieve = "DWSupport/AmenityCategory/Retrieve",
+            List = "DWSupport/AmenityCategory/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface AmenityDetailsSuppForm {
-        AmenityDetailCd: Serenity.StringEditor;
-        OfficeCd: Serenity.StringEditor;
         AmenityId: Serenity.StringEditor;
+        AmenityDetailCd: Serenity.StringEditor;
+        OfficeCd: Serenity.LookupEditor;
         SailDayFromQty: Serenity.IntegerEditor;
         SailDayToQty: Serenity.IntegerEditor;
         AmenityPtsQty: Serenity.IntegerEditor;
         MinCabinQty: Serenity.IntegerEditor;
-        ConditionDesc: Serenity.StringEditor;
-        CommentTxt: Serenity.StringEditor;
+        ConditionDesc: Serenity.TextAreaEditor;
+        CommentTxt: Serenity.TextAreaEditor;
         CreatedDat: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedDat: Serenity.DateEditor;
@@ -1167,6 +1199,38 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/AmenityDetailsSupp/Delete",
             Retrieve = "DWSupport/AmenityDetailsSupp/Retrieve",
             List = "DWSupport/AmenityDetailsSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    interface AmenityOfficeRow {
+        Cd?: string;
+    }
+    namespace AmenityOfficeRow {
+        const idProperty = "Cd";
+        const nameProperty = "Cd";
+        const localTextPrefix = "DWSupport.AmenityOffice";
+        const lookupKey = "DWSupport.AmenityOffice";
+        function getLookup(): Q.Lookup<AmenityOfficeRow>;
+        const enum Fields {
+            Cd = "Cd"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace AmenityOfficeService {
+        const baseUrl = "DWSupport/AmenityOffice";
+        function Create(request: Serenity.SaveRequest<AmenityOfficeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AmenityOfficeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AmenityOfficeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AmenityOfficeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/AmenityOffice/Create",
+            Update = "DWSupport/AmenityOffice/Update",
+            Delete = "DWSupport/AmenityOffice/Delete",
+            Retrieve = "DWSupport/AmenityOffice/Retrieve",
+            List = "DWSupport/AmenityOffice/List"
         }
     }
 }
@@ -3827,6 +3891,42 @@ declare namespace DAP.PCHDW {
             Retrieve = "PCHDW/DimCruise/Retrieve",
             List = "PCHDW/DimCruise/List",
             ExcelImport = "PCHDW/DimCruise/ExcelImport"
+        }
+    }
+}
+declare namespace DAP.PCHDW {
+    interface DimCurrencyRow {
+        Tk?: number;
+        Cd?: string;
+        Desc?: string;
+    }
+    namespace DimCurrencyRow {
+        const idProperty = "Cd";
+        const nameProperty = "Cd";
+        const localTextPrefix = "PCHDW.DimCurrency";
+        const lookupKey = "PCHDW.Currency";
+        function getLookup(): Q.Lookup<DimCurrencyRow>;
+        const enum Fields {
+            Tk = "Tk",
+            Cd = "Cd",
+            Desc = "Desc"
+        }
+    }
+}
+declare namespace DAP.PCHDW {
+    namespace DimCurrencyService {
+        const baseUrl = "PCHDW/DimCurrency";
+        function Create(request: Serenity.SaveRequest<DimCurrencyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DimCurrencyRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DimCurrencyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DimCurrencyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHDW/DimCurrency/Create",
+            Update = "PCHDW/DimCurrency/Update",
+            Delete = "PCHDW/DimCurrency/Delete",
+            Retrieve = "PCHDW/DimCurrency/Retrieve",
+            List = "PCHDW/DimCurrency/List"
         }
     }
 }
@@ -7326,6 +7426,7 @@ declare namespace DAP.DWSupport {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -7352,6 +7453,8 @@ declare namespace DAP.DWSupport {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected addButtonClick(): void;
     }
 }
 declare namespace DAP.DWSupport {
@@ -7364,7 +7467,7 @@ declare namespace DAP.DWSupport {
         protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
         private _amenityID;
-        amenityID: string;
+        amenityID: number;
     }
 }
 declare namespace DAP.DWSupport {

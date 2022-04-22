@@ -12,5 +12,5 @@ using MyPages = DAP.DWSupport.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Product Codes", typeof(MyPages.SlProductCodeSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Port Name Substitutions", typeof(MyPages.PortSubstitutionSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Invoice Item Type Master", typeof(MyPages.InvoiceItemTypeMasterSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Amenities Supp", typeof(MyPages.AmenitiesSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Amenities", typeof(MyPages.AmenitiesSuppController), icon: null)]
+//[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
