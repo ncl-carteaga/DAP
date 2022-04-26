@@ -8,6 +8,9 @@ namespace DAP.DWSupport.Repositories
     using System;
     using System.Data;
     using MyRow = Entities.SailingMasterSuppRow;
+    using MyPackageRow = Entities.PackageTypeCodeSuppRow;
+    using MyProductRow = Entities.ProductCodeSuppRow;
+    using MySlProductRow = Entities.SlProductCodeSuppRow;
 
     public class SailingMasterSuppRepository
     {
@@ -44,7 +47,7 @@ namespace DAP.DWSupport.Repositories
             {
                 base.BeforeSave();
 
-               //Sail dates of a main voyage sailing for a ship should not overlap with another main voyage of the same ship
+                //Sail dates of a main voyage sailing for a ship should not overlap with another main voyage of the same ship
 
                 //SELECT SHIP_CD, SAIL_DAT, MAIN_VOYAGE_CD, *
                 //  FROM[DW_Support].[dbo].[SAILING_MASTER_SUPP]
@@ -64,16 +67,41 @@ namespace DAP.DWSupport.Repositories
                 //    }
                 //}
 
-                //if (IsCreate)
-                //{
-                //    if (this.Connection.Exists<SailingMasterSuppRow>(MyRow.Fields.ShipCd == Row.ShipCd &&
-                //                                                     MyRow.Fields.SailDat == Row.SailDat.Value &&
-                //                                                     MyRow.Fields.MainVoyageCd == Row.MainVoyageCd &&
-                //                                                     MyRow.Fields.InactiveCd == Row.InactiveCd) && Row.MainVoyageCd == "Y" && Row.InactiveCd == "N")
-                //    {
-                //        throw new ValidationError("Main Voyage Already Exists for this hip on this Sail Date");
-                //    }
-                //}
+                if (IsUpdate)
+                {
+                    if (!this.Connection.Exists<PackageTypeCodeSuppRow>(MyPackageRow.Fields.TypeCode == this.Row.PackageTypeCd))
+                    {
+                        throw new ValidationError("Package Type Code does not exits.");
+                    }
+                    if (!this.Connection.Exists<ProductCodeSuppRow>(MyProductRow.Fields.ProductCd == this.Row.ProductCd))
+                    {
+                        throw new ValidationError("Product Code does not exits.");
+                    }
+                    if (!this.Connection.Exists<SlProductCodeSuppRow>(MySlProductRow.Fields.SlProductCd == this.Row.SlProductCd))
+                    {
+                        throw new ValidationError("SL Product Code does not exits.");
+                    }
+                    if (this.Row.FareFeedIncludeCd.ToUpper() != "Y" && this.Row.FareFeedIncludeCd.ToUpper() != "N")
+                    {
+                        throw new ValidationError("Fare Feed Include Code should be Y (Yes) or N (No).");
+                    }
+                    if (this.Row.InactiveCd.ToUpper() != "Y" && this.Row.InactiveCd.ToUpper() != "N")
+                    {
+                        throw new ValidationError("Inactive Code should be Y (Yes) or N (No).");
+                    }
+                    if (this.Row.MainVoyageCd.ToUpper() != "Y" && this.Row.MainVoyageCd.ToUpper() != "N")
+                    {
+                        throw new ValidationError("Main Voyage Code should be Y (Yes) or N (No).");
+                    }
+                    if (this.Row.InterportCd.ToUpper() != "Y" && this.Row.InterportCd.ToUpper() != "N")
+                    {
+                        throw new ValidationError("Interport Code should be Y (Yes) or N (No).");
+                    }
+                    if (this.Row.ValidVoyageCd.ToUpper() != "Y" && this.Row.ValidVoyageCd.ToUpper() != "N")
+                    {
+                        throw new ValidationError("Valid Voyage Code should be Y (Yes) or N (No).");
+                    }
+                }
 
 
             }

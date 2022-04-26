@@ -968,7 +968,7 @@ declare namespace DAP.DWSupport {
         AmenityCostAmt: Serenity.DecimalEditor;
         AmenityAddonAmt: Serenity.DecimalEditor;
         IsPerDiemCd: SelectYNEditor;
-        CurrencyCd: Serenity.StringEditor;
+        CurrencyCd: Serenity.LookupEditor;
         ConditionDesc: Serenity.TextAreaEditor;
         CommentTxt: Serenity.TextAreaEditor;
         CreatedDat: Serenity.DateEditor;
@@ -2169,12 +2169,14 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SailingMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SailingMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "DWSupport/SailingMasterSupp/Create",
             Update = "DWSupport/SailingMasterSupp/Update",
             Delete = "DWSupport/SailingMasterSupp/Delete",
             Retrieve = "DWSupport/SailingMasterSupp/Retrieve",
-            List = "DWSupport/SailingMasterSupp/List"
+            List = "DWSupport/SailingMasterSupp/List",
+            ExcelImport = "DWSupport/SailingMasterSupp/ExcelImport"
         }
     }
 }
@@ -9041,5 +9043,23 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class SailingMasterSuppExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    interface SailingMasterSuppExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class SailingMasterSuppExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }

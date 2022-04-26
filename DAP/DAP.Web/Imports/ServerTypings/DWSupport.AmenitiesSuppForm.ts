@@ -8,7 +8,7 @@
         AmenityCostAmt: Serenity.DecimalEditor;
         AmenityAddonAmt: Serenity.DecimalEditor;
         IsPerDiemCd: SelectYNEditor;
-        CurrencyCd: Serenity.StringEditor;
+        CurrencyCd: Serenity.LookupEditor;
         ConditionDesc: Serenity.TextAreaEditor;
         CommentTxt: Serenity.TextAreaEditor;
         CreatedDat: Serenity.DateEditor;
@@ -45,7 +45,7 @@
                     'AmenityCostAmt', w3,
                     'AmenityAddonAmt', w3,
                     'IsPerDiemCd', w4,
-                    'CurrencyCd', w0,
+                    'CurrencyCd', w1,
                     'ConditionDesc', w5,
                     'CommentTxt', w5,
                     'CreatedDat', w6,

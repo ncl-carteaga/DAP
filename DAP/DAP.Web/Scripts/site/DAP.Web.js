@@ -906,7 +906,7 @@ var DAP;
                         'AmenityCostAmt', w3,
                         'AmenityAddonAmt', w3,
                         'IsPerDiemCd', w4,
-                        'CurrencyCd', w0,
+                        'CurrencyCd', w1,
                         'ConditionDesc', w5,
                         'CommentTxt', w5,
                         'CreatedDat', w6,
@@ -1933,7 +1933,8 @@ var DAP;
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'ExcelImport'
             ].forEach(function (x) {
                 SailingMasterSuppService[x] = function (r, s, o) {
                     return Q.serviceRequest(SailingMasterSuppService.baseUrl + '/' + x, r, s, o);
@@ -9284,6 +9285,27 @@ var DAP;
                     onClick: function (e) { return _this.saveClick(); },
                     separator: true
                 });
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: DWSupport.SailingMasterSuppService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export to Excel"
+                }));
+                // add our import button
+                buttons.push({
+                    title: 'Import From Excel',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new DWSupport.SailingMasterSuppExcelImportDialog();
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
                 return buttons;
             };
             SailingMasterSuppGrid.prototype.onViewProcessData = function (response) {
@@ -15316,5 +15338,82 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingMasterSuppExcelImportDialog = /** @class */ (function (_super) {
+            __extends(SailingMasterSuppExcelImportDialog, _super);
+            function SailingMasterSuppExcelImportDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.SailingMasterSuppExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            SailingMasterSuppExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            SailingMasterSuppExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            DWSupport.SailingMasterSuppService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            SailingMasterSuppExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SailingMasterSuppExcelImportDialog);
+            return SailingMasterSuppExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        DWSupport.SailingMasterSuppExcelImportDialog = SailingMasterSuppExcelImportDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingMasterSuppExcelImportForm = /** @class */ (function (_super) {
+            __extends(SailingMasterSuppExcelImportForm, _super);
+            function SailingMasterSuppExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SailingMasterSuppExcelImportForm.init) {
+                    SailingMasterSuppExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(SailingMasterSuppExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            SailingMasterSuppExcelImportForm.formKey = 'DWSupport.SailingMasterSuppExcelImport';
+            return SailingMasterSuppExcelImportForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.SailingMasterSuppExcelImportForm = SailingMasterSuppExcelImportForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
