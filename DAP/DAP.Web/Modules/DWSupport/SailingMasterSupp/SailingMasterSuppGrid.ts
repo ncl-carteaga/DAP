@@ -66,6 +66,13 @@ namespace DAP.DWSupport {
                 }
             });
 
+            buttons.push({
+                title: 'Show Error Log',
+                cssClass: 'info-button',
+                onClick: e => this.showErrorLogClick(),
+                separator: true
+            });
+
             return buttons;
         }
 
@@ -330,5 +337,18 @@ namespace DAP.DWSupport {
                 });
             })();
         }
+
+        private showErrorLogClick() {
+
+           let dialog = new DWSupport.ImportErrorLogGridDialog();
+            ////dialog.returnData = (dataList) => {
+            ////    this._CompanyID = dataList;
+            ////};
+            this.initDialog(dialog);
+            dialog.dialogOpen();
+
+
+        }
+
     }
 }

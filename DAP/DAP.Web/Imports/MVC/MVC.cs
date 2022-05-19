@@ -98,6 +98,11 @@ namespace MVC
                 public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";
             }
 
+            public static class ImportErrorLog
+            {
+                public const string ImportErrorLogIndex = "~/Modules/DWSupport/ImportErrorLog/ImportErrorLogIndex.cshtml";
+            }
+
             public static class InvoiceItemTypeMasterSupp
             {
                 public const string InvoiceItemTypeMasterSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml";
@@ -329,6 +334,11 @@ namespace MVC
             public static class GsaDistributionList
             {
                 public const string GsaDistributionListIndex = "~/Modules/PCHODSNVS/GsaDistributionList/GsaDistributionListIndex.cshtml";
+            }
+
+            public static class JobManagement
+            {
+                public const string JobManagementIndex = "~/Modules/PCHODSNVS/JobManagement/JobManagementIndex.cshtml";
             }
 
             public static class NtrBudget

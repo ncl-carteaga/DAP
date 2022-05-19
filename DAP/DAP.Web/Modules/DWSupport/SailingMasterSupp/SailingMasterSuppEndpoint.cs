@@ -14,7 +14,9 @@ namespace DAP.DWSupport.Endpoints
     using System.Linq;
     using System.Web.Mvc;
     using MyRepository = Repositories.SailingMasterSuppRepository;
-    using MyRow = Entities.SailingMasterSuppRow;   
+    using MyLogRepository = Repositories.ImportErrorLogRepository;
+    using MyRow = Entities.SailingMasterSuppRow;
+    using MyLogRow = Entities.ImportErrorLogRow;
     using myImpHelp = myImportHelper.ExcelImportHelper;
     using myImpHelpExt = myImportHelper.myExtension;
     using jImpHelp = myImportFields.ExcelImportHelper;
@@ -55,6 +57,7 @@ namespace DAP.DWSupport.Endpoints
             return new MyRepository().List(connection, request);
         }
 
+        
         [HttpPost]
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
         {
@@ -154,7 +157,7 @@ namespace DAP.DWSupport.Endpoints
 
 
                     int sail_id = 0; 
-                    //long Sail_Sur_key = 0; 
+                    DateTime Modified_ts = new DateTime(9999, 12, 31); 
 
                     entType = jImpHelp.entryType.Int; //designate the type of item
                     fieldTitle = myFields.SailId.Title; //designate the field to be looked at
@@ -190,7 +193,7 @@ namespace DAP.DWSupport.Endpoints
 
                     var currentRow = uow.Connection.TryFirst<SailingMasterSuppRow>(q => q
                         .Select(myFields.SailSurKey)
-                        .Where(myFields.SailId == sail_id));
+                        .Where(myFields.SailId == sail_id && myFields.ModifiedTs == Modified_ts));
 
                     if (currentRow == null)
                         currentRow = new SailingMasterSuppRow
@@ -235,21 +238,21 @@ namespace DAP.DWSupport.Endpoints
                         importedValues.Clear();
                     }
 
-                    //entType = jImpHelp.entryType.String; //designate the type of item
-                    //fieldTitle = myFields.RmsSeasonCd.Title; //designate the field to be looked at
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        currentRow.RmsSeasonCd = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.RmsSeasonCd.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.RmsSeasonCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
                     entType = jImpHelp.entryType.String; //designate the type of item
                     fieldTitle = myFields.ProductCd.Title; //designate the field to be looked at
@@ -283,21 +286,21 @@ namespace DAP.DWSupport.Endpoints
                         importedValues.Clear();
                     }
 
-                    //entType = jImpHelp.entryType.String; //designate the type of item
-                    //fieldTitle = myFields.ValidVoyageCd.Title; //designate the field to be looked at
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        currentRow.ValidVoyageCd = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.ValidVoyageCd.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.ValidVoyageCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
                     entType = jImpHelp.entryType.String; //designate the type of item
                     fieldTitle = myFields.FareFeedIncludeCd.Title; //designate the field to be looked at
@@ -315,69 +318,69 @@ namespace DAP.DWSupport.Endpoints
                         importedValues.Clear();
                     }
 
-                    //entType = jImpHelp.entryType.String; //designate the type of item
-                    //fieldTitle = myFields.InactiveCd.Title; //designate the field to be looked at
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        currentRow.InactiveCd = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.InactiveCd.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.InactiveCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
-                    //entType = jImpHelp.entryType.String; //designate the type of item
-                    //fieldTitle = myFields.MainVoyageCd.Title; //designate the field to be looked at
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        currentRow.MainVoyageCd = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.MainVoyageCd.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.MainVoyageCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
-                    //entType = jImpHelp.entryType.String; //designate the type of item
-                    //fieldTitle = myFields.InterportCd.Title; //designate the field to be looked at
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        currentRow.InterportCd = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.String; //designate the type of item
+                    fieldTitle = myFields.InterportCd.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.InterportCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
-                    //entType = jImpHelp.entryType.Int; //designate the type of item
-                    //fieldTitle = myFields.MandateWeeksQty.Title; //designate the field to be looked at
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        currentRow.MandateWeeksQty = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.Int; //designate the type of item
+                    fieldTitle = myFields.MandateWeeksQty.Title; //designate the field to be looked at
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.MandateWeeksQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
                     //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
                     if (currentRow.SailSurKey == null)
@@ -398,9 +401,6 @@ namespace DAP.DWSupport.Endpoints
                         response.Updated = response.Updated + 1;
                     }
 
-
-
-
                 }
                 catch (Exception ex)
                 {
@@ -409,6 +409,28 @@ namespace DAP.DWSupport.Endpoints
                     //response.ErrorList.Add("Value: " + a);
                 }
             }
+
+            if (response.ErrorList.Count > 0)
+            {
+                foreach (var r in response.ErrorList)
+                {
+                    var crow = new ImportErrorLogRow
+                    {
+                        RunNumber = 1,
+                        Calledby = "SailingMasterSupp",
+                        ImportDate = DateTime.Now,
+                        FileName = request.FileName,
+                        ErrorMessage = r
+                    };
+                    new DAP.DWSupport.Repositories.ImportErrorLogRepository().Create(uow, new SaveWithLocalizationRequest<MyLogRow>  
+                    {                     
+                        Entity = crow
+                    });
+                  
+                }
+
+            }
+
             return response;
         }
 

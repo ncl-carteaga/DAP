@@ -1,5 +1,6 @@
 ﻿using Serenity.Navigation;
 using MyPages = DAP.PCHODSNVS.Pages;
+using MyPages2 = DAP.PCHDW.Pages;
 
 [assembly: NavigationMenu(int.MaxValue, "Brand Finance & Strategy", icon: "fa-bar-chart")]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/NTR Intl Dateline Cruises", typeof(MyPages.NtrIntlDatelineCruisesController), icon: "fa-calendar")]
@@ -13,3 +14,5 @@ using MyPages = DAP.PCHODSNVS.Pages;
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Consortium Exception List", typeof(MyPages.ConsortiumExceptionListController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Revenue Adhoc Management", typeof(MyPages.RevenueAdhocManagementController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Transfer Estimate OCI Amount", typeof(MyPages.TransferEstimateOciAmtController), icon: null)]
+//[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Job Management", typeof(MyPages.JobManagementController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strateg/Report Control", typeof(MyPages2.VwSqlJobListController), icon: null)]

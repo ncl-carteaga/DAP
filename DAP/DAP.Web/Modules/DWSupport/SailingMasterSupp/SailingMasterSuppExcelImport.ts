@@ -29,6 +29,10 @@
                             return;
                         }
 
+                        ImportErrorLogService.DeleteAll({
+
+                        });
+                      
                         SailingMasterSuppService.ExcelImport({
                             FileName: this.form.FileName.value.Filename
                         }, response => {
@@ -39,7 +43,7 @@
                             if (response.ErrorList != null && response.ErrorList.length > 0) {
                                 Q.notifyError(response.ErrorList.join(',\r\n '));
                             }
-
+                            
                             this.dialogClose();
                         });
                     },

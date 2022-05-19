@@ -1516,6 +1516,64 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface ImportErrorLogForm {
+        RunNumber: Serenity.IntegerEditor;
+        ImportDate: Serenity.DateEditor;
+        Calledby: Serenity.StringEditor;
+        FileName: Serenity.StringEditor;
+        ErrorMessage: Serenity.TextAreaEditor;
+    }
+    class ImportErrorLogForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface ImportErrorLogRow {
+        ImportLogId?: number;
+        RunNumber?: number;
+        ImportDate?: string;
+        Calledby?: string;
+        FileName?: string;
+        ErrorMessage?: string;
+    }
+    namespace ImportErrorLogRow {
+        const idProperty = "ImportLogId";
+        const nameProperty = "Calledby";
+        const localTextPrefix = "DWSupport.ImportErrorLog";
+        const enum Fields {
+            ImportLogId = "ImportLogId",
+            RunNumber = "RunNumber",
+            ImportDate = "ImportDate",
+            Calledby = "Calledby",
+            FileName = "FileName",
+            ErrorMessage = "ErrorMessage"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace ImportErrorLogService {
+        const baseUrl = "DWSupport/ImportErrorLog";
+        function Create(request: Serenity.SaveRequest<ImportErrorLogRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ImportErrorLogRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function DeleteAll(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ImportErrorLogRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ImportErrorLogRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/ImportErrorLog/Create",
+            Update = "DWSupport/ImportErrorLog/Update",
+            Delete = "DWSupport/ImportErrorLog/Delete",
+            DeleteAll = "DWSupport/ImportErrorLog/DeleteAll",
+            Retrieve = "DWSupport/ImportErrorLog/Retrieve",
+            List = "DWSupport/ImportErrorLog/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
     interface InvoiceItemSourceRow {
         ItemSourceCd?: string;
     }
@@ -1945,6 +2003,16 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface SailingMasterSuppExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class SailingMasterSuppExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
 }
 declare namespace DAP.DWSupport {
     interface SailingMasterSuppForm {
@@ -7561,6 +7629,53 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class ImportErrorLogDialog extends Serenity.EntityDialog<ImportErrorLogRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ImportErrorLogForm;
+        constructor();
+        protected updateInterface(): void;
+    }
+}
+declare namespace DAP.DWSupport {
+    class ImportErrorLogGrid extends Serenity.EntityGrid<ImportErrorLogRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ImportErrorLogDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class ImportErrorLogGridDialog extends Serenity.EntityDialog<ImportErrorLogRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ImportErrorLogForm;
+        private aGrid;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class ImportErrorLogListGrid extends Serenity.EntityGrid<ImportErrorLogRow, any> {
+        protected getColumnsKey(): string;
+        protected getIdProperty(): string;
+        protected getDialogType(): typeof ImportErrorLogDialog;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected createToolbar(): void;
+        protected createQuickSearchInput(): void;
+    }
+}
+declare namespace DAP.DWSupport {
     class InvoiceItemTypeMasterSuppDialog extends Serenity.EntityDialog<InvoiceItemTypeMasterSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -7637,6 +7752,14 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class SailingMasterSuppExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.DWSupport {
     class SailingMasterSuppGrid extends Serenity.EntityGrid<SailingMasterSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof SailingMasterSuppDialog;
@@ -7657,6 +7780,7 @@ declare namespace DAP.DWSupport {
         protected getColumns(): Slick.Column[];
         private inputsChange;
         private saveClick;
+        private showErrorLogClick;
     }
 }
 declare namespace DAP.DWSupport {
@@ -9045,21 +9169,13 @@ declare namespace DAP.SSISConfig {
         protected getButtons(): Serenity.ToolButton[];
     }
 }
-declare namespace DAP.DWSupport {
-    class SailingMasterSuppExcelImportDialog extends Serenity.PropertyDialog<any, any> {
-        private form;
-        constructor();
-        protected getDialogTitle(): string;
-        protected getDialogButtons(): Serenity.DialogButton[];
-    }
-}
-declare namespace DAP.DWSupport {
-    interface SailingMasterSuppExcelImportForm {
-        FileName: Serenity.ImageUploadEditor;
-    }
-    class SailingMasterSuppExcelImportForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
+declare namespace DAP.PCHODSNVS {
+    class JobManagemetGrid extends Serenity.EntityGrid<DAP.PCHDW.VwSqlJobListRow, any> {
+        protected getColumnsKey(): string;
+        protected getIdProperty(): string;
+        protected getDialogType(): typeof PCHDW.VwSqlJobListDialog;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }

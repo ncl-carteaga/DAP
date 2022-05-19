@@ -9609,6 +9609,12 @@ button.ui-button {
 .s-DWSupport-AmenityDetailsSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-ImportErrorLogDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-ImportErrorLogDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

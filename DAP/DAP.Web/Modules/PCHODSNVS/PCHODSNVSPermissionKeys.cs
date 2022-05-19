@@ -40,6 +40,7 @@ namespace DAP.PCHODSNVS
             public const string NTRActuals = "PCHODSNVS:Page:NTRActuals";
             public const string RevenueAdhocManagement = "PCHODSNVS:Page:RevenueAdhocManagement";
             public const string TransferEstimateOciAmt = "PCHODSNVS:Page:TransferEstimateOciAmt";
+            public const string JobManagement = "PCHODSNVS:Page:JobManagement";
         }
 
     }
