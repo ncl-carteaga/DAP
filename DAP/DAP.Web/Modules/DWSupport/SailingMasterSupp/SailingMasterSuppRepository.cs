@@ -101,6 +101,10 @@ namespace DAP.DWSupport.Repositories
                     {
                         throw new ValidationError("Valid Voyage Code should be Y (Yes) or N (No).");
                     }
+                    if (this.Row.CharterCd.ToUpper() != "Y" && this.Row.CharterCd.ToUpper() != "N")
+                    {
+                        throw new ValidationError("Charter Code should be Y (Yes) or N (No).");
+                    }
                 }
 
 

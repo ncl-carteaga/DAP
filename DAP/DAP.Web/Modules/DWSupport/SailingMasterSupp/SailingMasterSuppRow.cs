@@ -45,7 +45,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ValidVoyageCd[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickFilter]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickFilter, LookupEditor("DWSupport.ShipCode")]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }

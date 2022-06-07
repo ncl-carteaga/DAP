@@ -37,6 +37,7 @@ namespace DAP.SSISConfig
             public const string NCLShip = "SSISConfig:Page:NCLShip";
             public const string PSInterfaceConfig = "SSISConfig:Page:PSInterfaceConfig";
             public const string DWHConfigBase = "SSISConfig:Page:DWHConfigBase";
+            public const string DSARDataFlow = "SSISConfig:Page:DSARDataFlow";
         }
 
     }

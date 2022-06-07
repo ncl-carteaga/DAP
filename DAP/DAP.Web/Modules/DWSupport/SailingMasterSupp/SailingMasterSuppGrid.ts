@@ -247,9 +247,9 @@ namespace DAP.DWSupport {
             interportcd.referencedFields = [fld.InterportCd];
             interportcd.format = ctx => this.selectYNFormatter(ctx, fld.InterportCd);
 
-            //var chartercd = Q.first(columns, x => x.field === fld.CharterCd);
-            //chartercd.referencedFields = [fld.CharterCd];
-            //chartercd.format = ctx => this.selectYNFormatter(ctx, fld.CharterCd);
+            var chartercd = Q.first(columns, x => x.field === fld.CharterCd);
+            chartercd.referencedFields = [fld.CharterCd];
+            chartercd.format = ctx => this.selectYNFormatter(ctx, fld.CharterCd);
 
             return columns;
         }

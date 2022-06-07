@@ -38,7 +38,6 @@ namespace DAP.DWSupport.Forms
         public String RmsSeasonCd { get; set; }
         public String MainVoyageCd { get; set; }
         public String InterportCd { get; set; }
-        [ReadOnly(true)]
         public String CharterCd { get; set; }
 
         [Tab("RMS"), ReadOnly(true)]        

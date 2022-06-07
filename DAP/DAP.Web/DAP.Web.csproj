@@ -1165,6 +1165,8 @@
     <Content Include="Modules\DWSupport\AmenitiesSupp\AmenitiesSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\AmenityDetailsSupp\AmenityDetailsSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogIndex.cshtml" />
+    <Content Include="Modules\NCLHDSAR\DataFlow\DataFlowIndex.cshtml" />
+    <Content Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1630,6 +1632,10 @@
     <TypeScriptCompile Include="Modules\DWSupport\AmenityDetailsSupp\AmenityDetailsSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\DataFlow\DataFlowDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\DataFlow\DataFlowGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -2993,6 +2999,14 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ImportErrorLogForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3686,6 +3700,21 @@
     <Compile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogPage.cs" />
     <Compile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogColumns.cs" />
     <Compile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\DataFlow\DataFlowRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\DataFlow\DataFlowRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\DataFlow\DataFlowEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\DataFlow\DataFlowPage.cs" />
+    <Compile Include="Modules\NCLHDSAR\DataFlow\DataFlowColumns.cs" />
+    <Compile Include="Modules\NCLHDSAR\DataFlow\DataFlowForm.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\Ship\ShipRow.cs" />
+    <Compile Include="Modules\DWSupport\Ship\ShipRepository.cs" />
+    <Compile Include="Modules\DWSupport\Ship\ShipEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1684,6 +1684,138 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var InvoiceItemTypeSuppForm = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSuppForm, _super);
+            function InvoiceItemTypeSuppForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            InvoiceItemTypeSuppForm.formKey = 'DWSupport.InvoiceItemTypeSupp';
+            return InvoiceItemTypeSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.InvoiceItemTypeSuppForm = InvoiceItemTypeSuppForm;
+        [,
+            ['InvoiceClassType1Cd', function () { return Serenity.StringEditor; }],
+            ['InvoiceClassType2Cd', function () { return Serenity.StringEditor; }],
+            ['InvoiceClassType3Cd', function () { return Serenity.StringEditor; }],
+            ['InvoiceClassType4Cd', function () { return Serenity.StringEditor; }],
+            ['InvoiceItemSourceCd', function () { return Serenity.StringEditor; }],
+            ['InvoiceItemTypeCd', function () { return Serenity.StringEditor; }],
+            ['InvoiceItemSubTypeCd', function () { return Serenity.StringEditor; }],
+            ['InvoiceItemSubType2Cd', function () { return Serenity.StringEditor; }],
+            ['InvoiceItemSubType3Cd', function () { return Serenity.StringEditor; }],
+            ['ComponentCd', function () { return Serenity.StringEditor; }],
+            ['ComponentDesc', function () { return Serenity.StringEditor; }],
+            ['ChartOfAccountNbr', function () { return Serenity.StringEditor; }],
+            ['CommentsTxt', function () { return Serenity.StringEditor; }],
+            ['IsNtrCd', function () { return Serenity.StringEditor; }],
+            ['IsGtrCd', function () { return Serenity.StringEditor; }],
+            ['IsDilutionCd', function () { return Serenity.StringEditor; }],
+            ['IsCostCd', function () { return Serenity.StringEditor; }],
+            ['IsTaxCd', function () { return Serenity.StringEditor; }],
+            ['IsCcCostCd', function () { return Serenity.StringEditor; }],
+            ['IsAcctgAdjCd', function () { return Serenity.StringEditor; }],
+            ['IsPioCd', function () { return Serenity.StringEditor; }],
+            ['IsGroupAmenityCd', function () { return Serenity.StringEditor; }],
+            ['AmenityCostAmt', function () { return Serenity.DecimalEditor; }],
+            ['IsPerDiemCd', function () { return Serenity.StringEditor; }],
+            ['CreatedTs', function () { return Serenity.DateEditor; }],
+            ['CreatedByNam', function () { return Serenity.StringEditor; }],
+            ['ModifiedByNam', function () { return Serenity.StringEditor; }],
+            ['ModifiedTs', function () { return Serenity.DateEditor; }],
+            ['IsAcctgActualCd', function () { return Serenity.StringEditor; }],
+            ['CasinoComponentCd', function () { return Serenity.StringEditor; }],
+            ['CasinoComponentDesc', function () { return Serenity.StringEditor; }],
+            ['DeptShortDesc', function () { return Serenity.StringEditor; }],
+            ['IsSuppressBuiltCd', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(InvoiceItemTypeSuppForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeSuppRow;
+        (function (InvoiceItemTypeSuppRow) {
+            InvoiceItemTypeSuppRow.idProperty = 'InvoiceItemTypeGenNatKey';
+            InvoiceItemTypeSuppRow.nameProperty = 'InvoiceClassType1Cd';
+            InvoiceItemTypeSuppRow.localTextPrefix = 'DWSupport.InvoiceItemTypeSupp';
+            var Fields;
+            (function (Fields) {
+            })(Fields = InvoiceItemTypeSuppRow.Fields || (InvoiceItemTypeSuppRow.Fields = {}));
+            [
+                'InvoiceItemTypeGenNatKey',
+                'InvoiceClassType1Cd',
+                'InvoiceClassType2Cd',
+                'InvoiceClassType3Cd',
+                'InvoiceClassType4Cd',
+                'InvoiceItemSourceCd',
+                'InvoiceItemTypeCd',
+                'InvoiceItemSubTypeCd',
+                'InvoiceItemSubType2Cd',
+                'InvoiceItemSubType3Cd',
+                'ComponentCd',
+                'ComponentDesc',
+                'ChartOfAccountNbr',
+                'CommentsTxt',
+                'IsNtrCd',
+                'IsGtrCd',
+                'IsDilutionCd',
+                'IsCostCd',
+                'IsTaxCd',
+                'IsCcCostCd',
+                'IsAcctgAdjCd',
+                'IsPioCd',
+                'IsGroupAmenityCd',
+                'AmenityCostAmt',
+                'IsPerDiemCd',
+                'CreatedTs',
+                'CreatedByNam',
+                'ModifiedByNam',
+                'ModifiedTs',
+                'IsAcctgActualCd',
+                'CasinoComponentCd',
+                'CasinoComponentDesc',
+                'DeptShortDesc',
+                'IsSuppressBuiltCd'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(InvoiceItemTypeSuppRow = DWSupport.InvoiceItemTypeSuppRow || (DWSupport.InvoiceItemTypeSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeSuppService;
+        (function (InvoiceItemTypeSuppService) {
+            InvoiceItemTypeSuppService.baseUrl = 'DWSupport/InvoiceItemTypeSupp';
+            var Methods;
+            (function (Methods) {
+            })(Methods = InvoiceItemTypeSuppService.Methods || (InvoiceItemTypeSuppService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                InvoiceItemTypeSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(InvoiceItemTypeSuppService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = InvoiceItemTypeSuppService.baseUrl + '/' + x;
+            });
+        })(InvoiceItemTypeSuppService = DWSupport.InvoiceItemTypeSuppService || (DWSupport.InvoiceItemTypeSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var MasterComponentRow;
         (function (MasterComponentRow) {
             MasterComponentRow.idProperty = 'MasterComponentCd';
@@ -2030,6 +2162,52 @@ var DAP;
                 };
             });
         })(SailingMasterSuppService = DWSupport.SailingMasterSuppService || (DWSupport.SailingMasterSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ShipRow;
+        (function (ShipRow) {
+            ShipRow.idProperty = 'ShipCode';
+            ShipRow.nameProperty = 'ShipCode';
+            ShipRow.localTextPrefix = 'DWSupport.Ship';
+            var Fields;
+            (function (Fields) {
+            })(Fields = ShipRow.Fields || (ShipRow.Fields = {}));
+            [
+                'ShipCode',
+                'ShipName',
+                'Brand',
+                'IsActive'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(ShipRow = DWSupport.ShipRow || (DWSupport.ShipRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ShipService;
+        (function (ShipService) {
+            ShipService.baseUrl = 'DWSupport/Ship';
+            var Methods;
+            (function (Methods) {
+            })(Methods = ShipService.Methods || (ShipService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ShipService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ShipService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = ShipService.baseUrl + '/' + x;
+            });
+        })(ShipService = DWSupport.ShipService || (DWSupport.ShipService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -2590,6 +2768,98 @@ var DAP;
                 };
             });
         })(AssigneeService = NCLHDSAR.AssigneeService || (NCLHDSAR.AssigneeService = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var DataFlowForm = /** @class */ (function (_super) {
+            __extends(DataFlowForm, _super);
+            function DataFlowForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            DataFlowForm.formKey = 'NCLHDSAR.DataFlow';
+            return DataFlowForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.DataFlowForm = DataFlowForm;
+        [,
+            ['Source', function () { return Serenity.StringEditor; }],
+            ['Name', function () { return Serenity.StringEditor; }],
+            ['ProcessYn', function () { return Serenity.StringEditor; }],
+            ['Target', function () { return Serenity.StringEditor; }],
+            ['Description', function () { return Serenity.StringEditor; }],
+            ['SourceDesc', function () { return Serenity.StringEditor; }],
+            ['TargetDesc', function () { return Serenity.StringEditor; }],
+            ['Package', function () { return Serenity.StringEditor; }],
+            ['Status', function () { return Serenity.IntegerEditor; }],
+            ['Lset', function () { return Serenity.DateEditor; }],
+            ['Cet', function () { return Serenity.DateEditor; }],
+            ['LseIndex', function () { return Serenity.IntegerEditor; }],
+            ['CeIndex', function () { return Serenity.IntegerEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(DataFlowForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var DataFlowRow;
+        (function (DataFlowRow) {
+            DataFlowRow.idProperty = 'Key';
+            DataFlowRow.nameProperty = 'Source';
+            DataFlowRow.localTextPrefix = 'NCLHDSAR.DataFlow';
+            var Fields;
+            (function (Fields) {
+            })(Fields = DataFlowRow.Fields || (DataFlowRow.Fields = {}));
+            [
+                'Key',
+                'Source',
+                'Name',
+                'ProcessYn',
+                'Target',
+                'Description',
+                'SourceDesc',
+                'TargetDesc',
+                'Package',
+                'Status',
+                'Lset',
+                'Cet',
+                'LseIndex',
+                'CeIndex'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(DataFlowRow = NCLHDSAR.DataFlowRow || (NCLHDSAR.DataFlowRow = {}));
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var DataFlowService;
+        (function (DataFlowService) {
+            DataFlowService.baseUrl = 'NCLHDSAR/DataFlow';
+            var Methods;
+            (function (Methods) {
+            })(Methods = DataFlowService.Methods || (DataFlowService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DataFlowService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DataFlowService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = DataFlowService.baseUrl + '/' + x;
+            });
+        })(DataFlowService = NCLHDSAR.DataFlowService || (NCLHDSAR.DataFlowService = {}));
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -9316,6 +9586,52 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var InvoiceItemTypeSuppDialog = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSuppDialog, _super);
+            function InvoiceItemTypeSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.InvoiceItemTypeSuppForm(_this.idPrefix);
+                return _this;
+            }
+            InvoiceItemTypeSuppDialog.prototype.getFormKey = function () { return DWSupport.InvoiceItemTypeSuppForm.formKey; };
+            InvoiceItemTypeSuppDialog.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.idProperty; };
+            InvoiceItemTypeSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeSuppRow.localTextPrefix; };
+            InvoiceItemTypeSuppDialog.prototype.getNameProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.nameProperty; };
+            InvoiceItemTypeSuppDialog.prototype.getService = function () { return DWSupport.InvoiceItemTypeSuppService.baseUrl; };
+            InvoiceItemTypeSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InvoiceItemTypeSuppDialog);
+            return InvoiceItemTypeSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.InvoiceItemTypeSuppDialog = InvoiceItemTypeSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeSuppGrid = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSuppGrid, _super);
+            function InvoiceItemTypeSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InvoiceItemTypeSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.InvoiceItemTypeSupp'; };
+            InvoiceItemTypeSuppGrid.prototype.getDialogType = function () { return DWSupport.InvoiceItemTypeSuppDialog; };
+            InvoiceItemTypeSuppGrid.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.idProperty; };
+            InvoiceItemTypeSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeSuppRow.localTextPrefix; };
+            InvoiceItemTypeSuppGrid.prototype.getService = function () { return DWSupport.InvoiceItemTypeSuppService.baseUrl; };
+            InvoiceItemTypeSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InvoiceItemTypeSuppGrid);
+            return InvoiceItemTypeSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.InvoiceItemTypeSuppGrid = InvoiceItemTypeSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var PortSubstitutionSuppDialog = /** @class */ (function (_super) {
             __extends(PortSubstitutionSuppDialog, _super);
             function PortSubstitutionSuppDialog() {
@@ -9734,9 +10050,9 @@ var DAP;
                 var interportcd = Q.first(columns, function (x) { return x.field === "InterportCd" /* InterportCd */; });
                 interportcd.referencedFields = ["InterportCd" /* InterportCd */];
                 interportcd.format = function (ctx) { return _this.selectYNFormatter(ctx, "InterportCd" /* InterportCd */); };
-                //var chartercd = Q.first(columns, x => x.field === fld.CharterCd);
-                //chartercd.referencedFields = [fld.CharterCd];
-                //chartercd.format = ctx => this.selectYNFormatter(ctx, fld.CharterCd);
+                var chartercd = Q.first(columns, function (x) { return x.field === "CharterCd" /* CharterCd */; });
+                chartercd.referencedFields = ["CharterCd" /* CharterCd */];
+                chartercd.format = function (ctx) { return _this.selectYNFormatter(ctx, "CharterCd" /* CharterCd */); };
                 return columns;
             };
             SailingMasterSuppGrid.prototype.inputsChange = function (e) {
@@ -10465,6 +10781,62 @@ var DAP;
             return AssigneeGrid;
         }(Serenity.EntityGrid));
         NCLHDSAR.AssigneeGrid = AssigneeGrid;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var DataFlowDialog = /** @class */ (function (_super) {
+            __extends(DataFlowDialog, _super);
+            function DataFlowDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new NCLHDSAR.DataFlowForm(_this.idPrefix);
+                return _this;
+            }
+            DataFlowDialog.prototype.getFormKey = function () { return NCLHDSAR.DataFlowForm.formKey; };
+            DataFlowDialog.prototype.getIdProperty = function () { return NCLHDSAR.DataFlowRow.idProperty; };
+            DataFlowDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.DataFlowRow.localTextPrefix; };
+            DataFlowDialog.prototype.getNameProperty = function () { return NCLHDSAR.DataFlowRow.nameProperty; };
+            DataFlowDialog.prototype.getService = function () { return NCLHDSAR.DataFlowService.baseUrl; };
+            DataFlowDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            DataFlowDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowDialog);
+            return DataFlowDialog;
+        }(Serenity.EntityDialog));
+        NCLHDSAR.DataFlowDialog = DataFlowDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var DataFlowGrid = /** @class */ (function (_super) {
+            __extends(DataFlowGrid, _super);
+            function DataFlowGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DataFlowGrid.prototype.getColumnsKey = function () { return 'NCLHDSAR.DataFlow'; };
+            DataFlowGrid.prototype.getDialogType = function () { return NCLHDSAR.DataFlowDialog; };
+            DataFlowGrid.prototype.getIdProperty = function () { return NCLHDSAR.DataFlowRow.idProperty; };
+            DataFlowGrid.prototype.getLocalTextPrefix = function () { return NCLHDSAR.DataFlowRow.localTextPrefix; };
+            DataFlowGrid.prototype.getService = function () { return NCLHDSAR.DataFlowService.baseUrl; };
+            DataFlowGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                return buttons;
+            };
+            DataFlowGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DataFlowGrid);
+            return DataFlowGrid;
+        }(Serenity.EntityGrid));
+        NCLHDSAR.DataFlowGrid = DataFlowGrid;
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -14019,6 +14391,29 @@ var DAP;
         PCHODSNVS.GsaDistributionListGrid = GsaDistributionListGrid;
     })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
+/// <reference path="../../PCHDW/VwSqlJobList/VwSqlJobListGrid.ts" />
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var JobManagemetGrid = /** @class */ (function (_super) {
+            __extends(JobManagemetGrid, _super);
+            function JobManagemetGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            JobManagemetGrid.prototype.getColumnsKey = function () { return "DAP.PCHDW.VwSqlJobList"; };
+            JobManagemetGrid.prototype.getIdProperty = function () { return DAP.PCHDW.VwSqlJobListRow.idProperty; };
+            JobManagemetGrid.prototype.getDialogType = function () { return DAP.PCHDW.VwSqlJobListDialog; };
+            JobManagemetGrid.prototype.getLocalTextPrefix = function () { return DAP.PCHDW.VwSqlJobListRow.localTextPrefix; };
+            JobManagemetGrid.prototype.getService = function () { return DAP.PCHDW.VwSqlJobListService.baseUrl; };
+            JobManagemetGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], JobManagemetGrid);
+            return JobManagemetGrid;
+        }(Serenity.EntityGrid));
+        PCHODSNVS.JobManagemetGrid = JobManagemetGrid;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
     var PCHODSNVS;
@@ -15633,28 +16028,5 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-/// <reference path="../../PCHDW/VwSqlJobList/VwSqlJobListGrid.ts" />
-var DAP;
-(function (DAP) {
-    var PCHODSNVS;
-    (function (PCHODSNVS) {
-        var JobManagemetGrid = /** @class */ (function (_super) {
-            __extends(JobManagemetGrid, _super);
-            function JobManagemetGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            JobManagemetGrid.prototype.getColumnsKey = function () { return "DAP.PCHDW.VwSqlJobList"; };
-            JobManagemetGrid.prototype.getIdProperty = function () { return DAP.PCHDW.VwSqlJobListRow.idProperty; };
-            JobManagemetGrid.prototype.getDialogType = function () { return DAP.PCHDW.VwSqlJobListDialog; };
-            JobManagemetGrid.prototype.getLocalTextPrefix = function () { return DAP.PCHDW.VwSqlJobListRow.localTextPrefix; };
-            JobManagemetGrid.prototype.getService = function () { return DAP.PCHDW.VwSqlJobListService.baseUrl; };
-            JobManagemetGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], JobManagemetGrid);
-            return JobManagemetGrid;
-        }(Serenity.EntityGrid));
-        PCHODSNVS.JobManagemetGrid = JobManagemetGrid;
-    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
