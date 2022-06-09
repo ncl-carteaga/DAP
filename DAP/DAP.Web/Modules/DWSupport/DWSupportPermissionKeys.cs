@@ -35,6 +35,7 @@ namespace DAP.DWSupport
             public const string InvoiceItemSupp = "DWSupp:Page:InvoiceItemSupp";
             public const string AmenitySupp = "DWSupp:Page:AmenitySupp";
             public const string AmenityDetailSupp = "DWSupp:Page:AmenityDetailSupp";
+            public const string AgencySnapshotRequest = "DWSupp:Page:AgencySnapshotRequest";
         }
     }
 

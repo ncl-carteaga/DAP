@@ -957,6 +957,64 @@ declare namespace DAP.Common {
     }
 }
 declare namespace DAP.DWSupport {
+    class AgencySnapshotRequestForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface AgencySnapshotRequestForm {
+        RequestedBy: Serenity.StringEditor;
+        RequestedByDate: Serenity.DateEditor;
+        RequestedReason: Serenity.StringEditor;
+        CreatedBy: Serenity.StringEditor;
+        CreatedDate: Serenity.DateEditor;
+        ModifiedBy: Serenity.StringEditor;
+        ModifiedDate: Serenity.DateEditor;
+    }
+}
+declare namespace DAP.DWSupport {
+    interface AgencySnapshotRequestRow {
+        AgencySnapshotReqId?: number;
+        RequestedBy?: string;
+        RequestedByDate?: string;
+        RequestedReason?: string;
+        CreatedBy?: string;
+        CreatedDate?: string;
+        ModifiedBy?: string;
+        ModifiedDate?: string;
+    }
+    namespace AgencySnapshotRequestRow {
+        const idProperty = "AgencySnapshotReqId";
+        const nameProperty = "RequestedBy";
+        const localTextPrefix = "DWSupport.AgencySnapshotRequest";
+        namespace Fields {
+            const AgencySnapshotReqId: any;
+            const RequestedBy: any;
+            const RequestedByDate: any;
+            const RequestedReason: any;
+            const CreatedBy: any;
+            const CreatedDate: any;
+            const ModifiedBy: any;
+            const ModifiedDate: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace AgencySnapshotRequestService {
+        const baseUrl = "DWSupport/AgencySnapshotRequest";
+        function Create(request: Serenity.SaveRequest<AgencySnapshotRequestRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<AgencySnapshotRequestRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AgencySnapshotRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AgencySnapshotRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface AmenitiesSuppForm {
@@ -7724,6 +7782,28 @@ declare namespace DAP.Common {
     class UserPreferenceStorage implements Serenity.SettingStorage {
         getItem(key: string): string;
         setItem(key: string, data: string): void;
+    }
+}
+declare namespace DAP.DWSupport {
+    class AgencySnapshotRequestDialog extends Serenity.EntityDialog<AgencySnapshotRequestRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: AgencySnapshotRequestForm;
+        constructor();
+        protected afterLoadEntity(): void;
+    }
+}
+declare namespace DAP.DWSupport {
+    class AgencySnapshotRequestGrid extends Serenity.EntityGrid<AgencySnapshotRequestRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof AgencySnapshotRequestDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.DWSupport {

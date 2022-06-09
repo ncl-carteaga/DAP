@@ -9621,6 +9621,12 @@ button.ui-button {
 .s-DWSupport-InvoiceItemTypeSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-AgencySnapshotRequestDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AgencySnapshotRequestDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

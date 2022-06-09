@@ -1167,6 +1167,7 @@
     <Content Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\DataFlow\DataFlowIndex.cshtml" />
     <Content Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1636,6 +1637,8 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\DataFlow\DataFlowGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3007,6 +3010,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3715,6 +3721,12 @@
     <Compile Include="Modules\DWSupport\Ship\ShipRow.cs" />
     <Compile Include="Modules\DWSupport\Ship\ShipRepository.cs" />
     <Compile Include="Modules\DWSupport\Ship\ShipEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestRow.cs" />
+    <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestRepository.cs" />
+    <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestPage.cs" />
+    <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestColumns.cs" />
+    <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

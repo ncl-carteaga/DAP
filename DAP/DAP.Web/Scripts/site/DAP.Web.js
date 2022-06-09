@@ -883,6 +883,86 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var AgencySnapshotRequestForm = /** @class */ (function (_super) {
+            __extends(AgencySnapshotRequestForm, _super);
+            function AgencySnapshotRequestForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            AgencySnapshotRequestForm.formKey = 'DWSupport.AgencySnapshotRequest';
+            return AgencySnapshotRequestForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.AgencySnapshotRequestForm = AgencySnapshotRequestForm;
+        [,
+            ['RequestedBy', function () { return Serenity.StringEditor; }],
+            ['RequestedByDate', function () { return Serenity.DateEditor; }],
+            ['RequestedReason', function () { return Serenity.StringEditor; }],
+            ['CreatedBy', function () { return Serenity.StringEditor; }],
+            ['CreatedDate', function () { return Serenity.DateEditor; }],
+            ['ModifiedBy', function () { return Serenity.StringEditor; }],
+            ['ModifiedDate', function () { return Serenity.DateEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(AgencySnapshotRequestForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AgencySnapshotRequestRow;
+        (function (AgencySnapshotRequestRow) {
+            AgencySnapshotRequestRow.idProperty = 'AgencySnapshotReqId';
+            AgencySnapshotRequestRow.nameProperty = 'RequestedBy';
+            AgencySnapshotRequestRow.localTextPrefix = 'DWSupport.AgencySnapshotRequest';
+            var Fields;
+            (function (Fields) {
+            })(Fields = AgencySnapshotRequestRow.Fields || (AgencySnapshotRequestRow.Fields = {}));
+            [
+                'AgencySnapshotReqId',
+                'RequestedBy',
+                'RequestedByDate',
+                'RequestedReason',
+                'CreatedBy',
+                'CreatedDate',
+                'ModifiedBy',
+                'ModifiedDate'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(AgencySnapshotRequestRow = DWSupport.AgencySnapshotRequestRow || (DWSupport.AgencySnapshotRequestRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AgencySnapshotRequestService;
+        (function (AgencySnapshotRequestService) {
+            AgencySnapshotRequestService.baseUrl = 'DWSupport/AgencySnapshotRequest';
+            var Methods;
+            (function (Methods) {
+            })(Methods = AgencySnapshotRequestService.Methods || (AgencySnapshotRequestService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                AgencySnapshotRequestService[x] = function (r, s, o) {
+                    return Q.serviceRequest(AgencySnapshotRequestService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = AgencySnapshotRequestService.baseUrl + '/' + x;
+            });
+        })(AgencySnapshotRequestService = DWSupport.AgencySnapshotRequestService || (DWSupport.AgencySnapshotRequestService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var AmenitiesSuppForm = /** @class */ (function (_super) {
             __extends(AmenitiesSuppForm, _super);
             function AmenitiesSuppForm(prefix) {
@@ -8882,6 +8962,80 @@ var DAP;
         }());
         Common.UserPreferenceStorage = UserPreferenceStorage;
     })(Common = DAP.Common || (DAP.Common = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AgencySnapshotRequestDialog = /** @class */ (function (_super) {
+            __extends(AgencySnapshotRequestDialog, _super);
+            function AgencySnapshotRequestDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.AgencySnapshotRequestForm(_this.idPrefix);
+                _this.form = new DWSupport.AgencySnapshotRequestForm(_this.idPrefix);
+                _this.form.RequestedByDate.addValidationRule(_this.uniqueName, function (e) {
+                    var rdt = new Date(Q.formatDate(_this.form.RequestedByDate.value, "MM/dd/yyyy"));
+                    //pdt.setHours(0, 0, 0, 0);
+                    var dt = new Date(Q.formatDate(new Date(), "MM/dd/yyyy"));
+                    //dt.setHours(0, 0, 0, 0);
+                    if (rdt.getTime() < dt.getTime()) {
+                        return "Requested Date Should be greater han Today";
+                    }
+                });
+                return _this;
+            }
+            AgencySnapshotRequestDialog.prototype.getFormKey = function () { return DWSupport.AgencySnapshotRequestForm.formKey; };
+            AgencySnapshotRequestDialog.prototype.getIdProperty = function () { return DWSupport.AgencySnapshotRequestRow.idProperty; };
+            AgencySnapshotRequestDialog.prototype.getLocalTextPrefix = function () { return DWSupport.AgencySnapshotRequestRow.localTextPrefix; };
+            AgencySnapshotRequestDialog.prototype.getNameProperty = function () { return DWSupport.AgencySnapshotRequestRow.nameProperty; };
+            AgencySnapshotRequestDialog.prototype.getService = function () { return DWSupport.AgencySnapshotRequestService.baseUrl; };
+            AgencySnapshotRequestDialog.prototype.afterLoadEntity = function () {
+                _super.prototype.afterLoadEntity.call(this);
+                if (this.isNew) {
+                    this.form.RequestedBy.value = DAP.Authorization.userDefinition.Username;
+                }
+                var rdt = new Date(Q.formatDate(this.form.RequestedByDate.value, "MM/dd/yyyy"));
+                //pdt.setHours(0, 0, 0, 0);
+                var dt = new Date(Q.formatDate(new Date(), "MM/dd/yyyy"));
+                //dt.setHours(0, 0, 0, 0);
+                if (rdt.getTime() < dt.getTime()) {
+                    Serenity.EditorUtils.setReadOnly(this.form.RequestedBy, true);
+                    Serenity.EditorUtils.setReadOnly(this.form.RequestedByDate, true);
+                    Serenity.EditorUtils.setReadOnly(this.form.RequestedReason, true);
+                    this.applyChangesButton.hide();
+                    this.saveAndCloseButton.hide();
+                    this.deleteButton.hide();
+                }
+            };
+            AgencySnapshotRequestDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AgencySnapshotRequestDialog);
+            return AgencySnapshotRequestDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.AgencySnapshotRequestDialog = AgencySnapshotRequestDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AgencySnapshotRequestGrid = /** @class */ (function (_super) {
+            __extends(AgencySnapshotRequestGrid, _super);
+            function AgencySnapshotRequestGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            AgencySnapshotRequestGrid.prototype.getColumnsKey = function () { return 'DWSupport.AgencySnapshotRequest'; };
+            AgencySnapshotRequestGrid.prototype.getDialogType = function () { return DWSupport.AgencySnapshotRequestDialog; };
+            AgencySnapshotRequestGrid.prototype.getIdProperty = function () { return DWSupport.AgencySnapshotRequestRow.idProperty; };
+            AgencySnapshotRequestGrid.prototype.getLocalTextPrefix = function () { return DWSupport.AgencySnapshotRequestRow.localTextPrefix; };
+            AgencySnapshotRequestGrid.prototype.getService = function () { return DWSupport.AgencySnapshotRequestService.baseUrl; };
+            AgencySnapshotRequestGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AgencySnapshotRequestGrid);
+            return AgencySnapshotRequestGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.AgencySnapshotRequestGrid = AgencySnapshotRequestGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {

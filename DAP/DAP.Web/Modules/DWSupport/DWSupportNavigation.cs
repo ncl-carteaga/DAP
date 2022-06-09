@@ -16,3 +16,4 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/Amenities", typeof(MyPages.AmenitiesSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DWSupport/Import Error Log", typeof(MyPages.ImportErrorLogController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Agency Snapshot Request", typeof(MyPages.AgencySnapshotRequestController), icon: null)]
