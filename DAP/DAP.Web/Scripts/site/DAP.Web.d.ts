@@ -9043,6 +9043,8 @@ declare namespace DAP.PCHODS {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: UarSrDirAboveListForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODS {
@@ -9053,6 +9055,7 @@ declare namespace DAP.PCHODS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODS {
@@ -9063,6 +9066,8 @@ declare namespace DAP.PCHODS {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: UarUnknownReviewerForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODS {
@@ -9073,6 +9078,7 @@ declare namespace DAP.PCHODS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODSNVS {

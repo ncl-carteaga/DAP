@@ -24,7 +24,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Jobtitle"), Column("jobtitle"), Size(100), NotNull, QuickSearch]
+        [DisplayName("Jobtitle"), Column("jobtitle"), Size(100), NotNull, QuickSearch, ReadOnly(true)]
         public String Jobtitle
         {
             get { return Fields.Jobtitle[this]; }
@@ -38,21 +38,21 @@ namespace DAP.PCHODS.Entities
             set { Fields.IsSrDirAbove[this] = value; }
         }
 
-        [DisplayName("Date Effective"), NotNull]
+        [DisplayName("Date Effective"), NotNull, ReadOnly(true)]
         public DateTime? DateEffective
         {
             get { return Fields.DateEffective[this]; }
             set { Fields.DateEffective[this] = value; }
         }
 
-        [DisplayName("Date Expires")]
+        [DisplayName("Date Expires"), ReadOnly(true)]
         public DateTime? DateExpires
         {
             get { return Fields.DateExpires[this]; }
             set { Fields.DateExpires[this] = value; }
         }
 
-        [DisplayName("Row Change Reason"), Size(120), NotNull]
+        [DisplayName("Row Change Reason"), Size(120), NotNull, ReadOnly(true)]
         public String RowChangeReason
         {
             get { return Fields.RowChangeReason[this]; }
