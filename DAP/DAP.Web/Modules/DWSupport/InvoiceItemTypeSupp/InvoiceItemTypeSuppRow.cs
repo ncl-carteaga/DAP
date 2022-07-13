@@ -59,35 +59,35 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemSourceCd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Type Cd"), Column("INVOICE_ITEM_TYPE_CD"), Size(50)]
+        [DisplayName("Invoice Item Type Cd"), Column("INVOICE_ITEM_TYPE_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemType"), QuickFilter]
         public String InvoiceItemTypeCd
         {
             get { return Fields.InvoiceItemTypeCd[this]; }
             set { Fields.InvoiceItemTypeCd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Sub Type Cd"), Column("INVOICE_ITEM_SUB_TYPE_CD"), Size(50)]
+        [DisplayName("Invoice Item Sub Type Cd"), Column("INVOICE_ITEM_SUB_TYPE_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType"), QuickFilter]
         public String InvoiceItemSubTypeCd
         {
             get { return Fields.InvoiceItemSubTypeCd[this]; }
             set { Fields.InvoiceItemSubTypeCd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Sub Type2 Cd"), Column("INVOICE_ITEM_SUB_TYPE2_CD"), Size(50)]
+        [DisplayName("Invoice Item Sub Type2 Cd"), Column("INVOICE_ITEM_SUB_TYPE2_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType2"), QuickFilter]
         public String InvoiceItemSubType2Cd
         {
             get { return Fields.InvoiceItemSubType2Cd[this]; }
             set { Fields.InvoiceItemSubType2Cd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Sub Type3 Cd"), Column("INVOICE_ITEM_SUB_TYPE3_CD"), Size(50)]
+        [DisplayName("Invoice Item Sub Type3 Cd"), Column("INVOICE_ITEM_SUB_TYPE3_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType3"), QuickFilter]
         public String InvoiceItemSubType3Cd
         {
             get { return Fields.InvoiceItemSubType3Cd[this]; }
             set { Fields.InvoiceItemSubType3Cd[this] = value; }
         }
 
-        [DisplayName("Component Cd"), Column("COMPONENT_CD"), Size(30)]
+        [DisplayName("Component Cd"), Column("COMPONENT_CD"), Size(30), QuickFilter , LookupEditor("DWSupport.GetMasterComponent")]
         public String ComponentCd
         {
             get { return Fields.ComponentCd[this]; }

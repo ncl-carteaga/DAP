@@ -8975,11 +8975,11 @@ var DAP;
                 _this.form = new DWSupport.AgencySnapshotRequestForm(_this.idPrefix);
                 _this.form.RequestedByDate.addValidationRule(_this.uniqueName, function (e) {
                     var rdt = new Date(Q.formatDate(_this.form.RequestedByDate.value, "MM/dd/yyyy"));
-                    //pdt.setHours(0, 0, 0, 0);
+                    rdt.setHours(0, 0, 0, 0);
                     var dt = new Date(Q.formatDate(new Date(), "MM/dd/yyyy"));
-                    //dt.setHours(0, 0, 0, 0);
-                    if (rdt.getTime() < dt.getTime()) {
-                        return "Requested Date Should be greater han Today";
+                    dt.setHours(0, 0, 0, 0);
+                    if (rdt.getTime() <= dt.getTime()) {
+                        return "Requested Date Should be greater than Today";
                     }
                 });
                 return _this;
@@ -14368,7 +14368,7 @@ var DAP;
         var UarSrDirAboveListDialog = /** @class */ (function (_super) {
             __extends(UarSrDirAboveListDialog, _super);
             function UarSrDirAboveListDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHODS.UarSrDirAboveListForm(_this.idPrefix);
                 return _this;
             }
@@ -14377,6 +14377,12 @@ var DAP;
             UarSrDirAboveListDialog.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
             UarSrDirAboveListDialog.prototype.getNameProperty = function () { return PCHODS.UarSrDirAboveListRow.nameProperty; };
             UarSrDirAboveListDialog.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
+            UarSrDirAboveListDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "apply-changes-button"; }), 1);
+                return b;
+            };
             UarSrDirAboveListDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], UarSrDirAboveListDialog);
@@ -14399,6 +14405,15 @@ var DAP;
             UarSrDirAboveListGrid.prototype.getIdProperty = function () { return PCHODS.UarSrDirAboveListRow.idProperty; };
             UarSrDirAboveListGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
             UarSrDirAboveListGrid.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
+            UarSrDirAboveListGrid.prototype.getButtons = function () {
+                // call base method to get list of buttons
+                // by default, base entity grid adds a few buttons, 
+                // add, refresh, column selection in order.
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
+                return buttons;
+            };
             UarSrDirAboveListGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], UarSrDirAboveListGrid);
@@ -14414,7 +14429,7 @@ var DAP;
         var UarUnknownReviewerDialog = /** @class */ (function (_super) {
             __extends(UarUnknownReviewerDialog, _super);
             function UarUnknownReviewerDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
+                var _this = _super.call(this) || this;
                 _this.form = new PCHODS.UarUnknownReviewerForm(_this.idPrefix);
                 return _this;
             }
@@ -14423,6 +14438,12 @@ var DAP;
             UarUnknownReviewerDialog.prototype.getLocalTextPrefix = function () { return PCHODS.UarUnknownReviewerRow.localTextPrefix; };
             UarUnknownReviewerDialog.prototype.getNameProperty = function () { return PCHODS.UarUnknownReviewerRow.nameProperty; };
             UarUnknownReviewerDialog.prototype.getService = function () { return PCHODS.UarUnknownReviewerService.baseUrl; };
+            UarUnknownReviewerDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "apply-changes-button"; }), 1);
+                return b;
+            };
             UarUnknownReviewerDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], UarUnknownReviewerDialog);
@@ -14445,6 +14466,15 @@ var DAP;
             UarUnknownReviewerGrid.prototype.getIdProperty = function () { return PCHODS.UarUnknownReviewerRow.idProperty; };
             UarUnknownReviewerGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarUnknownReviewerRow.localTextPrefix; };
             UarUnknownReviewerGrid.prototype.getService = function () { return PCHODS.UarUnknownReviewerService.baseUrl; };
+            UarUnknownReviewerGrid.prototype.getButtons = function () {
+                // call base method to get list of buttons
+                // by default, base entity grid adds a few buttons, 
+                // add, refresh, column selection in order.
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
+                return buttons;
+            };
             UarUnknownReviewerGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], UarUnknownReviewerGrid);

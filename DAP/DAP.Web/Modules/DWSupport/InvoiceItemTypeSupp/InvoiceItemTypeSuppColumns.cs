@@ -16,6 +16,7 @@ namespace DAP.DWSupport.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Decimal InvoiceItemTypeGenNatKey { get; set; }
         [EditLink]
+        public String ComponentCd { get; set; }
         public String InvoiceClassType1Cd { get; set; }
         public String InvoiceClassType2Cd { get; set; }
         public String InvoiceClassType3Cd { get; set; }
@@ -25,7 +26,7 @@ namespace DAP.DWSupport.Columns
         public String InvoiceItemSubTypeCd { get; set; }
         public String InvoiceItemSubType2Cd { get; set; }
         public String InvoiceItemSubType3Cd { get; set; }
-        public String ComponentCd { get; set; }
+        
         public String ComponentDesc { get; set; }
         public String ChartOfAccountNbr { get; set; }
         public String CommentsTxt { get; set; }

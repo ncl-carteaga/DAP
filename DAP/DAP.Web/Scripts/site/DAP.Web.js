@@ -8975,11 +8975,11 @@ var DAP;
                 _this.form = new DWSupport.AgencySnapshotRequestForm(_this.idPrefix);
                 _this.form.RequestedByDate.addValidationRule(_this.uniqueName, function (e) {
                     var rdt = new Date(Q.formatDate(_this.form.RequestedByDate.value, "MM/dd/yyyy"));
-                    //pdt.setHours(0, 0, 0, 0);
+                    rdt.setHours(0, 0, 0, 0);
                     var dt = new Date(Q.formatDate(new Date(), "MM/dd/yyyy"));
-                    //dt.setHours(0, 0, 0, 0);
-                    if (rdt.getTime() < dt.getTime()) {
-                        return "Requested Date Should be greater han Today";
+                    dt.setHours(0, 0, 0, 0);
+                    if (rdt.getTime() <= dt.getTime()) {
+                        return "Requested Date Should be greater than Today";
                     }
                 });
                 return _this;
