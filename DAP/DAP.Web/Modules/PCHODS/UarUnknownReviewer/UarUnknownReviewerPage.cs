@@ -6,7 +6,7 @@ namespace DAP.PCHODS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODS/UarUnknownReviewer"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.UarUnknownReviewerRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.UarUnknownReviewerController)]
     public class UarUnknownReviewerController : Controller
     {
         public ActionResult Index()

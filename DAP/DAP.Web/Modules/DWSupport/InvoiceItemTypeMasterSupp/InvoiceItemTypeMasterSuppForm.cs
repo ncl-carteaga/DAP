@@ -20,9 +20,13 @@ namespace DAP.DWSupport.Forms
         public String InvoiceItemSubType2Cd { get; set; }
         public String InvoiceItemSubType3Cd { get; set; }
         public String CommentsTxt { get; set; }
+        [Visible(false)]
         public DateTime CreatedTs { get; set; }
+        [Visible(false)]
         public String CreatedByNam { get; set; }
+        [Visible(false)]
         public String ModifiedByNam { get; set; }
+        [Visible(false)]
         public DateTime ModifiedTs { get; set; }
     }
 }

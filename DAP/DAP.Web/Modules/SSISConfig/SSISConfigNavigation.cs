@@ -2,6 +2,7 @@
 using MyPages = DAP.SSISConfig.Pages;
 using MyPages2 = DAP.NCLHODSMICROS.Pages;
 using MyPages3 = DAP.NCLHODSSPENDVIS.Pages;
+using MyPages4 = DAP.NCLHDSAR.Pages;
 
 [assembly: NavigationMenu(int.MaxValue, "SSIS Config", icon: "fa fa-gear")]
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/Config Base (DWH)", typeof(MyPages.SsisConfigBaseController), icon: "fa fa-wrench")]
@@ -12,4 +13,5 @@ using MyPages3 = DAP.NCLHODSSPENDVIS.Pages;
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/GSC Micros Data Flow", typeof(MyPages.MicrosDataFlowController), icon: "fa fa-wrench")]
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/CBS FR Data Flow", typeof(MyPages2.DataFlowController), icon: "fa fa-wrench")]
 [assembly: NavigationLink(int.MaxValue, "SSIS Config/SAP ARIBA Data Flow", typeof(MyPages3.DataFlowController), icon: "fa fa-wrench")]
-[assembly: NavigationLink(int.MaxValue, "SSIS Config/Nclh Ship", typeof(MyPages.NclhShipController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "SSIS Config/DSAR Data Flow", typeof(MyPages4.DataFlowController), icon: "fa fa-wrench")]
+[assembly: NavigationLink(int.MaxValue, "SSIS Config/Nclh Ship", typeof(MyPages.NclhShipController), icon: "fa fa-wrench")]

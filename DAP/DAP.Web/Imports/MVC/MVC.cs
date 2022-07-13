@@ -68,6 +68,21 @@ namespace MVC
 
         public static class DWSupport
         {
+            public static class AmenitiesSupp
+            {
+                public const string AmenitiesSuppIndex = "~/Modules/DWSupport/AmenitiesSupp/AmenitiesSuppIndex.cshtml";
+            }
+
+            public static class AmenityDetailsSupp
+            {
+                public const string AmenityDetailsSuppIndex = "~/Modules/DWSupport/AmenityDetailsSupp/AmenityDetailsSuppIndex.cshtml";
+            }
+
+            public static class AmenityMasterDetail
+            {
+                public const string Index = "~/Modules/DWSupport/AmenityMasterDetail/Index.cshtml";
+            }
+
             public static class DistrictMasterSupp
             {
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
@@ -81,6 +96,11 @@ namespace MVC
             public static class GuestPreventDeparture
             {
                 public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";
+            }
+
+            public static class ImportErrorLog
+            {
+                public const string ImportErrorLogIndex = "~/Modules/DWSupport/ImportErrorLog/ImportErrorLogIndex.cshtml";
             }
 
             public static class InvoiceItemTypeMasterSupp
@@ -292,6 +312,16 @@ namespace MVC
                 public const string OutboundMonthlyRptArchiveOverrideIndex = "~/Modules/PCHODS/OutboundMonthlyRptArchiveOverride/OutboundMonthlyRptArchiveOverrideIndex.cshtml";
             }
 
+            public static class UarSrDirAboveList
+            {
+                public const string UarSrDirAboveListIndex = "~/Modules/PCHODS/UarSrDirAboveList/UarSrDirAboveListIndex.cshtml";
+            }
+
+            public static class UarUnknownReviewer
+            {
+                public const string UarUnknownReviewerIndex = "~/Modules/PCHODS/UarUnknownReviewer/UarUnknownReviewerIndex.cshtml";
+            }
+
         }
 
         public static class PCHODSNVS
@@ -304,6 +334,11 @@ namespace MVC
             public static class GsaDistributionList
             {
                 public const string GsaDistributionListIndex = "~/Modules/PCHODSNVS/GsaDistributionList/GsaDistributionListIndex.cshtml";
+            }
+
+            public static class JobManagement
+            {
+                public const string JobManagementIndex = "~/Modules/PCHODSNVS/JobManagement/JobManagementIndex.cshtml";
             }
 
             public static class NtrBudget

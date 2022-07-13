@@ -9597,6 +9597,36 @@ button.ui-button {
 .s-DWSupport-MasterDialog .caption {
   width: 150px;
 }
+.s-DWSupport-AmenitiesSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AmenitiesSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-AmenityDetailsSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AmenityDetailsSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-ImportErrorLogDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-ImportErrorLogDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-InvoiceItemTypeSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-InvoiceItemTypeSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-AgencySnapshotRequestDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AgencySnapshotRequestDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
@@ -9764,6 +9794,12 @@ button.ui-button {
 }
 .s-NoteDialog .ui-dialog-content {
   padding-bottom: 10px;
+}
+.s-NCLHDSAR-DataFlowDialog > .size {
+  width: 650px;
+}
+.s-NCLHDSAR-DataFlowDialog .caption {
+  width: 150px;
 }
 .s-NCLHODSMICROS-DataFlowDialog > .size {
   width: 650px;

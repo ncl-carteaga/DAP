@@ -43,6 +43,36 @@ namespace DAP.DWSupport {
                 separator: true
             });
 
+            buttons.push(Common.ExcelExportHelper.createToolButton({
+                grid: this,
+                service: SailingMasterSuppService.baseUrl + '/ListExcel',
+                onViewSubmit: () => this.onViewSubmit(),
+                separator: true,
+                title: "Export to Excel"
+            }));
+
+            // add our import button
+            buttons.push({
+                title: 'Import From Excel',
+                cssClass: 'export-xlsx-button',
+                onClick: () => {
+                    // open import dialog, let it handle rest
+                    var dialog = new SailingMasterSuppExcelImportDialog();
+                    dialog.element.on('dialogclose', () => {
+                        this.refresh();
+                        dialog = null;
+                    });
+                    dialog.dialogOpen();
+                }
+            });
+
+            buttons.push({
+                title: 'Show Error Log',
+                cssClass: 'info-button',
+                onClick: e => this.showErrorLogClick(),
+                separator: true
+            });
+
             return buttons;
         }
 
@@ -217,9 +247,9 @@ namespace DAP.DWSupport {
             interportcd.referencedFields = [fld.InterportCd];
             interportcd.format = ctx => this.selectYNFormatter(ctx, fld.InterportCd);
 
-            //var chartercd = Q.first(columns, x => x.field === fld.CharterCd);
-            //chartercd.referencedFields = [fld.CharterCd];
-            //chartercd.format = ctx => this.selectYNFormatter(ctx, fld.CharterCd);
+            var chartercd = Q.first(columns, x => x.field === fld.CharterCd);
+            chartercd.referencedFields = [fld.CharterCd];
+            chartercd.format = ctx => this.selectYNFormatter(ctx, fld.CharterCd);
 
             return columns;
         }
@@ -307,5 +337,18 @@ namespace DAP.DWSupport {
                 });
             })();
         }
+
+        private showErrorLogClick() {
+
+           let dialog = new DWSupport.ImportErrorLogGridDialog();
+            ////dialog.returnData = (dataList) => {
+            ////    this._CompanyID = dataList;
+            ////};
+            this.initDialog(dialog);
+            dialog.dialogOpen();
+
+
+        }
+
     }
 }

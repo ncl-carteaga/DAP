@@ -10,7 +10,7 @@ namespace DAP.DWSupport.Entities
     using System.IO;
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[INVOICE_ITEM_TYPE_MASTER_SUPP]")]
-    [DisplayName("Invoice Item Type Master Supp"), InstanceName("Invoice Item Type Master Supp")]
+    [DisplayName("Invoice Item Type Master"), InstanceName("Invoice Item Type Master Supp")]
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
@@ -66,28 +66,28 @@ namespace DAP.DWSupport.Entities
             set { Fields.CommentsTxt[this] = value; }
         }
 
-        [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull]
+        [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull, Updatable(false), Insertable(false)]
         public DateTime? CreatedTs
         {
             get { return Fields.CreatedTs[this]; }
             set { Fields.CreatedTs[this] = value; }
         }
 
-        [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull]
+        [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull, Updatable(false), Insertable(false)]
         public String CreatedByNam
         {
             get { return Fields.CreatedByNam[this]; }
             set { Fields.CreatedByNam[this] = value; }
         }
 
-        [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50)]
+        [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50), Updatable(false), Insertable(false)]
         public String ModifiedByNam
         {
             get { return Fields.ModifiedByNam[this]; }
             set { Fields.ModifiedByNam[this] = value; }
         }
 
-        [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull]
+        [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull, Updatable(false), Insertable(false)]
         public DateTime? ModifiedTs
         {
             get { return Fields.ModifiedTs[this]; }

@@ -1,11 +1,11 @@
 ﻿namespace DAP.DWSupport {
     export interface InvoiceItemTypeMasterSuppForm {
-        InvoiceItemTypeCd: Serenity.StringEditor;
-        InvoiceItemSubTypeCd: Serenity.StringEditor;
-        InvoiceItemSubType2Cd: Serenity.StringEditor;
-        InvoiceItemSubType3Cd: Serenity.StringEditor;
-        InvoiceItemSourceCd: Serenity.StringEditor;
         MasterComponentCd: Serenity.LookupEditor;
+        InvoiceItemSourceCd: Serenity.LookupEditor;
+        InvoiceItemTypeCd: Serenity.LookupEditor;
+        InvoiceItemSubTypeCd: Serenity.LookupEditor;
+        InvoiceItemSubType2Cd: Serenity.LookupEditor;
+        InvoiceItemSubType3Cd: Serenity.LookupEditor;
         CommentsTxt: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -24,21 +24,21 @@
                 InvoiceItemTypeMasterSuppForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.LookupEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.StringEditor;
                 var w2 = s.DateEditor;
 
                 Q.initFormType(InvoiceItemTypeMasterSuppForm, [
+                    'MasterComponentCd', w0,
+                    'InvoiceItemSourceCd', w0,
                     'InvoiceItemTypeCd', w0,
                     'InvoiceItemSubTypeCd', w0,
                     'InvoiceItemSubType2Cd', w0,
                     'InvoiceItemSubType3Cd', w0,
-                    'InvoiceItemSourceCd', w0,
-                    'MasterComponentCd', w1,
-                    'CommentsTxt', w0,
+                    'CommentsTxt', w1,
                     'CreatedTs', w2,
-                    'CreatedByNam', w0,
-                    'ModifiedByNam', w0,
+                    'CreatedByNam', w1,
+                    'ModifiedByNam', w1,
                     'ModifiedTs', w2
                 ]);
             }

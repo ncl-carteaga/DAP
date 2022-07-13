@@ -10,9 +10,11 @@ namespace DAP.PCHODS.Entities
     using System.IO;
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[UAR_Sr_Dir_above_list]")]
-    [DisplayName("Uar Sr Dir Above List"), InstanceName("Uar Sr Dir Above List")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [DisplayName("Sr. Dir. Above List"), InstanceName("Uar Sr Dir Above List")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
+    [DataAuditLog]
     public sealed class UarSrDirAboveListRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("ID"), Identity]
@@ -22,7 +24,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Jobtitle"), Column("jobtitle"), Size(100), NotNull, QuickSearch]
+        [DisplayName("Jobtitle"), Column("jobtitle"), Size(100), NotNull, QuickSearch, ReadOnly(true)]
         public String Jobtitle
         {
             get { return Fields.Jobtitle[this]; }
@@ -36,21 +38,21 @@ namespace DAP.PCHODS.Entities
             set { Fields.IsSrDirAbove[this] = value; }
         }
 
-        [DisplayName("Date Effective"), NotNull]
+        [DisplayName("Date Effective"), NotNull, ReadOnly(true)]
         public DateTime? DateEffective
         {
             get { return Fields.DateEffective[this]; }
             set { Fields.DateEffective[this] = value; }
         }
 
-        [DisplayName("Date Expires")]
+        [DisplayName("Date Expires"), ReadOnly(true)]
         public DateTime? DateExpires
         {
             get { return Fields.DateExpires[this]; }
             set { Fields.DateExpires[this] = value; }
         }
 
-        [DisplayName("Row Change Reason"), Size(120), NotNull]
+        [DisplayName("Row Change Reason"), Size(120), NotNull, ReadOnly(true)]
         public String RowChangeReason
         {
             get { return Fields.RowChangeReason[this]; }

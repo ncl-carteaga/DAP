@@ -51,5 +51,8 @@ namespace DAP.NCLHDSAR
 
         [Description("[General]")]
         public const string General = "NCLHDSAR:General";
+
+        [Description("[ConfigAdmin]")]
+        public const string ConfigAdmin = "NCLHDSAR:ConfigAdmin";
     }
 }

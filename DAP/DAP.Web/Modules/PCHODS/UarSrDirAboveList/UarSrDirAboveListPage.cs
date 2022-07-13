@@ -6,7 +6,7 @@ namespace DAP.PCHODS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODS/UarSrDirAboveList"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.UarSrDirAboveListRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.UarSrDirAboveListController)]
     public class UarSrDirAboveListController : Controller
     {
         public ActionResult Index()

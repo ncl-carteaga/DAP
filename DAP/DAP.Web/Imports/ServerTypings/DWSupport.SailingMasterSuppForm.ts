@@ -4,12 +4,11 @@
         PackageTypeCd: Serenity.LookupEditor;
         SailDat: Serenity.DateEditor;
         ShipCd: Serenity.StringEditor;
-        ShipNbr: Serenity.StringEditor;
+        ShipNbr: Serenity.MaskedEditor;
         MandateWeeksQty: Serenity.IntegerEditor;
         ValidVoyageCd: SelectYNEditor;
         ProductCd: Serenity.LookupEditor;
         SlProductCd: Serenity.LookupEditor;
-        LatitudeCruiseCd: Serenity.StringEditor;
         FareFeedIncludeCd: SelectYNEditor;
         InactiveCd: SelectYNEditor;
         RmsSeasonCd: Serenity.StringEditor;
@@ -34,6 +33,7 @@
         RmsParentSail13Id: Serenity.IntegerEditor;
         RmsParentSail14Id: Serenity.IntegerEditor;
         RmsParentSail15Id: Serenity.IntegerEditor;
+        LatitudeCruiseCd: SelectYNEditor;
         BackToBackCd: SelectYNEditor;
         AmenityPtsQty: Serenity.DecimalEditor;
         JonesActSailId: Serenity.IntegerEditor;
@@ -70,26 +70,26 @@
                 var w1 = s.LookupEditor;
                 var w2 = s.DateEditor;
                 var w3 = s.StringEditor;
-                var w4 = SelectYNEditor;
-                var w5 = s.DecimalEditor;
+                var w4 = s.MaskedEditor;
+                var w5 = SelectYNEditor;
+                var w6 = s.DecimalEditor;
 
                 Q.initFormType(SailingMasterSuppForm, [
                     'SailId', w0,
                     'PackageTypeCd', w1,
                     'SailDat', w2,
                     'ShipCd', w3,
-                    'ShipNbr', w3,
+                    'ShipNbr', w4,
                     'MandateWeeksQty', w0,
-                    'ValidVoyageCd', w4,
+                    'ValidVoyageCd', w5,
                     'ProductCd', w1,
                     'SlProductCd', w1,
-                    'LatitudeCruiseCd', w3,
-                    'FareFeedIncludeCd', w4,
-                    'InactiveCd', w4,
+                    'FareFeedIncludeCd', w5,
+                    'InactiveCd', w5,
                     'RmsSeasonCd', w3,
-                    'MainVoyageCd', w4,
-                    'InterportCd', w4,
-                    'CharterCd', w4,
+                    'MainVoyageCd', w5,
+                    'InterportCd', w5,
+                    'CharterCd', w5,
                     'RmsForecastCd', w0,
                     'RmsColorNameDesc', w3,
                     'RmsRefLinkSailId', w0,
@@ -108,25 +108,26 @@
                     'RmsParentSail13Id', w0,
                     'RmsParentSail14Id', w0,
                     'RmsParentSail15Id', w0,
-                    'BackToBackCd', w4,
-                    'AmenityPtsQty', w5,
+                    'LatitudeCruiseCd', w5,
+                    'BackToBackCd', w5,
+                    'AmenityPtsQty', w6,
                     'JonesActSailId', w0,
-                    'FsGrpAmenityAmt', w5,
+                    'FsGrpAmenityAmt', w6,
                     'ObrTradeCd', w3,
                     'ObrSubTradeCd', w3,
                     'ObrSeasonCd', w3,
                     'ProxySailId', w0,
                     'OnSaleDat', w2,
                     'SeasonYearCd', w3,
-                    'IsVoyageExceptionCd', w4,
+                    'IsVoyageExceptionCd', w5,
                     'VoyageExceptionDesc', w3,
                     'ItineraryChangedDat', w2,
-                    'IsHolidayCd', w4,
+                    'IsHolidayCd', w5,
                     'ProxyBudgetSailId', w0,
                     'ProxyMetaWeightSailId', w0,
                     'IsFreeOpenBarCd', w3,
                     'CasinoCabinCapacityQty', w0,
-                    'IsExtraordinaryCd', w4
+                    'IsExtraordinaryCd', w5
                 ]);
             }
         }
