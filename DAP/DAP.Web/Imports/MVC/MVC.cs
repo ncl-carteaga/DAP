@@ -68,6 +68,11 @@ namespace MVC
 
         public static class DWSupport
         {
+            public static class AgencySnapshotRequest
+            {
+                public const string AgencySnapshotRequestIndex = "~/Modules/DWSupport/AgencySnapshotRequest/AgencySnapshotRequestIndex.cshtml";
+            }
+
             public static class AmenitiesSupp
             {
                 public const string AmenitiesSuppIndex = "~/Modules/DWSupport/AmenitiesSupp/AmenitiesSuppIndex.cshtml";
@@ -106,6 +111,11 @@ namespace MVC
             public static class InvoiceItemTypeMasterSupp
             {
                 public const string InvoiceItemTypeMasterSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml";
+            }
+
+            public static class InvoiceItemTypeSupp
+            {
+                public const string InvoiceItemTypeSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeSupp/InvoiceItemTypeSuppIndex.cshtml";
             }
 
             public static class PortSubstitutionSupp
@@ -184,6 +194,11 @@ namespace MVC
             public static class Assignee
             {
                 public const string AssigneeIndex = "~/Modules/NCLHDSAR/Assignee/AssigneeIndex.cshtml";
+            }
+
+            public static class DataFlow
+            {
+                public const string DataFlowIndex = "~/Modules/NCLHDSAR/DataFlow/DataFlowIndex.cshtml";
             }
 
             public static class Request

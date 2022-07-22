@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface ShipRow {
         ShipCode?: string;
         ShipName?: string;
@@ -11,19 +10,18 @@ namespace DAP.DWSupport {
         export const idProperty = 'ShipCode';
         export const nameProperty = 'ShipCode';
         export const localTextPrefix = 'DWSupport.Ship';
+        export const lookupKey = 'DWSupport.ShipCode';
 
-        export namespace Fields {
-            export declare const ShipCode;
-            export declare const ShipName;
-            export declare const Brand;
-            export declare const IsActive;
+        export function getLookup(): Q.Lookup<ShipRow> {
+            return Q.getLookup<ShipRow>('DWSupport.ShipCode');
         }
 
-        [
-            'ShipCode',
-            'ShipName',
-            'Brand',
-            'IsActive'
-        ].forEach(x => (<any>Fields)[x] = x);
+        export declare const enum Fields {
+            ShipCode = "ShipCode",
+            ShipName = "ShipName",
+            Brand = "Brand",
+            IsActive = "IsActive"
+        }
     }
 }
+
