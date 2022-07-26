@@ -4740,28 +4740,26 @@ var DAP;
     (function (PCHODS) {
         var UarSrDirAboveListForm = /** @class */ (function (_super) {
             __extends(UarSrDirAboveListForm, _super);
-            function UarSrDirAboveListForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!UarSrDirAboveListForm.init) {
-                    UarSrDirAboveListForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.BooleanEditor;
-                    var w2 = s.DateEditor;
-                    Q.initFormType(UarSrDirAboveListForm, [
-                        'Jobtitle', w0,
-                        'IsSrDirAbove', w1,
-                        'DateEffective', w2,
-                        'DateExpires', w2,
-                        'RowChangeReason', w0
-                    ]);
-                }
-                return _this;
+            function UarSrDirAboveListForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
             }
             UarSrDirAboveListForm.formKey = 'PCHODS.UarSrDirAboveList';
             return UarSrDirAboveListForm;
         }(Serenity.PrefixedContext));
         PCHODS.UarSrDirAboveListForm = UarSrDirAboveListForm;
+        [,
+            ['Jobtitle', function () { return Serenity.StringEditor; }],
+            ['IsSrDirAbove', function () { return Serenity.IntegerEditor; }],
+            ['DateEffective', function () { return Serenity.DateEditor; }],
+            ['DateExpires', function () { return Serenity.DateEditor; }],
+            ['RowChangeReason', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(UarSrDirAboveListForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -4773,6 +4771,17 @@ var DAP;
             UarSrDirAboveListRow.idProperty = 'Id';
             UarSrDirAboveListRow.nameProperty = 'Jobtitle';
             UarSrDirAboveListRow.localTextPrefix = 'PCHODS.UarSrDirAboveList';
+            var Fields;
+            (function (Fields) {
+            })(Fields = UarSrDirAboveListRow.Fields || (UarSrDirAboveListRow.Fields = {}));
+            [
+                'Id',
+                'Jobtitle',
+                'IsSrDirAbove',
+                'DateEffective',
+                'DateExpires',
+                'RowChangeReason'
+            ].forEach(function (x) { return Fields[x] = x; });
         })(UarSrDirAboveListRow = PCHODS.UarSrDirAboveListRow || (PCHODS.UarSrDirAboveListRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -4783,6 +4792,9 @@ var DAP;
         var UarSrDirAboveListService;
         (function (UarSrDirAboveListService) {
             UarSrDirAboveListService.baseUrl = 'PCHODS/UarSrDirAboveList';
+            var Methods;
+            (function (Methods) {
+            })(Methods = UarSrDirAboveListService.Methods || (UarSrDirAboveListService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -4793,6 +4805,7 @@ var DAP;
                 UarSrDirAboveListService[x] = function (r, s, o) {
                     return Q.serviceRequest(UarSrDirAboveListService.baseUrl + '/' + x, r, s, o);
                 };
+                Methods[x] = UarSrDirAboveListService.baseUrl + '/' + x;
             });
         })(UarSrDirAboveListService = PCHODS.UarSrDirAboveListService || (PCHODS.UarSrDirAboveListService = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
@@ -14320,15 +14333,6 @@ var DAP;
             UarSrDirAboveListGrid.prototype.getIdProperty = function () { return PCHODS.UarSrDirAboveListRow.idProperty; };
             UarSrDirAboveListGrid.prototype.getLocalTextPrefix = function () { return PCHODS.UarSrDirAboveListRow.localTextPrefix; };
             UarSrDirAboveListGrid.prototype.getService = function () { return PCHODS.UarSrDirAboveListService.baseUrl; };
-            UarSrDirAboveListGrid.prototype.getButtons = function () {
-                // call base method to get list of buttons
-                // by default, base entity grid adds a few buttons, 
-                // add, refresh, column selection in order.
-                var buttons = _super.prototype.getButtons.call(this);
-                buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
-                //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
-                return buttons;
-            };
             UarSrDirAboveListGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], UarSrDirAboveListGrid);

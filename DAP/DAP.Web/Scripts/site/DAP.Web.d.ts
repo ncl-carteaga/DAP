@@ -5432,17 +5432,15 @@ declare namespace DAP.PCHODS {
 declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
+    class UarSrDirAboveListForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
     interface UarSrDirAboveListForm {
         Jobtitle: Serenity.StringEditor;
-        IsSrDirAbove: Serenity.BooleanEditor;
+        IsSrDirAbove: Serenity.IntegerEditor;
         DateEffective: Serenity.DateEditor;
         DateExpires: Serenity.DateEditor;
         RowChangeReason: Serenity.StringEditor;
-    }
-    class UarSrDirAboveListForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
     }
 }
 declare namespace DAP.PCHODS {
@@ -5458,13 +5456,13 @@ declare namespace DAP.PCHODS {
         const idProperty = "Id";
         const nameProperty = "Jobtitle";
         const localTextPrefix = "PCHODS.UarSrDirAboveList";
-        const enum Fields {
-            Id = "Id",
-            Jobtitle = "Jobtitle",
-            IsSrDirAbove = "IsSrDirAbove",
-            DateEffective = "DateEffective",
-            DateExpires = "DateExpires",
-            RowChangeReason = "RowChangeReason"
+        namespace Fields {
+            const Id: any;
+            const Jobtitle: any;
+            const IsSrDirAbove: any;
+            const DateEffective: any;
+            const DateExpires: any;
+            const RowChangeReason: any;
         }
     }
 }
@@ -5476,12 +5474,12 @@ declare namespace DAP.PCHODS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UarSrDirAboveListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UarSrDirAboveListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "PCHODS/UarSrDirAboveList/Create",
-            Update = "PCHODS/UarSrDirAboveList/Update",
-            Delete = "PCHODS/UarSrDirAboveList/Delete",
-            Retrieve = "PCHODS/UarSrDirAboveList/Retrieve",
-            List = "PCHODS/UarSrDirAboveList/List"
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
         }
     }
 }
@@ -9069,7 +9067,6 @@ declare namespace DAP.PCHODS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.PCHODS {
