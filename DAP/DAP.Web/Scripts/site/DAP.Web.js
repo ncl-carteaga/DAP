@@ -4740,26 +4740,28 @@ var DAP;
     (function (PCHODS) {
         var UarSrDirAboveListForm = /** @class */ (function (_super) {
             __extends(UarSrDirAboveListForm, _super);
-            function UarSrDirAboveListForm() {
-                return _super !== null && _super.apply(this, arguments) || this;
+            function UarSrDirAboveListForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!UarSrDirAboveListForm.init) {
+                    UarSrDirAboveListForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.BooleanEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(UarSrDirAboveListForm, [
+                        'Jobtitle', w0,
+                        'IsSrDirAbove', w1,
+                        'DateEffective', w2,
+                        'DateExpires', w2,
+                        'RowChangeReason', w0
+                    ]);
+                }
+                return _this;
             }
             UarSrDirAboveListForm.formKey = 'PCHODS.UarSrDirAboveList';
             return UarSrDirAboveListForm;
         }(Serenity.PrefixedContext));
         PCHODS.UarSrDirAboveListForm = UarSrDirAboveListForm;
-        [,
-            ['Jobtitle', function () { return Serenity.StringEditor; }],
-            ['IsSrDirAbove', function () { return Serenity.IntegerEditor; }],
-            ['DateEffective', function () { return Serenity.DateEditor; }],
-            ['DateExpires', function () { return Serenity.DateEditor; }],
-            ['RowChangeReason', function () { return Serenity.StringEditor; }]
-        ].forEach(function (x) { return Object.defineProperty(UarSrDirAboveListForm.prototype, x[0], {
-            get: function () {
-                return this.w(x[0], x[1]());
-            },
-            enumerable: true,
-            configurable: true
-        }); });
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -4771,17 +4773,6 @@ var DAP;
             UarSrDirAboveListRow.idProperty = 'Id';
             UarSrDirAboveListRow.nameProperty = 'Jobtitle';
             UarSrDirAboveListRow.localTextPrefix = 'PCHODS.UarSrDirAboveList';
-            var Fields;
-            (function (Fields) {
-            })(Fields = UarSrDirAboveListRow.Fields || (UarSrDirAboveListRow.Fields = {}));
-            [
-                'Id',
-                'Jobtitle',
-                'IsSrDirAbove',
-                'DateEffective',
-                'DateExpires',
-                'RowChangeReason'
-            ].forEach(function (x) { return Fields[x] = x; });
         })(UarSrDirAboveListRow = PCHODS.UarSrDirAboveListRow || (PCHODS.UarSrDirAboveListRow = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
@@ -4792,9 +4783,6 @@ var DAP;
         var UarSrDirAboveListService;
         (function (UarSrDirAboveListService) {
             UarSrDirAboveListService.baseUrl = 'PCHODS/UarSrDirAboveList';
-            var Methods;
-            (function (Methods) {
-            })(Methods = UarSrDirAboveListService.Methods || (UarSrDirAboveListService.Methods = {}));
             [
                 'Create',
                 'Update',
@@ -4805,7 +4793,6 @@ var DAP;
                 UarSrDirAboveListService[x] = function (r, s, o) {
                     return Q.serviceRequest(UarSrDirAboveListService.baseUrl + '/' + x, r, s, o);
                 };
-                Methods[x] = UarSrDirAboveListService.baseUrl + '/' + x;
             });
         })(UarSrDirAboveListService = PCHODS.UarSrDirAboveListService || (PCHODS.UarSrDirAboveListService = {}));
     })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
@@ -5883,7 +5870,8 @@ var DAP;
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'ExcelImport'
             ].forEach(function (x) {
                 TransferEstimateOciAmtService[x] = function (r, s, o) {
                     return Q.serviceRequest(TransferEstimateOciAmtService.baseUrl + '/' + x, r, s, o);
@@ -15708,6 +15696,33 @@ var DAP;
             TransferEstimateOciAmtGrid.prototype.getIdProperty = function () { return PCHODSNVS.TransferEstimateOciAmtRow.idProperty; };
             TransferEstimateOciAmtGrid.prototype.getLocalTextPrefix = function () { return PCHODSNVS.TransferEstimateOciAmtRow.localTextPrefix; };
             TransferEstimateOciAmtGrid.prototype.getService = function () { return PCHODSNVS.TransferEstimateOciAmtService.baseUrl; };
+            TransferEstimateOciAmtGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                // export button
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: PCHODSNVS.TransferEstimateOciAmtService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export to Excel"
+                }));
+                // import button
+                buttons.push({
+                    title: 'Import From Excel',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new PCHODSNVS.TransferEstimateOciAmtExcelImportDialog();
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                return buttons;
+            };
             TransferEstimateOciAmtGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], TransferEstimateOciAmtGrid);
@@ -16131,5 +16146,82 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var TransferEstimateOciAmtExcelImportDialog = /** @class */ (function (_super) {
+            __extends(TransferEstimateOciAmtExcelImportDialog, _super);
+            function TransferEstimateOciAmtExcelImportDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new PCHODSNVS.TransferEstimateOciAmtExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            TransferEstimateOciAmtExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            TransferEstimateOciAmtExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            PCHODSNVS.TransferEstimateOciAmtService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            TransferEstimateOciAmtExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], TransferEstimateOciAmtExcelImportDialog);
+            return TransferEstimateOciAmtExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        PCHODSNVS.TransferEstimateOciAmtExcelImportDialog = TransferEstimateOciAmtExcelImportDialog;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODSNVS;
+    (function (PCHODSNVS) {
+        var TransferEstimateOciAmtExcelImportForm = /** @class */ (function (_super) {
+            __extends(TransferEstimateOciAmtExcelImportForm, _super);
+            function TransferEstimateOciAmtExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!TransferEstimateOciAmtExcelImportForm.init) {
+                    TransferEstimateOciAmtExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(TransferEstimateOciAmtExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            TransferEstimateOciAmtExcelImportForm.formKey = 'PCHODSNVS.TransferEstimateOciAmtExcelImport';
+            return TransferEstimateOciAmtExcelImportForm;
+        }(Serenity.PrefixedContext));
+        PCHODSNVS.TransferEstimateOciAmtExcelImportForm = TransferEstimateOciAmtExcelImportForm;
+    })(PCHODSNVS = DAP.PCHODSNVS || (DAP.PCHODSNVS = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

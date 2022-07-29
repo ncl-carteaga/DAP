@@ -14,9 +14,12 @@ namespace DAP.PCHODS.Forms
     public class UarSrDirAboveListForm
     {
         public String Jobtitle { get; set; }
-        public Int32 IsSrDirAbove { get; set; }
+        public Boolean IsSrDirAbove { get; set; }
+        [Visible(false)]
         public DateTime DateEffective { get; set; }
+        [Visible(false)]
         public DateTime DateExpires { get; set; }
+        [Visible(false)]
         public String RowChangeReason { get; set; }
     }
 }

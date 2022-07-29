@@ -1443,6 +1443,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1516,6 +1519,7 @@
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUDialog.ts" />
@@ -3288,6 +3292,7 @@
     <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
