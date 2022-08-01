@@ -179,6 +179,17 @@ namespace DAP.PCHODSNVS.Endpoints
                         importedValues.Clear();
                     }
 
+                    // ----------------- RETURN ON VALIDATION -------------- //
+                    // Validate field value based against database
+                    var fieldValid = myImpHelp.validImportedVal(uow, "[PCH_ODS_NVS].[dap].[GetCruiseSegment]", myFields.CruiseSegmentCd, a);
+                    if (!fieldValid) {//error; return
+                        response.ErrorList.Add("Invalid value for field: " + myFields.CruiseSegmentCd.Title);
+                        return response;
+                    }                    
+                    // -----------------        //           -------------- //
+
+
+
                     var currentRow = uow.Connection.TryFirst<TransferEstimateOciAmtRow>(q => q
                         .Select(myFields.TransferId)
                         .Where(myFields.CruiseSegmentCd == Cruise_segment_cd.ToString()));
@@ -227,7 +238,7 @@ namespace DAP.PCHODSNVS.Endpoints
                         importedValues.Clear();
                     }
                     
-                    entType = jImpHelp.entryType.String; //designate the type of item
+                    entType = jImpHelp.entryType.Decimal; //designate the type of item
                     fieldTitle = myFields.TransferCostPerPax.Title; //designate the field to be looked at
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
@@ -288,7 +299,8 @@ namespace DAP.PCHODSNVS.Endpoints
                     response.ErrorList.Add("Exception on Row " + row + ": Field: " + fieldTitle + ": " + ex.Message);
                     //response.ErrorList.Add("Value: " + a);
                 }
-            }
+            } // for loop
+
             return response;
         }
 

@@ -17,7 +17,7 @@ namespace DAP.PCHODSNVS.Columns
         public String CruiseSegmentCd { get; set; }
         public String SegmentMarketName { get; set; }
         public String ShipCd { get; set; }
-        public String TransferCostPerPax { get; set; }
+        public Decimal TransferCostPerPax { get; set; }
         public DateTime LoadDt { get; set; }
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 TransferId { get; set; }

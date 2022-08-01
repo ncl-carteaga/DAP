@@ -38,8 +38,8 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.ShipCd[this] = value; }
         }
 
-        [DisplayName("Transfer Cost Per Pax"), Column("Transfer_cost_per_pax"), Size(50), NotNull]
-        public String TransferCostPerPax
+        [DisplayName("Transfer Cost Per Pax"), Column("Transfer_cost_per_pax"), Size(50), NotNull, DecimalEditor(AllowNegatives = true)]
+        public Decimal? TransferCostPerPax
         {
             get { return Fields.TransferCostPerPax[this]; }
             set { Fields.TransferCostPerPax[this] = value; }
@@ -81,7 +81,7 @@ namespace DAP.PCHODSNVS.Entities
             public StringField SegmentMarketName;
             public StringField CruiseSegmentCd;
             public StringField ShipCd;
-            public StringField TransferCostPerPax;
+            public DecimalField TransferCostPerPax;
             public DateTimeField LoadDt;
             public Int32Field TransferId;
         }
