@@ -199,7 +199,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.AdDescription[this] = value; }
         }
 
-        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50)]
+        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50), LookupEditor("PCHODS.UarEmployeeDirectreports")]
         public String ReviewerItCompliance
         {
             get { return Fields.ReviewerItCompliance[this]; }

@@ -112,8 +112,8 @@ C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\bin\System.Web.Razor.xml
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\bin\System.Web.WebPages.xml
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\bin\System.Web.WebPages.Razor.xml
-C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csprojAssemblyReference.cache
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CoreCompileInputs.cache
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CopyComplete
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.dll
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.pdb
+C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csprojAssemblyReference.cache

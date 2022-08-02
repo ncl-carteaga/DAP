@@ -5430,17 +5430,62 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+    interface UarEmployeeDirectreportsRow {
+        EmployeeId?: string;
+        EmployeeFirstName?: string;
+        EmployeeLastName?: string;
+        EmpCompanyCd?: string;
+        EmpCompanyDesc?: string;
+        EmpJobtitle?: string;
+        EmpJobcode?: string;
+        EmpEmail?: string;
+        EmpStatus?: string;
+        SupEmployeeId?: string;
+        SupFirstName?: string;
+        SupLastName?: string;
+        SupJobtitle?: string;
+        SupJobcode?: string;
+        SupLevel?: number;
+        IsSrDir?: number;
+    }
+    namespace UarEmployeeDirectreportsRow {
+        const idProperty = "EmployeeId";
+        const nameProperty = "EmployeeId";
+        const localTextPrefix = "PCHODS.UarEmployeeDirectreports";
+        const enum Fields {
+            EmployeeId = "EmployeeId",
+            EmployeeFirstName = "EmployeeFirstName",
+            EmployeeLastName = "EmployeeLastName",
+            EmpCompanyCd = "EmpCompanyCd",
+            EmpCompanyDesc = "EmpCompanyDesc",
+            EmpJobtitle = "EmpJobtitle",
+            EmpJobcode = "EmpJobcode",
+            EmpEmail = "EmpEmail",
+            EmpStatus = "EmpStatus",
+            SupEmployeeId = "SupEmployeeId",
+            SupFirstName = "SupFirstName",
+            SupLastName = "SupLastName",
+            SupJobtitle = "SupJobtitle",
+            SupJobcode = "SupJobcode",
+            SupLevel = "SupLevel",
+            IsSrDir = "IsSrDir"
+        }
+    }
 }
 declare namespace DAP.PCHODS {
-    class UarSrDirAboveListForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace DAP.PCHODS {
     interface UarSrDirAboveListForm {
         Jobtitle: Serenity.StringEditor;
         IsSrDirAbove: Serenity.IntegerEditor;
         DateEffective: Serenity.DateEditor;
         DateExpires: Serenity.DateEditor;
         RowChangeReason: Serenity.StringEditor;
+    }
+    class UarSrDirAboveListForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.PCHODS {
@@ -5456,13 +5501,13 @@ declare namespace DAP.PCHODS {
         const idProperty = "Id";
         const nameProperty = "Jobtitle";
         const localTextPrefix = "PCHODS.UarSrDirAboveList";
-        namespace Fields {
-            const Id: any;
-            const Jobtitle: any;
-            const IsSrDirAbove: any;
-            const DateEffective: any;
-            const DateExpires: any;
-            const RowChangeReason: any;
+        const enum Fields {
+            Id = "Id",
+            Jobtitle = "Jobtitle",
+            IsSrDirAbove = "IsSrDirAbove",
+            DateEffective = "DateEffective",
+            DateExpires = "DateExpires",
+            RowChangeReason = "RowChangeReason"
         }
     }
 }
@@ -5474,12 +5519,12 @@ declare namespace DAP.PCHODS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UarSrDirAboveListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UarSrDirAboveListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "PCHODS/UarSrDirAboveList/Create",
+            Update = "PCHODS/UarSrDirAboveList/Update",
+            Delete = "PCHODS/UarSrDirAboveList/Delete",
+            Retrieve = "PCHODS/UarSrDirAboveList/Retrieve",
+            List = "PCHODS/UarSrDirAboveList/List"
         }
     }
 }
@@ -9090,6 +9135,9 @@ declare namespace DAP.PCHODS {
         protected getService(): string;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
+        protected createSlickGrid(): Slick.Grid;
+        protected onViewProcessData(response: any): Serenity.ListResponse<UarUnknownReviewerRow>;
+        protected getColumns(): Slick.Column[];
     }
 }
 declare namespace DAP.PCHODSNVS {
