@@ -5430,49 +5430,6 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
-    interface UarEmployeeDirectreportsRow {
-        EmployeeId?: string;
-        EmployeeFirstName?: string;
-        EmployeeLastName?: string;
-        EmpCompanyCd?: string;
-        EmpCompanyDesc?: string;
-        EmpJobtitle?: string;
-        EmpJobcode?: string;
-        EmpEmail?: string;
-        EmpStatus?: string;
-        SupEmployeeId?: string;
-        SupFirstName?: string;
-        SupLastName?: string;
-        SupJobtitle?: string;
-        SupJobcode?: string;
-        SupLevel?: number;
-        IsSrDir?: number;
-    }
-    namespace UarEmployeeDirectreportsRow {
-        const idProperty = "EmployeeId";
-        const nameProperty = "EmployeeId";
-        const localTextPrefix = "PCHODS.UarEmployeeDirectreports";
-        const enum Fields {
-            EmployeeId = "EmployeeId",
-            EmployeeFirstName = "EmployeeFirstName",
-            EmployeeLastName = "EmployeeLastName",
-            EmpCompanyCd = "EmpCompanyCd",
-            EmpCompanyDesc = "EmpCompanyDesc",
-            EmpJobtitle = "EmpJobtitle",
-            EmpJobcode = "EmpJobcode",
-            EmpEmail = "EmpEmail",
-            EmpStatus = "EmpStatus",
-            SupEmployeeId = "SupEmployeeId",
-            SupFirstName = "SupFirstName",
-            SupLastName = "SupLastName",
-            SupJobtitle = "SupJobtitle",
-            SupJobcode = "SupJobcode",
-            SupLevel = "SupLevel",
-            IsSrDir = "IsSrDir"
-        }
-    }
-}
-declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface UarSrDirAboveListForm {
@@ -9135,9 +9092,6 @@ declare namespace DAP.PCHODS {
         protected getService(): string;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
-        protected createSlickGrid(): Slick.Grid;
-        protected onViewProcessData(response: any): Serenity.ListResponse<UarUnknownReviewerRow>;
-        protected getColumns(): Slick.Column[];
     }
 }
 declare namespace DAP.PCHODSNVS {
@@ -9612,5 +9566,48 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.PCHODS {
+    interface UarEmployeeDirectreportsRow {
+        EmployeeId?: string;
+        EmployeeFirstName?: string;
+        EmployeeLastName?: string;
+        EmpCompanyCd?: string;
+        EmpCompanyDesc?: string;
+        EmpJobtitle?: string;
+        EmpJobcode?: string;
+        EmpEmail?: string;
+        EmpStatus?: string;
+        SupEmployeeId?: string;
+        SupFirstName?: string;
+        SupLastName?: string;
+        SupJobtitle?: string;
+        SupJobcode?: string;
+        SupLevel?: number;
+        IsSrDir?: number;
+    }
+    namespace UarEmployeeDirectreportsRow {
+        const idProperty = "EmployeeId";
+        const nameProperty = "EmployeeId";
+        const localTextPrefix = "PCHODS.UarEmployeeDirectreports";
+        const enum Fields {
+            EmployeeId = "EmployeeId",
+            EmployeeFirstName = "EmployeeFirstName",
+            EmployeeLastName = "EmployeeLastName",
+            EmpCompanyCd = "EmpCompanyCd",
+            EmpCompanyDesc = "EmpCompanyDesc",
+            EmpJobtitle = "EmpJobtitle",
+            EmpJobcode = "EmpJobcode",
+            EmpEmail = "EmpEmail",
+            EmpStatus = "EmpStatus",
+            SupEmployeeId = "SupEmployeeId",
+            SupFirstName = "SupFirstName",
+            SupLastName = "SupLastName",
+            SupJobtitle = "SupJobtitle",
+            SupJobcode = "SupJobcode",
+            SupLevel = "SupLevel",
+            IsSrDir = "IsSrDir"
+        }
     }
 }

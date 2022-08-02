@@ -4738,18 +4738,6 @@ var DAP;
 (function (DAP) {
     var PCHODS;
     (function (PCHODS) {
-        var UarEmployeeDirectreportsRow;
-        (function (UarEmployeeDirectreportsRow) {
-            UarEmployeeDirectreportsRow.idProperty = 'EmployeeId';
-            UarEmployeeDirectreportsRow.nameProperty = 'EmployeeId';
-            UarEmployeeDirectreportsRow.localTextPrefix = 'PCHODS.UarEmployeeDirectreports';
-        })(UarEmployeeDirectreportsRow = PCHODS.UarEmployeeDirectreportsRow || (PCHODS.UarEmployeeDirectreportsRow = {}));
-    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHODS;
-    (function (PCHODS) {
         var UarSrDirAboveListForm = /** @class */ (function (_super) {
             __extends(UarSrDirAboveListForm, _super);
             function UarSrDirAboveListForm(prefix) {
@@ -14377,10 +14365,7 @@ var DAP;
         var UarUnknownReviewerGrid = /** @class */ (function (_super) {
             __extends(UarUnknownReviewerGrid, _super);
             function UarUnknownReviewerGrid(container) {
-                var _this = _super.call(this, container) || this;
-                // bindings
-                _this.slickContainer.on('change', '.edit:input', function (e) { return _this.inputsChange(e); });
-                return _this;
+                return _super.call(this, container) || this;
             }
             UarUnknownReviewerGrid.prototype.getColumnsKey = function () { return 'PCHODS.UarUnknownReviewer'; };
             UarUnknownReviewerGrid.prototype.getDialogType = function () { return PCHODS.UarUnknownReviewerDialog; };
@@ -14395,26 +14380,6 @@ var DAP;
                 buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
                 //buttons.splice(Q.indexOf(buttons, x => x.cssClass == "Column Picker"), 1);
                 return buttons;
-            };
-            UarUnknownReviewerGrid.prototype.createSlickGrid = function () {
-                this.slickGrid = _super.prototype.createSlickGrid.call(this);
-                new Serenity.AutoColumnWidthMixin({
-                    grid: this
-                });
-                return this.slickGrid;
-            };
-            UarUnknownReviewerGrid.prototype.onViewProcessData = function (response) {
-                this.pendingChanges = {};
-                this.setSaveButtonState();
-                return _super.prototype.onViewProcessData.call(this, response);
-            };
-            UarUnknownReviewerGrid.prototype.getColumns = function () {
-                var _this = this;
-                var columns = _super.prototype.getColumns.call(this);
-                var packagecd = Q.first(columns, function (x) { return x.field === fields.PackageTypeCd; });
-                packagecd.referencedFields = [fields.PackageTypeCd];
-                packagecd.format = function (ctx) { return _this.selectFormatter(ctx, fields.PackageTypeCd, PCHODS.UarUnknownReviewerRow.getLookup()); };
-                return columns;
             };
             UarUnknownReviewerGrid = __decorate([
                 Serenity.Decorators.registerClass()
@@ -16153,5 +16118,17 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var UarEmployeeDirectreportsRow;
+        (function (UarEmployeeDirectreportsRow) {
+            UarEmployeeDirectreportsRow.idProperty = 'EmployeeId';
+            UarEmployeeDirectreportsRow.nameProperty = 'EmployeeId';
+            UarEmployeeDirectreportsRow.localTextPrefix = 'PCHODS.UarEmployeeDirectreports';
+        })(UarEmployeeDirectreportsRow = PCHODS.UarEmployeeDirectreportsRow || (PCHODS.UarEmployeeDirectreportsRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
