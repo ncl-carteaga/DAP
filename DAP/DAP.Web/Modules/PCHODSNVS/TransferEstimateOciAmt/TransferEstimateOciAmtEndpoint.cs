@@ -179,15 +179,6 @@ namespace DAP.PCHODSNVS.Endpoints
                         importedValues.Clear();
                     }
 
-                    // ----------------- RETURN ON VALIDATION -------------- //
-                    // Validate field value based against database
-                    var fieldValid = myImpHelp.validImportedVal(uow, "[PCH_ODS_NVS].[dap].[GetCruiseSegment]", myFields.CruiseSegmentCd, a);
-                    if (!fieldValid) {//error; return
-                        response.ErrorList.Add("Invalid value for field: " + myFields.CruiseSegmentCd.Title);
-                        return response;
-                    }                    
-                    // -----------------        //           -------------- //
-
 
 
                     var currentRow = uow.Connection.TryFirst<TransferEstimateOciAmtRow>(q => q
@@ -204,7 +195,6 @@ namespace DAP.PCHODSNVS.Endpoints
                         // avoid assignment errors
                         currentRow.TrackWithChecks = false;
                     }
-
 
                     entType = jImpHelp.entryType.String; //designate the type of item
                     fieldTitle = myFields.SegmentMarketName.Title;  //designate the field to be looked at
@@ -253,22 +243,8 @@ namespace DAP.PCHODSNVS.Endpoints
                         sysHeader.Clear();
                         importedValues.Clear();
                     }
-                    
-                    entType = jImpHelp.entryType.dateTime; //designate the type of item
-                    fieldTitle = myFields.LoadDt.Title; //designate the field to be looked at
-                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    if (obj != null)
-                    {
-                        importedValues.Add(obj);
-                        sysHeader.Add(fieldTitle);
-                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                        if (a != null)
-                        {
-                            currentRow.LoadDt = a; //designate the field to be updated in the system
-                        }
-                        sysHeader.Clear();
-                        importedValues.Clear();
-                    }
+
+                    // current field value to validate against Model
 
                     //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
                     if (currentRow.TransferId == null)
@@ -295,8 +271,9 @@ namespace DAP.PCHODSNVS.Endpoints
                 }
                 catch (Exception ex)
                 {
-                    //myErrors.Add(myImpHelp.eMessage3(row, ex.Message));
-                    response.ErrorList.Add("Exception on Row " + row + ": Field: " + fieldTitle + ": " + ex.Message);
+                    // if current row matches thrown exception, add msessage from current field
+                    var msg = (ex.Message.Contains(fieldTitle)) ? "Exception on Row " + row + ": Field: " + fieldTitle + ": " : "";
+                    response.ErrorList.Add(msg + ex.Message);
                     //response.ErrorList.Add("Value: " + a);
                 }
             } // for loop

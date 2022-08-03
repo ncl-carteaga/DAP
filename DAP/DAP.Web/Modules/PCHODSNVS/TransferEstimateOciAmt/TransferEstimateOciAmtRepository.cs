@@ -7,12 +7,13 @@ namespace DAP.PCHODSNVS.Repositories
     using Serenity.Services;
     using System;
     using System.Data;
+    using System.Linq;
     using MyRow = Entities.TransferEstimateOciAmtRow;
 
-    public class TransferEstimateOciAmtRepository
-    {
-        private static MyRow.RowFields fld { get { return MyRow.Fields; } }
+    public class TransferEstimateOciAmtRepository { 
 
+        private static MyRow.RowFields fld { get { return MyRow.Fields; } }
+        // CREATE & UPDATE OVERRIDES
         public SaveResponse Create(IUnitOfWork uow, SaveRequest<MyRow> request)
         {
             return new MySaveHandler().Process(uow, request, SaveRequestType.Create);
@@ -22,6 +23,7 @@ namespace DAP.PCHODSNVS.Repositories
         {
             return new MySaveHandler().Process(uow, request, SaveRequestType.Update);
         }
+        // --------------------------------------------
 
         public DeleteResponse Delete(IUnitOfWork uow, DeleteRequest request)
         {
@@ -51,7 +53,7 @@ namespace DAP.PCHODSNVS.Repositories
                         throw new ValidationError("Segment Code Already Exists!");
                     }
                 }
-
+                
                 if (IsCreate)
                 {
                     if (this.Connection.Exists<TransferEstimateOciAmtRow>(MyRow.Fields.CruiseSegmentCd == Row.CruiseSegmentCd ))
@@ -60,7 +62,16 @@ namespace DAP.PCHODSNVS.Repositories
                     }
                 }
 
+                // validate against database
+                if (!this.Connection.Exists<TransferEstimateOciAmtRow>(new Criteria(MyRow.Fields.CruiseSegmentCd.Name) == Row.CruiseSegmentCd))
+                {
+                    throw new ValidationError(MyRow.Fields.CruiseSegmentCd.Title + " does not contain a valid value.");
+                }
 
+                if (!validateSegmentNShipCD())
+                {
+                    throw new ValidationError("Invalid values for fields: "+MyRow.Fields.SegmentMarketName.Name+", "+MyRow.Fields.ShipCd.Name);
+                }
             }
 
             protected override void SetInternalFields()
@@ -68,11 +79,29 @@ namespace DAP.PCHODSNVS.Repositories
                 base.SetInternalFields();
                 
                 Row.LoadDt = DateTime.Now;
-
             }
 
 
+            private bool validateSegmentNShipCD()
+            {
+                // prepared query
+                var query = new SqlQuery()
+                .Select("1")
+                .From("[PCH_ODS_NVS].[dap].[GetCruiseSegment]")
+                .Where(
+                    new Criteria(MyRow.Fields.CruiseSegmentCd.Name) == Row.CruiseSegmentCd &&
+                    new Criteria(MyRow.Fields.ShipCd.Name) == Row.ShipCd &&
+                    new Criteria("market_name") == Row.SegmentMarketName
+                );
+
+                // execute query
+                var result = Connection.Query(query);
+                var resultCount = result.ToList().Count;
+
+                return (resultCount > 0) ? true : false;
+            }
         }
+
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
         private class MyListHandler : ListRequestHandler<MyRow> { }
