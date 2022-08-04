@@ -23,7 +23,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.EmployeeId[this] = value; }
         }
         
-        [DisplayName("Employee First Name"), Column("Employee_FirstName"), Size(150)]
+        [DisplayName("Employee First Name"), Column("Employee_FirstName"), Size(150), LookupInclude]
         public String EmployeeFirstName
         {
             get { return Fields.EmployeeFirstName[this]; }
