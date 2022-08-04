@@ -100,3 +100,4 @@ Thumbs.db
 !.editorconfig
 !.phpcs.xml.dist
 bin
+obj
