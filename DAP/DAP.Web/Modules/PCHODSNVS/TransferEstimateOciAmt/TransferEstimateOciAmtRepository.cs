@@ -70,10 +70,10 @@ namespace DAP.PCHODSNVS.Repositories
                     throw new ValidationError(MyRow.Fields.CruiseSegmentCd.Title + " doesn't exist.");
                 }
 
-                if (!validateSegmentNShipCD())
+                /*if (!validateSegmentNShipCD())
                 {
                     throw new ValidationError("Values for fields: "+MyRow.Fields.SegmentMarketName.Name+", "+MyRow.Fields.ShipCd.Name + " don't exist.");
-                }
+                }*/
             }
 
             protected override void SetInternalFields()
