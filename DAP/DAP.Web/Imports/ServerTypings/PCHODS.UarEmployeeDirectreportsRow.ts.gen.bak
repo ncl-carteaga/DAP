@@ -1,4 +1,5 @@
-﻿namespace DAP.PCHODS {
+﻿
+namespace DAP.PCHODS {
     export interface UarEmployeeDirectreportsRow {
         EmployeeId?: string;
         EmployeeFirstName?: string;
@@ -23,23 +24,23 @@
         export const nameProperty = 'EmployeeId';
         export const localTextPrefix = 'PCHODS.UarEmployeeDirectreports';
 
-        export declare const enum Fields {
-            EmployeeId = "EmployeeId",
-            EmployeeFirstName = "EmployeeFirstName",
-            EmployeeLastName = "EmployeeLastName",
-            EmpCompanyCd = "EmpCompanyCd",
-            EmpCompanyDesc = "EmpCompanyDesc",
-            EmpJobtitle = "EmpJobtitle",
-            EmpJobcode = "EmpJobcode",
-            EmpEmail = "EmpEmail",
-            EmpStatus = "EmpStatus",
-            SupEmployeeId = "SupEmployeeId",
-            SupFirstName = "SupFirstName",
-            SupLastName = "SupLastName",
-            SupJobtitle = "SupJobtitle",
-            SupJobcode = "SupJobcode",
-            SupLevel = "SupLevel",
-            IsSrDir = "IsSrDir"
+        export namespace Fields {
+            export declare const EmployeeId;
+            export declare const EmployeeFirstName;
+            export declare const EmployeeLastName;
+            export declare const EmpCompanyCd;
+            export declare const EmpCompanyDesc;
+            export declare const EmpJobtitle;
+            export declare const EmpJobcode;
+            export declare const EmpEmail;
+            export declare const EmpStatus;
+            export declare const SupEmployeeId;
+            export declare const SupFirstName;
+            export declare const SupLastName;
+            export declare const SupJobtitle;
+            export declare const SupJobcode;
+            export declare const SupLevel;
+            export declare const IsSrDir;
         }
 
         [

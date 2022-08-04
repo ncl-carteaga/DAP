@@ -41,24 +41,6 @@
             SupLevel = "SupLevel",
             IsSrDir = "IsSrDir"
         }
-
-        [
-            'EmployeeId',
-            'EmployeeFirstName',
-            'EmployeeLastName',
-            'EmpCompanyCd',
-            'EmpCompanyDesc',
-            'EmpJobtitle',
-            'EmpJobcode',
-            'EmpEmail',
-            'EmpStatus',
-            'SupEmployeeId',
-            'SupFirstName',
-            'SupLastName',
-            'SupJobtitle',
-            'SupJobcode',
-            'SupLevel',
-            'IsSrDir'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+
