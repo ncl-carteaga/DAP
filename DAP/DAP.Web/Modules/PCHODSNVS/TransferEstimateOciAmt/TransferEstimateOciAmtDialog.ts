@@ -20,7 +20,7 @@ namespace DAP.PCHODSNVS {
                 var segmentcd = Q.toId(this.form.CruiseSegmentCd.value);
                 if (segmentcd != null) {
                     //this.form.SegmentMarketName.value = PCHDW.DimCruiseRow.getLookup().itemById[segmentcd].MarketName;
-                    this.form.SegmentMarketName.value = PCHODSNVS.GetCruiseSegmentRow.getLookup().itemById[segmentcd].MarketName;
+                    this.form.SegmentMarketName.value = PCHODSNVS.GetCruiseSegmentRow.getLookup().itemById[segmentcd].SegmentMarketName;
                     this.form.ShipCd.value = PCHODSNVS.GetCruiseSegmentRow.getLookup().itemById[segmentcd].ShipCd;
                 }
             });

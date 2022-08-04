@@ -3,7 +3,7 @@
         CruiseSegmentCd: Serenity.LookupEditor;
         SegmentMarketName: Serenity.StringEditor;
         ShipCd: Serenity.StringEditor;
-        TransferCostPerPax: Serenity.StringEditor;
+        TransferCostPerPax: Serenity.DecimalEditor;
         LoadDt: Serenity.DateEditor;
     }
 
@@ -20,14 +20,15 @@
                 var s = Serenity;
                 var w0 = s.LookupEditor;
                 var w1 = s.StringEditor;
-                var w2 = s.DateEditor;
+                var w2 = s.DecimalEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(TransferEstimateOciAmtForm, [
                     'CruiseSegmentCd', w0,
                     'SegmentMarketName', w1,
                     'ShipCd', w1,
-                    'TransferCostPerPax', w1,
-                    'LoadDt', w2
+                    'TransferCostPerPax', w2,
+                    'LoadDt', w3
                 ]);
             }
         }

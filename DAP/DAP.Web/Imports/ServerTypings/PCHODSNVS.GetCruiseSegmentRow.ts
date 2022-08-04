@@ -2,7 +2,7 @@
     export interface GetCruiseSegmentRow {
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        MarketName?: string;
+        SegmentMarketName?: string;
     }
 
     export namespace GetCruiseSegmentRow {
@@ -18,7 +18,7 @@
         export declare const enum Fields {
             CruiseSegmentCd = "CruiseSegmentCd",
             ShipCd = "ShipCd",
-            MarketName = "MarketName"
+            SegmentMarketName = "SegmentMarketName"
         }
     }
 }

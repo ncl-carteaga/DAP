@@ -29,11 +29,11 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.ShipCd[this] = value; }
         }
 
-        [DisplayName("Market Name"), Column("market_name"), Size(20), LookupInclude]
-        public String MarketName
+        [DisplayName("Segment Market Name"), Column("segment_market_name"), Size(20), LookupInclude]
+        public String SegmentMarketName
         {
-            get { return Fields.MarketName[this]; }
-            set { Fields.MarketName[this] = value; }
+            get { return Fields.SegmentMarketName[this]; }
+            set { Fields.SegmentMarketName[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -57,7 +57,7 @@ namespace DAP.PCHODSNVS.Entities
         {
             public StringField CruiseSegmentCd;
             public StringField ShipCd;
-            public StringField MarketName;
+            public StringField SegmentMarketName;
         }
     }
 }
