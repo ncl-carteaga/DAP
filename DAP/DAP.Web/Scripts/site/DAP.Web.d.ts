@@ -5914,7 +5914,7 @@ declare namespace DAP.PCHODSNVS {
     interface GetCruiseSegmentRow {
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        MarketName?: string;
+        SegmentMarketName?: string;
     }
     namespace GetCruiseSegmentRow {
         const idProperty = "CruiseSegmentCd";
@@ -5925,7 +5925,7 @@ declare namespace DAP.PCHODSNVS {
         const enum Fields {
             CruiseSegmentCd = "CruiseSegmentCd",
             ShipCd = "ShipCd",
-            MarketName = "MarketName"
+            SegmentMarketName = "SegmentMarketName"
         }
     }
 }
@@ -6709,11 +6709,21 @@ declare namespace DAP.PCHODSNVS {
 declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
+    interface TransferEstimateOciAmtExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class TransferEstimateOciAmtExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     interface TransferEstimateOciAmtForm {
         CruiseSegmentCd: Serenity.LookupEditor;
         SegmentMarketName: Serenity.StringEditor;
         ShipCd: Serenity.StringEditor;
-        TransferCostPerPax: Serenity.StringEditor;
+        TransferCostPerPax: Serenity.DecimalEditor;
         LoadDt: Serenity.DateEditor;
     }
     class TransferEstimateOciAmtForm extends Serenity.PrefixedContext {
@@ -6727,7 +6737,7 @@ declare namespace DAP.PCHODSNVS {
         SegmentMarketName?: string;
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        TransferCostPerPax?: string;
+        TransferCostPerPax?: number;
         LoadDt?: string;
         TransferId?: number;
     }
@@ -9402,6 +9412,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class TransferEstimateOciAmtExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class TransferEstimateOciAmtGrid extends Serenity.EntityGrid<TransferEstimateOciAmtRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof TransferEstimateOciAmtDialog;
@@ -9569,23 +9587,5 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.PCHODSNVS {
-    class TransferEstimateOciAmtExcelImportDialog extends Serenity.PropertyDialog<any, any> {
-        private form;
-        constructor();
-        protected getDialogTitle(): string;
-        protected getDialogButtons(): Serenity.DialogButton[];
-    }
-}
-declare namespace DAP.PCHODSNVS {
-    interface TransferEstimateOciAmtExcelImportForm {
-        FileName: Serenity.ImageUploadEditor;
-    }
-    class TransferEstimateOciAmtExcelImportForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
     }
 }

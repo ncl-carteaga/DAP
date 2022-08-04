@@ -9,6 +9,7 @@ namespace DAP.PCHODSNVS.Repositories
     using System.Data;
     using System.Linq;
     using MyRow = Entities.TransferEstimateOciAmtRow;
+    using MyCruiseSegmentRow = Entities.GetCruiseSegmentRow;
 
     public class TransferEstimateOciAmtRepository { 
 
@@ -62,15 +63,16 @@ namespace DAP.PCHODSNVS.Repositories
                     }
                 }
 
+
                 // validate against database
-                if (!this.Connection.Exists<TransferEstimateOciAmtRow>(new Criteria(MyRow.Fields.CruiseSegmentCd.Name) == Row.CruiseSegmentCd))
+                if (!this.Connection.Exists<MyCruiseSegmentRow>(new Criteria(MyRow.Fields.CruiseSegmentCd.Name) == Row.CruiseSegmentCd))
                 {
-                    throw new ValidationError(MyRow.Fields.CruiseSegmentCd.Title + " does not contain a valid value.");
+                    throw new ValidationError(MyRow.Fields.CruiseSegmentCd.Title + " doesn't exist.");
                 }
 
                 if (!validateSegmentNShipCD())
                 {
-                    throw new ValidationError("Invalid values for fields: "+MyRow.Fields.SegmentMarketName.Name+", "+MyRow.Fields.ShipCd.Name);
+                    throw new ValidationError("Values for fields: "+MyRow.Fields.SegmentMarketName.Name+", "+MyRow.Fields.ShipCd.Name + " don't exist.");
                 }
             }
 
@@ -91,7 +93,7 @@ namespace DAP.PCHODSNVS.Repositories
                 .Where(
                     new Criteria(MyRow.Fields.CruiseSegmentCd.Name) == Row.CruiseSegmentCd &&
                     new Criteria(MyRow.Fields.ShipCd.Name) == Row.ShipCd &&
-                    new Criteria("market_name") == Row.SegmentMarketName
+                    new Criteria(MyRow.Fields.SegmentMarketName.Name) == Row.SegmentMarketName
                 );
 
                 // execute query

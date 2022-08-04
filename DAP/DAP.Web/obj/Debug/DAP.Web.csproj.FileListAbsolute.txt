@@ -116,4 +116,3 @@ C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.Core
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CopyComplete
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.dll
 C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.pdb
-C:\Users\carteaga\source\repos\NewRepo\DAP\DAP.Web\obj\Debug\DAP.Web.csprojAssemblyReference.cache

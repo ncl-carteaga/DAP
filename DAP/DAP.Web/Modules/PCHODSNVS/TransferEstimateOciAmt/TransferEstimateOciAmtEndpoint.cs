@@ -273,7 +273,7 @@ namespace DAP.PCHODSNVS.Endpoints
                 {
                     // if current row matches thrown exception, add msessage from current field
                     var msg = (ex.Message.Contains(fieldTitle)) ? "Exception on Row " + row + ": Field: " + fieldTitle + ": " : "";
-                    response.ErrorList.Add(msg + ex.Message);
+                    response.ErrorList.Add("Error on row " + row + ": " + msg + ex.Message);
                     //response.ErrorList.Add("Value: " + a);
                 }
             } // for loop

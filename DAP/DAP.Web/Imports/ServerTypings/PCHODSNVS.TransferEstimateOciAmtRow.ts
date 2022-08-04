@@ -3,7 +3,7 @@
         SegmentMarketName?: string;
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        TransferCostPerPax?: string;
+        TransferCostPerPax?: number;
         LoadDt?: string;
         TransferId?: number;
     }
