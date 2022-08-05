@@ -1000,10 +1000,93 @@ namespace DAP.PCHODSNVS.Endpoints
                         importedValues.Clear();
                     }
 
+
+
                     // ADD NEW FIELDS
 
+
+                    entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
+                    fieldTitle = myFields.FyCcfTargetFy1.Title;//<--Update Me
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.FyCcfTargetFy1 = a; //<--Update Me
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
+                    fieldTitle = myFields.FyCcfTargetFy2.Title;//<--Update Me
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.FyCcfTargetFy2 = a; //<--Update Me
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
+                    fieldTitle = myFields.FyCcfTargetFy3.Title;//<--Update Me
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.FyCcfTargetFy3 = a; //<--Update Me
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
+                    fieldTitle = myFields.FyCcfTargetFy4.Title;//<--Update Me
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.FyCcfTargetFy4 = a; //<--Update Me
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
+                    fieldTitle = myFields.FyCcfTargetFy5.Title;//<--Update Me
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.FyCcfTargetFy5 = a; //<--Update Me
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
                     #endregion
-                  
+
                     //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
                     if (currentRow.KeyAcctTk == null)
                     {

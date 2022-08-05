@@ -45,6 +45,13 @@ namespace DAP.PCHODSNVS.Entities
             set { Fields.AccountType[this] = value; }
         }
 
+        [DisplayName("Agency Cd"), Column("Agency_Cd"), Size(6), LookupEditor("PCHODSNVS.Agency"), QuickSearch]
+        public String AgencyCd
+        {
+            get { return Fields.AgencyCd[this]; }
+            set { Fields.AgencyCd[this] = value; }
+        }
+
         [DisplayName("Ccf Target Q1"), Column("ccf_target_Q1"), Size(18), Scale(4), DecimalEditor(AllowNegatives =true)]
         public Decimal? CcfTargetQ1
         {
@@ -334,35 +341,40 @@ namespace DAP.PCHODSNVS.Entities
 
         [DisplayName("Year"), Column("Year"), Updatable(false)]
         public Int16? Year
-        [DisplayName("Fy Ccf Target Fy1"), Column("fy_ccf_target_FY1"), Size(18), Scale(4)]
+        {
+            get { return Fields.Year[this]; }
+            set { Fields.Year[this] = value; }
+        }
+
+        [DisplayName("Fy Ccf Target Fy1"), Column("fy_ccf_target_FY1"), Size(18), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? FyCcfTargetFy1
         {
             get { return Fields.FyCcfTargetFy1[this]; }
             set { Fields.FyCcfTargetFy1[this] = value; }
         }
 
-        [DisplayName("Fy Ccf Target Fy2"), Column("fy_ccf_target_FY2"), Size(18), Scale(4)]
+        [DisplayName("Fy Ccf Target Fy2"), Column("fy_ccf_target_FY2"), Size(18), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? FyCcfTargetFy2
         {
             get { return Fields.FyCcfTargetFy2[this]; }
             set { Fields.FyCcfTargetFy2[this] = value; }
         }
 
-        [DisplayName("Fy Ccf Target Fy3"), Column("fy_ccf_target_FY3"), Size(18), Scale(4)]
+        [DisplayName("Fy Ccf Target Fy3"), Column("fy_ccf_target_FY3"), Size(18), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? FyCcfTargetFy3
         {
             get { return Fields.FyCcfTargetFy3[this]; }
             set { Fields.FyCcfTargetFy3[this] = value; }
         }
 
-        [DisplayName("Fy Ccf Target Fy4"), Column("fy_ccf_target_FY4"), Size(18), Scale(4)]
+        [DisplayName("Fy Ccf Target Fy4"), Column("fy_ccf_target_FY4"), Size(18), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? FyCcfTargetFy4
         {
             get { return Fields.FyCcfTargetFy4[this]; }
             set { Fields.FyCcfTargetFy4[this] = value; }
         }
 
-        [DisplayName("Fy Ccf Target Fy5"), Column("fy_ccf_target_FY5"), Size(18), Scale(4)]
+        [DisplayName("Fy Ccf Target Fy5"), Column("fy_ccf_target_FY5"), Size(18), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? FyCcfTargetFy5
         {
             get { return Fields.FyCcfTargetFy5[this]; }
