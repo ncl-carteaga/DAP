@@ -23,7 +23,8 @@ namespace DAP.PCHODS.Entities
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
-
+   
+        [LookupEditor("PCHODS.UarEmployeeDirectreports"), ForeignKey("[dbo].[UAR_employee_directreports]", "Employee_ID"), LeftJoin("empName")]
         [DisplayName("Employee Id"), Column("EmployeeID"), Size(255), QuickSearch, ReadOnly(true)]
         public String EmployeeId
         {
@@ -199,7 +200,8 @@ namespace DAP.PCHODS.Entities
             set { Fields.AdDescription[this] = value; }
         }
 
-        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50)]
+
+        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50), Expression("empName.[sup_FirstName]")]
         public String ReviewerItCompliance
         {
             get { return Fields.ReviewerItCompliance[this]; }

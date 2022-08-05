@@ -3048,6 +3048,8 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3763,6 +3765,9 @@
     <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestPage.cs" />
     <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestColumns.cs" />
     <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestForm.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRepository.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

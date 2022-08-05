@@ -5430,6 +5430,68 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+    interface UarEmployeeDirectreportsRow {
+        EmployeeId?: string;
+        EmployeeFirstName?: string;
+        EmployeeLastName?: string;
+        EmpCompanyCd?: string;
+        EmpCompanyDesc?: string;
+        EmpJobtitle?: string;
+        EmpJobcode?: string;
+        EmpEmail?: string;
+        EmpStatus?: string;
+        SupEmployeeId?: string;
+        SupFirstName?: string;
+        SupLastName?: string;
+        SupJobtitle?: string;
+        SupJobcode?: string;
+        SupLevel?: number;
+        IsSrDir?: number;
+    }
+    namespace UarEmployeeDirectreportsRow {
+        const idProperty = "EmployeeId";
+        const nameProperty = "EmployeeId";
+        const localTextPrefix = "PCHODS.UarEmployeeDirectreports";
+        const lookupKey = "PCHODS.UarEmployeeDirectreports";
+        function getLookup(): Q.Lookup<UarEmployeeDirectreportsRow>;
+        const enum Fields {
+            EmployeeId = "EmployeeId",
+            EmployeeFirstName = "EmployeeFirstName",
+            EmployeeLastName = "EmployeeLastName",
+            EmpCompanyCd = "EmpCompanyCd",
+            EmpCompanyDesc = "EmpCompanyDesc",
+            EmpJobtitle = "EmpJobtitle",
+            EmpJobcode = "EmpJobcode",
+            EmpEmail = "EmpEmail",
+            EmpStatus = "EmpStatus",
+            SupEmployeeId = "SupEmployeeId",
+            SupFirstName = "SupFirstName",
+            SupLastName = "SupLastName",
+            SupJobtitle = "SupJobtitle",
+            SupJobcode = "SupJobcode",
+            SupLevel = "SupLevel",
+            IsSrDir = "IsSrDir"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace UarEmployeeDirectreportsService {
+        const baseUrl = "PCHODS/UarEmployeeDirectreports";
+        function Create(request: Serenity.SaveRequest<UarEmployeeDirectreportsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UarEmployeeDirectreportsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UarEmployeeDirectreportsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UarEmployeeDirectreportsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/UarEmployeeDirectreports/Create",
+            Update = "PCHODS/UarEmployeeDirectreports/Update",
+            Delete = "PCHODS/UarEmployeeDirectreports/Delete",
+            Retrieve = "PCHODS/UarEmployeeDirectreports/Retrieve",
+            List = "PCHODS/UarEmployeeDirectreports/List"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface UarSrDirAboveListForm {
@@ -5489,7 +5551,7 @@ declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface UarUnknownReviewerForm {
-        EmployeeId: Serenity.StringEditor;
+        EmployeeId: Serenity.LookupEditor;
         UserLoginName: Serenity.StringEditor;
         UserFullName: Serenity.StringEditor;
         Firstname: Serenity.StringEditor;
@@ -5514,7 +5576,7 @@ declare namespace DAP.PCHODS {
         AdActiveStatus: Serenity.StringEditor;
         HrEmpStatus: Serenity.StringEditor;
         AdDescription: Serenity.StringEditor;
-        ReviewerItCompliance: Serenity.LookupEditor;
+        ReviewerItCompliance: Serenity.StringEditor;
     }
     class UarUnknownReviewerForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -6629,6 +6691,11 @@ declare namespace DAP.PCHODSNVS {
         PrctTargetQ44?: number;
         PrctTargetQ45?: number;
         LoadDt?: string;
+        FyCcfTargetFy1?: number;
+        FyCcfTargetFy2?: number;
+        FyCcfTargetFy3?: number;
+        FyCcfTargetFy4?: number;
+        FyCcfTargetFy5?: number;
     }
     namespace SuppKeyAcctTargetRow {
         const idProperty = "KeyAcctTk";
@@ -6681,7 +6748,12 @@ declare namespace DAP.PCHODSNVS {
             PrctTargetQ43 = "PrctTargetQ43",
             PrctTargetQ44 = "PrctTargetQ44",
             PrctTargetQ45 = "PrctTargetQ45",
-            LoadDt = "LoadDt"
+            LoadDt = "LoadDt",
+            FyCcfTargetFy1 = "FyCcfTargetFy1",
+            FyCcfTargetFy2 = "FyCcfTargetFy2",
+            FyCcfTargetFy3 = "FyCcfTargetFy3",
+            FyCcfTargetFy4 = "FyCcfTargetFy4",
+            FyCcfTargetFy5 = "FyCcfTargetFy5"
         }
     }
 }
@@ -9408,7 +9480,6 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
-        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.SSISConfig {
@@ -9568,15 +9639,5 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.PCHODSNVS {
-    interface TransferEstimateOciAmtExcelImportForm {
-        FileName: Serenity.ImageUploadEditor;
-    }
-    class TransferEstimateOciAmtExcelImportForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
     }
 }

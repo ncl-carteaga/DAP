@@ -1,0 +1,65 @@
+﻿
+namespace DAP.PCHODS {
+    export interface UarEmployeeDirectreportsRow {
+        EmployeeId?: string;
+        EmployeeFirstName?: string;
+        EmployeeLastName?: string;
+        EmpCompanyCd?: string;
+        EmpCompanyDesc?: string;
+        EmpJobtitle?: string;
+        EmpJobcode?: string;
+        EmpEmail?: string;
+        EmpStatus?: string;
+        SupEmployeeId?: string;
+        SupFirstName?: string;
+        SupLastName?: string;
+        SupJobtitle?: string;
+        SupJobcode?: string;
+        SupLevel?: number;
+        IsSrDir?: number;
+    }
+
+    export namespace UarEmployeeDirectreportsRow {
+        export const idProperty = 'EmployeeId';
+        export const nameProperty = 'EmployeeId';
+        export const localTextPrefix = 'PCHODS.UarEmployeeDirectreports';
+
+        export namespace Fields {
+            export declare const EmployeeId;
+            export declare const EmployeeFirstName;
+            export declare const EmployeeLastName;
+            export declare const EmpCompanyCd;
+            export declare const EmpCompanyDesc;
+            export declare const EmpJobtitle;
+            export declare const EmpJobcode;
+            export declare const EmpEmail;
+            export declare const EmpStatus;
+            export declare const SupEmployeeId;
+            export declare const SupFirstName;
+            export declare const SupLastName;
+            export declare const SupJobtitle;
+            export declare const SupJobcode;
+            export declare const SupLevel;
+            export declare const IsSrDir;
+        }
+
+        [
+            'EmployeeId',
+            'EmployeeFirstName',
+            'EmployeeLastName',
+            'EmpCompanyCd',
+            'EmpCompanyDesc',
+            'EmpJobtitle',
+            'EmpJobcode',
+            'EmpEmail',
+            'EmpStatus',
+            'SupEmployeeId',
+            'SupFirstName',
+            'SupLastName',
+            'SupJobtitle',
+            'SupJobcode',
+            'SupLevel',
+            'IsSrDir'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

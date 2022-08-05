@@ -67,6 +67,11 @@ namespace DAP.PCHODSNVS.Columns
         public Decimal PrctTargetQ44 { get; set; }
         public Decimal CcfTargetQ45 { get; set; }
         public Decimal PrctTargetQ45 { get; set; }
+        public Decimal FyCcfTargetFy1 { get; set; }
+        public Decimal FyCcfTargetFy2 { get; set; }
+        public Decimal FyCcfTargetFy3 { get; set; }
+        public Decimal FyCcfTargetFy4 { get; set; }
+        public Decimal FyCcfTargetFy5 { get; set; }
         public DateTime LoadDt { get; set; }
     }
 }
