@@ -22,6 +22,11 @@
         export const idProperty = 'EmployeeId';
         export const nameProperty = 'EmployeeId';
         export const localTextPrefix = 'PCHODS.UarEmployeeDirectreports';
+        export const lookupKey = 'PCHODS.UarEmployeeDirectreports';
+
+        export function getLookup(): Q.Lookup<UarEmployeeDirectreportsRow> {
+            return Q.getLookup<UarEmployeeDirectreportsRow>('PCHODS.UarEmployeeDirectreports');
+        }
 
         export declare const enum Fields {
             EmployeeId = "EmployeeId",
@@ -41,24 +46,6 @@
             SupLevel = "SupLevel",
             IsSrDir = "IsSrDir"
         }
-
-        [
-            'EmployeeId',
-            'EmployeeFirstName',
-            'EmployeeLastName',
-            'EmpCompanyCd',
-            'EmpCompanyDesc',
-            'EmpJobtitle',
-            'EmpJobcode',
-            'EmpEmail',
-            'EmpStatus',
-            'SupEmployeeId',
-            'SupFirstName',
-            'SupLastName',
-            'SupJobtitle',
-            'SupJobcode',
-            'SupLevel',
-            'IsSrDir'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

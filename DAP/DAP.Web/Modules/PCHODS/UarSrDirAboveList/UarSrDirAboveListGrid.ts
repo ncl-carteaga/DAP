@@ -12,5 +12,14 @@ namespace DAP.PCHODS {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected getButtons(): Serenity.ToolButton[] {
+
+            var buttons = super.getButtons();
+            // remove 'add button' at it's index
+            buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
+
+            return buttons;
+        }
     }
 }

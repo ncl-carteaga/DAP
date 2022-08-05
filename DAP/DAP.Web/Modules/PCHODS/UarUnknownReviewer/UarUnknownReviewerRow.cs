@@ -199,6 +199,7 @@ namespace DAP.PCHODS.Entities
             get { return Fields.AdDescription[this]; }
             set { Fields.AdDescription[this] = value; }
         }
+        [LookupEditor("PCHODS.UarEmployeeDirectreports")]
         [Expression("c.[sup_FirstName]")]
         //[DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50)]
         public String ReviewerItCompliance

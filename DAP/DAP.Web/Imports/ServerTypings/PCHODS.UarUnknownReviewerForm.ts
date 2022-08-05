@@ -25,7 +25,7 @@
         AdActiveStatus: Serenity.StringEditor;
         HrEmpStatus: Serenity.StringEditor;
         AdDescription: Serenity.StringEditor;
-        ReviewerItCompliance: Serenity.StringEditor;
+        ReviewerItCompliance: Serenity.LookupEditor;
     }
 
     export class UarUnknownReviewerForm extends Serenity.PrefixedContext {
@@ -40,6 +40,7 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
+                var w1 = s.LookupEditor;
 
                 Q.initFormType(UarUnknownReviewerForm, [
                     'EmployeeId', w0,
@@ -67,7 +68,7 @@
                     'AdActiveStatus', w0,
                     'HrEmpStatus', w0,
                     'AdDescription', w0,
-                    'ReviewerItCompliance', w0
+                    'ReviewerItCompliance', w1
                 ]);
             }
         }
