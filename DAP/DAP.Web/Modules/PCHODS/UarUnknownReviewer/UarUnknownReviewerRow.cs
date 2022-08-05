@@ -15,7 +15,6 @@ namespace DAP.PCHODS.Entities
     [ModifyPermission(PermissionKeys.Outbound.Modify)]
     [DeletePermission(PermissionKeys.Outbound.Delete)]
     [DataAuditLog]
-    [ForeignKey("UAR_employee_directreports", "Employee_ID"), LeftJoin("c", "UAR_employee_directreports", "c.[Employee_ID]=T0.[EmployeeID]")] // join whole table
     public sealed class UarUnknownReviewerRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("ID"), Identity]
@@ -24,7 +23,8 @@ namespace DAP.PCHODS.Entities
             get { return Fields.Id[this]; }
             set { Fields.Id[this] = value; }
         }
-
+   
+        [LookupEditor("PCHODS.UarEmployeeDirectreports"), ForeignKey("[dbo].[UAR_employee_directreports]", "Employee_ID"), LeftJoin("empName")]
         [DisplayName("Employee Id"), Column("EmployeeID"), Size(255), QuickSearch, ReadOnly(true)]
         public String EmployeeId
         {
@@ -199,9 +199,9 @@ namespace DAP.PCHODS.Entities
             get { return Fields.AdDescription[this]; }
             set { Fields.AdDescription[this] = value; }
         }
-        [LookupEditor("PCHODS.UarEmployeeDirectreports")]
-        [Expression("c.[sup_FirstName]")]
-        //[DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50)]
+
+
+        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50), Expression("empName.[sup_FirstName]")]
         public String ReviewerItCompliance
         {
             get { return Fields.ReviewerItCompliance[this]; }

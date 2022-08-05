@@ -5551,7 +5551,7 @@ declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface UarUnknownReviewerForm {
-        EmployeeId: Serenity.StringEditor;
+        EmployeeId: Serenity.LookupEditor;
         UserLoginName: Serenity.StringEditor;
         UserFullName: Serenity.StringEditor;
         Firstname: Serenity.StringEditor;
@@ -5576,7 +5576,7 @@ declare namespace DAP.PCHODS {
         AdActiveStatus: Serenity.StringEditor;
         HrEmpStatus: Serenity.StringEditor;
         AdDescription: Serenity.StringEditor;
-        ReviewerItCompliance: Serenity.LookupEditor;
+        ReviewerItCompliance: Serenity.StringEditor;
     }
     class UarUnknownReviewerForm extends Serenity.PrefixedContext {
         static formKey: string;

@@ -1000,6 +1000,8 @@ namespace DAP.PCHODSNVS.Endpoints
                         importedValues.Clear();
                     }
 
+                    // ADD NEW FIELDS
+
                     #endregion
                   
                     //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
