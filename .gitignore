@@ -101,3 +101,4 @@ Thumbs.db
 !.phpcs.xml.dist
 bin
 obj
+/DAP/DAP.Web/App_Data

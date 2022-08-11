@@ -172,7 +172,6 @@ C:\Git\DAPDEV3\DAP\DAP.Web\bin\System.Web.Razor.xml
 C:\Git\DAPDEV3\DAP\DAP.Web\bin\System.Web.WebPages.xml
 C:\Git\DAPDEV3\DAP\DAP.Web\bin\System.Web.WebPages.Deployment.xml
 C:\Git\DAPDEV3\DAP\DAP.Web\bin\System.Web.WebPages.Razor.xml
-C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.csprojAssemblyReference.cache
 C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CoreCompileInputs.cache
 C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CopyComplete
 C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.dll

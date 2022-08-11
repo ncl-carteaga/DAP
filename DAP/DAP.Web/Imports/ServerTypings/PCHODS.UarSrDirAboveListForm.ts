@@ -1,7 +1,7 @@
 ﻿namespace DAP.PCHODS {
     export interface UarSrDirAboveListForm {
         Jobtitle: Serenity.StringEditor;
-        IsSrDirAbove: Serenity.IntegerEditor;
+        IsSrDirAbove: Serenity.BooleanEditor;
         DateEffective: Serenity.DateEditor;
         DateExpires: Serenity.DateEditor;
         RowChangeReason: Serenity.StringEditor;
@@ -19,7 +19,7 @@
 
                 var s = Serenity;
                 var w0 = s.StringEditor;
-                var w1 = s.IntegerEditor;
+                var w1 = s.BooleanEditor;
                 var w2 = s.DateEditor;
 
                 Q.initFormType(UarSrDirAboveListForm, [

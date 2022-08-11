@@ -1006,7 +1006,7 @@ namespace DAP.PCHODSNVS.Endpoints
 
 
                     entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
-                    fieldTitle = myFields.FyCcfTargetFy1.Title;//<--Update Me
+                    fieldTitle = myFields.CcfTargetFy1.Title;//<--Update Me
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1015,14 +1015,14 @@ namespace DAP.PCHODSNVS.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.FyCcfTargetFy1 = a; //<--Update Me
+                            currentRow.CcfTargetFy1 = a; //<--Update Me
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
                     }
 
                     entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
-                    fieldTitle = myFields.FyCcfTargetFy2.Title;//<--Update Me
+                    fieldTitle = myFields.CcfTargetFy2.Title;//<--Update Me
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1031,14 +1031,14 @@ namespace DAP.PCHODSNVS.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.FyCcfTargetFy2 = a; //<--Update Me
+                            currentRow.CcfTargetFy2 = a; //<--Update Me
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
                     }
 
                     entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
-                    fieldTitle = myFields.FyCcfTargetFy3.Title;//<--Update Me
+                    fieldTitle = myFields.CcfTargetFy3.Title;//<--Update Me
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1047,14 +1047,14 @@ namespace DAP.PCHODSNVS.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.FyCcfTargetFy3 = a; //<--Update Me
+                            currentRow.CcfTargetFy3 = a; //<--Update Me
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
                     }
 
                     entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
-                    fieldTitle = myFields.FyCcfTargetFy4.Title;//<--Update Me
+                    fieldTitle = myFields.CcfTargetFy4.Title;//<--Update Me
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1063,14 +1063,14 @@ namespace DAP.PCHODSNVS.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.FyCcfTargetFy4 = a; //<--Update Me
+                            currentRow.CcfTargetFy4 = a; //<--Update Me
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
                     }
 
                     entType = jImpHelp.entryType.Decimal; //<--Update Me according to type of field to merge with
-                    fieldTitle = myFields.FyCcfTargetFy5.Title;//<--Update Me
+                    fieldTitle = myFields.CcfTargetFy5.Title;//<--Update Me
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1079,7 +1079,7 @@ namespace DAP.PCHODSNVS.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.FyCcfTargetFy5 = a; //<--Update Me
+                            currentRow.CcfTargetFy5 = a; //<--Update Me
                         }
                         sysHeader.Clear();
                         importedValues.Clear();

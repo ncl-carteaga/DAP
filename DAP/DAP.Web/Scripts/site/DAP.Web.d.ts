@@ -5496,7 +5496,7 @@ declare namespace DAP.PCHODS {
 declare namespace DAP.PCHODS {
     interface UarSrDirAboveListForm {
         Jobtitle: Serenity.StringEditor;
-        IsSrDirAbove: Serenity.IntegerEditor;
+        IsSrDirAbove: Serenity.BooleanEditor;
         DateEffective: Serenity.DateEditor;
         DateExpires: Serenity.DateEditor;
         RowChangeReason: Serenity.StringEditor;
@@ -5511,7 +5511,7 @@ declare namespace DAP.PCHODS {
     interface UarSrDirAboveListRow {
         Id?: number;
         Jobtitle?: string;
-        IsSrDirAbove?: number;
+        IsSrDirAbove?: boolean;
         DateEffective?: string;
         DateExpires?: string;
         RowChangeReason?: string;
@@ -5976,7 +5976,7 @@ declare namespace DAP.PCHODSNVS {
     interface GetCruiseSegmentRow {
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        MarketName?: string;
+        SegmentMarketName?: string;
     }
     namespace GetCruiseSegmentRow {
         const idProperty = "CruiseSegmentCd";
@@ -5987,7 +5987,7 @@ declare namespace DAP.PCHODSNVS {
         const enum Fields {
             CruiseSegmentCd = "CruiseSegmentCd",
             ShipCd = "ShipCd",
-            MarketName = "MarketName"
+            SegmentMarketName = "SegmentMarketName"
         }
     }
 }
@@ -6635,6 +6635,11 @@ declare namespace DAP.PCHODSNVS {
         PrctTargetQ44: Serenity.DecimalEditor;
         CcfTargetQ45: Serenity.DecimalEditor;
         PrctTargetQ45: Serenity.DecimalEditor;
+        FyCcfTargetFy1: Serenity.DecimalEditor;
+        FyCcfTargetFy2: Serenity.DecimalEditor;
+        FyCcfTargetFy3: Serenity.DecimalEditor;
+        FyCcfTargetFy4: Serenity.DecimalEditor;
+        FyCcfTargetFy5: Serenity.DecimalEditor;
     }
     class SuppKeyAcctTargetForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -6781,11 +6786,21 @@ declare namespace DAP.PCHODSNVS {
 declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
+    interface TransferEstimateOciAmtExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class TransferEstimateOciAmtExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     interface TransferEstimateOciAmtForm {
         CruiseSegmentCd: Serenity.LookupEditor;
         SegmentMarketName: Serenity.StringEditor;
         ShipCd: Serenity.StringEditor;
-        TransferCostPerPax: Serenity.StringEditor;
+        TransferCostPerPax: Serenity.DecimalEditor;
         LoadDt: Serenity.DateEditor;
     }
     class TransferEstimateOciAmtForm extends Serenity.PrefixedContext {
@@ -6799,7 +6814,7 @@ declare namespace DAP.PCHODSNVS {
         SegmentMarketName?: string;
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        TransferCostPerPax?: string;
+        TransferCostPerPax?: number;
         LoadDt?: string;
         TransferId?: number;
     }
@@ -6825,12 +6840,14 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TransferEstimateOciAmtRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TransferEstimateOciAmtRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODSNVS/TransferEstimateOciAmt/Create",
             Update = "PCHODSNVS/TransferEstimateOciAmt/Update",
             Delete = "PCHODSNVS/TransferEstimateOciAmt/Delete",
             Retrieve = "PCHODSNVS/TransferEstimateOciAmt/Retrieve",
-            List = "PCHODSNVS/TransferEstimateOciAmt/List"
+            List = "PCHODSNVS/TransferEstimateOciAmt/List",
+            ExcelImport = "PCHODSNVS/TransferEstimateOciAmt/ExcelImport"
         }
     }
 }
@@ -9473,6 +9490,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class TransferEstimateOciAmtExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class TransferEstimateOciAmtGrid extends Serenity.EntityGrid<TransferEstimateOciAmtRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof TransferEstimateOciAmtDialog;
@@ -9480,6 +9505,7 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.SSISConfig {

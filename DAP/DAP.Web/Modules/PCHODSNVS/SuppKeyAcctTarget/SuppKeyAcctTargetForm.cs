@@ -70,11 +70,11 @@ namespace DAP.PCHODSNVS.Forms
         public Decimal CcfTargetQ45 { get; set; }                
         public Decimal PrctTargetQ45 { get; set; }
         [Category("Full Year"), Collapsible(Collapsed = false)]
-        public Decimal FyCcfTargetFy1 { get; set; }
-        public Decimal FyCcfTargetFy2 { get; set; }
-        public Decimal FyCcfTargetFy3 { get; set; }
-        public Decimal FyCcfTargetFy4 { get; set; }
-        public Decimal FyCcfTargetFy5 { get; set; }
+        public Decimal CcfTargetFy1 { get; set; }
+        public Decimal CcfTargetFy2 { get; set; }
+        public Decimal CcfTargetFy3 { get; set; }
+        public Decimal CcfTargetFy4 { get; set; }
+        public Decimal CcfTargetFy5 { get; set; }
 
     }
 }
