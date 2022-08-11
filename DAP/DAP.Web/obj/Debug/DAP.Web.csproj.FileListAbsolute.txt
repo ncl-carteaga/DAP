@@ -176,3 +176,4 @@ C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CoreCompileInputs.cache
 C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.csproj.CopyComplete
 C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.dll
 C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.pdb
+C:\Git\DAPDEV3\DAP\DAP.Web\obj\Debug\DAP.Web.csprojAssemblyReference.cache

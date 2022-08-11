@@ -1433,14 +1433,12 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface FinReportPublishingSuppForm {
-        PublishDat: Serenity.DateEditor;
-        PublishCommentsTxt: Serenity.TextAreaEditor;
-        PublishCd: Serenity.BooleanEditor;
+        ReportName: Serenity.StringEditor;
+        OnHold: Serenity.BooleanEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
         ModifiedByNam: Serenity.StringEditor;
-        ProcessedDateTs: Serenity.DateEditor;
     }
     class FinReportPublishingSuppForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1451,29 +1449,25 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
     interface FinReportPublishingSuppRow {
         FinReportPublishingSurKey?: number;
-        PublishDat?: string;
-        PublishCd?: boolean;
-        PublishCommentsTxt?: string;
+        OnHold?: boolean;
+        ReportName?: string;
         CreatedTs?: string;
         CreatedByNam?: string;
         ModifiedTs?: string;
         ModifiedByNam?: string;
-        ProcessedDateTs?: string;
     }
     namespace FinReportPublishingSuppRow {
         const idProperty = "FinReportPublishingSurKey";
-        const nameProperty = "PublishCommentsTxt";
+        const nameProperty = "ReportName";
         const localTextPrefix = "DWSupport.FinReportPublishingSupp";
         const enum Fields {
             FinReportPublishingSurKey = "FinReportPublishingSurKey",
-            PublishDat = "PublishDat",
-            PublishCd = "PublishCd",
-            PublishCommentsTxt = "PublishCommentsTxt",
+            OnHold = "OnHold",
+            ReportName = "ReportName",
             CreatedTs = "CreatedTs",
             CreatedByNam = "CreatedByNam",
             ModifiedTs = "ModifiedTs",
-            ModifiedByNam = "ModifiedByNam",
-            ProcessedDateTs = "ProcessedDateTs"
+            ModifiedByNam = "ModifiedByNam"
         }
     }
 }
@@ -6635,11 +6629,11 @@ declare namespace DAP.PCHODSNVS {
         PrctTargetQ44: Serenity.DecimalEditor;
         CcfTargetQ45: Serenity.DecimalEditor;
         PrctTargetQ45: Serenity.DecimalEditor;
-        FyCcfTargetFy1: Serenity.DecimalEditor;
-        FyCcfTargetFy2: Serenity.DecimalEditor;
-        FyCcfTargetFy3: Serenity.DecimalEditor;
-        FyCcfTargetFy4: Serenity.DecimalEditor;
-        FyCcfTargetFy5: Serenity.DecimalEditor;
+        CcfTargetFy1: Serenity.DecimalEditor;
+        CcfTargetFy2: Serenity.DecimalEditor;
+        CcfTargetFy3: Serenity.DecimalEditor;
+        CcfTargetFy4: Serenity.DecimalEditor;
+        CcfTargetFy5: Serenity.DecimalEditor;
     }
     class SuppKeyAcctTargetForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -6696,11 +6690,11 @@ declare namespace DAP.PCHODSNVS {
         PrctTargetQ44?: number;
         PrctTargetQ45?: number;
         LoadDt?: string;
-        FyCcfTargetFy1?: number;
-        FyCcfTargetFy2?: number;
-        FyCcfTargetFy3?: number;
-        FyCcfTargetFy4?: number;
-        FyCcfTargetFy5?: number;
+        CcfTargetFy1?: number;
+        CcfTargetFy2?: number;
+        CcfTargetFy3?: number;
+        CcfTargetFy4?: number;
+        CcfTargetFy5?: number;
     }
     namespace SuppKeyAcctTargetRow {
         const idProperty = "KeyAcctTk";
@@ -6754,11 +6748,11 @@ declare namespace DAP.PCHODSNVS {
             PrctTargetQ44 = "PrctTargetQ44",
             PrctTargetQ45 = "PrctTargetQ45",
             LoadDt = "LoadDt",
-            FyCcfTargetFy1 = "FyCcfTargetFy1",
-            FyCcfTargetFy2 = "FyCcfTargetFy2",
-            FyCcfTargetFy3 = "FyCcfTargetFy3",
-            FyCcfTargetFy4 = "FyCcfTargetFy4",
-            FyCcfTargetFy5 = "FyCcfTargetFy5"
+            CcfTargetFy1 = "CcfTargetFy1",
+            CcfTargetFy2 = "CcfTargetFy2",
+            CcfTargetFy3 = "CcfTargetFy3",
+            CcfTargetFy4 = "CcfTargetFy4",
+            CcfTargetFy5 = "CcfTargetFy5"
         }
     }
 }

@@ -47,11 +47,11 @@
         PrctTargetQ44?: number;
         PrctTargetQ45?: number;
         LoadDt?: string;
-        FyCcfTargetFy1?: number;
-        FyCcfTargetFy2?: number;
-        FyCcfTargetFy3?: number;
-        FyCcfTargetFy4?: number;
-        FyCcfTargetFy5?: number;
+        CcfTargetFy1?: number;
+        CcfTargetFy2?: number;
+        CcfTargetFy3?: number;
+        CcfTargetFy4?: number;
+        CcfTargetFy5?: number;
     }
 
     export namespace SuppKeyAcctTargetRow {
@@ -107,11 +107,11 @@
             PrctTargetQ44 = "PrctTargetQ44",
             PrctTargetQ45 = "PrctTargetQ45",
             LoadDt = "LoadDt",
-            FyCcfTargetFy1 = "FyCcfTargetFy1",
-            FyCcfTargetFy2 = "FyCcfTargetFy2",
-            FyCcfTargetFy3 = "FyCcfTargetFy3",
-            FyCcfTargetFy4 = "FyCcfTargetFy4",
-            FyCcfTargetFy5 = "FyCcfTargetFy5"
+            CcfTargetFy1 = "CcfTargetFy1",
+            CcfTargetFy2 = "CcfTargetFy2",
+            CcfTargetFy3 = "CcfTargetFy3",
+            CcfTargetFy4 = "CcfTargetFy4",
+            CcfTargetFy5 = "CcfTargetFy5"
         }
     }
 }

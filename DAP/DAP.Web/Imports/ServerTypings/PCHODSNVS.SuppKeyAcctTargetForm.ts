@@ -46,11 +46,11 @@
         PrctTargetQ44: Serenity.DecimalEditor;
         CcfTargetQ45: Serenity.DecimalEditor;
         PrctTargetQ45: Serenity.DecimalEditor;
-        FyCcfTargetFy1: Serenity.DecimalEditor;
-        FyCcfTargetFy2: Serenity.DecimalEditor;
-        FyCcfTargetFy3: Serenity.DecimalEditor;
-        FyCcfTargetFy4: Serenity.DecimalEditor;
-        FyCcfTargetFy5: Serenity.DecimalEditor;
+        CcfTargetFy1: Serenity.DecimalEditor;
+        CcfTargetFy2: Serenity.DecimalEditor;
+        CcfTargetFy3: Serenity.DecimalEditor;
+        CcfTargetFy4: Serenity.DecimalEditor;
+        CcfTargetFy5: Serenity.DecimalEditor;
     }
 
     export class SuppKeyAcctTargetForm extends Serenity.PrefixedContext {
@@ -118,11 +118,11 @@
                     'PrctTargetQ44', w5,
                     'CcfTargetQ45', w5,
                     'PrctTargetQ45', w5,
-                    'FyCcfTargetFy1', w5,
-                    'FyCcfTargetFy2', w5,
-                    'FyCcfTargetFy3', w5,
-                    'FyCcfTargetFy4', w5,
-                    'FyCcfTargetFy5', w5
+                    'CcfTargetFy1', w5,
+                    'CcfTargetFy2', w5,
+                    'CcfTargetFy3', w5,
+                    'CcfTargetFy4', w5,
+                    'CcfTargetFy5', w5
                 ]);
             }
         }
