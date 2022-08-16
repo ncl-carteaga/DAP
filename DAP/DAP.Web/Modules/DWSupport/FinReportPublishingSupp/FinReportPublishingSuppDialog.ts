@@ -14,18 +14,7 @@ namespace DAP.DWSupport {
         constructor() {
             super();
 
-            this.form = new FinReportPublishingSuppForm(this.idPrefix);
-
-            this.form.PublishDat.addValidationRule(this.uniqueName, e => {
-                var pdt = new Date(Q.formatDate(this.form.PublishDat.value, "MM/dd/yyyy"));
-                //pdt.setHours(0, 0, 0, 0);
-                var dt = new Date(Q.formatDate(new Date(), "MM/dd/yyyy"));
-                //dt.setHours(0, 0, 0, 0);
-               if (pdt.getTime() < dt.getTime()) {
-                    return "Publish Date Should be greater or equal than Today";
-                }
-            });
-
+          
         }
 
         protected getToolbarButtons(): Serenity.ToolButton[] {
@@ -40,14 +29,14 @@ namespace DAP.DWSupport {
         protected afterLoadEntity() {
             super.afterLoadEntity();
 
-            if (this.form.ProcessedDateTs.value != null) {
-                Serenity.EditorUtils.setReadOnly(this.form.PublishDat, true);
-                Serenity.EditorUtils.setReadOnly(this.form.PublishCommentsTxt, true);
-                Serenity.EditorUtils.setReadOnly(this.form.PublishCd, true);
+            //if (this.form.ProcessedDateTs.value != null) {
+            //    Serenity.EditorUtils.setReadOnly(this.form.PublishDat, true);
+            //    Serenity.EditorUtils.setReadOnly(this.form.PublishCommentsTxt, true);
+            //    Serenity.EditorUtils.setReadOnly(this.form.PublishCd, true);
 
-                this.applyChangesButton.hide();
-                this.saveAndCloseButton.hide();
-            }
+            //    this.applyChangesButton.hide();
+            //    this.saveAndCloseButton.hide();
+            //}
         }
 
         protected updateInterface(): void {

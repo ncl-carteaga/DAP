@@ -40,27 +40,7 @@ namespace DAP.DWSupport.Repositories
 
         private class MySaveHandler : SaveRequestHandler<MyRow> {
 
-            protected override void BeforeSave()
-            {
-                base.BeforeSave();
-
-                if (IsUpdate) { 
-                    if (this.Connection.Exists<FinReportPublishingSuppRow>(MyRow.Fields.PublishDat == Row.PublishDat.Value && MyRow.Fields.FinReportPublishingSurKey != Row.FinReportPublishingSurKey.Value))
-                    {
-                        throw new ValidationError("There is already an entry for this date");                
-                    }
-                }
-
-                if (IsCreate)
-                {
-                    if (this.Connection.Exists<FinReportPublishingSuppRow>(MyRow.Fields.PublishDat == Row.PublishDat.Value ))
-                    {
-                        throw new ValidationError("There is already an entry for this date");
-                    }
-                }
-
-
-            }
+            
             protected override void SetInternalFields()
             {
                 base.SetInternalFields();

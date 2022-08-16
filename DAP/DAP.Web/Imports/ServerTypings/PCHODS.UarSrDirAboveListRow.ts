@@ -2,7 +2,7 @@
     export interface UarSrDirAboveListRow {
         Id?: number;
         Jobtitle?: string;
-        IsSrDirAbove?: number;
+        IsSrDirAbove?: boolean;
         DateEffective?: string;
         DateExpires?: string;
         RowChangeReason?: string;

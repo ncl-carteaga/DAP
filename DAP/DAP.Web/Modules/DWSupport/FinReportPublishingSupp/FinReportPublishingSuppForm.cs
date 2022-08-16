@@ -13,10 +13,8 @@ namespace DAP.DWSupport.Forms
     [BasedOnRow(typeof(Entities.FinReportPublishingSuppRow), CheckNames = true)]
     public class FinReportPublishingSuppForm
     {
-        public DateTime PublishDat { get; set; }
-        [TextAreaEditor(Rows = 3)]
-        public String PublishCommentsTxt { get; set; }
-        public Boolean PublishCd { get; set; }
+        public String ReportName { get; set; }
+        public Boolean OnHold { get; set; }
         [Visible(false)]
         public DateTime CreatedTs { get; set; }
         [Visible(false)]
@@ -25,6 +23,6 @@ namespace DAP.DWSupport.Forms
         public DateTime ModifiedTs { get; set; }
         [Visible(false)]
         public String ModifiedByNam { get; set; }
-        public DateTime ProcessedDateTs { get; set; }
+
     }
 }

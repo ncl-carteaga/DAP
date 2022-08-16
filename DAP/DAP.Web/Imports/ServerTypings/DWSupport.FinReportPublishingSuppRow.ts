@@ -1,31 +1,27 @@
 ﻿namespace DAP.DWSupport {
     export interface FinReportPublishingSuppRow {
         FinReportPublishingSurKey?: number;
-        PublishDat?: string;
-        PublishCd?: boolean;
-        PublishCommentsTxt?: string;
+        OnHold?: boolean;
+        ReportName?: string;
         CreatedTs?: string;
         CreatedByNam?: string;
         ModifiedTs?: string;
         ModifiedByNam?: string;
-        ProcessedDateTs?: string;
     }
 
     export namespace FinReportPublishingSuppRow {
         export const idProperty = 'FinReportPublishingSurKey';
-        export const nameProperty = 'PublishCommentsTxt';
+        export const nameProperty = 'ReportName';
         export const localTextPrefix = 'DWSupport.FinReportPublishingSupp';
 
         export declare const enum Fields {
             FinReportPublishingSurKey = "FinReportPublishingSurKey",
-            PublishDat = "PublishDat",
-            PublishCd = "PublishCd",
-            PublishCommentsTxt = "PublishCommentsTxt",
+            OnHold = "OnHold",
+            ReportName = "ReportName",
             CreatedTs = "CreatedTs",
             CreatedByNam = "CreatedByNam",
             ModifiedTs = "ModifiedTs",
-            ModifiedByNam = "ModifiedByNam",
-            ProcessedDateTs = "ProcessedDateTs"
+            ModifiedByNam = "ModifiedByNam"
         }
     }
 }

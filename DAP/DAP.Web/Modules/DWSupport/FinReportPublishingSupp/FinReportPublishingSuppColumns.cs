@@ -15,11 +15,10 @@ namespace DAP.DWSupport.Columns
     {
         [DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 FinReportPublishingSurKey { get; set; }
-        public DateTime PublishDat { get; set; }
-        
-        public Boolean PublishCd { get; set; }
-        [Width(400)]
-        public String PublishCommentsTxt { get; set; }
+        [EditLink, Width(400)]
+        public String ReportName { get; set; }
+        [Width(200)]
+        public Boolean OnHold { get; set; }
         public DateTime CreatedTs { get; set; }
         public String CreatedByNam { get; set; }
         public DateTime ModifiedTs { get; set; }

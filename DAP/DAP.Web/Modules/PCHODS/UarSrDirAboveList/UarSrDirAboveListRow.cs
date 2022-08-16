@@ -10,14 +10,14 @@ namespace DAP.PCHODS.Entities
     using System.IO;
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[UAR_Sr_Dir_above_list]")]
-    [DisplayName("Sr. Dir. Above List"), InstanceName("Uar Sr Dir Above List")]
+    [DisplayName("UAR Sr Dir Above List"), InstanceName("Uar Sr Dir Above List")]
     [ReadPermission(PermissionKeys.Outbound.View)]
     [ModifyPermission(PermissionKeys.Outbound.Modify)]
     [DeletePermission(PermissionKeys.Outbound.Delete)]
     [DataAuditLog]
     public sealed class UarSrDirAboveListRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id"), Column("ID"), Identity]
+        [DisplayName("Id"), Column("ID"), Identity, Visible(false)]
         public Int32? Id
         {
             get { return Fields.Id[this]; }
@@ -31,28 +31,28 @@ namespace DAP.PCHODS.Entities
             set { Fields.Jobtitle[this] = value; }
         }
 
-        [DisplayName("Is Sr Dir Above"), Column("Is_Sr_Dir_Above"), BooleanEditor]
-        public Int32? IsSrDirAbove
+        [DisplayName("Is Sr Dir Above"), Column("Is_Sr_Dir_Above")]
+        public Boolean? IsSrDirAbove
         {
             get { return Fields.IsSrDirAbove[this]; }
             set { Fields.IsSrDirAbove[this] = value; }
         }
 
-        [DisplayName("Date Effective"), NotNull, ReadOnly(true)]
+        [DisplayName("Date Effective"), NotNull]
         public DateTime? DateEffective
         {
             get { return Fields.DateEffective[this]; }
             set { Fields.DateEffective[this] = value; }
         }
 
-        [DisplayName("Date Expires"), ReadOnly(true)]
+        [DisplayName("Date Expires")]
         public DateTime? DateExpires
         {
             get { return Fields.DateExpires[this]; }
             set { Fields.DateExpires[this] = value; }
         }
 
-        [DisplayName("Row Change Reason"), Size(120), NotNull, ReadOnly(true)]
+        [DisplayName("Row Change Reason"), Size(120), NotNull]
         public String RowChangeReason
         {
             get { return Fields.RowChangeReason[this]; }
@@ -80,7 +80,7 @@ namespace DAP.PCHODS.Entities
         {
             public Int32Field Id;
             public StringField Jobtitle;
-            public Int32Field IsSrDirAbove;
+            public BooleanField IsSrDirAbove;
             public DateTimeField DateEffective;
             public DateTimeField DateExpires;
             public StringField RowChangeReason;

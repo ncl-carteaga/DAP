@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface InvoiceItemTypeSuppRow {
         InvoiceItemTypeGenNatKey?: number;
         InvoiceClassType1Cd?: string;
@@ -42,78 +41,42 @@ namespace DAP.DWSupport {
         export const nameProperty = 'InvoiceClassType1Cd';
         export const localTextPrefix = 'DWSupport.InvoiceItemTypeSupp';
 
-        export namespace Fields {
-            export declare const InvoiceItemTypeGenNatKey;
-            export declare const InvoiceClassType1Cd;
-            export declare const InvoiceClassType2Cd;
-            export declare const InvoiceClassType3Cd;
-            export declare const InvoiceClassType4Cd;
-            export declare const InvoiceItemSourceCd;
-            export declare const InvoiceItemTypeCd;
-            export declare const InvoiceItemSubTypeCd;
-            export declare const InvoiceItemSubType2Cd;
-            export declare const InvoiceItemSubType3Cd;
-            export declare const ComponentCd;
-            export declare const ComponentDesc;
-            export declare const ChartOfAccountNbr;
-            export declare const CommentsTxt;
-            export declare const IsNtrCd;
-            export declare const IsGtrCd;
-            export declare const IsDilutionCd;
-            export declare const IsCostCd;
-            export declare const IsTaxCd;
-            export declare const IsCcCostCd;
-            export declare const IsAcctgAdjCd;
-            export declare const IsPioCd;
-            export declare const IsGroupAmenityCd;
-            export declare const AmenityCostAmt;
-            export declare const IsPerDiemCd;
-            export declare const CreatedTs;
-            export declare const CreatedByNam;
-            export declare const ModifiedByNam;
-            export declare const ModifiedTs;
-            export declare const IsAcctgActualCd;
-            export declare const CasinoComponentCd;
-            export declare const CasinoComponentDesc;
-            export declare const DeptShortDesc;
-            export declare const IsSuppressBuiltCd;
+        export declare const enum Fields {
+            InvoiceItemTypeGenNatKey = "InvoiceItemTypeGenNatKey",
+            InvoiceClassType1Cd = "InvoiceClassType1Cd",
+            InvoiceClassType2Cd = "InvoiceClassType2Cd",
+            InvoiceClassType3Cd = "InvoiceClassType3Cd",
+            InvoiceClassType4Cd = "InvoiceClassType4Cd",
+            InvoiceItemSourceCd = "InvoiceItemSourceCd",
+            InvoiceItemTypeCd = "InvoiceItemTypeCd",
+            InvoiceItemSubTypeCd = "InvoiceItemSubTypeCd",
+            InvoiceItemSubType2Cd = "InvoiceItemSubType2Cd",
+            InvoiceItemSubType3Cd = "InvoiceItemSubType3Cd",
+            ComponentCd = "ComponentCd",
+            ComponentDesc = "ComponentDesc",
+            ChartOfAccountNbr = "ChartOfAccountNbr",
+            CommentsTxt = "CommentsTxt",
+            IsNtrCd = "IsNtrCd",
+            IsGtrCd = "IsGtrCd",
+            IsDilutionCd = "IsDilutionCd",
+            IsCostCd = "IsCostCd",
+            IsTaxCd = "IsTaxCd",
+            IsCcCostCd = "IsCcCostCd",
+            IsAcctgAdjCd = "IsAcctgAdjCd",
+            IsPioCd = "IsPioCd",
+            IsGroupAmenityCd = "IsGroupAmenityCd",
+            AmenityCostAmt = "AmenityCostAmt",
+            IsPerDiemCd = "IsPerDiemCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            IsAcctgActualCd = "IsAcctgActualCd",
+            CasinoComponentCd = "CasinoComponentCd",
+            CasinoComponentDesc = "CasinoComponentDesc",
+            DeptShortDesc = "DeptShortDesc",
+            IsSuppressBuiltCd = "IsSuppressBuiltCd"
         }
-
-        [
-            'InvoiceItemTypeGenNatKey',
-            'InvoiceClassType1Cd',
-            'InvoiceClassType2Cd',
-            'InvoiceClassType3Cd',
-            'InvoiceClassType4Cd',
-            'InvoiceItemSourceCd',
-            'InvoiceItemTypeCd',
-            'InvoiceItemSubTypeCd',
-            'InvoiceItemSubType2Cd',
-            'InvoiceItemSubType3Cd',
-            'ComponentCd',
-            'ComponentDesc',
-            'ChartOfAccountNbr',
-            'CommentsTxt',
-            'IsNtrCd',
-            'IsGtrCd',
-            'IsDilutionCd',
-            'IsCostCd',
-            'IsTaxCd',
-            'IsCcCostCd',
-            'IsAcctgAdjCd',
-            'IsPioCd',
-            'IsGroupAmenityCd',
-            'AmenityCostAmt',
-            'IsPerDiemCd',
-            'CreatedTs',
-            'CreatedByNam',
-            'ModifiedByNam',
-            'ModifiedTs',
-            'IsAcctgActualCd',
-            'CasinoComponentCd',
-            'CasinoComponentDesc',
-            'DeptShortDesc',
-            'IsSuppressBuiltCd'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

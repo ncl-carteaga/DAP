@@ -957,9 +957,8 @@ declare namespace DAP.Common {
     }
 }
 declare namespace DAP.DWSupport {
-    class AgencySnapshotRequestForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace DAP.DWSupport {
     interface AgencySnapshotRequestForm {
         RequestedBy: Serenity.StringEditor;
         RequestedByDate: Serenity.DateEditor;
@@ -968,6 +967,11 @@ declare namespace DAP.DWSupport {
         CreatedDate: Serenity.DateEditor;
         ModifiedBy: Serenity.StringEditor;
         ModifiedDate: Serenity.DateEditor;
+    }
+    class AgencySnapshotRequestForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.DWSupport {
@@ -985,15 +989,15 @@ declare namespace DAP.DWSupport {
         const idProperty = "AgencySnapshotReqId";
         const nameProperty = "RequestedBy";
         const localTextPrefix = "DWSupport.AgencySnapshotRequest";
-        namespace Fields {
-            const AgencySnapshotReqId: any;
-            const RequestedBy: any;
-            const RequestedByDate: any;
-            const RequestedReason: any;
-            const CreatedBy: any;
-            const CreatedDate: any;
-            const ModifiedBy: any;
-            const ModifiedDate: any;
+        const enum Fields {
+            AgencySnapshotReqId = "AgencySnapshotReqId",
+            RequestedBy = "RequestedBy",
+            RequestedByDate = "RequestedByDate",
+            RequestedReason = "RequestedReason",
+            CreatedBy = "CreatedBy",
+            CreatedDate = "CreatedDate",
+            ModifiedBy = "ModifiedBy",
+            ModifiedDate = "ModifiedDate"
         }
     }
 }
@@ -1005,12 +1009,12 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AgencySnapshotRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AgencySnapshotRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "DWSupport/AgencySnapshotRequest/Create",
+            Update = "DWSupport/AgencySnapshotRequest/Update",
+            Delete = "DWSupport/AgencySnapshotRequest/Delete",
+            Retrieve = "DWSupport/AgencySnapshotRequest/Retrieve",
+            List = "DWSupport/AgencySnapshotRequest/List"
         }
     }
 }
@@ -1429,14 +1433,12 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface FinReportPublishingSuppForm {
-        PublishDat: Serenity.DateEditor;
-        PublishCommentsTxt: Serenity.TextAreaEditor;
-        PublishCd: Serenity.BooleanEditor;
+        ReportName: Serenity.StringEditor;
+        OnHold: Serenity.BooleanEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
         ModifiedByNam: Serenity.StringEditor;
-        ProcessedDateTs: Serenity.DateEditor;
     }
     class FinReportPublishingSuppForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1447,29 +1449,25 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
     interface FinReportPublishingSuppRow {
         FinReportPublishingSurKey?: number;
-        PublishDat?: string;
-        PublishCd?: boolean;
-        PublishCommentsTxt?: string;
+        OnHold?: boolean;
+        ReportName?: string;
         CreatedTs?: string;
         CreatedByNam?: string;
         ModifiedTs?: string;
         ModifiedByNam?: string;
-        ProcessedDateTs?: string;
     }
     namespace FinReportPublishingSuppRow {
         const idProperty = "FinReportPublishingSurKey";
-        const nameProperty = "PublishCommentsTxt";
+        const nameProperty = "ReportName";
         const localTextPrefix = "DWSupport.FinReportPublishingSupp";
         const enum Fields {
             FinReportPublishingSurKey = "FinReportPublishingSurKey",
-            PublishDat = "PublishDat",
-            PublishCd = "PublishCd",
-            PublishCommentsTxt = "PublishCommentsTxt",
+            OnHold = "OnHold",
+            ReportName = "ReportName",
             CreatedTs = "CreatedTs",
             CreatedByNam = "CreatedByNam",
             ModifiedTs = "ModifiedTs",
-            ModifiedByNam = "ModifiedByNam",
-            ProcessedDateTs = "ProcessedDateTs"
+            ModifiedByNam = "ModifiedByNam"
         }
     }
 }
@@ -1866,20 +1864,19 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-    class InvoiceItemTypeSuppForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace DAP.DWSupport {
     interface InvoiceItemTypeSuppForm {
         InvoiceClassType1Cd: Serenity.StringEditor;
         InvoiceClassType2Cd: Serenity.StringEditor;
         InvoiceClassType3Cd: Serenity.StringEditor;
         InvoiceClassType4Cd: Serenity.StringEditor;
         InvoiceItemSourceCd: Serenity.StringEditor;
-        InvoiceItemTypeCd: Serenity.StringEditor;
-        InvoiceItemSubTypeCd: Serenity.StringEditor;
-        InvoiceItemSubType2Cd: Serenity.StringEditor;
-        InvoiceItemSubType3Cd: Serenity.StringEditor;
-        ComponentCd: Serenity.StringEditor;
+        InvoiceItemTypeCd: Serenity.LookupEditor;
+        InvoiceItemSubTypeCd: Serenity.LookupEditor;
+        InvoiceItemSubType2Cd: Serenity.LookupEditor;
+        InvoiceItemSubType3Cd: Serenity.LookupEditor;
+        ComponentCd: Serenity.LookupEditor;
         ComponentDesc: Serenity.StringEditor;
         ChartOfAccountNbr: Serenity.StringEditor;
         CommentsTxt: Serenity.StringEditor;
@@ -1903,6 +1900,11 @@ declare namespace DAP.DWSupport {
         CasinoComponentDesc: Serenity.StringEditor;
         DeptShortDesc: Serenity.StringEditor;
         IsSuppressBuiltCd: Serenity.StringEditor;
+    }
+    class InvoiceItemTypeSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.DWSupport {
@@ -1946,41 +1948,41 @@ declare namespace DAP.DWSupport {
         const idProperty = "InvoiceItemTypeGenNatKey";
         const nameProperty = "InvoiceClassType1Cd";
         const localTextPrefix = "DWSupport.InvoiceItemTypeSupp";
-        namespace Fields {
-            const InvoiceItemTypeGenNatKey: any;
-            const InvoiceClassType1Cd: any;
-            const InvoiceClassType2Cd: any;
-            const InvoiceClassType3Cd: any;
-            const InvoiceClassType4Cd: any;
-            const InvoiceItemSourceCd: any;
-            const InvoiceItemTypeCd: any;
-            const InvoiceItemSubTypeCd: any;
-            const InvoiceItemSubType2Cd: any;
-            const InvoiceItemSubType3Cd: any;
-            const ComponentCd: any;
-            const ComponentDesc: any;
-            const ChartOfAccountNbr: any;
-            const CommentsTxt: any;
-            const IsNtrCd: any;
-            const IsGtrCd: any;
-            const IsDilutionCd: any;
-            const IsCostCd: any;
-            const IsTaxCd: any;
-            const IsCcCostCd: any;
-            const IsAcctgAdjCd: any;
-            const IsPioCd: any;
-            const IsGroupAmenityCd: any;
-            const AmenityCostAmt: any;
-            const IsPerDiemCd: any;
-            const CreatedTs: any;
-            const CreatedByNam: any;
-            const ModifiedByNam: any;
-            const ModifiedTs: any;
-            const IsAcctgActualCd: any;
-            const CasinoComponentCd: any;
-            const CasinoComponentDesc: any;
-            const DeptShortDesc: any;
-            const IsSuppressBuiltCd: any;
+        const enum Fields {
+            InvoiceItemTypeGenNatKey = "InvoiceItemTypeGenNatKey",
+            InvoiceClassType1Cd = "InvoiceClassType1Cd",
+            InvoiceClassType2Cd = "InvoiceClassType2Cd",
+            InvoiceClassType3Cd = "InvoiceClassType3Cd",
+            InvoiceClassType4Cd = "InvoiceClassType4Cd",
+            InvoiceItemSourceCd = "InvoiceItemSourceCd",
+            InvoiceItemTypeCd = "InvoiceItemTypeCd",
+            InvoiceItemSubTypeCd = "InvoiceItemSubTypeCd",
+            InvoiceItemSubType2Cd = "InvoiceItemSubType2Cd",
+            InvoiceItemSubType3Cd = "InvoiceItemSubType3Cd",
+            ComponentCd = "ComponentCd",
+            ComponentDesc = "ComponentDesc",
+            ChartOfAccountNbr = "ChartOfAccountNbr",
+            CommentsTxt = "CommentsTxt",
+            IsNtrCd = "IsNtrCd",
+            IsGtrCd = "IsGtrCd",
+            IsDilutionCd = "IsDilutionCd",
+            IsCostCd = "IsCostCd",
+            IsTaxCd = "IsTaxCd",
+            IsCcCostCd = "IsCcCostCd",
+            IsAcctgAdjCd = "IsAcctgAdjCd",
+            IsPioCd = "IsPioCd",
+            IsGroupAmenityCd = "IsGroupAmenityCd",
+            AmenityCostAmt = "AmenityCostAmt",
+            IsPerDiemCd = "IsPerDiemCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            IsAcctgActualCd = "IsAcctgActualCd",
+            CasinoComponentCd = "CasinoComponentCd",
+            CasinoComponentDesc = "CasinoComponentDesc",
+            DeptShortDesc = "DeptShortDesc",
+            IsSuppressBuiltCd = "IsSuppressBuiltCd"
         }
     }
 }
@@ -1992,12 +1994,12 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InvoiceItemTypeSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InvoiceItemTypeSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "DWSupport/InvoiceItemTypeSupp/Create",
+            Update = "DWSupport/InvoiceItemTypeSupp/Update",
+            Delete = "DWSupport/InvoiceItemTypeSupp/Delete",
+            Retrieve = "DWSupport/InvoiceItemTypeSupp/Retrieve",
+            List = "DWSupport/InvoiceItemTypeSupp/List"
         }
     }
 }
@@ -2213,7 +2215,7 @@ declare namespace DAP.DWSupport {
         SailId: Serenity.IntegerEditor;
         PackageTypeCd: Serenity.LookupEditor;
         SailDat: Serenity.DateEditor;
-        ShipCd: Serenity.StringEditor;
+        ShipCd: Serenity.LookupEditor;
         ShipNbr: Serenity.MaskedEditor;
         MandateWeeksQty: Serenity.IntegerEditor;
         ValidVoyageCd: SelectYNEditor;
@@ -2453,11 +2455,13 @@ declare namespace DAP.DWSupport {
         const idProperty = "ShipCode";
         const nameProperty = "ShipCode";
         const localTextPrefix = "DWSupport.Ship";
-        namespace Fields {
-            const ShipCode: any;
-            const ShipName: any;
-            const Brand: any;
-            const IsActive: any;
+        const lookupKey = "DWSupport.ShipCode";
+        function getLookup(): Q.Lookup<ShipRow>;
+        const enum Fields {
+            ShipCode = "ShipCode",
+            ShipName = "ShipName",
+            Brand = "Brand",
+            IsActive = "IsActive"
         }
     }
 }
@@ -2469,12 +2473,12 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ShipRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ShipRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "DWSupport/Ship/Create",
+            Update = "DWSupport/Ship/Update",
+            Delete = "DWSupport/Ship/Delete",
+            Retrieve = "DWSupport/Ship/Retrieve",
+            List = "DWSupport/Ship/List"
         }
     }
 }
@@ -3114,9 +3118,8 @@ declare namespace DAP.NCLHDSAR {
     }
 }
 declare namespace DAP.NCLHDSAR {
-    class DataFlowForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
+}
+declare namespace DAP.NCLHDSAR {
     interface DataFlowForm {
         Source: Serenity.StringEditor;
         Name: Serenity.StringEditor;
@@ -3131,6 +3134,11 @@ declare namespace DAP.NCLHDSAR {
         Cet: Serenity.DateEditor;
         LseIndex: Serenity.IntegerEditor;
         CeIndex: Serenity.IntegerEditor;
+    }
+    class DataFlowForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -3154,21 +3162,21 @@ declare namespace DAP.NCLHDSAR {
         const idProperty = "Key";
         const nameProperty = "Source";
         const localTextPrefix = "NCLHDSAR.DataFlow";
-        namespace Fields {
-            const Key: any;
-            const Source: any;
-            const Name: any;
-            const ProcessYn: any;
-            const Target: any;
-            const Description: any;
-            const SourceDesc: any;
-            const TargetDesc: any;
-            const Package: any;
-            const Status: any;
-            const Lset: any;
-            const Cet: any;
-            const LseIndex: any;
-            const CeIndex: any;
+        const enum Fields {
+            Key = "Key",
+            Source = "Source",
+            Name = "Name",
+            ProcessYn = "ProcessYn",
+            Target = "Target",
+            Description = "Description",
+            SourceDesc = "SourceDesc",
+            TargetDesc = "TargetDesc",
+            Package = "Package",
+            Status = "Status",
+            Lset = "Lset",
+            Cet = "Cet",
+            LseIndex = "LseIndex",
+            CeIndex = "CeIndex"
         }
     }
 }
@@ -3180,12 +3188,12 @@ declare namespace DAP.NCLHDSAR {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DataFlowRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DataFlowRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "NCLHDSAR/DataFlow/Create",
+            Update = "NCLHDSAR/DataFlow/Update",
+            Delete = "NCLHDSAR/DataFlow/Delete",
+            Retrieve = "NCLHDSAR/DataFlow/Retrieve",
+            List = "NCLHDSAR/DataFlow/List"
         }
     }
 }
@@ -5416,6 +5424,68 @@ declare namespace DAP.PCHODS {
     }
 }
 declare namespace DAP.PCHODS {
+    interface UarEmployeeDirectreportsRow {
+        EmployeeId?: string;
+        EmployeeFirstName?: string;
+        EmployeeLastName?: string;
+        EmpCompanyCd?: string;
+        EmpCompanyDesc?: string;
+        EmpJobtitle?: string;
+        EmpJobcode?: string;
+        EmpEmail?: string;
+        EmpStatus?: string;
+        SupEmployeeId?: string;
+        SupFirstName?: string;
+        SupLastName?: string;
+        SupJobtitle?: string;
+        SupJobcode?: string;
+        SupLevel?: number;
+        IsSrDir?: number;
+    }
+    namespace UarEmployeeDirectreportsRow {
+        const idProperty = "EmployeeId";
+        const nameProperty = "EmployeeId";
+        const localTextPrefix = "PCHODS.UarEmployeeDirectreports";
+        const lookupKey = "PCHODS.UarEmployeeDirectreports";
+        function getLookup(): Q.Lookup<UarEmployeeDirectreportsRow>;
+        const enum Fields {
+            EmployeeId = "EmployeeId",
+            EmployeeFirstName = "EmployeeFirstName",
+            EmployeeLastName = "EmployeeLastName",
+            EmpCompanyCd = "EmpCompanyCd",
+            EmpCompanyDesc = "EmpCompanyDesc",
+            EmpJobtitle = "EmpJobtitle",
+            EmpJobcode = "EmpJobcode",
+            EmpEmail = "EmpEmail",
+            EmpStatus = "EmpStatus",
+            SupEmployeeId = "SupEmployeeId",
+            SupFirstName = "SupFirstName",
+            SupLastName = "SupLastName",
+            SupJobtitle = "SupJobtitle",
+            SupJobcode = "SupJobcode",
+            SupLevel = "SupLevel",
+            IsSrDir = "IsSrDir"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
+    namespace UarEmployeeDirectreportsService {
+        const baseUrl = "PCHODS/UarEmployeeDirectreports";
+        function Create(request: Serenity.SaveRequest<UarEmployeeDirectreportsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UarEmployeeDirectreportsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UarEmployeeDirectreportsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UarEmployeeDirectreportsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "PCHODS/UarEmployeeDirectreports/Create",
+            Update = "PCHODS/UarEmployeeDirectreports/Update",
+            Delete = "PCHODS/UarEmployeeDirectreports/Delete",
+            Retrieve = "PCHODS/UarEmployeeDirectreports/Retrieve",
+            List = "PCHODS/UarEmployeeDirectreports/List"
+        }
+    }
+}
+declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface UarSrDirAboveListForm {
@@ -5435,7 +5505,7 @@ declare namespace DAP.PCHODS {
     interface UarSrDirAboveListRow {
         Id?: number;
         Jobtitle?: string;
-        IsSrDirAbove?: number;
+        IsSrDirAbove?: boolean;
         DateEffective?: string;
         DateExpires?: string;
         RowChangeReason?: string;
@@ -5475,7 +5545,7 @@ declare namespace DAP.PCHODS {
 }
 declare namespace DAP.PCHODS {
     interface UarUnknownReviewerForm {
-        EmployeeId: Serenity.StringEditor;
+        EmployeeId: Serenity.LookupEditor;
         UserLoginName: Serenity.StringEditor;
         UserFullName: Serenity.StringEditor;
         Firstname: Serenity.StringEditor;
@@ -5900,7 +5970,7 @@ declare namespace DAP.PCHODSNVS {
     interface GetCruiseSegmentRow {
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        MarketName?: string;
+        SegmentMarketName?: string;
     }
     namespace GetCruiseSegmentRow {
         const idProperty = "CruiseSegmentCd";
@@ -5911,7 +5981,7 @@ declare namespace DAP.PCHODSNVS {
         const enum Fields {
             CruiseSegmentCd = "CruiseSegmentCd",
             ShipCd = "ShipCd",
-            MarketName = "MarketName"
+            SegmentMarketName = "SegmentMarketName"
         }
     }
 }
@@ -6559,6 +6629,11 @@ declare namespace DAP.PCHODSNVS {
         PrctTargetQ44: Serenity.DecimalEditor;
         CcfTargetQ45: Serenity.DecimalEditor;
         PrctTargetQ45: Serenity.DecimalEditor;
+        CcfTargetFy1: Serenity.DecimalEditor;
+        CcfTargetFy2: Serenity.DecimalEditor;
+        CcfTargetFy3: Serenity.DecimalEditor;
+        CcfTargetFy4: Serenity.DecimalEditor;
+        CcfTargetFy5: Serenity.DecimalEditor;
     }
     class SuppKeyAcctTargetForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -6615,6 +6690,11 @@ declare namespace DAP.PCHODSNVS {
         PrctTargetQ44?: number;
         PrctTargetQ45?: number;
         LoadDt?: string;
+        CcfTargetFy1?: number;
+        CcfTargetFy2?: number;
+        CcfTargetFy3?: number;
+        CcfTargetFy4?: number;
+        CcfTargetFy5?: number;
     }
     namespace SuppKeyAcctTargetRow {
         const idProperty = "KeyAcctTk";
@@ -6667,7 +6747,12 @@ declare namespace DAP.PCHODSNVS {
             PrctTargetQ43 = "PrctTargetQ43",
             PrctTargetQ44 = "PrctTargetQ44",
             PrctTargetQ45 = "PrctTargetQ45",
-            LoadDt = "LoadDt"
+            LoadDt = "LoadDt",
+            CcfTargetFy1 = "CcfTargetFy1",
+            CcfTargetFy2 = "CcfTargetFy2",
+            CcfTargetFy3 = "CcfTargetFy3",
+            CcfTargetFy4 = "CcfTargetFy4",
+            CcfTargetFy5 = "CcfTargetFy5"
         }
     }
 }
@@ -6695,11 +6780,21 @@ declare namespace DAP.PCHODSNVS {
 declare namespace DAP.PCHODSNVS {
 }
 declare namespace DAP.PCHODSNVS {
+    interface TransferEstimateOciAmtExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class TransferEstimateOciAmtExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.PCHODSNVS {
     interface TransferEstimateOciAmtForm {
         CruiseSegmentCd: Serenity.LookupEditor;
         SegmentMarketName: Serenity.StringEditor;
         ShipCd: Serenity.StringEditor;
-        TransferCostPerPax: Serenity.StringEditor;
+        TransferCostPerPax: Serenity.DecimalEditor;
         LoadDt: Serenity.DateEditor;
     }
     class TransferEstimateOciAmtForm extends Serenity.PrefixedContext {
@@ -6713,7 +6808,7 @@ declare namespace DAP.PCHODSNVS {
         SegmentMarketName?: string;
         CruiseSegmentCd?: string;
         ShipCd?: string;
-        TransferCostPerPax?: string;
+        TransferCostPerPax?: number;
         LoadDt?: string;
         TransferId?: number;
     }
@@ -6739,12 +6834,14 @@ declare namespace DAP.PCHODSNVS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<TransferEstimateOciAmtRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<TransferEstimateOciAmtRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "PCHODSNVS/TransferEstimateOciAmt/Create",
             Update = "PCHODSNVS/TransferEstimateOciAmt/Update",
             Delete = "PCHODSNVS/TransferEstimateOciAmt/Delete",
             Retrieve = "PCHODSNVS/TransferEstimateOciAmt/Retrieve",
-            List = "PCHODSNVS/TransferEstimateOciAmt/List"
+            List = "PCHODSNVS/TransferEstimateOciAmt/List",
+            ExcelImport = "PCHODSNVS/TransferEstimateOciAmt/ExcelImport"
         }
     }
 }
@@ -9387,6 +9484,14 @@ declare namespace DAP.PCHODSNVS {
     }
 }
 declare namespace DAP.PCHODSNVS {
+    class TransferEstimateOciAmtExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.PCHODSNVS {
     class TransferEstimateOciAmtGrid extends Serenity.EntityGrid<TransferEstimateOciAmtRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof TransferEstimateOciAmtDialog;
@@ -9394,6 +9499,7 @@ declare namespace DAP.PCHODSNVS {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.SSISConfig {

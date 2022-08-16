@@ -17,8 +17,9 @@ namespace DAP.DWSupport {
 
             var buttons = super.getButtons();
 
-            var btn = Q.first(buttons, x => x.cssClass == "add-button");
-            btn.title = Q.text("Add New");            
+            //var btn = Q.first(buttons, x => x.cssClass == "add-button");
+            //btn.title = Q.text("Add New");            
+            buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
 
             return buttons;
         }

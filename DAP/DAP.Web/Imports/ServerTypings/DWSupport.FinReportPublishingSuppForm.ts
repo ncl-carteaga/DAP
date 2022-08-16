@@ -1,13 +1,11 @@
 ﻿namespace DAP.DWSupport {
     export interface FinReportPublishingSuppForm {
-        PublishDat: Serenity.DateEditor;
-        PublishCommentsTxt: Serenity.TextAreaEditor;
-        PublishCd: Serenity.BooleanEditor;
+        ReportName: Serenity.StringEditor;
+        OnHold: Serenity.BooleanEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
         ModifiedByNam: Serenity.StringEditor;
-        ProcessedDateTs: Serenity.DateEditor;
     }
 
     export class FinReportPublishingSuppForm extends Serenity.PrefixedContext {
@@ -21,20 +19,17 @@
                 FinReportPublishingSuppForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.DateEditor;
-                var w1 = s.TextAreaEditor;
-                var w2 = s.BooleanEditor;
-                var w3 = s.StringEditor;
+                var w0 = s.StringEditor;
+                var w1 = s.BooleanEditor;
+                var w2 = s.DateEditor;
 
                 Q.initFormType(FinReportPublishingSuppForm, [
-                    'PublishDat', w0,
-                    'PublishCommentsTxt', w1,
-                    'PublishCd', w2,
-                    'CreatedTs', w0,
-                    'CreatedByNam', w3,
-                    'ModifiedTs', w0,
-                    'ModifiedByNam', w3,
-                    'ProcessedDateTs', w0
+                    'ReportName', w0,
+                    'OnHold', w1,
+                    'CreatedTs', w2,
+                    'CreatedByNam', w0,
+                    'ModifiedTs', w2,
+                    'ModifiedByNam', w0
                 ]);
             }
         }

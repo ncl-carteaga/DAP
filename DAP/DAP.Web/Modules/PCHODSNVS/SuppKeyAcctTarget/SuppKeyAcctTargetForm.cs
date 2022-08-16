@@ -69,6 +69,12 @@ namespace DAP.PCHODSNVS.Forms
         public Decimal PrctTargetQ44 { get; set; }
         public Decimal CcfTargetQ45 { get; set; }                
         public Decimal PrctTargetQ45 { get; set; }
-      
+        [Category("Full Year"), Collapsible(Collapsed = false)]
+        public Decimal CcfTargetFy1 { get; set; }
+        public Decimal CcfTargetFy2 { get; set; }
+        public Decimal CcfTargetFy3 { get; set; }
+        public Decimal CcfTargetFy4 { get; set; }
+        public Decimal CcfTargetFy5 { get; set; }
+
     }
 }

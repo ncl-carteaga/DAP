@@ -17,7 +17,7 @@ namespace DAP.PCHODS.Columns
         public Int32 Id { get; set; }
         [EditLink]
         public String Jobtitle { get; set; }
-        public Int32 IsSrDirAbove { get; set; }
+        public Boolean IsSrDirAbove { get; set; }
         public DateTime DateEffective { get; set; }
         public DateTime DateExpires { get; set; }
         public String RowChangeReason { get; set; }

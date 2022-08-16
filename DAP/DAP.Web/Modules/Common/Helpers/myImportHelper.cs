@@ -1,5 +1,6 @@
 ﻿using OfficeOpenXml;
 using Serenity.Data;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -97,5 +98,22 @@ namespace DAP.myImportHelper
                 myOut = null;
             return myOut;
         }
-    }
+
+        public static bool validImportedVal(IUnitOfWork uow, string table, StringField field, string val)
+        {           
+            // prepared query
+            var query = new SqlQuery()
+            .Select(field.Name)
+            .From(table)
+            .Where(new Criteria(field.Name) == val)
+            ;// DEBUG for query - Console.WriteLine(query.ToString());
+
+            // execute query
+            var result = uow.Connection.Query(query);
+            var resultCount = result.ToList().Count;
+
+            return (resultCount > 0) ? true : false;
+        }
+
+    } // class
 }

@@ -1,6 +1,6 @@
 ﻿namespace DAP.PCHODS {
     export interface UarUnknownReviewerForm {
-        EmployeeId: Serenity.StringEditor;
+        EmployeeId: Serenity.LookupEditor;
         UserLoginName: Serenity.StringEditor;
         UserFullName: Serenity.StringEditor;
         Firstname: Serenity.StringEditor;
@@ -39,35 +39,36 @@
                 UarUnknownReviewerForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.StringEditor;
 
                 Q.initFormType(UarUnknownReviewerForm, [
                     'EmployeeId', w0,
-                    'UserLoginName', w0,
-                    'UserFullName', w0,
-                    'Firstname', w0,
-                    'Middlename', w0,
-                    'Lastname', w0,
-                    'OfficeCode', w0,
-                    'Department', w0,
-                    'Comments', w0,
-                    'UserGroupId', w0,
-                    'UserGroupName', w0,
-                    'GroupDescription', w0,
-                    'UserGroupRights', w0,
-                    'TaskId', w0,
-                    'TaskName', w0,
-                    'CriticalFuction', w0,
-                    'Accesstype', w0,
-                    'SupEmployeeid', w0,
-                    'ReviewerFirstname', w0,
-                    'ReviewerLastname', w0,
-                    'HowFound', w0,
-                    'AdManager', w0,
-                    'AdActiveStatus', w0,
-                    'HrEmpStatus', w0,
-                    'AdDescription', w0,
-                    'ReviewerItCompliance', w0
+                    'UserLoginName', w1,
+                    'UserFullName', w1,
+                    'Firstname', w1,
+                    'Middlename', w1,
+                    'Lastname', w1,
+                    'OfficeCode', w1,
+                    'Department', w1,
+                    'Comments', w1,
+                    'UserGroupId', w1,
+                    'UserGroupName', w1,
+                    'GroupDescription', w1,
+                    'UserGroupRights', w1,
+                    'TaskId', w1,
+                    'TaskName', w1,
+                    'CriticalFuction', w1,
+                    'Accesstype', w1,
+                    'SupEmployeeid', w1,
+                    'ReviewerFirstname', w1,
+                    'ReviewerLastname', w1,
+                    'HowFound', w1,
+                    'AdManager', w1,
+                    'AdActiveStatus', w1,
+                    'HrEmpStatus', w1,
+                    'AdDescription', w1,
+                    'ReviewerItCompliance', w1
                 ]);
             }
         }

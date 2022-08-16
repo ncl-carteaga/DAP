@@ -17,15 +17,16 @@ namespace DAP.DWSupport.Columns
         public Decimal InvoiceItemTypeGenNatKey { get; set; }
         [EditLink]
         public String ComponentCd { get; set; }
-        public String InvoiceClassType1Cd { get; set; }
-        public String InvoiceClassType2Cd { get; set; }
-        public String InvoiceClassType3Cd { get; set; }
-        public String InvoiceClassType4Cd { get; set; }
         public String InvoiceItemSourceCd { get; set; }
         public String InvoiceItemTypeCd { get; set; }
         public String InvoiceItemSubTypeCd { get; set; }
         public String InvoiceItemSubType2Cd { get; set; }
         public String InvoiceItemSubType3Cd { get; set; }
+        public String InvoiceClassType1Cd { get; set; }
+        public String InvoiceClassType2Cd { get; set; }
+        public String InvoiceClassType3Cd { get; set; }
+        public String InvoiceClassType4Cd { get; set; }
+
         
         public String ComponentDesc { get; set; }
         public String ChartOfAccountNbr { get; set; }

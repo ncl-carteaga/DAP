@@ -11,8 +11,9 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[FIN_REPORT_PUBLISHING_SUPP]")]
     [DisplayName("Financial Report Publishing"), InstanceName("Fin Report Publishing Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
     [DataAuditLog]
     public sealed class FinReportPublishingSuppRow : Row, IIdRow, INameRow
     {
@@ -23,25 +24,18 @@ namespace DAP.DWSupport.Entities
             set { Fields.FinReportPublishingSurKey[this] = value; }
         }
 
-        [DisplayName("Publish Date"), Column("PUBLISH_DAT"), NotNull, EditLink]
-        public DateTime? PublishDat
+        [DisplayName("On Hold"), Column("ON_HOLD"), NotNull]
+        public Boolean? OnHold
         {
-            get { return Fields.PublishDat[this]; }
-            set { Fields.PublishDat[this] = value; }
+            get { return Fields.OnHold[this]; }
+            set { Fields.OnHold[this] = value; }
         }
 
-        [DisplayName("Publish Report"), Column("PUBLISH_CD"), NotNull]
-        public Boolean? PublishCd
+        [DisplayName("Report Name"), Column("REPORT_NAME"), Size(250), QuickSearch, Updatable(false)]
+        public String ReportName
         {
-            get { return Fields.PublishCd[this]; }
-            set { Fields.PublishCd[this] = value; }
-        }
-
-        [DisplayName("Publish Comments"), Column("PUBLISH_COMMENTS_TXT"), Size(500), QuickSearch]
-        public String PublishCommentsTxt
-        {
-            get { return Fields.PublishCommentsTxt[this]; }
-            set { Fields.PublishCommentsTxt[this] = value; }
+            get { return Fields.ReportName[this]; }
+            set { Fields.ReportName[this] = value; }
         }
 
         [DisplayName("Created Date"), Column("CREATED_TS"), NotNull, Updatable(false), Insertable(false)]
@@ -72,12 +66,6 @@ namespace DAP.DWSupport.Entities
             set { Fields.ModifiedByNam[this] = value; }
         }
 
-        [DisplayName("Modified Date"), Column("PROCESSEDDATE_TS"), Visible(false)]
-        public DateTime? ProcessedDateTs
-        {
-            get { return Fields.ProcessedDateTs[this]; }
-            set { Fields.ProcessedDateTs[this] = value; }
-        }
 
         IIdField IIdRow.IdField
         {
@@ -86,7 +74,7 @@ namespace DAP.DWSupport.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.PublishCommentsTxt; }
+            get { return Fields.ReportName; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -99,14 +87,13 @@ namespace DAP.DWSupport.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field FinReportPublishingSurKey;
-            public DateTimeField PublishDat;
-            public BooleanField PublishCd;
-            public StringField PublishCommentsTxt;
+            public BooleanField OnHold;
+            public StringField ReportName;
             public DateTimeField CreatedTs;
             public StringField CreatedByNam;
             public DateTimeField ModifiedTs;
             public StringField ModifiedByNam;
-            public DateTimeField ProcessedDateTs;
+
         }
     }
 }

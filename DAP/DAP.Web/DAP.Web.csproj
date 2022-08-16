@@ -1191,6 +1191,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Avaya.SkillSplitMappingColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenitiesSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1221,6 +1224,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeMasterSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PortSubstitutionSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1246,6 +1252,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.NoteRow.ts">
@@ -1434,6 +1443,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODSNVS.TransferEstimateOciAmtExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\SSISConfig.DataFlowColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1507,6 +1519,7 @@
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrFcst\NtrFcstExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUDialog.ts" />
@@ -3002,17 +3015,41 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ImportErrorLogForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ShipService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3257,6 +3294,7 @@
     <Compile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImportForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
@@ -3727,6 +3765,9 @@
     <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestPage.cs" />
     <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestColumns.cs" />
     <Compile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestForm.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRepository.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

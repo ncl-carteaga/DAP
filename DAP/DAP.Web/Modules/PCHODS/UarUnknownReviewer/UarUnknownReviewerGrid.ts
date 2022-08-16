@@ -1,6 +1,8 @@
 ﻿
 namespace DAP.PCHODS {
 
+    import fields = UarUnknownReviewerRow.Fields;
+
     @Serenity.Decorators.registerClass()
     export class UarUnknownReviewerGrid extends Serenity.EntityGrid<UarUnknownReviewerRow, any> {
         protected getColumnsKey() { return 'PCHODS.UarUnknownReviewer'; }
@@ -25,6 +27,5 @@ namespace DAP.PCHODS {
 
             return buttons;
         }
-
     }
 }
