@@ -42,5 +42,6 @@ namespace DAP.PCHODS.Columns
         public String HrEmpStatus { get; set; }
         public String AdDescription { get; set; }
         public String ReviewerItCompliance { get; set; }
+        //public List<String> ReviewerItComplianceList { get; set; }
     }
 }

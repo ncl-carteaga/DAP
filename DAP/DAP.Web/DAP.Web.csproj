@@ -898,6 +898,9 @@
     <Content Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseIndex.cshtml" />
     <Content Include="Modules\DWSupport\AmenityMasterDetail\Index.cshtml" />
     <Content Include="Modules\PCHODSNVS\JobManagement\JobManagementIndex.cshtml" />
+    <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.20220804_101344.bak" />
+    <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.gen.bak" />
+    <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.orig" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -3048,8 +3051,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3309,6 +3316,8 @@
     <Compile Include="Modules\PCHODS\OutboundNvsUsers\UsersLookup.cs" />
     <Compile Include="Modules\PCHODS\PCHODSNavigation.cs" />
     <Compile Include="Modules\PCHODS\PCHODSPermissionKeys.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsEditorAttribute.cs" />
+    <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsLookupEditor.cs" />
     <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigFilterLookup.cs" />
     <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseColumns.cs" />
     <Compile Include="Modules\SSISConfig\INTConfigBase\INTConfigBaseEndpoint.cs" />

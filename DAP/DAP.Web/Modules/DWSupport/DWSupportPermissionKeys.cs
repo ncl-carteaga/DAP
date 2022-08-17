@@ -1,6 +1,8 @@
 ﻿
+using Serenity;
 using Serenity.Extensibility;
 using System.ComponentModel;
+using static MVC.Views.Administration;
 
 namespace DAP.DWSupport
 {
@@ -20,6 +22,9 @@ namespace DAP.DWSupport
 
         [Description("[General]")]
         public const string General = "DWSupport:General";
+
+        [Description("DWSupport_Revenue")]
+        public const string DWSupport_Revenue = "DWSupport:DWSupport_Revenue";
 
         [DisplayName("Page")]
         public class PagePermission

@@ -10,6 +10,5 @@ namespace DAP.DWSupport {
         protected getService() { return InvoiceItemTypeMasterSuppService.baseUrl; }
 
         protected form = new InvoiceItemTypeMasterSuppForm(this.idPrefix);
-
     }
 }

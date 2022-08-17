@@ -9724,6 +9724,11 @@ var DAP;
             InvoiceItemTypeSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeSuppRow.localTextPrefix; };
             InvoiceItemTypeSuppDialog.prototype.getNameProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.nameProperty; };
             InvoiceItemTypeSuppDialog.prototype.getService = function () { return DWSupport.InvoiceItemTypeSuppService.baseUrl; };
+            InvoiceItemTypeSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
             InvoiceItemTypeSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], InvoiceItemTypeSuppDialog);
@@ -9746,6 +9751,14 @@ var DAP;
             InvoiceItemTypeSuppGrid.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.idProperty; };
             InvoiceItemTypeSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeSuppRow.localTextPrefix; };
             InvoiceItemTypeSuppGrid.prototype.getService = function () { return DWSupport.InvoiceItemTypeSuppService.baseUrl; };
+            InvoiceItemTypeSuppGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                // REMOVE button if no access
+                if (!DAP.Authorization.hasPermission("DWSupport:DWSupport_Revenue")) {
+                    buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                }
+                return buttons;
+            };
             InvoiceItemTypeSuppGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], InvoiceItemTypeSuppGrid);

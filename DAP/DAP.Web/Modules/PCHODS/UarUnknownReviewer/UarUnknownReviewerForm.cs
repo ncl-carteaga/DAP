@@ -8,6 +8,8 @@ namespace DAP.PCHODS.Forms
     using System.ComponentModel;
     using System.Collections.Generic;
     using System.IO;
+    using Serenity.Data.Mapping;
+    using DAP.PCHODS.Lookups;
 
     [FormScript("PCHODS.UarUnknownReviewer")]
     [BasedOnRow(typeof(Entities.UarUnknownReviewerRow), CheckNames = true)]

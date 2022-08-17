@@ -12,11 +12,12 @@ namespace DAP.DWSupport.Entities
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[INVOICE_ITEM_TYPE_SUPP]")]
     [DisplayName("Invoice Item Type"), InstanceName("Invoice Item Type Supp")]
     [ReadPermission(PermissionKeys.DWSupport.View)]
-    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [UpdatePermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
     [DataAuditLog]
     public sealed class InvoiceItemTypeSuppRow : Row, IIdRow, INameRow
     {
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Item Type Gen Nat Key"), Column("INVOICE_ITEM_TYPE_GEN_NAT_KEY"), Size(19)]
         public Int64? InvoiceItemTypeGenNatKey
         {
@@ -24,6 +25,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemTypeGenNatKey[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Class Type 1 Cd"), Column("INVOICE_CLASS_TYPE_1_CD"), Size(50), QuickSearch]
         public String InvoiceClassType1Cd
         {
@@ -31,6 +33,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceClassType1Cd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Class Type 2 Cd"), Column("INVOICE_CLASS_TYPE_2_CD"), Size(50)]
         public String InvoiceClassType2Cd
         {
@@ -38,6 +41,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceClassType2Cd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Class Type 3 Cd"), Column("INVOICE_CLASS_TYPE_3_CD"), Size(50)]
         public String InvoiceClassType3Cd
         {
@@ -45,6 +49,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceClassType3Cd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Class Type 4 Cd"), Column("INVOICE_CLASS_TYPE_4_CD"), Size(50)]
         public String InvoiceClassType4Cd
         {
@@ -52,6 +57,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceClassType4Cd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Item Source Cd"), Column("INVOICE_ITEM_SOURCE_CD"), Size(30)]
         public String InvoiceItemSourceCd
         {
@@ -59,6 +65,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemSourceCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Item Type Cd"), Column("INVOICE_ITEM_TYPE_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemType"), QuickFilter]
         public String InvoiceItemTypeCd
         {
@@ -66,6 +73,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemTypeCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Item Sub Type Cd"), Column("INVOICE_ITEM_SUB_TYPE_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType"), QuickFilter]
         public String InvoiceItemSubTypeCd
         {
@@ -73,6 +81,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemSubTypeCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Item Sub Type2 Cd"), Column("INVOICE_ITEM_SUB_TYPE2_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType2"), QuickFilter]
         public String InvoiceItemSubType2Cd
         {
@@ -80,6 +89,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemSubType2Cd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Invoice Item Sub Type3 Cd"), Column("INVOICE_ITEM_SUB_TYPE3_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType3"), QuickFilter]
         public String InvoiceItemSubType3Cd
         {
@@ -87,6 +97,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.InvoiceItemSubType3Cd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Component Cd"), Column("COMPONENT_CD"), Size(30), QuickFilter , LookupEditor("DWSupport.GetMasterComponent")]
         public String ComponentCd
         {
@@ -94,6 +105,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ComponentCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Component Desc"), Column("COMPONENT_DESC"), Size(50)]
         public String ComponentDesc
         {
@@ -101,6 +113,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ComponentDesc[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Chart Of Account Nbr"), Column("CHART_OF_ACCOUNT_NBR"), Size(15)]
         public String ChartOfAccountNbr
         {
@@ -108,6 +121,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ChartOfAccountNbr[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Comments Txt"), Column("COMMENTS_TXT"), Size(50)]
         public String CommentsTxt
         {
@@ -115,6 +129,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CommentsTxt[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Ntr Cd"), Column("IS_NTR_CD"), Size(1)]
         public String IsNtrCd
         {
@@ -122,6 +137,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsNtrCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Gtr Cd"), Column("IS_GTR_CD"), Size(1)]
         public String IsGtrCd
         {
@@ -129,6 +145,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsGtrCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Dilution Cd"), Column("IS_DILUTION_CD"), Size(1)]
         public String IsDilutionCd
         {
@@ -136,6 +153,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsDilutionCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Cost Cd"), Column("IS_COST_CD"), Size(1)]
         public String IsCostCd
         {
@@ -143,6 +161,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsCostCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Tax Cd"), Column("IS_TAX_CD"), Size(1)]
         public String IsTaxCd
         {
@@ -150,6 +169,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsTaxCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Cc Cost Cd"), Column("IS_CC_COST_CD"), Size(1)]
         public String IsCcCostCd
         {
@@ -157,6 +177,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsCcCostCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Acctg Adj Cd"), Column("IS_ACCTG_ADJ_CD"), Size(1)]
         public String IsAcctgAdjCd
         {
@@ -164,6 +185,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsAcctgAdjCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Pio Cd"), Column("IS_PIO_CD"), Size(1)]
         public String IsPioCd
         {
@@ -171,6 +193,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsPioCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Group Amenity Cd"), Column("IS_GROUP_AMENITY_CD"), Size(1)]
         public String IsGroupAmenityCd
         {
@@ -178,6 +201,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsGroupAmenityCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Amenity Cost Amt"), Column("AMENITY_COST_AMT"), Size(38), Scale(4)]
         public Decimal? AmenityCostAmt
         {
@@ -185,6 +209,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.AmenityCostAmt[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Per Diem Cd"), Column("IS_PER_DIEM_CD"), Size(1)]
         public String IsPerDiemCd
         {
@@ -192,6 +217,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsPerDiemCd[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull, Updatable(false), Insertable(false)]
         public DateTime? CreatedTs
         {
@@ -199,6 +225,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedTs[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull, Updatable(false), Insertable(false)]
         public String CreatedByNam
         {
@@ -206,6 +233,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedByNam[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50), Updatable(false), Insertable(false)]
         public String ModifiedByNam
         {
@@ -213,6 +241,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ModifiedByNam[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull, Updatable(false), Insertable(false)]
         public DateTime? ModifiedTs
         {
@@ -220,12 +249,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.ModifiedTs[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Acctg Actual Cd"), Column("IS_ACCTG_ACTUAL_CD"), Size(1)]
         public String IsAcctgActualCd
         {
             get { return Fields.IsAcctgActualCd[this]; }
             set { Fields.IsAcctgActualCd[this] = value; }
         }
+
 
         [DisplayName("Casino Component Cd"), Column("CASINO_COMPONENT_CD"), Size(30)]
         public String CasinoComponentCd
@@ -241,6 +272,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CasinoComponentDesc[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Dept Short Desc"), Column("DEPT_SHORT_DESC"), Size(15)]
         public String DeptShortDesc
         {
@@ -248,6 +280,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.DeptShortDesc[this] = value; }
         }
 
+        [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
         [DisplayName("Is Suppress Built Cd"), Column("IS_SUPPRESS_BUILT_CD"), Size(1)]
         public String IsSuppressBuiltCd
         {

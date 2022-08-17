@@ -12,5 +12,16 @@ namespace DAP.DWSupport {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected getButtons(): Serenity.ToolButton[] {
+
+            var buttons = super.getButtons();
+            // REMOVE button if no access
+            if (!Authorization.hasPermission("DWSupport:DWSupport_Revenue")) {
+                buttons.splice(Q.indexOf(buttons, x => x.cssClass == "add-button"), 1);
+            }
+
+            return buttons;
+        }
     }
 }
