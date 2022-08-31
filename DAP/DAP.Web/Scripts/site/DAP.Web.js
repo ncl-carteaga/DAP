@@ -4871,7 +4871,7 @@ var DAP;
                         'AdActiveStatus', w1,
                         'HrEmpStatus', w1,
                         'AdDescription', w1,
-                        'ReviewerItCompliance', w1
+                        'ReviewerItCompliance', w0
                     ]);
                 }
                 return _this;
