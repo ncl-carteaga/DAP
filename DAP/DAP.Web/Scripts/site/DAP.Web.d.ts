@@ -8101,13 +8101,31 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-    class InvoiceItemTypeMasterSuppDialog extends Serenity.EntityDialog<InvoiceItemTypeMasterSuppRow, any> {
-        protected getFormKey(): string;
+    class InvoiceItemTypeSuppGrid extends Serenity.EntityGrid<InvoiceItemTypeSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof InvoiceItemTypeSuppDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
         protected getService(): string;
-        protected form: InvoiceItemTypeMasterSuppForm;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+        protected getColumns(): Slick.Column[];
+        protected initEntityDialog(itemType: any, dialog: any): void;
+        protected addButtonClick(): void;
+        protected getGridCanLoad(): boolean;
+        private _invoiceItemTypeGenNatKey;
+        invoiceItemTypeGenNatKey: number;
+    }
+}
+declare namespace DAP.DWSupport {
+    class InvoiceItemTypeSplitDetailGrid extends DWSupport.InvoiceItemTypeSuppGrid {
+        constructor(container: JQuery);
+        protected usePager(): boolean;
+    }
+}
+declare namespace DAP.DWSupport {
+    class InvoiceItemTypeSplitMasterDetailPane extends Serenity.Widget<any> {
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.DWSupport {
@@ -8121,6 +8139,23 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class InvoiceItemTypeSplitMasterGrid extends InvoiceItemTypeSuppGrid {
+        constructor(container: JQuery);
+        protected getSlickOptions(): Slick.GridOptions;
+        protected createSlickGrid(): Slick.Grid;
+    }
+}
+declare namespace DAP.DWSupport {
+    class InvoiceItemTypeMasterSuppDialog extends Serenity.EntityDialog<InvoiceItemTypeMasterSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: InvoiceItemTypeMasterSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
     class InvoiceItemTypeSuppDialog extends Serenity.EntityDialog<InvoiceItemTypeSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -8129,17 +8164,6 @@ declare namespace DAP.DWSupport {
         protected getService(): string;
         protected form: InvoiceItemTypeSuppForm;
         protected getToolbarButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.DWSupport {
-    class InvoiceItemTypeSuppGrid extends Serenity.EntityGrid<InvoiceItemTypeSuppRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof InvoiceItemTypeSuppDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {

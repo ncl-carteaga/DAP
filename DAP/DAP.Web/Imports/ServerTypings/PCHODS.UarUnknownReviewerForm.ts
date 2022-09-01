@@ -25,7 +25,7 @@
         AdActiveStatus: Serenity.StringEditor;
         HrEmpStatus: Serenity.StringEditor;
         AdDescription: Serenity.StringEditor;
-        ReviewerItCompliance: Serenity.StringEditor;
+        ReviewerItCompliance: Serenity.LookupEditor;
     }
 
     export class UarUnknownReviewerForm extends Serenity.PrefixedContext {
@@ -68,7 +68,7 @@
                     'AdActiveStatus', w1,
                     'HrEmpStatus', w1,
                     'AdDescription', w1,
-                    'ReviewerItCompliance', w1
+                    'ReviewerItCompliance', w0
                 ]);
             }
         }

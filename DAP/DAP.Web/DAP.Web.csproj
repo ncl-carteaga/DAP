@@ -901,6 +901,7 @@
     <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.20220804_101344.bak" />
     <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.gen.bak" />
     <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.orig" />
+    <Content Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1492,6 +1493,9 @@
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogGridDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogListGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitDetailGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitMasterDetailPane.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SelectYNEditor.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImport.ts" />

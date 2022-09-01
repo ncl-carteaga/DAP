@@ -108,6 +108,11 @@ namespace MVC
                 public const string ImportErrorLogIndex = "~/Modules/DWSupport/ImportErrorLog/ImportErrorLogIndex.cshtml";
             }
 
+            public static class InvoiceItemTypeMasterDetail
+            {
+                public const string Index = "~/Modules/DWSupport/InvoiceItemTypeMasterDetail/Index.cshtml";
+            }
+
             public static class InvoiceItemTypeMasterSupp
             {
                 public const string InvoiceItemTypeMasterSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml";

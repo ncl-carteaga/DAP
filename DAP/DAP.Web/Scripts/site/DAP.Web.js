@@ -9666,24 +9666,131 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var InvoiceItemTypeMasterSuppDialog = /** @class */ (function (_super) {
-            __extends(InvoiceItemTypeMasterSuppDialog, _super);
-            function InvoiceItemTypeMasterSuppDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.InvoiceItemTypeMasterSuppForm(_this.idPrefix);
+        var InvoiceItemTypeSuppGrid = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSuppGrid, _super);
+            function InvoiceItemTypeSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InvoiceItemTypeSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.InvoiceItemTypeSupp'; };
+            InvoiceItemTypeSuppGrid.prototype.getDialogType = function () { return DWSupport.InvoiceItemTypeSuppDialog; };
+            InvoiceItemTypeSuppGrid.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.idProperty; };
+            InvoiceItemTypeSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeSuppRow.localTextPrefix; };
+            InvoiceItemTypeSuppGrid.prototype.getService = function () { return DWSupport.InvoiceItemTypeSuppService.baseUrl; };
+            InvoiceItemTypeSuppGrid.prototype.getButtons = function () {
+                var buttons = _super.prototype.getButtons.call(this);
+                // REMOVE button if no access
+                if (!DAP.Authorization.hasPermission("DWSupport:DWSupport_Revenue")) {
+                    buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
+                }
+                return buttons;
+            };
+            InvoiceItemTypeSuppGrid.prototype.getColumns = function () {
+                return _super.prototype.getColumns.call(this).filter(function (x) { return x.field !== "InvoiceItemTypeGenNatKey" /* InvoiceItemTypeGenNatKey */; });
+            };
+            InvoiceItemTypeSuppGrid.prototype.initEntityDialog = function (itemType, dialog) {
+                _super.prototype.initEntityDialog.call(this, itemType, dialog);
+                Serenity.SubDialogHelper.cascade(dialog, this.element.closest('.ui-dialog'));
+            };
+            InvoiceItemTypeSuppGrid.prototype.addButtonClick = function () {
+                this.editItem({ InvoiceItemTypeGenNatKey: this.invoiceItemTypeGenNatKey });
+            };
+            InvoiceItemTypeSuppGrid.prototype.getGridCanLoad = function () {
+                return _super.prototype.getGridCanLoad.call(this) && !!this.invoiceItemTypeGenNatKey;
+            };
+            Object.defineProperty(InvoiceItemTypeSuppGrid.prototype, "invoiceItemTypeGenNatKey", {
+                get: function () {
+                    return this._invoiceItemTypeGenNatKey;
+                },
+                set: function (value) {
+                    if (this._invoiceItemTypeGenNatKey !== value) {
+                        this._invoiceItemTypeGenNatKey = value;
+                        this.setEquality('InvoiceItemTypeGenNatKey', value);
+                        this.refresh();
+                    }
+                },
+                enumerable: true,
+                configurable: true
+            });
+            InvoiceItemTypeSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InvoiceItemTypeSuppGrid);
+            return InvoiceItemTypeSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.InvoiceItemTypeSuppGrid = InvoiceItemTypeSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../InvoiceItemTypeSupp/InvoiceItemTypeSuppGrid.ts" />
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeSplitDetailGrid = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSplitDetailGrid, _super);
+            function InvoiceItemTypeSplitDetailGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InvoiceItemTypeSplitDetailGrid.prototype.usePager = function () {
+                return false;
+            };
+            InvoiceItemTypeSplitDetailGrid = __decorate([
+                Serenity.Decorators.registerClass("DAP.DWSupport.InvoiceItemTypeSplitDetailGrid")
+            ], InvoiceItemTypeSplitDetailGrid);
+            return InvoiceItemTypeSplitDetailGrid;
+        }(DWSupport.InvoiceItemTypeSuppGrid));
+        DWSupport.InvoiceItemTypeSplitDetailGrid = InvoiceItemTypeSplitDetailGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeSplitMasterDetailPane = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSplitMasterDetailPane, _super);
+            function InvoiceItemTypeSplitMasterDetailPane(container) {
+                var _this = _super.call(this, container) || this;
+                var masterDiv = container[0].appendChild(document.createElement("div"));
+                masterDiv.classList.add('pane');
+                var InvoiceItemTypeMasterGrid = new DWSupport.InvoiceItemTypeSplitMasterGrid($(masterDiv));
+                var detailDiv = container[0].appendChild(document.createElement("div"));
+                detailDiv.classList.add('pane');
+                var InvoiceItemTypeDetailsGrid = new DWSupport.InvoiceItemTypeSplitDetailGrid($(detailDiv));
+                var resize = Q.debounce(function () {
+                    if (!_this.element)
+                        return;
+                    InvoiceItemTypeMasterGrid.element.triggerHandler("layout");
+                    InvoiceItemTypeDetailsGrid.element.triggerHandler("layout");
+                }, 250);
+                InvoiceItemTypeMasterGrid.view.onDataLoaded.subscribe(function (e) { return InvoiceItemTypeMasterGrid.slickGrid.setSelectedRows([]); });
+                InvoiceItemTypeMasterGrid.slickGrid.onSelectedRowsChanged.subscribe(Q.debounce(function (e) {
+                    if (!_this.element)
+                        return;
+                    var rows = InvoiceItemTypeMasterGrid.slickGrid.getSelectedRows();
+                    if (!rows.length) {
+                        InvoiceItemTypeDetailsGrid.invoiceItemTypeGenNatKey = null;
+                    }
+                    else {
+                        InvoiceItemTypeMasterGrid.slickGrid.scrollRowIntoView(rows[0], false);
+                        var master = InvoiceItemTypeMasterGrid.view.getItem(rows[0]);
+                        InvoiceItemTypeDetailsGrid.invoiceItemTypeGenNatKey = master.InvoiceItemTypeMasterId;
+                        InvoiceItemTypeDetailsGrid.setTitle('Invoice Item Type Details of');
+                    }
+                }, 500));
+                var split = Split([masterDiv, detailDiv], {
+                    direction: "vertical",
+                    cursor: "row-resize",
+                    minSize: [380, 310],
+                    onDragEnd: resize,
+                    onDrag: resize
+                });
+                window.setTimeout(function () { return resize(); }, 1);
                 return _this;
             }
-            InvoiceItemTypeMasterSuppDialog.prototype.getFormKey = function () { return DWSupport.InvoiceItemTypeMasterSuppForm.formKey; };
-            InvoiceItemTypeMasterSuppDialog.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeMasterSuppRow.idProperty; };
-            InvoiceItemTypeMasterSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeMasterSuppRow.localTextPrefix; };
-            InvoiceItemTypeMasterSuppDialog.prototype.getNameProperty = function () { return DWSupport.InvoiceItemTypeMasterSuppRow.nameProperty; };
-            InvoiceItemTypeMasterSuppDialog.prototype.getService = function () { return DWSupport.InvoiceItemTypeMasterSuppService.baseUrl; };
-            InvoiceItemTypeMasterSuppDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], InvoiceItemTypeMasterSuppDialog);
-            return InvoiceItemTypeMasterSuppDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.InvoiceItemTypeMasterSuppDialog = InvoiceItemTypeMasterSuppDialog;
+            InvoiceItemTypeSplitMasterDetailPane = __decorate([
+                Serenity.Decorators.registerClass("DAP.DWSupport.InvoiceItemTypeSplitMasterDetailPane")
+            ], InvoiceItemTypeSplitMasterDetailPane);
+            return InvoiceItemTypeSplitMasterDetailPane;
+        }(Serenity.Widget));
+        DWSupport.InvoiceItemTypeSplitMasterDetailPane = InvoiceItemTypeSplitMasterDetailPane;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -9706,6 +9813,58 @@ var DAP;
             return InvoiceItemTypeMasterSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.InvoiceItemTypeMasterSuppGrid = InvoiceItemTypeMasterSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppGrid.ts" />
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeSplitMasterGrid = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeSplitMasterGrid, _super);
+            function InvoiceItemTypeSplitMasterGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InvoiceItemTypeSplitMasterGrid.prototype.getSlickOptions = function () {
+                var opt = _super.prototype.getSlickOptions.call(this);
+                opt.enableCellNavigation = true;
+                return opt;
+            };
+            InvoiceItemTypeSplitMasterGrid.prototype.createSlickGrid = function () {
+                var grid = _super.prototype.createSlickGrid.call(this);
+                grid.setSelectionModel(new Slick.RowSelectionModel());
+                return grid;
+            };
+            InvoiceItemTypeSplitMasterGrid = __decorate([
+                Serenity.Decorators.registerClass("DAP.DWSupport.InvoiceItemTypeSplitMasterGrid")
+            ], InvoiceItemTypeSplitMasterGrid);
+            return InvoiceItemTypeSplitMasterGrid;
+        }(DWSupport.InvoiceItemTypeSuppGrid));
+        DWSupport.InvoiceItemTypeSplitMasterGrid = InvoiceItemTypeSplitMasterGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var InvoiceItemTypeMasterSuppDialog = /** @class */ (function (_super) {
+            __extends(InvoiceItemTypeMasterSuppDialog, _super);
+            function InvoiceItemTypeMasterSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.InvoiceItemTypeMasterSuppForm(_this.idPrefix);
+                return _this;
+            }
+            InvoiceItemTypeMasterSuppDialog.prototype.getFormKey = function () { return DWSupport.InvoiceItemTypeMasterSuppForm.formKey; };
+            InvoiceItemTypeMasterSuppDialog.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeMasterSuppRow.idProperty; };
+            InvoiceItemTypeMasterSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeMasterSuppRow.localTextPrefix; };
+            InvoiceItemTypeMasterSuppDialog.prototype.getNameProperty = function () { return DWSupport.InvoiceItemTypeMasterSuppRow.nameProperty; };
+            InvoiceItemTypeMasterSuppDialog.prototype.getService = function () { return DWSupport.InvoiceItemTypeMasterSuppService.baseUrl; };
+            InvoiceItemTypeMasterSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InvoiceItemTypeMasterSuppDialog);
+            return InvoiceItemTypeMasterSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.InvoiceItemTypeMasterSuppDialog = InvoiceItemTypeMasterSuppDialog;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -9735,36 +9894,6 @@ var DAP;
             return InvoiceItemTypeSuppDialog;
         }(Serenity.EntityDialog));
         DWSupport.InvoiceItemTypeSuppDialog = InvoiceItemTypeSuppDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var InvoiceItemTypeSuppGrid = /** @class */ (function (_super) {
-            __extends(InvoiceItemTypeSuppGrid, _super);
-            function InvoiceItemTypeSuppGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            InvoiceItemTypeSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.InvoiceItemTypeSupp'; };
-            InvoiceItemTypeSuppGrid.prototype.getDialogType = function () { return DWSupport.InvoiceItemTypeSuppDialog; };
-            InvoiceItemTypeSuppGrid.prototype.getIdProperty = function () { return DWSupport.InvoiceItemTypeSuppRow.idProperty; };
-            InvoiceItemTypeSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.InvoiceItemTypeSuppRow.localTextPrefix; };
-            InvoiceItemTypeSuppGrid.prototype.getService = function () { return DWSupport.InvoiceItemTypeSuppService.baseUrl; };
-            InvoiceItemTypeSuppGrid.prototype.getButtons = function () {
-                var buttons = _super.prototype.getButtons.call(this);
-                // REMOVE button if no access
-                if (!DAP.Authorization.hasPermission("DWSupport:DWSupport_Revenue")) {
-                    buttons.splice(Q.indexOf(buttons, function (x) { return x.cssClass == "add-button"; }), 1);
-                }
-                return buttons;
-            };
-            InvoiceItemTypeSuppGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], InvoiceItemTypeSuppGrid);
-            return InvoiceItemTypeSuppGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.InvoiceItemTypeSuppGrid = InvoiceItemTypeSuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
