@@ -9685,26 +9685,30 @@ var DAP;
                 return buttons;
             };
             InvoiceItemTypeSuppGrid.prototype.getColumns = function () {
-                return _super.prototype.getColumns.call(this).filter(function (x) { return x.field !== "InvoiceItemTypeGenNatKey" /* InvoiceItemTypeGenNatKey */; });
+                return _super.prototype.getColumns.call(this).filter(function (x) { return x.field !== "InvoiceItemTypeCd" /* InvoiceItemTypeCd */; });
             };
             InvoiceItemTypeSuppGrid.prototype.initEntityDialog = function (itemType, dialog) {
                 _super.prototype.initEntityDialog.call(this, itemType, dialog);
                 Serenity.SubDialogHelper.cascade(dialog, this.element.closest('.ui-dialog'));
             };
             InvoiceItemTypeSuppGrid.prototype.addButtonClick = function () {
-                this.editItem({ InvoiceItemTypeGenNatKey: this.invoiceItemTypeGenNatKey });
+                this.editItem({ InvoiceItemTypeCd: this.invoiceItemTypeCd });
+            };
+            InvoiceItemTypeSuppGrid.prototype.getInitialTitle = function () {
+                return null;
             };
             InvoiceItemTypeSuppGrid.prototype.getGridCanLoad = function () {
-                return _super.prototype.getGridCanLoad.call(this) && !!this.invoiceItemTypeGenNatKey;
+                // return true if grid can load and Grid's field exists
+                return _super.prototype.getGridCanLoad.call(this) && !!this.invoiceItemTypeCd;
             };
-            Object.defineProperty(InvoiceItemTypeSuppGrid.prototype, "invoiceItemTypeGenNatKey", {
+            Object.defineProperty(InvoiceItemTypeSuppGrid.prototype, "invoiceItemTypeCd", {
                 get: function () {
-                    return this._invoiceItemTypeGenNatKey;
+                    return this._invoiceItemTypeCd;
                 },
                 set: function (value) {
-                    if (this._invoiceItemTypeGenNatKey !== value) {
-                        this._invoiceItemTypeGenNatKey = value;
-                        this.setEquality('InvoiceItemTypeGenNatKey', value);
+                    if (this._invoiceItemTypeCd !== value) {
+                        this._invoiceItemTypeCd = value;
+                        this.setEquality('InvoiceItemTypeCd', value);
                         this.refresh();
                     }
                 },
@@ -9766,13 +9770,13 @@ var DAP;
                         return;
                     var rows = InvoiceItemTypeMasterGrid.slickGrid.getSelectedRows();
                     if (!rows.length) {
-                        InvoiceItemTypeDetailsGrid.invoiceItemTypeGenNatKey = null;
+                        InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = null;
                     }
                     else {
                         InvoiceItemTypeMasterGrid.slickGrid.scrollRowIntoView(rows[0], false);
                         var master = InvoiceItemTypeMasterGrid.view.getItem(rows[0]);
-                        InvoiceItemTypeDetailsGrid.invoiceItemTypeGenNatKey = master.InvoiceItemTypeMasterId;
-                        InvoiceItemTypeDetailsGrid.setTitle('Invoice Item Type Details of');
+                        InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = master.InvoiceItemTypeCd;
+                        InvoiceItemTypeDetailsGrid.setTitle('Invoice Item Type Details of ' + master.InvoiceItemTypeMasterId + ' - ' + master.InvoiceItemTypeCd);
                     }
                 }, 500));
                 var split = Split([masterDiv, detailDiv], {

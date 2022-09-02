@@ -27,7 +27,7 @@ namespace DAP.DWSupport {
         }
 
         protected getColumns(): Slick.Column[] {
-            return super.getColumns().filter(x => x.field !== fld.InvoiceItemTypeGenNatKey);
+            return super.getColumns().filter(x => x.field !== fld.InvoiceItemTypeCd);
         }
 
         protected initEntityDialog(itemType, dialog) {
@@ -36,23 +36,28 @@ namespace DAP.DWSupport {
         }
 
         protected addButtonClick() {
-            this.editItem({ InvoiceItemTypeGenNatKey: this.invoiceItemTypeGenNatKey });
+            this.editItem({ InvoiceItemTypeCd: this.invoiceItemTypeCd });
+        }
+
+        protected getInitialTitle() {
+            return null;
         }
 
         protected getGridCanLoad() {
-            return super.getGridCanLoad() && !!this.invoiceItemTypeGenNatKey;
+            // return true if grid can load and Grid's field exists
+            return super.getGridCanLoad() && !!this.invoiceItemTypeCd
         }
 
-        private _invoiceItemTypeGenNatKey: number;
+        private _invoiceItemTypeCd: string;
 
-        get invoiceItemTypeGenNatKey() {
-            return this._invoiceItemTypeGenNatKey;
+        get invoiceItemTypeCd() {
+            return this._invoiceItemTypeCd;
         }
-
-        set invoiceItemTypeGenNatKey(value: number) {
-            if (this._invoiceItemTypeGenNatKey !== value) {
-                this._invoiceItemTypeGenNatKey = value;
-                this.setEquality('InvoiceItemTypeGenNatKey', value);
+        
+        set invoiceItemTypeCd(value: string) {
+            if (this._invoiceItemTypeCd !== value) {
+                this._invoiceItemTypeCd = value;
+                this.setEquality('InvoiceItemTypeCd', value);
                 this.refresh();
             }
         }

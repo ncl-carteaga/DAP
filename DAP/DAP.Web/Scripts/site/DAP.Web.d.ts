@@ -8112,9 +8112,10 @@ declare namespace DAP.DWSupport {
         protected getColumns(): Slick.Column[];
         protected initEntityDialog(itemType: any, dialog: any): void;
         protected addButtonClick(): void;
+        protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
-        private _invoiceItemTypeGenNatKey;
-        invoiceItemTypeGenNatKey: number;
+        private _invoiceItemTypeCd;
+        invoiceItemTypeCd: string;
     }
 }
 declare namespace DAP.DWSupport {

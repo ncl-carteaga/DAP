@@ -29,14 +29,14 @@
 
                 var rows = InvoiceItemTypeMasterGrid.slickGrid.getSelectedRows() as number[];
                 if (!rows.length) {
-                    InvoiceItemTypeDetailsGrid.invoiceItemTypeGenNatKey = null;
+                    InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = null;
                 }
                 else {
                     InvoiceItemTypeMasterGrid.slickGrid.scrollRowIntoView(rows[0], false);
                     var master = InvoiceItemTypeMasterGrid.view.getItem(
                         rows[0]) as InvoiceItemTypeMasterSuppRow;
-                    InvoiceItemTypeDetailsGrid.invoiceItemTypeGenNatKey = master.InvoiceItemTypeMasterId;
-                    InvoiceItemTypeDetailsGrid.setTitle('Invoice Item Type Details of');
+                    InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = master.InvoiceItemTypeCd;
+                    InvoiceItemTypeDetailsGrid.setTitle('Invoice Item Type Details of ' + master.InvoiceItemTypeMasterId + ' - ' + master.InvoiceItemTypeCd);
                 }
             }, 500));
 
