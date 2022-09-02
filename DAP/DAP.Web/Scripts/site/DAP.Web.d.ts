@@ -8139,7 +8139,7 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-    class InvoiceItemTypeSplitMasterGrid extends InvoiceItemTypeSuppGrid {
+    class InvoiceItemTypeSplitMasterGrid extends InvoiceItemTypeMasterSuppGrid {
         constructor(container: JQuery);
         protected getSlickOptions(): Slick.GridOptions;
         protected createSlickGrid(): Slick.Grid;

@@ -9839,7 +9839,7 @@ var DAP;
                 Serenity.Decorators.registerClass("DAP.DWSupport.InvoiceItemTypeSplitMasterGrid")
             ], InvoiceItemTypeSplitMasterGrid);
             return InvoiceItemTypeSplitMasterGrid;
-        }(DWSupport.InvoiceItemTypeSuppGrid));
+        }(DWSupport.InvoiceItemTypeMasterSuppGrid));
         DWSupport.InvoiceItemTypeSplitMasterGrid = InvoiceItemTypeSplitMasterGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));

@@ -3,7 +3,7 @@
 namespace DAP.DWSupport {
 
     @Serenity.Decorators.registerClass("DAP.DWSupport.InvoiceItemTypeSplitMasterGrid")
-    export class InvoiceItemTypeSplitMasterGrid extends InvoiceItemTypeSuppGrid {
+    export class InvoiceItemTypeSplitMasterGrid extends InvoiceItemTypeMasterSuppGrid {
 
         constructor(container: JQuery) {
             super(container);
