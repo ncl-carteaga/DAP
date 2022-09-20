@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.DWSupport.Repositories
 {
+    using DAP.DWSupport.Entities;
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
@@ -56,6 +57,27 @@ namespace DAP.DWSupport.Repositories
                 {
                     Row.ModifiedBy = user.Username.ToUpper();
                     Row.ModifiedDate = DateTime.Now;
+                }
+            }
+
+            protected override void BeforeSave()
+            {
+                base.BeforeSave();
+
+                if (IsUpdate)
+                {
+                    if (this.Connection.Exists<AgencySnapshotRequestRow>(MyRow.Fields.RequestedByDate == Row.RequestedByDate.Value.ToString()))
+                    {
+                        throw new ValidationError("Duplicate entry for field: " + MyRow.Fields.RequestedByDate.ColumnAlias);
+                    }
+                }
+
+                if (IsCreate)
+                {
+                    if (this.Connection.Exists<AgencySnapshotRequestRow>(MyRow.Fields.RequestedByDate == Row.RequestedByDate.Value.ToString()))
+                    {
+                        throw new ValidationError("Duplicate entry for field: " + MyRow.Fields.RequestedByDate.ColumnAlias);
+                    }
                 }
             }
 

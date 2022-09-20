@@ -5570,7 +5570,7 @@ declare namespace DAP.PCHODS {
         AdActiveStatus: Serenity.StringEditor;
         HrEmpStatus: Serenity.StringEditor;
         AdDescription: Serenity.StringEditor;
-        ReviewerItCompliance: Serenity.StringEditor;
+        ReviewerItCompliance: Serenity.LookupEditor;
     }
     class UarUnknownReviewerForm extends Serenity.PrefixedContext {
         static formKey: string;
