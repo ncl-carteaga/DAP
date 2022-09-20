@@ -12,5 +12,15 @@ namespace DAP.DWSupport {
         constructor(container: JQuery) {
             super(container);
         }
+
+        protected createSlickGrid() {
+            this.slickGrid = super.createSlickGrid();
+
+            new Serenity.AutoColumnWidthMixin({
+                grid: this
+            });
+
+            return this.slickGrid;
+        }      
     }
 }

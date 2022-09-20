@@ -31,14 +31,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.RequestedBy[this] = value; }
         }
 
-        [DisplayName("Requested By Date"), NotNull, QuickSearch]
+        [DisplayName("Requested By Date"), NotNull]
         public DateTime? RequestedByDate
         {
             get { return Fields.RequestedByDate[this]; }
             set { Fields.RequestedByDate[this] = value; }
         }
 
-        [DisplayName("Requested Reason"), Size(250), NotNull]
+        [DisplayName("Requested Reason"), Size(250), NotNull, QuickSearch]
         public String RequestedReason
         {
             get { return Fields.RequestedReason[this]; }
