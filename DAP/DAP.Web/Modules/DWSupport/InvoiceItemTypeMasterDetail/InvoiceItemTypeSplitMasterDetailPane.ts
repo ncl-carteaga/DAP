@@ -1,10 +1,15 @@
 ﻿namespace DAP.DWSupport {
 
+    /*
+     * Connect master grid's row to child grid's row by ID.
+    */
+
     @Serenity.Decorators.registerClass("DAP.DWSupport.InvoiceItemTypeSplitMasterDetailPane")
     export class InvoiceItemTypeSplitMasterDetailPane extends Serenity.Widget<any> {
         constructor(container: JQuery) {
             super(container);
 
+            // get grid objects
             var masterDiv = container[0].appendChild(document.createElement("div"));
             masterDiv.classList.add('pane');
             var InvoiceItemTypeMasterGrid = new InvoiceItemTypeSplitMasterGrid($(masterDiv));
@@ -23,14 +28,17 @@
 
             InvoiceItemTypeMasterGrid.view.onDataLoaded.subscribe(e => InvoiceItemTypeMasterGrid.slickGrid.setSelectedRows([]));
 
+
             InvoiceItemTypeMasterGrid.slickGrid.onSelectedRowsChanged.subscribe(Q.debounce((e) => {
                 if (!this.element)
                     return;
 
+                // if there are no data rows in master, set child row's ID to null
                 var rows = InvoiceItemTypeMasterGrid.slickGrid.getSelectedRows() as number[];
                 if (!rows.length) {
                     InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = null;
                 }
+                // if master grid has data, set child grid's row ID to master's ID
                 else {
                     InvoiceItemTypeMasterGrid.slickGrid.scrollRowIntoView(rows[0], false);
                     var master = InvoiceItemTypeMasterGrid.view.getItem(

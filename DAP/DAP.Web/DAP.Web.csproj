@@ -1172,6 +1172,12 @@
     <Content Include="Modules\NCLHDSAR\DataFlow\DataFlowIndex.cshtml" />
     <Content Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1204,6 +1210,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityDetailsSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CasinoSlotMasterDescSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CategoryMasterSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DistrictMasterSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1219,6 +1234,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinReportPublishingSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FullShipChartersSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1231,10 +1249,16 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MinibarSetupSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PortSubstitutionSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppColumns.ts">
@@ -1659,6 +1683,18 @@
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeSupp\InvoiceItemTypeSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AgencySnapshotRequest\AgencySnapshotRequestGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3061,6 +3097,60 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.UarEmployeeDirectreportsService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CasinoSlotMasterDescSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CasinoSlotMasterDescSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CasinoSlotMasterDescSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CategoryMasterSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CategoryMasterSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CategoryMasterSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FullShipChartersSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FullShipChartersSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FullShipChartersSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MinibarSetupSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MinibarSetupSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MinibarSetupSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3781,6 +3871,42 @@
     <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs" />
     <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRepository.cs" />
     <Compile Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CasinoSlotMasterDescSupp\CasinoSlotMasterDescSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CategoryMasterSupp\CategoryMasterSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CurrencyExchangeRateSupp\CurrencyExchangeRateSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
