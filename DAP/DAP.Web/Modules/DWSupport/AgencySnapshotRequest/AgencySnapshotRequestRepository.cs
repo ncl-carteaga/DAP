@@ -68,7 +68,7 @@ namespace DAP.DWSupport.Repositories
                 {
                     if (this.Connection.Exists<AgencySnapshotRequestRow>(MyRow.Fields.RequestedByDate == Row.RequestedByDate.Value.ToString()))
                     {
-                        throw new ValidationError("Duplicate entry for field: " + MyRow.Fields.RequestedByDate.ColumnAlias);
+                        throw new ValidationError("There is already an entry for this date.");
                     }
                 }
 
@@ -76,7 +76,7 @@ namespace DAP.DWSupport.Repositories
                 {
                     if (this.Connection.Exists<AgencySnapshotRequestRow>(MyRow.Fields.RequestedByDate == Row.RequestedByDate.Value.ToString()))
                     {
-                        throw new ValidationError("Duplicate entry for field: " + MyRow.Fields.RequestedByDate.ColumnAlias);
+                        throw new ValidationError("There is already an entry for this date.");
                     }
                 }
             }

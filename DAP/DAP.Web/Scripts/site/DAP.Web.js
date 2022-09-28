@@ -9429,6 +9429,13 @@ var DAP;
             AgencySnapshotRequestGrid.prototype.getIdProperty = function () { return DWSupport.AgencySnapshotRequestRow.idProperty; };
             AgencySnapshotRequestGrid.prototype.getLocalTextPrefix = function () { return DWSupport.AgencySnapshotRequestRow.localTextPrefix; };
             AgencySnapshotRequestGrid.prototype.getService = function () { return DWSupport.AgencySnapshotRequestService.baseUrl; };
+            AgencySnapshotRequestGrid.prototype.createSlickGrid = function () {
+                this.slickGrid = _super.prototype.createSlickGrid.call(this);
+                new Serenity.AutoColumnWidthMixin({
+                    grid: this
+                });
+                return this.slickGrid;
+            };
             AgencySnapshotRequestGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], AgencySnapshotRequestGrid);
