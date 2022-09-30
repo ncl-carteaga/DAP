@@ -11,8 +11,10 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[CURRENCY_EXCHANGE_RATE_SUPP]")]
     [DisplayName("Currency Exchange Rate Supp"), InstanceName("Currency Exchange Rate Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class CurrencyExchangeRateSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Currency Sur Key"), Column("CURRENCY_SUR_KEY"), Size(50), PrimaryKey, QuickSearch]

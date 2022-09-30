@@ -11,8 +11,10 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MINIBAR_SETUP_SUPP]")]
     [DisplayName("Minibar Setup Supp"), InstanceName("Minibar Setup Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class MinibarSetupSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Minibar Setup Sur Key"), Column("MINIBAR_SETUP_SUR_KEY"), PrimaryKey]

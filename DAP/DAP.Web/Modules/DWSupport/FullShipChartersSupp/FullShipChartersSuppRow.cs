@@ -11,8 +11,10 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[FULL_SHIP_CHARTERS_SUPP]")]
     [DisplayName("Full Ship Charters Supp"), InstanceName("Full Ship Charters Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class FullShipChartersSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Ship Charter Sur Key"), Column("SHIP_CHARTER_SUR_KEY"), PrimaryKey]

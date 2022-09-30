@@ -11,8 +11,10 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[CASINO_SLOT_MASTER_DESC_SUPP]")]
     [DisplayName("Casino Slot Master Desc Supp"), InstanceName("Casino Slot Master Desc Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class CasinoSlotMasterDescSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Slot Master Desc Sur Key"), Column("SLOT_MASTER_DESC_SUR_KEY"), Size(50), PrimaryKey, QuickSearch]

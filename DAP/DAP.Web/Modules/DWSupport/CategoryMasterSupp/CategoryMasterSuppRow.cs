@@ -11,8 +11,10 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[CATEGORY_MASTER_SUPP]")]
     [DisplayName("Category Master Supp"), InstanceName("Category Master Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class CategoryMasterSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Category Master Sur Key"), Column("CATEGORY_MASTER_SUR_KEY"), Size(50), PrimaryKey, QuickSearch]

@@ -41,8 +41,13 @@ namespace DAP.DWSupport
             public const string AmenitySupp = "DWSupp:Page:AmenitySupp";
             public const string AmenityDetailSupp = "DWSupp:Page:AmenityDetailSupp";
             public const string AgencySnapshotRequest = "DWSupp:Page:AgencySnapshotRequest";
-        }
-    }
 
-    
+            public const string CasinoSlotMasterDescSupp = "DWSupp:Page:CasinoSlotMasterDescSupp";
+            public const string CategoryMasterSupp = "DWSupp:Page:CategoryMasterSupp";
+            public const string CurrencyExchangeRateSupp = "DWSupp:Page:CurrencyExchangeRateSupp";
+            public const string FullShipChartersSupp = "DWSupp:Page:FullShipChartersSupp";
+            public const string MinibarSetupSupp = "DWSupp:Page:MinibarSetupSupp";
+            public const string RollupProductCodesSupp = "DWSupp:Page:RollupProductCodesSupp";
+        }
+    }    
 }

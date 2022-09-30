@@ -11,8 +11,10 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[ROLLUP_PRODUCT_CODES_SUPP]")]
     [DisplayName("Rollup Product Codes Supp"), InstanceName("Rollup Product Codes Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class RollupProductCodesSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Rollup Product Sur Key"), Column("ROLLUP_PRODUCT_SUR_KEY"), PrimaryKey]
