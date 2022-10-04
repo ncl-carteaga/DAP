@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/FullShipChartersSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.FullShipChartersSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.FullShipChartersSupp)]
     public class FullShipChartersSuppController : Controller
     {
         public ActionResult Index()
