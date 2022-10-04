@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/CasinoSlotMasterDescSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.CasinoSlotMasterDescSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.CasinoSlotMasterDescSupp)]
     public class CasinoSlotMasterDescSuppController : Controller
     {
         public ActionResult Index()

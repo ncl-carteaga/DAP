@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/CategoryMasterSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.CategoryMasterSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.CategoryMasterSupp)]
     public class CategoryMasterSuppController : Controller
     {
         public ActionResult Index()

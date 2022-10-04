@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/RollupProductCodesSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.RollupProductCodesSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.RollupProductCodesSupp)]
     public class RollupProductCodesSuppController : Controller
     {
         public ActionResult Index()

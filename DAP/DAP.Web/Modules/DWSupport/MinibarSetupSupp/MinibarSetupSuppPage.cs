@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/MinibarSetupSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.MinibarSetupSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.MinibarSetupSupp)]
     public class MinibarSetupSuppController : Controller
     {
         public ActionResult Index()

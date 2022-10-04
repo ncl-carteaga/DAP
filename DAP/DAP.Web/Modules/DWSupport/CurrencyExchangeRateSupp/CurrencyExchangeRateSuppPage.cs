@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/CurrencyExchangeRateSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.CurrencyExchangeRateSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.CurrencyExchangeRateSupp)]
     public class CurrencyExchangeRateSuppController : Controller
     {
         public ActionResult Index()
