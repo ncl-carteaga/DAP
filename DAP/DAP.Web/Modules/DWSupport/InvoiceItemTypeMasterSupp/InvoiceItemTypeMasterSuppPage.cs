@@ -11,7 +11,9 @@ namespace DAP.DWSupport.Pages
     {
         public ActionResult Index()
         {
-            return View("~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml");
+            //return View("~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml");
+            return View("~/Modules/DWSupport/InvoiceItemTypeMasterDetail/Index.cshtml");
+
         }
     }
 }

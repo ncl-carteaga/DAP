@@ -9627,6 +9627,42 @@ button.ui-button {
 .s-DWSupport-AgencySnapshotRequestDialog .caption {
   width: 150px;
 }
+.s-DWSupport-CasinoSlotMasterDescSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CasinoSlotMasterDescSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-CategoryMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CategoryMasterSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-CurrencyExchangeRateSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CurrencyExchangeRateSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-FullShipChartersSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-FullShipChartersSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-MinibarSetupSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-MinibarSetupSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-RollupProductCodesSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-RollupProductCodesSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

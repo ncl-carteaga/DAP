@@ -1,11 +1,14 @@
 ﻿
 namespace DAP.PCHODS.Entities
 {
+    using DAP.PCHODS;
+    using DAP.PCHODS.Lookups;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel;
     using System.IO;
 
@@ -199,9 +202,8 @@ namespace DAP.PCHODS.Entities
             get { return Fields.AdDescription[this]; }
             set { Fields.AdDescription[this] = value; }
         }
-
-
-        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50), Expression("empName.[sup_FirstName]")]
+       
+        [DisplayName("Reviewer It Compliance"), Column("Reviewer_ITCompliance"), Size(50), LookupEditor(typeof(UarEmployeeDirectreportsLookupEditor))]
         public String ReviewerItCompliance
         {
             get { return Fields.ReviewerItCompliance[this]; }

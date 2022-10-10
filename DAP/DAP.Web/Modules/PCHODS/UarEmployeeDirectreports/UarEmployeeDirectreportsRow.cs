@@ -23,7 +23,7 @@ namespace DAP.PCHODS.Entities
             set { Fields.EmployeeId[this] = value; }
         }
         
-        [DisplayName("Employee First Name"), Column("Employee_FirstName"), Size(150), LookupInclude]
+        [DisplayName("Employee First Name"), Column("Employee_FirstName"), Size(150)]
         public String EmployeeFirstName
         {
             get { return Fields.EmployeeFirstName[this]; }
@@ -86,13 +86,15 @@ namespace DAP.PCHODS.Entities
             set { Fields.SupEmployeeId[this] = value; }
         }
 
-        [DisplayName("Sup First Name"), Column("sup_FirstName"), Size(150)]
+
+        [Expression("CONCAT(T0.[sup_FirstName], CONCAT(' ', T0.[sup_LastName]))")]
+        [DisplayName("Sup First Name"), Column("sup_FirstName"), Size(150), LookupInclude]
         public String SupFirstName
         {
             get { return Fields.SupFirstName[this]; }
             set { Fields.SupFirstName[this] = value; }
         }
-
+        
         [DisplayName("Sup Last Name"), Column("sup_LastName"), Size(150)]
         public String SupLastName
         {
@@ -137,7 +139,7 @@ namespace DAP.PCHODS.Entities
         {
             get { return Fields.EmployeeId; }
         }
-
+        
         public static readonly RowFields Fields = new RowFields().Init();
 
         public UarEmployeeDirectreportsRow()

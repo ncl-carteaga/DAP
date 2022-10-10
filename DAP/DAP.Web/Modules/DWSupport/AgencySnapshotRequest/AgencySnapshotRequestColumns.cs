@@ -13,7 +13,7 @@ namespace DAP.DWSupport.Columns
     [BasedOnRow(typeof(Entities.AgencySnapshotRequestRow), CheckNames = true)]
     public class AgencySnapshotRequestColumns
     {
-        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
+        [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight, Visible(false)]
         public Int32 AgencySnapshotReqId { get; set; }
         [EditLink]
         public String RequestedBy { get; set; }

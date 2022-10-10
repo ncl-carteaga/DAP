@@ -88,6 +88,21 @@ namespace MVC
                 public const string Index = "~/Modules/DWSupport/AmenityMasterDetail/Index.cshtml";
             }
 
+            public static class CasinoSlotMasterDescSupp
+            {
+                public const string CasinoSlotMasterDescSuppIndex = "~/Modules/DWSupport/CasinoSlotMasterDescSupp/CasinoSlotMasterDescSuppIndex.cshtml";
+            }
+
+            public static class CategoryMasterSupp
+            {
+                public const string CategoryMasterSuppIndex = "~/Modules/DWSupport/CategoryMasterSupp/CategoryMasterSuppIndex.cshtml";
+            }
+
+            public static class CurrencyExchangeRateSupp
+            {
+                public const string CurrencyExchangeRateSuppIndex = "~/Modules/DWSupport/CurrencyExchangeRateSupp/CurrencyExchangeRateSuppIndex.cshtml";
+            }
+
             public static class DistrictMasterSupp
             {
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
@@ -96,6 +111,11 @@ namespace MVC
             public static class FinReportPublishingSupp
             {
                 public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
+            }
+
+            public static class FullShipChartersSupp
+            {
+                public const string FullShipChartersSuppIndex = "~/Modules/DWSupport/FullShipChartersSupp/FullShipChartersSuppIndex.cshtml";
             }
 
             public static class GuestPreventDeparture
@@ -108,6 +128,11 @@ namespace MVC
                 public const string ImportErrorLogIndex = "~/Modules/DWSupport/ImportErrorLog/ImportErrorLogIndex.cshtml";
             }
 
+            public static class InvoiceItemTypeMasterDetail
+            {
+                public const string Index = "~/Modules/DWSupport/InvoiceItemTypeMasterDetail/Index.cshtml";
+            }
+
             public static class InvoiceItemTypeMasterSupp
             {
                 public const string InvoiceItemTypeMasterSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeMasterSupp/InvoiceItemTypeMasterSuppIndex.cshtml";
@@ -118,6 +143,11 @@ namespace MVC
                 public const string InvoiceItemTypeSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeSupp/InvoiceItemTypeSuppIndex.cshtml";
             }
 
+            public static class MinibarSetupSupp
+            {
+                public const string MinibarSetupSuppIndex = "~/Modules/DWSupport/MinibarSetupSupp/MinibarSetupSuppIndex.cshtml";
+            }
+
             public static class PortSubstitutionSupp
             {
                 public const string PortSubstitutionSuppIndex = "~/Modules/DWSupport/PortSubstitutionSupp/PortSubstitutionSuppIndex.cshtml";
@@ -126,6 +156,11 @@ namespace MVC
             public static class ProductCodeSupp
             {
                 public const string ProductCodeSuppIndex = "~/Modules/DWSupport/ProductCodeSupp/ProductCodeSuppIndex.cshtml";
+            }
+
+            public static class RollupProductCodesSupp
+            {
+                public const string RollupProductCodesSuppIndex = "~/Modules/DWSupport/RollupProductCodesSupp/RollupProductCodesSuppIndex.cshtml";
             }
 
             public static class SailingMasterSupp
