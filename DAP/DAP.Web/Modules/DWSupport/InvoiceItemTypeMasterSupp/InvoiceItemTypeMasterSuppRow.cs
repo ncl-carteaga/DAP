@@ -8,6 +8,7 @@ namespace DAP.DWSupport.Entities
     using System;
     using System.ComponentModel;
     using System.IO;
+    using Lookups;
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[INVOICE_ITEM_TYPE_MASTER_SUPP]")]
     [DisplayName("Invoice Item Type Master"), InstanceName("Invoice Item Type Master Supp")]
@@ -17,35 +18,35 @@ namespace DAP.DWSupport.Entities
     [DataAuditLog]
     public sealed class InvoiceItemTypeMasterSuppRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Invoice Item Type Cd"), Column("INVOICE_ITEM_TYPE_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemType"), QuickFilter]
+        [DisplayName("Invoice Item Type Cd"), Column("INVOICE_ITEM_TYPE_CD"), Size(50), /*LookupEditor("DWSupport.GetInvoiceItemType"), QuickFilter*/]
         public String InvoiceItemTypeCd
         {
             get { return Fields.InvoiceItemTypeCd[this]; }
             set { Fields.InvoiceItemTypeCd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Sub Type Cd"), Column("INVOICE_ITEM_SUB_TYPE_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType"), QuickFilter]
+        [DisplayName("Invoice Item Sub Type Cd"), Column("INVOICE_ITEM_SUB_TYPE_CD"), Size(50), /*LookupEditor("DWSupport.GetInvoiceItemSubType"), QuickFilter*/]
         public String InvoiceItemSubTypeCd
         {
             get { return Fields.InvoiceItemSubTypeCd[this]; }
             set { Fields.InvoiceItemSubTypeCd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Sub Type2 Cd"), Column("INVOICE_ITEM_SUB_TYPE2_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType2"), QuickFilter]
+        [DisplayName("Invoice Item Sub Type2 Cd"), Column("INVOICE_ITEM_SUB_TYPE2_CD"), Size(50), /*LookupEditor("DWSupport.GetInvoiceItemSubType2"), QuickFilter*/]
         public String InvoiceItemSubType2Cd
         {
             get { return Fields.InvoiceItemSubType2Cd[this]; }
             set { Fields.InvoiceItemSubType2Cd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Sub Type3 Cd"), Column("INVOICE_ITEM_SUB_TYPE3_CD"), Size(50), LookupEditor("DWSupport.GetInvoiceItemSubType3"), QuickFilter]
+        [DisplayName("Invoice Item Sub Type3 Cd"), Column("INVOICE_ITEM_SUB_TYPE3_CD"), Size(50), /*LookupEditor("DWSupport.GetInvoiceItemSubType3"), QuickFilter*/]
         public String InvoiceItemSubType3Cd
         {
             get { return Fields.InvoiceItemSubType3Cd[this]; }
             set { Fields.InvoiceItemSubType3Cd[this] = value; }
         }
 
-        [DisplayName("Invoice Item Source Cd"), Column("INVOICE_ITEM_SOURCE_CD"), Size(30), LookupEditor("DWSupport.GetInvoiceItemSource"), QuickFilter]
+        [DisplayName("Invoice Item Source Cd"), Column("INVOICE_ITEM_SOURCE_CD"), Size(30), /*LookupEditor("DWSupport.GetInvoiceItemSource"), QuickFilter*/]
         public String InvoiceItemSourceCd
         {
             get { return Fields.InvoiceItemSourceCd[this]; }

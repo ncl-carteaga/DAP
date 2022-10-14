@@ -40,6 +40,11 @@
         export const idProperty = 'InvoiceItemTypeGenNatKey';
         export const nameProperty = 'InvoiceClassType1Cd';
         export const localTextPrefix = 'DWSupport.InvoiceItemTypeSupp';
+        export const lookupKey = 'DWSupport.InvoiceItemTypeSupp';
+
+        export function getLookup(): Q.Lookup<InvoiceItemTypeSuppRow> {
+            return Q.getLookup<InvoiceItemTypeSuppRow>('DWSupport.InvoiceItemTypeSupp');
+        }
 
         export declare const enum Fields {
             InvoiceItemTypeGenNatKey = "InvoiceItemTypeGenNatKey",
