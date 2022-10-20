@@ -1,0 +1,23 @@
+﻿
+namespace DAP.PCHODS {
+    export interface OutboundCompanyRow {
+        Cd?: string;
+        Nm?: string;
+    }
+
+    export namespace OutboundCompanyRow {
+        export const idProperty = 'Cd';
+        export const nameProperty = 'Cd';
+        export const localTextPrefix = 'PCHODS.OutboundCompany';
+
+        export namespace Fields {
+            export declare const Cd;
+            export declare const Nm;
+        }
+
+        [
+            'Cd',
+            'Nm'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}
