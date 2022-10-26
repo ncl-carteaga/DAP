@@ -24,7 +24,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.MinibarSetupSurKey[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(50), QuickSearch]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), QuickSearch]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }
@@ -45,7 +45,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.MinibarSetupCostAmt[this] = value; }
         }
 
-        [DisplayName("Comment Txt"), Column("COMMENT_TXT"), Size(1)]
+        [DisplayName("Comment Txt"), Column("COMMENT_TXT"), Size(2000)]
         public String CommentTxt
         {
             get { return Fields.CommentTxt[this]; }
