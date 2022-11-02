@@ -43,7 +43,12 @@
                     InvoiceItemTypeMasterGrid.slickGrid.scrollRowIntoView(rows[0], false);
                     var master = InvoiceItemTypeMasterGrid.view.getItem(
                         rows[0]) as InvoiceItemTypeMasterSuppRow;
-                    InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = master.InvoiceItemTypeCd;
+
+                    InvoiceItemTypeDetailsGrid.invoiceItemTypeCd = 274;
+                    //InvoiceItemTypeDetailsGrid.m2 = master.InvoiceItemTypeMasterId;
+                    //InvoiceItemTypeDetailsGrid.m3 = master.InvoiceItemTypeMasterId;
+                    //InvoiceItemTypeDetailsGrid.m4 = master.InvoiceItemTypeMasterId;
+
                     InvoiceItemTypeDetailsGrid.setTitle('Invoice Item Type Details of ' + master.InvoiceItemTypeMasterId + ' - ' + master.InvoiceItemTypeCd);
                 }
             }, 500));

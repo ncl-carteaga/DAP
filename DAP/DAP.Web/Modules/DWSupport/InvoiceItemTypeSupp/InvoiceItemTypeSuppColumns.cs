@@ -51,5 +51,9 @@ namespace DAP.DWSupport.Columns
         public String CasinoComponentDesc { get; set; }
         public String DeptShortDesc { get; set; }
         public String IsSuppressBuiltCd { get; set; }
+        public Int64 M1 { get; set; }
+        public Int64 M2 { get; set; }
+        public Int64 M3 { get; set; }
+        public Int64 M4 { get; set; }
     }
 }

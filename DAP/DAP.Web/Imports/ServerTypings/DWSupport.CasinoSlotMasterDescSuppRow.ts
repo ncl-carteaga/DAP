@@ -1,6 +1,6 @@
 ﻿namespace DAP.DWSupport {
     export interface CasinoSlotMasterDescSuppRow {
-        SlotMasterDescSurKey?: string;
+        SlotMasterDescSurKey?: number;
         SlotMasterDesc?: string;
         CommentTxt?: string;
         CreatedTs?: string;
@@ -12,7 +12,7 @@
 
     export namespace CasinoSlotMasterDescSuppRow {
         export const idProperty = 'SlotMasterDescSurKey';
-        export const nameProperty = 'SlotMasterDescSurKey';
+        export const nameProperty = 'SlotMasterDesc';
         export const localTextPrefix = 'DWSupport.CasinoSlotMasterDescSupp';
 
         export declare const enum Fields {

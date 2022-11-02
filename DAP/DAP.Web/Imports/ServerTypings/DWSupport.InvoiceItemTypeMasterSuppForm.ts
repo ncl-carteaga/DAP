@@ -1,11 +1,11 @@
 ﻿namespace DAP.DWSupport {
     export interface InvoiceItemTypeMasterSuppForm {
         MasterComponentCd: Serenity.LookupEditor;
-        InvoiceItemSourceCd: Serenity.LookupEditor;
-        InvoiceItemTypeCd: Serenity.LookupEditor;
-        InvoiceItemSubTypeCd: Serenity.LookupEditor;
-        InvoiceItemSubType2Cd: Serenity.LookupEditor;
-        InvoiceItemSubType3Cd: Serenity.LookupEditor;
+        InvoiceItemSourceCd: Serenity.StringEditor;
+        InvoiceItemTypeCd: Serenity.StringEditor;
+        InvoiceItemSubTypeCd: Serenity.StringEditor;
+        InvoiceItemSubType2Cd: Serenity.StringEditor;
+        InvoiceItemSubType3Cd: Serenity.StringEditor;
         CommentsTxt: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -30,11 +30,11 @@
 
                 Q.initFormType(InvoiceItemTypeMasterSuppForm, [
                     'MasterComponentCd', w0,
-                    'InvoiceItemSourceCd', w0,
-                    'InvoiceItemTypeCd', w0,
-                    'InvoiceItemSubTypeCd', w0,
-                    'InvoiceItemSubType2Cd', w0,
-                    'InvoiceItemSubType3Cd', w0,
+                    'InvoiceItemSourceCd', w1,
+                    'InvoiceItemTypeCd', w1,
+                    'InvoiceItemSubTypeCd', w1,
+                    'InvoiceItemSubType2Cd', w1,
+                    'InvoiceItemSubType3Cd', w1,
                     'CommentsTxt', w1,
                     'CreatedTs', w2,
                     'CreatedByNam', w1,
