@@ -1,0 +1,41 @@
+﻿
+namespace DAP.PCHODS {
+    export interface OutboundCommissionPeriodRow {
+        OutboundCommissionPeriodId?: number;
+        IsOpen?: boolean;
+        StartDate?: string;
+        EndDate?: string;
+        CurrentMonth?: string;
+        PreviousMonth?: string;
+        CloseDate?: string;
+        CloseBy?: string;
+    }
+
+    export namespace OutboundCommissionPeriodRow {
+        export const idProperty = 'OutboundCommissionPeriodId';
+        export const nameProperty = 'CloseBy';
+        export const localTextPrefix = 'PCHODS.OutboundCommissionPeriod';
+
+        export namespace Fields {
+            export declare const OutboundCommissionPeriodId;
+            export declare const IsOpen;
+            export declare const StartDate;
+            export declare const EndDate;
+            export declare const CurrentMonth;
+            export declare const PreviousMonth;
+            export declare const CloseDate;
+            export declare const CloseBy;
+        }
+
+        [
+            'OutboundCommissionPeriodId',
+            'IsOpen',
+            'StartDate',
+            'EndDate',
+            'CurrentMonth',
+            'PreviousMonth',
+            'CloseDate',
+            'CloseBy'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

@@ -1,0 +1,30 @@
+﻿
+namespace DAP.PCHODS {
+    export class OutboundCommissionHistBrForm extends Serenity.PrefixedContext {
+        static formKey = 'PCHODS.OutboundCommissionHistBr';
+    }
+
+    export interface OutboundCommissionHistBrForm {
+        CompanyCd: Serenity.StringEditor;
+        LowNumBookings: Serenity.DecimalEditor;
+        HighNumBookings: Serenity.DecimalEditor;
+        CommissionRate: Serenity.DecimalEditor;
+        ActiveDt: Serenity.DateEditor;
+        InactiveDt: Serenity.DateEditor;
+    }
+
+    [,
+        ['CompanyCd', () => Serenity.StringEditor],
+        ['LowNumBookings', () => Serenity.DecimalEditor],
+        ['HighNumBookings', () => Serenity.DecimalEditor],
+        ['CommissionRate', () => Serenity.DecimalEditor],
+        ['ActiveDt', () => Serenity.DateEditor],
+        ['InactiveDt', () => Serenity.DateEditor]
+    ].forEach(x => Object.defineProperty(OutboundCommissionHistBrForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}
