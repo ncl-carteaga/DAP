@@ -27,7 +27,7 @@ namespace DAP.DWSupport {
         }
 
         protected getColumns(): Slick.Column[] {
-            return super.getColumns().filter(x => x.field !== fld.InvoiceItemTypeCd);
+            return super.getColumns();//.filter(x => x.field !== fld.M1);
         }
 
         protected initEntityDialog(itemType, dialog) {
@@ -48,16 +48,16 @@ namespace DAP.DWSupport {
             return super.getGridCanLoad() && !!this.invoiceItemTypeCd
         }
 
-        private _invoiceItemTypeCd: string;
+        private _invoiceItemTypeCd: number;
 
         get invoiceItemTypeCd() {
             return this._invoiceItemTypeCd;
         }
-        
-        set invoiceItemTypeCd(value: string) {
+
+        set invoiceItemTypeCd(value: number) {
             if (this._invoiceItemTypeCd !== value) {
                 this._invoiceItemTypeCd = value;
-                this.setEquality('InvoiceItemTypeCd', value);
+                this.setEquality('M1', value);
                 this.refresh();
             }
         }

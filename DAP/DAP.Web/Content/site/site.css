@@ -9837,6 +9837,12 @@ button.ui-button {
 .s-NCLHDSAR-DataFlowDialog .caption {
   width: 150px;
 }
+.s-NCLHDSAR-MarketingRequestDialog > .size {
+  width: 650px;
+}
+.s-NCLHDSAR-MarketingRequestDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSMICROS-DataFlowDialog > .size {
   width: 650px;
 }

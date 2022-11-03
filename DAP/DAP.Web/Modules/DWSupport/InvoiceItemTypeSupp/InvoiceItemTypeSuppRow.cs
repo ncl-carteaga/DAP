@@ -15,6 +15,7 @@ namespace DAP.DWSupport.Entities
     [UpdatePermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
     [DataAuditLog]
+    [LeftJoin("c", "[dbo].GetInvoiceItemTypeMasterSuppID", "c.INVOICE_ITEM_TYPE_GEN_NAT_KEY=T0.INVOICE_ITEM_TYPE_GEN_NAT_KEY")]
     public sealed class InvoiceItemTypeSuppRow : Row, IIdRow, INameRow
     {
         [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
@@ -23,6 +24,34 @@ namespace DAP.DWSupport.Entities
         {
             get { return Fields.InvoiceItemTypeGenNatKey[this]; }
             set { Fields.InvoiceItemTypeGenNatKey[this] = value; }
+        }
+
+        [Expression("c.[m1]")/*, Visible(false)*/]
+        public Int64? M1
+        {
+            get { return Fields.M1[this]; }
+            set { Fields.M1[this] = value; }
+        }
+
+        [Expression("c.[m2]")/*, Visible(false)*/]
+        public Int64? M2
+        {
+            get { return Fields.M2[this]; }
+            set { Fields.M2[this] = value; }
+        }
+
+        [Expression("c.[m3]")/*, Visible(false)*/]
+        public Int64? M3
+        {
+            get { return Fields.M3[this]; }
+            set { Fields.M3[this] = value; }
+        }
+
+        [Expression("c.[m4]")/*, Visible(false)*/]
+        public Int64? M4
+        {
+            get { return Fields.M4[this]; }
+            set { Fields.M4[this] = value; }
         }
 
         [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
@@ -98,7 +127,7 @@ namespace DAP.DWSupport.Entities
         }
 
         [UpdatePermission(PermissionKeys.DWSupport_Revenue)]
-        [DisplayName("Component Cd"), Column("COMPONENT_CD"), Size(30), QuickFilter , LookupEditor("DWSupport.GetMasterComponent")]
+        [DisplayName("Component Cd"), Column("COMPONENT_CD"), Size(30), QuickFilter, LookupEditor("DWSupport.GetMasterComponent")]
         public String ComponentCd
         {
             get { return Fields.ComponentCd[this]; }
@@ -341,6 +370,10 @@ namespace DAP.DWSupport.Entities
             public StringField CasinoComponentDesc;
             public StringField DeptShortDesc;
             public StringField IsSuppressBuiltCd;
+            public Int64Field M1;
+            public Int64Field M2;
+            public Int64Field M3;
+            public Int64Field M4;
         }
     }
 }

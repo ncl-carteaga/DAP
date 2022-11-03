@@ -1,6 +1,6 @@
 ﻿namespace DAP.DWSupport {
     export interface CategoryMasterSuppRow {
-        CategoryMasterSurKey?: string;
+        CategoryMasterSurKey?: number;
         ShipCd?: string;
         SailFromDat?: string;
         SailToDat?: string;
@@ -19,7 +19,7 @@
 
     export namespace CategoryMasterSuppRow {
         export const idProperty = 'CategoryMasterSurKey';
-        export const nameProperty = 'CategoryMasterSurKey';
+        export const nameProperty = 'CategoryCd';
         export const localTextPrefix = 'DWSupport.CategoryMasterSupp';
 
         export declare const enum Fields {

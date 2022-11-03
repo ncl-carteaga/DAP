@@ -1178,6 +1178,7 @@
     <Content Include="Modules\DWSupport\FullShipChartersSupp\FullShipChartersSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppIndex.cshtml" />
+    <Content Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1283,6 +1284,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.DataFlowColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.NoteRow.ts">
@@ -1695,6 +1699,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestDialog.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3151,6 +3157,23 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestBrandsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestBrandsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestChannelsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestChannelsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestSourcesRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestSourcesService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestTypesRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestTypesService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3907,6 +3930,24 @@
     <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppPage.cs" />
     <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestPage.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestColumns.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestForm.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestBrands\MarketingRequestBrandsRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestBrands\MarketingRequestBrandsRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestBrands\MarketingRequestBrandsEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestChannels\MarketingRequestChannelsRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestChannels\MarketingRequestChannelsRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestChannels\MarketingRequestChannelsEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestSources\MarketingRequestSourcesRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestSources\MarketingRequestSourcesRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestSources\MarketingRequestSourcesEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\MarketingRequestTypesRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\MarketingRequestTypesRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\MarketingRequestTypesEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,17 +34,16 @@
         CasinoComponentDesc?: string;
         DeptShortDesc?: string;
         IsSuppressBuiltCd?: string;
+        M1?: number;
+        M2?: number;
+        M3?: number;
+        M4?: number;
     }
 
     export namespace InvoiceItemTypeSuppRow {
         export const idProperty = 'InvoiceItemTypeGenNatKey';
         export const nameProperty = 'InvoiceClassType1Cd';
         export const localTextPrefix = 'DWSupport.InvoiceItemTypeSupp';
-        export const lookupKey = 'DWSupport.InvoiceItemTypeSupp';
-
-        export function getLookup(): Q.Lookup<InvoiceItemTypeSuppRow> {
-            return Q.getLookup<InvoiceItemTypeSuppRow>('DWSupport.InvoiceItemTypeSupp');
-        }
 
         export declare const enum Fields {
             InvoiceItemTypeGenNatKey = "InvoiceItemTypeGenNatKey",
@@ -80,7 +79,11 @@
             CasinoComponentCd = "CasinoComponentCd",
             CasinoComponentDesc = "CasinoComponentDesc",
             DeptShortDesc = "DeptShortDesc",
-            IsSuppressBuiltCd = "IsSuppressBuiltCd"
+            IsSuppressBuiltCd = "IsSuppressBuiltCd",
+            M1 = "M1",
+            M2 = "M2",
+            M3 = "M3",
+            M4 = "M4"
         }
     }
 }
