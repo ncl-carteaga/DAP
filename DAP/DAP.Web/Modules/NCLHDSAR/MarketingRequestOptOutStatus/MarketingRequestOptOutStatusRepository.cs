@@ -1,16 +1,14 @@
 ﻿
 namespace DAP.NCLHDSAR.Repositories
 {
-    using DAP.NCLHDSAR.Entities;
-    using DAP.NCLHDSAR.Lookups;
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
     using System;
     using System.Data;
-    using MyRow = Entities.MarketingRequestRow;
+    using MyRow = Entities.MarketingRequestOptOutStatusRow;
 
-    public class MarketingRequestRepository
+    public class MarketingRequestOptOutStatusRepository
     {
         private static MyRow.RowFields fld { get { return MyRow.Fields; } }
 
@@ -39,26 +37,7 @@ namespace DAP.NCLHDSAR.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> {           
-            protected override void SetInternalFields()
-            {
-                base.SetInternalFields();
-
-                var user = (UserDefinition)Authorization.UserDefinition;
-
-                if (IsCreate)
-                {
-                    Row.CreatedBy = user.DisplayName;
-                    Row.CreatedDate = DateTime.Now;
-                    Row.ModifiedDate = DateTime.Now;
-                }
-                if (IsUpdate)
-                {
-                    Row.ModifiedBy = user.DisplayName.ToUpper();
-                    Row.ModifiedDate = DateTime.Now;
-                }
-            }
-        }
+        private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
         private class MyListHandler : ListRequestHandler<MyRow> { }

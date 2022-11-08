@@ -20,7 +20,7 @@ namespace DAP.NCLHDSAR.Columns
         [EditLink]
         public String ContactId { get; set; }
         public String ChannelDescription { get; set; }
-        public String OptOutStatus { get; set; }
+        public Int16 OptOutStatusID { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String Address1 { get; set; }

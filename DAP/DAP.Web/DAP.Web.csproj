@@ -3166,14 +3166,36 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestBrandsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestBrandsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestChannelsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestChannelsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestSourcesRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestSourcesService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestTypesRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestTypesService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestBrandsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestBrandsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestChannelsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestChannelsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestSourcesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestSourcesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestTypesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestTypesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestOptOutStatusRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestOptOutStatusService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3372,6 +3394,12 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRow.cs" />
     <Compile Include="Modules\Common\Helpers\GetNextNumberHelper.cs" />
     <Compile Include="Modules\Common\Helpers\GetNextNumberRequest.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestBrands\BrandLookupEditor.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestChannels\ChannelLookupEditor.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\OptOutLookupEditor.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestSources\SourceLookupEditor.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\TypeLookupEditor.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\YNLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARNavigation.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARPermissionKeys.cs" />
     <Compile Include="Modules\NCLHDSAR\Note\NoteRepository.cs" />
@@ -3948,6 +3976,9 @@
     <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\MarketingRequestTypesRow.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\MarketingRequestTypesRepository.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\MarketingRequestTypesEndpoint.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\MarketingRequestOptOutStatusRow.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\MarketingRequestOptOutStatusRepository.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\MarketingRequestOptOutStatusEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
