@@ -54,5 +54,20 @@ namespace DAP.NCLHDSAR
 
         [Description("[ConfigAdmin]")]
         public const string ConfigAdmin = "NCLHDSAR:ConfigAdmin";
+
+        [DisplayName("Page")]
+        public class PagePermission
+        {
+            public const string Assignee = "NCLHDSAR:Page:Assignee";
+            public const string DataFlow = "NCLHDSAR:Page:DataFlow";
+            public const string Request = "NCLHDSAR:Page:Request";
+            public const string RequestAttributes = "NCLHDSAR:Page:RequestAttributes";
+            public const string RequestStatus = "NCLHDSAR:Page:RequestStatus";
+            public const string RequestType = "NCLHDSAR:Page:RequestType";
+            public const string SwRequest = "NCLHDSAR:Page:SwRequest";
+            public const string SwRequestAttributes = "NCLHDSAR:Page:SwRequestAttributes";
+            public const string SystemMaster = "NCLHDSAR:Page:SystemMaster";
+            public const string MarketingRequest = "NCLHDSAR:Page:MarketingRequest";
+        }
     }
 }
