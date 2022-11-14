@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.NCLHDSAR.Entities
 {
+    using DAP.NCLHDSAR.Lookups;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -24,14 +25,14 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Request Type"), Column("RequestTypeID"), NotNull, ForeignKey("[dbo].[MarketingRequestTypes]", "id"), LeftJoin("jRequestType"), TextualField("RequestTypeDescription")]
+        [DisplayName("Request Type"), Column("RequestTypeID"), NotNull, ForeignKey("[dbo].[MarketingRequestTypes]", "id"), LeftJoin("jRequestType"), TextualField("RequestTypeDescription"), LookupEditor(typeof(TypeLookupEditor))]
         public Int16? RequestTypeId
         {
             get { return Fields.RequestTypeId[this]; }
             set { Fields.RequestTypeId[this] = value; }
         }
 
-        [DisplayName("Brand"), Column("BrandID"), NotNull, ForeignKey("[dbo].[MarketingRequestBrands]", "id"), LeftJoin("jBrand"), TextualField("BrandDescription")]
+        [DisplayName("Brand"), Column("BrandID"), NotNull, ForeignKey("[dbo].[MarketingRequestBrands]", "id"), LeftJoin("jBrand"), TextualField("BrandDescription"), LookupEditor(typeof(BrandLookupEditor))]
         public Int16? BrandId
         {
             get { return Fields.BrandId[this]; }
@@ -45,18 +46,18 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.ContactId[this] = value; }
         }
 
-        [DisplayName("Channel"), Column("ChannelID"), NotNull, ForeignKey("[dbo].[MarketingRequestChannels]", "id"), LeftJoin("jChannel"), TextualField("ChannelDescription")]
+        [DisplayName("Channel"), Column("ChannelID"), NotNull, ForeignKey("[dbo].[MarketingRequestChannels]", "id"), LeftJoin("jChannel"), TextualField("ChannelDescription"), LookupEditor(typeof(ChannelLookupEditor))]
         public Int16? ChannelId
         {
             get { return Fields.ChannelId[this]; }
             set { Fields.ChannelId[this] = value; }
         }
 
-        [DisplayName("Opt Out Status"), Size(3)]
-        public String OptOutStatus
+        [DisplayName("Opt Out Status"), Column("OptOutStatusID"), ForeignKey("[dbo].[MarketingRequestOptOutStatus]", "id"), LeftJoin("jOptOut"), Size(3), LookupEditor(typeof(OptOutLookupEditor))]
+        public Int16? OptOutStatusID
         {
-            get { return Fields.OptOutStatus[this]; }
-            set { Fields.OptOutStatus[this] = value; }
+            get { return Fields.OptOutStatusID[this]; }
+            set { Fields.OptOutStatusID[this] = value; }
         }
 
         [DisplayName("First Name"), Size(50)]
@@ -122,7 +123,7 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.Phone[this] = value; }
         }
 
-        [DisplayName("Source"), Column("SourceID"), ForeignKey("[dbo].[MarketingRequestSources]", "id"), LeftJoin("jSource"), TextualField("SourceDescription")]
+        [DisplayName("Source"), Column("SourceID"), ForeignKey("[dbo].[MarketingRequestSources]", "id"), LeftJoin("jSource"), TextualField("SourceDescription"), LookupEditor(typeof(SourceLookupEditor))]
         public Int16? SourceId
         {
             get { return Fields.SourceId[this]; }
@@ -150,28 +151,28 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.IsReturnedMailCd[this] = value; }
         }
 
-        [DisplayName("Created By"), Size(50)]
+        [DisplayName("Created By"), Size(50), ReadOnly(true), Visible(false)]
         public String CreatedBy
         {
             get { return Fields.CreatedBy[this]; }
             set { Fields.CreatedBy[this] = value; }
         }
 
-        [DisplayName("Created Date")]
+        [DisplayName("Created Date"), ReadOnly(true), Visible(false)]
         public DateTime? CreatedDate
         {
             get { return Fields.CreatedDate[this]; }
             set { Fields.CreatedDate[this] = value; }
         }
 
-        [DisplayName("Modified By"), Size(50)]
+        [DisplayName("Modified By"), Size(50), ReadOnly(true), Visible(false)]
         public String ModifiedBy
         {
             get { return Fields.ModifiedBy[this]; }
             set { Fields.ModifiedBy[this] = value; }
         }
 
-        [DisplayName("Modified Date")]
+        [DisplayName("Modified Date"), ReadOnly(true), Visible(false)]
         public DateTime? ModifiedDate
         {
             get { return Fields.ModifiedDate[this]; }
@@ -230,7 +231,7 @@ namespace DAP.NCLHDSAR.Entities
             public Int16Field BrandId;
             public StringField ContactId;
             public Int16Field ChannelId;
-            public StringField OptOutStatus;
+            public Int16Field OptOutStatusID;
             public StringField FirstName;
             public StringField LastName;
             public StringField Address1;

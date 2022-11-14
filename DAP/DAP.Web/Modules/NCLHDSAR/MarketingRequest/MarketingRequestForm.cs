@@ -13,11 +13,11 @@ namespace DAP.NCLHDSAR.Forms
     [BasedOnRow(typeof(Entities.MarketingRequestRow), CheckNames = true)]
     public class MarketingRequestForm
     {
+        [Tab("General")]
         public Int16 RequestTypeId { get; set; }
+        public Int16 SourceId { get; set; }
         public Int16 BrandId { get; set; }
         public String ContactId { get; set; }
-        public Int16 ChannelId { get; set; }
-        public String OptOutStatus { get; set; }
         public String FirstName { get; set; }
         public String LastName { get; set; }
         public String Address1 { get; set; }
@@ -27,10 +27,15 @@ namespace DAP.NCLHDSAR.Forms
         public String Zip { get; set; }
         public String Country { get; set; }
         public String Phone { get; set; }
-        public Int16 SourceId { get; set; }
         public String EmailAddress { get; set; }
+        [Tab("Opt Out")]
+        public Int16 OptOutStatusID { get; set; }
+        public Int16 ChannelId { get; set; }
+        [Tab("Change of Address")]
         public String Title { get; set; }
+        [Tab("Return Mail")]
         public Boolean IsReturnedMailCd { get; set; }
+
         public String CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public String ModifiedBy { get; set; }

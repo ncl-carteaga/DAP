@@ -1,10 +1,9 @@
 ﻿namespace DAP.NCLHDSAR {
     export interface MarketingRequestForm {
-        RequestTypeId: Serenity.IntegerEditor;
-        BrandId: Serenity.IntegerEditor;
+        RequestTypeId: Serenity.LookupEditor;
+        SourceId: Serenity.LookupEditor;
+        BrandId: Serenity.LookupEditor;
         ContactId: Serenity.StringEditor;
-        ChannelId: Serenity.IntegerEditor;
-        OptOutStatus: Serenity.StringEditor;
         FirstName: Serenity.StringEditor;
         LastName: Serenity.StringEditor;
         Address1: Serenity.StringEditor;
@@ -14,8 +13,9 @@
         Zip: Serenity.StringEditor;
         Country: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
-        SourceId: Serenity.IntegerEditor;
         EmailAddress: Serenity.StringEditor;
+        OptOutStatusID: Serenity.LookupEditor;
+        ChannelId: Serenity.LookupEditor;
         Title: Serenity.StringEditor;
         IsReturnedMailCd: Serenity.BooleanEditor;
         CreatedBy: Serenity.StringEditor;
@@ -35,17 +35,16 @@
                 MarketingRequestForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.IntegerEditor;
+                var w0 = s.LookupEditor;
                 var w1 = s.StringEditor;
                 var w2 = s.BooleanEditor;
                 var w3 = s.DateEditor;
 
                 Q.initFormType(MarketingRequestForm, [
                     'RequestTypeId', w0,
+                    'SourceId', w0,
                     'BrandId', w0,
                     'ContactId', w1,
-                    'ChannelId', w0,
-                    'OptOutStatus', w1,
                     'FirstName', w1,
                     'LastName', w1,
                     'Address1', w1,
@@ -55,8 +54,9 @@
                     'Zip', w1,
                     'Country', w1,
                     'Phone', w1,
-                    'SourceId', w0,
                     'EmailAddress', w1,
+                    'OptOutStatusID', w0,
+                    'ChannelId', w0,
                     'Title', w1,
                     'IsReturnedMailCd', w2,
                     'CreatedBy', w1,

@@ -5,7 +5,7 @@
         BrandId?: number;
         ContactId?: string;
         ChannelId?: number;
-        OptOutStatus?: string;
+        OptOutStatusID?: number;
         FirstName?: string;
         LastName?: string;
         Address1?: string;
@@ -40,7 +40,7 @@
             BrandId = "BrandId",
             ContactId = "ContactId",
             ChannelId = "ChannelId",
-            OptOutStatus = "OptOutStatus",
+            OptOutStatusID = "OptOutStatusID",
             FirstName = "FirstName",
             LastName = "LastName",
             Address1 = "Address1",

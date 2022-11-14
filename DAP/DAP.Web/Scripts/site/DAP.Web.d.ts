@@ -3735,11 +3735,10 @@ declare namespace DAP.NCLHDSAR {
 }
 declare namespace DAP.NCLHDSAR {
     interface MarketingRequestForm {
-        RequestTypeId: Serenity.IntegerEditor;
-        BrandId: Serenity.IntegerEditor;
+        RequestTypeId: Serenity.LookupEditor;
+        SourceId: Serenity.LookupEditor;
+        BrandId: Serenity.LookupEditor;
         ContactId: Serenity.StringEditor;
-        ChannelId: Serenity.IntegerEditor;
-        OptOutStatus: Serenity.StringEditor;
         FirstName: Serenity.StringEditor;
         LastName: Serenity.StringEditor;
         Address1: Serenity.StringEditor;
@@ -3749,8 +3748,9 @@ declare namespace DAP.NCLHDSAR {
         Zip: Serenity.StringEditor;
         Country: Serenity.StringEditor;
         Phone: Serenity.StringEditor;
-        SourceId: Serenity.IntegerEditor;
         EmailAddress: Serenity.StringEditor;
+        OptOutStatusID: Serenity.LookupEditor;
+        ChannelId: Serenity.LookupEditor;
         Title: Serenity.StringEditor;
         IsReturnedMailCd: Serenity.BooleanEditor;
         CreatedBy: Serenity.StringEditor;
@@ -3765,13 +3765,45 @@ declare namespace DAP.NCLHDSAR {
     }
 }
 declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestOptOutStatusRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace MarketingRequestOptOutStatusRow {
+        const idProperty = "Id";
+        const nameProperty = "Description";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestOptOutStatus";
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestOptOutStatusService {
+        const baseUrl = "NCLHDSAR/MarketingRequestOptOutStatus";
+        function Create(request: Serenity.SaveRequest<MarketingRequestOptOutStatusRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestOptOutStatusRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestOptOutStatusRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestOptOutStatusRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequestOptOutStatus/Create",
+            Update = "NCLHDSAR/MarketingRequestOptOutStatus/Update",
+            Delete = "NCLHDSAR/MarketingRequestOptOutStatus/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequestOptOutStatus/Retrieve",
+            List = "NCLHDSAR/MarketingRequestOptOutStatus/List"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
     interface MarketingRequestRow {
         Id?: number;
         RequestTypeId?: number;
         BrandId?: number;
         ContactId?: string;
         ChannelId?: number;
-        OptOutStatus?: string;
+        OptOutStatusID?: number;
         FirstName?: string;
         LastName?: string;
         Address1?: string;
@@ -3804,7 +3836,7 @@ declare namespace DAP.NCLHDSAR {
             BrandId = "BrandId",
             ContactId = "ContactId",
             ChannelId = "ChannelId",
-            OptOutStatus = "OptOutStatus",
+            OptOutStatusID = "OptOutStatusID",
             FirstName = "FirstName",
             LastName = "LastName",
             Address1 = "Address1",
@@ -9261,6 +9293,8 @@ declare namespace DAP.NCLHDSAR {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: MarketingRequestForm;
+        constructor();
+        updateInterface(): void;
     }
 }
 declare namespace DAP.NCLHDSAR {
