@@ -15,6 +15,7 @@ namespace DAP.NCLHDSAR.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int64 Id { get; set; }
+        [EditLink]
         public String RequestTypeDescription { get; set; }
         public String BrandDescription { get; set; }
         [EditLink]

@@ -3360,17 +3360,17 @@ var DAP;
                         'ContactId', w1,
                         'FirstName', w1,
                         'LastName', w1,
+                        'Phone', w1,
+                        'EmailAddress', w1,
+                        'OptOutStatusID', w0,
+                        'ChannelId', w0,
+                        'Title', w1,
                         'Address1', w1,
                         'Address2', w1,
                         'City', w1,
                         'State', w1,
                         'Zip', w1,
                         'Country', w1,
-                        'Phone', w1,
-                        'EmailAddress', w1,
-                        'OptOutStatusID', w0,
-                        'ChannelId', w0,
-                        'Title', w1,
                         'IsReturnedMailCd', w2,
                         'CreatedBy', w1,
                         'CreatedDate', w3,
@@ -12091,22 +12091,38 @@ var DAP;
             function MarketingRequestDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix);
+                _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix);
                 // For each drop-down option, check required fields have value. //            
-                _this.form.RequestTypeId.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.RequestTypeId.value == "1") {
-                        // Check dropdown ID 1
-                        if (Q.isEmptyOrNull(_this.form.OptOutStatusID.value) || Q.isEmptyOrNull(_this.form.ChannelId.value)) {
-                            var fld1 = "OptOutStatusID" /* OptOutStatusID */;
-                            var fld2 = "ChannelId" /* ChannelId */;
-                            return "Fields " + fld1 + " and " + fld2 + " required.";
-                        }
-                        // Check dropdown ID 2
+                //this.form.RequestTypeId.addValidationRule(this.uniqueName, e => {
+                //    if (this.form.RequestTypeId.value == "1") {
+                //        // Check dropdown ID 1
+                //        if (Q.isEmptyOrNull(this.form.OptOutStatusID.value) || Q.isEmptyOrNull(this.form.ChannelId.value)) {
+                //            let fld1 = fld.OptOutStatusID;
+                //            let fld2 = fld.ChannelId;
+                //            return `Fields ${fld1} and ${fld2} required.`;
+                //        }
+                //        // Check dropdown ID 2
+                //    } else if (this.form.RequestTypeId.value == "2") {
+                //        if (Q.isEmptyOrNull(this.form.Title.value)) {
+                //            let fld3 = fld.Title; 
+                //            return `Field ${fld3} is required.`;
+                //        }
+                //    }
+                //});
+                //this.form.RequestTypeId.changeSelect2(e => {
+                //    var rqvalue = Q.toId(this.form.RequestTypeId.value);
+                //    if (rqvalue != null) {
+                //        alert(rqvalue);
+                //    }
+                //});
+                _this.form.Title.addValidationRule(_this.uniqueName, function (e) {
+                    if ((_this.form.RequestTypeId.value == "2") && (_this.form.Title.value == null)) {
+                        return "Title is required for Address Change Requests";
                     }
-                    else if (_this.form.RequestTypeId.value == "2") {
-                        if (Q.isEmptyOrNull(_this.form.Title.value)) {
-                            var fld1 = "Title" /* Title */;
-                            return "Field " + fld1 + " is required.";
-                        }
+                });
+                _this.form.Address1.addValidationRule(_this.uniqueName, function (e) {
+                    if ((_this.form.RequestTypeId.value == "2") && (_this.form.Address1.value == null)) {
+                        return "Address1 is required for Address Change Requests";
                     }
                 });
                 return _this;

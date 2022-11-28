@@ -18,7 +18,7 @@ namespace DAP.NCLHDSAR.Entities
     [DataAuditLog]
     public sealed class MarketingRequestRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Id"), Identity]
+        [DisplayName("Id"), Identity, Visible(false)]
         public Int64? Id
         {
             get { return Fields.Id[this]; }
@@ -144,35 +144,35 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.Title[this] = value; }
         }
 
-        [DisplayName("Is Returned Mail Cd"), Column("IsReturnedMailCD"), NotNull]
+        [DisplayName("Is Returned Mail"), Column("IsReturnedMailCD"), NotNull]
         public Boolean? IsReturnedMailCd
         {
             get { return Fields.IsReturnedMailCd[this]; }
             set { Fields.IsReturnedMailCd[this] = value; }
         }
 
-        [DisplayName("Created By"), Size(50), ReadOnly(true), Visible(false)]
+        [DisplayName("Created By"), Size(50), ReadOnly(true)]
         public String CreatedBy
         {
             get { return Fields.CreatedBy[this]; }
             set { Fields.CreatedBy[this] = value; }
         }
 
-        [DisplayName("Created Date"), ReadOnly(true), Visible(false)]
+        [DisplayName("Created Date"), ReadOnly(true)]
         public DateTime? CreatedDate
         {
             get { return Fields.CreatedDate[this]; }
             set { Fields.CreatedDate[this] = value; }
         }
 
-        [DisplayName("Modified By"), Size(50), ReadOnly(true), Visible(false)]
+        [DisplayName("Modified By"), Size(50), ReadOnly(true)]
         public String ModifiedBy
         {
             get { return Fields.ModifiedBy[this]; }
             set { Fields.ModifiedBy[this] = value; }
         }
 
-        [DisplayName("Modified Date"), ReadOnly(true), Visible(false)]
+        [DisplayName("Modified Date"), ReadOnly(true)]
         public DateTime? ModifiedDate
         {
             get { return Fields.ModifiedDate[this]; }
