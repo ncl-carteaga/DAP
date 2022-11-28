@@ -3342,6 +3342,30 @@ var DAP;
 (function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
+        var MarketingRequestExcelImportForm = /** @class */ (function (_super) {
+            __extends(MarketingRequestExcelImportForm, _super);
+            function MarketingRequestExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!MarketingRequestExcelImportForm.init) {
+                    MarketingRequestExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(MarketingRequestExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            MarketingRequestExcelImportForm.formKey = 'NCLHDSAR.MarketingRequestExcelImport';
+            return MarketingRequestExcelImportForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.MarketingRequestExcelImportForm = MarketingRequestExcelImportForm;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
         var MarketingRequestForm = /** @class */ (function (_super) {
             __extends(MarketingRequestForm, _super);
             function MarketingRequestForm(prefix) {
@@ -12093,38 +12117,32 @@ var DAP;
             function MarketingRequestDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix);
-                _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix);
-                // For each drop-down option, check required fields have value. //            
-                //this.form.RequestTypeId.addValidationRule(this.uniqueName, e => {
-                //    if (this.form.RequestTypeId.value == "1") {
-                //        // Check dropdown ID 1
-                //        if (Q.isEmptyOrNull(this.form.OptOutStatusID.value) || Q.isEmptyOrNull(this.form.ChannelId.value)) {
-                //            let fld1 = fld.OptOutStatusID;
-                //            let fld2 = fld.ChannelId;
-                //            return `Fields ${fld1} and ${fld2} required.`;
-                //        }
-                //        // Check dropdown ID 2
-                //    } else if (this.form.RequestTypeId.value == "2") {
-                //        if (Q.isEmptyOrNull(this.form.Title.value)) {
-                //            let fld3 = fld.Title; 
-                //            return `Field ${fld3} is required.`;
-                //        }
-                //    }
-                //});
-                //this.form.RequestTypeId.changeSelect2(e => {
-                //    var rqvalue = Q.toId(this.form.RequestTypeId.value);
-                //    if (rqvalue != null) {
-                //        alert(rqvalue);
-                //    }
-                //});
-                _this.form.Title.addValidationRule(_this.uniqueName, function (e) {
-                    if ((_this.form.RequestTypeId.value == "2") && (_this.form.Title.value == null)) {
-                        return "Title is required for Address Change Requests";
+                _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix); // For each drop-down option, check required fields have value. //            
+                _this.form.RequestTypeId.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.RequestTypeId.value == "1") {
+                        // Check dropdown ID 1
+                        if (Q.isEmptyOrNull(_this.form.OptOutStatusID.value) || Q.isEmptyOrNull(_this.form.ChannelId.value)) {
+                            var fld1 = "OptOutStatusID" /* OptOutStatusID */;
+                            var fld2 = "ChannelId" /* ChannelId */;
+                            return "Fields " + fld1 + " and " + fld2 + " required.";
+                        }
+                        // Check dropdown ID 2
                     }
-                });
-                _this.form.Address1.addValidationRule(_this.uniqueName, function (e) {
-                    if ((_this.form.RequestTypeId.value == "2") && (_this.form.Address1.value == null)) {
-                        return "Address1 is required for Address Change Requests";
+                    else if (_this.form.RequestTypeId.value == "2") {
+                        if (Q.isEmptyOrNull(_this.form.Title.value) ||
+                            Q.isEmptyOrNull(_this.form.Address1.value) ||
+                            Q.isEmptyOrNull(_this.form.City.value) ||
+                            Q.isEmptyOrNull(_this.form.Zip.value) ||
+                            Q.isEmptyOrNull(_this.form.State.value) ||
+                            Q.isEmptyOrNull(_this.form.Country.value)) {
+                            var fld1 = "Title" /* Title */;
+                            var fld2 = "Address1" /* Address1 */;
+                            var fld3 = "City" /* City */;
+                            var fld4 = "Zip" /* Zip */;
+                            var fld5 = "State" /* State */;
+                            var fld6 = "Country" /* Country */;
+                            return "Fields " + fld1 + ", " + fld2 + ", " + fld3 + ", " + fld4 + " are required.";
+                        }
                     }
                 });
                 return _this;
@@ -12145,6 +12163,75 @@ var DAP;
             return MarketingRequestDialog;
         }(Serenity.EntityDialog));
         NCLHDSAR.MarketingRequestDialog = MarketingRequestDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var MarketingRequestExcelImportDialog = /** @class */ (function (_super) {
+            __extends(MarketingRequestExcelImportDialog, _super);
+            function MarketingRequestExcelImportDialog(i) {
+                var _this = _super.call(this) || this;
+                _this.form = new NCLHDSAR.MarketingRequestExcelImportForm(_this.idPrefix);
+                _this.index = i;
+                return _this;
+            }
+            MarketingRequestExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            MarketingRequestExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            // Select service type
+                            if (_this.index == 0) {
+                                NCLHDSAR.MarketingRequestService.ExcelImportChangeOfAddress({
+                                    FileName: _this.form.FileName.value.Filename
+                                }, function (response) {
+                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                        ', Updated: ' + (response.Updated || 0));
+                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                        Q.notifyError(response.ErrorList.join(',\r\n '));
+                                    }
+                                    _this.dialogClose();
+                                });
+                            }
+                            else if (_this.index == 1) {
+                                NCLHDSAR.MarketingRequestService.ExcelImportReturnMail({
+                                    FileName: _this.form.FileName.value.Filename
+                                }, function (response) {
+                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                        ', Updated: ' + (response.Updated || 0));
+                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                        Q.notifyError(response.ErrorList.join(',\r\n '));
+                                    }
+                                    _this.dialogClose();
+                                });
+                            }
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            MarketingRequestExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MarketingRequestExcelImportDialog);
+            return MarketingRequestExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        NCLHDSAR.MarketingRequestExcelImportDialog = MarketingRequestExcelImportDialog;
     })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -17506,98 +17593,5 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var NCLHDSAR;
-    (function (NCLHDSAR) {
-        var MarketingRequestExcelImportForm = /** @class */ (function (_super) {
-            __extends(MarketingRequestExcelImportForm, _super);
-            function MarketingRequestExcelImportForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!MarketingRequestExcelImportForm.init) {
-                    MarketingRequestExcelImportForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.ImageUploadEditor;
-                    Q.initFormType(MarketingRequestExcelImportForm, [
-                        'FileName', w0
-                    ]);
-                }
-                return _this;
-            }
-            MarketingRequestExcelImportForm.formKey = 'NCLHDSAR.MarketingRequestExcelImport';
-            return MarketingRequestExcelImportForm;
-        }(Serenity.PrefixedContext));
-        NCLHDSAR.MarketingRequestExcelImportForm = MarketingRequestExcelImportForm;
-    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var NCLHDSAR;
-    (function (NCLHDSAR) {
-        var MarketingRequestExcelImportDialog = /** @class */ (function (_super) {
-            __extends(MarketingRequestExcelImportDialog, _super);
-            function MarketingRequestExcelImportDialog(i) {
-                var _this = _super.call(this) || this;
-                _this.form = new NCLHDSAR.MarketingRequestExcelImportForm(_this.idPrefix);
-                _this.index = i;
-                return _this;
-            }
-            MarketingRequestExcelImportDialog.prototype.getDialogTitle = function () {
-                return "Excel Import";
-            };
-            MarketingRequestExcelImportDialog.prototype.getDialogButtons = function () {
-                var _this = this;
-                return [
-                    {
-                        text: 'Import',
-                        click: function () {
-                            if (!_this.validateBeforeSave())
-                                return;
-                            if (_this.form.FileName.value == null ||
-                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
-                                Q.notifyError("Please select a file!");
-                                return;
-                            }
-                            // Select service type
-                            if (_this.index == 0) {
-                                NCLHDSAR.MarketingRequestService.ExcelImportChangeOfAddress({
-                                    FileName: _this.form.FileName.value.Filename
-                                }, function (response) {
-                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
-                                        ', Updated: ' + (response.Updated || 0));
-                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
-                                        Q.notifyError(response.ErrorList.join(',\r\n '));
-                                    }
-                                    _this.dialogClose();
-                                });
-                            }
-                            else if (_this.index == 1) {
-                                NCLHDSAR.MarketingRequestService.ExcelImportReturnMail({
-                                    FileName: _this.form.FileName.value.Filename
-                                }, function (response) {
-                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
-                                        ', Updated: ' + (response.Updated || 0));
-                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
-                                        Q.notifyError(response.ErrorList.join(',\r\n '));
-                                    }
-                                    _this.dialogClose();
-                                });
-                            }
-                        },
-                    },
-                    {
-                        text: 'Cancel',
-                        click: function () { return _this.dialogClose(); }
-                    }
-                ];
-            };
-            MarketingRequestExcelImportDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], MarketingRequestExcelImportDialog);
-            return MarketingRequestExcelImportDialog;
-        }(Serenity.PropertyDialog));
-        NCLHDSAR.MarketingRequestExcelImportDialog = MarketingRequestExcelImportDialog;
-    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

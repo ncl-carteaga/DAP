@@ -714,7 +714,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     var currentRow = uow.Connection.TryFirst<MarketingRequestRow>(q => q
                         .Select(myFields.Id)
                         .Where(
-                            myFields.Address1 == address1 &&
+                            //myFields.BrandId == brandID &&
                             myFields.FirstName == first_name &&
                             myFields.IsReturnedMailCd == is_returned_mail_cd
                         )

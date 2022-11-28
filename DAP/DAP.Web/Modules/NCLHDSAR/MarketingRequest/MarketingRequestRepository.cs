@@ -43,7 +43,112 @@ namespace DAP.NCLHDSAR.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> {           
+        private class MySaveHandler : SaveRequestHandler<MyRow>
+        {
+            protected override void BeforeSave()
+            {
+                base.BeforeSave();
+
+                if (IsUpdate)
+                {
+                    // ------------------ Request Type ------------------ //
+                    if (MyRow.Fields.RequestTypeId < 1)
+                    {
+                        throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.RequestTypeId.Name));
+                    }
+                    //  ------------------ Change of Address Validation ------------------ //
+                    else if (MyRow.Fields.RequestTypeId == 2)
+                    {
+                        if (Row.Address1 == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Address1.Name));
+                        }
+                        else if (Row.Title == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Title.Name));
+                        }
+                        else if (Row.City == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.City.Name));
+                        }
+                        else if (Row.State == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.State.Name));
+                        }
+                        else if (Row.Zip == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Zip.Name));
+                        }
+                        else if (Row.Country == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Country.Name));
+                        }
+                    }// if
+                    //  ------------------ Opt Outs Validation ------------------ //
+                    else if (Row.RequestTypeId == 1)
+                    {
+                        if (Row.OptOutStatusID == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.OptOutStatusID.Name));
+                        }
+                        else if (Row.ChannelId == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.ChannelDescription.Name));
+                        }
+                    }
+
+                }
+
+                if (IsCreate)
+                {
+                    // ------------------ Request Type ------------------ //
+                    if (MyRow.Fields.RequestTypeId < 1)
+                    {
+                        throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.RequestTypeId.Name));
+                    }
+                    //  ------------------ Change of Address Validation ------------------ //
+                    else if (MyRow.Fields.RequestTypeId == 2)
+                    {
+                        if (Row.Address1 == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Address1.Name));
+                        }
+                        else if (Row.Title == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Title.Name));
+                        }
+                        else if (Row.City == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.City.Name));
+                        }
+                        else if (Row.State == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.State.Name));
+                        }
+                        else if (Row.Zip == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Zip.Name));
+                        }
+                        else if (Row.Country == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Country.Name));
+                        }
+                    }// if
+                    //  ------------------ Opt Outs Validation ------------------ //
+                    else if (Row.RequestTypeId == 1)
+                    {
+                        if (Row.OptOutStatusID == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.OptOutStatusID.Name));
+                        }
+                        else if (Row.ChannelId == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.ChannelDescription.Name));
+                        }
+                    }
+                }
+            }
+
             protected override void SetInternalFields()
             {
                 base.SetInternalFields();

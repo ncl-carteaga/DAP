@@ -3734,6 +3734,16 @@ declare namespace DAP.NCLHDSAR {
 declare namespace DAP.NCLHDSAR {
 }
 declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class MarketingRequestExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.NCLHDSAR {
     interface MarketingRequestForm {
         RequestTypeId: Serenity.LookupEditor;
         SourceId: Serenity.LookupEditor;
@@ -9302,6 +9312,15 @@ declare namespace DAP.NCLHDSAR {
     }
 }
 declare namespace DAP.NCLHDSAR {
+    class MarketingRequestExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        private index;
+        constructor(i: number);
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.NCLHDSAR {
     class MarketingRequestGrid extends Serenity.EntityGrid<MarketingRequestRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof MarketingRequestDialog;
@@ -10580,24 +10599,5 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.NCLHDSAR {
-    interface MarketingRequestExcelImportForm {
-        FileName: Serenity.ImageUploadEditor;
-    }
-    class MarketingRequestExcelImportForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.NCLHDSAR {
-    class MarketingRequestExcelImportDialog extends Serenity.PropertyDialog<any, any> {
-        private form;
-        private index;
-        constructor(i: number);
-        protected getDialogTitle(): string;
-        protected getDialogButtons(): Serenity.DialogButton[];
     }
 }
