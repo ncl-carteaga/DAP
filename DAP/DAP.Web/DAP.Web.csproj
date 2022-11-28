@@ -1289,6 +1289,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.NoteRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1527,6 +1530,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SelectYNEditor.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestExcelImportDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NoteDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\Note\NotesEditor.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\RequestAttributes\RequestAttibutesEditor.ts" />
@@ -3399,6 +3403,7 @@
     <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\OptOutLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestSources\SourceLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\TypeLookupEditor.cs" />
+    <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestExcelImportForm.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequest\YNLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARNavigation.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARPermissionKeys.cs" />
