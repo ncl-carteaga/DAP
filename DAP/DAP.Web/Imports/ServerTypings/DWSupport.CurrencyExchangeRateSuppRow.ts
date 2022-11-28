@@ -1,6 +1,6 @@
 ﻿namespace DAP.DWSupport {
     export interface CurrencyExchangeRateSuppRow {
-        CurrencySurKey?: string;
+        CurrencySurKey?: number;
         CurrencyCd?: string;
         SailFromDat?: string;
         SailToDat?: string;
@@ -15,7 +15,7 @@
 
     export namespace CurrencyExchangeRateSuppRow {
         export const idProperty = 'CurrencySurKey';
-        export const nameProperty = 'CurrencySurKey';
+        export const nameProperty = 'CurrencyCd';
         export const localTextPrefix = 'DWSupport.CurrencyExchangeRateSupp';
 
         export declare const enum Fields {

@@ -1366,7 +1366,7 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CasinoSlotMasterDescSuppRow {
-        SlotMasterDescSurKey?: string;
+        SlotMasterDescSurKey?: number;
         SlotMasterDesc?: string;
         CommentTxt?: string;
         CreatedTs?: string;
@@ -1377,7 +1377,7 @@ declare namespace DAP.DWSupport {
     }
     namespace CasinoSlotMasterDescSuppRow {
         const idProperty = "SlotMasterDescSurKey";
-        const nameProperty = "SlotMasterDescSurKey";
+        const nameProperty = "SlotMasterDesc";
         const localTextPrefix = "DWSupport.CasinoSlotMasterDescSupp";
         const enum Fields {
             SlotMasterDescSurKey = "SlotMasterDescSurKey",
@@ -1435,7 +1435,7 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CategoryMasterSuppRow {
-        CategoryMasterSurKey?: string;
+        CategoryMasterSurKey?: number;
         ShipCd?: string;
         SailFromDat?: string;
         SailToDat?: string;
@@ -1453,7 +1453,7 @@ declare namespace DAP.DWSupport {
     }
     namespace CategoryMasterSuppRow {
         const idProperty = "CategoryMasterSurKey";
-        const nameProperty = "CategoryMasterSurKey";
+        const nameProperty = "CategoryCd";
         const localTextPrefix = "DWSupport.CategoryMasterSupp";
         const enum Fields {
             CategoryMasterSurKey = "CategoryMasterSurKey",
@@ -1514,7 +1514,7 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CurrencyExchangeRateSuppRow {
-        CurrencySurKey?: string;
+        CurrencySurKey?: number;
         CurrencyCd?: string;
         SailFromDat?: string;
         SailToDat?: string;
@@ -1528,7 +1528,7 @@ declare namespace DAP.DWSupport {
     }
     namespace CurrencyExchangeRateSuppRow {
         const idProperty = "CurrencySurKey";
-        const nameProperty = "CurrencySurKey";
+        const nameProperty = "CurrencyCd";
         const localTextPrefix = "DWSupport.CurrencyExchangeRateSupp";
         const enum Fields {
             CurrencySurKey = "CurrencySurKey",
@@ -2091,11 +2091,11 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
     interface InvoiceItemTypeMasterSuppForm {
         MasterComponentCd: Serenity.LookupEditor;
-        InvoiceItemSourceCd: Serenity.LookupEditor;
-        InvoiceItemTypeCd: Serenity.LookupEditor;
-        InvoiceItemSubTypeCd: Serenity.LookupEditor;
-        InvoiceItemSubType2Cd: Serenity.LookupEditor;
-        InvoiceItemSubType3Cd: Serenity.LookupEditor;
+        InvoiceItemSourceCd: Serenity.StringEditor;
+        InvoiceItemTypeCd: Serenity.StringEditor;
+        InvoiceItemSubTypeCd: Serenity.StringEditor;
+        InvoiceItemSubType2Cd: Serenity.StringEditor;
+        InvoiceItemSubType3Cd: Serenity.StringEditor;
         CommentsTxt: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -2272,6 +2272,10 @@ declare namespace DAP.DWSupport {
         CasinoComponentDesc?: string;
         DeptShortDesc?: string;
         IsSuppressBuiltCd?: string;
+        M1?: number;
+        M2?: number;
+        M3?: number;
+        M4?: number;
     }
     namespace InvoiceItemTypeSuppRow {
         const idProperty = "InvoiceItemTypeGenNatKey";
@@ -2311,7 +2315,11 @@ declare namespace DAP.DWSupport {
             CasinoComponentCd = "CasinoComponentCd",
             CasinoComponentDesc = "CasinoComponentDesc",
             DeptShortDesc = "DeptShortDesc",
-            IsSuppressBuiltCd = "IsSuppressBuiltCd"
+            IsSuppressBuiltCd = "IsSuppressBuiltCd",
+            M1 = "M1",
+            M2 = "M2",
+            M3 = "M3",
+            M4 = "M4"
         }
     }
 }
@@ -3656,6 +3664,285 @@ declare namespace DAP.NCLHDSAR {
             Delete = "NCLHDSAR/DataFlow/Delete",
             Retrieve = "NCLHDSAR/DataFlow/Retrieve",
             List = "NCLHDSAR/DataFlow/List"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestBrandsRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace MarketingRequestBrandsRow {
+        const idProperty = "Id";
+        const nameProperty = "Description";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestBrands";
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestBrandsService {
+        const baseUrl = "NCLHDSAR/MarketingRequestBrands";
+        function Create(request: Serenity.SaveRequest<MarketingRequestBrandsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestBrandsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestBrandsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestBrandsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequestBrands/Create",
+            Update = "NCLHDSAR/MarketingRequestBrands/Update",
+            Delete = "NCLHDSAR/MarketingRequestBrands/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequestBrands/Retrieve",
+            List = "NCLHDSAR/MarketingRequestBrands/List"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestChannelsRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace MarketingRequestChannelsRow {
+        const idProperty = "Id";
+        const nameProperty = "Description";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestChannels";
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestChannelsService {
+        const baseUrl = "NCLHDSAR/MarketingRequestChannels";
+        function Create(request: Serenity.SaveRequest<MarketingRequestChannelsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestChannelsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestChannelsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestChannelsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequestChannels/Create",
+            Update = "NCLHDSAR/MarketingRequestChannels/Update",
+            Delete = "NCLHDSAR/MarketingRequestChannels/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequestChannels/Retrieve",
+            List = "NCLHDSAR/MarketingRequestChannels/List"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestForm {
+        RequestTypeId: Serenity.LookupEditor;
+        SourceId: Serenity.LookupEditor;
+        BrandId: Serenity.LookupEditor;
+        ContactId: Serenity.StringEditor;
+        FirstName: Serenity.StringEditor;
+        LastName: Serenity.StringEditor;
+        Phone: Serenity.StringEditor;
+        EmailAddress: Serenity.StringEditor;
+        OptOutStatusID: Serenity.LookupEditor;
+        ChannelId: Serenity.LookupEditor;
+        Title: Serenity.StringEditor;
+        Address1: Serenity.StringEditor;
+        Address2: Serenity.StringEditor;
+        City: Serenity.StringEditor;
+        State: Serenity.StringEditor;
+        Zip: Serenity.StringEditor;
+        Country: Serenity.StringEditor;
+        IsReturnedMailCd: Serenity.BooleanEditor;
+        CreatedBy: Serenity.StringEditor;
+        CreatedDate: Serenity.DateEditor;
+        ModifiedBy: Serenity.StringEditor;
+        ModifiedDate: Serenity.DateEditor;
+    }
+    class MarketingRequestForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestOptOutStatusRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace MarketingRequestOptOutStatusRow {
+        const idProperty = "Id";
+        const nameProperty = "Description";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestOptOutStatus";
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestOptOutStatusService {
+        const baseUrl = "NCLHDSAR/MarketingRequestOptOutStatus";
+        function Create(request: Serenity.SaveRequest<MarketingRequestOptOutStatusRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestOptOutStatusRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestOptOutStatusRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestOptOutStatusRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequestOptOutStatus/Create",
+            Update = "NCLHDSAR/MarketingRequestOptOutStatus/Update",
+            Delete = "NCLHDSAR/MarketingRequestOptOutStatus/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequestOptOutStatus/Retrieve",
+            List = "NCLHDSAR/MarketingRequestOptOutStatus/List"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestRow {
+        Id?: number;
+        RequestTypeId?: number;
+        BrandId?: number;
+        ContactId?: string;
+        ChannelId?: number;
+        OptOutStatusID?: number;
+        FirstName?: string;
+        LastName?: string;
+        Address1?: string;
+        Address2?: string;
+        City?: string;
+        State?: string;
+        Zip?: string;
+        Country?: string;
+        Phone?: string;
+        SourceId?: number;
+        EmailAddress?: string;
+        Title?: string;
+        IsReturnedMailCd?: boolean;
+        CreatedBy?: string;
+        CreatedDate?: string;
+        ModifiedBy?: string;
+        ModifiedDate?: string;
+        RequestTypeDescription?: string;
+        BrandDescription?: string;
+        ChannelDescription?: string;
+        SourceDescription?: string;
+    }
+    namespace MarketingRequestRow {
+        const idProperty = "Id";
+        const nameProperty = "ContactId";
+        const localTextPrefix = "NCLHDSAR.MarketingRequest";
+        const enum Fields {
+            Id = "Id",
+            RequestTypeId = "RequestTypeId",
+            BrandId = "BrandId",
+            ContactId = "ContactId",
+            ChannelId = "ChannelId",
+            OptOutStatusID = "OptOutStatusID",
+            FirstName = "FirstName",
+            LastName = "LastName",
+            Address1 = "Address1",
+            Address2 = "Address2",
+            City = "City",
+            State = "State",
+            Zip = "Zip",
+            Country = "Country",
+            Phone = "Phone",
+            SourceId = "SourceId",
+            EmailAddress = "EmailAddress",
+            Title = "Title",
+            IsReturnedMailCd = "IsReturnedMailCd",
+            CreatedBy = "CreatedBy",
+            CreatedDate = "CreatedDate",
+            ModifiedBy = "ModifiedBy",
+            ModifiedDate = "ModifiedDate",
+            RequestTypeDescription = "RequestTypeDescription",
+            BrandDescription = "BrandDescription",
+            ChannelDescription = "ChannelDescription",
+            SourceDescription = "SourceDescription"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestService {
+        const baseUrl = "NCLHDSAR/MarketingRequest";
+        function Create(request: Serenity.SaveRequest<MarketingRequestRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImportChangeOfAddress(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImportReturnMail(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequest/Create",
+            Update = "NCLHDSAR/MarketingRequest/Update",
+            Delete = "NCLHDSAR/MarketingRequest/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequest/Retrieve",
+            List = "NCLHDSAR/MarketingRequest/List",
+            ExcelImportChangeOfAddress = "NCLHDSAR/MarketingRequest/ExcelImportChangeOfAddress",
+            ExcelImportReturnMail = "NCLHDSAR/MarketingRequest/ExcelImportReturnMail"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestSourcesRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace MarketingRequestSourcesRow {
+        const idProperty = "Id";
+        const nameProperty = "Description";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestSources";
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestSourcesService {
+        const baseUrl = "NCLHDSAR/MarketingRequestSources";
+        function Create(request: Serenity.SaveRequest<MarketingRequestSourcesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestSourcesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestSourcesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestSourcesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequestSources/Create",
+            Update = "NCLHDSAR/MarketingRequestSources/Update",
+            Delete = "NCLHDSAR/MarketingRequestSources/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequestSources/Retrieve",
+            List = "NCLHDSAR/MarketingRequestSources/List"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestTypesRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace MarketingRequestTypesRow {
+        const idProperty = "Id";
+        const nameProperty = "Description";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestTypes";
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    namespace MarketingRequestTypesService {
+        const baseUrl = "NCLHDSAR/MarketingRequestTypes";
+        function Create(request: Serenity.SaveRequest<MarketingRequestTypesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<MarketingRequestTypesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestTypesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestTypesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "NCLHDSAR/MarketingRequestTypes/Create",
+            Update = "NCLHDSAR/MarketingRequestTypes/Update",
+            Delete = "NCLHDSAR/MarketingRequestTypes/Delete",
+            Retrieve = "NCLHDSAR/MarketingRequestTypes/Retrieve",
+            List = "NCLHDSAR/MarketingRequestTypes/List"
         }
     }
 }
@@ -8504,6 +8791,7 @@ declare namespace DAP.DWSupport {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -8658,7 +8946,7 @@ declare namespace DAP.DWSupport {
         protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
         private _invoiceItemTypeCd;
-        invoiceItemTypeCd: string;
+        invoiceItemTypeCd: number;
     }
 }
 declare namespace DAP.DWSupport {
@@ -8994,6 +9282,29 @@ declare namespace DAP.NCLHDSAR {
     class DataFlowGrid extends Serenity.EntityGrid<DataFlowRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof DataFlowDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    class MarketingRequestDialog extends Serenity.EntityDialog<MarketingRequestRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: MarketingRequestForm;
+        constructor();
+        updateInterface(): void;
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    class MarketingRequestGrid extends Serenity.EntityGrid<MarketingRequestRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof MarketingRequestDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -10269,5 +10580,24 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class MarketingRequestExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    class MarketingRequestExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        private index;
+        constructor(i: number);
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
     }
 }
