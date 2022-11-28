@@ -3869,12 +3869,16 @@ declare namespace DAP.NCLHDSAR {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<MarketingRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImportChangeOfAddress(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImportReturnMail(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "NCLHDSAR/MarketingRequest/Create",
             Update = "NCLHDSAR/MarketingRequest/Update",
             Delete = "NCLHDSAR/MarketingRequest/Delete",
             Retrieve = "NCLHDSAR/MarketingRequest/Retrieve",
-            List = "NCLHDSAR/MarketingRequest/List"
+            List = "NCLHDSAR/MarketingRequest/List",
+            ExcelImportChangeOfAddress = "NCLHDSAR/MarketingRequest/ExcelImportChangeOfAddress",
+            ExcelImportReturnMail = "NCLHDSAR/MarketingRequest/ExcelImportReturnMail"
         }
     }
 }
@@ -9305,6 +9309,7 @@ declare namespace DAP.NCLHDSAR {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -10575,5 +10580,24 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    interface MarketingRequestExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class MarketingRequestExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.NCLHDSAR {
+    class MarketingRequestExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        private index;
+        constructor(i: number);
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
     }
 }

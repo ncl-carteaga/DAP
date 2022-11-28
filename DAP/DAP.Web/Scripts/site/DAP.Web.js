@@ -3443,7 +3443,9 @@ var DAP;
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'ExcelImportChangeOfAddress',
+                'ExcelImportReturnMail'
             ].forEach(function (x) {
                 MarketingRequestService[x] = function (r, s, o) {
                     return Q.serviceRequest(MarketingRequestService.baseUrl + '/' + x, r, s, o);
@@ -12159,6 +12161,47 @@ var DAP;
             MarketingRequestGrid.prototype.getIdProperty = function () { return NCLHDSAR.MarketingRequestRow.idProperty; };
             MarketingRequestGrid.prototype.getLocalTextPrefix = function () { return NCLHDSAR.MarketingRequestRow.localTextPrefix; };
             MarketingRequestGrid.prototype.getService = function () { return NCLHDSAR.MarketingRequestService.baseUrl; };
+            MarketingRequestGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                // export button 1
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: NCLHDSAR.MarketingRequestService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export Excel"
+                }));
+                // import button 1
+                buttons.push({
+                    title: 'Import Change of Address',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new NCLHDSAR.MarketingRequestExcelImportDialog(0);
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                // import button 2
+                buttons.push({
+                    title: 'Import Return Mail',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new NCLHDSAR.MarketingRequestExcelImportDialog(1);
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                return buttons;
+            };
             MarketingRequestGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], MarketingRequestGrid);
@@ -17463,5 +17506,98 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var MarketingRequestExcelImportForm = /** @class */ (function (_super) {
+            __extends(MarketingRequestExcelImportForm, _super);
+            function MarketingRequestExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!MarketingRequestExcelImportForm.init) {
+                    MarketingRequestExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(MarketingRequestExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            MarketingRequestExcelImportForm.formKey = 'NCLHDSAR.MarketingRequestExcelImport';
+            return MarketingRequestExcelImportForm;
+        }(Serenity.PrefixedContext));
+        NCLHDSAR.MarketingRequestExcelImportForm = MarketingRequestExcelImportForm;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var NCLHDSAR;
+    (function (NCLHDSAR) {
+        var MarketingRequestExcelImportDialog = /** @class */ (function (_super) {
+            __extends(MarketingRequestExcelImportDialog, _super);
+            function MarketingRequestExcelImportDialog(i) {
+                var _this = _super.call(this) || this;
+                _this.form = new NCLHDSAR.MarketingRequestExcelImportForm(_this.idPrefix);
+                _this.index = i;
+                return _this;
+            }
+            MarketingRequestExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            MarketingRequestExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            // Select service type
+                            if (_this.index == 0) {
+                                NCLHDSAR.MarketingRequestService.ExcelImportChangeOfAddress({
+                                    FileName: _this.form.FileName.value.Filename
+                                }, function (response) {
+                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                        ', Updated: ' + (response.Updated || 0));
+                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                        Q.notifyError(response.ErrorList.join(',\r\n '));
+                                    }
+                                    _this.dialogClose();
+                                });
+                            }
+                            else if (_this.index == 1) {
+                                NCLHDSAR.MarketingRequestService.ExcelImportReturnMail({
+                                    FileName: _this.form.FileName.value.Filename
+                                }, function (response) {
+                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                        ', Updated: ' + (response.Updated || 0));
+                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                        Q.notifyError(response.ErrorList.join(',\r\n '));
+                                    }
+                                    _this.dialogClose();
+                                });
+                            }
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            MarketingRequestExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], MarketingRequestExcelImportDialog);
+            return MarketingRequestExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        NCLHDSAR.MarketingRequestExcelImportDialog = MarketingRequestExcelImportDialog;
+    })(NCLHDSAR = DAP.NCLHDSAR || (DAP.NCLHDSAR = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
