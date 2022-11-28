@@ -35,10 +35,13 @@ namespace DAP.NCLHDSAR.Forms
         public String Country { get; set; }
         [Category("Return Mail")]
         public Boolean IsReturnedMailCd { get; set; }
-
+        [Visible(false)]
         public String CreatedBy { get; set; }
+        [Visible(false)]
         public DateTime CreatedDate { get; set; }
+        [Visible(false)]
         public String ModifiedBy { get; set; }
+        [Visible(false)]
         public DateTime ModifiedDate { get; set; }
     }
 }

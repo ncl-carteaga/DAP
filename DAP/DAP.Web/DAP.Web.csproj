@@ -3404,7 +3404,6 @@
     <Compile Include="Modules\NCLHDSAR\MarketingRequestSources\SourceLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestTypes\TypeLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestExcelImportForm.cs" />
-    <Compile Include="Modules\NCLHDSAR\MarketingRequest\YNLookupEditor.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARNavigation.cs" />
     <Compile Include="Modules\NCLHDSAR\NCLHDSARPermissionKeys.cs" />
     <Compile Include="Modules\NCLHDSAR\Note\NoteRepository.cs" />
