@@ -10119,12 +10119,50 @@ var DAP;
             CurrencyExchangeRateSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CurrencyExchangeRateSuppRow.localTextPrefix; };
             CurrencyExchangeRateSuppDialog.prototype.getNameProperty = function () { return DWSupport.CurrencyExchangeRateSuppRow.nameProperty; };
             CurrencyExchangeRateSuppDialog.prototype.getService = function () { return DWSupport.CurrencyExchangeRateSuppService.baseUrl; };
+            CurrencyExchangeRateSuppDialog.prototype.getToolbarButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getToolbarButtons.call(this);
+                buttons.push({
+                    title: 'Close Record',
+                    cssClass: 'edit-permissions-button',
+                    icon: 'fa-lock text-green',
+                    onClick: function () {
+                        // -------------------------------- [ VALIDATE ] --------------------------------- //
+                        // (record cannot be closed if criteria already met)
+                        if (_this.form.SailToDat.value == lastDayOfMonthDate(_this.form.SailFromDat.value)) {
+                            window.setTimeout(function () { return Q.notifyError('Record already closed.'); }, 0);
+                            _this.dialogClose();
+                            return buttons; // return immediately
+                        }
+                        // ------------------------------ [ CLOSE RECORD ] ------------------------------ //
+                        // get sailFromDate's last day of the month to update sailFromToDate
+                        _this.entity.SailToDat = lastDayOfMonthDate(_this.form.SailFromDat.value);
+                        DWSupport.CurrencyExchangeRateSuppService.Update({
+                            EntityId: _this.entityId,
+                            Entity: _this.entity
+                        }, function (response) {
+                            _this.dialogClose();
+                            window.setTimeout(function () { return Q.notifySuccess('Record successfully closed.'); }, 0);
+                        });
+                        // ----------------------------------------------------------------------------- //
+                        // update row set sailToDate = lastDayOfMonth(sailfromDate)
+                        // insert new row sailToDate = 9999-12-31 sailFromDate = firstDayOfMonth(sailfromDate)
+                    }
+                });
+                return buttons;
+            };
             CurrencyExchangeRateSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], CurrencyExchangeRateSuppDialog);
             return CurrencyExchangeRateSuppDialog;
         }(Serenity.EntityDialog));
         DWSupport.CurrencyExchangeRateSuppDialog = CurrencyExchangeRateSuppDialog;
+        function lastDayOfMonthDate(date) {
+            var dateArr = date.split('-');
+            var dateObj = new Date(Number(dateArr[0]), Number(dateArr[1]) - 1, Number(dateArr[2]));
+            var newDate = new Date(dateObj.getFullYear(), dateObj.getMonth() + 1, 0);
+            return Q.formatDate(newDate.toDateString(), "yyyy-MM-dd");
+        }
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -10141,21 +10179,6 @@ var DAP;
             CurrencyExchangeRateSuppGrid.prototype.getIdProperty = function () { return DWSupport.CurrencyExchangeRateSuppRow.idProperty; };
             CurrencyExchangeRateSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.CurrencyExchangeRateSuppRow.localTextPrefix; };
             CurrencyExchangeRateSuppGrid.prototype.getService = function () { return DWSupport.CurrencyExchangeRateSuppService.baseUrl; };
-            CurrencyExchangeRateSuppGrid.prototype.getQuickFilters = function () {
-                // get quick filter list from base class
-                var filters = _super.prototype.getQuickFilters.call(this);
-                filters.push({
-                    type: Serenity.DateEditor,
-                    field: "ModifiedTs" /* ModifiedTs */,
-                    title: "Modified TS (Read Only)",
-                    init: function (w) {
-                        w.value = '12/31/9999';
-                        w.set_readOnly(true);
-                    }
-                });
-                console.log(filters);
-                return filters;
-            };
             CurrencyExchangeRateSuppGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], CurrencyExchangeRateSuppGrid);
