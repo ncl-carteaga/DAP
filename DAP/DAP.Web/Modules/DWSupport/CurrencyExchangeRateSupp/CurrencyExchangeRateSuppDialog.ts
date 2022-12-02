@@ -37,20 +37,47 @@ namespace DAP.DWSupport {
                         CurrencyExchangeRateSuppService.Update({
                             EntityId: this.entityId,
                             Entity: this.entity
-                            }, response => {
-                                this.dialogClose();
-                                window.setTimeout(() => Q.notifySuccess('Record successfully closed.'), 0);
+                        }, response => {
+                                //
                         });
-                    // ----------------------------------------------------------------------------- //
 
-                    
-                    // update row set sailToDate = lastDayOfMonth(sailfromDate)
-                    // insert new row sailToDate = 9999-12-31 sailFromDate = firstDayOfMonth(sailfromDate)
+
+
+                    // ---------------------------- [ INSERT NEW RECORD ] --------------------------- //
+                    // After previous record is closed with UPDATE, a new row is inserted
+                        var row = {
+                            CurrencyCd: this.form.CurrencyCd.value,
+                            SailToDat : "9999-12-31",
+                            SailFromDat: firstDayOfMonthDate(lastDayOfMonthDate(this.form.SailFromDat.value)),
+                            ExchangeRateNbr: this.form.ExchangeRateNbr.value,
+                            CommentTxt: this.form.CommentTxt.value,
+                            AuditRecordId: this.form.AuditRecordId.value,
+                            CreatedByNam: Authorization.userDefinition.Username,
+                            CreatedTs: new Date().toISOString().slice(0, 10)
+                        }
+
+                        // INSERT
+                        DWSupport.CurrencyExchangeRateSuppService.Create({
+                            Entity: row
+                        }, response => {
+                            this.dialogClose();
+                            window.setTimeout(() => Q.notifySuccess('Record successfully closed.'), 0);
+                            // refresh data changes
+                            Serenity.SubDialogHelper.triggerDataChange(this);
+                        });
                 }
             });
 
             return buttons;
         }
+    }
+
+    function firstDayOfMonthDate(date: string) {
+        var dateArr = date.split('-');
+        var dateObj = new Date(Number(dateArr[0]), Number(dateArr[1]) - 1, Number(dateArr[2]));
+        var newDate = new Date(dateObj.getFullYear(), dateObj.getMonth() + 1, 1);
+
+        return Q.formatDate(newDate.toDateString(), "yyyy-MM-dd");
     }
 
     function lastDayOfMonthDate(date: string) {
