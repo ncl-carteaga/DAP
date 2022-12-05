@@ -12117,31 +12117,46 @@ var DAP;
             function MarketingRequestDialog() {
                 var _this = _super.call(this) || this;
                 _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix);
-                _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix); // For each drop-down option, check required fields have value. //            
+                // get form obj
+                _this.form = new NCLHDSAR.MarketingRequestForm(_this.idPrefix);
+                // For each drop-down option, check required fields have value. //
                 _this.form.RequestTypeId.addValidationRule(_this.uniqueName, function (e) {
+                    // Check dropdown ID 1 (Opt Outs)
                     if (_this.form.RequestTypeId.value == "1") {
-                        // Check dropdown ID 1
-                        if (Q.isEmptyOrNull(_this.form.OptOutStatusID.value) || Q.isEmptyOrNull(_this.form.ChannelId.value)) {
+                        if (Q.isEmptyOrNull(_this.form.OptOutStatusID.value)) {
                             var fld1 = "OptOutStatusID" /* OptOutStatusID */;
-                            var fld2 = "ChannelId" /* ChannelId */;
-                            return "Fields " + fld1 + " and " + fld2 + " required.";
+                            return "Field " + fld1 + " is required.";
                         }
-                        // Check dropdown ID 2
+                        else if (Q.isEmptyOrNull(_this.form.ChannelId.value)) {
+                            var fld1 = "ChannelId" /* ChannelId */;
+                            return "Field " + fld1 + " is required.";
+                        }
                     }
+                    // Check dropdown ID 2 (Change of Address)
                     else if (_this.form.RequestTypeId.value == "2") {
-                        if (Q.isEmptyOrNull(_this.form.Title.value) ||
-                            Q.isEmptyOrNull(_this.form.Address1.value) ||
-                            Q.isEmptyOrNull(_this.form.City.value) ||
-                            Q.isEmptyOrNull(_this.form.Zip.value) ||
-                            Q.isEmptyOrNull(_this.form.State.value) ||
-                            Q.isEmptyOrNull(_this.form.Country.value)) {
+                        if (Q.isEmptyOrNull(_this.form.Title.value)) {
                             var fld1 = "Title" /* Title */;
-                            var fld2 = "Address1" /* Address1 */;
-                            var fld3 = "City" /* City */;
-                            var fld4 = "Zip" /* Zip */;
-                            var fld5 = "State" /* State */;
-                            var fld6 = "Country" /* Country */;
-                            return "Fields " + fld1 + ", " + fld2 + ", " + fld3 + ", " + fld4 + " are required.";
+                            return "Field " + fld1 + " is required.";
+                        }
+                        else if (Q.isEmptyOrNull(_this.form.Address1.value)) {
+                            var fld1 = "Address1" /* Address1 */;
+                            return "Field " + fld1 + " is required.";
+                        }
+                        else if (Q.isEmptyOrNull(_this.form.City.value)) {
+                            var fld1 = "City" /* City */;
+                            return "Field " + fld1 + " is required.";
+                        }
+                        else if (Q.isEmptyOrNull(_this.form.State.value)) {
+                            var fld1 = "State" /* State */;
+                            return "Field " + fld1 + " is required.";
+                        }
+                        else if (Q.isEmptyOrNull(_this.form.Zip.value)) {
+                            var fld1 = "Zip" /* Zip */;
+                            return "Field " + fld1 + " is required.";
+                        }
+                        else if (Q.isEmptyOrNull(_this.form.Country.value)) {
+                            var fld1 = "Country" /* Country */;
+                            return "Field " + fld1 + " is required.";
                         }
                     }
                 });
