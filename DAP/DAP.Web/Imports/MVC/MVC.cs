@@ -236,6 +236,11 @@ namespace MVC
                 public const string DataFlowIndex = "~/Modules/NCLHDSAR/DataFlow/DataFlowIndex.cshtml";
             }
 
+            public static class MarketingRequest
+            {
+                public const string MarketingRequestIndex = "~/Modules/NCLHDSAR/MarketingRequest/MarketingRequestIndex.cshtml";
+            }
+
             public static class Request
             {
                 public const string RequestIndex = "~/Modules/NCLHDSAR/Request/RequestIndex.cshtml";

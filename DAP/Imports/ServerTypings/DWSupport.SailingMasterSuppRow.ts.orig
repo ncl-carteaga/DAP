@@ -1,0 +1,191 @@
+﻿
+namespace DAP.DWSupport {
+    export interface SailingMasterSuppRow {
+        SailSurKey?: number;
+        SailId?: number;
+        PackageTypeCd?: string;
+        ValidVoyageCd?: string;
+        ShipCd?: string;
+        SailDat?: string;
+        ProductCd?: string;
+        LatitudeCruiseCd?: string;
+        FareFeedIncludeCd?: string;
+        InactiveCd?: string;
+        ShipNbr?: string;
+        AmenityPtsQty?: number;
+        RmsForecastCd?: number;
+        RmsParentSail1Id?: number;
+        RmsParentSail2Id?: number;
+        RmsParentSail3Id?: number;
+        RmsSeasonCd?: string;
+        RmsColorNameDesc?: string;
+        RmsRefLinkSailId?: number;
+        BackToBackCd?: string;
+        MainVoyageCd?: string;
+        SlProductCd?: string;
+        MandateWeeksQty?: number;
+        InterportCd?: string;
+        JonesActSailId?: number;
+        RmsParentSail4Id?: number;
+        RmsParentSail5Id?: number;
+        RmsParentSail6Id?: number;
+        RmsParentSail7Id?: number;
+        RmsParentSail8Id?: number;
+        RmsParentSail9Id?: number;
+        RmsParentSail10Id?: number;
+        RmsParentSail11Id?: number;
+        RmsParentSail12Id?: number;
+        RmsParentSail13Id?: number;
+        RmsParentSail14Id?: number;
+        RmsParentSail15Id?: number;
+        FsGrpAmenityAmt?: number;
+        ObrTradeCd?: string;
+        ObrSubTradeCd?: string;
+        ObrSeasonCd?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        ProxySailId?: number;
+        OnSaleDat?: string;
+        SeasonYearCd?: string;
+        IsVoyageExceptionCd?: string;
+        VoyageExceptionDesc?: string;
+        ItineraryChangedDat?: string;
+        CharterCd?: string;
+        IsHolidayCd?: string;
+        ProxyBudgetSailId?: number;
+        ProxyMetaWeightSailId?: number;
+        IsFreeOpenBarCd?: string;
+        CasinoCabinCapacityQty?: number;
+        IsExtraordinaryCd?: string;
+    }
+
+    export namespace SailingMasterSuppRow {
+        export const idProperty = 'SailSurKey';
+        export const nameProperty = 'PackageTypeCd';
+        export const localTextPrefix = 'DWSupport.SailingMasterSupp';
+
+        export namespace Fields {
+            export declare const SailSurKey;
+            export declare const SailId;
+            export declare const PackageTypeCd;
+            export declare const ValidVoyageCd;
+            export declare const ShipCd;
+            export declare const SailDat;
+            export declare const ProductCd;
+            export declare const LatitudeCruiseCd;
+            export declare const FareFeedIncludeCd;
+            export declare const InactiveCd;
+            export declare const ShipNbr;
+            export declare const AmenityPtsQty;
+            export declare const RmsForecastCd;
+            export declare const RmsParentSail1Id;
+            export declare const RmsParentSail2Id;
+            export declare const RmsParentSail3Id;
+            export declare const RmsSeasonCd;
+            export declare const RmsColorNameDesc;
+            export declare const RmsRefLinkSailId;
+            export declare const BackToBackCd;
+            export declare const MainVoyageCd;
+            export declare const SlProductCd;
+            export declare const MandateWeeksQty;
+            export declare const InterportCd;
+            export declare const JonesActSailId;
+            export declare const RmsParentSail4Id;
+            export declare const RmsParentSail5Id;
+            export declare const RmsParentSail6Id;
+            export declare const RmsParentSail7Id;
+            export declare const RmsParentSail8Id;
+            export declare const RmsParentSail9Id;
+            export declare const RmsParentSail10Id;
+            export declare const RmsParentSail11Id;
+            export declare const RmsParentSail12Id;
+            export declare const RmsParentSail13Id;
+            export declare const RmsParentSail14Id;
+            export declare const RmsParentSail15Id;
+            export declare const FsGrpAmenityAmt;
+            export declare const ObrTradeCd;
+            export declare const ObrSubTradeCd;
+            export declare const ObrSeasonCd;
+            export declare const CreatedTs;
+            export declare const CreatedByNam;
+            export declare const ModifiedByNam;
+            export declare const ModifiedTs;
+            export declare const ProxySailId;
+            export declare const OnSaleDat;
+            export declare const SeasonYearCd;
+            export declare const IsVoyageExceptionCd;
+            export declare const VoyageExceptionDesc;
+            export declare const ItineraryChangedDat;
+            export declare const CharterCd;
+            export declare const IsHolidayCd;
+            export declare const ProxyBudgetSailId;
+            export declare const ProxyMetaWeightSailId;
+            export declare const IsFreeOpenBarCd;
+            export declare const CasinoCabinCapacityQty;
+            export declare const IsExtraordinaryCd;
+        }
+
+        [
+            'SailSurKey',
+            'SailId',
+            'PackageTypeCd',
+            'ValidVoyageCd',
+            'ShipCd',
+            'SailDat',
+            'ProductCd',
+            'LatitudeCruiseCd',
+            'FareFeedIncludeCd',
+            'InactiveCd',
+            'ShipNbr',
+            'AmenityPtsQty',
+            'RmsForecastCd',
+            'RmsParentSail1Id',
+            'RmsParentSail2Id',
+            'RmsParentSail3Id',
+            'RmsSeasonCd',
+            'RmsColorNameDesc',
+            'RmsRefLinkSailId',
+            'BackToBackCd',
+            'MainVoyageCd',
+            'SlProductCd',
+            'MandateWeeksQty',
+            'InterportCd',
+            'JonesActSailId',
+            'RmsParentSail4Id',
+            'RmsParentSail5Id',
+            'RmsParentSail6Id',
+            'RmsParentSail7Id',
+            'RmsParentSail8Id',
+            'RmsParentSail9Id',
+            'RmsParentSail10Id',
+            'RmsParentSail11Id',
+            'RmsParentSail12Id',
+            'RmsParentSail13Id',
+            'RmsParentSail14Id',
+            'RmsParentSail15Id',
+            'FsGrpAmenityAmt',
+            'ObrTradeCd',
+            'ObrSubTradeCd',
+            'ObrSeasonCd',
+            'CreatedTs',
+            'CreatedByNam',
+            'ModifiedByNam',
+            'ModifiedTs',
+            'ProxySailId',
+            'OnSaleDat',
+            'SeasonYearCd',
+            'IsVoyageExceptionCd',
+            'VoyageExceptionDesc',
+            'ItineraryChangedDat',
+            'CharterCd',
+            'IsHolidayCd',
+            'ProxyBudgetSailId',
+            'ProxyMetaWeightSailId',
+            'IsFreeOpenBarCd',
+            'CasinoCabinCapacityQty',
+            'IsExtraordinaryCd'
+        ].forEach(x => (<any>Fields)[x] = x);
+    }
+}

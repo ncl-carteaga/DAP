@@ -34,6 +34,10 @@
         CasinoComponentDesc?: string;
         DeptShortDesc?: string;
         IsSuppressBuiltCd?: string;
+        M1?: number;
+        M2?: number;
+        M3?: number;
+        M4?: number;
     }
 
     export namespace InvoiceItemTypeSuppRow {
@@ -75,7 +79,11 @@
             CasinoComponentCd = "CasinoComponentCd",
             CasinoComponentDesc = "CasinoComponentDesc",
             DeptShortDesc = "DeptShortDesc",
-            IsSuppressBuiltCd = "IsSuppressBuiltCd"
+            IsSuppressBuiltCd = "IsSuppressBuiltCd",
+            M1 = "M1",
+            M2 = "M2",
+            M3 = "M3",
+            M4 = "M4"
         }
     }
 }
