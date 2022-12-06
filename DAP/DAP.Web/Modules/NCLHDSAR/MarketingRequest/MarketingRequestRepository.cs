@@ -85,7 +85,7 @@ namespace DAP.NCLHDSAR.Repositories
                         }
                     }// if
                     //  ------------------ Opt Outs Validation ------------------ //
-                    else if (Row.RequestTypeId == 1)
+                    else if (MyRow.Fields.RequestTypeId == 1)
                     {
                         if (Row.OptOutStatusID == null)
                         {
@@ -135,7 +135,7 @@ namespace DAP.NCLHDSAR.Repositories
                         }
                     }// if
                     //  ------------------ Opt Outs Validation ------------------ //
-                    else if (Row.RequestTypeId == 1)
+                    else if (MyRow.Fields.RequestTypeId == 1)
                     {
                         if (Row.OptOutStatusID == null)
                         {
