@@ -16,7 +16,7 @@ namespace DAP.DWSupport {
             super(container);
         }
 
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[] {
+        /*protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[] {
 
             // get quick filter list from base class
             let filters = super.getQuickFilters();
@@ -32,8 +32,7 @@ namespace DAP.DWSupport {
                 }
             });
             
-            console.log(filters);
             return filters;
-        }
+        }*/
     }
 }

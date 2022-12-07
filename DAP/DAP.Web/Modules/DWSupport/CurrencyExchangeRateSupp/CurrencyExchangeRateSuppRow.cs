@@ -66,7 +66,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.AuditRecordId[this] = value; }
         }
 
-        [Updatable(false), Insertable(false)]
+        [Visible(false)]
         [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull]
         public String CreatedByNam
         {
@@ -74,7 +74,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedByNam[this] = value; }
         }
 
-        [Updatable(false), Insertable(false)]
+        [Visible(false)]
         [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull]
         public DateTime? CreatedTs
         {
@@ -82,7 +82,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedTs[this] = value; }
         }
 
-        [Updatable(false), Insertable(false)]
+        [Visible(false)]
         [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50)]
         public String ModifiedByNam
         {
@@ -90,7 +90,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ModifiedByNam[this] = value; }
         }
 
-        [Updatable(false), Insertable(false)]
+        [Visible(false)]
         [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull]
         public DateTime? ModifiedTs
         {

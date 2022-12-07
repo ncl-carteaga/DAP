@@ -50,7 +50,7 @@ namespace DAP.DWSupport.Repositories
                     Row.CreatedByNam = user.DisplayName.ToUpper();
                     Row.CreatedTs = DateTime.Now;
                     Row.ModifiedByNam = user.Username.ToUpper();
-                    Row.ModifiedTs = DateTime.Now;
+                    Row.ModifiedTs = new DateTime(9999,12,31);
                 }
                 if (IsUpdate)
                 {
