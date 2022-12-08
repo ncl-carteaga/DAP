@@ -2603,6 +2603,83 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface PsGlAccountSuppForm {
+        SetId: Serenity.StringEditor;
+        AccountId: Serenity.StringEditor;
+        OlapAccountDesc: Serenity.StringEditor;
+        GrossCostCd: Serenity.StringEditor;
+        AccountClassType1Cd: Serenity.StringEditor;
+        AccountClassType2Cd: Serenity.StringEditor;
+        AccountClassType3Cd: Serenity.StringEditor;
+        AccountClassType4Cd: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+    }
+    class PsGlAccountSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface PsGlAccountSuppRow {
+        AccountSurKey?: number;
+        SetId?: string;
+        AccountId?: string;
+        OlapAccountDesc?: string;
+        GrossCostCd?: string;
+        AccountClassType1Cd?: string;
+        AccountClassType2Cd?: string;
+        AccountClassType3Cd?: string;
+        AccountClassType4Cd?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+    }
+    namespace PsGlAccountSuppRow {
+        const idProperty = "AccountSurKey";
+        const nameProperty = "SetId";
+        const localTextPrefix = "DWSupport.PsGlAccountSupp";
+        const enum Fields {
+            AccountSurKey = "AccountSurKey",
+            SetId = "SetId",
+            AccountId = "AccountId",
+            OlapAccountDesc = "OlapAccountDesc",
+            GrossCostCd = "GrossCostCd",
+            AccountClassType1Cd = "AccountClassType1Cd",
+            AccountClassType2Cd = "AccountClassType2Cd",
+            AccountClassType3Cd = "AccountClassType3Cd",
+            AccountClassType4Cd = "AccountClassType4Cd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace PsGlAccountSuppService {
+        const baseUrl = "DWSupport/PsGlAccountSupp";
+        function Create(request: Serenity.SaveRequest<PsGlAccountSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<PsGlAccountSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<PsGlAccountSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<PsGlAccountSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/PsGlAccountSupp/Create",
+            Update = "DWSupport/PsGlAccountSupp/Update",
+            Delete = "DWSupport/PsGlAccountSupp/Delete",
+            Retrieve = "DWSupport/PsGlAccountSupp/Retrieve",
+            List = "DWSupport/PsGlAccountSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface RollupProductCodesSuppForm {
         ProductCd: Serenity.StringEditor;
         RmRollupProductCd: Serenity.StringEditor;
@@ -9070,6 +9147,26 @@ declare namespace DAP.DWSupport {
         constructor(container: JQuery);
         protected getColumns(): Slick.Column[];
         protected onClick(e: JQueryEventObject, row: number, cell: number): void;
+    }
+}
+declare namespace DAP.DWSupport {
+    class PsGlAccountSuppDialog extends Serenity.EntityDialog<PsGlAccountSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: PsGlAccountSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class PsGlAccountSuppGrid extends Serenity.EntityGrid<PsGlAccountSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof PsGlAccountSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.DWSupport {

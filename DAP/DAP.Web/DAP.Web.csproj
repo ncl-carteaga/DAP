@@ -1179,6 +1179,7 @@
     <Content Include="Modules\DWSupport\MinibarSetupSupp\MinibarSetupSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestIndex.cshtml" />
+    <Content Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1257,6 +1258,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ProductCodeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppColumns.ts">
@@ -1705,6 +1709,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestDialog.ts" />
     <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3200,6 +3206,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.MarketingRequestOptOutStatusService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3983,6 +3998,12 @@
     <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\MarketingRequestOptOutStatusRow.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\MarketingRequestOptOutStatusRepository.cs" />
     <Compile Include="Modules\NCLHDSAR\MarketingRequestOptOutStatus\MarketingRequestOptOutStatusEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -23,3 +23,4 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/Full Ship Charters Supp", typeof(MyPages.FullShipChartersSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Minibar Setup Supp", typeof(MyPages.MinibarSetupSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Rollup Product Codes Supp", typeof(MyPages.RollupProductCodesSuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
