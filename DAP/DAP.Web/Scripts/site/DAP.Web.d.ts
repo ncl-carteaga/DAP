@@ -3755,6 +3755,7 @@ declare namespace DAP.NCLHDSAR {
         EmailAddress: Serenity.StringEditor;
         OptOutStatusID: Serenity.LookupEditor;
         ChannelId: Serenity.LookupEditor;
+        IsReturnedMailCd: Serenity.BooleanEditor;
         Title: Serenity.StringEditor;
         Address1: Serenity.StringEditor;
         Address2: Serenity.StringEditor;
@@ -3762,7 +3763,6 @@ declare namespace DAP.NCLHDSAR {
         State: Serenity.StringEditor;
         Zip: Serenity.StringEditor;
         Country: Serenity.StringEditor;
-        IsReturnedMailCd: Serenity.BooleanEditor;
         CreatedBy: Serenity.StringEditor;
         CreatedDate: Serenity.DateEditor;
         ModifiedBy: Serenity.StringEditor;
