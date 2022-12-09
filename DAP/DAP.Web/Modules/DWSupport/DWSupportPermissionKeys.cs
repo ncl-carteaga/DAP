@@ -48,6 +48,7 @@ namespace DAP.DWSupport
             public const string FullShipChartersSupp = "DWSupp:Page:FullShipChartersSupp";
             public const string MinibarSetupSupp = "DWSupp:Page:MinibarSetupSupp";
             public const string RollupProductCodesSupp = "DWSupp:Page:RollupProductCodesSupp";
+            public const string PsGlAccountSupp = "DWSupp:Page:PsGlAccountSupp";
         }
     }    
 }

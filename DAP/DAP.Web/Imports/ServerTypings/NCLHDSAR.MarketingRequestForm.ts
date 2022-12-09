@@ -10,6 +10,7 @@
         EmailAddress: Serenity.StringEditor;
         OptOutStatusID: Serenity.LookupEditor;
         ChannelId: Serenity.LookupEditor;
+        IsReturnedMailCd: Serenity.BooleanEditor;
         Title: Serenity.StringEditor;
         Address1: Serenity.StringEditor;
         Address2: Serenity.StringEditor;
@@ -17,7 +18,6 @@
         State: Serenity.StringEditor;
         Zip: Serenity.StringEditor;
         Country: Serenity.StringEditor;
-        IsReturnedMailCd: Serenity.BooleanEditor;
         CreatedBy: Serenity.StringEditor;
         CreatedDate: Serenity.DateEditor;
         ModifiedBy: Serenity.StringEditor;
@@ -51,6 +51,7 @@
                     'EmailAddress', w1,
                     'OptOutStatusID', w0,
                     'ChannelId', w0,
+                    'IsReturnedMailCd', w2,
                     'Title', w1,
                     'Address1', w1,
                     'Address2', w1,
@@ -58,7 +59,6 @@
                     'State', w1,
                     'Zip', w1,
                     'Country', w1,
-                    'IsReturnedMailCd', w2,
                     'CreatedBy', w1,
                     'CreatedDate', w3,
                     'ModifiedBy', w1,

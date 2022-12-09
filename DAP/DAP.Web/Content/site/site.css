@@ -9663,6 +9663,12 @@ button.ui-button {
 .s-DWSupport-RollupProductCodesSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-PsGlAccountSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-PsGlAccountSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
