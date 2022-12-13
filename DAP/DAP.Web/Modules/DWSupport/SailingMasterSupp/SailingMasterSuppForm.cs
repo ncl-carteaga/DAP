@@ -92,11 +92,11 @@ namespace DAP.DWSupport.Forms
         public String ObrSubTradeCd { get; set; }
         [ReadOnly(true)]
         public String ObrSeasonCd { get; set; }
-        [ReadOnly(true)]
+
         public Int32 ProxySailId { get; set; }
-        [ReadOnly(true)]
+
         public DateTime OnSaleDat { get; set; }
-        [ReadOnly(true)]
+
         public String SeasonYearCd { get; set; }
         [ReadOnly(true)]
         public String IsVoyageExceptionCd { get; set; }
