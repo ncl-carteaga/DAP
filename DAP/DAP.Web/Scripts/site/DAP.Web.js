@@ -4835,6 +4835,131 @@ var DAP;
 (function (DAP) {
     var PCHODS;
     (function (PCHODS) {
+        var InboundUserOverrideDescriptionRow;
+        (function (InboundUserOverrideDescriptionRow) {
+            InboundUserOverrideDescriptionRow.idProperty = 'Id';
+            InboundUserOverrideDescriptionRow.nameProperty = 'Description';
+            InboundUserOverrideDescriptionRow.localTextPrefix = 'PCHODS.InboundUserOverrideDescription';
+            var Fields;
+            (function (Fields) {
+            })(Fields = InboundUserOverrideDescriptionRow.Fields || (InboundUserOverrideDescriptionRow.Fields = {}));
+            [
+                'Id',
+                'Description',
+                'OutboundComments'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(InboundUserOverrideDescriptionRow = PCHODS.InboundUserOverrideDescriptionRow || (PCHODS.InboundUserOverrideDescriptionRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var InboundUserOverrideDescriptionService;
+        (function (InboundUserOverrideDescriptionService) {
+            InboundUserOverrideDescriptionService.baseUrl = 'PCHODS/InboundUserOverrideDescription';
+            var Methods;
+            (function (Methods) {
+            })(Methods = InboundUserOverrideDescriptionService.Methods || (InboundUserOverrideDescriptionService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                InboundUserOverrideDescriptionService[x] = function (r, s, o) {
+                    return Q.serviceRequest(InboundUserOverrideDescriptionService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = InboundUserOverrideDescriptionService.baseUrl + '/' + x;
+            });
+        })(InboundUserOverrideDescriptionService = PCHODS.InboundUserOverrideDescriptionService || (PCHODS.InboundUserOverrideDescriptionService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var InboundUserOverrideForm = /** @class */ (function (_super) {
+            __extends(InboundUserOverrideForm, _super);
+            function InboundUserOverrideForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            InboundUserOverrideForm.formKey = 'PCHODS.InboundUserOverride';
+            return InboundUserOverrideForm;
+        }(Serenity.PrefixedContext));
+        PCHODS.InboundUserOverrideForm = InboundUserOverrideForm;
+        [,
+            ['Company', function () { return Serenity.StringEditor; }],
+            ['Invoice', function () { return Serenity.StringEditor; }],
+            ['UserAssign', function () { return Serenity.StringEditor; }],
+            ['ItDescription', function () { return Serenity.IntegerEditor; }],
+            ['Inbound', function () { return Serenity.StringEditor; }],
+            ['Comments', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(InboundUserOverrideForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var InboundUserOverrideRow;
+        (function (InboundUserOverrideRow) {
+            InboundUserOverrideRow.idProperty = 'Id';
+            InboundUserOverrideRow.nameProperty = 'Company';
+            InboundUserOverrideRow.localTextPrefix = 'PCHODS.InboundUserOverride';
+            var Fields;
+            (function (Fields) {
+            })(Fields = InboundUserOverrideRow.Fields || (InboundUserOverrideRow.Fields = {}));
+            [
+                'Id',
+                'Company',
+                'Invoice',
+                'UserAssign',
+                'ItDescription',
+                'Inbound',
+                'Comments',
+                'ItDescriptionDescription',
+                'ItDescriptionOutboundComments'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(InboundUserOverrideRow = PCHODS.InboundUserOverrideRow || (PCHODS.InboundUserOverrideRow = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var InboundUserOverrideService;
+        (function (InboundUserOverrideService) {
+            InboundUserOverrideService.baseUrl = 'PCHODS/InboundUserOverride';
+            var Methods;
+            (function (Methods) {
+            })(Methods = InboundUserOverrideService.Methods || (InboundUserOverrideService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                InboundUserOverrideService[x] = function (r, s, o) {
+                    return Q.serviceRequest(InboundUserOverrideService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = InboundUserOverrideService.baseUrl + '/' + x;
+            });
+        })(InboundUserOverrideService = PCHODS.InboundUserOverrideService || (PCHODS.InboundUserOverrideService = {}));
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
         var OutboundAgentForm = /** @class */ (function (_super) {
             __extends(OutboundAgentForm, _super);
             function OutboundAgentForm(prefix) {
@@ -7182,6 +7307,53 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var LanguageList;
+    (function (LanguageList) {
+        function getValue() {
+            var result = [];
+            for (var _i = 0, _a = DAP.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
+                var k = _a[_i];
+                if (k.LanguageId !== 'en') {
+                    result.push([k.Id.toString(), k.LanguageName]);
+                }
+            }
+            return result;
+        }
+        LanguageList.getValue = getValue;
+    })(LanguageList = DAP.LanguageList || (DAP.LanguageList = {}));
+})(DAP || (DAP = {}));
+/// <reference path="../Common/Helpers/LanguageList.ts" />
+var DAP;
+(function (DAP) {
+    var ScriptInitialization;
+    (function (ScriptInitialization) {
+        Q.Config.responsiveDialogs = true;
+        Q.Config.rootNamespaces.push('DAP');
+        Serenity.EntityDialog.defaultLanguageList = DAP.LanguageList.getValue;
+        Serenity.DataGrid.defaultPersistanceStorage = window.localStorage;
+        if ($.fn['colorbox']) {
+            $.fn['colorbox'].settings.maxWidth = "95%";
+            $.fn['colorbox'].settings.maxHeight = "95%";
+        }
+        Serenity.setupUIOverrides();
+        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
+        $(function () {
+            // let demo page use its own settings for idle timeout
+            if (window.location.pathname.indexOf('Samples/IdleTimeout') > 0)
+                return;
+            var meta = $('meta[name=username]');
+            if ((meta.length && meta.attr('content')) ||
+                (!meta.length && Q.Authorization.isLoggedIn)) {
+                new Serenity.IdleTimeout({
+                    activityTimeout: 60 * 60,
+                    warningDuration: 5 * 60
+                });
+            }
+        });
+    })(ScriptInitialization = DAP.ScriptInitialization || (DAP.ScriptInitialization = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var Administration;
     (function (Administration) {
         var DataAuditLogDialog = /** @class */ (function (_super) {
@@ -7743,22 +7915,6 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
-    var Authorization;
-    (function (Authorization) {
-        Object.defineProperty(Authorization, 'userDefinition', {
-            get: function () {
-                return Q.getRemoteData('UserData');
-            }
-        });
-        function hasPermission(permissionKey) {
-            var ud = Authorization.userDefinition;
-            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
-        }
-        Authorization.hasPermission = hasPermission;
-    })(Authorization = DAP.Authorization || (DAP.Authorization = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
     var Administration;
     (function (Administration) {
         var PermissionCheckEditor = /** @class */ (function (_super) {
@@ -8274,53 +8430,6 @@ var DAP;
         }(Serenity.EntityGrid));
         Avaya.SkillSplitMappingGrid = SkillSplitMappingGrid;
     })(Avaya = DAP.Avaya || (DAP.Avaya = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var LanguageList;
-    (function (LanguageList) {
-        function getValue() {
-            var result = [];
-            for (var _i = 0, _a = DAP.Administration.LanguageRow.getLookup().items; _i < _a.length; _i++) {
-                var k = _a[_i];
-                if (k.LanguageId !== 'en') {
-                    result.push([k.Id.toString(), k.LanguageName]);
-                }
-            }
-            return result;
-        }
-        LanguageList.getValue = getValue;
-    })(LanguageList = DAP.LanguageList || (DAP.LanguageList = {}));
-})(DAP || (DAP = {}));
-/// <reference path="../Common/Helpers/LanguageList.ts" />
-var DAP;
-(function (DAP) {
-    var ScriptInitialization;
-    (function (ScriptInitialization) {
-        Q.Config.responsiveDialogs = true;
-        Q.Config.rootNamespaces.push('DAP');
-        Serenity.EntityDialog.defaultLanguageList = DAP.LanguageList.getValue;
-        Serenity.DataGrid.defaultPersistanceStorage = window.localStorage;
-        if ($.fn['colorbox']) {
-            $.fn['colorbox'].settings.maxWidth = "95%";
-            $.fn['colorbox'].settings.maxHeight = "95%";
-        }
-        Serenity.setupUIOverrides();
-        window.onerror = Q.ErrorHandling.runtimeErrorHandler;
-        $(function () {
-            // let demo page use its own settings for idle timeout
-            if (window.location.pathname.indexOf('Samples/IdleTimeout') > 0)
-                return;
-            var meta = $('meta[name=username]');
-            if ((meta.length && meta.attr('content')) ||
-                (!meta.length && Q.Authorization.isLoggedIn)) {
-                new Serenity.IdleTimeout({
-                    activityTimeout: 60 * 60,
-                    warningDuration: 5 * 60
-                });
-            }
-        });
-    })(ScriptInitialization = DAP.ScriptInitialization || (DAP.ScriptInitialization = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -11991,184 +12100,6 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var ChangePasswordPanel = /** @class */ (function (_super) {
-            __extends(ChangePasswordPanel, _super);
-            function ChangePasswordPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.ChangePasswordForm(_this.idPrefix);
-                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.w('ConfirmPassword', Serenity.PasswordEditor).value.length < 7) {
-                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
-                    }
-                });
-                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
-                        return Q.text('Validation.PasswordConfirm');
-                    }
-                });
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/ChangePassword'),
-                        request: request,
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.ChangePassword.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
-            ChangePasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ChangePasswordPanel);
-            return ChangePasswordPanel;
-        }(Serenity.PropertyPanel));
-        Membership.ChangePasswordPanel = ChangePasswordPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var ForgotPasswordPanel = /** @class */ (function (_super) {
-            __extends(ForgotPasswordPanel, _super);
-            function ForgotPasswordPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.ForgotPasswordForm(_this.idPrefix);
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/ForgotPassword'),
-                        request: request,
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.ForgotPassword.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
-            ForgotPasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ForgotPasswordPanel);
-            return ForgotPasswordPanel;
-        }(Serenity.PropertyPanel));
-        Membership.ForgotPasswordPanel = ForgotPasswordPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var ResetPasswordPanel = /** @class */ (function (_super) {
-            __extends(ResetPasswordPanel, _super);
-            function ResetPasswordPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.ResetPasswordForm(_this.idPrefix);
-                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value.length < 7) {
-                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
-                    }
-                });
-                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
-                        return Q.text('Validation.PasswordConfirm');
-                    }
-                });
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    var request = _this.getSaveEntity();
-                    request.Token = _this.byId('Token').val();
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/ResetPassword'),
-                        request: request,
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.ResetPassword.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/Account/Login');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
-            ResetPasswordPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ResetPasswordPanel);
-            return ResetPasswordPanel;
-        }(Serenity.PropertyPanel));
-        Membership.ResetPasswordPanel = ResetPasswordPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var Membership;
-    (function (Membership) {
-        var SignUpPanel = /** @class */ (function (_super) {
-            __extends(SignUpPanel, _super);
-            function SignUpPanel(container) {
-                var _this = _super.call(this, container) || this;
-                _this.form = new Membership.SignUpForm(_this.idPrefix);
-                _this.form.ConfirmEmail.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmEmail.value !== _this.form.Email.value) {
-                        return Q.text('Validation.EmailConfirm');
-                    }
-                });
-                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
-                    if (_this.form.ConfirmPassword.value !== _this.form.Password.value) {
-                        return Q.text('Validation.PasswordConfirm');
-                    }
-                });
-                _this.byId('SubmitButton').click(function (e) {
-                    e.preventDefault();
-                    if (!_this.validateForm()) {
-                        return;
-                    }
-                    Q.serviceCall({
-                        url: Q.resolveUrl('~/Account/SignUp'),
-                        request: {
-                            DisplayName: _this.form.DisplayName.value,
-                            Email: _this.form.Email.value,
-                            Password: _this.form.Password.value
-                        },
-                        onSuccess: function (response) {
-                            Q.information(Q.text('Forms.Membership.SignUp.Success'), function () {
-                                window.location.href = Q.resolveUrl('~/');
-                            });
-                        }
-                    });
-                });
-                return _this;
-            }
-            SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
-            SignUpPanel = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SignUpPanel);
-            return SignUpPanel;
-        }(Serenity.PropertyPanel));
-        Membership.SignUpPanel = SignUpPanel;
-    })(Membership = DAP.Membership || (DAP.Membership = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
     var NCLHDSAR;
     (function (NCLHDSAR) {
         var AssigneeDialog = /** @class */ (function (_super) {
@@ -14417,6 +14348,52 @@ var DAP;
         }(Serenity.EntityGrid));
         PCHDW.VwSqlJobListGrid = VwSqlJobListGrid;
     })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var InboundUserOverrideDialog = /** @class */ (function (_super) {
+            __extends(InboundUserOverrideDialog, _super);
+            function InboundUserOverrideDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new PCHODS.InboundUserOverrideForm(_this.idPrefix);
+                return _this;
+            }
+            InboundUserOverrideDialog.prototype.getFormKey = function () { return PCHODS.InboundUserOverrideForm.formKey; };
+            InboundUserOverrideDialog.prototype.getIdProperty = function () { return PCHODS.InboundUserOverrideRow.idProperty; };
+            InboundUserOverrideDialog.prototype.getLocalTextPrefix = function () { return PCHODS.InboundUserOverrideRow.localTextPrefix; };
+            InboundUserOverrideDialog.prototype.getNameProperty = function () { return PCHODS.InboundUserOverrideRow.nameProperty; };
+            InboundUserOverrideDialog.prototype.getService = function () { return PCHODS.InboundUserOverrideService.baseUrl; };
+            InboundUserOverrideDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InboundUserOverrideDialog);
+            return InboundUserOverrideDialog;
+        }(Serenity.EntityDialog));
+        PCHODS.InboundUserOverrideDialog = InboundUserOverrideDialog;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHODS;
+    (function (PCHODS) {
+        var InboundUserOverrideGrid = /** @class */ (function (_super) {
+            __extends(InboundUserOverrideGrid, _super);
+            function InboundUserOverrideGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            InboundUserOverrideGrid.prototype.getColumnsKey = function () { return 'PCHODS.InboundUserOverride'; };
+            InboundUserOverrideGrid.prototype.getDialogType = function () { return PCHODS.InboundUserOverrideDialog; };
+            InboundUserOverrideGrid.prototype.getIdProperty = function () { return PCHODS.InboundUserOverrideRow.idProperty; };
+            InboundUserOverrideGrid.prototype.getLocalTextPrefix = function () { return PCHODS.InboundUserOverrideRow.localTextPrefix; };
+            InboundUserOverrideGrid.prototype.getService = function () { return PCHODS.InboundUserOverrideService.baseUrl; };
+            InboundUserOverrideGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], InboundUserOverrideGrid);
+            return InboundUserOverrideGrid;
+        }(Serenity.EntityGrid));
+        PCHODS.InboundUserOverrideGrid = InboundUserOverrideGrid;
+    })(PCHODS = DAP.PCHODS || (DAP.PCHODS = {}));
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
@@ -17769,5 +17746,199 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Authorization;
+    (function (Authorization) {
+        Object.defineProperty(Authorization, 'userDefinition', {
+            get: function () {
+                return Q.getRemoteData('UserData');
+            }
+        });
+        function hasPermission(permissionKey) {
+            var ud = Authorization.userDefinition;
+            return ud.Username === 'admin' || !!ud.Permissions[permissionKey];
+        }
+        Authorization.hasPermission = hasPermission;
+    })(Authorization = DAP.Authorization || (DAP.Authorization = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var ChangePasswordPanel = /** @class */ (function (_super) {
+            __extends(ChangePasswordPanel, _super);
+            function ChangePasswordPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.ChangePasswordForm(_this.idPrefix);
+                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.w('ConfirmPassword', Serenity.PasswordEditor).value.length < 7) {
+                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
+                    }
+                });
+                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
+                        return Q.text('Validation.PasswordConfirm');
+                    }
+                });
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    var request = _this.getSaveEntity();
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/ChangePassword'),
+                        request: request,
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.ChangePassword.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            ChangePasswordPanel.prototype.getFormKey = function () { return Membership.ChangePasswordForm.formKey; };
+            ChangePasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ChangePasswordPanel);
+            return ChangePasswordPanel;
+        }(Serenity.PropertyPanel));
+        Membership.ChangePasswordPanel = ChangePasswordPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var ForgotPasswordPanel = /** @class */ (function (_super) {
+            __extends(ForgotPasswordPanel, _super);
+            function ForgotPasswordPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.ForgotPasswordForm(_this.idPrefix);
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    var request = _this.getSaveEntity();
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/ForgotPassword'),
+                        request: request,
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.ForgotPassword.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            ForgotPasswordPanel.prototype.getFormKey = function () { return Membership.ForgotPasswordForm.formKey; };
+            ForgotPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ForgotPasswordPanel);
+            return ForgotPasswordPanel;
+        }(Serenity.PropertyPanel));
+        Membership.ForgotPasswordPanel = ForgotPasswordPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var ResetPasswordPanel = /** @class */ (function (_super) {
+            __extends(ResetPasswordPanel, _super);
+            function ResetPasswordPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.ResetPasswordForm(_this.idPrefix);
+                _this.form.NewPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value.length < 7) {
+                        return Q.format(Q.text('Validation.MinRequiredPasswordLength'), 7);
+                    }
+                });
+                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value !== _this.form.NewPassword.value) {
+                        return Q.text('Validation.PasswordConfirm');
+                    }
+                });
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    var request = _this.getSaveEntity();
+                    request.Token = _this.byId('Token').val();
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/ResetPassword'),
+                        request: request,
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.ResetPassword.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/Account/Login');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            ResetPasswordPanel.prototype.getFormKey = function () { return Membership.ResetPasswordForm.formKey; };
+            ResetPasswordPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResetPasswordPanel);
+            return ResetPasswordPanel;
+        }(Serenity.PropertyPanel));
+        Membership.ResetPasswordPanel = ResetPasswordPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var Membership;
+    (function (Membership) {
+        var SignUpPanel = /** @class */ (function (_super) {
+            __extends(SignUpPanel, _super);
+            function SignUpPanel(container) {
+                var _this = _super.call(this, container) || this;
+                _this.form = new Membership.SignUpForm(_this.idPrefix);
+                _this.form.ConfirmEmail.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmEmail.value !== _this.form.Email.value) {
+                        return Q.text('Validation.EmailConfirm');
+                    }
+                });
+                _this.form.ConfirmPassword.addValidationRule(_this.uniqueName, function (e) {
+                    if (_this.form.ConfirmPassword.value !== _this.form.Password.value) {
+                        return Q.text('Validation.PasswordConfirm');
+                    }
+                });
+                _this.byId('SubmitButton').click(function (e) {
+                    e.preventDefault();
+                    if (!_this.validateForm()) {
+                        return;
+                    }
+                    Q.serviceCall({
+                        url: Q.resolveUrl('~/Account/SignUp'),
+                        request: {
+                            DisplayName: _this.form.DisplayName.value,
+                            Email: _this.form.Email.value,
+                            Password: _this.form.Password.value
+                        },
+                        onSuccess: function (response) {
+                            Q.information(Q.text('Forms.Membership.SignUp.Success'), function () {
+                                window.location.href = Q.resolveUrl('~/');
+                            });
+                        }
+                    });
+                });
+                return _this;
+            }
+            SignUpPanel.prototype.getFormKey = function () { return Membership.SignUpForm.formKey; };
+            SignUpPanel = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SignUpPanel);
+            return SignUpPanel;
+        }(Serenity.PropertyPanel));
+        Membership.SignUpPanel = SignUpPanel;
+    })(Membership = DAP.Membership || (DAP.Membership = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
