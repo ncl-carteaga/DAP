@@ -9465,6 +9465,12 @@ button.ui-button {
 .s-PCHODS-UarUnknownReviewerDialog .caption {
   width: 150px;
 }
+.s-PCHODS-InboundUserOverrideDialog > .size {
+  width: 650px;
+}
+.s-PCHODS-InboundUserOverrideDialog .caption {
+  width: 150px;
+}
 .s-PCHODSNVS-NtrIntlDatelineCruisesDialog > .size {
   width: 650px;
 }
