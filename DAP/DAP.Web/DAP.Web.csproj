@@ -1381,6 +1381,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.VwSqlJobListColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.Lookups.OutboundAgentColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>

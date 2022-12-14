@@ -206,7 +206,9 @@ namespace DAP.DWSupport {
             var num = ctx => this.numericInputFormatter(ctx, 0);
             //var num4 = ctx => this.numericInputFormatter(ctx, 4);
 
-            //Q.first(columns, x => x.field === fld.ShipNbr).format = num;
+            Q.first(columns, x => x.field === fld.ProxySailId).format = num;
+            Q.first(columns, x => x.field === fld.SeasonYearCd).format = str;
+            //Q.first(columns, x => x.field === fld.OnSaleDat).format = str;
             Q.first(columns, x => x.field === fld.MandateWeeksQty).format = num;
             Q.first(columns, x => x.field === fld.RmsSeasonCd).format = str;
             //Q.first(columns, x => x.field === fld.CommissionRate).format = num4;
