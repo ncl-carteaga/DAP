@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODS {
+﻿namespace DAP.PCHODS {
     export namespace InboundUserOverrideService {
         export const baseUrl = 'PCHODS/InboundUserOverride';
 
@@ -9,12 +8,12 @@ namespace DAP.PCHODS {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InboundUserOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InboundUserOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "PCHODS/InboundUserOverride/Create",
+            Update = "PCHODS/InboundUserOverride/Update",
+            Delete = "PCHODS/InboundUserOverride/Delete",
+            Retrieve = "PCHODS/InboundUserOverride/Retrieve",
+            List = "PCHODS/InboundUserOverride/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.PCHODS {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>InboundUserOverrideService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>InboundUserOverrideService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+
