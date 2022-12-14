@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHODS {
+﻿namespace DAP.PCHODS {
     export interface InboundUserOverrideDescriptionRow {
         Id?: number;
         Description?: string;
@@ -11,16 +10,11 @@ namespace DAP.PCHODS {
         export const nameProperty = 'Description';
         export const localTextPrefix = 'PCHODS.InboundUserOverrideDescription';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const Description;
-            export declare const OutboundComments;
+        export declare const enum Fields {
+            Id = "Id",
+            Description = "Description",
+            OutboundComments = "OutboundComments"
         }
-
-        [
-            'Id',
-            'Description',
-            'OutboundComments'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

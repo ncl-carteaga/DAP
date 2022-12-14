@@ -2774,6 +2774,9 @@ declare namespace DAP.DWSupport {
         MainVoyageCd: SelectYNEditor;
         InterportCd: SelectYNEditor;
         CharterCd: SelectYNEditor;
+        ProxySailId: Serenity.IntegerEditor;
+        OnSaleDat: Serenity.DateEditor;
+        SeasonYearCd: Serenity.StringEditor;
         RmsForecastCd: Serenity.IntegerEditor;
         RmsColorNameDesc: Serenity.StringEditor;
         RmsRefLinkSailId: Serenity.IntegerEditor;
@@ -2800,9 +2803,6 @@ declare namespace DAP.DWSupport {
         ObrTradeCd: Serenity.StringEditor;
         ObrSubTradeCd: Serenity.StringEditor;
         ObrSeasonCd: Serenity.StringEditor;
-        ProxySailId: Serenity.IntegerEditor;
-        OnSaleDat: Serenity.DateEditor;
-        SeasonYearCd: Serenity.StringEditor;
         IsVoyageExceptionCd: SelectYNEditor;
         VoyageExceptionDesc: Serenity.StringEditor;
         ItineraryChangedDat: Serenity.DateEditor;
@@ -5659,10 +5659,10 @@ declare namespace DAP.PCHODS {
         const idProperty = "Id";
         const nameProperty = "Description";
         const localTextPrefix = "PCHODS.InboundUserOverrideDescription";
-        namespace Fields {
-            const Id: any;
-            const Description: any;
-            const OutboundComments: any;
+        const enum Fields {
+            Id = "Id",
+            Description = "Description",
+            OutboundComments = "OutboundComments"
         }
     }
 }
@@ -5674,26 +5674,28 @@ declare namespace DAP.PCHODS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InboundUserOverrideDescriptionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InboundUserOverrideDescriptionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "PCHODS/InboundUserOverrideDescription/Create",
+            Update = "PCHODS/InboundUserOverrideDescription/Update",
+            Delete = "PCHODS/InboundUserOverrideDescription/Delete",
+            Retrieve = "PCHODS/InboundUserOverrideDescription/Retrieve",
+            List = "PCHODS/InboundUserOverrideDescription/List"
         }
     }
 }
 declare namespace DAP.PCHODS {
-    class InboundUserOverrideForm extends Serenity.PrefixedContext {
-        static formKey: string;
-    }
     interface InboundUserOverrideForm {
         Company: Serenity.StringEditor;
         Invoice: Serenity.StringEditor;
         UserAssign: Serenity.StringEditor;
-        ItDescription: Serenity.IntegerEditor;
+        ItDescription: Serenity.LookupEditor;
         Inbound: Serenity.StringEditor;
         Comments: Serenity.StringEditor;
+    }
+    class InboundUserOverrideForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.PCHODS {
@@ -5712,16 +5714,16 @@ declare namespace DAP.PCHODS {
         const idProperty = "Id";
         const nameProperty = "Company";
         const localTextPrefix = "PCHODS.InboundUserOverride";
-        namespace Fields {
-            const Id: any;
-            const Company: any;
-            const Invoice: any;
-            const UserAssign: any;
-            const ItDescription: any;
-            const Inbound: any;
-            const Comments: any;
-            const ItDescriptionDescription: any;
-            const ItDescriptionOutboundComments: any;
+        const enum Fields {
+            Id = "Id",
+            Company = "Company",
+            Invoice = "Invoice",
+            UserAssign = "UserAssign",
+            ItDescription = "ItDescription",
+            Inbound = "Inbound",
+            Comments = "Comments",
+            ItDescriptionDescription = "ItDescriptionDescription",
+            ItDescriptionOutboundComments = "ItDescriptionOutboundComments"
         }
     }
 }
@@ -5733,12 +5735,12 @@ declare namespace DAP.PCHODS {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InboundUserOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InboundUserOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "PCHODS/InboundUserOverride/Create",
+            Update = "PCHODS/InboundUserOverride/Update",
+            Delete = "PCHODS/InboundUserOverride/Delete",
+            Retrieve = "PCHODS/InboundUserOverride/Retrieve",
+            List = "PCHODS/InboundUserOverride/List"
         }
     }
 }
@@ -7784,16 +7786,6 @@ declare namespace Serenity.Reporting {
         IsDataOnlyReport?: boolean;
     }
 }
-declare namespace DAP {
-    interface ScriptUserDefinition {
-        Username?: string;
-        DisplayName?: string;
-        IsAdmin?: boolean;
-        Permissions?: {
-            [key: string]: boolean;
-        };
-    }
-}
 declare namespace DAP.SSISConfig {
 }
 declare namespace DAP.SSISConfig {
@@ -8263,12 +8255,17 @@ declare namespace DAP.SSISConfig {
         }
     }
 }
+declare namespace DAP {
+    interface ScriptUserDefinition {
+        Username?: string;
+        DisplayName?: string;
+        IsAdmin?: boolean;
+        Permissions?: {
+            [key: string]: boolean;
+        };
+    }
+}
 declare namespace DAP.Texts {
-}
-declare namespace DAP.LanguageList {
-    function getValue(): string[][];
-}
-declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP.Administration {
     class DataAuditLogDialog extends Serenity.EntityDialog<DataAuditLogRow, any> {
@@ -8400,6 +8397,10 @@ declare namespace DAP.Administration {
         protected getColumns(): Slick.Column[];
     }
 }
+declare namespace DAP.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
 declare namespace DAP.Administration {
     class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
         protected getIdProperty(): string;
@@ -8490,6 +8491,11 @@ declare namespace DAP.Avaya {
         protected getService(): string;
         constructor(container: JQuery);
     }
+}
+declare namespace DAP.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
@@ -9413,6 +9419,34 @@ declare namespace DAP.Membership {
         protected redirectToReturnUrl(): void;
         protected handleTwoFactorAuthentication(user: string, pass: string, twoFactorGuid: string, info: string): void;
         protected getTemplate(): string;
+    }
+}
+declare namespace DAP.Membership {
+    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -10779,35 +10813,5 @@ declare namespace DAP.SSISConfig {
         protected getButtons(): Serenity.ToolButton[];
     }
 }
-declare namespace DAP.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
-}
-declare namespace DAP.Membership {
-    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
+declare namespace DAP.PCHODS {
 }
