@@ -39,6 +39,12 @@ namespace DAP.DWSupport.Forms
         public String MainVoyageCd { get; set; }
         public String InterportCd { get; set; }
         public String CharterCd { get; set; }
+
+        public Int32 ProxySailId { get; set; }
+
+        public DateTime OnSaleDat { get; set; }
+
+        public String SeasonYearCd { get; set; }
         [Tab("RMS"), ReadOnly(true)]        
         public Int32 RmsForecastCd { get; set; }
         [ReadOnly(true)]
@@ -92,12 +98,6 @@ namespace DAP.DWSupport.Forms
         public String ObrSubTradeCd { get; set; }
         [ReadOnly(true)]
         public String ObrSeasonCd { get; set; }
-        [ReadOnly(true)]
-        public Int32 ProxySailId { get; set; }
-        [ReadOnly(true)]
-        public DateTime OnSaleDat { get; set; }
-        [ReadOnly(true)]
-        public String SeasonYearCd { get; set; }
         [ReadOnly(true)]
         public String IsVoyageExceptionCd { get; set; }
         [ReadOnly(true)]
