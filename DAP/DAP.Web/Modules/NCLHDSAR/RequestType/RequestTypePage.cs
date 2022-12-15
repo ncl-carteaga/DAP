@@ -6,7 +6,7 @@ namespace DAP.NCLHDSAR.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("NCLHDSAR/RequestType"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.RequestTypeRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.RequestType)]
     public class RequestTypeController : Controller
     {
         public ActionResult Index()

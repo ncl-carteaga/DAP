@@ -6,7 +6,7 @@ namespace DAP.NCLHDSAR.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("NCLHDSAR/SystemMaster"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.SystemMasterRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.SystemMaster)]
     public class SystemMasterController : Controller
     {
         public ActionResult Index()
