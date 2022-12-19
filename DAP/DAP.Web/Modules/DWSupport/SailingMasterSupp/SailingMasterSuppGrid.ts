@@ -122,7 +122,6 @@ namespace DAP.DWSupport {
                     "' data-field='" + ctx.column.field +
                     "' value='" + Q.formatNumber(value, '0') + "'/>";
             }
-
         }
 
         private stringInputFormatter(ctx) {
@@ -203,15 +202,15 @@ namespace DAP.DWSupport {
         protected getColumns() {
             var columns = super.getColumns();
             var str = ctx => this.stringInputFormatter(ctx);
-            var num = ctx => this.numericInputFormatter(ctx, 0);
+            var num = ctx => this.numericInputFormatter(ctx, -1);
             //var num4 = ctx => this.numericInputFormatter(ctx, 4);
 
-            Q.first(columns, x => x.field === fld.ProxySailId).format = num;
+            //Q.first(columns, x => x.field === fld.ProxySailId).format = num;
             Q.first(columns, x => x.field === fld.SeasonYearCd).format = str;
-            //Q.first(columns, x => x.field === fld.OnSaleDat).format = str;
             Q.first(columns, x => x.field === fld.MandateWeeksQty).format = num;
             Q.first(columns, x => x.field === fld.RmsSeasonCd).format = str;
             //Q.first(columns, x => x.field === fld.CommissionRate).format = num4;
+            //Q.first(columns, x => x.field === fld.OnSaleDat).format = str;
 
             var packagecd = Q.first(columns, x => x.field === fld.PackageTypeCd);
             packagecd.referencedFields = [fld.PackageTypeCd];
@@ -348,9 +347,22 @@ namespace DAP.DWSupport {
             ////};
             this.initDialog(dialog);
             dialog.dialogOpen();
-
-
         }
+        
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[] {
 
+            // get quick filter list from base class
+            let filters = super.getQuickFilters();
+
+            // get filter for SailDat field and set default value
+            filters[1].type = Serenity.DateEditor;
+            filters[1].init = (w) => {
+                var date = new Date();
+                var t = Q.formatDate(date.toDateString(), "MM/dd/yyyy");
+                (w as Serenity.DateEditor).value = t;
+            }
+
+            return filters;
+        }
     }
 }
