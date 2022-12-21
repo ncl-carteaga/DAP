@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/PsGlAccountSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.PsGlAccountSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.PsGlAccountSupp)]
     public class PsGlAccountSuppController : Controller
     {
         public ActionResult Index()
