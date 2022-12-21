@@ -11543,14 +11543,14 @@ var DAP;
                 var _this = this;
                 var columns = _super.prototype.getColumns.call(this);
                 var str = function (ctx) { return _this.stringInputFormatter(ctx); };
-                var num = function (ctx) { return _this.numericInputFormatter(ctx, 0); };
+                var num = function (ctx) { return _this.numericInputFormatter(ctx, -1); };
                 //var num4 = ctx => this.numericInputFormatter(ctx, 4);
-                Q.first(columns, function (x) { return x.field === "ProxySailId" /* ProxySailId */; }).format = num;
+                //Q.first(columns, x => x.field === fld.ProxySailId).format = num;
                 Q.first(columns, function (x) { return x.field === "SeasonYearCd" /* SeasonYearCd */; }).format = str;
-                //Q.first(columns, x => x.field === fld.OnSaleDat).format = str;
                 Q.first(columns, function (x) { return x.field === "MandateWeeksQty" /* MandateWeeksQty */; }).format = num;
                 Q.first(columns, function (x) { return x.field === "RmsSeasonCd" /* RmsSeasonCd */; }).format = str;
                 //Q.first(columns, x => x.field === fld.CommissionRate).format = num4;
+                //Q.first(columns, x => x.field === fld.OnSaleDat).format = str;
                 var packagecd = Q.first(columns, function (x) { return x.field === "PackageTypeCd" /* PackageTypeCd */; });
                 packagecd.referencedFields = ["PackageTypeCd" /* PackageTypeCd */];
                 packagecd.format = function (ctx) { return _this.selectFormatter(ctx, "PackageTypeCd" /* PackageTypeCd */, DWSupport.PackageTypeCodeSuppRow.getLookup()); };
@@ -11662,6 +11662,18 @@ var DAP;
                 ////};
                 this.initDialog(dialog);
                 dialog.dialogOpen();
+            };
+            SailingMasterSuppGrid.prototype.getQuickFilters = function () {
+                // get quick filter list from base class
+                var filters = _super.prototype.getQuickFilters.call(this);
+                // get filter for SailDat field and set default value
+                filters[1].type = Serenity.DateEditor;
+                filters[1].init = function (w) {
+                    var date = new Date();
+                    var t = Q.formatDate(date.toDateString(), "MM/dd/yyyy");
+                    w.value = t;
+                };
+                return filters;
             };
             SailingMasterSuppGrid = __decorate([
                 Serenity.Decorators.registerClass()

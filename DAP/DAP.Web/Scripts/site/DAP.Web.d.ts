@@ -5650,6 +5650,8 @@ declare namespace DAP.PCHDW {
     }
 }
 declare namespace DAP.PCHODS {
+}
+declare namespace DAP.PCHODS {
     interface InboundUserOverrideDescriptionRow {
         Id?: number;
         Description?: string;
@@ -9326,6 +9328,7 @@ declare namespace DAP.DWSupport {
         private inputsChange;
         private saveClick;
         private showErrorLogClick;
+        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -10812,6 +10815,4 @@ declare namespace DAP.SSISConfig {
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
     }
-}
-declare namespace DAP.PCHODS {
 }
