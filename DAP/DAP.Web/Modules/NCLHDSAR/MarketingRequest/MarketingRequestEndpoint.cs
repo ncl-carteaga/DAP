@@ -716,15 +716,12 @@ namespace DAP.NCLHDSAR.Endpoints
                     // ----------------------------------------------- //
 
                     // Check if row exists in DB
-                    Int32 bitVal;   // convert "Y"/"N" string value into int
-                    var x = Int32.TryParse(is_returned_mail_cd.ToString(), out bitVal);
                     var currentRow = uow.Connection.TryFirst<MarketingRequestRow>(q => q
                         .Select(myFields.Id)
                         .Where(
                             myFields.RequestTypeId == 3     &&
                             myFields.Address1 == address1   &&
                             myFields.BrandId == brandID
-                            // &&   new Criteria(myFields.IsReturnedMailCd.Name) == bitVal
                         )
                     );
 
@@ -758,6 +755,22 @@ namespace DAP.NCLHDSAR.Endpoints
                         if (a != null)
                         {
                             currentRow.BrandDescription = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.String;            //excel field type
+                    fieldTitle = myFields.IsReturnedMailCd.Title;            //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.IsReturnedMailCd = (a == "Y");
                         }
                         sysHeader.Clear();
                         importedValues.Clear();

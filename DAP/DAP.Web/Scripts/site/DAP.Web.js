@@ -12394,39 +12394,19 @@ var DAP;
                 _this.form.RequestTypeId.addValidationRule(_this.uniqueName, function (e) {
                     // Check dropdown ID 1 (Opt Outs)
                     if (_this.form.RequestTypeId.value == "1") {
-                        if (Q.isEmptyOrNull(_this.form.OptOutStatusID.value)) {
-                            var fld1 = "OptOutStatusID" /* OptOutStatusID */;
-                            return "Field " + fld1 + " is required.";
-                        }
-                        else if (Q.isEmptyOrNull(_this.form.ChannelId.value)) {
+                        if (Q.isEmptyOrNull(_this.form.ChannelId.value)) {
                             var fld1 = "ChannelId" /* ChannelId */;
                             return "Field " + fld1 + " is required.";
                         }
                     }
                     // Check dropdown ID 2 (Change of Address)
                     else if (_this.form.RequestTypeId.value == "2") {
-                        if (Q.isEmptyOrNull(_this.form.Title.value)) {
-                            var fld1 = "Title" /* Title */;
+                        if (Q.isEmptyOrNull(_this.form.BrandId.value)) {
+                            var fld1 = "BrandId" /* BrandId */;
                             return "Field " + fld1 + " is required.";
                         }
                         else if (Q.isEmptyOrNull(_this.form.Address1.value)) {
                             var fld1 = "Address1" /* Address1 */;
-                            return "Field " + fld1 + " is required.";
-                        }
-                        else if (Q.isEmptyOrNull(_this.form.City.value)) {
-                            var fld1 = "City" /* City */;
-                            return "Field " + fld1 + " is required.";
-                        }
-                        else if (Q.isEmptyOrNull(_this.form.State.value)) {
-                            var fld1 = "State" /* State */;
-                            return "Field " + fld1 + " is required.";
-                        }
-                        else if (Q.isEmptyOrNull(_this.form.Zip.value)) {
-                            var fld1 = "Zip" /* Zip */;
-                            return "Field " + fld1 + " is required.";
-                        }
-                        else if (Q.isEmptyOrNull(_this.form.Country.value)) {
-                            var fld1 = "Country" /* Country */;
                             return "Field " + fld1 + " is required.";
                         }
                     }
