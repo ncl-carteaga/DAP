@@ -10,4 +10,4 @@ using MyPages = DAP.NCLHDSAR.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DSAR/Request Status", typeof(MyPages.RequestStatusController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DSAR/CCPA Request", typeof(MyPages.SwRequestController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "NCLHDSAR/Sw Request Attributes", typeof(MyPages.SwRequestAttributesController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Marketing Request", typeof(MyPages.MarketingRequestController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Marketing Operations", typeof(MyPages.MarketingRequestController), icon: null)]
