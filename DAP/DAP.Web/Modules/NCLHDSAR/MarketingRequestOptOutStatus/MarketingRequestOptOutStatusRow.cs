@@ -11,8 +11,7 @@ namespace DAP.NCLHDSAR.Entities
 
     [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[MarketingRequestOptOutStatus]")]
     [DisplayName("Marketing Request Opt Out Status"), InstanceName("Marketing Request Opt Out Status")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Request.View)]
     public sealed class MarketingRequestOptOutStatusRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]

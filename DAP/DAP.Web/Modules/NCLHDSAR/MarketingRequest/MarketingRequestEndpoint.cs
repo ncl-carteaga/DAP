@@ -1,4 +1,14 @@
 ﻿
+//  ======================= DUAL EXCEL IMPORTS =======================  //
+
+    // This module contains 2 different endpoints for excel import;     //
+    // these are selected based on param passed into the typescript;    //
+    // additionally, row IDs are dynamically found from values          //
+    // retrieved from Excel.                                            //
+
+//  ======================= ================== =======================  //
+
+
 namespace DAP.NCLHDSAR.Endpoints
 {
     using Serenity;
@@ -124,21 +134,21 @@ namespace DAP.NCLHDSAR.Endpoints
                 //response.ErrorList.Add(q.Text);
             }
 
-            if (!importedHeaders.Contains("Brand Description", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.BrandDescription.Title, StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column Brand Description.");
+                response.ErrorList.Add("Missing Required Column "+ myFields.BrandDescription.Title + ".");
             }
             if (!importedHeaders.Contains("Title", StringComparer.OrdinalIgnoreCase) == true)
             {
                 response.ErrorList.Add("Missing Required Column Title.");
             }
-            if (!importedHeaders.Contains("First Name", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.FirstName.Title, StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column First Name.");
+                response.ErrorList.Add("Missing Required Column "+ myFields.FirstName.Title + ".");
             }
-            if (!importedHeaders.Contains("Last Name", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.LastName.Title, StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column Last Name.");
+                response.ErrorList.Add("Missing Required Column "+ myFields.LastName.Title + ".");
             }
 
             if (response.ErrorList.Count > 0)
@@ -260,44 +270,45 @@ namespace DAP.NCLHDSAR.Endpoints
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
-                    }// ----------------------------------------- //
+                    }// ---------------------------------------------------------------------------- //
 
 
                     // ----------   Find Foreign Field IDs   ---------- //
                     // pass in description from excel field and get row ID from DB
                     var qBrand = new SqlQuery().Select("id").From("MarketingRequestBrands").Where(new Criteria("Description") == brand);
                     var bResult = uow.Connection.Query(qBrand);
-                    var brandID = bResult.ToList()[0].id;
-                    var qChannel = new SqlQuery().Select("id").From("MarketingRequestChannels").Where(new Criteria("Description") == channel);
-                    var cResult = uow.Connection.Query(qChannel);
-                    var channelID = cResult.ToList()[0].id;
+                    var resultCount = bResult.ToList().Count;
+                    var brandID = (resultCount>0) ? bResult.ToList()[0].id : -1;
                     // ----------------------------------------------- //
 
                     // Check if row exists in DB
                     var currentRow = uow.Connection.TryFirst<MarketingRequestRow>(q => q
                         .Select(myFields.Id)
                         .Where(
-                            myFields.Address1 == address1 &&
+                            myFields.RequestTypeId == 2     &&
+                            myFields.Address1 == address1   &&
                             myFields.FirstName == first_name
                         )
                     );
 
                     // Row doesn't exist in DB
                     if (currentRow == null)
-                        currentRow = new MarketingRequestRow
-                        {
-                            // default value for RequestTypeID = [CHANGE_OF_ADDRESS]
-                            RequestTypeId = 2,
-                            BrandId = brandID,
-                            ChannelId = channelID
-                        };
-                    else
-                    { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
+                        if (brandID >= 0) {
+                            currentRow = new MarketingRequestRow {
+                                RequestTypeId = 2,      // default value for RequestTypeID = [CHANGE_OF_ADDRESS]
+                                BrandId = brandID,
+                                ChannelId = 6           // default value = N/A
+                            };
+                        }
+                    else {
+                        // avoid assignment errors
+                        currentRow.TrackWithChecks = false;
+                    }
 
 
                     // ----------   Create Row from Excel Values   ---------- //
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandDescription.Title;   //excel field name
+                    fieldTitle = myFields.BrandId.Title;            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -501,8 +512,9 @@ namespace DAP.NCLHDSAR.Endpoints
                 {
                     // if current row matches thrown exception, add msessage from current field
                     var msg = (ex.Message.Contains(fieldTitle)) ? "Exception on Row " + row + ": Field: " + fieldTitle + ": " : "";
-                    response.ErrorList.Add("Error on row " + row + ": " + msg + ex.Message);
-                    //response.ErrorList.Add("Value: " + a);
+                    // replace null references with user friendly message
+                    var exc = (ex.Message.Contains("Object reference")) ? "Empty rows found." : ex.Message;
+                    response.ErrorList.Add("Error on row " + row + ": " + msg + exc);
                 }
             } // for loop
 
@@ -564,21 +576,13 @@ namespace DAP.NCLHDSAR.Endpoints
                 //response.ErrorList.Add(q.Text);
             }
 
-            if (!importedHeaders.Contains("Brand Description", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.BrandDescription.Title, StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column Brand Description.");
+                response.ErrorList.Add("Missing Required Column " + myFields.BrandDescription.Title + ".");
             }
-            if (!importedHeaders.Contains("Is Returned Mail Cd", StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.IsReturnedMailCd.Title, StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column Is Returned Mail Cd.");
-            }
-            if (!importedHeaders.Contains("First Name", StringComparer.OrdinalIgnoreCase) == true)
-            {
-                response.ErrorList.Add("Missing Required Column First Name.");
-            }
-            if (!importedHeaders.Contains("Last Name", StringComparer.OrdinalIgnoreCase) == true)
-            {
-                response.ErrorList.Add("Missing Required Column Last Name.");
+                response.ErrorList.Add("Missing Required Column " + myFields.IsReturnedMailCd.Title + ".");
             }
 
             if (response.ErrorList.Count > 0)
@@ -612,14 +616,14 @@ namespace DAP.NCLHDSAR.Endpoints
                      * it does not exist, it creates a new entry. */
 
                     // ---------- Get fields to check against DB (as Composite Prim Key) ---------- //
-                    string contact_id = "";
+                    string is_returned_mail_cd = "";
                     string first_name = "";
                     string address1 = "";
                     string brand = "";
-                    string is_returned_mail_cd = "";
+                    string channel = "";
 
-                    entType = jImpHelp.entryType.String;    //designate the type of item
-                    fieldTitle = myFields.ContactId.Title;    //designate the field to be looked at
+                    entType = jImpHelp.entryType.String;                //designate the type of item
+                    fieldTitle = myFields.IsReturnedMailCd.Title;       //designate the field to be looked at
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -628,7 +632,7 @@ namespace DAP.NCLHDSAR.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            contact_id = a; //designate the field to be updated in the system
+                            is_returned_mail_cd = a; //designate the field to be updated in the system
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
@@ -670,7 +674,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.IsReturnedMailCd.Title;   //excel field name
+                    fieldTitle = myFields.ChannelDescription.Title;   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -679,7 +683,7 @@ namespace DAP.NCLHDSAR.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            is_returned_mail_cd = a; //designate the field to be updated in the system
+                            channel = a; //designate the field to be updated in the system
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
@@ -700,43 +704,51 @@ namespace DAP.NCLHDSAR.Endpoints
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
-                    }// ----------------------------------------- //
+                    }// ---------------------------------------------------------------------------- //
 
 
                     // ----------   Find Foreign Field IDs   ---------- //
                     // pass in description from excel field and get row ID from DB
                     var qBrand = new SqlQuery().Select("id").From("MarketingRequestBrands").Where(new Criteria("Description") == brand);
                     var bResult = uow.Connection.Query(qBrand);
-                    var brandID = bResult.ToList()[0].id;
+                    var resultCount = bResult.ToList().Count;
+                    int brandID = (resultCount > 0) ? bResult.ToList()[0].id : -1;
                     // ----------------------------------------------- //
 
                     // Check if row exists in DB
+                    Int32 bitVal;   // convert "Y"/"N" string value into int
+                    var x = Int32.TryParse(is_returned_mail_cd.ToString(), out bitVal);
                     var currentRow = uow.Connection.TryFirst<MarketingRequestRow>(q => q
                         .Select(myFields.Id)
                         .Where(
-                            //myFields.BrandId == brandID &&
-                            myFields.FirstName == first_name &&
-                            myFields.IsReturnedMailCd == is_returned_mail_cd
+                            myFields.RequestTypeId == 3     &&
+                            myFields.Address1 == address1   &&
+                            myFields.BrandId == brandID
+                            // &&   new Criteria(myFields.IsReturnedMailCd.Name) == bitVal
                         )
                     );
 
                     // Row doesn't exist in DB
                     if (currentRow == null)
-                        currentRow = new MarketingRequestRow
+                        if (brandID >= 0)
                         {
-                            // default value for RequestTypeID = [RETURN MAIL]
-                            RequestTypeId = 3,
-                            // default value for ChannelID = n/a
-                            ChannelId = 6,
-                            BrandId = brandID,
-                        };
-                    else
-                    { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
+                            currentRow = new MarketingRequestRow
+                            {
+                                RequestTypeId = 3,      // default value for RequestTypeID = [RETURN_MAIL]
+                                BrandId = (short)brandID,
+                                ChannelId = 6           // default value = N/A
+                            };
+                        }
+                        else
+                        {
+                            // avoid assignment errors
+                            currentRow.TrackWithChecks = false;
+                        }
 
 
                     // ----------   Create Row from Excel Values   ---------- //
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandDescription.Title;   //excel field name
+                    fieldTitle = myFields.BrandId.Title;            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -940,8 +952,9 @@ namespace DAP.NCLHDSAR.Endpoints
                 {
                     // if current row matches thrown exception, add msessage from current field
                     var msg = (ex.Message.Contains(fieldTitle)) ? "Exception on Row " + row + ": Field: " + fieldTitle + ": " : "";
-                    response.ErrorList.Add("Error on row " + row + ": " + msg + ex.Message);
-                    //response.ErrorList.Add("Value: " + a);
+                    // replace null references with user friendly message
+                    var exc = (ex.Message.Contains("Object reference")) ? "Empty rows found." : ex.Message;
+                    response.ErrorList.Add("Error on row " + row + ": " + msg + exc);
                 }
             } // for loop
 

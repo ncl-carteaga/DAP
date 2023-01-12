@@ -1,5 +1,5 @@
 ﻿
-namespace DAP.NCLHDSAR.Entities
+namespace DAP.PCHODS.Entities
 {
     using Serenity;
     using Serenity.ComponentModel;
@@ -9,10 +9,11 @@ namespace DAP.NCLHDSAR.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[MarketingRequestChannels]")]
-    [DisplayName("Marketing Request Channels"), InstanceName("Marketing Request Channels")]
-    [ReadPermission(PermissionKeys.Request.View)]
-    public sealed class MarketingRequestChannelsRow : Row, IIdRow, INameRow
+    [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Inbound_User_Override_Description]")]
+    [DisplayName("Inbound User Override Description"), InstanceName("Inbound User Override Description")]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
+    public sealed class InboundUserOverrideDescriptionRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]
         public Int16? Id
@@ -21,11 +22,18 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Description"), Size(15), NotNull, QuickSearch]
+        [DisplayName("Description"), Size(35), QuickSearch]
         public String Description
         {
             get { return Fields.Description[this]; }
             set { Fields.Description[this] = value; }
+        }
+
+        [DisplayName("Outbound Comments"), Size(150)]
+        public String OutboundComments
+        {
+            get { return Fields.OutboundComments[this]; }
+            set { Fields.OutboundComments[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -40,7 +48,7 @@ namespace DAP.NCLHDSAR.Entities
 
         public static readonly RowFields Fields = new RowFields().Init();
 
-        public MarketingRequestChannelsRow()
+        public InboundUserOverrideDescriptionRow()
             : base(Fields)
         {
         }
@@ -49,6 +57,7 @@ namespace DAP.NCLHDSAR.Entities
         {
             public Int16Field Id;
             public StringField Description;
+            public StringField OutboundComments;
         }
     }
 }

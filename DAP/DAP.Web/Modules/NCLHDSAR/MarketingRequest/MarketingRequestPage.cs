@@ -6,7 +6,7 @@ namespace DAP.NCLHDSAR.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("NCLHDSAR/MarketingRequest"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.MarketingRequestRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.MarketingRequest)]
     public class MarketingRequestController : Controller
     {
         public ActionResult Index()
