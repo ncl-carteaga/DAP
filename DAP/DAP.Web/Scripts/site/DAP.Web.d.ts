@@ -3752,7 +3752,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestBrandsRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "NCLHDSAR.MarketingRequestBrands";
+        const localTextPrefix = "DWSupport.MarketingRequestBrands";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -3784,7 +3784,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestChannelsRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "NCLHDSAR.MarketingRequestChannels";
+        const localTextPrefix = "DWSupport.MarketingRequestChannels";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -3859,7 +3859,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestOptOutStatusRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "NCLHDSAR.MarketingRequestOptOutStatus";
+        const localTextPrefix = "DWSupport.MarketingRequestOptOutStatus";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -3916,7 +3916,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestRow {
         const idProperty = "Id";
         const nameProperty = "ContactId";
-        const localTextPrefix = "NCLHDSAR.MarketingRequest";
+        const localTextPrefix = "DWSupport.MarketingRequest";
         const enum Fields {
             Id = "Id",
             RequestTypeId = "RequestTypeId",
@@ -3977,7 +3977,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestSourcesRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "NCLHDSAR.MarketingRequestSources";
+        const localTextPrefix = "DWSupport.MarketingRequestSources";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -4009,7 +4009,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestTypesRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "NCLHDSAR.MarketingRequestTypes";
+        const localTextPrefix = "DWSupport.MarketingRequestTypes";
         const enum Fields {
             Id = "Id",
             Description = "Description"
