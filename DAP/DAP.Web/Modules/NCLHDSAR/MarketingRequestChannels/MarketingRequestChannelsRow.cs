@@ -9,7 +9,7 @@ namespace DAP.NCLHDSAR.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[MarketingRequestChannels]")]
+    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MarketingRequestChannels]")]
     [DisplayName("Marketing Request Channels"), InstanceName("Marketing Request Channels")]
     [ReadPermission(PermissionKeys.Request.View)]
     public sealed class MarketingRequestChannelsRow : Row, IIdRow, INameRow

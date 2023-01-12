@@ -11664,7 +11664,6 @@ var DAP;
                 dialog.dialogOpen();
             };
             SailingMasterSuppGrid.prototype.getQuickFilters = function () {
-                var _this = this;
                 // get quick filter list from base class
                 var filters = _super.prototype.getQuickFilters.call(this);
                 // get filter for SailDat field and set default value
@@ -11673,7 +11672,6 @@ var DAP;
                     var date = new Date();
                     var t = Q.formatDate(date.toDateString(), "MM/dd/yyyy");
                     w.value = t;
-                    _this.refresh();
                 };
                 return filters;
             };

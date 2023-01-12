@@ -9,7 +9,7 @@ namespace DAP.NCLHDSAR.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[MarketingRequestOptOutStatus]")]
+    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MarketingRequestOptOutStatus]")]
     [DisplayName("Marketing Request Opt Out Status"), InstanceName("Marketing Request Opt Out Status")]
     [ReadPermission(PermissionKeys.Request.View)]
     public sealed class MarketingRequestOptOutStatusRow : Row, IIdRow, INameRow

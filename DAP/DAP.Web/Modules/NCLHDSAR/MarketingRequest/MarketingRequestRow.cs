@@ -10,7 +10,7 @@ namespace DAP.NCLHDSAR.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[MarketingRequest]")]
+    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MarketingRequest]")]
     [DisplayName("Marketing Request"), InstanceName("Marketing Request")]
     [ReadPermission(PermissionKeys.Request.View)]
     [ModifyPermission(PermissionKeys.Request.Modify)]
