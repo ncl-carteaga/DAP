@@ -11,7 +11,8 @@ namespace DAP.NCLHDSAR.Entities
 
     [ConnectionKey("NCLH_DSAR"), Module("NCLHDSAR"), TableName("[dbo].[MarketingRequestChannels]")]
     [DisplayName("Marketing Request Channels"), InstanceName("Marketing Request Channels")]
-    [ReadPermission(PermissionKeys.Request.View)]
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
     public sealed class MarketingRequestChannelsRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]

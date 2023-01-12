@@ -1180,7 +1180,6 @@
     <Content Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestIndex.cshtml" />
     <Content Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppIndex.cshtml" />
-    <Content Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1379,9 +1378,6 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.VwSqlJobListColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.Lookups.OutboundAgentColumns.ts">
@@ -1715,8 +1711,6 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppGrid.ts" />
-    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideDialog.ts" />
-    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3221,21 +3215,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideDescriptionRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideDescriptionService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3487,7 +3466,6 @@
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImportForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionLookupEditor.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
@@ -4026,15 +4004,6 @@
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppPage.cs" />
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRow.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRepository.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideEndpoint.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverridePage.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideColumns.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRow.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRepository.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

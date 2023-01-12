@@ -6,7 +6,7 @@ namespace DAP.NCLHDSAR.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("NCLHDSAR/SwRequest"), Route("{action=index}")]
-    [PageAuthorize(PermissionKeys.PagePermission.SwRequest)]
+    [PageAuthorize(typeof(Entities.SwRequestRow))]
     public class SwRequestController : Controller
     {
         public ActionResult Index()
