@@ -32,7 +32,7 @@
     export namespace MarketingRequestRow {
         export const idProperty = 'Id';
         export const nameProperty = 'ContactId';
-        export const localTextPrefix = 'DWSupport.MarketingRequest';
+        export const localTextPrefix = 'NCLHDSAR.MarketingRequest';
 
         export declare const enum Fields {
             Id = "Id",
