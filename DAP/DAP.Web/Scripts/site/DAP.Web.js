@@ -12520,6 +12520,10 @@ var DAP;
             MarketingRequestGrid.prototype.getButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
+                // Update main INSERT button title
+                console.log(buttons);
+                var _button = Q.first(buttons, function (x) { return x.title == "New Marketing Request"; });
+                _button.title = "New Marketing Operation";
                 // export button 1
                 buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
                     grid: this,

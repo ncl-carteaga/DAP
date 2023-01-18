@@ -16,6 +16,11 @@ namespace DAP.NCLHDSAR {
         protected getButtons() {
             var buttons = super.getButtons();
 
+            // Update main INSERT button title
+            console.log(buttons);
+            var _button = Q.first(buttons, x => x.title == "New Marketing Request");
+            _button.title = "New Marketing Operation";
+
             // export button 1
             buttons.push(Common.ExcelExportHelper.createToolButton({
                 grid: this,
