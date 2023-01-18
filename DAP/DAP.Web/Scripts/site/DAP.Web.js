@@ -12418,6 +12418,9 @@ var DAP;
             MarketingRequestDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.MarketingRequestRow.localTextPrefix; };
             MarketingRequestDialog.prototype.getNameProperty = function () { return NCLHDSAR.MarketingRequestRow.nameProperty; };
             MarketingRequestDialog.prototype.getService = function () { return NCLHDSAR.MarketingRequestService.baseUrl; };
+            MarketingRequestDialog.prototype.updateTitle = function () {
+                this.dialogTitle = "Marketing Operations";
+            };
             MarketingRequestDialog.prototype.updateInterface = function () {
                 _super.prototype.updateInterface.call(this);
                 // set dropdown default value. Passing in item ID

@@ -9502,6 +9502,7 @@ declare namespace DAP.NCLHDSAR {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: MarketingRequestForm;
+        protected updateTitle(): void;
         constructor();
         updateInterface(): void;
     }
