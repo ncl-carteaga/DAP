@@ -12,6 +12,10 @@ namespace DAP.NCLHDSAR {
         protected getService() { return MarketingRequestService.baseUrl; }
 
         protected form = new MarketingRequestForm(this.idPrefix);
+
+        protected updateTitle() {
+            this.dialogTitle = "Marketing Operations";
+        }
        
         
         constructor() {

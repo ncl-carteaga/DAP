@@ -11,7 +11,7 @@ namespace DAP.NCLHDSAR.Entities
     using System.IO;
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MarketingRequest]")]
-    [DisplayName("Marketing Request"), InstanceName("Marketing Request")]
+    [DisplayName("Marketing Operations"), InstanceName("Marketing Request")]
     [ReadPermission(PermissionKeys.Request.View)]
     [ModifyPermission(PermissionKeys.Request.Modify)]
     [DeletePermission(PermissionKeys.Request.Delete)]

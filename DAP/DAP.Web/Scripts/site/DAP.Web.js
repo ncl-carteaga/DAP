@@ -12418,6 +12418,9 @@ var DAP;
             MarketingRequestDialog.prototype.getLocalTextPrefix = function () { return NCLHDSAR.MarketingRequestRow.localTextPrefix; };
             MarketingRequestDialog.prototype.getNameProperty = function () { return NCLHDSAR.MarketingRequestRow.nameProperty; };
             MarketingRequestDialog.prototype.getService = function () { return NCLHDSAR.MarketingRequestService.baseUrl; };
+            MarketingRequestDialog.prototype.updateTitle = function () {
+                this.dialogTitle = "Marketing Operations";
+            };
             MarketingRequestDialog.prototype.updateInterface = function () {
                 _super.prototype.updateInterface.call(this);
                 // set dropdown default value. Passing in item ID
@@ -12517,6 +12520,10 @@ var DAP;
             MarketingRequestGrid.prototype.getButtons = function () {
                 var _this = this;
                 var buttons = _super.prototype.getButtons.call(this);
+                // Update main INSERT button title
+                console.log(buttons);
+                var _button = Q.first(buttons, function (x) { return x.title == "New Marketing Request"; });
+                _button.title = "New Marketing Operation";
                 // export button 1
                 buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
                     grid: this,
