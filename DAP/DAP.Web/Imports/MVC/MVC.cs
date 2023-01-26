@@ -108,6 +108,11 @@ namespace MVC
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
             }
 
+            public static class FinPlannedCapacitySupp
+            {
+                public const string FinPlannedCapacitySuppIndex = "~/Modules/DWSupport/FinPlannedCapacitySupp/FinPlannedCapacitySuppIndex.cshtml";
+            }
+
             public static class FinReportPublishingSupp
             {
                 public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
