@@ -1181,6 +1181,7 @@
     <Content Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestIndex.cshtml" />
     <Content Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppIndex.cshtml" />
     <Content Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1217,6 +1218,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CategoryMasterSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppColumns.ts">
@@ -1717,6 +1721,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3236,6 +3242,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideDescriptionService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4036,6 +4051,12 @@
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRow.cs" />
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRepository.cs" />
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -98,6 +98,11 @@ namespace MVC
                 public const string CategoryMasterSuppIndex = "~/Modules/DWSupport/CategoryMasterSupp/CategoryMasterSuppIndex.cshtml";
             }
 
+            public static class CmiSupp
+            {
+                public const string CmiSuppIndex = "~/Modules/DWSupport/CmiSupp/CmiSuppIndex.cshtml";
+            }
+
             public static class CurrencyExchangeRateSupp
             {
                 public const string CurrencyExchangeRateSuppIndex = "~/Modules/DWSupport/CurrencyExchangeRateSupp/CurrencyExchangeRateSuppIndex.cshtml";
