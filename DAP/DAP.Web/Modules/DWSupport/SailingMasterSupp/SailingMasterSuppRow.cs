@@ -8,6 +8,7 @@ namespace DAP.DWSupport.Entities
     using System;
     using System.ComponentModel;
     using System.IO;
+    using DWSupport.Lookups;
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[SAILING_MASTER_SUPP]")]
     [DisplayName("Sailing Master Supp"), InstanceName("Sailing Master Supp")]
@@ -45,7 +46,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ValidVoyageCd[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickFilter, LookupEditor("DWSupport.ShipCode")]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickFilter, LookupEditor(typeof(ShipCDLookupEditor))]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }

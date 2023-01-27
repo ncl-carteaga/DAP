@@ -136,9 +136,8 @@ namespace DAP.DWSupport.Repositories
             {
                 base.ApplyFilters(query);
 
-                query.Where(fld.ModifiedTs == new DateTime(9999, 12, 31));
-                query.Where(fld.SailDat > DateTime.Now);
-               
+                // Filter by ModifiedTs
+                query.Where(fld.ModifiedTs == new DateTime(9999, 12, 31));     
 
             }
 

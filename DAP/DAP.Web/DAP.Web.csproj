@@ -3395,6 +3395,7 @@
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImportForm.cs" />
+    <Compile Include="Modules\DWSupport\SailingMasterSupp\ShipCDLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SLProductCode.cs" />
     <Compile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImportForm.cs" />
     <Compile Include="Modules\Membership\Account\ChangePassword\AccountPage.ChangePassword.cs" />

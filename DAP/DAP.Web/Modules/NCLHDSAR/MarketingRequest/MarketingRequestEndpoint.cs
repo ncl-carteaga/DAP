@@ -714,9 +714,11 @@ namespace DAP.NCLHDSAR.Endpoints
                     var currentRow = uow.Connection.TryFirst<MarketingRequestRow>(q => q
                         .Select(myFields.Id)
                         .Where(
-                            //myFields.BrandId == brandID &&
-                            myFields.FirstName == first_name &&
-                            myFields.IsReturnedMailCd == is_returned_mail_cd
+
+                            myFields.RequestTypeId == 3     &&
+                            myFields.Address1 == address1   &&
+                            myFields.BrandId == brandID
+
                         )
                     );
 
@@ -746,6 +748,22 @@ namespace DAP.NCLHDSAR.Endpoints
                         if (a != null)
                         {
                             currentRow.BrandDescription = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.String;            //excel field type
+                    fieldTitle = myFields.IsReturnedMailCd.Title;            //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.IsReturnedMailCd = (a == "Y");
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
