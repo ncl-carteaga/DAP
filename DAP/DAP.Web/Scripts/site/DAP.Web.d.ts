@@ -2774,9 +2774,6 @@ declare namespace DAP.DWSupport {
         MainVoyageCd: SelectYNEditor;
         InterportCd: SelectYNEditor;
         CharterCd: SelectYNEditor;
-        ProxySailId: Serenity.IntegerEditor;
-        OnSaleDat: Serenity.DateEditor;
-        SeasonYearCd: Serenity.StringEditor;
         RmsForecastCd: Serenity.IntegerEditor;
         RmsColorNameDesc: Serenity.StringEditor;
         RmsRefLinkSailId: Serenity.IntegerEditor;
@@ -2803,6 +2800,9 @@ declare namespace DAP.DWSupport {
         ObrTradeCd: Serenity.StringEditor;
         ObrSubTradeCd: Serenity.StringEditor;
         ObrSeasonCd: Serenity.StringEditor;
+        ProxySailId: Serenity.IntegerEditor;
+        OnSaleDat: Serenity.DateEditor;
+        SeasonYearCd: Serenity.StringEditor;
         IsVoyageExceptionCd: SelectYNEditor;
         VoyageExceptionDesc: Serenity.StringEditor;
         ItineraryChangedDat: Serenity.DateEditor;
@@ -3752,7 +3752,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestBrandsRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "DWSupport.MarketingRequestBrands";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestBrands";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -3784,7 +3784,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestChannelsRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "DWSupport.MarketingRequestChannels";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestChannels";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -3859,7 +3859,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestOptOutStatusRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "DWSupport.MarketingRequestOptOutStatus";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestOptOutStatus";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -3916,7 +3916,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestRow {
         const idProperty = "Id";
         const nameProperty = "ContactId";
-        const localTextPrefix = "DWSupport.MarketingRequest";
+        const localTextPrefix = "NCLHDSAR.MarketingRequest";
         const enum Fields {
             Id = "Id",
             RequestTypeId = "RequestTypeId",
@@ -3977,7 +3977,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestSourcesRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "DWSupport.MarketingRequestSources";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestSources";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -4009,7 +4009,7 @@ declare namespace DAP.NCLHDSAR {
     namespace MarketingRequestTypesRow {
         const idProperty = "Id";
         const nameProperty = "Description";
-        const localTextPrefix = "DWSupport.MarketingRequestTypes";
+        const localTextPrefix = "NCLHDSAR.MarketingRequestTypes";
         const enum Fields {
             Id = "Id",
             Description = "Description"
@@ -5646,103 +5646,6 @@ declare namespace DAP.PCHDW {
             Delete = "PCHDW/VwSqlJobList/Delete",
             Retrieve = "PCHDW/VwSqlJobList/Retrieve",
             List = "PCHDW/VwSqlJobList/List"
-        }
-    }
-}
-declare namespace DAP.PCHODS {
-}
-declare namespace DAP.PCHODS {
-    interface InboundUserOverrideDescriptionRow {
-        Id?: number;
-        Description?: string;
-        OutboundComments?: string;
-    }
-    namespace InboundUserOverrideDescriptionRow {
-        const idProperty = "Id";
-        const nameProperty = "Description";
-        const localTextPrefix = "PCHODS.InboundUserOverrideDescription";
-        const enum Fields {
-            Id = "Id",
-            Description = "Description",
-            OutboundComments = "OutboundComments"
-        }
-    }
-}
-declare namespace DAP.PCHODS {
-    namespace InboundUserOverrideDescriptionService {
-        const baseUrl = "PCHODS/InboundUserOverrideDescription";
-        function Create(request: Serenity.SaveRequest<InboundUserOverrideDescriptionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<InboundUserOverrideDescriptionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InboundUserOverrideDescriptionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InboundUserOverrideDescriptionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "PCHODS/InboundUserOverrideDescription/Create",
-            Update = "PCHODS/InboundUserOverrideDescription/Update",
-            Delete = "PCHODS/InboundUserOverrideDescription/Delete",
-            Retrieve = "PCHODS/InboundUserOverrideDescription/Retrieve",
-            List = "PCHODS/InboundUserOverrideDescription/List"
-        }
-    }
-}
-declare namespace DAP.PCHODS {
-    interface InboundUserOverrideForm {
-        Company: Serenity.StringEditor;
-        Invoice: Serenity.StringEditor;
-        UserAssign: Serenity.StringEditor;
-        ItDescription: Serenity.LookupEditor;
-        Inbound: Serenity.StringEditor;
-        Comments: Serenity.StringEditor;
-    }
-    class InboundUserOverrideForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.PCHODS {
-    interface InboundUserOverrideRow {
-        Id?: number;
-        Company?: string;
-        Invoice?: string;
-        UserAssign?: string;
-        ItDescription?: number;
-        Inbound?: string;
-        Comments?: string;
-        ItDescriptionDescription?: string;
-        ItDescriptionOutboundComments?: string;
-    }
-    namespace InboundUserOverrideRow {
-        const idProperty = "Id";
-        const nameProperty = "Company";
-        const localTextPrefix = "PCHODS.InboundUserOverride";
-        const enum Fields {
-            Id = "Id",
-            Company = "Company",
-            Invoice = "Invoice",
-            UserAssign = "UserAssign",
-            ItDescription = "ItDescription",
-            Inbound = "Inbound",
-            Comments = "Comments",
-            ItDescriptionDescription = "ItDescriptionDescription",
-            ItDescriptionOutboundComments = "ItDescriptionOutboundComments"
-        }
-    }
-}
-declare namespace DAP.PCHODS {
-    namespace InboundUserOverrideService {
-        const baseUrl = "PCHODS/InboundUserOverride";
-        function Create(request: Serenity.SaveRequest<InboundUserOverrideRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<InboundUserOverrideRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<InboundUserOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<InboundUserOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "PCHODS/InboundUserOverride/Create",
-            Update = "PCHODS/InboundUserOverride/Update",
-            Delete = "PCHODS/InboundUserOverride/Delete",
-            Retrieve = "PCHODS/InboundUserOverride/Retrieve",
-            List = "PCHODS/InboundUserOverride/List"
         }
     }
 }
@@ -9328,7 +9231,6 @@ declare namespace DAP.DWSupport {
         private inputsChange;
         private saveClick;
         private showErrorLogClick;
-        protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -9983,26 +9885,6 @@ declare namespace DAP.PCHDW {
         protected getColumns(): Slick.Column[];
         protected onClick(e: JQueryEventObject, row: number, cell: number): void;
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.PCHODS {
-    class InboundUserOverrideDialog extends Serenity.EntityDialog<InboundUserOverrideRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: InboundUserOverrideForm;
-    }
-}
-declare namespace DAP.PCHODS {
-    class InboundUserOverrideGrid extends Serenity.EntityGrid<InboundUserOverrideRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof InboundUserOverrideDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
     }
 }
 declare namespace DAP.PCHODS {

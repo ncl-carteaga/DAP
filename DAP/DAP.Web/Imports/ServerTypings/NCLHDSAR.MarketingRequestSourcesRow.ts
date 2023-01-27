@@ -7,7 +7,7 @@
     export namespace MarketingRequestSourcesRow {
         export const idProperty = 'Id';
         export const nameProperty = 'Description';
-        export const localTextPrefix = 'DWSupport.MarketingRequestSources';
+        export const localTextPrefix = 'NCLHDSAR.MarketingRequestSources';
 
         export declare const enum Fields {
             Id = "Id",

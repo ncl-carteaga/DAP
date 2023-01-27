@@ -10,8 +10,10 @@ namespace DAP.NCLHDSAR.Entities
     using System.ComponentModel;
     using System.IO;
 
+
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MarketingRequest]")]
     [DisplayName("Marketing Operations"), InstanceName("Marketing Request")]
+
     [ReadPermission(PermissionKeys.Request.View)]
     [ModifyPermission(PermissionKeys.Request.Modify)]
     [DeletePermission(PermissionKeys.Request.Delete)]
@@ -32,14 +34,14 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.RequestTypeId[this] = value; }
         }
 
-        [DisplayName("BRAND"), Column("BrandID"), NotNull, ForeignKey("[dbo].[MarketingRequestBrands]", "id"), LeftJoin("jBrand"), TextualField("BrandDescription"), LookupEditor(typeof(BrandLookupEditor))]
+        [DisplayName("Brand"), Column("BrandID"), NotNull, ForeignKey("[dbo].[MarketingRequestBrands]", "id"), LeftJoin("jBrand"), TextualField("BrandDescription"), LookupEditor(typeof(BrandLookupEditor))]
         public Int16? BrandId
         {
             get { return Fields.BrandId[this]; }
             set { Fields.BrandId[this] = value; }
         }
 
-        [DisplayName("CONTACT_ID"), Column("CONTACT_ID"), Size(100), QuickSearch]
+        [DisplayName("Contact Id"), Column("ContactID"), Size(100), QuickSearch]
         public String ContactId
         {
             get { return Fields.ContactId[this]; }
@@ -60,63 +62,63 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.OptOutStatusID[this] = value; }
         }
 
-        [DisplayName("FIRST_NAM"), Column("FIRST_NAM"), Size(50)]
+        [DisplayName("First Name"), Size(50)]
         public String FirstName
         {
             get { return Fields.FirstName[this]; }
             set { Fields.FirstName[this] = value; }
         }
 
-        [DisplayName("LAST_NAM"), Column("LAST_NAM"), Size(50)]
+        [DisplayName("Last Name"), Size(50)]
         public String LastName
         {
             get { return Fields.LastName[this]; }
             set { Fields.LastName[this] = value; }
         }
 
-        [DisplayName("ADDRESS1"), Column("ADDRESS1"), Size(95)]
+        [DisplayName("Address1"), Size(95)]
         public String Address1
         {
             get { return Fields.Address1[this]; }
             set { Fields.Address1[this] = value; }
         }
 
-        [DisplayName("ADDRESS2"), Column("ADDRESS2"), Size(95)]
+        [DisplayName("Address2"), Size(95)]
         public String Address2
         {
             get { return Fields.Address2[this]; }
             set { Fields.Address2[this] = value; }
         }
 
-        [DisplayName("CITY"), Column("CITY"), Size(35)]
+        [DisplayName("City"), Size(35)]
         public String City
         {
             get { return Fields.City[this]; }
             set { Fields.City[this] = value; }
         }
 
-        [DisplayName("STATE"), Column("STATE"), Size(25)]
+        [DisplayName("State"), Size(25)]
         public String State
         {
             get { return Fields.State[this]; }
             set { Fields.State[this] = value; }
         }
 
-        [DisplayName("ZIP"), Column("ZIP"), Size(10)]
+        [DisplayName("Zip"), Size(10)]
         public String Zip
         {
             get { return Fields.Zip[this]; }
             set { Fields.Zip[this] = value; }
         }
 
-        [DisplayName("COUNTRY"), Column("COUNTRY"), Size(25)]
+        [DisplayName("Country"), Size(25)]
         public String Country
         {
             get { return Fields.Country[this]; }
             set { Fields.Country[this] = value; }
         }
 
-        [DisplayName("PHONE"), Column("PHONE"), Size(15)]
+        [DisplayName("Phone"), Size(15)]
         public String Phone
         {
             get { return Fields.Phone[this]; }
@@ -130,21 +132,21 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.SourceId[this] = value; }
         }
 
-        [DisplayName("EMAIL_ADDRESS"), Column("EMAIL_ADDRESS"), Size(65)]
+        [DisplayName("Email Address"), Size(65)]
         public String EmailAddress
         {
             get { return Fields.EmailAddress[this]; }
             set { Fields.EmailAddress[this] = value; }
         }
 
-        [DisplayName("TITLE"), Column("TITLE"), Size(100)]
+        [DisplayName("Title"), Size(100)]
         public String Title
         {
             get { return Fields.Title[this]; }
             set { Fields.Title[this] = value; }
         }
 
-        [DisplayName("IS_RETURNED_MAIL_CD"), Column("IS_RETURNED_MAIL_CD"), NotNull]
+        [DisplayName("Is Returned Mail"), Column("IsReturnedMailCD"), NotNull]
         public Boolean? IsReturnedMailCd
         {
             get { return Fields.IsReturnedMailCd[this]; }
@@ -186,7 +188,7 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.RequestTypeDescription[this] = value; }
         }
 
-        [DisplayName("BRAND"), Expression("jBrand.[Description]")]
+        [DisplayName("Brand Description"), Expression("jBrand.[Description]")]
         public String BrandDescription
         {
             get { return Fields.BrandDescription[this]; }

@@ -138,6 +138,7 @@ namespace DAP.DWSupport.Repositories
 
                 // Filter by ModifiedTs
                 query.Where(fld.ModifiedTs == new DateTime(9999, 12, 31));     
+
             }
 
         }

@@ -75,9 +75,7 @@ namespace DAP.myImportHelper
                 {
                     myErrors.Add(emessage);
                 }
-
-                if(!headerMap.ContainsKey(expectedHeaders[b])) headerMap.Add(expectedHeaders[b], x);
-
+                headerMap.Add(expectedHeaders[b], x);
             }
 
             return headerMap;

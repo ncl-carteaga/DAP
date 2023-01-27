@@ -382,54 +382,6 @@ namespace DAP.DWSupport.Endpoints
                         importedValues.Clear();
                     }
 
-                    entType = jImpHelp.entryType.Int; //designate the type of item
-                    fieldTitle = myFields.ProxySailId.Title; //designate the field to be looked at
-                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    if (obj != null)
-                    {
-                        importedValues.Add(obj);
-                        sysHeader.Add(fieldTitle);
-                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                        if (a != null)
-                        {
-                            currentRow.ProxySailId = a; //designate the field to be updated in the system
-                        }
-                        sysHeader.Clear();
-                        importedValues.Clear();
-                    }
-
-                    entType = jImpHelp.entryType.dateTime; //designate the type of item
-                    fieldTitle = myFields.OnSaleDat.Title; //designate the field to be looked at
-                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    if (obj != null)
-                    {
-                        importedValues.Add(obj);
-                        sysHeader.Add(fieldTitle);
-                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                        if (a != null)
-                        {
-                            currentRow.OnSaleDat = a; //designate the field to be updated in the system
-                        }
-                        sysHeader.Clear();
-                        importedValues.Clear();
-                    }
-
-                    entType = jImpHelp.entryType.String; //designate the type of item
-                    fieldTitle = myFields.SeasonYearCd.Title; //designate the field to be looked at
-                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    if (obj != null)
-                    {
-                        importedValues.Add(obj);
-                        sysHeader.Add(fieldTitle);
-                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                        if (a != null)
-                        {
-                            currentRow.SeasonYearCd = a; //designate the field to be updated in the system
-                        }
-                        sysHeader.Clear();
-                        importedValues.Clear();
-                    }
-
                     //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
                     if (currentRow.SailSurKey == null)
                     {
