@@ -1494,6 +1494,158 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface CmiSuppForm {
+        CmiTypeCd: Serenity.StringEditor;
+        SailId: Serenity.IntegerEditor;
+        CruiseRevAmt: Serenity.DecimalEditor;
+        NcfAmt: Serenity.DecimalEditor;
+        CommissionAmt: Serenity.DecimalEditor;
+        CmiAmenityCostAmt: Serenity.DecimalEditor;
+        AgencyId: Serenity.IntegerEditor;
+        ContractDat: Serenity.DateEditor;
+        CabinQty: Serenity.IntegerEditor;
+        PaxQty: Serenity.IntegerEditor;
+        BookingCurrencyCd: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        CmiSubTypeCd: Serenity.StringEditor;
+        CmiSubType2Cd: Serenity.StringEditor;
+        VoyageCd: Serenity.StringEditor;
+        SmCabinFareAmt: Serenity.DecimalEditor;
+        SmCabinFareNonrevAmt: Serenity.DecimalEditor;
+        SmExcessTicketingAmt: Serenity.DecimalEditor;
+        SmCruiseDiscAmt: Serenity.DecimalEditor;
+        SmCostOfSalesAmt: Serenity.DecimalEditor;
+        SmGuestFeesGratsExpenseAmt: Serenity.DecimalEditor;
+        SmCreditCardCostAmt: Serenity.DecimalEditor;
+        ShipCd: Serenity.StringEditor;
+        SailDat: Serenity.DateEditor;
+        SailDayQty: Serenity.IntegerEditor;
+        CharterDesc: Serenity.StringEditor;
+        RmContractAdjNtrNoSvcAmt: Serenity.StringEditor;
+        OfficeCd: Serenity.StringEditor;
+        RmFinalGuestQty: Serenity.IntegerEditor;
+        RmFinalAdjNtrAmt: Serenity.IntegerEditor;
+        RmFinalAdjNtrNoSvcAmt: Serenity.IntegerEditor;
+        DistrictNbr: Serenity.StringEditor;
+        ContractPriceAmt: Serenity.IntegerEditor;
+        DepositDat: Serenity.DateEditor;
+    }
+    class CmiSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CmiSuppRow {
+        CmiSurKey?: number;
+        CmiTypeCd?: string;
+        SailId?: number;
+        CruiseRevAmt?: number;
+        NcfAmt?: number;
+        CommissionAmt?: number;
+        CmiAmenityCostAmt?: number;
+        AgencyId?: number;
+        ContractDat?: string;
+        CabinQty?: number;
+        PaxQty?: number;
+        BookingCurrencyCd?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        CmiSubTypeCd?: string;
+        CmiSubType2Cd?: string;
+        VoyageCd?: string;
+        SmCabinFareAmt?: number;
+        SmCabinFareNonrevAmt?: number;
+        SmExcessTicketingAmt?: number;
+        SmCruiseDiscAmt?: number;
+        SmCostOfSalesAmt?: number;
+        SmGuestFeesGratsExpenseAmt?: number;
+        SmCreditCardCostAmt?: number;
+        ShipCd?: string;
+        SailDat?: string;
+        SailDayQty?: number;
+        CharterDesc?: string;
+        RmContractAdjNtrNoSvcAmt?: string;
+        OfficeCd?: string;
+        RmFinalGuestQty?: number;
+        RmFinalAdjNtrAmt?: number;
+        RmFinalAdjNtrNoSvcAmt?: number;
+        DistrictNbr?: string;
+        ContractPriceAmt?: number;
+        DepositDat?: string;
+    }
+    namespace CmiSuppRow {
+        const idProperty = "CmiSurKey";
+        const nameProperty = "CmiTypeCd";
+        const localTextPrefix = "DWSupport.CmiSupp";
+        const enum Fields {
+            CmiSurKey = "CmiSurKey",
+            CmiTypeCd = "CmiTypeCd",
+            SailId = "SailId",
+            CruiseRevAmt = "CruiseRevAmt",
+            NcfAmt = "NcfAmt",
+            CommissionAmt = "CommissionAmt",
+            CmiAmenityCostAmt = "CmiAmenityCostAmt",
+            AgencyId = "AgencyId",
+            ContractDat = "ContractDat",
+            CabinQty = "CabinQty",
+            PaxQty = "PaxQty",
+            BookingCurrencyCd = "BookingCurrencyCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            CmiSubTypeCd = "CmiSubTypeCd",
+            CmiSubType2Cd = "CmiSubType2Cd",
+            VoyageCd = "VoyageCd",
+            SmCabinFareAmt = "SmCabinFareAmt",
+            SmCabinFareNonrevAmt = "SmCabinFareNonrevAmt",
+            SmExcessTicketingAmt = "SmExcessTicketingAmt",
+            SmCruiseDiscAmt = "SmCruiseDiscAmt",
+            SmCostOfSalesAmt = "SmCostOfSalesAmt",
+            SmGuestFeesGratsExpenseAmt = "SmGuestFeesGratsExpenseAmt",
+            SmCreditCardCostAmt = "SmCreditCardCostAmt",
+            ShipCd = "ShipCd",
+            SailDat = "SailDat",
+            SailDayQty = "SailDayQty",
+            CharterDesc = "CharterDesc",
+            RmContractAdjNtrNoSvcAmt = "RmContractAdjNtrNoSvcAmt",
+            OfficeCd = "OfficeCd",
+            RmFinalGuestQty = "RmFinalGuestQty",
+            RmFinalAdjNtrAmt = "RmFinalAdjNtrAmt",
+            RmFinalAdjNtrNoSvcAmt = "RmFinalAdjNtrNoSvcAmt",
+            DistrictNbr = "DistrictNbr",
+            ContractPriceAmt = "ContractPriceAmt",
+            DepositDat = "DepositDat"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CmiSuppService {
+        const baseUrl = "DWSupport/CmiSupp";
+        function Create(request: Serenity.SaveRequest<CmiSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CmiSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CmiSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CmiSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/CmiSupp/Create",
+            Update = "DWSupport/CmiSupp/Update",
+            Delete = "DWSupport/CmiSupp/Delete",
+            Retrieve = "DWSupport/CmiSupp/Retrieve",
+            List = "DWSupport/CmiSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface CurrencyExchangeRateSuppForm {
         CurrencyCd: Serenity.StringEditor;
         SailFromDat: Serenity.DateEditor;
@@ -8951,6 +9103,26 @@ declare namespace DAP.DWSupport {
     class CategoryMasterSuppGrid extends Serenity.EntityGrid<CategoryMasterSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof CategoryMasterSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class CmiSuppDialog extends Serenity.EntityDialog<CmiSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CmiSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CmiSuppGrid extends Serenity.EntityGrid<CmiSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CmiSuppDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
