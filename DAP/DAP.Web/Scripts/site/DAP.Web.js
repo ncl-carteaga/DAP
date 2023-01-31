@@ -1354,48 +1354,49 @@ var DAP;
                 if (!CmiSuppForm.init) {
                     CmiSuppForm.init = true;
                     var s = Serenity;
-                    var w0 = s.StringEditor;
+                    var w0 = s.LookupEditor;
                     var w1 = s.IntegerEditor;
-                    var w2 = s.DecimalEditor;
-                    var w3 = s.DateEditor;
+                    var w2 = s.StringEditor;
+                    var w3 = s.DecimalEditor;
+                    var w4 = s.DateEditor;
                     Q.initFormType(CmiSuppForm, [
-                        'CmiTypeCd', w0,
+                        'ShipCd', w0,
                         'SailId', w1,
-                        'CruiseRevAmt', w2,
-                        'NcfAmt', w2,
-                        'CommissionAmt', w2,
-                        'CmiAmenityCostAmt', w2,
                         'AgencyId', w1,
-                        'ContractDat', w3,
+                        'CmiTypeCd', w2,
+                        'CruiseRevAmt', w3,
+                        'NcfAmt', w3,
+                        'CommissionAmt', w3,
+                        'CmiAmenityCostAmt', w3,
+                        'ContractDat', w4,
                         'CabinQty', w1,
                         'PaxQty', w1,
-                        'BookingCurrencyCd', w0,
-                        'CreatedTs', w3,
-                        'CreatedByNam', w0,
-                        'ModifiedByNam', w0,
-                        'ModifiedTs', w3,
-                        'CmiSubTypeCd', w0,
-                        'CmiSubType2Cd', w0,
-                        'VoyageCd', w0,
-                        'SmCabinFareAmt', w2,
-                        'SmCabinFareNonrevAmt', w2,
-                        'SmExcessTicketingAmt', w2,
-                        'SmCruiseDiscAmt', w2,
-                        'SmCostOfSalesAmt', w2,
-                        'SmGuestFeesGratsExpenseAmt', w2,
-                        'SmCreditCardCostAmt', w2,
-                        'ShipCd', w0,
-                        'SailDat', w3,
+                        'BookingCurrencyCd', w2,
+                        'CreatedTs', w4,
+                        'CreatedByNam', w2,
+                        'ModifiedByNam', w2,
+                        'ModifiedTs', w4,
+                        'CmiSubTypeCd', w2,
+                        'CmiSubType2Cd', w2,
+                        'VoyageCd', w2,
+                        'SmCabinFareAmt', w3,
+                        'SmCabinFareNonrevAmt', w3,
+                        'SmExcessTicketingAmt', w3,
+                        'SmCruiseDiscAmt', w3,
+                        'SmCostOfSalesAmt', w3,
+                        'SmGuestFeesGratsExpenseAmt', w3,
+                        'SmCreditCardCostAmt', w3,
+                        'SailDat', w4,
                         'SailDayQty', w1,
-                        'CharterDesc', w0,
-                        'RmContractAdjNtrNoSvcAmt', w0,
-                        'OfficeCd', w0,
+                        'CharterDesc', w2,
+                        'RmContractAdjNtrNoSvcAmt', w2,
+                        'OfficeCd', w2,
                         'RmFinalGuestQty', w1,
                         'RmFinalAdjNtrAmt', w1,
                         'RmFinalAdjNtrNoSvcAmt', w1,
-                        'DistrictNbr', w0,
+                        'DistrictNbr', w2,
                         'ContractPriceAmt', w1,
-                        'DepositDat', w3
+                        'DepositDat', w4
                     ]);
                 }
                 return _this;

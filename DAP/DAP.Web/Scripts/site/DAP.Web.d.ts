@@ -1495,13 +1495,14 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CmiSuppForm {
-        CmiTypeCd: Serenity.StringEditor;
+        ShipCd: Serenity.LookupEditor;
         SailId: Serenity.IntegerEditor;
+        AgencyId: Serenity.IntegerEditor;
+        CmiTypeCd: Serenity.StringEditor;
         CruiseRevAmt: Serenity.DecimalEditor;
         NcfAmt: Serenity.DecimalEditor;
         CommissionAmt: Serenity.DecimalEditor;
         CmiAmenityCostAmt: Serenity.DecimalEditor;
-        AgencyId: Serenity.IntegerEditor;
         ContractDat: Serenity.DateEditor;
         CabinQty: Serenity.IntegerEditor;
         PaxQty: Serenity.IntegerEditor;
@@ -1520,7 +1521,6 @@ declare namespace DAP.DWSupport {
         SmCostOfSalesAmt: Serenity.DecimalEditor;
         SmGuestFeesGratsExpenseAmt: Serenity.DecimalEditor;
         SmCreditCardCostAmt: Serenity.DecimalEditor;
-        ShipCd: Serenity.StringEditor;
         SailDat: Serenity.DateEditor;
         SailDayQty: Serenity.IntegerEditor;
         CharterDesc: Serenity.StringEditor;
