@@ -1800,6 +1800,83 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface FinPlannedCapacitySuppForm {
+        ShipCd: Serenity.StringEditor;
+        SailFromDat: Serenity.DateEditor;
+        SailToDat: Serenity.DateEditor;
+        FinancialCabinCapacityQty: Serenity.IntegerEditor;
+        FinancialGuestCapacityQty: Serenity.IntegerEditor;
+        CapacityDesc: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        UnadjustedFinancialCabinCapacityQty: Serenity.IntegerEditor;
+        UnadjustedFinancialGuestCapacityQty: Serenity.IntegerEditor;
+    }
+    class FinPlannedCapacitySuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface FinPlannedCapacitySuppRow {
+        FinPlannedCapacitySurKey?: number;
+        ShipCd?: string;
+        SailFromDat?: string;
+        SailToDat?: string;
+        FinancialCabinCapacityQty?: number;
+        FinancialGuestCapacityQty?: number;
+        CapacityDesc?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        UnadjustedFinancialCabinCapacityQty?: number;
+        UnadjustedFinancialGuestCapacityQty?: number;
+    }
+    namespace FinPlannedCapacitySuppRow {
+        const idProperty = "FinPlannedCapacitySurKey";
+        const nameProperty = "ShipCd";
+        const localTextPrefix = "DWSupport.FinPlannedCapacitySupp";
+        const enum Fields {
+            FinPlannedCapacitySurKey = "FinPlannedCapacitySurKey",
+            ShipCd = "ShipCd",
+            SailFromDat = "SailFromDat",
+            SailToDat = "SailToDat",
+            FinancialCabinCapacityQty = "FinancialCabinCapacityQty",
+            FinancialGuestCapacityQty = "FinancialGuestCapacityQty",
+            CapacityDesc = "CapacityDesc",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            UnadjustedFinancialCabinCapacityQty = "UnadjustedFinancialCabinCapacityQty",
+            UnadjustedFinancialGuestCapacityQty = "UnadjustedFinancialGuestCapacityQty"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace FinPlannedCapacitySuppService {
+        const baseUrl = "DWSupport/FinPlannedCapacitySupp";
+        function Create(request: Serenity.SaveRequest<FinPlannedCapacitySuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<FinPlannedCapacitySuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<FinPlannedCapacitySuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<FinPlannedCapacitySuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/FinPlannedCapacitySupp/Create",
+            Update = "DWSupport/FinPlannedCapacitySupp/Update",
+            Delete = "DWSupport/FinPlannedCapacitySupp/Delete",
+            Retrieve = "DWSupport/FinPlannedCapacitySupp/Retrieve",
+            List = "DWSupport/FinPlannedCapacitySupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface FinReportPublishingSuppForm {
         ReportName: Serenity.StringEditor;
         OnHold: Serenity.BooleanEditor;
@@ -9171,6 +9248,26 @@ declare namespace DAP.DWSupport {
         constructor(container: JQuery);
         protected createQuickFilters(): void;
         protected createSlickGrid(): Slick.Grid;
+    }
+}
+declare namespace DAP.DWSupport {
+    class FinPlannedCapacitySuppDialog extends Serenity.EntityDialog<FinPlannedCapacitySuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: FinPlannedCapacitySuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class FinPlannedCapacitySuppGrid extends Serenity.EntityGrid<FinPlannedCapacitySuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof FinPlannedCapacitySuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.DWSupport {
