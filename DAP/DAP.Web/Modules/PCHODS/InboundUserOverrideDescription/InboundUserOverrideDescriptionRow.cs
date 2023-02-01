@@ -11,8 +11,9 @@ namespace DAP.PCHODS.Entities
 
     [ConnectionKey("PCH_ODS"), Module("PCHODS"), TableName("[dbo].[Inbound_User_Override_Description]")]
     [DisplayName("Inbound User Override Description"), InstanceName("Inbound User Override Description")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.Outbound.View)]
+    [ModifyPermission(PermissionKeys.Outbound.Modify)]
+    [DeletePermission(PermissionKeys.Outbound.Delete)]
     public sealed class InboundUserOverrideDescriptionRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]
