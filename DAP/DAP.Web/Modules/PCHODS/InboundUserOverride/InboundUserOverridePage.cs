@@ -6,7 +6,7 @@ namespace DAP.PCHODS.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("PCHODS/InboundUserOverride"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.InboundUserOverrideRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.InboundUserOverride)]
     public class InboundUserOverrideController : Controller
     {
         public ActionResult Index()
