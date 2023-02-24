@@ -14,6 +14,7 @@ namespace DAP.DWSupport.Entities
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
     public sealed class FinPlannedCapacitySuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Fin Planned Capacity Sur Key"), Column("FIN_PLANNED_CAPACITY_SUR_KEY"), Identity]
