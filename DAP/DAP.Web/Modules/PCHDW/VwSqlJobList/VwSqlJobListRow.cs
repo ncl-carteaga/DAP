@@ -10,7 +10,7 @@ namespace DAP.PCHDW.Entities
     using System.IO;
 
     [ConnectionKey("PCH_DW"), Module("PCHDW"), TableName("[dbo].[vw_SQLJobList]")]
-    [DisplayName("Vw Sql Job List"), InstanceName("Vw Sql Job List")]
+    [DisplayName("DWH Report Job List"), InstanceName("Vw Sql Job List")]
     [ReadPermission(PermissionKeys.EDMSupport.View)]
     [ModifyPermission(PermissionKeys.EDMSupport.Modify)]
     [DeletePermission(PermissionKeys.EDMSupport.Delete)]
