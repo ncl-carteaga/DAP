@@ -2057,7 +2057,7 @@ declare namespace DAP.DWSupport {
         EffectiveFromDt: Serenity.DateEditor;
         EffectiveToDt: Serenity.DateEditor;
         CreatedTs: Serenity.DateEditor;
-        CreatedByName: Serenity.StringEditor;
+        CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
         ModifiedByNam: Serenity.StringEditor;
     }

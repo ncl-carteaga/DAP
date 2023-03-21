@@ -7,7 +7,7 @@
         EffectiveFromDt: Serenity.DateEditor;
         EffectiveToDt: Serenity.DateEditor;
         CreatedTs: Serenity.DateEditor;
-        CreatedByName: Serenity.StringEditor;
+        CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
         ModifiedByNam: Serenity.StringEditor;
     }
@@ -37,7 +37,7 @@
                     'EffectiveFromDt', w3,
                     'EffectiveToDt', w3,
                     'CreatedTs', w3,
-                    'CreatedByName', w4,
+                    'CreatedByNam', w4,
                     'ModifiedTs', w3,
                     'ModifiedByNam', w4
                 ]);
