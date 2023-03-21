@@ -3178,6 +3178,73 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var UpgradeAdvAdjSuppForm = /** @class */ (function (_super) {
+            __extends(UpgradeAdvAdjSuppForm, _super);
+            function UpgradeAdvAdjSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!UpgradeAdvAdjSuppForm.init) {
+                    UpgradeAdvAdjSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.DecimalEditor;
+                    var w1 = s.DateEditor;
+                    var w2 = s.StringEditor;
+                    Q.initFormType(UpgradeAdvAdjSuppForm, [
+                        'UpgradeAmountMin', w0,
+                        'UpgradeAmountMax', w0,
+                        'CommissionPercent', w0,
+                        'EffectiveFromDt', w1,
+                        'EffectiveToDt', w1,
+                        'CreatedTs', w1,
+                        'CreatedByName', w2,
+                        'ModifiedTs', w1,
+                        'ModifiedByNam', w2
+                    ]);
+                }
+                return _this;
+            }
+            UpgradeAdvAdjSuppForm.formKey = 'DWSupport.UpgradeAdvAdjSupp';
+            return UpgradeAdvAdjSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.UpgradeAdvAdjSuppForm = UpgradeAdvAdjSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var UpgradeAdvAdjSuppRow;
+        (function (UpgradeAdvAdjSuppRow) {
+            UpgradeAdvAdjSuppRow.idProperty = 'UpgradeAdvAdjId';
+            UpgradeAdvAdjSuppRow.nameProperty = 'CreatedByName';
+            UpgradeAdvAdjSuppRow.localTextPrefix = 'DWSupport.UpgradeAdvAdjSupp';
+        })(UpgradeAdvAdjSuppRow = DWSupport.UpgradeAdvAdjSuppRow || (DWSupport.UpgradeAdvAdjSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var UpgradeAdvAdjSuppService;
+        (function (UpgradeAdvAdjSuppService) {
+            UpgradeAdvAdjSuppService.baseUrl = 'DWSupport/UpgradeAdvAdjSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                UpgradeAdvAdjSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(UpgradeAdvAdjSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(UpgradeAdvAdjSuppService = DWSupport.UpgradeAdvAdjSuppService || (DWSupport.UpgradeAdvAdjSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var VwGetSeaPortCodeRow;
         (function (VwGetSeaPortCodeRow) {
             VwGetSeaPortCodeRow.idProperty = 'PortCode';
@@ -12362,6 +12429,52 @@ var DAP;
             return TblStrategicPriceControlGrid;
         }(Serenity.EntityGrid));
         DWSupport.TblStrategicPriceControlGrid = TblStrategicPriceControlGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var UpgradeAdvAdjSuppDialog = /** @class */ (function (_super) {
+            __extends(UpgradeAdvAdjSuppDialog, _super);
+            function UpgradeAdvAdjSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.UpgradeAdvAdjSuppForm(_this.idPrefix);
+                return _this;
+            }
+            UpgradeAdvAdjSuppDialog.prototype.getFormKey = function () { return DWSupport.UpgradeAdvAdjSuppForm.formKey; };
+            UpgradeAdvAdjSuppDialog.prototype.getIdProperty = function () { return DWSupport.UpgradeAdvAdjSuppRow.idProperty; };
+            UpgradeAdvAdjSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.UpgradeAdvAdjSuppRow.localTextPrefix; };
+            UpgradeAdvAdjSuppDialog.prototype.getNameProperty = function () { return DWSupport.UpgradeAdvAdjSuppRow.nameProperty; };
+            UpgradeAdvAdjSuppDialog.prototype.getService = function () { return DWSupport.UpgradeAdvAdjSuppService.baseUrl; };
+            UpgradeAdvAdjSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UpgradeAdvAdjSuppDialog);
+            return UpgradeAdvAdjSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.UpgradeAdvAdjSuppDialog = UpgradeAdvAdjSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var UpgradeAdvAdjSuppGrid = /** @class */ (function (_super) {
+            __extends(UpgradeAdvAdjSuppGrid, _super);
+            function UpgradeAdvAdjSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            UpgradeAdvAdjSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.UpgradeAdvAdjSupp'; };
+            UpgradeAdvAdjSuppGrid.prototype.getDialogType = function () { return DWSupport.UpgradeAdvAdjSuppDialog; };
+            UpgradeAdvAdjSuppGrid.prototype.getIdProperty = function () { return DWSupport.UpgradeAdvAdjSuppRow.idProperty; };
+            UpgradeAdvAdjSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.UpgradeAdvAdjSuppRow.localTextPrefix; };
+            UpgradeAdvAdjSuppGrid.prototype.getService = function () { return DWSupport.UpgradeAdvAdjSuppService.baseUrl; };
+            UpgradeAdvAdjSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], UpgradeAdvAdjSuppGrid);
+            return UpgradeAdvAdjSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.UpgradeAdvAdjSuppGrid = UpgradeAdvAdjSuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;

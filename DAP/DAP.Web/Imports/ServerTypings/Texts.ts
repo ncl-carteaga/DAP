@@ -803,6 +803,19 @@
                 export const StrategicPriceControlId: string;
             }
 
+            namespace UpgradeAdvAdjSupp {
+                export const CommissionPercent: string;
+                export const CreatedByName: string;
+                export const CreatedTs: string;
+                export const EffectiveFromDt: string;
+                export const EffectiveToDt: string;
+                export const ModifiedByNam: string;
+                export const ModifiedTs: string;
+                export const UpgradeAdvAdjId: string;
+                export const UpgradeAmountMax: string;
+                export const UpgradeAmountMin: string;
+            }
+
             namespace VwGetSeaPortCode {
                 export const CountryCode: string;
                 export const PortCode: string;

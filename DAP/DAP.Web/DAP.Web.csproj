@@ -1184,6 +1184,7 @@
     <Content Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\GtfSupp\GtfSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1735,6 +1736,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3281,6 +3284,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4104,6 +4110,12 @@
     <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppPage.cs" />
     <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

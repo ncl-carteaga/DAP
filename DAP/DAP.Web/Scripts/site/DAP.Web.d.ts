@@ -3539,6 +3539,74 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface UpgradeAdvAdjSuppForm {
+        UpgradeAmountMin: Serenity.DecimalEditor;
+        UpgradeAmountMax: Serenity.DecimalEditor;
+        CommissionPercent: Serenity.DecimalEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByName: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+    class UpgradeAdvAdjSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface UpgradeAdvAdjSuppRow {
+        UpgradeAdvAdjId?: number;
+        UpgradeAmountMin?: number;
+        UpgradeAmountMax?: number;
+        CommissionPercent?: number;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
+        CreatedTs?: string;
+        CreatedByName?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace UpgradeAdvAdjSuppRow {
+        const idProperty = "UpgradeAdvAdjId";
+        const nameProperty = "CreatedByName";
+        const localTextPrefix = "DWSupport.UpgradeAdvAdjSupp";
+        const enum Fields {
+            UpgradeAdvAdjId = "UpgradeAdvAdjId",
+            UpgradeAmountMin = "UpgradeAmountMin",
+            UpgradeAmountMax = "UpgradeAmountMax",
+            CommissionPercent = "CommissionPercent",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
+            CreatedTs = "CreatedTs",
+            CreatedByName = "CreatedByName",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace UpgradeAdvAdjSuppService {
+        const baseUrl = "DWSupport/UpgradeAdvAdjSupp";
+        function Create(request: Serenity.SaveRequest<UpgradeAdvAdjSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<UpgradeAdvAdjSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<UpgradeAdvAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<UpgradeAdvAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/UpgradeAdvAdjSupp/Create",
+            Update = "DWSupport/UpgradeAdvAdjSupp/Update",
+            Delete = "DWSupport/UpgradeAdvAdjSupp/Delete",
+            Retrieve = "DWSupport/UpgradeAdvAdjSupp/Retrieve",
+            List = "DWSupport/UpgradeAdvAdjSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
     interface VwGetSeaPortCodeRow {
         PortCode?: string;
         PortName?: string;
@@ -9786,6 +9854,26 @@ declare namespace DAP.DWSupport {
         protected getService(): string;
         constructor(container: JQuery);
         protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class UpgradeAdvAdjSuppDialog extends Serenity.EntityDialog<UpgradeAdvAdjSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: UpgradeAdvAdjSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class UpgradeAdvAdjSuppGrid extends Serenity.EntityGrid<UpgradeAdvAdjSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof UpgradeAdvAdjSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.Membership {
