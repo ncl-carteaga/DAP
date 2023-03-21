@@ -10942,6 +10942,12 @@ var DAP;
             GtfSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.GtfSuppRow.localTextPrefix; };
             GtfSuppDialog.prototype.getNameProperty = function () { return DWSupport.GtfSuppRow.nameProperty; };
             GtfSuppDialog.prototype.getService = function () { return DWSupport.GtfSuppService.baseUrl; };
+            GtfSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                //b.splice(Q.indexOf(b, x => x.cssClass == "apply-changes-button"), 1);
+                return b;
+            };
             GtfSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], GtfSuppDialog);
