@@ -9675,6 +9675,24 @@ button.ui-button {
 .s-DWSupport-PsGlAccountSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-FinPlannedCapacitySuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-FinPlannedCapacitySuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-CmiSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CmiSuppDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-GtfSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-GtfSuppDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-UpgradeAdvAdjSuppDialog > .size {
   width: 650px;
 }

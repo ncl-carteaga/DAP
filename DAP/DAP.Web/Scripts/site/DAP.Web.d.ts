@@ -1494,6 +1494,158 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface CmiSuppForm {
+        ShipCd: Serenity.LookupEditor;
+        SailId: Serenity.IntegerEditor;
+        AgencyId: Serenity.IntegerEditor;
+        CmiTypeCd: Serenity.StringEditor;
+        CruiseRevAmt: Serenity.DecimalEditor;
+        NcfAmt: Serenity.DecimalEditor;
+        CommissionAmt: Serenity.DecimalEditor;
+        CmiAmenityCostAmt: Serenity.DecimalEditor;
+        ContractDat: Serenity.DateEditor;
+        CabinQty: Serenity.IntegerEditor;
+        PaxQty: Serenity.IntegerEditor;
+        BookingCurrencyCd: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        CmiSubTypeCd: Serenity.StringEditor;
+        CmiSubType2Cd: Serenity.StringEditor;
+        VoyageCd: Serenity.StringEditor;
+        SmCabinFareAmt: Serenity.DecimalEditor;
+        SmCabinFareNonrevAmt: Serenity.DecimalEditor;
+        SmExcessTicketingAmt: Serenity.DecimalEditor;
+        SmCruiseDiscAmt: Serenity.DecimalEditor;
+        SmCostOfSalesAmt: Serenity.DecimalEditor;
+        SmGuestFeesGratsExpenseAmt: Serenity.DecimalEditor;
+        SmCreditCardCostAmt: Serenity.DecimalEditor;
+        SailDat: Serenity.DateEditor;
+        SailDayQty: Serenity.IntegerEditor;
+        CharterDesc: Serenity.StringEditor;
+        RmContractAdjNtrNoSvcAmt: Serenity.StringEditor;
+        OfficeCd: Serenity.StringEditor;
+        RmFinalGuestQty: Serenity.IntegerEditor;
+        RmFinalAdjNtrAmt: Serenity.IntegerEditor;
+        RmFinalAdjNtrNoSvcAmt: Serenity.IntegerEditor;
+        DistrictNbr: Serenity.StringEditor;
+        ContractPriceAmt: Serenity.IntegerEditor;
+        DepositDat: Serenity.DateEditor;
+    }
+    class CmiSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CmiSuppRow {
+        CmiSurKey?: number;
+        CmiTypeCd?: string;
+        SailId?: number;
+        CruiseRevAmt?: number;
+        NcfAmt?: number;
+        CommissionAmt?: number;
+        CmiAmenityCostAmt?: number;
+        AgencyId?: number;
+        ContractDat?: string;
+        CabinQty?: number;
+        PaxQty?: number;
+        BookingCurrencyCd?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        CmiSubTypeCd?: string;
+        CmiSubType2Cd?: string;
+        VoyageCd?: string;
+        SmCabinFareAmt?: number;
+        SmCabinFareNonrevAmt?: number;
+        SmExcessTicketingAmt?: number;
+        SmCruiseDiscAmt?: number;
+        SmCostOfSalesAmt?: number;
+        SmGuestFeesGratsExpenseAmt?: number;
+        SmCreditCardCostAmt?: number;
+        ShipCd?: string;
+        SailDat?: string;
+        SailDayQty?: number;
+        CharterDesc?: string;
+        RmContractAdjNtrNoSvcAmt?: string;
+        OfficeCd?: string;
+        RmFinalGuestQty?: number;
+        RmFinalAdjNtrAmt?: number;
+        RmFinalAdjNtrNoSvcAmt?: number;
+        DistrictNbr?: string;
+        ContractPriceAmt?: number;
+        DepositDat?: string;
+    }
+    namespace CmiSuppRow {
+        const idProperty = "CmiSurKey";
+        const nameProperty = "CmiTypeCd";
+        const localTextPrefix = "DWSupport.CmiSupp";
+        const enum Fields {
+            CmiSurKey = "CmiSurKey",
+            CmiTypeCd = "CmiTypeCd",
+            SailId = "SailId",
+            CruiseRevAmt = "CruiseRevAmt",
+            NcfAmt = "NcfAmt",
+            CommissionAmt = "CommissionAmt",
+            CmiAmenityCostAmt = "CmiAmenityCostAmt",
+            AgencyId = "AgencyId",
+            ContractDat = "ContractDat",
+            CabinQty = "CabinQty",
+            PaxQty = "PaxQty",
+            BookingCurrencyCd = "BookingCurrencyCd",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            CmiSubTypeCd = "CmiSubTypeCd",
+            CmiSubType2Cd = "CmiSubType2Cd",
+            VoyageCd = "VoyageCd",
+            SmCabinFareAmt = "SmCabinFareAmt",
+            SmCabinFareNonrevAmt = "SmCabinFareNonrevAmt",
+            SmExcessTicketingAmt = "SmExcessTicketingAmt",
+            SmCruiseDiscAmt = "SmCruiseDiscAmt",
+            SmCostOfSalesAmt = "SmCostOfSalesAmt",
+            SmGuestFeesGratsExpenseAmt = "SmGuestFeesGratsExpenseAmt",
+            SmCreditCardCostAmt = "SmCreditCardCostAmt",
+            ShipCd = "ShipCd",
+            SailDat = "SailDat",
+            SailDayQty = "SailDayQty",
+            CharterDesc = "CharterDesc",
+            RmContractAdjNtrNoSvcAmt = "RmContractAdjNtrNoSvcAmt",
+            OfficeCd = "OfficeCd",
+            RmFinalGuestQty = "RmFinalGuestQty",
+            RmFinalAdjNtrAmt = "RmFinalAdjNtrAmt",
+            RmFinalAdjNtrNoSvcAmt = "RmFinalAdjNtrNoSvcAmt",
+            DistrictNbr = "DistrictNbr",
+            ContractPriceAmt = "ContractPriceAmt",
+            DepositDat = "DepositDat"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CmiSuppService {
+        const baseUrl = "DWSupport/CmiSupp";
+        function Create(request: Serenity.SaveRequest<CmiSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CmiSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CmiSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CmiSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/CmiSupp/Create",
+            Update = "DWSupport/CmiSupp/Update",
+            Delete = "DWSupport/CmiSupp/Delete",
+            Retrieve = "DWSupport/CmiSupp/Retrieve",
+            List = "DWSupport/CmiSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface CurrencyExchangeRateSuppForm {
         CurrencyCd: Serenity.StringEditor;
         SailFromDat: Serenity.DateEditor;
@@ -1642,6 +1794,83 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/DistrictMasterSupp/Delete",
             Retrieve = "DWSupport/DistrictMasterSupp/Retrieve",
             List = "DWSupport/DistrictMasterSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface FinPlannedCapacitySuppForm {
+        ShipCd: Serenity.StringEditor;
+        SailFromDat: Serenity.DateEditor;
+        SailToDat: Serenity.DateEditor;
+        FinancialCabinCapacityQty: Serenity.IntegerEditor;
+        FinancialGuestCapacityQty: Serenity.IntegerEditor;
+        CapacityDesc: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        UnadjustedFinancialCabinCapacityQty: Serenity.IntegerEditor;
+        UnadjustedFinancialGuestCapacityQty: Serenity.IntegerEditor;
+    }
+    class FinPlannedCapacitySuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface FinPlannedCapacitySuppRow {
+        FinPlannedCapacitySurKey?: number;
+        ShipCd?: string;
+        SailFromDat?: string;
+        SailToDat?: string;
+        FinancialCabinCapacityQty?: number;
+        FinancialGuestCapacityQty?: number;
+        CapacityDesc?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+        UnadjustedFinancialCabinCapacityQty?: number;
+        UnadjustedFinancialGuestCapacityQty?: number;
+    }
+    namespace FinPlannedCapacitySuppRow {
+        const idProperty = "FinPlannedCapacitySurKey";
+        const nameProperty = "ShipCd";
+        const localTextPrefix = "DWSupport.FinPlannedCapacitySupp";
+        const enum Fields {
+            FinPlannedCapacitySurKey = "FinPlannedCapacitySurKey",
+            ShipCd = "ShipCd",
+            SailFromDat = "SailFromDat",
+            SailToDat = "SailToDat",
+            FinancialCabinCapacityQty = "FinancialCabinCapacityQty",
+            FinancialGuestCapacityQty = "FinancialGuestCapacityQty",
+            CapacityDesc = "CapacityDesc",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedByNam = "ModifiedByNam",
+            ModifiedTs = "ModifiedTs",
+            UnadjustedFinancialCabinCapacityQty = "UnadjustedFinancialCabinCapacityQty",
+            UnadjustedFinancialGuestCapacityQty = "UnadjustedFinancialGuestCapacityQty"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace FinPlannedCapacitySuppService {
+        const baseUrl = "DWSupport/FinPlannedCapacitySupp";
+        function Create(request: Serenity.SaveRequest<FinPlannedCapacitySuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<FinPlannedCapacitySuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<FinPlannedCapacitySuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<FinPlannedCapacitySuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/FinPlannedCapacitySupp/Create",
+            Update = "DWSupport/FinPlannedCapacitySupp/Update",
+            Delete = "DWSupport/FinPlannedCapacitySupp/Delete",
+            Retrieve = "DWSupport/FinPlannedCapacitySupp/Retrieve",
+            List = "DWSupport/FinPlannedCapacitySupp/List"
         }
     }
 }
@@ -1814,6 +2043,77 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/FullShipChartersSupp/Delete",
             Retrieve = "DWSupport/FullShipChartersSupp/Retrieve",
             List = "DWSupport/FullShipChartersSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface GtfSuppForm {
+        ShipCd: Serenity.LookupEditor;
+        CategoryCd: GTFCategoryEditor;
+        EmbarkDebarkCd: Serenity.LookupEditor;
+        Rate: Serenity.DecimalEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByName: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+    class GtfSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface GtfSuppRow {
+        GtfsuppId?: number;
+        ShipCd?: string;
+        CategoryCd?: string;
+        EmbarkDebarkCd?: string;
+        Rate?: number;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace GtfSuppRow {
+        const idProperty = "GtfsuppId";
+        const nameProperty = "ShipCd";
+        const localTextPrefix = "DWSupport.GtfSupp";
+        const enum Fields {
+            GtfsuppId = "GtfsuppId",
+            ShipCd = "ShipCd",
+            CategoryCd = "CategoryCd",
+            EmbarkDebarkCd = "EmbarkDebarkCd",
+            Rate = "Rate",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace GtfSuppService {
+        const baseUrl = "DWSupport/GtfSupp";
+        function Create(request: Serenity.SaveRequest<GtfSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GtfSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GtfSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GtfSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/GtfSupp/Create",
+            Update = "DWSupport/GtfSupp/Update",
+            Delete = "DWSupport/GtfSupp/Delete",
+            Retrieve = "DWSupport/GtfSupp/Retrieve",
+            List = "DWSupport/GtfSupp/List"
         }
     }
 }
@@ -9026,6 +9326,26 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class CmiSuppDialog extends Serenity.EntityDialog<CmiSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CmiSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CmiSuppGrid extends Serenity.EntityGrid<CmiSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CmiSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
     class CurrencyExchangeRateSuppDialog extends Serenity.EntityDialog<CurrencyExchangeRateSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -9070,6 +9390,26 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class FinPlannedCapacitySuppDialog extends Serenity.EntityDialog<FinPlannedCapacitySuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: FinPlannedCapacitySuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class FinPlannedCapacitySuppGrid extends Serenity.EntityGrid<FinPlannedCapacitySuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof FinPlannedCapacitySuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
     class FinReportPublishingSuppDialog extends Serenity.EntityDialog<FinReportPublishingSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -9109,6 +9449,39 @@ declare namespace DAP.DWSupport {
     class FullShipChartersSuppGrid extends Serenity.EntityGrid<FullShipChartersSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof FullShipChartersSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    /**
+     * Our select editor with hardcoded values.
+     *
+     * When you define a new editor type, make sure you build
+     * and transform templates for it to be available
+     * in server side forms, e.g. [HardCodedValuesEditor]
+     */
+    class GTFCategoryEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class GtfSuppDialog extends Serenity.EntityDialog<GtfSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GtfSuppForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class GtfSuppGrid extends Serenity.EntityGrid<GtfSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GtfSuppDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

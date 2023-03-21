@@ -15,4 +15,4 @@ using MyPages2 = DAP.PCHDW.Pages;
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Revenue Adhoc Management", typeof(MyPages.RevenueAdhocManagementController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Transfer Estimate OCI Amount", typeof(MyPages.TransferEstimateOciAmtController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Job Management", typeof(MyPages.JobManagementController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strateg/Report Control", typeof(MyPages2.VwSqlJobListController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Disable|Enable Report Jobs", typeof(MyPages2.VwSqlJobListController), icon: null)]

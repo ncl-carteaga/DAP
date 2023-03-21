@@ -98,6 +98,11 @@ namespace MVC
                 public const string CategoryMasterSuppIndex = "~/Modules/DWSupport/CategoryMasterSupp/CategoryMasterSuppIndex.cshtml";
             }
 
+            public static class CmiSupp
+            {
+                public const string CmiSuppIndex = "~/Modules/DWSupport/CmiSupp/CmiSuppIndex.cshtml";
+            }
+
             public static class CurrencyExchangeRateSupp
             {
                 public const string CurrencyExchangeRateSuppIndex = "~/Modules/DWSupport/CurrencyExchangeRateSupp/CurrencyExchangeRateSuppIndex.cshtml";
@@ -108,6 +113,11 @@ namespace MVC
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
             }
 
+            public static class FinPlannedCapacitySupp
+            {
+                public const string FinPlannedCapacitySuppIndex = "~/Modules/DWSupport/FinPlannedCapacitySupp/FinPlannedCapacitySuppIndex.cshtml";
+            }
+
             public static class FinReportPublishingSupp
             {
                 public const string FinReportPublishingSuppIndex = "~/Modules/DWSupport/FinReportPublishingSupp/FinReportPublishingSuppIndex.cshtml";
@@ -116,6 +126,11 @@ namespace MVC
             public static class FullShipChartersSupp
             {
                 public const string FullShipChartersSuppIndex = "~/Modules/DWSupport/FullShipChartersSupp/FullShipChartersSuppIndex.cshtml";
+            }
+
+            public static class GtfSupp
+            {
+                public const string GtfSuppIndex = "~/Modules/DWSupport/GtfSupp/GtfSuppIndex.cshtml";
             }
 
             public static class GuestPreventDeparture
