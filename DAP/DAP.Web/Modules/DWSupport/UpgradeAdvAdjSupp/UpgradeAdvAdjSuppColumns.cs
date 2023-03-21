@@ -24,6 +24,6 @@ namespace DAP.DWSupport.Columns
         [EditLink]
         public String CreatedByName { get; set; }
         public DateTime ModifiedTs { get; set; }
-        public String ModifiedByNam { get; set; }
+        public String ModifiedByName { get; set; }
     }
 }

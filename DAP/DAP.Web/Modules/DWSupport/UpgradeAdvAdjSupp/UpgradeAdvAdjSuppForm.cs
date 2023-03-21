@@ -25,6 +25,6 @@ namespace DAP.DWSupport.Forms
         [Visible(false)]
         public DateTime ModifiedTs { get; set; }
         [Visible(false)]
-        public String ModifiedByNam { get; set; }
+        public String ModifiedByName { get; set; }
     }
 }
