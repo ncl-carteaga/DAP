@@ -187,6 +187,11 @@ namespace MVC
             {
                 public const string TblStrategicPriceControlIndex = "~/Modules/DWSupport/TblStrategicPriceControl/TblStrategicPriceControlIndex.cshtml";
             }
+
+            public static class UpgradeAdvAdjSupp
+            {
+                public const string UpgradeAdvAdjSuppIndex = "~/Modules/DWSupport/UpgradeAdvAdjSupp/UpgradeAdvAdjSuppIndex.cshtml";
+            }
         }
 
         public static class Errors

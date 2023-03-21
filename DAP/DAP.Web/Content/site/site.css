@@ -9675,6 +9675,12 @@ button.ui-button {
 .s-DWSupport-PsGlAccountSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-UpgradeAdvAdjSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-UpgradeAdvAdjSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
