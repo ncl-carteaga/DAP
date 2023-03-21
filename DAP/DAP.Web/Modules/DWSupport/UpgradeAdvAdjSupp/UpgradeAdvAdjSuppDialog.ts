@@ -11,5 +11,15 @@ namespace DAP.DWSupport {
 
         protected form = new UpgradeAdvAdjSuppForm(this.idPrefix);
 
+
+        protected getToolbarButtons(): Serenity.ToolButton[] {
+            var b = super.getToolbarButtons();
+
+            b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+
+            return b;
+
+        }
+
     }
 }
