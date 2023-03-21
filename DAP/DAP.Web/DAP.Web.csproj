@@ -1183,6 +1183,7 @@
     <Content Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideIndex.cshtml" />
     <Content Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\GtfSupp\GtfSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1246,6 +1247,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FullShipChartersSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureColumns.ts">
@@ -1729,6 +1733,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3266,6 +3272,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3282,6 +3297,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\DWSupport.GTFCategoryEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\DWSupport.SelectYNEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
@@ -3443,6 +3461,8 @@
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesChannelLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesRepLookup.cs" />
     <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
+    <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GTFPortLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImportForm.cs" />
@@ -4078,6 +4098,12 @@
     <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppPage.cs" />
     <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

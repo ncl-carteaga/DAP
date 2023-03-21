@@ -51,6 +51,9 @@ namespace DAP.DWSupport
             public const string PsGlAccountSupp = "DWSupp:Page:PsGlAccountSupp";
             public const string CmiSupp = "DWSupp:Page:CmiSupp";
             public const string FinPlannedCapacitySupp = "DWSupp:Page:FinPlannedCapacitySupp";
+            public const string GtfSupp = "DWSupp:Page:GtfSupp";
+
+            
         }
     }    
 }

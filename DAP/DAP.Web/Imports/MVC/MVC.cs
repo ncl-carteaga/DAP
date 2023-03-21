@@ -128,6 +128,11 @@ namespace MVC
                 public const string FullShipChartersSuppIndex = "~/Modules/DWSupport/FullShipChartersSupp/FullShipChartersSuppIndex.cshtml";
             }
 
+            public static class GtfSupp
+            {
+                public const string GtfSuppIndex = "~/Modules/DWSupport/GtfSupp/GtfSuppIndex.cshtml";
+            }
+
             public static class GuestPreventDeparture
             {
                 public const string GuestPreventDepartureIndex = "~/Modules/DWSupport/GuestPreventDeparture/GuestPreventDepartureIndex.cshtml";

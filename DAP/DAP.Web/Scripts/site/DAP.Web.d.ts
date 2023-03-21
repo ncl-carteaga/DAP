@@ -2049,6 +2049,77 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface GtfSuppForm {
+        ShipCd: Serenity.LookupEditor;
+        CategoryCd: GTFCategoryEditor;
+        EmbarkDebarkCd: Serenity.LookupEditor;
+        Rate: Serenity.DecimalEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByName: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+    class GtfSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface GtfSuppRow {
+        GtfsuppId?: number;
+        ShipCd?: string;
+        CategoryCd?: string;
+        EmbarkDebarkCd?: string;
+        Rate?: number;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace GtfSuppRow {
+        const idProperty = "GtfsuppId";
+        const nameProperty = "ShipCd";
+        const localTextPrefix = "DWSupport.GtfSupp";
+        const enum Fields {
+            GtfsuppId = "GtfsuppId",
+            ShipCd = "ShipCd",
+            CategoryCd = "CategoryCd",
+            EmbarkDebarkCd = "EmbarkDebarkCd",
+            Rate = "Rate",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace GtfSuppService {
+        const baseUrl = "DWSupport/GtfSupp";
+        function Create(request: Serenity.SaveRequest<GtfSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<GtfSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<GtfSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<GtfSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/GtfSupp/Create",
+            Update = "DWSupport/GtfSupp/Update",
+            Delete = "DWSupport/GtfSupp/Delete",
+            Retrieve = "DWSupport/GtfSupp/Retrieve",
+            List = "DWSupport/GtfSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface GuestPreventDepartureForm {
         GuestFirstNam: Serenity.StringEditor;
         GuestLastNam: Serenity.StringEditor;
@@ -9310,6 +9381,38 @@ declare namespace DAP.DWSupport {
     class FullShipChartersSuppGrid extends Serenity.EntityGrid<FullShipChartersSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof FullShipChartersSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    /**
+     * Our select editor with hardcoded values.
+     *
+     * When you define a new editor type, make sure you build
+     * and transform templates for it to be available
+     * in server side forms, e.g. [HardCodedValuesEditor]
+     */
+    class GTFCategoryEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class GtfSuppDialog extends Serenity.EntityDialog<GtfSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: GtfSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class GtfSuppGrid extends Serenity.EntityGrid<GtfSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof GtfSuppDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
