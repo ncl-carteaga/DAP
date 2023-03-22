@@ -81,11 +81,11 @@ namespace DAP.DWSupport.Entities
             set { Fields.ModifiedTs[this] = value; }
         }
 
-        [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAM"), Size(50)]
-        public String ModifiedByNam
+        [DisplayName("Modified By Nam"), Column("MODIFIED_BY_NAME"), Size(50)]
+        public String ModifiedByName
         {
-            get { return Fields.ModifiedByNam[this]; }
-            set { Fields.ModifiedByNam[this] = value; }
+            get { return Fields.ModifiedByName[this]; }
+            set { Fields.ModifiedByName[this] = value; }
         }
 
         IIdField IIdRow.IdField
@@ -116,7 +116,7 @@ namespace DAP.DWSupport.Entities
             public DateTimeField CreatedTs;
             public StringField CreatedByName;
             public DateTimeField ModifiedTs;
-            public StringField ModifiedByNam;
+            public StringField ModifiedByName;
         }
     }
 }

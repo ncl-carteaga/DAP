@@ -25,6 +25,6 @@ namespace DAP.DWSupport.Columns
         public DateTime CreatedTs { get; set; }    
         public String CreatedByName { get; set; }
         public DateTime ModifiedTs { get; set; }
-        public String ModifiedByNam { get; set; }
+        public String ModifiedByName { get; set; }
     }
 }

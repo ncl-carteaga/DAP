@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.DWSupport.Repositories
 {
+    using DAP.DWSupport.Entities;
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
@@ -42,6 +43,15 @@ namespace DAP.DWSupport.Repositories
             protected override void BeforeSave()
             {
                 base.BeforeSave();
+
+                if (this.Connection.Exists<UpgradeAdvAdjSuppRow>(
+                        MyRow.Fields.UpgradeAmountMin == this.Row.UpgradeAmountMin.Value &&
+                        MyRow.Fields.UpgradeAmountMax == this.Row.UpgradeAmountMax.Value &&
+                        MyRow.Fields.EffectiveToDt.IsNull()
+                    ))
+                {
+                    throw new ValidationError("Open record found for this min, max upgrade combination.");
+                }
             }
 
             protected override void SetInternalFields()
@@ -54,12 +64,12 @@ namespace DAP.DWSupport.Repositories
                 {
                     Row.CreatedByName = user.Username.ToUpper();
                     Row.CreatedTs = DateTime.Now;
-                    Row.ModifiedByNam = user.Username.ToUpper();
+                    Row.ModifiedByName = user.Username.ToUpper();
                     Row.ModifiedTs = DateTime.Now;
                 }
                 if (IsUpdate)
                 {
-                    Row.ModifiedByNam = user.Username.ToUpper();
+                    Row.ModifiedByName = user.Username.ToUpper();
                     Row.ModifiedTs = DateTime.Now;
                 }
             }
