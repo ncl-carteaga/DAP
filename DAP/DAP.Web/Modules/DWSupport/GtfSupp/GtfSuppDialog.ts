@@ -11,6 +11,7 @@ namespace DAP.DWSupport {
 
         protected form = new GtfSuppForm(this.idPrefix);
 
+        
         protected getToolbarButtons(): Serenity.ToolButton[] {
             var b = super.getToolbarButtons();
 

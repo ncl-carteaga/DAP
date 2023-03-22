@@ -9864,6 +9864,7 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: UpgradeAdvAdjSuppForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {

@@ -48,8 +48,8 @@ namespace DAP.DWSupport.Repositories
                 {
                     if (this.Connection.Exists<GtfSuppRow>(MyRow.Fields.ShipCd == Row.ShipCd && 
                                                            MyRow.Fields.CategoryCd == Row.CategoryCd && 
-                                                           MyRow.Fields.EmbarkDebarkCd == Row.EmbarkDebarkCd && 
-                                                           MyRow.Fields.ModifiedTs.IsNull()  && 
+                                                           MyRow.Fields.EmbarkDebarkCd == Row.EmbarkDebarkCd &&
+                                                           MyRow.Fields.EffectiveToDt > DateTime.Now &&
                                                            MyRow.Fields.GtfsuppId != Row.GtfsuppId.Value))
                     {
                         throw new ValidationError("An Active GTF Already Exists For This Ship CD, Category CD and Port CD combination");
@@ -61,7 +61,7 @@ namespace DAP.DWSupport.Repositories
                     if (this.Connection.Exists<GtfSuppRow>(MyRow.Fields.ShipCd == Row.ShipCd && 
                                                            MyRow.Fields.CategoryCd == Row.CategoryCd && 
                                                            MyRow.Fields.EmbarkDebarkCd == Row.EmbarkDebarkCd && 
-                                                           MyRow.Fields.EffectiveToDt.IsNull() ))
+                                                           MyRow.Fields.EffectiveToDt > DateTime.Now))
                     {
                         throw new ValidationError("An Active GTF Already Exists For This Ship CD, Category CD and Port CD combination");
                     }

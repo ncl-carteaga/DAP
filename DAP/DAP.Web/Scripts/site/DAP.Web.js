@@ -12447,6 +12447,11 @@ var DAP;
             UpgradeAdvAdjSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.UpgradeAdvAdjSuppRow.localTextPrefix; };
             UpgradeAdvAdjSuppDialog.prototype.getNameProperty = function () { return DWSupport.UpgradeAdvAdjSuppRow.nameProperty; };
             UpgradeAdvAdjSuppDialog.prototype.getService = function () { return DWSupport.UpgradeAdvAdjSuppService.baseUrl; };
+            UpgradeAdvAdjSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
             UpgradeAdvAdjSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], UpgradeAdvAdjSuppDialog);

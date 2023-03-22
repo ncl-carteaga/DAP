@@ -15,13 +15,14 @@ namespace DAP.DWSupport.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 UpgradeAdvAdjId { get; set; }
+        [EditLink]
         public Decimal UpgradeAmountMin { get; set; }
+        [EditLink]
         public Decimal UpgradeAmountMax { get; set; }
         public Decimal CommissionPercent { get; set; }
         public DateTime EffectiveFromDt { get; set; }
         public DateTime EffectiveToDt { get; set; }
-        public DateTime CreatedTs { get; set; }
-        [EditLink]
+        public DateTime CreatedTs { get; set; }    
         public String CreatedByName { get; set; }
         public DateTime ModifiedTs { get; set; }
         public String ModifiedByNam { get; set; }
