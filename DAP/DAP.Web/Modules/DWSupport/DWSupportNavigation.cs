@@ -33,3 +33,4 @@ using MyPages = DAP.DWSupport.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Product Codes", typeof(MyPages.SlProductCodeSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/GTF Supp", typeof(MyPages.GtfSuppController), icon: null)][assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Upgrade Adv Adj Supp", typeof(MyPages.UpgradeAdvAdjSuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Credit Card Adj Supp", typeof(MyPages.CreditCardAdjSuppController), icon: null)]

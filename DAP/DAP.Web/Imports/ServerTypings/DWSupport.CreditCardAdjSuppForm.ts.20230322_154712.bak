@@ -1,0 +1,75 @@
+﻿
+namespace DAP.DWSupport {
+    export class CreditCardAdjSuppForm extends Serenity.PrefixedContext {
+        static formKey = 'DWSupport.CreditCardAdjSupp';
+    }
+
+    export interface CreditCardAdjSuppForm {
+        LocationCd: Serenity.StringEditor;
+        BaseRate: Serenity.DecimalEditor;
+        ParticipationRate: Serenity.DecimalEditor;
+        BlendedRate: Serenity.DecimalEditor;
+        CxBuffer: Serenity.DecimalEditor;
+        ProposedRate: Serenity.DecimalEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByName: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+
+    export class CreditCardAdjSuppForm extends Serenity.PrefixedContext {
+        static formKey = 'DWSupport.CreditCardAdjSupp';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!CreditCardAdjSuppForm.init)  {
+                CreditCardAdjSuppForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.DecimalEditor;
+                var w2 = s.DateEditor;
+
+                Q.initFormType(CreditCardAdjSuppForm, [
+                    'LocationCd', w0,
+                    'BaseRate', w1,
+                    'ParticipationRate', w1,
+                    'BlendedRate', w1,
+                    'CxBuffer', w1,
+                    'ProposedRate', w1,
+                    'EffectiveFromDt', w2,
+                    'EffectiveToDt', w2,
+                    'CreatedTs', w2,
+                    'CreatedByName', w0,
+                    'ModifiedTs', w2,
+                    'ModifiedByNam', w0
+                ]);
+            }
+        }
+    }
+    [,
+        ['LocationCd', () => Serenity.StringEditor],
+        ['BaseRate', () => Serenity.DecimalEditor],
+        ['ParticipationRate', () => Serenity.DecimalEditor],
+        ['BlendedRate', () => Serenity.DecimalEditor],
+        ['CxBuffer', () => Serenity.DecimalEditor],
+        ['ProposedRate', () => Serenity.DecimalEditor],
+        ['EffectiveFromDt', () => Serenity.DateEditor],
+        ['EffectiveToDt', () => Serenity.DateEditor],
+        ['CreatedTs', () => Serenity.DateEditor],
+        ['CreatedByName', () => Serenity.StringEditor],
+        ['ModifiedTs', () => Serenity.DateEditor],
+        ['ModifiedByNam', () => Serenity.StringEditor]
+    ].forEach(x => Object.defineProperty(CreditCardAdjSuppForm.prototype, <string>x[0], {
+        get: function () {
+            return this.w(x[0], (x[1] as any)());
+        },
+        enumerable: true,
+        configurable: true
+    }));
+}
+

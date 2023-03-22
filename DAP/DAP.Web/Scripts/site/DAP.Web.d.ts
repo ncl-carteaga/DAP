@@ -3550,7 +3550,7 @@ declare namespace DAP.DWSupport {
         CreatedTs: Serenity.DateEditor;
         CreatedByName: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
-        ModifiedByNam: Serenity.StringEditor;
+        ModifiedByName: Serenity.StringEditor;
     }
     class UpgradeAdvAdjSuppForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -3569,7 +3569,7 @@ declare namespace DAP.DWSupport {
         CreatedTs?: string;
         CreatedByName?: string;
         ModifiedTs?: string;
-        ModifiedByNam?: string;
+        ModifiedByName?: string;
     }
     namespace UpgradeAdvAdjSuppRow {
         const idProperty = "UpgradeAdvAdjId";
@@ -3585,7 +3585,7 @@ declare namespace DAP.DWSupport {
             CreatedTs = "CreatedTs",
             CreatedByName = "CreatedByName",
             ModifiedTs = "ModifiedTs",
-            ModifiedByNam = "ModifiedByNam"
+            ModifiedByName = "ModifiedByName"
         }
     }
 }
@@ -8791,11 +8791,13 @@ declare namespace DAP.Administration {
         protected getButtons(): Serenity.ToolButton[];
         protected createToolbarExtensions(): void;
         private getSortedGroupAndPermissionKeys;
-        value: UserPermissionRow[];
+        get value(): UserPermissionRow[];
+        set value(value: UserPermissionRow[]);
         private _rolePermissions;
-        rolePermissions: string[];
+        get rolePermissions(): string[];
+        set rolePermissions(value: string[]);
         private _implicitPermissions;
-        implicitPermissions: Q.Dictionary<string[]>;
+        set implicitPermissions(value: Q.Dictionary<string[]>);
     }
     interface PermissionCheckEditorOptions {
         showRevoke?: boolean;
@@ -8871,9 +8873,12 @@ declare namespace DAP {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
         constructor();
         cancelled: boolean;
-        max: number;
-        value: number;
-        title: string;
+        get max(): number;
+        set max(value: number);
+        get value(): number;
+        set value(value: number);
+        get title(): string;
+        set title(value: string);
         cancelTitle: string;
         getDialogOptions(): JQueryUI.DialogOptions;
         initDialog(): void;
@@ -8961,7 +8966,8 @@ declare namespace DAP.Common {
         protected editItem(entityOrId: any): void;
         getEditValue(property: any, target: any): void;
         setEditValue(source: any, property: any): void;
-        value: TEntity[];
+        get value(): TEntity[];
+        set value(value: TEntity[]);
         protected getGridCanLoad(): boolean;
         protected usePager(): boolean;
         protected getInitialTitle(): any;
@@ -9001,7 +9007,8 @@ declare namespace DAP.Membership {
             required: any;
             editorParams: any;
         }[];
-        value: any;
+        get value(): any;
+        set value(v: any);
         static prompt(title: string, message: string, value: string, validateValue: (string: any) => boolean): void;
     }
 }
@@ -9015,9 +9022,12 @@ declare namespace DAP {
         private cascadeLink;
         constructor(hidden: JQuery, options: TOptions);
         private setCascadeFrom;
-        cascadeValue: any;
-        cascadeField: any;
-        cascadeFrom: any;
+        get cascadeValue(): any;
+        set cascadeValue(value: any);
+        get cascadeField(): any;
+        set cascadeField(value: any);
+        get cascadeFrom(): any;
+        set cascadeFrom(value: any);
         private getCascadeFromValue;
         protected getIncludeColumns(): string[];
         protected getSort(): string[];
@@ -9264,7 +9274,8 @@ declare namespace DAP.DWSupport {
         protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
         private _amenityID;
-        amenityID: number;
+        get amenityID(): number;
+        set amenityID(value: number);
     }
 }
 declare namespace DAP.DWSupport {
@@ -9571,7 +9582,8 @@ declare namespace DAP.DWSupport {
         protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
         private _invoiceItemTypeCd;
-        invoiceItemTypeCd: number;
+        get invoiceItemTypeCd(): number;
+        set invoiceItemTypeCd(value: number);
     }
 }
 declare namespace DAP.DWSupport {
@@ -9995,7 +10007,8 @@ declare namespace DAP.NCLHDSAR {
         constructor();
         protected getTemplate(): string;
         protected getDialogOptions(): JQueryUI.DialogOptions;
-        text: string;
+        get text(): string;
+        set text(value: string);
         okClick: () => void;
     }
 }
@@ -10009,7 +10022,8 @@ declare namespace DAP.NCLHDSAR {
         protected addClick(): void;
         protected editClick(e: any): void;
         deleteClick(e: any): void;
-        value: NoteRow[];
+        get value(): NoteRow[];
+        set value(value: NoteRow[]);
         getEditValue(prop: Serenity.PropertyItem, target: any): void;
         setEditValue(source: any, prop: Serenity.PropertyItem): void;
         get_isDirty(): boolean;
@@ -10058,7 +10072,8 @@ declare namespace DAP.NCLHDSAR {
         protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
         private _RequestID;
-        requestID: string;
+        get requestID(): string;
+        set requestID(value: string);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -10207,7 +10222,8 @@ declare namespace DAP.NCLHDSAR {
         protected getInitialTitle(): any;
         protected getGridCanLoad(): boolean;
         private _RequestID;
-        requestID: number;
+        get requestID(): number;
+        set requestID(value: number);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -11278,4 +11294,136 @@ declare namespace DAP.SSISConfig {
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
     }
+}
+declare namespace DAP.DWSupport {
+    interface CreditCardAdjSuppForm {
+        LocationCd: Serenity.LookupEditor;
+        BaseRate: Serenity.DecimalEditor;
+        ParticipationRate: Serenity.DecimalEditor;
+        BlendedRate: Serenity.DecimalEditor;
+        CxBuffer: Serenity.DecimalEditor;
+        ProposedRate: Serenity.DecimalEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByName: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+    class CreditCardAdjSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CreditCardAdjSuppRow {
+        CreditcardAdjId?: number;
+        LocationCd?: string;
+        BaseRate?: number;
+        ParticipationRate?: number;
+        BlendedRate?: number;
+        CxBuffer?: number;
+        ProposedRate?: number;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
+        CreatedTs?: string;
+        CreatedByName?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace CreditCardAdjSuppRow {
+        const idProperty = "CreditcardAdjId";
+        const nameProperty = "LocationCd";
+        const localTextPrefix = "DWSupport.CreditCardAdjSupp";
+        const enum Fields {
+            CreditcardAdjId = "CreditcardAdjId",
+            LocationCd = "LocationCd",
+            BaseRate = "BaseRate",
+            ParticipationRate = "ParticipationRate",
+            BlendedRate = "BlendedRate",
+            CxBuffer = "CxBuffer",
+            ProposedRate = "ProposedRate",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
+            CreatedTs = "CreatedTs",
+            CreatedByName = "CreatedByName",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CreditCardAdjSuppService {
+        const baseUrl = "DWSupport/CreditCardAdjSupp";
+        function Create(request: Serenity.SaveRequest<CreditCardAdjSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CreditCardAdjSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CreditCardAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CreditCardAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/CreditCardAdjSupp/Create",
+            Update = "DWSupport/CreditCardAdjSupp/Update",
+            Delete = "DWSupport/CreditCardAdjSupp/Delete",
+            Retrieve = "DWSupport/CreditCardAdjSupp/Retrieve",
+            List = "DWSupport/CreditCardAdjSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    class CreditCardAdjSuppDialog extends Serenity.EntityDialog<CreditCardAdjSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CreditCardAdjSuppForm;
+        constructor();
+    }
+}
+declare namespace DAP.DWSupport {
+    class CreditCardAdjSuppGrid extends Serenity.EntityGrid<CreditCardAdjSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CreditCardAdjSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.PCHDW {
+    interface DimOfficeRow {
+        Tk?: number;
+        Cd?: string;
+        Desc?: string;
+    }
+    namespace DimOfficeRow {
+        const idProperty = "Tk";
+        const nameProperty = "Cd";
+        const localTextPrefix = "PCHDW.DimOffice";
+        namespace Fields {
+            const Tk: any;
+            const Cd: any;
+            const Desc: any;
+        }
+    }
+}
+declare namespace DAP.PCHDW {
+    namespace DimOfficeService {
+        const baseUrl = "PCHDW/DimOffice";
+        function Create(request: Serenity.SaveRequest<DimOfficeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DimOfficeRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DimOfficeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DimOfficeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
 }

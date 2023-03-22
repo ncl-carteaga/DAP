@@ -1185,6 +1185,7 @@
     <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\GtfSupp\GtfSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1224,6 +1225,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppColumns.ts">
@@ -1741,6 +1745,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3296,6 +3302,21 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimOfficeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimOfficeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4125,6 +4146,15 @@
     <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppPage.cs" />
     <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppForm.cs" />
+    <Compile Include="Modules\PCHDW\DimOffice\DimOfficeRow.cs" />
+    <Compile Include="Modules\PCHDW\DimOffice\DimOfficeRepository.cs" />
+    <Compile Include="Modules\PCHDW\DimOffice\DimOfficeEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

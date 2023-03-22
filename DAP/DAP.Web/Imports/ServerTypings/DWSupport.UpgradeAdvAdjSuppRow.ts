@@ -9,7 +9,7 @@
         CreatedTs?: string;
         CreatedByName?: string;
         ModifiedTs?: string;
-        ModifiedByNam?: string;
+        ModifiedByName?: string;
     }
 
     export namespace UpgradeAdvAdjSuppRow {
@@ -27,7 +27,7 @@
             CreatedTs = "CreatedTs",
             CreatedByName = "CreatedByName",
             ModifiedTs = "ModifiedTs",
-            ModifiedByNam = "ModifiedByNam"
+            ModifiedByName = "ModifiedByName"
         }
     }
 }

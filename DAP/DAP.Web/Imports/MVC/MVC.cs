@@ -103,6 +103,11 @@ namespace MVC
                 public const string CmiSuppIndex = "~/Modules/DWSupport/CmiSupp/CmiSuppIndex.cshtml";
             }
 
+            public static class CreditCardAdjSupp
+            {
+                public const string CreditCardAdjSuppIndex = "~/Modules/DWSupport/CreditCardAdjSupp/CreditCardAdjSuppIndex.cshtml";
+            }
+
             public static class CurrencyExchangeRateSupp
             {
                 public const string CurrencyExchangeRateSuppIndex = "~/Modules/DWSupport/CurrencyExchangeRateSupp/CurrencyExchangeRateSuppIndex.cshtml";
