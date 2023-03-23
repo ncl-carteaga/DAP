@@ -26,11 +26,11 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreditcardAdjId[this] = value; }
         }
 
-        [DisplayName("Location Cd"), Column("LOCATION_CD"), Size(50), NotNull, QuickSearch, LookupEditor(typeof(DimOfficeRow))]
-        public String LocationCd
+        [DisplayName("Office"), Column("OFFICE"), NotNull, QuickSearch, LookupEditor(typeof(DimOfficeRow))]
+        public String Office
         {
-            get { return Fields.LocationCd[this]; }
-            set { Fields.LocationCd[this] = value; }
+            get { return Fields.Office[this]; }
+            set { Fields.Office[this] = value; }
         }
 
         [DisplayName("Base Rate"), Column("BASE_RATE"), Size(18), Scale(2), NotNull]
@@ -117,7 +117,7 @@ namespace DAP.DWSupport.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.LocationCd; }
+            get { return Fields.Office; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
@@ -130,7 +130,7 @@ namespace DAP.DWSupport.Entities
         public class RowFields : RowFieldsBase
         {
             public Int32Field CreditcardAdjId;
-            public StringField LocationCd;
+            public StringField Office;
             public DecimalField BaseRate;
             public DecimalField ParticipationRate;
             public DecimalField BlendedRate;

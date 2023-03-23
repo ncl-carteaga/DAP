@@ -46,7 +46,7 @@ namespace DAP.DWSupport.Repositories
                 if (IsCreate)
                 {
                     if (this.Connection.Exists<CreditCardAdjSuppRow>(
-                        MyRow.Fields.LocationCd == this.Row.LocationCd &&
+                        MyRow.Fields.Office == this.Row.Office &&
                         MyRow.Fields.EffectiveToDt.IsNull()
                     ))
                     {

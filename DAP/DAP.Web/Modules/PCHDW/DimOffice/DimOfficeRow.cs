@@ -45,7 +45,7 @@ namespace DAP.PCHDW.Entities
 
         StringField INameRow.NameField
         {
-            get { return Fields.Cd; }
+            get { return Fields.Desc; }
         }
 
         public static readonly RowFields Fields = new RowFields().Init();
