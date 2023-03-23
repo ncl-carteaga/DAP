@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.DWSupport.Repositories
 {
+    using DAP.DWSupport.Entities;
     using Serenity;
     using Serenity.Data;
     using Serenity.Services;
@@ -39,6 +40,22 @@ namespace DAP.DWSupport.Repositories
 
         private class MySaveHandler : SaveRequestHandler<MyRow>
         {
+            protected override void BeforeSave()
+            {
+                base.BeforeSave();
+                if (IsCreate)
+                {
+                    if (this.Connection.Exists<CreditCardAdjSuppRow>(
+                        MyRow.Fields.LocationCd == this.Row.LocationCd &&
+                        MyRow.Fields.EffectiveToDt.IsNull()
+                    ))
+                    {
+                        throw new ValidationError("Open record found for this location code.");
+                    }
+                }
+            }
+
+
             protected override void SetInternalFields()
             {
                 base.SetInternalFields();

@@ -11296,6 +11296,8 @@ declare namespace DAP.SSISConfig {
     }
 }
 declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface CreditCardAdjSuppForm {
         LocationCd: Serenity.LookupEditor;
         BaseRate: Serenity.DecimalEditor;
@@ -11370,27 +11372,6 @@ declare namespace DAP.DWSupport {
         }
     }
 }
-declare namespace DAP.DWSupport {
-    class CreditCardAdjSuppDialog extends Serenity.EntityDialog<CreditCardAdjSuppRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: CreditCardAdjSuppForm;
-        constructor();
-    }
-}
-declare namespace DAP.DWSupport {
-    class CreditCardAdjSuppGrid extends Serenity.EntityGrid<CreditCardAdjSuppRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof CreditCardAdjSuppDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
 declare namespace DAP.PCHDW {
     interface DimOfficeRow {
         Tk?: number;
@@ -11401,10 +11382,12 @@ declare namespace DAP.PCHDW {
         const idProperty = "Tk";
         const nameProperty = "Cd";
         const localTextPrefix = "PCHDW.DimOffice";
-        namespace Fields {
-            const Tk: any;
-            const Cd: any;
-            const Desc: any;
+        const lookupKey = "PCHDW.DimOffice";
+        function getLookup(): Q.Lookup<DimOfficeRow>;
+        const enum Fields {
+            Tk = "Tk",
+            Cd = "Cd",
+            Desc = "Desc"
         }
     }
 }
@@ -11416,14 +11399,34 @@ declare namespace DAP.PCHDW {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DimOfficeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DimOfficeRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        const enum Methods {
+            Create = "PCHDW/DimOffice/Create",
+            Update = "PCHDW/DimOffice/Update",
+            Delete = "PCHDW/DimOffice/Delete",
+            Retrieve = "PCHDW/DimOffice/Retrieve",
+            List = "PCHDW/DimOffice/List"
         }
     }
 }
 declare namespace DAP.DWSupport {
+    class CreditCardAdjSuppDialog extends Serenity.EntityDialog<CreditCardAdjSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CreditCardAdjSuppForm;
+        constructor();
+        protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class CreditCardAdjSuppGrid extends Serenity.EntityGrid<CreditCardAdjSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CreditCardAdjSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
 }

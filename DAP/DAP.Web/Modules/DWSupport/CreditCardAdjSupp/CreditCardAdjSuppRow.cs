@@ -75,7 +75,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.EffectiveFromDt[this] = value; }
         }
 
-        [DisplayName("Effective To Dt"), Column("EFFECTIVE_TO_DT")]
+        [DisplayName("Effective To Dt"), Column("EFFECTIVE_TO_DT"), DefaultValue("9999-12-30")]
         public DateTime? EffectiveToDt
         {
             get { return Fields.EffectiveToDt[this]; }

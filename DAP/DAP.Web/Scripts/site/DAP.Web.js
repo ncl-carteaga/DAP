@@ -18513,6 +18513,44 @@ var DAP;
 })(DAP || (DAP = {}));
 var DAP;
 (function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimOfficeRow;
+        (function (DimOfficeRow) {
+            DimOfficeRow.idProperty = 'Tk';
+            DimOfficeRow.nameProperty = 'Cd';
+            DimOfficeRow.localTextPrefix = 'PCHDW.DimOffice';
+            DimOfficeRow.lookupKey = 'PCHDW.DimOffice';
+            function getLookup() {
+                return Q.getLookup('PCHDW.DimOffice');
+            }
+            DimOfficeRow.getLookup = getLookup;
+        })(DimOfficeRow = PCHDW.DimOfficeRow || (PCHDW.DimOfficeRow = {}));
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var PCHDW;
+    (function (PCHDW) {
+        var DimOfficeService;
+        (function (DimOfficeService) {
+            DimOfficeService.baseUrl = 'PCHDW/DimOffice';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DimOfficeService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DimOfficeService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DimOfficeService = PCHDW.DimOfficeService || (PCHDW.DimOfficeService = {}));
+    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
     var DWSupport;
     (function (DWSupport) {
         var CreditCardAdjSuppDialog = /** @class */ (function (_super) {
@@ -18542,13 +18580,18 @@ var DAP;
                     _this.form.ProposedRate.set_value(t1 + t2);
                 });
                 return _this;
-                // ---------------------------------------------            
+                // ---------------------------------------------     
             }
             CreditCardAdjSuppDialog.prototype.getFormKey = function () { return DWSupport.CreditCardAdjSuppForm.formKey; };
             CreditCardAdjSuppDialog.prototype.getIdProperty = function () { return DWSupport.CreditCardAdjSuppRow.idProperty; };
             CreditCardAdjSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CreditCardAdjSuppRow.localTextPrefix; };
             CreditCardAdjSuppDialog.prototype.getNameProperty = function () { return DWSupport.CreditCardAdjSuppRow.nameProperty; };
             CreditCardAdjSuppDialog.prototype.getService = function () { return DWSupport.CreditCardAdjSuppService.baseUrl; };
+            CreditCardAdjSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
             CreditCardAdjSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], CreditCardAdjSuppDialog);
@@ -18578,50 +18621,5 @@ var DAP;
         }(Serenity.EntityGrid));
         DWSupport.CreditCardAdjSuppGrid = CreditCardAdjSuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHDW;
-    (function (PCHDW) {
-        var DimOfficeRow;
-        (function (DimOfficeRow) {
-            DimOfficeRow.idProperty = 'Tk';
-            DimOfficeRow.nameProperty = 'Cd';
-            DimOfficeRow.localTextPrefix = 'PCHDW.DimOffice';
-            var Fields;
-            (function (Fields) {
-            })(Fields = DimOfficeRow.Fields || (DimOfficeRow.Fields = {}));
-            [
-                'Tk',
-                'Cd',
-                'Desc'
-            ].forEach(function (x) { return Fields[x] = x; });
-        })(DimOfficeRow = PCHDW.DimOfficeRow || (PCHDW.DimOfficeRow = {}));
-    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var PCHDW;
-    (function (PCHDW) {
-        var DimOfficeService;
-        (function (DimOfficeService) {
-            DimOfficeService.baseUrl = 'PCHDW/DimOffice';
-            var Methods;
-            (function (Methods) {
-            })(Methods = DimOfficeService.Methods || (DimOfficeService.Methods = {}));
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                DimOfficeService[x] = function (r, s, o) {
-                    return Q.serviceRequest(DimOfficeService.baseUrl + '/' + x, r, s, o);
-                };
-                Methods[x] = DimOfficeService.baseUrl + '/' + x;
-            });
-        })(DimOfficeService = PCHDW.DimOfficeService || (PCHDW.DimOfficeService = {}));
-    })(PCHDW = DAP.PCHDW || (DAP.PCHDW = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map

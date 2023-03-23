@@ -35,7 +35,16 @@ namespace DAP.DWSupport {
                     let t2 = this.form.BlendedRate.value;
                     this.form.ProposedRate.set_value(t1 + t2);
                 });
-            // ---------------------------------------------            
+            // ---------------------------------------------     
+        }
+
+
+        protected getToolbarButtons(): Serenity.ToolButton[] {
+            var b = super.getToolbarButtons();
+
+            b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+
+            return b;
         }
     }
 }
