@@ -8,7 +8,7 @@
         CreatedTs: Serenity.DateEditor;
         CreatedByName: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
-        ModifiedByNam: Serenity.StringEditor;
+        ModifiedByName: Serenity.StringEditor;
     }
 
     export class UpgradeAdvAdjSuppForm extends Serenity.PrefixedContext {
@@ -35,7 +35,7 @@
                     'CreatedTs', w1,
                     'CreatedByName', w2,
                     'ModifiedTs', w1,
-                    'ModifiedByNam', w2
+                    'ModifiedByName', w2
                 ]);
             }
         }

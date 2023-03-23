@@ -9699,6 +9699,12 @@ button.ui-button {
 .s-DWSupport-UpgradeAdvAdjSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-CreditCardAdjSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CreditCardAdjSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
