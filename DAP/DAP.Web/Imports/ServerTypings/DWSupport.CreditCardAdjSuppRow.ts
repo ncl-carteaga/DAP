@@ -1,7 +1,7 @@
 ﻿namespace DAP.DWSupport {
     export interface CreditCardAdjSuppRow {
         CreditcardAdjId?: number;
-        LocationCd?: string;
+        OfficeId?: string;
         BaseRate?: number;
         ParticipationRate?: number;
         BlendedRate?: number;
@@ -17,12 +17,12 @@
 
     export namespace CreditCardAdjSuppRow {
         export const idProperty = 'CreditcardAdjId';
-        export const nameProperty = 'LocationCd';
+        export const nameProperty = 'OfficeId';
         export const localTextPrefix = 'DWSupport.CreditCardAdjSupp';
 
         export declare const enum Fields {
             CreditcardAdjId = "CreditcardAdjId",
-            LocationCd = "LocationCd",
+            OfficeId = "OfficeId",
             BaseRate = "BaseRate",
             ParticipationRate = "ParticipationRate",
             BlendedRate = "BlendedRate",

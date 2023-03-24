@@ -16,7 +16,7 @@ namespace DAP.DWSupport.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 CreditcardAdjId { get; set; }
         [EditLink]
-        public String LocationCd { get; set; }
+        public String Office { get; set; }
         public Decimal BaseRate { get; set; }
         public Decimal ParticipationRate { get; set; }
         public Decimal BlendedRate { get; set; }

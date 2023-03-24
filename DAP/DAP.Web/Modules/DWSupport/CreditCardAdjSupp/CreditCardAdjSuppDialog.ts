@@ -14,7 +14,7 @@ namespace DAP.DWSupport {
         constructor() {
             super();
 
-            // Calculate and refresh [BlendedRate] when [ParticipationRate] or [BaseRate] changes
+            // Calculate and refresh [Calculated fields] when base fields change
             // ---------------------------------------------
                 this.form.BaseRate.change(e => {
                     let t1 = this.form.ParticipationRate.value;

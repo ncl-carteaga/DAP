@@ -13,12 +13,12 @@ namespace DAP.DWSupport.Forms
     [BasedOnRow(typeof(Entities.CreditCardAdjSuppRow), CheckNames = true)]
     public class CreditCardAdjSuppForm
     {
-        public String LocationCd { get; set; }
+        public String Office { get; set; }
         public Decimal BaseRate { get; set; }
         public Decimal ParticipationRate { get; set; }
+        public Decimal CxBuffer { get; set; }
         [DisplayName("Blended Rate (Calculated)")]
         public Decimal BlendedRate { get; set; }
-        public Decimal CxBuffer { get; set; }
         [DisplayName("Proposed Rate (Calculated)")]
         public Decimal ProposedRate { get; set; }
         public DateTime EffectiveFromDt { get; set; }

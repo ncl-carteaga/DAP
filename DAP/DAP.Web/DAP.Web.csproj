@@ -3490,6 +3490,7 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\OfficeLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\AreaLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelCdLookup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelLookup.cs" />
