@@ -3317,6 +3317,8 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimOfficeService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3490,7 +3492,6 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
-    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\OfficeLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\AreaLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelCdLookup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelLookup.cs" />
@@ -4156,6 +4157,9 @@
     <Compile Include="Modules\PCHDW\DimOffice\DimOfficeRow.cs" />
     <Compile Include="Modules\PCHDW\DimOffice\DimOfficeRepository.cs" />
     <Compile Include="Modules\PCHDW\DimOffice\DimOfficeEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsRow.cs" />
+    <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsRepository.cs" />
+    <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

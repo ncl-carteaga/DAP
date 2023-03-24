@@ -7,7 +7,7 @@
 
     export namespace DimOfficeRow {
         export const idProperty = 'Tk';
-        export const nameProperty = 'Cd';
+        export const nameProperty = 'Desc';
         export const localTextPrefix = 'PCHDW.DimOffice';
         export const lookupKey = 'PCHDW.DimOffice';
 

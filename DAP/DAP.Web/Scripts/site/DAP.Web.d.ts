@@ -1492,6 +1492,38 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    interface CcOfficeLoationsRow {
+        Cd?: string;
+    }
+    namespace CcOfficeLoationsRow {
+        const idProperty = "Cd";
+        const nameProperty = "Cd";
+        const localTextPrefix = "DWSupport.CcOfficeLoations";
+        const lookupKey = "DWSupport.CCOffice";
+        function getLookup(): Q.Lookup<CcOfficeLoationsRow>;
+        const enum Fields {
+            Cd = "Cd"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CcOfficeLoationsService {
+        const baseUrl = "DWSupport/CcOfficeLoations";
+        function Create(request: Serenity.SaveRequest<CcOfficeLoationsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CcOfficeLoationsRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CcOfficeLoationsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CcOfficeLoationsRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/CcOfficeLoations/Create",
+            Update = "DWSupport/CcOfficeLoations/Update",
+            Delete = "DWSupport/CcOfficeLoations/Delete",
+            Retrieve = "DWSupport/CcOfficeLoations/Retrieve",
+            List = "DWSupport/CcOfficeLoations/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CmiSuppForm {
@@ -1647,7 +1679,7 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CreditCardAdjSuppForm {
-        OfficeId: Serenity.LookupEditor;
+        Office: Serenity.LookupEditor;
         BaseRate: Serenity.DecimalEditor;
         ParticipationRate: Serenity.DecimalEditor;
         CxBuffer: Serenity.DecimalEditor;
@@ -1669,7 +1701,7 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
     interface CreditCardAdjSuppRow {
         CreditcardAdjId?: number;
-        OfficeId?: string;
+        Office?: string;
         BaseRate?: number;
         ParticipationRate?: number;
         BlendedRate?: number;
@@ -1684,11 +1716,11 @@ declare namespace DAP.DWSupport {
     }
     namespace CreditCardAdjSuppRow {
         const idProperty = "CreditcardAdjId";
-        const nameProperty = "OfficeId";
+        const nameProperty = "Office";
         const localTextPrefix = "DWSupport.CreditCardAdjSupp";
         const enum Fields {
             CreditcardAdjId = "CreditcardAdjId",
-            OfficeId = "OfficeId",
+            Office = "Office",
             BaseRate = "BaseRate",
             ParticipationRate = "ParticipationRate",
             BlendedRate = "BlendedRate",
@@ -6001,7 +6033,7 @@ declare namespace DAP.PCHDW {
     }
     namespace DimOfficeRow {
         const idProperty = "Tk";
-        const nameProperty = "Cd";
+        const nameProperty = "Desc";
         const localTextPrefix = "PCHDW.DimOffice";
         const lookupKey = "PCHDW.DimOffice";
         function getLookup(): Q.Lookup<DimOfficeRow>;

@@ -26,7 +26,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreditcardAdjId[this] = value; }
         }
 
-        [DisplayName("Office"), Column("OFFICE"), NotNull, QuickSearch, LookupEditor(typeof(DimOfficeRow))]
+        [DisplayName("Office"), Column("OFFICE"), NotNull, QuickSearch, LookupEditor("DWSupport.CCOffice")]
         public String Office
         {
             get { return Fields.Office[this]; }
