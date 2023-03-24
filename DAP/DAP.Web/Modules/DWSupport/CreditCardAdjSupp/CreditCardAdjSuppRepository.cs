@@ -43,14 +43,25 @@ namespace DAP.DWSupport.Repositories
             protected override void BeforeSave()
             {
                 base.BeforeSave();
+                if (IsUpdate)
+                {
+                    if (this.Connection.Exists<CreditCardAdjSuppRow>(
+                        MyRow.Fields.Office == this.Row.Office &&
+                        MyRow.Fields.EffectiveToDt > DateTime.Now &&
+                        MyRow.Fields.CreditcardAdjId != Row.CreditcardAdjId.Value
+                    ))
+                    {
+                        throw new ValidationError("There is already an active record for this office.");
+                    }
+                }
                 if (IsCreate)
                 {
                     if (this.Connection.Exists<CreditCardAdjSuppRow>(
                         MyRow.Fields.Office == this.Row.Office &&
-                        MyRow.Fields.EffectiveToDt.IsNull()
+                        MyRow.Fields.EffectiveToDt > DateTime.Now
                     ))
                     {
-                        throw new ValidationError("Open record found for this location code.");
+                        throw new ValidationError("There is already an active record for this office.");
                     }
                 }
             }
