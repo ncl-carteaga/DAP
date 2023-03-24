@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/UpgradeAdvAdjSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.UpgradeAdvAdjSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.UpgradeAdvAdjSupp)]
     public class UpgradeAdvAdjSuppController : Controller
     {
         public ActionResult Index()

@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/CmiSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.CmiSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.CmiSupp)]
     public class CmiSuppController : Controller
     {
         public ActionResult Index()

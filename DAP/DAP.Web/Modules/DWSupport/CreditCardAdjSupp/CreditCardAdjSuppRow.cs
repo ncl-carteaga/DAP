@@ -19,7 +19,7 @@ namespace DAP.DWSupport.Entities
 
     public sealed class CreditCardAdjSuppRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Creditcard Adj Id"), Column("CREDITCARD_ADJ_ID"), Identity]
+        [DisplayName("Creditcard Adj Id"), Column("CREDITCARD_ADJ_ID"), Identity, Visible(false)]
         public Int32? CreditcardAdjId
         {
             get { return Fields.CreditcardAdjId[this]; }

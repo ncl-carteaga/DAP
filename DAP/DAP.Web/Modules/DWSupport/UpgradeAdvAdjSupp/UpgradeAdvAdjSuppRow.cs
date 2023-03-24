@@ -67,7 +67,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedTs[this] = value; }
         }
 
-        [DisplayName("Created By Name"), Column("CREATED_BY_NAM"), Size(50), QuickSearch]
+        [DisplayName("Created By Name"), Column("CREATED_BY_NAME"), Size(50), QuickSearch]
         public String CreatedByName
         {
             get { return Fields.CreatedByName[this]; }

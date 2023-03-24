@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/CreditCardAdjSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.CreditCardAdjSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.CreditCardAdjSupp)]
     public class CreditCardAdjSuppController : Controller
     {
         public ActionResult Index()
