@@ -28,6 +28,8 @@ namespace DAP.DWSupport.Columns
         public Int32 PaxQty { get; set; }
         public String BookingCurrencyCd { get; set; }
         public DateTime CreatedTs { get; set; }
+        public DateTime EffectiveToDt { get; set; }
+        public DateTime EffectiveFromDt { get; set; }
         public String CreatedByNam { get; set; }
         public String ModifiedByNam { get; set; }
         public DateTime ModifiedTs { get; set; }

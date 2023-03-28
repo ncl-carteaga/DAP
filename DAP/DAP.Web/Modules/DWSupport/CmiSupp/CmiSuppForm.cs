@@ -13,6 +13,7 @@ namespace DAP.DWSupport.Forms
     [BasedOnRow(typeof(Entities.CmiSuppRow), CheckNames = true)]
     public class CmiSuppForm
     {
+        [Tab("Tab 1")]
         public String ShipCd { get; set; }
         public Int32 SailId { get; set; }
         public Int32 AgencyId { get; set; }
@@ -24,6 +25,9 @@ namespace DAP.DWSupport.Forms
         public DateTime ContractDat { get; set; }
         public Int32 CabinQty { get; set; }
         public Int32 PaxQty { get; set; }
+        public DateTime EffectiveToDt { get; set; }
+        public DateTime EffectiveFromDt { get; set; }
+        [Tab("Tab 2")]
         public String BookingCurrencyCd { get; set; }
         [Visible(false)]
         public DateTime CreatedTs { get; set; }
@@ -43,6 +47,7 @@ namespace DAP.DWSupport.Forms
         public Decimal SmCostOfSalesAmt { get; set; }
         public Decimal SmGuestFeesGratsExpenseAmt { get; set; }
         public Decimal SmCreditCardCostAmt { get; set; }
+        [Tab("Tab 3")]
         public DateTime SailDat { get; set; }
         public Int32 SailDayQty { get; set; }
         public String CharterDesc { get; set; }

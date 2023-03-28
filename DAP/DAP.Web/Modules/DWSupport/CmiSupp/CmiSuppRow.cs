@@ -108,6 +108,20 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedTs[this] = value; }
         }
 
+        [DisplayName("Effective From Dt"), Column("EFFECTIVE_FROM_DT"), NotNull]
+        public DateTime? EffectiveFromDt
+        {
+            get { return Fields.EffectiveFromDt[this]; }
+            set { Fields.EffectiveFromDt[this] = value; }
+        }
+
+        [DisplayName("Effective To Dt"), Column("EFFECTIVE_TO_DT"), NotNull, DefaultValue("12-30-9999")]
+        public DateTime? EffectiveToDt
+        {
+            get { return Fields.EffectiveToDt[this]; }
+            set { Fields.EffectiveToDt[this] = value; }
+        }
+
         [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull]
         public String CreatedByNam
         {
@@ -315,6 +329,8 @@ namespace DAP.DWSupport.Entities
             public Int32Field PaxQty;
             public StringField BookingCurrencyCd;
             public DateTimeField CreatedTs;
+            public DateTimeField EffectiveFromDt;
+            public DateTimeField EffectiveToDt;
             public StringField CreatedByNam;
             public StringField ModifiedByNam;
             public DateTimeField ModifiedTs;
