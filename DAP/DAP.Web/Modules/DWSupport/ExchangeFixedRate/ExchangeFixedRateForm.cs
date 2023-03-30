@@ -17,6 +17,7 @@ namespace DAP.DWSupport.Forms
         public Decimal ExchangeRate { get; set; }
         public DateTime EffectiveFrom { get; set; }
         public DateTime EffectiveTo { get; set; }
+        [Visible(false)]
         public DateTime LoadDt { get; set; }
     }
 }
