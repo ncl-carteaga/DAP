@@ -1538,6 +1538,8 @@ declare namespace DAP.DWSupport {
         ContractDat: Serenity.DateEditor;
         CabinQty: Serenity.IntegerEditor;
         PaxQty: Serenity.IntegerEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        EffectiveFromDt: Serenity.DateEditor;
         BookingCurrencyCd: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -1586,6 +1588,8 @@ declare namespace DAP.DWSupport {
         PaxQty?: number;
         BookingCurrencyCd?: string;
         CreatedTs?: string;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
         CreatedByNam?: string;
         ModifiedByNam?: string;
         ModifiedTs?: string;
@@ -1630,6 +1634,8 @@ declare namespace DAP.DWSupport {
             PaxQty = "PaxQty",
             BookingCurrencyCd = "BookingCurrencyCd",
             CreatedTs = "CreatedTs",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
             CreatedByNam = "CreatedByNam",
             ModifiedByNam = "ModifiedByNam",
             ModifiedTs = "ModifiedTs",
@@ -3083,6 +3089,65 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/PsGlAccountSupp/Delete",
             Retrieve = "DWSupport/PsGlAccountSupp/Retrieve",
             List = "DWSupport/PsGlAccountSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface RegionForm {
+        RegionCd: Serenity.StringEditor;
+        RegionType: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        EffectiveFrom: Serenity.DateEditor;
+        EffectiveTo: Serenity.DateEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class RegionForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface RegionRow {
+        RegionId?: number;
+        RegionCd?: string;
+        RegionType?: string;
+        CompanyCd?: string;
+        EffectiveFrom?: string;
+        EffectiveTo?: string;
+        LoadDt?: string;
+    }
+    namespace RegionRow {
+        const idProperty = "RegionId";
+        const nameProperty = "RegionCd";
+        const localTextPrefix = "DWSupport.Region";
+        const enum Fields {
+            RegionId = "RegionId",
+            RegionCd = "RegionCd",
+            RegionType = "RegionType",
+            CompanyCd = "CompanyCd",
+            EffectiveFrom = "EffectiveFrom",
+            EffectiveTo = "EffectiveTo",
+            LoadDt = "LoadDt"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace RegionService {
+        const baseUrl = "DWSupport/Region";
+        function Create(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/Region/Create",
+            Update = "DWSupport/Region/Update",
+            Delete = "DWSupport/Region/Delete",
+            Retrieve = "DWSupport/Region/Retrieve",
+            List = "DWSupport/Region/List"
         }
     }
 }
@@ -9868,6 +9933,26 @@ declare namespace DAP.DWSupport {
     class PsGlAccountSuppGrid extends Serenity.EntityGrid<PsGlAccountSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof PsGlAccountSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class RegionDialog extends Serenity.EntityDialog<RegionRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RegionForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RegionDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
