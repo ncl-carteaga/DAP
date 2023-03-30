@@ -1187,6 +1187,7 @@
     <Content Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\RevDetailField\RevDetailFieldIndex.cshtml" />
+    <Content Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1753,6 +1754,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\RevDetailField\RevDetailFieldDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\RevDetailField\RevDetailFieldGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3338,6 +3341,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RevDetailFieldForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4185,6 +4191,12 @@
     <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldPage.cs" />
     <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldColumns.cs" />
     <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldForm.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateRow.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateRepository.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRatePage.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateColumns.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

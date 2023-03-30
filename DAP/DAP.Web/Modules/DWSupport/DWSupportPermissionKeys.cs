@@ -55,6 +55,7 @@ namespace DAP.DWSupport
             public const string UpgradeAdvAdjSupp = "DWSupp:Page:UpgradeAdvAdjSupp";
             public const string CreditCardAdjSupp = "DWSupp:Page:CreditCardAdjSupp";
             public const string RevDetailField = "DWSupp:Page:RevDetailField";
+            public const string ExchangeFixedRate = "DWSupp:Page:ExchangeFixedRate";
         }
     }    
 }

@@ -9711,6 +9711,12 @@ button.ui-button {
 .s-DWSupport-RevDetailFieldDialog .caption {
   width: 150px;
 }
+.s-DWSupport-ExchangeFixedRateDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-ExchangeFixedRateDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

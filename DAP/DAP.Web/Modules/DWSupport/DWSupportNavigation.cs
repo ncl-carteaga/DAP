@@ -26,6 +26,7 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/Credit Card Adj Supp", typeof(MyPages.CreditCardAdjSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Rev Detail Field", typeof(MyPages.RevDetailFieldController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/CMI Supp", typeof(MyPages.CmiSuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Exchange Fixed Rate", typeof(MyPages.ExchangeFixedRateController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Import Error Log", typeof(MyPages.ImportErrorLogController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Invoice Item Type", typeof(MyPages.InvoiceItemTypeSuppController), icon: null)]
