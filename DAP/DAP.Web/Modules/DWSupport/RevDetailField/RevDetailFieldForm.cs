@@ -18,6 +18,7 @@ namespace DAP.DWSupport.Forms
         public String RevdetailFieldCheck { get; set; }
         public String OdsFieldNm { get; set; }
         public Int32 CubeInsInd { get; set; }
+        [Visible(false)]
         public DateTime LoadDt { get; set; }
     }
 }
