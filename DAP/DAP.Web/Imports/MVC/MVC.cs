@@ -183,6 +183,11 @@ namespace MVC
                 public const string PsGlAccountSuppIndex = "~/Modules/DWSupport/PsGlAccountSupp/PsGlAccountSuppIndex.cshtml";
             }
 
+            public static class RevDetailField
+            {
+                public const string RevDetailFieldIndex = "~/Modules/DWSupport/RevDetailField/RevDetailFieldIndex.cshtml";
+            }
+
             public static class RollupProductCodesSupp
             {
                 public const string RollupProductCodesSuppIndex = "~/Modules/DWSupport/RollupProductCodesSupp/RollupProductCodesSuppIndex.cshtml";
