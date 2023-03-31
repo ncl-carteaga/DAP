@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/Region"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.RegionRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.Region)]
     public class RegionController : Controller
     {
         public ActionResult Index()
