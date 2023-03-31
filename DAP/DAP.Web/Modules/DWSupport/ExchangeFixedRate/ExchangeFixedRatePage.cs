@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/ExchangeFixedRate"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.ExchangeFixedRateRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.ExchangeFixedRate)]
     public class ExchangeFixedRateController : Controller
     {
         public ActionResult Index()

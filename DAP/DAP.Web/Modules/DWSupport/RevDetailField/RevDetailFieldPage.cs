@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/RevDetailField"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.RevDetailFieldRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.RevDetailField)]
     public class RevDetailFieldController : Controller
     {
         public ActionResult Index()
