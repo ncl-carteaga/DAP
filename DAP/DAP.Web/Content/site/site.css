@@ -9705,6 +9705,12 @@ button.ui-button {
 .s-DWSupport-CreditCardAdjSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-RegionDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-RegionDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
