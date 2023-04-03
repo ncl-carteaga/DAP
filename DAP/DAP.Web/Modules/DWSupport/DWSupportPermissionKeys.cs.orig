@@ -48,13 +48,18 @@ namespace DAP.DWSupport
             public const string FullShipChartersSupp = "DWSupp:Page:FullShipChartersSupp";
             public const string MinibarSetupSupp = "DWSupp:Page:MinibarSetupSupp";
             public const string RollupProductCodesSupp = "DWSupp:Page:RollupProductCodesSupp";
-<<<<<<< HEAD
-            public const string PsGlAccountSupp = "DWSupp:Page:PsGlAccountSupp"; 
-            public const string CmiSupp = "DWSupp:Page:CmiSupp";
-=======
             public const string PsGlAccountSupp = "DWSupp:Page:PsGlAccountSupp";
+            public const string CmiSupp = "DWSupp:Page:CmiSupp";
             public const string FinPlannedCapacitySupp = "DWSupp:Page:FinPlannedCapacitySupp";
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+            public const string GtfSupp = "DWSupp:Page:GtfSupp";            
+            public const string UpgradeAdvAdjSupp = "DWSupp:Page:UpgradeAdvAdjSupp";
+            public const string CreditCardAdjSupp = "DWSupp:Page:CreditCardAdjSupp";
+<<<<<<< HEAD
+            public const string RevDetailField = "DWSupp:Page:RevDetailField";
+            public const string ExchangeFixedRate = "DWSupp:Page:ExchangeFixedRate";
+=======
+            public const string Region = "DWSupp:Page:Region";
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
         }
     }    
 }

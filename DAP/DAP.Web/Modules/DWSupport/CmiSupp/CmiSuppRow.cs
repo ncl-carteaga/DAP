@@ -108,18 +108,18 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedTs[this] = value; }
         }
 
-        [DisplayName("Effective From Dt"), Column("EFFECTIVE_FROM_DT"), NotNull]
-        public DateTime? EffectiveFromDt
+        [DisplayName("Voyage Start Date"), Column("VOYAGE_START_DATE"), NotNull]
+        public DateTime? VoyageStartDate
         {
-            get { return Fields.EffectiveFromDt[this]; }
-            set { Fields.EffectiveFromDt[this] = value; }
+            get { return Fields.VoyageStartDate[this]; }
+            set { Fields.VoyageStartDate[this] = value; }
         }
 
-        [DisplayName("Effective To Dt"), Column("EFFECTIVE_TO_DT"), NotNull, DefaultValue("12-30-9999")]
-        public DateTime? EffectiveToDt
+        [DisplayName("Voyage End Date"), Column("VOYAGE_END_DATE"), NotNull, DefaultValue("12-30-9999")]
+        public DateTime? VoyageEndDate
         {
-            get { return Fields.EffectiveToDt[this]; }
-            set { Fields.EffectiveToDt[this] = value; }
+            get { return Fields.VoyageEndDate[this]; }
+            set { Fields.VoyageEndDate[this] = value; }
         }
 
         [DisplayName("Created By Nam"), Column("CREATED_BY_NAM"), Size(50), NotNull]
@@ -329,8 +329,8 @@ namespace DAP.DWSupport.Entities
             public Int32Field PaxQty;
             public StringField BookingCurrencyCd;
             public DateTimeField CreatedTs;
-            public DateTimeField EffectiveFromDt;
-            public DateTimeField EffectiveToDt;
+            public DateTimeField VoyageStartDate;
+            public DateTimeField VoyageEndDate;
             public StringField CreatedByNam;
             public StringField ModifiedByNam;
             public DateTimeField ModifiedTs;

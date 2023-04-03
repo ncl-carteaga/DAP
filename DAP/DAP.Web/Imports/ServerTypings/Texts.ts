@@ -809,6 +809,21 @@
                 export const SlProductSurKey: string;
             }
 
+            namespace StlyDates {
+                export const DataAsOfDt: string;
+                export const DayOfWeek: string;
+                export const DisasterInd: string;
+                export const EffectiveFrom: string;
+                export const EffectiveTo: string;
+                export const HolidayInd: string;
+                export const LoadDt: string;
+                export const ReportDt: string;
+                export const StlyDt: string;
+                export const Stlyid: string;
+                export const SystemIssuesInd: string;
+                export const WeekNum: string;
+            }
+
             namespace SurveyFilterExclusionSupp {
                 export const CommentsTxt: string;
                 export const CreatedByNam: string;
