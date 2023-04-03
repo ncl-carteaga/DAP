@@ -54,6 +54,7 @@ namespace DAP.DWSupport
             public const string GtfSupp = "DWSupp:Page:GtfSupp";            
             public const string UpgradeAdvAdjSupp = "DWSupp:Page:UpgradeAdvAdjSupp";
             public const string CreditCardAdjSupp = "DWSupp:Page:CreditCardAdjSupp";
+            public const string Region = "DWSupp:Page:Region";
             public const string StlyDates = "DWSupp:Page:StlyDates";
         }
     }    
