@@ -25,8 +25,8 @@ namespace DAP.DWSupport.Forms
         public DateTime ContractDat { get; set; }
         public Int32 CabinQty { get; set; }
         public Int32 PaxQty { get; set; }
-        public DateTime EffectiveToDt { get; set; }
-        public DateTime EffectiveFromDt { get; set; }
+        public DateTime VoyageEndDate { get; set; }
+        public DateTime VoyageStartDate { get; set; }
         [Tab("Tab 2")]
         public String BookingCurrencyCd { get; set; }
         [Visible(false)]

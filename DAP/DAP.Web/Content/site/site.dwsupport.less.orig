@@ -121,11 +121,41 @@
     .caption { width: 150px; }
 }
 
-<<<<<<< HEAD
-.s-DWSupport-CmiSuppDialog {
-=======
 .s-DWSupport-FinPlannedCapacitySuppDialog {
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+    > .size { width: 650px; }
+    .caption { width: 150px; }
+}
+
+.s-DWSupport-CmiSuppDialog {
+    > .size { width: 650px; }
+    .caption { width: 150px; }
+}
+
+.s-DWSupport-GtfSuppDialog {
+    > .size { width: 650px; }
+    .caption { width: 150px; }
+}
+
+.s-DWSupport-UpgradeAdvAdjSuppDialog {
+    > .size { width: 650px; }
+    .caption { width: 150px; }
+}
+
+.s-DWSupport-CreditCardAdjSuppDialog {
+    > .size { width: 650px; }
+    .caption { width: 150px; }
+}
+
+<<<<<<< HEAD
+.s-DWSupport-RevDetailFieldDialog {
+    > .size { width: 650px; }
+    .caption { width: 150px; }
+}
+
+.s-DWSupport-ExchangeFixedRateDialog {
+=======
+.s-DWSupport-RegionDialog {
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
     > .size { width: 650px; }
     .caption { width: 150px; }
 }

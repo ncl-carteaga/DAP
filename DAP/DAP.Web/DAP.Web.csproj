@@ -1186,6 +1186,7 @@
     <Content Include="Modules\DWSupport\GtfSupp\GtfSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\StlyDates\StlyDatesIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1291,6 +1292,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppColumns.ts">
@@ -1747,6 +1751,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\StlyDates\StlyDatesDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\StlyDates\StlyDatesGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3317,8 +3323,21 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimOfficeService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4160,6 +4179,12 @@
     <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsRow.cs" />
     <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsRepository.cs" />
     <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesRow.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesRepository.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesPage.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesColumns.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

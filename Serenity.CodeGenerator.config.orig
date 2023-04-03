@@ -349,13 +349,62 @@
                     "PermissionKey": "Administration:General"
                 },
                 {
-<<<<<<< HEAD
-                    "Tablename": "dbo.CMI_SUPP",
-                    "Identifier": "CmiSupp",
-=======
                     "Tablename": "dbo.FIN_PLANNED_CAPACITY_SUPP",
                     "Identifier": "FinPlannedCapacitySupp",
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "dbo.CMI_SUPP",
+                    "Identifier": "CmiSupp",
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "dbo.GTF_SUPP",
+                    "Identifier": "GtfSupp",
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "dbo.UPGRADE_ADV_ADJ_SUPP",
+                    "Identifier": "UpgradeAdvAdjSupp",
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "dbo.CREDIT_CARD_ADJ_SUPP",
+                    "Identifier": "CreditCardAdjSupp",
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "dbo.CCOfficeLoations",
+                    "Identifier": "CcOfficeLoations",
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+<<<<<<< HEAD
+                    "Tablename": "nvs.RevDetail_Field",
+                    "Identifier": "RevDetailField",
+                    "Module": "DWSupport",
+                    "ConnectionKey": "DW_Support",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "nvs.ExchangeFixedRate",
+                    "Identifier": "ExchangeFixedRate",
+=======
+                    "Tablename": "nvs.Region",
+                    "Identifier": "Region",
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
                     "Module": "DWSupport",
                     "ConnectionKey": "DW_Support",
                     "PermissionKey": "Administration:General"
@@ -544,6 +593,13 @@
                 {
                     "Tablename": "dbo.dim_currency",
                     "Identifier": "DimCurrency",
+                    "Module": "PCHDW",
+                    "ConnectionKey": "PCH_DW",
+                    "PermissionKey": "Administration:General"
+                },
+                {
+                    "Tablename": "dbo.dim_office",
+                    "Identifier": "DimOffice",
                     "Module": "PCHDW",
                     "ConnectionKey": "PCH_DW",
                     "PermissionKey": "Administration:General"
