@@ -11,8 +11,11 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[nvs].[STLY_Dates]")]
     [DisplayName("Stly Dates"), InstanceName("Stly Dates")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
+
     public sealed class StlyDatesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Stlyid"), Column("STLYID"), Identity]
