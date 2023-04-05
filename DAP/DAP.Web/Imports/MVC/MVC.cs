@@ -118,6 +118,11 @@ namespace MVC
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
             }
 
+            public static class ExchangeFixedRate
+            {
+                public const string ExchangeFixedRateIndex = "~/Modules/DWSupport/ExchangeFixedRate/ExchangeFixedRateIndex.cshtml";
+            }
+
             public static class FinPlannedCapacitySupp
             {
                 public const string FinPlannedCapacitySuppIndex = "~/Modules/DWSupport/FinPlannedCapacitySupp/FinPlannedCapacitySuppIndex.cshtml";
@@ -186,6 +191,11 @@ namespace MVC
             public static class Region
             {
                 public const string RegionIndex = "~/Modules/DWSupport/Region/RegionIndex.cshtml";
+            }
+
+            public static class RevDetailField
+            {
+                public const string RevDetailFieldIndex = "~/Modules/DWSupport/RevDetailField/RevDetailFieldIndex.cshtml";
             }
 
             public static class RollupProductCodesSupp
