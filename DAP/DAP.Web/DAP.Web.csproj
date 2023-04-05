@@ -1187,6 +1187,7 @@
     <Content Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\Region\RegionIndex.cshtml" />
+    <Content Include="Modules\DWSupport\StlyDates\StlyDatesIndex.cshtml" />
     <Content Include="Modules\DWSupport\RevDetailField\RevDetailFieldIndex.cshtml" />
     <Content Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateIndex.cshtml" />
   </ItemGroup>
@@ -1303,6 +1304,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppColumns.ts">
@@ -1761,6 +1765,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\Region\RegionDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\Region\RegionGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\StlyDates\StlyDatesDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\StlyDates\StlyDatesGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\RevDetailField\RevDetailFieldDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\RevDetailField\RevDetailFieldGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateDialog.ts" />
@@ -3356,6 +3362,21 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RevDetailFieldRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -4221,6 +4242,12 @@
     <Compile Include="Modules\DWSupport\Region\RegionPage.cs" />
     <Compile Include="Modules\DWSupport\Region\RegionColumns.cs" />
     <Compile Include="Modules\DWSupport\Region\RegionForm.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesRow.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesRepository.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesPage.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesColumns.cs" />
+    <Compile Include="Modules\DWSupport\StlyDates\StlyDatesForm.cs" />
     <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldRow.cs" />
     <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldRepository.cs" />
     <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldEndpoint.cs" />

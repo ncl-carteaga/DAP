@@ -188,14 +188,15 @@ namespace MVC
                 public const string PsGlAccountSuppIndex = "~/Modules/DWSupport/PsGlAccountSupp/PsGlAccountSuppIndex.cshtml";
             }
 
-            public static class Region
-            {
-                public const string RegionIndex = "~/Modules/DWSupport/Region/RegionIndex.cshtml";
-            }
-
+<<<<<<< HEAD
             public static class RevDetailField
             {
                 public const string RevDetailFieldIndex = "~/Modules/DWSupport/RevDetailField/RevDetailFieldIndex.cshtml";
+=======
+            public static class Region
+            {
+                public const string RegionIndex = "~/Modules/DWSupport/Region/RegionIndex.cshtml";
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
             }
 
             public static class RollupProductCodesSupp
@@ -211,11 +212,6 @@ namespace MVC
             public static class SlProductCodeSupp
             {
                 public const string SlProductCodeSuppIndex = "~/Modules/DWSupport/SlProductCodeSupp/SlProductCodeSuppIndex.cshtml";
-            }
-
-            public static class StlyDates
-            {
-                public const string StlyDatesIndex = "~/Modules/DWSupport/StlyDates/StlyDatesIndex.cshtml";
             }
 
             public static class SurveyFilterExclusionSupp

@@ -17,17 +17,18 @@ namespace DAP.DWSupport.Forms
         public String ShipCd { get; set; }
         public Int32 SailId { get; set; }
         public Int32 AgencyId { get; set; }
+        public String VoyageCd { get; set; }
         public String CmiTypeCd { get; set; }
         public Decimal CruiseRevAmt { get; set; }
         public Decimal NcfAmt { get; set; }
         public Decimal CommissionAmt { get; set; }
         public Decimal CmiAmenityCostAmt { get; set; }
-        public DateTime ContractDat { get; set; }
         public Int32 CabinQty { get; set; }
         public Int32 PaxQty { get; set; }
-        public DateTime EffectiveToDt { get; set; }
-        public DateTime EffectiveFromDt { get; set; }
+        public DateTime VoyageStartDate { get; set; }
+        public DateTime VoyageEndDate { get; set; }
         [Tab("Tab 2")]
+        public DateTime ContractDat { get; set; }
         public String BookingCurrencyCd { get; set; }
         [Visible(false)]
         public DateTime CreatedTs { get; set; }
@@ -39,7 +40,6 @@ namespace DAP.DWSupport.Forms
         public DateTime ModifiedTs { get; set; }
         public String CmiSubTypeCd { get; set; }
         public String CmiSubType2Cd { get; set; }
-        public String VoyageCd { get; set; }
         public Decimal SmCabinFareAmt { get; set; }
         public Decimal SmCabinFareNonrevAmt { get; set; }
         public Decimal SmExcessTicketingAmt { get; set; }

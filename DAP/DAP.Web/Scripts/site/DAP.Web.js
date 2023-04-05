@@ -3320,6 +3320,76 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var StlyDatesForm = /** @class */ (function (_super) {
+            __extends(StlyDatesForm, _super);
+            function StlyDatesForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!StlyDatesForm.init) {
+                    StlyDatesForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.DateEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.BooleanEditor;
+                    Q.initFormType(StlyDatesForm, [
+                        'ReportDt', w0,
+                        'DataAsOfDt', w0,
+                        'StlyDt', w0,
+                        'DayOfWeek', w1,
+                        'WeekNum', w2,
+                        'SystemIssuesInd', w3,
+                        'HolidayInd', w3,
+                        'DisasterInd', w3,
+                        'EffectiveFrom', w0,
+                        'EffectiveTo', w0,
+                        'LoadDt', w0
+                    ]);
+                }
+                return _this;
+            }
+            StlyDatesForm.formKey = 'DWSupport.StlyDates';
+            return StlyDatesForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.StlyDatesForm = StlyDatesForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesRow;
+        (function (StlyDatesRow) {
+            StlyDatesRow.idProperty = 'Stlyid';
+            StlyDatesRow.nameProperty = 'DayOfWeek';
+            StlyDatesRow.localTextPrefix = 'DWSupport.StlyDates';
+        })(StlyDatesRow = DWSupport.StlyDatesRow || (DWSupport.StlyDatesRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesService;
+        (function (StlyDatesService) {
+            StlyDatesService.baseUrl = 'DWSupport/StlyDates';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                StlyDatesService[x] = function (r, s, o) {
+                    return Q.serviceRequest(StlyDatesService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(StlyDatesService = DWSupport.StlyDatesService || (DWSupport.StlyDatesService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var SurveyFilterExclusionSuppForm = /** @class */ (function (_super) {
             __extends(SurveyFilterExclusionSuppForm, _super);
             function SurveyFilterExclusionSuppForm(prefix) {
@@ -12781,6 +12851,52 @@ var DAP;
             return SlProductCodeSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.SlProductCodeSuppGrid = SlProductCodeSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesDialog = /** @class */ (function (_super) {
+            __extends(StlyDatesDialog, _super);
+            function StlyDatesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.StlyDatesForm(_this.idPrefix);
+                return _this;
+            }
+            StlyDatesDialog.prototype.getFormKey = function () { return DWSupport.StlyDatesForm.formKey; };
+            StlyDatesDialog.prototype.getIdProperty = function () { return DWSupport.StlyDatesRow.idProperty; };
+            StlyDatesDialog.prototype.getLocalTextPrefix = function () { return DWSupport.StlyDatesRow.localTextPrefix; };
+            StlyDatesDialog.prototype.getNameProperty = function () { return DWSupport.StlyDatesRow.nameProperty; };
+            StlyDatesDialog.prototype.getService = function () { return DWSupport.StlyDatesService.baseUrl; };
+            StlyDatesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StlyDatesDialog);
+            return StlyDatesDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.StlyDatesDialog = StlyDatesDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesGrid = /** @class */ (function (_super) {
+            __extends(StlyDatesGrid, _super);
+            function StlyDatesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            StlyDatesGrid.prototype.getColumnsKey = function () { return 'DWSupport.StlyDates'; };
+            StlyDatesGrid.prototype.getDialogType = function () { return DWSupport.StlyDatesDialog; };
+            StlyDatesGrid.prototype.getIdProperty = function () { return DWSupport.StlyDatesRow.idProperty; };
+            StlyDatesGrid.prototype.getLocalTextPrefix = function () { return DWSupport.StlyDatesRow.localTextPrefix; };
+            StlyDatesGrid.prototype.getService = function () { return DWSupport.StlyDatesService.baseUrl; };
+            StlyDatesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StlyDatesGrid);
+            return StlyDatesGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.StlyDatesGrid = StlyDatesGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;

@@ -1181,11 +1181,17 @@
     <Content Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestIndex.cshtml" />
     <Content Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppIndex.cshtml" />
     <Content Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideIndex.cshtml" />
-<<<<<<< HEAD
-    <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
-=======
     <Content Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppIndex.cshtml" />
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+    <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\GtfSupp\GtfSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppIndex.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Modules\DWSupport\RevDetailField\RevDetailFieldIndex.cshtml" />
+    <Content Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateIndex.cshtml" />
+=======
+    <Content Include="Modules\DWSupport\Region\RegionIndex.cshtml" />
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1227,6 +1233,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1242,6 +1251,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DistrictMasterSuppService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinPlannedCapacitySuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1249,6 +1261,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FullShipChartersSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GuestPreventDepartureColumns.ts">
@@ -1275,6 +1290,13 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+<<<<<<< HEAD
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RevDetailFieldColumns.ts">
+=======
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionColumns.ts">
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1294,6 +1316,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.TblStrategicPriceControlExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\NCLHDSAR.AssigneeColumns.ts">
@@ -1728,13 +1753,25 @@
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideDialog.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideGrid.ts" />
-<<<<<<< HEAD
-    <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppDialog.ts" />
-    <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppGrid.ts" />
-=======
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppGrid.ts" />
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+    <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GtfSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppGrid.ts" />
+<<<<<<< HEAD
+    <TypeScriptCompile Include="Modules\DWSupport\RevDetailField\RevDetailFieldDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\RevDetailField\RevDetailFieldGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateGrid.ts" />
+=======
+    <TypeScriptCompile Include="Modules\DWSupport\Region\RegionDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\Region\RegionGrid.ts" />
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3254,15 +3291,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideDescriptionService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-<<<<<<< HEAD
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppForm.ts">
-=======
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinPlannedCapacitySuppRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -3270,7 +3298,82 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinPlannedCapacitySuppForm.ts">
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CmiSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.GtfSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimOfficeRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimOfficeService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CcOfficeLoationsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+<<<<<<< HEAD
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RevDetailFieldRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RevDetailFieldService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RevDetailFieldForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateForm.ts">
+=======
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionForm.ts">
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -3289,6 +3392,9 @@
     <Compile Include="App_Start\SiteInitialization.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Imports\ClientTypes\DWSupport.GTFCategoryEditorAttribute.cs">
+      <DependentUpon>ClientTypes.tt</DependentUpon>
     </Compile>
     <Compile Include="Imports\ClientTypes\DWSupport.SelectYNEditorAttribute.cs">
       <DependentUpon>ClientTypes.tt</DependentUpon>
@@ -3450,6 +3556,8 @@
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesChannelLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesRepLookup.cs" />
     <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
+    <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GTFPortLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImportForm.cs" />
@@ -4073,21 +4181,63 @@
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRow.cs" />
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRepository.cs" />
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionEndpoint.cs" />
-<<<<<<< HEAD
-    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppRow.cs" />
-    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppRepository.cs" />
-    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppEndpoint.cs" />
-    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppPage.cs" />
-    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppColumns.cs" />
-    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppForm.cs" />
-=======
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppRow.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppRepository.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppEndpoint.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppPage.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppColumns.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppForm.cs" />
->>>>>>> FIN_PLANNED_CAPACITY_SUPP
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CmiSupp\CmiSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\GtfSupp\GtfSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\UpgradeAdvAdjSupp\UpgradeAdvAdjSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CreditCardAdjSupp\CreditCardAdjSuppForm.cs" />
+    <Compile Include="Modules\PCHDW\DimOffice\DimOfficeRow.cs" />
+    <Compile Include="Modules\PCHDW\DimOffice\DimOfficeRepository.cs" />
+    <Compile Include="Modules\PCHDW\DimOffice\DimOfficeEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsRow.cs" />
+    <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsRepository.cs" />
+    <Compile Include="Modules\DWSupport\CcOfficeLoations\CcOfficeLoationsEndpoint.cs" />
+<<<<<<< HEAD
+    <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldRow.cs" />
+    <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldRepository.cs" />
+    <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldPage.cs" />
+    <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldColumns.cs" />
+    <Compile Include="Modules\DWSupport\RevDetailField\RevDetailFieldForm.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateRow.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateRepository.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRatePage.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateColumns.cs" />
+    <Compile Include="Modules\DWSupport\ExchangeFixedRate\ExchangeFixedRateForm.cs" />
+=======
+    <Compile Include="Modules\DWSupport\Region\RegionRow.cs" />
+    <Compile Include="Modules\DWSupport\Region\RegionRepository.cs" />
+    <Compile Include="Modules\DWSupport\Region\RegionEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\Region\RegionPage.cs" />
+    <Compile Include="Modules\DWSupport\Region\RegionColumns.cs" />
+    <Compile Include="Modules\DWSupport\Region\RegionForm.cs" />
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

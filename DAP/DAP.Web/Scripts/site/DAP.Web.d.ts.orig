@@ -3151,65 +3151,7 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
-    interface RegionForm {
-        RegionCd: Serenity.StringEditor;
-        RegionType: Serenity.StringEditor;
-        CompanyCd: Serenity.StringEditor;
-        EffectiveFrom: Serenity.DateEditor;
-        EffectiveTo: Serenity.DateEditor;
-        LoadDt: Serenity.DateEditor;
-    }
-    class RegionForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.DWSupport {
-    interface RegionRow {
-        RegionId?: number;
-        RegionCd?: string;
-        RegionType?: string;
-        CompanyCd?: string;
-        EffectiveFrom?: string;
-        EffectiveTo?: string;
-        LoadDt?: string;
-    }
-    namespace RegionRow {
-        const idProperty = "RegionId";
-        const nameProperty = "RegionCd";
-        const localTextPrefix = "DWSupport.Region";
-        const enum Fields {
-            RegionId = "RegionId",
-            RegionCd = "RegionCd",
-            RegionType = "RegionType",
-            CompanyCd = "CompanyCd",
-            EffectiveFrom = "EffectiveFrom",
-            EffectiveTo = "EffectiveTo",
-            LoadDt = "LoadDt"
-        }
-    }
-}
-declare namespace DAP.DWSupport {
-    namespace RegionService {
-        const baseUrl = "DWSupport/Region";
-        function Create(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "DWSupport/Region/Create",
-            Update = "DWSupport/Region/Update",
-            Delete = "DWSupport/Region/Delete",
-            Retrieve = "DWSupport/Region/Retrieve",
-            List = "DWSupport/Region/List"
-        }
-    }
-}
-declare namespace DAP.DWSupport {
-}
-declare namespace DAP.DWSupport {
+<<<<<<< HEAD
     interface RevDetailFieldForm {
         RevdetailFieldNm: Serenity.StringEditor;
         RevdetailSegmentFieldNm: Serenity.StringEditor;
@@ -3219,12 +3161,24 @@ declare namespace DAP.DWSupport {
         LoadDt: Serenity.DateEditor;
     }
     class RevDetailFieldForm extends Serenity.PrefixedContext {
+=======
+    interface RegionForm {
+        RegionCd: Serenity.StringEditor;
+        RegionType: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        EffectiveFrom: Serenity.DateEditor;
+        EffectiveTo: Serenity.DateEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class RegionForm extends Serenity.PrefixedContext {
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
         static formKey: string;
         private static init;
         constructor(prefix: string);
     }
 }
 declare namespace DAP.DWSupport {
+<<<<<<< HEAD
     interface RevDetailFieldRow {
         RevDetailFieldId?: number;
         RevdetailFieldNm?: string;
@@ -3245,11 +3199,34 @@ declare namespace DAP.DWSupport {
             RevdetailFieldCheck = "RevdetailFieldCheck",
             OdsFieldNm = "OdsFieldNm",
             CubeInsInd = "CubeInsInd",
+=======
+    interface RegionRow {
+        RegionId?: number;
+        RegionCd?: string;
+        RegionType?: string;
+        CompanyCd?: string;
+        EffectiveFrom?: string;
+        EffectiveTo?: string;
+        LoadDt?: string;
+    }
+    namespace RegionRow {
+        const idProperty = "RegionId";
+        const nameProperty = "RegionCd";
+        const localTextPrefix = "DWSupport.Region";
+        const enum Fields {
+            RegionId = "RegionId",
+            RegionCd = "RegionCd",
+            RegionType = "RegionType",
+            CompanyCd = "CompanyCd",
+            EffectiveFrom = "EffectiveFrom",
+            EffectiveTo = "EffectiveTo",
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
             LoadDt = "LoadDt"
         }
     }
 }
 declare namespace DAP.DWSupport {
+<<<<<<< HEAD
     namespace RevDetailFieldService {
         const baseUrl = "DWSupport/RevDetailField";
         function Create(request: Serenity.SaveRequest<RevDetailFieldRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
@@ -3263,6 +3240,21 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/RevDetailField/Delete",
             Retrieve = "DWSupport/RevDetailField/Retrieve",
             List = "DWSupport/RevDetailField/List"
+=======
+    namespace RegionService {
+        const baseUrl = "DWSupport/Region";
+        function Create(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RegionRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/Region/Create",
+            Update = "DWSupport/Region/Update",
+            Delete = "DWSupport/Region/Delete",
+            Retrieve = "DWSupport/Region/Retrieve",
+            List = "DWSupport/Region/List"
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
         }
     }
 }
@@ -3676,80 +3668,6 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/SlProductCodeSupp/Delete",
             Retrieve = "DWSupport/SlProductCodeSupp/Retrieve",
             List = "DWSupport/SlProductCodeSupp/List"
-        }
-    }
-}
-declare namespace DAP.DWSupport {
-}
-declare namespace DAP.DWSupport {
-    interface StlyDatesForm {
-        ReportDt: Serenity.DateEditor;
-        DataAsOfDt: Serenity.DateEditor;
-        StlyDt: Serenity.DateEditor;
-        DayOfWeek: Serenity.StringEditor;
-        WeekNum: Serenity.IntegerEditor;
-        SystemIssuesInd: Serenity.BooleanEditor;
-        HolidayInd: Serenity.BooleanEditor;
-        DisasterInd: Serenity.BooleanEditor;
-        EffectiveFrom: Serenity.DateEditor;
-        EffectiveTo: Serenity.DateEditor;
-        LoadDt: Serenity.DateEditor;
-    }
-    class StlyDatesForm extends Serenity.PrefixedContext {
-        static formKey: string;
-        private static init;
-        constructor(prefix: string);
-    }
-}
-declare namespace DAP.DWSupport {
-    interface StlyDatesRow {
-        Stlyid?: number;
-        ReportDt?: string;
-        DataAsOfDt?: string;
-        StlyDt?: string;
-        DayOfWeek?: string;
-        WeekNum?: number;
-        SystemIssuesInd?: boolean;
-        HolidayInd?: boolean;
-        DisasterInd?: boolean;
-        EffectiveFrom?: string;
-        EffectiveTo?: string;
-        LoadDt?: string;
-    }
-    namespace StlyDatesRow {
-        const idProperty = "Stlyid";
-        const nameProperty = "DayOfWeek";
-        const localTextPrefix = "DWSupport.StlyDates";
-        const enum Fields {
-            Stlyid = "Stlyid",
-            ReportDt = "ReportDt",
-            DataAsOfDt = "DataAsOfDt",
-            StlyDt = "StlyDt",
-            DayOfWeek = "DayOfWeek",
-            WeekNum = "WeekNum",
-            SystemIssuesInd = "SystemIssuesInd",
-            HolidayInd = "HolidayInd",
-            DisasterInd = "DisasterInd",
-            EffectiveFrom = "EffectiveFrom",
-            EffectiveTo = "EffectiveTo",
-            LoadDt = "LoadDt"
-        }
-    }
-}
-declare namespace DAP.DWSupport {
-    namespace StlyDatesService {
-        const baseUrl = "DWSupport/StlyDates";
-        function Create(request: Serenity.SaveRequest<StlyDatesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Update(request: Serenity.SaveRequest<StlyDatesRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<StlyDatesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<StlyDatesRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        const enum Methods {
-            Create = "DWSupport/StlyDates/Create",
-            Update = "DWSupport/StlyDates/Update",
-            Delete = "DWSupport/StlyDates/Delete",
-            Retrieve = "DWSupport/StlyDates/Retrieve",
-            List = "DWSupport/StlyDates/List"
         }
     }
 }
@@ -10149,32 +10067,17 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-    class RegionDialog extends Serenity.EntityDialog<RegionRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: RegionForm;
-    }
-}
-declare namespace DAP.DWSupport {
-    class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof RegionDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.DWSupport {
+<<<<<<< HEAD
     class RevDetailFieldDialog extends Serenity.EntityDialog<RevDetailFieldRow, any> {
+=======
+    class RegionDialog extends Serenity.EntityDialog<RegionRow, any> {
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
         protected getFormKey(): string;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getNameProperty(): string;
         protected getService(): string;
+<<<<<<< HEAD
         protected form: RevDetailFieldForm;
     }
 }
@@ -10182,6 +10085,15 @@ declare namespace DAP.DWSupport {
     class RevDetailFieldGrid extends Serenity.EntityGrid<RevDetailFieldRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof RevDetailFieldDialog;
+=======
+        protected form: RegionForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RegionDialog;
+>>>>>>> 7812a6645d4b379bf79d6c9797c282a887dc355f
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -10279,26 +10191,6 @@ declare namespace DAP.DWSupport {
     class SlProductCodeSuppGrid extends Serenity.EntityGrid<SlProductCodeSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof SlProductCodeSuppDialog;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getService(): string;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.DWSupport {
-    class StlyDatesDialog extends Serenity.EntityDialog<StlyDatesRow, any> {
-        protected getFormKey(): string;
-        protected getIdProperty(): string;
-        protected getLocalTextPrefix(): string;
-        protected getNameProperty(): string;
-        protected getService(): string;
-        protected form: StlyDatesForm;
-    }
-}
-declare namespace DAP.DWSupport {
-    class StlyDatesGrid extends Serenity.EntityGrid<StlyDatesRow, any> {
-        protected getColumnsKey(): string;
-        protected getDialogType(): typeof StlyDatesDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;

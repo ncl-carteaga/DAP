@@ -9711,6 +9711,12 @@ button.ui-button {
 .s-DWSupport-RegionDialog .caption {
   width: 150px;
 }
+.s-DWSupport-StlyDatesDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-StlyDatesDialog .caption {
+  width: 150px;
+}
 .s-DWSupport-RevDetailFieldDialog > .size {
   width: 650px;
 }
