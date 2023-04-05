@@ -1695,6 +1695,69 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var ExchangeFixedRateForm = /** @class */ (function (_super) {
+            __extends(ExchangeFixedRateForm, _super);
+            function ExchangeFixedRateForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ExchangeFixedRateForm.init) {
+                    ExchangeFixedRateForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(ExchangeFixedRateForm, [
+                        'CurrencyCd', w0,
+                        'ExchangeRate', w1,
+                        'EffectiveFrom', w2,
+                        'EffectiveTo', w2,
+                        'LoadDt', w2
+                    ]);
+                }
+                return _this;
+            }
+            ExchangeFixedRateForm.formKey = 'DWSupport.ExchangeFixedRate';
+            return ExchangeFixedRateForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.ExchangeFixedRateForm = ExchangeFixedRateForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateRow;
+        (function (ExchangeFixedRateRow) {
+            ExchangeFixedRateRow.idProperty = 'ExchangeFixedRateId';
+            ExchangeFixedRateRow.nameProperty = 'CurrencyCd';
+            ExchangeFixedRateRow.localTextPrefix = 'DWSupport.ExchangeFixedRate';
+        })(ExchangeFixedRateRow = DWSupport.ExchangeFixedRateRow || (DWSupport.ExchangeFixedRateRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateService;
+        (function (ExchangeFixedRateService) {
+            ExchangeFixedRateService.baseUrl = 'DWSupport/ExchangeFixedRate';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ExchangeFixedRateService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ExchangeFixedRateService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ExchangeFixedRateService = DWSupport.ExchangeFixedRateService || (DWSupport.ExchangeFixedRateService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var FinPlannedCapacitySuppForm = /** @class */ (function (_super) {
             __extends(FinPlannedCapacitySuppForm, _super);
             function FinPlannedCapacitySuppForm(prefix) {
@@ -2875,6 +2938,70 @@ var DAP;
                 };
             });
         })(RegionService = DWSupport.RegionService || (DWSupport.RegionService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldForm = /** @class */ (function (_super) {
+            __extends(RevDetailFieldForm, _super);
+            function RevDetailFieldForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!RevDetailFieldForm.init) {
+                    RevDetailFieldForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(RevDetailFieldForm, [
+                        'RevdetailFieldNm', w0,
+                        'RevdetailSegmentFieldNm', w0,
+                        'RevdetailFieldCheck', w0,
+                        'OdsFieldNm', w0,
+                        'CubeInsInd', w1,
+                        'LoadDt', w2
+                    ]);
+                }
+                return _this;
+            }
+            RevDetailFieldForm.formKey = 'DWSupport.RevDetailField';
+            return RevDetailFieldForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.RevDetailFieldForm = RevDetailFieldForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldRow;
+        (function (RevDetailFieldRow) {
+            RevDetailFieldRow.idProperty = 'RevDetailFieldId';
+            RevDetailFieldRow.nameProperty = 'RevdetailFieldNm';
+            RevDetailFieldRow.localTextPrefix = 'DWSupport.RevDetailField';
+        })(RevDetailFieldRow = DWSupport.RevDetailFieldRow || (DWSupport.RevDetailFieldRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldService;
+        (function (RevDetailFieldService) {
+            RevDetailFieldService.baseUrl = 'DWSupport/RevDetailField';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                RevDetailFieldService[x] = function (r, s, o) {
+                    return Q.serviceRequest(RevDetailFieldService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(RevDetailFieldService = DWSupport.RevDetailFieldService || (DWSupport.RevDetailFieldService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -11145,6 +11272,52 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var ExchangeFixedRateDialog = /** @class */ (function (_super) {
+            __extends(ExchangeFixedRateDialog, _super);
+            function ExchangeFixedRateDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.ExchangeFixedRateForm(_this.idPrefix);
+                return _this;
+            }
+            ExchangeFixedRateDialog.prototype.getFormKey = function () { return DWSupport.ExchangeFixedRateForm.formKey; };
+            ExchangeFixedRateDialog.prototype.getIdProperty = function () { return DWSupport.ExchangeFixedRateRow.idProperty; };
+            ExchangeFixedRateDialog.prototype.getLocalTextPrefix = function () { return DWSupport.ExchangeFixedRateRow.localTextPrefix; };
+            ExchangeFixedRateDialog.prototype.getNameProperty = function () { return DWSupport.ExchangeFixedRateRow.nameProperty; };
+            ExchangeFixedRateDialog.prototype.getService = function () { return DWSupport.ExchangeFixedRateService.baseUrl; };
+            ExchangeFixedRateDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ExchangeFixedRateDialog);
+            return ExchangeFixedRateDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.ExchangeFixedRateDialog = ExchangeFixedRateDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateGrid = /** @class */ (function (_super) {
+            __extends(ExchangeFixedRateGrid, _super);
+            function ExchangeFixedRateGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ExchangeFixedRateGrid.prototype.getColumnsKey = function () { return 'DWSupport.ExchangeFixedRate'; };
+            ExchangeFixedRateGrid.prototype.getDialogType = function () { return DWSupport.ExchangeFixedRateDialog; };
+            ExchangeFixedRateGrid.prototype.getIdProperty = function () { return DWSupport.ExchangeFixedRateRow.idProperty; };
+            ExchangeFixedRateGrid.prototype.getLocalTextPrefix = function () { return DWSupport.ExchangeFixedRateRow.localTextPrefix; };
+            ExchangeFixedRateGrid.prototype.getService = function () { return DWSupport.ExchangeFixedRateService.baseUrl; };
+            ExchangeFixedRateGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ExchangeFixedRateGrid);
+            return ExchangeFixedRateGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.ExchangeFixedRateGrid = ExchangeFixedRateGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var FinPlannedCapacitySuppDialog = /** @class */ (function (_super) {
             __extends(FinPlannedCapacitySuppDialog, _super);
             function FinPlannedCapacitySuppDialog() {
@@ -12111,6 +12284,52 @@ var DAP;
             return RegionGrid;
         }(Serenity.EntityGrid));
         DWSupport.RegionGrid = RegionGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldDialog = /** @class */ (function (_super) {
+            __extends(RevDetailFieldDialog, _super);
+            function RevDetailFieldDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.RevDetailFieldForm(_this.idPrefix);
+                return _this;
+            }
+            RevDetailFieldDialog.prototype.getFormKey = function () { return DWSupport.RevDetailFieldForm.formKey; };
+            RevDetailFieldDialog.prototype.getIdProperty = function () { return DWSupport.RevDetailFieldRow.idProperty; };
+            RevDetailFieldDialog.prototype.getLocalTextPrefix = function () { return DWSupport.RevDetailFieldRow.localTextPrefix; };
+            RevDetailFieldDialog.prototype.getNameProperty = function () { return DWSupport.RevDetailFieldRow.nameProperty; };
+            RevDetailFieldDialog.prototype.getService = function () { return DWSupport.RevDetailFieldService.baseUrl; };
+            RevDetailFieldDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RevDetailFieldDialog);
+            return RevDetailFieldDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.RevDetailFieldDialog = RevDetailFieldDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldGrid = /** @class */ (function (_super) {
+            __extends(RevDetailFieldGrid, _super);
+            function RevDetailFieldGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RevDetailFieldGrid.prototype.getColumnsKey = function () { return 'DWSupport.RevDetailField'; };
+            RevDetailFieldGrid.prototype.getDialogType = function () { return DWSupport.RevDetailFieldDialog; };
+            RevDetailFieldGrid.prototype.getIdProperty = function () { return DWSupport.RevDetailFieldRow.idProperty; };
+            RevDetailFieldGrid.prototype.getLocalTextPrefix = function () { return DWSupport.RevDetailFieldRow.localTextPrefix; };
+            RevDetailFieldGrid.prototype.getService = function () { return DWSupport.RevDetailFieldService.baseUrl; };
+            RevDetailFieldGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RevDetailFieldGrid);
+            return RevDetailFieldGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.RevDetailFieldGrid = RevDetailFieldGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;

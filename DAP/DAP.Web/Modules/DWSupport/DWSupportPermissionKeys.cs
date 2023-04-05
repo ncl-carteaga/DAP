@@ -56,6 +56,8 @@ namespace DAP.DWSupport
             public const string CreditCardAdjSupp = "DWSupp:Page:CreditCardAdjSupp";
             public const string Region = "DWSupp:Page:Region";
             public const string StlyDates = "DWSupp:Page:StlyDates";
+            public const string RevDetailField = "DWSupp:Page:RevDetailField";
+            public const string ExchangeFixedRate = "DWSupp:Page:ExchangeFixedRate";
         }
     }    
 }

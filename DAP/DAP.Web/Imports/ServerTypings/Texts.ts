@@ -409,6 +409,15 @@
                 export const SecondaryCrmSupportNam: string;
             }
 
+            namespace ExchangeFixedRate {
+                export const CurrencyCd: string;
+                export const EffectiveFrom: string;
+                export const EffectiveTo: string;
+                export const ExchangeFixedRateId: string;
+                export const ExchangeRate: string;
+                export const LoadDt: string;
+            }
+
             namespace FinPlannedCapacitySupp {
                 export const CapacityDesc: string;
                 export const CreatedByNam: string;
@@ -703,6 +712,16 @@
                 export const RegionCd: string;
                 export const RegionId: string;
                 export const RegionType: string;
+            }
+
+            namespace RevDetailField {
+                export const CubeInsInd: string;
+                export const LoadDt: string;
+                export const OdsFieldNm: string;
+                export const RevDetailFieldId: string;
+                export const RevdetailFieldCheck: string;
+                export const RevdetailFieldNm: string;
+                export const RevdetailSegmentFieldNm: string;
             }
 
             namespace RollupProductCodesSupp {

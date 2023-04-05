@@ -1915,6 +1915,62 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface ExchangeFixedRateForm {
+        CurrencyCd: Serenity.StringEditor;
+        ExchangeRate: Serenity.DecimalEditor;
+        EffectiveFrom: Serenity.DateEditor;
+        EffectiveTo: Serenity.DateEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class ExchangeFixedRateForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface ExchangeFixedRateRow {
+        ExchangeFixedRateId?: number;
+        CurrencyCd?: string;
+        ExchangeRate?: number;
+        EffectiveFrom?: string;
+        EffectiveTo?: string;
+        LoadDt?: string;
+    }
+    namespace ExchangeFixedRateRow {
+        const idProperty = "ExchangeFixedRateId";
+        const nameProperty = "CurrencyCd";
+        const localTextPrefix = "DWSupport.ExchangeFixedRate";
+        const enum Fields {
+            ExchangeFixedRateId = "ExchangeFixedRateId",
+            CurrencyCd = "CurrencyCd",
+            ExchangeRate = "ExchangeRate",
+            EffectiveFrom = "EffectiveFrom",
+            EffectiveTo = "EffectiveTo",
+            LoadDt = "LoadDt"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace ExchangeFixedRateService {
+        const baseUrl = "DWSupport/ExchangeFixedRate";
+        function Create(request: Serenity.SaveRequest<ExchangeFixedRateRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ExchangeFixedRateRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ExchangeFixedRateRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ExchangeFixedRateRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/ExchangeFixedRate/Create",
+            Update = "DWSupport/ExchangeFixedRate/Update",
+            Delete = "DWSupport/ExchangeFixedRate/Delete",
+            Retrieve = "DWSupport/ExchangeFixedRate/Retrieve",
+            List = "DWSupport/ExchangeFixedRate/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface FinPlannedCapacitySuppForm {
         ShipCd: Serenity.StringEditor;
         SailFromDat: Serenity.DateEditor;
@@ -3148,6 +3204,65 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/Region/Delete",
             Retrieve = "DWSupport/Region/Retrieve",
             List = "DWSupport/Region/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface RevDetailFieldForm {
+        RevdetailFieldNm: Serenity.StringEditor;
+        RevdetailSegmentFieldNm: Serenity.StringEditor;
+        RevdetailFieldCheck: Serenity.StringEditor;
+        OdsFieldNm: Serenity.StringEditor;
+        CubeInsInd: Serenity.IntegerEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class RevDetailFieldForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface RevDetailFieldRow {
+        RevDetailFieldId?: number;
+        RevdetailFieldNm?: string;
+        RevdetailSegmentFieldNm?: string;
+        RevdetailFieldCheck?: string;
+        OdsFieldNm?: string;
+        CubeInsInd?: number;
+        LoadDt?: string;
+    }
+    namespace RevDetailFieldRow {
+        const idProperty = "RevDetailFieldId";
+        const nameProperty = "RevdetailFieldNm";
+        const localTextPrefix = "DWSupport.RevDetailField";
+        const enum Fields {
+            RevDetailFieldId = "RevDetailFieldId",
+            RevdetailFieldNm = "RevdetailFieldNm",
+            RevdetailSegmentFieldNm = "RevdetailSegmentFieldNm",
+            RevdetailFieldCheck = "RevdetailFieldCheck",
+            OdsFieldNm = "OdsFieldNm",
+            CubeInsInd = "CubeInsInd",
+            LoadDt = "LoadDt"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace RevDetailFieldService {
+        const baseUrl = "DWSupport/RevDetailField";
+        function Create(request: Serenity.SaveRequest<RevDetailFieldRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RevDetailFieldRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RevDetailFieldRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RevDetailFieldRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/RevDetailField/Create",
+            Update = "DWSupport/RevDetailField/Update",
+            Delete = "DWSupport/RevDetailField/Delete",
+            Retrieve = "DWSupport/RevDetailField/Retrieve",
+            List = "DWSupport/RevDetailField/List"
         }
     }
 }
@@ -9696,6 +9811,26 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class ExchangeFixedRateDialog extends Serenity.EntityDialog<ExchangeFixedRateRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: ExchangeFixedRateForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class ExchangeFixedRateGrid extends Serenity.EntityGrid<ExchangeFixedRateRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ExchangeFixedRateDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
     class FinPlannedCapacitySuppDialog extends Serenity.EntityDialog<FinPlannedCapacitySuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -10027,6 +10162,26 @@ declare namespace DAP.DWSupport {
     class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof RegionDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class RevDetailFieldDialog extends Serenity.EntityDialog<RevDetailFieldRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RevDetailFieldForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class RevDetailFieldGrid extends Serenity.EntityGrid<RevDetailFieldRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RevDetailFieldDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
