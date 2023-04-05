@@ -11,8 +11,8 @@
         ContractDat: Serenity.DateEditor;
         CabinQty: Serenity.IntegerEditor;
         PaxQty: Serenity.IntegerEditor;
-        EffectiveToDt: Serenity.DateEditor;
-        EffectiveFromDt: Serenity.DateEditor;
+        VoyageEndDate: Serenity.DateEditor;
+        VoyageStartDate: Serenity.DateEditor;
         BookingCurrencyCd: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -70,8 +70,8 @@
                     'ContractDat', w4,
                     'CabinQty', w1,
                     'PaxQty', w1,
-                    'EffectiveToDt', w4,
-                    'EffectiveFromDt', w4,
+                    'VoyageEndDate', w4,
+                    'VoyageStartDate', w4,
                     'BookingCurrencyCd', w2,
                     'CreatedTs', w4,
                     'CreatedByNam', w2,

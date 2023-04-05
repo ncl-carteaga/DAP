@@ -1538,8 +1538,8 @@ declare namespace DAP.DWSupport {
         ContractDat: Serenity.DateEditor;
         CabinQty: Serenity.IntegerEditor;
         PaxQty: Serenity.IntegerEditor;
-        EffectiveToDt: Serenity.DateEditor;
-        EffectiveFromDt: Serenity.DateEditor;
+        VoyageEndDate: Serenity.DateEditor;
+        VoyageStartDate: Serenity.DateEditor;
         BookingCurrencyCd: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -1588,8 +1588,8 @@ declare namespace DAP.DWSupport {
         PaxQty?: number;
         BookingCurrencyCd?: string;
         CreatedTs?: string;
-        EffectiveFromDt?: string;
-        EffectiveToDt?: string;
+        VoyageStartDate?: string;
+        VoyageEndDate?: string;
         CreatedByNam?: string;
         ModifiedByNam?: string;
         ModifiedTs?: string;
@@ -1634,8 +1634,8 @@ declare namespace DAP.DWSupport {
             PaxQty = "PaxQty",
             BookingCurrencyCd = "BookingCurrencyCd",
             CreatedTs = "CreatedTs",
-            EffectiveFromDt = "EffectiveFromDt",
-            EffectiveToDt = "EffectiveToDt",
+            VoyageStartDate = "VoyageStartDate",
+            VoyageEndDate = "VoyageEndDate",
             CreatedByNam = "CreatedByNam",
             ModifiedByNam = "ModifiedByNam",
             ModifiedTs = "ModifiedTs",
