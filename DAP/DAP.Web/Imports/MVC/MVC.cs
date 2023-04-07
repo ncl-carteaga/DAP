@@ -367,11 +367,6 @@ namespace MVC
 
         public static class PCHODS
         {
-            public static class InboundUserOverride
-            {
-                public const string InboundUserOverrideIndex = "~/Modules/PCHODS/InboundUserOverride/InboundUserOverrideIndex.cshtml";
-            }
-
             public static class OutboundAgent
             {
                 public const string OutboundAgentIndex = "~/Modules/PCHODS/OutboundAgent/OutboundAgentIndex.cshtml";

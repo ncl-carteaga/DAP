@@ -11,8 +11,8 @@ namespace DAP.NCLHDSAR.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[MarketingRequestTypes]")]
     [DisplayName("Marketing Request Types"), InstanceName("Marketing Request Types")]
-    [ReadPermission(PermissionKeys.Request.View)]
-
+    [ReadPermission("Administration:General")]
+    [ModifyPermission("Administration:General")]
     public sealed class MarketingRequestTypesRow : Row, IIdRow, INameRow
     {
         [DisplayName("Id"), Column("id"), Identity]

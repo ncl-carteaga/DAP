@@ -15,9 +15,6 @@
         MainVoyageCd: SelectYNEditor;
         InterportCd: SelectYNEditor;
         CharterCd: SelectYNEditor;
-        ProxySailId: Serenity.IntegerEditor;
-        OnSaleDat: Serenity.DateEditor;
-        SeasonYearCd: Serenity.StringEditor;
         RmsForecastCd: Serenity.IntegerEditor;
         RmsColorNameDesc: Serenity.StringEditor;
         RmsRefLinkSailId: Serenity.IntegerEditor;
@@ -44,6 +41,9 @@
         ObrTradeCd: Serenity.StringEditor;
         ObrSubTradeCd: Serenity.StringEditor;
         ObrSeasonCd: Serenity.StringEditor;
+        ProxySailId: Serenity.IntegerEditor;
+        OnSaleDat: Serenity.DateEditor;
+        SeasonYearCd: Serenity.StringEditor;
         IsVoyageExceptionCd: SelectYNEditor;
         VoyageExceptionDesc: Serenity.StringEditor;
         ItineraryChangedDat: Serenity.DateEditor;
@@ -90,9 +90,6 @@
                     'MainVoyageCd', w4,
                     'InterportCd', w4,
                     'CharterCd', w4,
-                    'ProxySailId', w0,
-                    'OnSaleDat', w2,
-                    'SeasonYearCd', w5,
                     'RmsForecastCd', w0,
                     'RmsColorNameDesc', w5,
                     'RmsRefLinkSailId', w0,
@@ -119,6 +116,9 @@
                     'ObrTradeCd', w5,
                     'ObrSubTradeCd', w5,
                     'ObrSeasonCd', w5,
+                    'ProxySailId', w0,
+                    'OnSaleDat', w2,
+                    'SeasonYearCd', w5,
                     'IsVoyageExceptionCd', w4,
                     'VoyageExceptionDesc', w5,
                     'ItineraryChangedDat', w2,
