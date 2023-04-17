@@ -9741,6 +9741,12 @@ button.ui-button {
 .s-DWSupport-AirCostAdjSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-SailingExclusionSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-SailingExclusionSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

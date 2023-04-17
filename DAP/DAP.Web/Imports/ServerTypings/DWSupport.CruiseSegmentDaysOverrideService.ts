@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export namespace CruiseSegmentDaysOverrideService {
         export const baseUrl = 'DWSupport/CruiseSegmentDaysOverride';
 
@@ -9,12 +8,12 @@ namespace DAP.DWSupport {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CruiseSegmentDaysOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CruiseSegmentDaysOverrideRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "DWSupport/CruiseSegmentDaysOverride/Create",
+            Update = "DWSupport/CruiseSegmentDaysOverride/Update",
+            Delete = "DWSupport/CruiseSegmentDaysOverride/Delete",
+            Retrieve = "DWSupport/CruiseSegmentDaysOverride/Retrieve",
+            List = "DWSupport/CruiseSegmentDaysOverride/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.DWSupport {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>CruiseSegmentDaysOverrideService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>CruiseSegmentDaysOverrideService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+
