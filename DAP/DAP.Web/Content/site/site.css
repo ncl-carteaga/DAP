@@ -9711,6 +9711,36 @@ button.ui-button {
 .s-DWSupport-StlyDatesDialog .caption {
   width: 150px;
 }
+.s-DWSupport-RevDetailFieldDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-RevDetailFieldDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-ExchangeFixedRateDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-ExchangeFixedRateDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-DimCruiseFlagsDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-DimCruiseFlagsDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-CruiseSegmentDaysOverrideDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CruiseSegmentDaysOverrideDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-AirCostAdjSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AirCostAdjSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

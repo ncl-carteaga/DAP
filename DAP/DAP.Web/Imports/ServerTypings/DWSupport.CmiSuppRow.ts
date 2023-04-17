@@ -13,8 +13,8 @@
         PaxQty?: number;
         BookingCurrencyCd?: string;
         CreatedTs?: string;
-        EffectiveFromDt?: string;
-        EffectiveToDt?: string;
+        VoyageStartDate?: string;
+        VoyageEndDate?: string;
         CreatedByNam?: string;
         ModifiedByNam?: string;
         ModifiedTs?: string;
@@ -61,8 +61,8 @@
             PaxQty = "PaxQty",
             BookingCurrencyCd = "BookingCurrencyCd",
             CreatedTs = "CreatedTs",
-            EffectiveFromDt = "EffectiveFromDt",
-            EffectiveToDt = "EffectiveToDt",
+            VoyageStartDate = "VoyageStartDate",
+            VoyageEndDate = "VoyageEndDate",
             CreatedByNam = "CreatedByNam",
             ModifiedByNam = "ModifiedByNam",
             ModifiedTs = "ModifiedTs",
