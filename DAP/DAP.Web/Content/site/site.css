@@ -9729,6 +9729,24 @@ button.ui-button {
 .s-DWSupport-ExchangeFixedRateDialog .caption {
   width: 150px;
 }
+.s-DWSupport-DimCruiseFlagsDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-DimCruiseFlagsDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-CruiseSegmentDaysOverrideDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CruiseSegmentDaysOverrideDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-AirCostAdjSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-AirCostAdjSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

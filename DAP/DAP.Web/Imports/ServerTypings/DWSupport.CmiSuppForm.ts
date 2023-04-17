@@ -3,16 +3,17 @@
         ShipCd: Serenity.LookupEditor;
         SailId: Serenity.IntegerEditor;
         AgencyId: Serenity.IntegerEditor;
+        VoyageCd: Serenity.StringEditor;
         CmiTypeCd: Serenity.StringEditor;
         CruiseRevAmt: Serenity.DecimalEditor;
         NcfAmt: Serenity.DecimalEditor;
         CommissionAmt: Serenity.DecimalEditor;
         CmiAmenityCostAmt: Serenity.DecimalEditor;
-        ContractDat: Serenity.DateEditor;
         CabinQty: Serenity.IntegerEditor;
         PaxQty: Serenity.IntegerEditor;
-        VoyageEndDate: Serenity.DateEditor;
         VoyageStartDate: Serenity.DateEditor;
+        VoyageEndDate: Serenity.DateEditor;
+        ContractDat: Serenity.DateEditor;
         BookingCurrencyCd: Serenity.StringEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
@@ -20,7 +21,6 @@
         ModifiedTs: Serenity.DateEditor;
         CmiSubTypeCd: Serenity.StringEditor;
         CmiSubType2Cd: Serenity.StringEditor;
-        VoyageCd: Serenity.StringEditor;
         SmCabinFareAmt: Serenity.DecimalEditor;
         SmCabinFareNonrevAmt: Serenity.DecimalEditor;
         SmExcessTicketingAmt: Serenity.DecimalEditor;
@@ -62,16 +62,17 @@
                     'ShipCd', w0,
                     'SailId', w1,
                     'AgencyId', w1,
+                    'VoyageCd', w2,
                     'CmiTypeCd', w2,
                     'CruiseRevAmt', w3,
                     'NcfAmt', w3,
                     'CommissionAmt', w3,
                     'CmiAmenityCostAmt', w3,
-                    'ContractDat', w4,
                     'CabinQty', w1,
                     'PaxQty', w1,
-                    'VoyageEndDate', w4,
                     'VoyageStartDate', w4,
+                    'VoyageEndDate', w4,
+                    'ContractDat', w4,
                     'BookingCurrencyCd', w2,
                     'CreatedTs', w4,
                     'CreatedByNam', w2,
@@ -79,7 +80,6 @@
                     'ModifiedTs', w4,
                     'CmiSubTypeCd', w2,
                     'CmiSubType2Cd', w2,
-                    'VoyageCd', w2,
                     'SmCabinFareAmt', w3,
                     'SmCabinFareNonrevAmt', w3,
                     'SmExcessTicketingAmt', w3,
