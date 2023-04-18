@@ -3283,6 +3283,30 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var SailingExclusionSuppExcelImportForm = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppExcelImportForm, _super);
+            function SailingExclusionSuppExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SailingExclusionSuppExcelImportForm.init) {
+                    SailingExclusionSuppExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(SailingExclusionSuppExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            SailingExclusionSuppExcelImportForm.formKey = 'DWSupport.SailingExclusionSuppExcelImport';
+            return SailingExclusionSuppExcelImportForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.SailingExclusionSuppExcelImportForm = SailingExclusionSuppExcelImportForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var SailingExclusionSuppForm = /** @class */ (function (_super) {
             __extends(SailingExclusionSuppForm, _super);
             function SailingExclusionSuppForm(prefix) {
@@ -12739,6 +12763,59 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var SailingExclusionSuppExcelImportDialog = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppExcelImportDialog, _super);
+            function SailingExclusionSuppExcelImportDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.SailingExclusionSuppExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            SailingExclusionSuppExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            SailingExclusionSuppExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            DWSupport.SailingExclusionSuppService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            SailingExclusionSuppExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SailingExclusionSuppExcelImportDialog);
+            return SailingExclusionSuppExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        DWSupport.SailingExclusionSuppExcelImportDialog = SailingExclusionSuppExcelImportDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var SailingExclusionSuppGrid = /** @class */ (function (_super) {
             __extends(SailingExclusionSuppGrid, _super);
             function SailingExclusionSuppGrid(container) {
@@ -12765,7 +12842,7 @@ var DAP;
                     cssClass: 'export-xlsx-button',
                     onClick: function () {
                         // open import dialog, let it handle rest
-                        var dialog = new DWSupport.TblStrategicPriceControlExcelImportDialog();
+                        var dialog = new DWSupport.SailingExclusionSuppExcelImportDialog();
                         dialog.element.on('dialogclose', function () {
                             _this.refresh();
                             dialog = null;

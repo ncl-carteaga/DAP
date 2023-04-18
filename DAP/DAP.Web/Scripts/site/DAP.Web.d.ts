@@ -3559,6 +3559,16 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface SailingExclusionSuppExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class SailingExclusionSuppExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
     interface SailingExclusionSuppForm {
         ShipCd: Serenity.LookupEditor;
         MainSailId: Serenity.IntegerEditor;
@@ -10479,6 +10489,14 @@ declare namespace DAP.DWSupport {
         protected getService(): string;
         protected form: SailingExclusionSuppForm;
         protected getToolbarButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class SailingExclusionSuppExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
     }
 }
 declare namespace DAP.DWSupport {

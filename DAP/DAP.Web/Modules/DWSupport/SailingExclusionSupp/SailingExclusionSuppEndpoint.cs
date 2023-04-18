@@ -167,8 +167,8 @@
                     string main_voyage_cd = "";
 
 
-                    entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.MainSailDt.Title;   //excel field name
+                    entType = jImpHelp.entryType.String;      //excel field type
+                    fieldTitle = myFields.MainSailDt.Title;     //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -200,21 +200,23 @@
                         importedValues.Clear();
                     }
 
+                    var dt = DateTime.FromOADate(double.Parse(main_sail_dt));
+
                     // Check if row exists in DB
                     var currentRow = uow.Connection.TryFirst<SailingExclusionSuppRow>(q => q
                         .Select(myFields.SailingExclusionId)
                         .Where(
                             myFields.MainVoyageCd == main_voyage_cd &&
-                            myFields.MainSailDt == main_sail_dt
+                            myFields.MainSailDt == dt
                         )
                     );
-
+                    
                     // Row doesn't exist in DB
                     if (currentRow == null)
                         currentRow = new SailingExclusionSuppRow
                         {
                             MainVoyageCd = main_voyage_cd,
-                            MainSailDt = DateTime.Parse(main_sail_dt)
+                            MainSailDt = dt
                         };
                     else
                     { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
@@ -222,7 +224,7 @@
 
                     // ----------   Create Row from Excel Values   ---------- //
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ShipCd.Title;   //excel field name
+                    fieldTitle = myFields.ShipCd.Title;             //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -237,8 +239,8 @@
                         importedValues.Clear();
                     }
 
-                    entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.MainSailId.Title;  //excel field name
+                    entType = jImpHelp.entryType.Int;           //excel field type
+                    fieldTitle = myFields.MainSailId.Title;     //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -253,7 +255,7 @@
                         importedValues.Clear();
                     }
 
-                    entType = jImpHelp.entryType.String;    //excel field type
+                    entType = jImpHelp.entryType.dateTime;           //excel field type
                     fieldTitle = myFields.FromDataAsOfDt.Title;      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
@@ -269,7 +271,7 @@
                         importedValues.Clear();
                     }
 
-                    entType = jImpHelp.entryType.String;    //excel field type
+                    entType = jImpHelp.entryType.dateTime;    //excel field type
                     fieldTitle = myFields.ToDataAsOfDt.Title;  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)

@@ -29,7 +29,7 @@
                 cssClass: 'export-xlsx-button',
                 onClick: () => {
                     // open import dialog, let it handle rest
-                    var dialog = new TblStrategicPriceControlExcelImportDialog();
+                    var dialog = new SailingExclusionSuppExcelImportDialog();
                     dialog.element.on('dialogclose', () => {
                         this.refresh();
                         dialog = null;

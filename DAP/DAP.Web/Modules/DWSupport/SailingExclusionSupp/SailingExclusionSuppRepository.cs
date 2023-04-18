@@ -37,7 +37,46 @@ namespace DAP.DWSupport.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> { }
+        private class MySaveHandler : SaveRequestHandler<MyRow>
+        {
+            protected override void BeforeSave()
+            {
+                base.BeforeSave();
+
+                //this.Row.CategoryCd = this.Row.CategoryCd.ToUpper();
+
+                //if (this.Row.EffectiveFromDat == null || this.Row.EffectiveToDat == null)
+                //{
+                //    throw new ValidationError("Effective Dates are required.");
+                //}
+
+
+                //if (this.Row.EffectiveToDat < this.Row.EffectiveFromDat)
+                //{
+                //    throw new ValidationError("Invalid Effective Dates; End Date set before the Start Date.");
+                //}
+            }
+
+            protected override void SetInternalFields()
+            {
+                base.SetInternalFields();
+
+                var user = (UserDefinition)Authorization.UserDefinition;
+
+                if (IsCreate)
+                {
+                    Row.CreatedByNam = user.Username.ToUpper();
+                    Row.CreatedTs = DateTime.Now;
+                    Row.ModifiedByNam = user.Username.ToUpper();
+                    Row.ModifiedTs = DateTime.Now;
+                }
+                if (IsUpdate)
+                {
+                    Row.ModifiedByNam = user.Username.ToUpper();
+                    Row.ModifiedTs = DateTime.Now;
+                }
+            }
+        }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
         private class MyListHandler : ListRequestHandler<MyRow> { }
