@@ -32,7 +32,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.UpgradeAmountMin[this] = value; }
         }
 
-        [DisplayName("Upgrade Amount Max"), Column("UPGRADE_AMOUNT_MAX"), Size(18), Scale(2), NotNull]
+        [DisplayName("Upgrade Amount Max"), Column("UPGRADE_AMOUNT_MAX"), Size(18), Scale(2)]
         public Decimal? UpgradeAmountMax
         {
             get { return Fields.UpgradeAmountMax[this]; }

@@ -9,7 +9,7 @@ namespace DAP.DWSupport.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[AIR_COST_ADJ_SUPP]")]
+    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[AIR_COSTS_ADJ_SUPP]")]
     [DisplayName("Air Cost Adjustments"), InstanceName("Air Cost Adj Supp")]
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]

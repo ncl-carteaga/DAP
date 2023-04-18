@@ -44,14 +44,30 @@ namespace DAP.DWSupport.Repositories
             {
                 base.BeforeSave();
 
-                if (this.Connection.Exists<UpgradeAdvAdjSuppRow>(
+                if (IsCreate)
+                {
+                    if (this.Connection.Exists<UpgradeAdvAdjSuppRow>(
                         MyRow.Fields.UpgradeAmountMin == this.Row.UpgradeAmountMin.Value &&
-                        MyRow.Fields.UpgradeAmountMax == this.Row.UpgradeAmountMax.Value &&
                         MyRow.Fields.EffectiveToDt.IsNull()
                     ))
-                {
-                    throw new ValidationError("Open record found for this min, max upgrade combination.");
+                    {
+                        throw new ValidationError("Active record found for this min, max upgrade combination.");
+                    }
                 }
+
+                if (IsUpdate)
+                {
+                    if (this.Connection.Exists<UpgradeAdvAdjSuppRow>(
+                        MyRow.Fields.UpgradeAmountMin == this.Row.UpgradeAmountMin.Value &&
+                        MyRow.Fields.EffectiveToDt.IsNull() &&
+                        MyRow.Fields.UpgradeAdvAdjId != Row.UpgradeAdvAdjId.Value
+                    ))
+                    {
+                        throw new ValidationError("Active record found for this min, max upgrade combination.");
+                    }
+                     
+                }
+
             }
 
             protected override void SetInternalFields()
