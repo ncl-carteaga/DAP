@@ -201,7 +201,6 @@
                         importedValues.Clear();
                     }
 
-<<<<<<< HEAD
 
                     entType = jImpHelp.entryType.Int;            //excel field type
                     fieldTitle = myFields.MainSailId.Title;       //excel field name
@@ -219,22 +218,15 @@
                         importedValues.Clear();
                     }
 
-=======
->>>>>>> 0834ab3 (Working excel import, Updated myImportFields.cs excel helper)
                     var dt = DateTime.FromOADate(double.Parse(main_sail_dt));
 
                     // Check if row exists in DB
                     var currentRow = uow.Connection.TryFirst<SailingExclusionSuppRow>(q => q
                         .Select(myFields.SailingExclusionId)
                         .Where(
-<<<<<<< HEAD
                             myFields.MainVoyageCd == main_voyage_cd
                             && myFields.MainSailDt == dt
                             && myFields.MainSailId == main_sail_id
-=======
-                            myFields.MainVoyageCd == main_voyage_cd &&
-                            myFields.MainSailDt == dt
->>>>>>> 0834ab3 (Working excel import, Updated myImportFields.cs excel helper)
                         )
                     );
                     
