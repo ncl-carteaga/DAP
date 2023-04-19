@@ -165,6 +165,7 @@
                     // ---------- Set fields to check against DB - Fill from excel vals ---------- //
                     string main_sail_dt = "";
                     string main_voyage_cd = "";
+                    int main_sail_id = -1;
 
 
                     entType = jImpHelp.entryType.String;      //excel field type
@@ -200,14 +201,32 @@
                         importedValues.Clear();
                     }
 
+
+                    entType = jImpHelp.entryType.Int;            //excel field type
+                    fieldTitle = myFields.MainSailId.Title;       //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            main_sail_id = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
                     var dt = DateTime.FromOADate(double.Parse(main_sail_dt));
 
                     // Check if row exists in DB
                     var currentRow = uow.Connection.TryFirst<SailingExclusionSuppRow>(q => q
                         .Select(myFields.SailingExclusionId)
                         .Where(
-                            myFields.MainVoyageCd == main_voyage_cd &&
-                            myFields.MainSailDt == dt
+                            myFields.MainVoyageCd == main_voyage_cd
+                            && myFields.MainSailDt == dt
+                            && myFields.MainSailId == main_sail_id
                         )
                     );
                     
