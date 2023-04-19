@@ -73,6 +73,11 @@ namespace MVC
                 public const string AgencySnapshotRequestIndex = "~/Modules/DWSupport/AgencySnapshotRequest/AgencySnapshotRequestIndex.cshtml";
             }
 
+            public static class AirCostAdjSupp
+            {
+                public const string AirCostAdjSuppIndex = "~/Modules/DWSupport/AirCostAdjSupp/AirCostAdjSuppIndex.cshtml";
+            }
+
             public static class AmenitiesSupp
             {
                 public const string AmenitiesSuppIndex = "~/Modules/DWSupport/AmenitiesSupp/AmenitiesSuppIndex.cshtml";
@@ -108,9 +113,19 @@ namespace MVC
                 public const string CreditCardAdjSuppIndex = "~/Modules/DWSupport/CreditCardAdjSupp/CreditCardAdjSuppIndex.cshtml";
             }
 
+            public static class CruiseSegmentDaysOverride
+            {
+                public const string CruiseSegmentDaysOverrideIndex = "~/Modules/DWSupport/CruiseSegmentDaysOverride/CruiseSegmentDaysOverrideIndex.cshtml";
+            }
+
             public static class CurrencyExchangeRateSupp
             {
                 public const string CurrencyExchangeRateSuppIndex = "~/Modules/DWSupport/CurrencyExchangeRateSupp/CurrencyExchangeRateSuppIndex.cshtml";
+            }
+
+            public static class DimCruiseFlags
+            {
+                public const string DimCruiseFlagsIndex = "~/Modules/DWSupport/DimCruiseFlags/DimCruiseFlagsIndex.cshtml";
             }
 
             public static class DistrictMasterSupp
@@ -201,6 +216,11 @@ namespace MVC
             public static class RollupProductCodesSupp
             {
                 public const string RollupProductCodesSuppIndex = "~/Modules/DWSupport/RollupProductCodesSupp/RollupProductCodesSuppIndex.cshtml";
+            }
+
+            public static class SailingExclusionSupp
+            {
+                public const string SailingExclusionSuppIndex = "~/Modules/DWSupport/SailingExclusionSupp/SailingExclusionSuppIndex.cshtml";
             }
 
             public static class SailingMasterSupp

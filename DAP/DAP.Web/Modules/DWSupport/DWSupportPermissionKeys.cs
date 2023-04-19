@@ -56,7 +56,7 @@ namespace DAP.DWSupport
             public const string CreditCardAdjSupp = "DWSupp:Page:CreditCardAdjSupp";
             public const string AirCostAdjSupp = "DWSupp:Page:AirCostAdjSupp";
             public const string CruiseSegmentDaysOverride = "DWSupp:Page:CruiseSegmentDaysOverride";
-            
+            public const string SailingExclusionSupp = "DWSupp:Page:SailingExclusionSupp";
 
             //nvs
             public const string DimCruiseFlags = "DWSupp:Page:DimCruiseFlags";
