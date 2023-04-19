@@ -86,8 +86,11 @@ namespace DAP.DWSupport.Columns
         public String ObrSubTradeCd { get; set; }
         [Visible(false)]
         public String ObrSeasonCd { get; set; }
+        [Visible(false)]
         public Int32 ProxySailId { get; set; }
+        [Visible(false)]
         public DateTime OnSaleDat { get; set; }
+        [Visible(false)]
         public String SeasonYearCd { get; set; }
         [Visible(false)]
         public String IsVoyageExceptionCd { get; set; }

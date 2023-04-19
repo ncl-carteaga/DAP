@@ -1,5 +1,4 @@
 ﻿
-
 namespace DAP.NCLHDSAR.Columns
 {
     using Serenity;
@@ -17,13 +16,10 @@ namespace DAP.NCLHDSAR.Columns
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int64 Id { get; set; }
         [EditLink]
-        [DisplayName("Request Type")]
         public String RequestTypeDescription { get; set; }
-        [DisplayName("BRAND")]
         public String BrandDescription { get; set; }
         [EditLink]
         public String ContactId { get; set; }
-        [DisplayName("Channel")]
         public String ChannelDescription { get; set; }
         public Int16 OptOutStatusID { get; set; }
         public String FirstName { get; set; }

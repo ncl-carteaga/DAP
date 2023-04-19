@@ -54,3 +54,4 @@ using MyPages = DAP.DWSupport.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Product Codes", typeof(MyPages.SlProductCodeSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Cruise Segment Days Override", typeof(MyPages.CruiseSegmentDaysOverrideController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Air Cost Adjustments", typeof(MyPages.AirCostAdjSuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Exclusion Supp", typeof(MyPages.SailingExclusionSuppController), icon: null)]

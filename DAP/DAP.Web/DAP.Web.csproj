@@ -1193,6 +1193,7 @@
     <Content Include="Modules\DWSupport\DimCruiseFlags\DimCruiseFlagsIndex.cshtml" />
     <Content Include="Modules\DWSupport\CruiseSegmentDaysOverride\CruiseSegmentDaysOverrideIndex.cshtml" />
     <Content Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1219,6 +1220,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenitiesSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1237,7 +1241,13 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DistrictMasterSuppColumns.ts">
@@ -1298,6 +1308,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppColumns.ts">
@@ -1418,9 +1434,6 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.VwSqlJobListColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.Lookups.OutboundAgentColumns.ts">
@@ -1574,6 +1587,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitDetailGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitMasterDetailPane.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitMasterGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SelectYNEditor.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImport.ts" />
@@ -1754,8 +1768,6 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppGrid.ts" />
-    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideDialog.ts" />
-    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppDialog.ts" />
@@ -1780,6 +1792,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CruiseSegmentDaysOverride\CruiseSegmentDaysOverrideGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3284,21 +3298,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.PsGlAccountSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideDescriptionRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\PCHODS.InboundUserOverrideDescriptionService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.FinPlannedCapacitySuppRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -3404,15 +3403,42 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3596,6 +3622,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
     <Compile Include="Modules\DWSupport\GtfSupp\GTFPortLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ShipCDLookupEditor.cs" />
@@ -3670,7 +3697,6 @@
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImportForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionLookupEditor.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
@@ -4209,15 +4235,6 @@
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppPage.cs" />
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRow.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRepository.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideEndpoint.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverridePage.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideColumns.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRow.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRepository.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionEndpoint.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppRow.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppRepository.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppEndpoint.cs" />
@@ -4296,6 +4313,12 @@
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppPage.cs" />
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
