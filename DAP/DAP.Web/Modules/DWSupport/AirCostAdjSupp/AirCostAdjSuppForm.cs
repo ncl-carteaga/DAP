@@ -15,6 +15,7 @@ namespace DAP.DWSupport.Forms
     {
         public String VoyageCd { get; set; }
         public Decimal RmEstimatedAirCost { get; set; }
+        [DefaultValue("now")]
         public DateTime EffectiveFromDt { get; set; }
         public DateTime EffectiveToDt { get; set; }
         [Visible(false)]
