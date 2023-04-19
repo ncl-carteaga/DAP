@@ -12,6 +12,8 @@
 
     public class ExcelImportHelper
     {
+
+
         /// <summary>
         /// Enum managing the myImportEntry field type
         /// </summary>
@@ -68,9 +70,9 @@
                     case entryType.Short:
                         myField = Convert.ToInt16(val);
                         break;
+
                     case entryType.dateTime:
-                        var dt = DateTime.MinValue;
-                        myField = DateTime.TryParse(val.ToString(), out dt) ? Convert.ToDateTime(val) : DateTime.FromOADate(double.Parse(val.ToString()));
+                        myField = Convert.ToDateTime(val);
                         break;
                     //case entryType.oneValJoin:
                     //    myField = oneValJoin(myConnection, myErrors, row, expectedHeader[0], val);
@@ -96,10 +98,6 @@
                 return myField;
             }
         }
-
-
-
-
 
         /// <summary>
         /// Import Joint Field with multiple Required fields

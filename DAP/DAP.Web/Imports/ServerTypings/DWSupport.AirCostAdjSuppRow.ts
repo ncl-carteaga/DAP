@@ -1,4 +1,5 @@
-﻿namespace DAP.DWSupport {
+﻿
+namespace DAP.DWSupport {
     export interface AirCostAdjSuppRow {
         AirCostAdjId?: number;
         VoyageCd?: string;
@@ -16,17 +17,28 @@
         export const nameProperty = 'VoyageCd';
         export const localTextPrefix = 'DWSupport.AirCostAdjSupp';
 
-        export declare const enum Fields {
-            AirCostAdjId = "AirCostAdjId",
-            VoyageCd = "VoyageCd",
-            RmEstimatedAirCost = "RmEstimatedAirCost",
-            EffectiveFromDt = "EffectiveFromDt",
-            EffectiveToDt = "EffectiveToDt",
-            CreatedTs = "CreatedTs",
-            CreatedByNam = "CreatedByNam",
-            ModifiedTs = "ModifiedTs",
-            ModifiedByNam = "ModifiedByNam"
+        export namespace Fields {
+            export declare const AirCostAdjId;
+            export declare const VoyageCd;
+            export declare const RmEstimatedAirCost;
+            export declare const EffectiveFromDt;
+            export declare const EffectiveToDt;
+            export declare const CreatedTs;
+            export declare const CreatedByNam;
+            export declare const ModifiedTs;
+            export declare const ModifiedByNam;
         }
+
+        [
+            'AirCostAdjId',
+            'VoyageCd',
+            'RmEstimatedAirCost',
+            'EffectiveFromDt',
+            'EffectiveToDt',
+            'CreatedTs',
+            'CreatedByNam',
+            'ModifiedTs',
+            'ModifiedByNam'
+        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
-
