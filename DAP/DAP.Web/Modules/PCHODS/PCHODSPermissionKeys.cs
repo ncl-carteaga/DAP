@@ -34,6 +34,7 @@ namespace DAP.PCHODS
             public const string OutboundMonthlyRptArchiveOverride = "PCHODS:Page:OutboundMonthlyRptArchiveOverride";
             public const string UarSrDirAboveList = "PCHODS:Page:UarSrDirAboveListController";
             public const string UarUnknownReviewer = "PCHODS:Page:UarUnknownReviewerController";
+            public const string InboundUserOverride = "PCHODS:Page:InboundUserOverrideController";
         }
 
     }

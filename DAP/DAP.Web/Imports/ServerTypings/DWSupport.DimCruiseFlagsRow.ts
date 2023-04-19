@@ -1,4 +1,5 @@
-﻿namespace DAP.DWSupport {
+﻿
+namespace DAP.DWSupport {
     export interface DimCruiseFlagsRow {
         DimCruiseFlagId?: number;
         CruiseCd?: string;
@@ -26,27 +27,48 @@
         export const nameProperty = 'CruiseCd';
         export const localTextPrefix = 'DWSupport.DimCruiseFlags';
 
-        export declare const enum Fields {
-            DimCruiseFlagId = "DimCruiseFlagId",
-            CruiseCd = "CruiseCd",
-            CruiseSegmentCd = "CruiseSegmentCd",
-            ShipCd = "ShipCd",
-            CompanyCd = "CompanyCd",
-            CappedCapacity = "CappedCapacity",
-            OnbrdAvgPaxQty = "OnbrdAvgPaxQty",
-            HighlightInd = "HighlightInd",
-            ColorInd = "ColorInd",
-            DrydockInd = "DrydockInd",
-            VarToCurve = "VarToCurve",
-            ShowInDr001 = "ShowInDr001",
-            ShowInDr010 = "ShowInDr010",
-            ShowInCube = "ShowInCube",
-            IntlDatelineInd = "IntlDatelineInd",
-            MinisegInd = "MinisegInd",
-            EffectiveFrom = "EffectiveFrom",
-            EffectiveTo = "EffectiveTo",
-            LoadDt = "LoadDt"
+        export namespace Fields {
+            export declare const DimCruiseFlagId;
+            export declare const CruiseCd;
+            export declare const CruiseSegmentCd;
+            export declare const ShipCd;
+            export declare const CompanyCd;
+            export declare const CappedCapacity;
+            export declare const OnbrdAvgPaxQty;
+            export declare const HighlightInd;
+            export declare const ColorInd;
+            export declare const DrydockInd;
+            export declare const VarToCurve;
+            export declare const ShowInDr001;
+            export declare const ShowInDr010;
+            export declare const ShowInCube;
+            export declare const IntlDatelineInd;
+            export declare const MinisegInd;
+            export declare const EffectiveFrom;
+            export declare const EffectiveTo;
+            export declare const LoadDt;
         }
+
+        [
+            'DimCruiseFlagId',
+            'CruiseCd',
+            'CruiseSegmentCd',
+            'ShipCd',
+            'CompanyCd',
+            'CappedCapacity',
+            'OnbrdAvgPaxQty',
+            'HighlightInd',
+            'ColorInd',
+            'DrydockInd',
+            'VarToCurve',
+            'ShowInDr001',
+            'ShowInDr010',
+            'ShowInCube',
+            'IntlDatelineInd',
+            'MinisegInd',
+            'EffectiveFrom',
+            'EffectiveTo',
+            'LoadDt'
+        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
-
