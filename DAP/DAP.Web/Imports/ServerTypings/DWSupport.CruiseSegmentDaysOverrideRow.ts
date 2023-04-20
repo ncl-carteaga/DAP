@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface CruiseSegmentDaysOverrideRow {
         CruiseSegmentDayOverrideId?: number;
         CruiseCd?: string;
@@ -16,26 +15,16 @@ namespace DAP.DWSupport {
         export const nameProperty = 'CruiseCd';
         export const localTextPrefix = 'DWSupport.CruiseSegmentDaysOverride';
 
-        export namespace Fields {
-            export declare const CruiseSegmentDayOverrideId;
-            export declare const CruiseCd;
-            export declare const CompanyCd;
-            export declare const CruiseDaysQty;
-            export declare const CruiseSegmentDaysQty;
-            export declare const EffectiveFrom;
-            export declare const EffectiveTo;
-            export declare const LoadDt;
+        export declare const enum Fields {
+            CruiseSegmentDayOverrideId = "CruiseSegmentDayOverrideId",
+            CruiseCd = "CruiseCd",
+            CompanyCd = "CompanyCd",
+            CruiseDaysQty = "CruiseDaysQty",
+            CruiseSegmentDaysQty = "CruiseSegmentDaysQty",
+            EffectiveFrom = "EffectiveFrom",
+            EffectiveTo = "EffectiveTo",
+            LoadDt = "LoadDt"
         }
-
-        [
-            'CruiseSegmentDayOverrideId',
-            'CruiseCd',
-            'CompanyCd',
-            'CruiseDaysQty',
-            'CruiseSegmentDaysQty',
-            'EffectiveFrom',
-            'EffectiveTo',
-            'LoadDt'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

@@ -902,6 +902,7 @@
     <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.gen.bak" />
     <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.orig" />
     <Content Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\Index.cshtml" />
+    <Content Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppIndex.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1219,6 +1220,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AgencySnapshotRequestColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenitiesSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1237,7 +1241,13 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CurrencyExchangeRateSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DimCruiseFlagsColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DistrictMasterSuppColumns.ts">
@@ -1298,6 +1308,21 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RollupProductCodesSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingExclusionSuppService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppColumns.ts">
@@ -1574,6 +1599,9 @@
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitDetailGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitMasterDetailPane.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitMasterGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\SailingMasterSupp\SelectYNEditor.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\TblStrategicPriceControl\TblStrategicPriceControlExcelImport.ts" />
@@ -3614,6 +3642,13 @@
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
     <Compile Include="Modules\DWSupport\GtfSupp\GTFPortLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppExcelImportForm.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppRow.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ProductCode.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\SailingMasterSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\SailingMasterSupp\ShipCDLookupEditor.cs" />

@@ -1,9 +1,4 @@
-﻿
-namespace DAP.DWSupport {
-    export class CruiseSegmentDaysOverrideForm extends Serenity.PrefixedContext {
-        static formKey = 'DWSupport.CruiseSegmentDaysOverride';
-    }
-
+﻿namespace DAP.DWSupport {
     export interface CruiseSegmentDaysOverrideForm {
         CruiseCd: Serenity.StringEditor;
         CompanyCd: Serenity.StringEditor;
@@ -14,19 +9,32 @@ namespace DAP.DWSupport {
         LoadDt: Serenity.DateEditor;
     }
 
-    [,
-        ['CruiseCd', () => Serenity.StringEditor],
-        ['CompanyCd', () => Serenity.StringEditor],
-        ['CruiseDaysQty', () => Serenity.IntegerEditor],
-        ['CruiseSegmentDaysQty', () => Serenity.IntegerEditor],
-        ['EffectiveFrom', () => Serenity.DateEditor],
-        ['EffectiveTo', () => Serenity.DateEditor],
-        ['LoadDt', () => Serenity.DateEditor]
-    ].forEach(x => Object.defineProperty(CruiseSegmentDaysOverrideForm.prototype, <string>x[0], {
-        get: function () {
-            return this.w(x[0], (x[1] as any)());
-        },
-        enumerable: true,
-        configurable: true
-    }));
+    export class CruiseSegmentDaysOverrideForm extends Serenity.PrefixedContext {
+        static formKey = 'DWSupport.CruiseSegmentDaysOverride';
+        private static init: boolean;
+
+        constructor(prefix: string) {
+            super(prefix);
+
+            if (!CruiseSegmentDaysOverrideForm.init)  {
+                CruiseSegmentDaysOverrideForm.init = true;
+
+                var s = Serenity;
+                var w0 = s.StringEditor;
+                var w1 = s.IntegerEditor;
+                var w2 = s.DateEditor;
+
+                Q.initFormType(CruiseSegmentDaysOverrideForm, [
+                    'CruiseCd', w0,
+                    'CompanyCd', w0,
+                    'CruiseDaysQty', w1,
+                    'CruiseSegmentDaysQty', w1,
+                    'EffectiveFrom', w2,
+                    'EffectiveTo', w2,
+                    'LoadDt', w2
+                ]);
+            }
+        }
+    }
 }
+
