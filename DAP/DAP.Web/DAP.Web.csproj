@@ -1194,6 +1194,7 @@
     <Content Include="Modules\DWSupport\DimCruiseFlags\DimCruiseFlagsIndex.cshtml" />
     <Content Include="Modules\DWSupport\CruiseSegmentDaysOverride\CruiseSegmentDaysOverrideIndex.cshtml" />
     <Content Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1808,6 +1809,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CruiseSegmentDaysOverride\CruiseSegmentDaysOverrideGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3459,6 +3462,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4349,6 +4355,12 @@
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppPage.cs" />
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

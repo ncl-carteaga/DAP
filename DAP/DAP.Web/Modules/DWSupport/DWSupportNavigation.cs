@@ -21,23 +21,13 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Fin Planned Capacity Supp", typeof(MyPages.FinPlannedCapacitySuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/GTF Supp", typeof(MyPages.GtfSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Upgrade Adv Adj Supp", typeof(MyPages.UpgradeAdvAdjSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Credit Card Adj Supp", typeof(MyPages.CreditCardAdjSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/CMI Supp", typeof(MyPages.CmiSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/CMI Supp", typeof(MyPages.CmiSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/GTF Supp", typeof(MyPages.GtfSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Upgrade Adv Adj Supp", typeof(MyPages.UpgradeAdvAdjSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Credit Card Adj Supp", typeof(MyPages.CreditCardAdjSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/GTF Supp", typeof(MyPages.GtfSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/PS GL Account Supp", typeof(MyPages.PsGlAccountSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Upgrade Adv Adj Supp", typeof(MyPages.UpgradeAdvAdjSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Credit Card Adj Supp", typeof(MyPages.CreditCardAdjSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/CMI Supp", typeof(MyPages.CmiSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Air Cost Adjustments", typeof(MyPages.AirCostAdjSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Exclusions", typeof(MyPages.SailingExclusionSuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Voyage Budget Final", typeof(MyPages.VoyageBudgetFinalSuppController), icon: null)]
+
 
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Cruise Segment Days Override", typeof(MyPages.CruiseSegmentDaysOverrideController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Stly Dates", typeof(MyPages.StlyDatesController), icon: null)]
@@ -45,7 +35,6 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Exchange Fixed Rate", typeof(MyPages.ExchangeFixedRateController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Rev Detail Field", typeof(MyPages.RevDetailFieldController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Dim Cruise Flags", typeof(MyPages.DimCruiseFlagsController), icon: null)]
-
 
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Import Error Log", typeof(MyPages.ImportErrorLogController), icon: null)]

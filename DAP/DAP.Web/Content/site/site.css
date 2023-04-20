@@ -9747,6 +9747,12 @@ button.ui-button {
 .s-DWSupport-AirCostAdjSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-VoyageBudgetFinalSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-VoyageBudgetFinalSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
