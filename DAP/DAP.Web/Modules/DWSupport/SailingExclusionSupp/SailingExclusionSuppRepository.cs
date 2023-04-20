@@ -43,18 +43,10 @@ namespace DAP.DWSupport.Repositories
             {
                 base.BeforeSave();
 
-                //this.Row.CategoryCd = this.Row.CategoryCd.ToUpper();
-
-                //if (this.Row.EffectiveFromDat == null || this.Row.EffectiveToDat == null)
-                //{
-                //    throw new ValidationError("Effective Dates are required.");
-                //}
-
-
-                //if (this.Row.EffectiveToDat < this.Row.EffectiveFromDat)
-                //{
-                //    throw new ValidationError("Invalid Effective Dates; End Date set before the Start Date.");
-                //}
+                if (Row.ShipCd.IsEmptyOrNull() || Row.MainSailId.ToString().IsEmptyOrNull() || Row.MainSailDt.ToString().IsEmptyOrNull())
+                {
+                    throw new ValidationError(string.Format("Fields: {0}, {1} and {2} are required.", MyRow.Fields.ShipCd.Title, MyRow.Fields.MainSailId.Title, MyRow.Fields.MainSailDt.Title));
+                }
             }
 
             protected override void SetInternalFields()
