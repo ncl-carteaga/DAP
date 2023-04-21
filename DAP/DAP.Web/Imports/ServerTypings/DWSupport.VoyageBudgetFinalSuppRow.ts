@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface VoyageBudgetFinalSuppRow {
         BudgetFinalId?: number;
         ShipCd?: string;
@@ -27,48 +26,27 @@ namespace DAP.DWSupport {
         export const nameProperty = 'ShipCd';
         export const localTextPrefix = 'DWSupport.VoyageBudgetFinalSupp';
 
-        export namespace Fields {
-            export declare const BudgetFinalId;
-            export declare const ShipCd;
-            export declare const VoyageCd;
-            export declare const SalesChannelDesc;
-            export declare const YearNbr;
-            export declare const MonthNbr;
-            export declare const OperationalNtrAmt;
-            export declare const PassengerCountQty;
-            export declare const PassengerDaysQty;
-            export declare const CapacityDaysQty;
-            export declare const CabinDaysQty;
-            export declare const BudgetTypeCd;
-            export declare const CharterFlagCd;
-            export declare const BkCabinDaysQty;
-            export declare const BkCabinQty;
-            export declare const CreatedTs;
-            export declare const CreatedByNam;
-            export declare const ModifiedTs;
-            export declare const ModifiedByNam;
+        export declare const enum Fields {
+            BudgetFinalId = "BudgetFinalId",
+            ShipCd = "ShipCd",
+            VoyageCd = "VoyageCd",
+            SalesChannelDesc = "SalesChannelDesc",
+            YearNbr = "YearNbr",
+            MonthNbr = "MonthNbr",
+            OperationalNtrAmt = "OperationalNtrAmt",
+            PassengerCountQty = "PassengerCountQty",
+            PassengerDaysQty = "PassengerDaysQty",
+            CapacityDaysQty = "CapacityDaysQty",
+            CabinDaysQty = "CabinDaysQty",
+            BudgetTypeCd = "BudgetTypeCd",
+            CharterFlagCd = "CharterFlagCd",
+            BkCabinDaysQty = "BkCabinDaysQty",
+            BkCabinQty = "BkCabinQty",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
         }
-
-        [
-            'BudgetFinalId',
-            'ShipCd',
-            'VoyageCd',
-            'SalesChannelDesc',
-            'YearNbr',
-            'MonthNbr',
-            'OperationalNtrAmt',
-            'PassengerCountQty',
-            'PassengerDaysQty',
-            'CapacityDaysQty',
-            'CabinDaysQty',
-            'BudgetTypeCd',
-            'CharterFlagCd',
-            'BkCabinDaysQty',
-            'BkCabinQty',
-            'CreatedTs',
-            'CreatedByNam',
-            'ModifiedTs',
-            'ModifiedByNam'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+

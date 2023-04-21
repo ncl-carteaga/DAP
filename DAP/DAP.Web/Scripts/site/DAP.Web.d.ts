@@ -4278,9 +4278,18 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
-    class VoyageBudgetFinalSuppForm extends Serenity.PrefixedContext {
-        static formKey: string;
+    interface VoyageBudgetFinalExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
     }
+    class VoyageBudgetFinalExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface VoyageBudgetFinalSuppForm {
         ShipCd: Serenity.StringEditor;
         VoyageCd: Serenity.StringEditor;
@@ -4300,6 +4309,11 @@ declare namespace DAP.DWSupport {
         CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
         ModifiedByNam: Serenity.StringEditor;
+    }
+    class VoyageBudgetFinalSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
     }
 }
 declare namespace DAP.DWSupport {
@@ -4328,26 +4342,26 @@ declare namespace DAP.DWSupport {
         const idProperty = "BudgetFinalId";
         const nameProperty = "ShipCd";
         const localTextPrefix = "DWSupport.VoyageBudgetFinalSupp";
-        namespace Fields {
-            const BudgetFinalId: any;
-            const ShipCd: any;
-            const VoyageCd: any;
-            const SalesChannelDesc: any;
-            const YearNbr: any;
-            const MonthNbr: any;
-            const OperationalNtrAmt: any;
-            const PassengerCountQty: any;
-            const PassengerDaysQty: any;
-            const CapacityDaysQty: any;
-            const CabinDaysQty: any;
-            const BudgetTypeCd: any;
-            const CharterFlagCd: any;
-            const BkCabinDaysQty: any;
-            const BkCabinQty: any;
-            const CreatedTs: any;
-            const CreatedByNam: any;
-            const ModifiedTs: any;
-            const ModifiedByNam: any;
+        const enum Fields {
+            BudgetFinalId = "BudgetFinalId",
+            ShipCd = "ShipCd",
+            VoyageCd = "VoyageCd",
+            SalesChannelDesc = "SalesChannelDesc",
+            YearNbr = "YearNbr",
+            MonthNbr = "MonthNbr",
+            OperationalNtrAmt = "OperationalNtrAmt",
+            PassengerCountQty = "PassengerCountQty",
+            PassengerDaysQty = "PassengerDaysQty",
+            CapacityDaysQty = "CapacityDaysQty",
+            CabinDaysQty = "CabinDaysQty",
+            BudgetTypeCd = "BudgetTypeCd",
+            CharterFlagCd = "CharterFlagCd",
+            BkCabinDaysQty = "BkCabinDaysQty",
+            BkCabinQty = "BkCabinQty",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
         }
     }
 }
@@ -4359,12 +4373,14 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<VoyageBudgetFinalSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<VoyageBudgetFinalSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
-        namespace Methods {
-            const Create: string;
-            const Update: string;
-            const Delete: string;
-            const Retrieve: string;
-            const List: string;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/VoyageBudgetFinalSupp/Create",
+            Update = "DWSupport/VoyageBudgetFinalSupp/Update",
+            Delete = "DWSupport/VoyageBudgetFinalSupp/Delete",
+            Retrieve = "DWSupport/VoyageBudgetFinalSupp/Retrieve",
+            List = "DWSupport/VoyageBudgetFinalSupp/List",
+            ExcelImport = "DWSupport/VoyageBudgetFinalSupp/ExcelImport"
         }
     }
 }
@@ -8954,16 +8970,6 @@ declare namespace Serenity.Reporting {
         IsDataOnlyReport?: boolean;
     }
 }
-declare namespace DAP {
-    interface ScriptUserDefinition {
-        Username?: string;
-        DisplayName?: string;
-        IsAdmin?: boolean;
-        Permissions?: {
-            [key: string]: boolean;
-        };
-    }
-}
 declare namespace DAP.SSISConfig {
 }
 declare namespace DAP.SSISConfig {
@@ -9433,12 +9439,17 @@ declare namespace DAP.SSISConfig {
         }
     }
 }
+declare namespace DAP {
+    interface ScriptUserDefinition {
+        Username?: string;
+        DisplayName?: string;
+        IsAdmin?: boolean;
+        Permissions?: {
+            [key: string]: boolean;
+        };
+    }
+}
 declare namespace DAP.Texts {
-}
-declare namespace DAP.LanguageList {
-    function getValue(): string[][];
-}
-declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP.Administration {
     class DataAuditLogDialog extends Serenity.EntityDialog<DataAuditLogRow, any> {
@@ -9570,6 +9581,10 @@ declare namespace DAP.Administration {
         protected getColumns(): Slick.Column[];
     }
 }
+declare namespace DAP.Authorization {
+    let userDefinition: ScriptUserDefinition;
+    function hasPermission(permissionKey: string): boolean;
+}
 declare namespace DAP.Administration {
     class PermissionCheckEditor extends Serenity.DataGrid<PermissionCheckItem, PermissionCheckEditorOptions> {
         protected getIdProperty(): string;
@@ -9660,6 +9675,11 @@ declare namespace DAP.Avaya {
         protected getService(): string;
         constructor(container: JQuery);
     }
+}
+declare namespace DAP.LanguageList {
+    function getValue(): string[][];
+}
+declare namespace DAP.ScriptInitialization {
 }
 declare namespace DAP {
     class BasicProgressDialog extends Serenity.TemplatedDialog<any> {
@@ -10865,6 +10885,14 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class VoyageBudgetFinalExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.DWSupport {
     class VoyageBudgetFinalSuppDialog extends Serenity.EntityDialog<VoyageBudgetFinalSuppRow, any> {
         protected getFormKey(): string;
         protected getIdProperty(): string;
@@ -10891,6 +10919,34 @@ declare namespace DAP.Membership {
         protected redirectToReturnUrl(): void;
         protected handleTwoFactorAuthentication(user: string, pass: string, twoFactorGuid: string, info: string): void;
         protected getTemplate(): string;
+    }
+}
+declare namespace DAP.Membership {
+    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.Membership {
+    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
+        protected getFormKey(): string;
+        private form;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.NCLHDSAR {
@@ -12256,37 +12312,5 @@ declare namespace DAP.SSISConfig {
         protected getQuickFilters(): Serenity.QuickFilter<Serenity.Widget<any>, any>[];
         protected createSlickGrid(): Slick.Grid;
         protected getButtons(): Serenity.ToolButton[];
-    }
-}
-declare namespace DAP.Authorization {
-    let userDefinition: ScriptUserDefinition;
-    function hasPermission(permissionKey: string): boolean;
-}
-declare namespace DAP.Membership {
-    class ChangePasswordPanel extends Serenity.PropertyPanel<ChangePasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ForgotPasswordPanel extends Serenity.PropertyPanel<ForgotPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class ResetPasswordPanel extends Serenity.PropertyPanel<ResetPasswordRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
-    }
-}
-declare namespace DAP.Membership {
-    class SignUpPanel extends Serenity.PropertyPanel<SignUpRequest, any> {
-        protected getFormKey(): string;
-        private form;
-        constructor(container: JQuery);
     }
 }

@@ -252,6 +252,11 @@ namespace MVC
             {
                 public const string UpgradeAdvAdjSuppIndex = "~/Modules/DWSupport/UpgradeAdvAdjSupp/UpgradeAdvAdjSuppIndex.cshtml";
             }
+
+            public static class VoyageBudgetFinalSupp
+            {
+                public const string VoyageBudgetFinalSuppIndex = "~/Modules/DWSupport/VoyageBudgetFinalSupp/VoyageBudgetFinalSuppIndex.cshtml";
+            }
         }
 
         public static class Errors
