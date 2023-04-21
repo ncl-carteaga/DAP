@@ -58,6 +58,7 @@ namespace DAP.DWSupport
             public const string CruiseSegmentDaysOverride = "DWSupp:Page:CruiseSegmentDaysOverride";
             public const string SailingExclusionSupp = "DWSupp:Page:SailingExclusionSupp";
             public const string VoyageBudgetFinalSupp = "DWSupp:Page:VoyageBudgetFinalSupp";
+            public const string ResExclusionSupp = "DWSupp:Page:ResExclusionSupp";
 
             //nvs
             public const string DimCruiseFlags = "DWSupp:Page:DimCruiseFlags";
