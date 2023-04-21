@@ -208,6 +208,11 @@ namespace MVC
                 public const string RegionIndex = "~/Modules/DWSupport/Region/RegionIndex.cshtml";
             }
 
+            public static class ResExclusionSupp
+            {
+                public const string ResExclusionSuppIndex = "~/Modules/DWSupport/ResExclusionSupp/ResExclusionSuppIndex.cshtml";
+            }
+
             public static class RevDetailField
             {
                 public const string RevDetailFieldIndex = "~/Modules/DWSupport/RevDetailField/RevDetailFieldIndex.cshtml";
