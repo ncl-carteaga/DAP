@@ -57,6 +57,7 @@ namespace DAP.DWSupport
             public const string AirCostAdjSupp = "DWSupp:Page:AirCostAdjSupp";
             public const string CruiseSegmentDaysOverride = "DWSupp:Page:CruiseSegmentDaysOverride";
             public const string SailingExclusionSupp = "DWSupp:Page:SailingExclusionSupp";
+            public const string VoyageBudgetFinalSupp = "DWSupp:Page:VoyageBudgetFinalSupp";
             public const string ResExclusionSupp = "DWSupp:Page:ResExclusionSupp";
 
             //nvs
