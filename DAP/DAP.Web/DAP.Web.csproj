@@ -3642,6 +3642,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
     <Compile Include="Modules\DWSupport\GtfSupp\GTFPortLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\GuestPreventDeparture\TypeLookup.cs" />
+    <Compile Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppEndpoint.cs" />
     <Compile Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppExcelImportForm.cs" />
