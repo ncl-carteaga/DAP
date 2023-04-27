@@ -208,6 +208,11 @@ namespace MVC
                 public const string RegionIndex = "~/Modules/DWSupport/Region/RegionIndex.cshtml";
             }
 
+            public static class ResExclusionSupp
+            {
+                public const string ResExclusionSuppIndex = "~/Modules/DWSupport/ResExclusionSupp/ResExclusionSuppIndex.cshtml";
+            }
+
             public static class RevDetailField
             {
                 public const string RevDetailFieldIndex = "~/Modules/DWSupport/RevDetailField/RevDetailFieldIndex.cshtml";
@@ -251,6 +256,11 @@ namespace MVC
             public static class UpgradeAdvAdjSupp
             {
                 public const string UpgradeAdvAdjSuppIndex = "~/Modules/DWSupport/UpgradeAdvAdjSupp/UpgradeAdvAdjSuppIndex.cshtml";
+            }
+
+            public static class VoyageBudgetFinalSupp
+            {
+                public const string VoyageBudgetFinalSuppIndex = "~/Modules/DWSupport/VoyageBudgetFinalSupp/VoyageBudgetFinalSuppIndex.cshtml";
             }
         }
 

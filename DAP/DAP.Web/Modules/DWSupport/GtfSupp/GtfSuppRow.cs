@@ -24,7 +24,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.GtfsuppId[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickSearch, LookupEditor(typeof(Lookups.ShipCDLookupEditor))]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), QuickSearch, LookupEditor(typeof(Lookups.ShipCDLookupEditor))]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }

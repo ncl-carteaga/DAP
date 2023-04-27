@@ -24,7 +24,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CategoryMasterSurKey[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, QuickSearch]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }
