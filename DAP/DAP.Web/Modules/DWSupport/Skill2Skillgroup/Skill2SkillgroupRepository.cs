@@ -6,9 +6,9 @@ namespace DAP.DWSupport.Repositories
     using Serenity.Services;
     using System;
     using System.Data;
-    using MyRow = Entities.CategoryMasterSuppRow;
+    using MyRow = Entities.Skill2SkillgroupRow;
 
-    public class CategoryMasterSuppRepository
+    public class Skill2SkillgroupRepository
     {
         private static MyRow.RowFields fld { get { return MyRow.Fields; } }
 
@@ -37,41 +37,9 @@ namespace DAP.DWSupport.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow>
-        {
-            protected override void SetInternalFields()
-            {
-                base.SetInternalFields();
-
-                var user = (UserDefinition)Authorization.UserDefinition;
-
-                if (IsCreate)
-                {
-                    Row.CreatedByNam = user.DisplayName.ToUpper();
-                    Row.CreatedTs = DateTime.Now;
-                    Row.ModifiedByNam = user.Username.ToUpper();
-                    Row.ModifiedTs = new DateTime(9999, 12, 31);
-                }
-                if (IsUpdate)
-                {
-                    Row.ModifiedByNam = user.Username.ToUpper();
-                    Row.ModifiedTs = new DateTime(9999, 12, 31);
-                    Row.CreatedTs = DateTime.Now;
-                }
-            }
-        }
+        private class MySaveHandler : SaveRequestHandler<MyRow> { }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> {
-
-            protected override void ApplyFilters(SqlQuery query)
-            {
-                base.ApplyFilters(query);
-
-                // Filter by ModifiedTs
-                query.Where(fld.ModifiedTs == new DateTime(9999, 12, 31));
-            }
-
-        }
+        private class MyListHandler : ListRequestHandler<MyRow> { }
     }
 }

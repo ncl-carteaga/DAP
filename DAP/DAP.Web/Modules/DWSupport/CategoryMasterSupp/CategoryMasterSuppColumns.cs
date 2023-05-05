@@ -15,6 +15,7 @@ namespace DAP.DWSupport.Columns
     {
         [EditLink, DisplayName("Db.Shared.RecordId"), AlignRight]
         public Int32 CategoryMasterSurKey { get; set; }
+        [EditLink]
         public String ShipCd { get; set; }
         public DateTime SailFromDat { get; set; }
         public DateTime SailToDat { get; set; }

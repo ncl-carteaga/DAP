@@ -66,6 +66,11 @@ namespace DAP.DWSupport
             public const string Region = "DWSupp:Page:Region";
             public const string StlyDates = "DWSupp:Page:StlyDates";
             public const string RevDetailField = "DWSupp:Page:RevDetailField";
+            public const string CrlinkOverrideFinance = "DWSupp:Page:CrlinkOverrideFinance";
+
+            //gamification
+            public const string Skill2Skillgroup = "DWSupp:Page:Skill2Skillgroup";
+
         }
     }    
 }

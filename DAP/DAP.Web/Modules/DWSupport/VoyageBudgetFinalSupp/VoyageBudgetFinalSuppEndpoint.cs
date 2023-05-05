@@ -61,7 +61,7 @@ namespace DAP.DWSupport.Endpoints
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
         {
             var data = List(connection, request).Entities;
-            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.SailingExclusionSuppColumns));
+            var report = new DynamicDataReport(data, request.IncludeColumns, typeof(Columns.VoyageBudgetFinalSuppColumns));
             var bytes = new ReportRepository().Render(report);
             return ExcelContentResult.Create(bytes, "VoyageBudgetFinal" +
                 DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".xlsx");

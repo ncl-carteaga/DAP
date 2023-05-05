@@ -11,5 +11,14 @@ namespace DAP.DWSupport {
 
         protected form = new CategoryMasterSuppForm(this.idPrefix);
 
+        protected getToolbarButtons(): Serenity.ToolButton[] {
+            var b = super.getToolbarButtons();
+
+            if (!Authorization.hasPermission("DWSupport:DWSupport:Delete")) {
+                b.splice(Q.indexOf(b, x => x.cssClass == "delete-button"), 1);
+            }
+            return b;
+        }
+
     }
 }

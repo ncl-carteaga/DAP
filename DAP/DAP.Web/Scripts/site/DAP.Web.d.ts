@@ -1483,10 +1483,10 @@ declare namespace DAP.DWSupport {
         CategoryCd: Serenity.StringEditor;
         MetaCategoryCd: Serenity.StringEditor;
         FleetCategoryPriorityNbr: Serenity.IntegerEditor;
-        PseudoCategoryCd: Serenity.StringEditor;
-        MandatoryAssignmentCd: Serenity.StringEditor;
+        PseudoCategoryCd: SelectYNEditor;
+        MandatoryAssignmentCd: SelectYNEditor;
         NewMetaCategoryCd: Serenity.StringEditor;
-        RmsPseudoCategoryCd: Serenity.StringEditor;
+        RmsPseudoCategoryCd: SelectYNEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedByNam: Serenity.StringEditor;
@@ -1820,6 +1820,65 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/CreditCardAdjSupp/Delete",
             Retrieve = "DWSupport/CreditCardAdjSupp/Retrieve",
             List = "DWSupport/CreditCardAdjSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface CrlinkOverrideFinanceForm {
+        CruiseCd: Serenity.StringEditor;
+        CruiseSegmentCd: Serenity.StringEditor;
+        CompanyCd: Serenity.StringEditor;
+        EffectiveFrom: Serenity.DateEditor;
+        EffectiveTo: Serenity.DateEditor;
+        LoadDt: Serenity.DateEditor;
+    }
+    class CrlinkOverrideFinanceForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CrlinkOverrideFinanceRow {
+        CrlinkOverrideId?: number;
+        CruiseCd?: string;
+        CruiseSegmentCd?: string;
+        CompanyCd?: string;
+        EffectiveFrom?: string;
+        EffectiveTo?: string;
+        LoadDt?: string;
+    }
+    namespace CrlinkOverrideFinanceRow {
+        const idProperty = "CrlinkOverrideId";
+        const nameProperty = "CruiseCd";
+        const localTextPrefix = "DWSupport.CrlinkOverrideFinance";
+        const enum Fields {
+            CrlinkOverrideId = "CrlinkOverrideId",
+            CruiseCd = "CruiseCd",
+            CruiseSegmentCd = "CruiseSegmentCd",
+            CompanyCd = "CompanyCd",
+            EffectiveFrom = "EffectiveFrom",
+            EffectiveTo = "EffectiveTo",
+            LoadDt = "LoadDt"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CrlinkOverrideFinanceService {
+        const baseUrl = "DWSupport/CrlinkOverrideFinance";
+        function Create(request: Serenity.SaveRequest<CrlinkOverrideFinanceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CrlinkOverrideFinanceRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CrlinkOverrideFinanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CrlinkOverrideFinanceRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/CrlinkOverrideFinance/Create",
+            Update = "DWSupport/CrlinkOverrideFinance/Update",
+            Delete = "DWSupport/CrlinkOverrideFinance/Delete",
+            Retrieve = "DWSupport/CrlinkOverrideFinance/Retrieve",
+            List = "DWSupport/CrlinkOverrideFinance/List"
         }
     }
 }
@@ -4000,6 +4059,74 @@ declare namespace DAP.DWSupport {
             Delete = "DWSupport/Ship/Delete",
             Retrieve = "DWSupport/Ship/Retrieve",
             List = "DWSupport/Ship/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
+    interface Skill2SkillgroupForm {
+        SplitGroupId: Serenity.IntegerEditor;
+        SplitGroupName: Serenity.StringEditor;
+        Skill: Serenity.IntegerEditor;
+        AcdSource: Serenity.StringEditor;
+        AcdLevel1: Serenity.StringEditor;
+        AcdLevel2: Serenity.StringEditor;
+        Active: Serenity.StringEditor;
+        EffectiveStart: Serenity.DateEditor;
+        EffectiveEnd: Serenity.DateEditor;
+    }
+    class Skill2SkillgroupForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface Skill2SkillgroupRow {
+        Skill2SkillgroupSk?: number;
+        SplitGroupId?: number;
+        SplitGroupName?: string;
+        Skill?: number;
+        AcdSource?: string;
+        AcdLevel1?: string;
+        AcdLevel2?: string;
+        Active?: string;
+        EffectiveStart?: string;
+        EffectiveEnd?: string;
+    }
+    namespace Skill2SkillgroupRow {
+        const idProperty = "Skill2SkillgroupSk";
+        const nameProperty = "SplitGroupName";
+        const localTextPrefix = "DWSupport.Skill2Skillgroup";
+        const enum Fields {
+            Skill2SkillgroupSk = "Skill2SkillgroupSk",
+            SplitGroupId = "SplitGroupId",
+            SplitGroupName = "SplitGroupName",
+            Skill = "Skill",
+            AcdSource = "AcdSource",
+            AcdLevel1 = "AcdLevel1",
+            AcdLevel2 = "AcdLevel2",
+            Active = "Active",
+            EffectiveStart = "EffectiveStart",
+            EffectiveEnd = "EffectiveEnd"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace Skill2SkillgroupService {
+        const baseUrl = "DWSupport/Skill2Skillgroup";
+        function Create(request: Serenity.SaveRequest<Skill2SkillgroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<Skill2SkillgroupRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<Skill2SkillgroupRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<Skill2SkillgroupRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/Skill2Skillgroup/Create",
+            Update = "DWSupport/Skill2Skillgroup/Update",
+            Delete = "DWSupport/Skill2Skillgroup/Delete",
+            Retrieve = "DWSupport/Skill2Skillgroup/Retrieve",
+            List = "DWSupport/Skill2Skillgroup/List"
         }
     }
 }
@@ -10225,6 +10352,7 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: CategoryMasterSuppForm;
+        protected getToolbarButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {
@@ -10273,6 +10401,26 @@ declare namespace DAP.DWSupport {
     class CreditCardAdjSuppGrid extends Serenity.EntityGrid<CreditCardAdjSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof CreditCardAdjSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class CrlinkOverrideFinanceDialog extends Serenity.EntityDialog<CrlinkOverrideFinanceRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CrlinkOverrideFinanceForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CrlinkOverrideFinanceGrid extends Serenity.EntityGrid<CrlinkOverrideFinanceRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CrlinkOverrideFinanceDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
@@ -10875,6 +11023,26 @@ declare namespace DAP.DWSupport {
      * in server side forms, e.g. [HardCodedValuesEditor]
      */
     class SelectYNEditor extends Serenity.Select2Editor<any, any> {
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class Skill2SkillgroupDialog extends Serenity.EntityDialog<Skill2SkillgroupRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: Skill2SkillgroupForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class Skill2SkillgroupGrid extends Serenity.EntityGrid<Skill2SkillgroupRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof Skill2SkillgroupDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
         constructor(container: JQuery);
     }
 }

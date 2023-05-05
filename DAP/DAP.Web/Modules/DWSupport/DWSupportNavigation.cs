@@ -36,6 +36,7 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Exchange Fixed Rate", typeof(MyPages.ExchangeFixedRateController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Rev Detail Field", typeof(MyPages.RevDetailFieldController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Dim Cruise Flags", typeof(MyPages.DimCruiseFlagsController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Crlink Override Finance", typeof(MyPages.CrlinkOverrideFinanceController), icon: null)]
 
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Import Error Log", typeof(MyPages.ImportErrorLogController), icon: null)]
@@ -48,3 +49,5 @@ using MyPages = DAP.DWSupport.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Invoice Item Type", typeof(MyPages.InvoiceItemTypeSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Product Codes", typeof(MyPages.ProductCodeSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Product Codes", typeof(MyPages.SlProductCodeSuppController), icon: null)]
+[assembly: NavigationMenu(int.MaxValue, "Gamification", icon: "fa-trophy")]
+[assembly: NavigationLink(int.MaxValue, "Gamification/Skill to Skill Group", typeof(MyPages.Skill2SkillgroupController), icon: null)]

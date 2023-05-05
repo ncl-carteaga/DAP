@@ -113,6 +113,11 @@ namespace MVC
                 public const string CreditCardAdjSuppIndex = "~/Modules/DWSupport/CreditCardAdjSupp/CreditCardAdjSuppIndex.cshtml";
             }
 
+            public static class CrlinkOverrideFinance
+            {
+                public const string CrlinkOverrideFinanceIndex = "~/Modules/DWSupport/CrlinkOverrideFinance/CrlinkOverrideFinanceIndex.cshtml";
+            }
+
             public static class CruiseSegmentDaysOverride
             {
                 public const string CruiseSegmentDaysOverrideIndex = "~/Modules/DWSupport/CruiseSegmentDaysOverride/CruiseSegmentDaysOverrideIndex.cshtml";
@@ -231,6 +236,11 @@ namespace MVC
             public static class SailingMasterSupp
             {
                 public const string SailingMasterSuppIndex = "~/Modules/DWSupport/SailingMasterSupp/SailingMasterSuppIndex.cshtml";
+            }
+
+            public static class Skill2Skillgroup
+            {
+                public const string Skill2SkillgroupIndex = "~/Modules/DWSupport/Skill2Skillgroup/Skill2SkillgroupIndex.cshtml";
             }
 
             public static class SlProductCodeSupp

@@ -6,10 +6,10 @@
         CategoryCd: Serenity.StringEditor;
         MetaCategoryCd: Serenity.StringEditor;
         FleetCategoryPriorityNbr: Serenity.IntegerEditor;
-        PseudoCategoryCd: Serenity.StringEditor;
-        MandatoryAssignmentCd: Serenity.StringEditor;
+        PseudoCategoryCd: SelectYNEditor;
+        MandatoryAssignmentCd: SelectYNEditor;
         NewMetaCategoryCd: Serenity.StringEditor;
-        RmsPseudoCategoryCd: Serenity.StringEditor;
+        RmsPseudoCategoryCd: SelectYNEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedByNam: Serenity.StringEditor;
@@ -30,6 +30,7 @@
                 var w0 = s.StringEditor;
                 var w1 = s.DateEditor;
                 var w2 = s.IntegerEditor;
+                var w3 = SelectYNEditor;
 
                 Q.initFormType(CategoryMasterSuppForm, [
                     'ShipCd', w0,
@@ -38,10 +39,10 @@
                     'CategoryCd', w0,
                     'MetaCategoryCd', w0,
                     'FleetCategoryPriorityNbr', w2,
-                    'PseudoCategoryCd', w0,
-                    'MandatoryAssignmentCd', w0,
+                    'PseudoCategoryCd', w3,
+                    'MandatoryAssignmentCd', w3,
                     'NewMetaCategoryCd', w0,
-                    'RmsPseudoCategoryCd', w0,
+                    'RmsPseudoCategoryCd', w3,
                     'CreatedTs', w1,
                     'CreatedByNam', w0,
                     'ModifiedByNam', w0,

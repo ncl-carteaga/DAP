@@ -9759,6 +9759,18 @@ button.ui-button {
 .s-DWSupport-ResExclusionSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-CrlinkOverrideFinanceDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CrlinkOverrideFinanceDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-Skill2SkillgroupDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-Skill2SkillgroupDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

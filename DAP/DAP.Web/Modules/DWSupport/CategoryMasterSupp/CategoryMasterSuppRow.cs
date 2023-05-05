@@ -17,7 +17,7 @@ namespace DAP.DWSupport.Entities
     [DataAuditLog]
     public sealed class CategoryMasterSuppRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Category Master Sur Key"), Column("CATEGORY_MASTER_SUR_KEY"), Size(50), PrimaryKey, QuickSearch]
+        [DisplayName("Category Master Sur Key"), Column("CATEGORY_MASTER_SUR_KEY"), Size(50), PrimaryKey, Visible(false)]
         public Int32? CategoryMasterSurKey
         {
             get { return Fields.CategoryMasterSurKey[this]; }
@@ -66,14 +66,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.FleetCategoryPriorityNbr[this] = value; }
         }
 
-        [DisplayName("Pseudo Category Cd"), Column("PSEUDO_CATEGORY_CD"), Size(1)]
+        [DisplayName("Pseudo Category Cd"), Column("PSEUDO_CATEGORY_CD"), Size(1), SelectYNEditor]
         public String PseudoCategoryCd
         {
             get { return Fields.PseudoCategoryCd[this]; }
             set { Fields.PseudoCategoryCd[this] = value; }
         }
 
-        [DisplayName("Mandatory Assignment Cd"), Column("MANDATORY_ASSIGNMENT_CD"), Size(1)]
+        [DisplayName("Mandatory Assignment Cd"), Column("MANDATORY_ASSIGNMENT_CD"), Size(1), SelectYNEditor]
         public String MandatoryAssignmentCd
         {
             get { return Fields.MandatoryAssignmentCd[this]; }
@@ -87,7 +87,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.NewMetaCategoryCd[this] = value; }
         }
 
-        [DisplayName("Rms Pseudo Category Cd"), Column("RMS_PSEUDO_CATEGORY_CD"), Size(1)]
+        [DisplayName("Rms Pseudo Category Cd"), Column("RMS_PSEUDO_CATEGORY_CD"), Size(1), SelectYNEditor]
         public String RmsPseudoCategoryCd
         {
             get { return Fields.RmsPseudoCategoryCd[this]; }

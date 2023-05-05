@@ -1196,8 +1196,6 @@
     <Content Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppIndex.cshtml" />
-    <Content Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceIndex.cshtml" />
-    <Content Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1243,9 +1241,6 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CreditCardAdjSuppColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CrlinkOverrideFinanceColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CruiseSegmentDaysOverrideColumns.ts">
@@ -1344,9 +1339,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SailingMasterSuppExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.Skill2SkillgroupColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SlProductCodeSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1363,9 +1355,6 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.UpgradeAdvAdjSuppColumns.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppColumns.ts">
@@ -1836,10 +1825,6 @@
     <TypeScriptCompile Include="Modules\DWSupport\VoyageBudgetFinalSupp\VoyageBudgetFinalSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppGrid.ts" />
-    <TypeScriptCompile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceDialog.ts" />
-    <TypeScriptCompile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceGrid.ts" />
-    <TypeScriptCompile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupDialog.ts" />
-    <TypeScriptCompile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3491,15 +3476,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.VoyageBudgetFinalSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ResExclusionSuppRow.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -3507,24 +3486,6 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ResExclusionSuppForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CrlinkOverrideFinanceRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CrlinkOverrideFinanceService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CrlinkOverrideFinanceForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.Skill2SkillgroupRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.Skill2SkillgroupService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.Skill2SkillgroupForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
   </ItemGroup>
@@ -4431,18 +4392,6 @@
     <Compile Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppPage.cs" />
     <Compile Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppForm.cs" />
-    <Compile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceRow.cs" />
-    <Compile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceRepository.cs" />
-    <Compile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceEndpoint.cs" />
-    <Compile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinancePage.cs" />
-    <Compile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceColumns.cs" />
-    <Compile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceForm.cs" />
-    <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupRow.cs" />
-    <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupRepository.cs" />
-    <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupEndpoint.cs" />
-    <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupPage.cs" />
-    <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupColumns.cs" />
-    <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

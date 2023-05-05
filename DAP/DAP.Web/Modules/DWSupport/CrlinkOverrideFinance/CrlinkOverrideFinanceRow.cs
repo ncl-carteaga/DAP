@@ -9,19 +9,19 @@ namespace DAP.DWSupport.Entities
     using System.ComponentModel;
     using System.IO;
 
-    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[nvs].[Cruise_segment_days_override]")]
-    [DisplayName("Cruise Segment Days Override"), InstanceName("Cruise Segment Days Override")]
+    [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[nvs].[Crlink_override_finance]")]
+    [DisplayName("Crlink Override Finance"), InstanceName("Crlink Override Finance")]
     [ReadPermission(PermissionKeys.DWSupport.View)]
     [ModifyPermission(PermissionKeys.DWSupport.Modify)]
     [DeletePermission(PermissionKeys.DWSupport.Delete)]
     [DataAuditLog]
-    public sealed class CruiseSegmentDaysOverrideRow : Row, IIdRow, INameRow
+    public sealed class CrlinkOverrideFinanceRow : Row, IIdRow, INameRow
     {
-        [DisplayName("Cruise Segment Day Override Id"), Column("CruiseSegmentDayOverrideID"), Identity, Visible(false)]
-        public Int32? CruiseSegmentDayOverrideId
+        [DisplayName("Crlink Override Id"), Column("CrlinkOverrideID"), Identity, Visible(false)]
+        public Int32? CrlinkOverrideId
         {
-            get { return Fields.CruiseSegmentDayOverrideId[this]; }
-            set { Fields.CruiseSegmentDayOverrideId[this] = value; }
+            get { return Fields.CrlinkOverrideId[this]; }
+            set { Fields.CrlinkOverrideId[this] = value; }
         }
 
         [DisplayName("Cruise Cd"), Column("cruise_cd"), Size(10), NotNull, QuickSearch]
@@ -31,25 +31,18 @@ namespace DAP.DWSupport.Entities
             set { Fields.CruiseCd[this] = value; }
         }
 
+        [DisplayName("Cruise Segment Cd"), Column("cruise_segment_cd"), Size(10), NotNull]
+        public String CruiseSegmentCd
+        {
+            get { return Fields.CruiseSegmentCd[this]; }
+            set { Fields.CruiseSegmentCd[this] = value; }
+        }
+
         [DisplayName("Company Cd"), Column("company_cd"), Size(3), NotNull]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
-        }
-
-        [DisplayName("Cruise Days Qty"), Column("cruise_days_qty"), NotNull]
-        public Int32? CruiseDaysQty
-        {
-            get { return Fields.CruiseDaysQty[this]; }
-            set { Fields.CruiseDaysQty[this] = value; }
-        }
-
-        [DisplayName("Cruise Segment Days Qty"), Column("cruise_segment_days_qty"), NotNull]
-        public Int32? CruiseSegmentDaysQty
-        {
-            get { return Fields.CruiseSegmentDaysQty[this]; }
-            set { Fields.CruiseSegmentDaysQty[this] = value; }
         }
 
         [DisplayName("Effective From"), Column("effective_from"), NotNull]
@@ -75,7 +68,7 @@ namespace DAP.DWSupport.Entities
 
         IIdField IIdRow.IdField
         {
-            get { return Fields.CruiseSegmentDayOverrideId; }
+            get { return Fields.CrlinkOverrideId; }
         }
 
         StringField INameRow.NameField
@@ -85,18 +78,17 @@ namespace DAP.DWSupport.Entities
 
         public static readonly RowFields Fields = new RowFields().Init();
 
-        public CruiseSegmentDaysOverrideRow()
+        public CrlinkOverrideFinanceRow()
             : base(Fields)
         {
         }
 
         public class RowFields : RowFieldsBase
         {
-            public Int32Field CruiseSegmentDayOverrideId;
+            public Int32Field CrlinkOverrideId;
             public StringField CruiseCd;
+            public StringField CruiseSegmentCd;
             public StringField CompanyCd;
-            public Int32Field CruiseDaysQty;
-            public Int32Field CruiseSegmentDaysQty;
             public DateTimeField EffectiveFrom;
             public DateTimeField EffectiveTo;
             public DateTimeField LoadDt;

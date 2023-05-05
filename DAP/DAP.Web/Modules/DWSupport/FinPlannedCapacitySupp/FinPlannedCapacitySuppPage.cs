@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/FinPlannedCapacitySupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.FinPlannedCapacitySuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.FinPlannedCapacitySupp)]
     public class FinPlannedCapacitySuppController : Controller
     {
         public ActionResult Index()
