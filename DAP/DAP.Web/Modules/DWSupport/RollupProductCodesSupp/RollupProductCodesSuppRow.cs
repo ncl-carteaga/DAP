@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.DWSupport.Entities
 {
+    using DAP.DWSupport.Lookups;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -24,7 +25,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.RollupProductSurKey[this] = value; }
         }
 
-        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(50), QuickSearch]
+        [DisplayName("Product Cd"), Column("PRODUCT_CD"), Size(50), QuickSearch, LookupEditor(typeof(RollupProductCodesSuppLookupEditor))]
         public String ProductCd
         {
             get { return Fields.ProductCd[this]; }
