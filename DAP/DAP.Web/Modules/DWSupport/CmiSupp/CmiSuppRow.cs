@@ -164,49 +164,49 @@ namespace DAP.DWSupport.Entities
             set { Fields.VoyageCd[this] = value; }
         }
 
-        [DisplayName("Sm Cabin Fare Amt"), Column("SM_CABIN_FARE_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Cabin Fare Amt"), Column("SM_CABIN_FARE_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmCabinFareAmt
         {
             get { return Fields.SmCabinFareAmt[this]; }
             set { Fields.SmCabinFareAmt[this] = value; }
         }
 
-        [DisplayName("Sm Cabin Fare Nonrev Amt"), Column("SM_CABIN_FARE_NONREV_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Cabin Fare Nonrev Amt"), Column("SM_CABIN_FARE_NONREV_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmCabinFareNonrevAmt
         {
             get { return Fields.SmCabinFareNonrevAmt[this]; }
             set { Fields.SmCabinFareNonrevAmt[this] = value; }
         }
 
-        [DisplayName("Sm Excess Ticketing Amt"), Column("SM_EXCESS_TICKETING_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Excess Ticketing Amt"), Column("SM_EXCESS_TICKETING_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmExcessTicketingAmt
         {
             get { return Fields.SmExcessTicketingAmt[this]; }
             set { Fields.SmExcessTicketingAmt[this] = value; }
         }
 
-        [DisplayName("Sm Cruise Disc Amt"), Column("SM_CRUISE_DISC_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Cruise Disc Amt"), Column("SM_CRUISE_DISC_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmCruiseDiscAmt
         {
             get { return Fields.SmCruiseDiscAmt[this]; }
             set { Fields.SmCruiseDiscAmt[this] = value; }
         }
 
-        [DisplayName("Sm Cost Of Sales Amt"), Column("SM_COST_OF_SALES_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Cost Of Sales Amt"), Column("SM_COST_OF_SALES_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmCostOfSalesAmt
         {
             get { return Fields.SmCostOfSalesAmt[this]; }
             set { Fields.SmCostOfSalesAmt[this] = value; }
         }
 
-        [DisplayName("Sm Guest Fees Grats Expense Amt"), Column("SM_GUEST_FEES_GRATS_EXPENSE_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Guest Fees Grats Expense Amt"), Column("SM_GUEST_FEES_GRATS_EXPENSE_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmGuestFeesGratsExpenseAmt
         {
             get { return Fields.SmGuestFeesGratsExpenseAmt[this]; }
             set { Fields.SmGuestFeesGratsExpenseAmt[this] = value; }
         }
 
-        [DisplayName("Sm Credit Card Cost Amt"), Column("SM_CREDIT_CARD_COST_AMT"), Size(38), Scale(4)]
+        [DisplayName("Sm Credit Card Cost Amt"), Column("SM_CREDIT_CARD_COST_AMT"), Size(38), Scale(4), DecimalEditor(AllowNegatives = true)]
         public Decimal? SmCreditCardCostAmt
         {
             get { return Fields.SmCreditCardCostAmt[this]; }

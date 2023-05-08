@@ -3628,7 +3628,7 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface RollupProductCodesSuppForm {
-        ProductCd: Serenity.StringEditor;
+        ProductCd: Serenity.LookupEditor;
         RmRollupProductCd: Serenity.StringEditor;
         RmRollupProductDesc: Serenity.StringEditor;
         BrochureRollupProductCd: Serenity.StringEditor;

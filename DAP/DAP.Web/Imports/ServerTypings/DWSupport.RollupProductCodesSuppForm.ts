@@ -1,6 +1,6 @@
 ﻿namespace DAP.DWSupport {
     export interface RollupProductCodesSuppForm {
-        ProductCd: Serenity.StringEditor;
+        ProductCd: Serenity.LookupEditor;
         RmRollupProductCd: Serenity.StringEditor;
         RmRollupProductDesc: Serenity.StringEditor;
         BrochureRollupProductCd: Serenity.StringEditor;
@@ -22,19 +22,20 @@
                 RollupProductCodesSuppForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
-                var w1 = s.DateEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.DateEditor;
 
                 Q.initFormType(RollupProductCodesSuppForm, [
                     'ProductCd', w0,
-                    'RmRollupProductCd', w0,
-                    'RmRollupProductDesc', w0,
-                    'BrochureRollupProductCd', w0,
-                    'BrochureRollupProductDesc', w0,
-                    'CreatedByNam', w0,
-                    'CreatedTs', w1,
-                    'ModifiedByNam', w0,
-                    'ModifiedTs', w1
+                    'RmRollupProductCd', w1,
+                    'RmRollupProductDesc', w1,
+                    'BrochureRollupProductCd', w1,
+                    'BrochureRollupProductDesc', w1,
+                    'CreatedByNam', w1,
+                    'CreatedTs', w2,
+                    'ModifiedByNam', w1,
+                    'ModifiedTs', w2
                 ]);
             }
         }
