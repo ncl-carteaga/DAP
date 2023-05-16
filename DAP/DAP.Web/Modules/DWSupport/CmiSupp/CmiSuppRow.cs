@@ -31,7 +31,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CmiTypeCd[this] = value; }
         }
 
-        [DisplayName("Sail Id"), Column("SAIL_ID"), NotNull]
+        [DisplayName("Sail Id"), Column("SAIL_ID")]
         public Int32? SailId
         {
             get { return Fields.SailId[this]; }
@@ -157,7 +157,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CmiSubType2Cd[this] = value; }
         }
 
-        [DisplayName("Voyage Cd"), Column("VOYAGE_CD"), Size(25)]
+        [DisplayName("Voyage Cd"), Column("VOYAGE_CD"), Size(25), QuickSearch]
         public String VoyageCd
         {
             get { return Fields.VoyageCd[this]; }
