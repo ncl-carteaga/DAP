@@ -20,14 +20,14 @@ namespace DAP.DWSupport {
                     let t1 = this.form.ParticipationRate.value;
                     let t2 = this.form.BaseRate.value;
                     let t3 = this.form.CxBuffer.value;
-                    this.form.BlendedRate.set_value(t1 * t2);
-                    this.form.ProposedRate.set_value(this.form.BlendedRate.value+t3);
+                    this.form.BlendedRate.set_value((t1 * t2) + t3);
+                    this.form.ProposedRate.set_value(this.form.BlendedRate.value + t3);
                 });
                 this.form.ParticipationRate.change(e => {
                     let t1 = this.form.ParticipationRate.value;
                     let t2 = this.form.BaseRate.value;
                     let t3 = this.form.CxBuffer.value;
-                    this.form.BlendedRate.set_value(t1 * t2);
+                    this.form.BlendedRate.set_value((t1 * t2) + t3);
                     this.form.ProposedRate.set_value(this.form.BlendedRate.value + t3);
                 });
                 this.form.CxBuffer.change(e => {

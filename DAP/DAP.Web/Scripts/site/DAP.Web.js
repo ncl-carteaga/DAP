@@ -947,72 +947,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var AirCostAdjSuppForm = /** @class */ (function (_super) {
-            __extends(AirCostAdjSuppForm, _super);
-            function AirCostAdjSuppForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!AirCostAdjSuppForm.init) {
-                    AirCostAdjSuppForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.DecimalEditor;
-                    var w2 = s.DateEditor;
-                    Q.initFormType(AirCostAdjSuppForm, [
-                        'VoyageCd', w0,
-                        'RmEstimatedAirCost', w1,
-                        'EffectiveFromDt', w2,
-                        'EffectiveToDt', w2,
-                        'CreatedTs', w2,
-                        'CreatedByNam', w0,
-                        'ModifiedTs', w2,
-                        'ModifiedByNam', w0
-                    ]);
-                }
-                return _this;
-            }
-            AirCostAdjSuppForm.formKey = 'DWSupport.AirCostAdjSupp';
-            return AirCostAdjSuppForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.AirCostAdjSuppForm = AirCostAdjSuppForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var AirCostAdjSuppRow;
-        (function (AirCostAdjSuppRow) {
-            AirCostAdjSuppRow.idProperty = 'AirCostAdjId';
-            AirCostAdjSuppRow.nameProperty = 'VoyageCd';
-            AirCostAdjSuppRow.localTextPrefix = 'DWSupport.AirCostAdjSupp';
-        })(AirCostAdjSuppRow = DWSupport.AirCostAdjSuppRow || (DWSupport.AirCostAdjSuppRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var AirCostAdjSuppService;
-        (function (AirCostAdjSuppService) {
-            AirCostAdjSuppService.baseUrl = 'DWSupport/AirCostAdjSupp';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                AirCostAdjSuppService[x] = function (r, s, o) {
-                    return Q.serviceRequest(AirCostAdjSuppService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(AirCostAdjSuppService = DWSupport.AirCostAdjSuppService || (DWSupport.AirCostAdjSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var AmenitiesSuppForm = /** @class */ (function (_super) {
             __extends(AmenitiesSuppForm, _super);
             function AmenitiesSuppForm(prefix) {
@@ -1414,44 +1348,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var CcOfficeLoationsRow;
-        (function (CcOfficeLoationsRow) {
-            CcOfficeLoationsRow.idProperty = 'Cd';
-            CcOfficeLoationsRow.nameProperty = 'Cd';
-            CcOfficeLoationsRow.localTextPrefix = 'DWSupport.CcOfficeLoations';
-            CcOfficeLoationsRow.lookupKey = 'DWSupport.CCOffice';
-            function getLookup() {
-                return Q.getLookup('DWSupport.CCOffice');
-            }
-            CcOfficeLoationsRow.getLookup = getLookup;
-        })(CcOfficeLoationsRow = DWSupport.CcOfficeLoationsRow || (DWSupport.CcOfficeLoationsRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CcOfficeLoationsService;
-        (function (CcOfficeLoationsService) {
-            CcOfficeLoationsService.baseUrl = 'DWSupport/CcOfficeLoations';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                CcOfficeLoationsService[x] = function (r, s, o) {
-                    return Q.serviceRequest(CcOfficeLoationsService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(CcOfficeLoationsService = DWSupport.CcOfficeLoationsService || (DWSupport.CcOfficeLoationsService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var CmiSuppForm = /** @class */ (function (_super) {
             __extends(CmiSuppForm, _super);
             function CmiSuppForm(prefix) {
@@ -1622,134 +1518,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var CrlinkOverrideFinanceForm = /** @class */ (function (_super) {
-            __extends(CrlinkOverrideFinanceForm, _super);
-            function CrlinkOverrideFinanceForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!CrlinkOverrideFinanceForm.init) {
-                    CrlinkOverrideFinanceForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.DateEditor;
-                    Q.initFormType(CrlinkOverrideFinanceForm, [
-                        'CruiseCd', w0,
-                        'CruiseSegmentCd', w0,
-                        'CompanyCd', w0,
-                        'EffectiveFrom', w1,
-                        'EffectiveTo', w1,
-                        'LoadDt', w1
-                    ]);
-                }
-                return _this;
-            }
-            CrlinkOverrideFinanceForm.formKey = 'DWSupport.CrlinkOverrideFinance';
-            return CrlinkOverrideFinanceForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.CrlinkOverrideFinanceForm = CrlinkOverrideFinanceForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CrlinkOverrideFinanceRow;
-        (function (CrlinkOverrideFinanceRow) {
-            CrlinkOverrideFinanceRow.idProperty = 'CrlinkOverrideId';
-            CrlinkOverrideFinanceRow.nameProperty = 'CruiseCd';
-            CrlinkOverrideFinanceRow.localTextPrefix = 'DWSupport.CrlinkOverrideFinance';
-        })(CrlinkOverrideFinanceRow = DWSupport.CrlinkOverrideFinanceRow || (DWSupport.CrlinkOverrideFinanceRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CrlinkOverrideFinanceService;
-        (function (CrlinkOverrideFinanceService) {
-            CrlinkOverrideFinanceService.baseUrl = 'DWSupport/CrlinkOverrideFinance';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                CrlinkOverrideFinanceService[x] = function (r, s, o) {
-                    return Q.serviceRequest(CrlinkOverrideFinanceService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(CrlinkOverrideFinanceService = DWSupport.CrlinkOverrideFinanceService || (DWSupport.CrlinkOverrideFinanceService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CruiseSegmentDaysOverrideForm = /** @class */ (function (_super) {
-            __extends(CruiseSegmentDaysOverrideForm, _super);
-            function CruiseSegmentDaysOverrideForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!CruiseSegmentDaysOverrideForm.init) {
-                    CruiseSegmentDaysOverrideForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
-                    Q.initFormType(CruiseSegmentDaysOverrideForm, [
-                        'CruiseCd', w0,
-                        'CompanyCd', w0,
-                        'CruiseDaysQty', w1,
-                        'CruiseSegmentDaysQty', w1,
-                        'EffectiveFrom', w2,
-                        'EffectiveTo', w2,
-                        'LoadDt', w2
-                    ]);
-                }
-                return _this;
-            }
-            CruiseSegmentDaysOverrideForm.formKey = 'DWSupport.CruiseSegmentDaysOverride';
-            return CruiseSegmentDaysOverrideForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.CruiseSegmentDaysOverrideForm = CruiseSegmentDaysOverrideForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CruiseSegmentDaysOverrideRow;
-        (function (CruiseSegmentDaysOverrideRow) {
-            CruiseSegmentDaysOverrideRow.idProperty = 'CruiseSegmentDayOverrideId';
-            CruiseSegmentDaysOverrideRow.nameProperty = 'CruiseCd';
-            CruiseSegmentDaysOverrideRow.localTextPrefix = 'DWSupport.CruiseSegmentDaysOverride';
-        })(CruiseSegmentDaysOverrideRow = DWSupport.CruiseSegmentDaysOverrideRow || (DWSupport.CruiseSegmentDaysOverrideRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CruiseSegmentDaysOverrideService;
-        (function (CruiseSegmentDaysOverrideService) {
-            CruiseSegmentDaysOverrideService.baseUrl = 'DWSupport/CruiseSegmentDaysOverride';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                CruiseSegmentDaysOverrideService[x] = function (r, s, o) {
-                    return Q.serviceRequest(CruiseSegmentDaysOverrideService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(CruiseSegmentDaysOverrideService = DWSupport.CruiseSegmentDaysOverrideService || (DWSupport.CruiseSegmentDaysOverrideService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var CurrencyExchangeRateSuppForm = /** @class */ (function (_super) {
             __extends(CurrencyExchangeRateSuppForm, _super);
             function CurrencyExchangeRateSuppForm(prefix) {
@@ -1812,84 +1580,6 @@ var DAP;
                 };
             });
         })(CurrencyExchangeRateSuppService = DWSupport.CurrencyExchangeRateSuppService || (DWSupport.CurrencyExchangeRateSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var DimCruiseFlagsForm = /** @class */ (function (_super) {
-            __extends(DimCruiseFlagsForm, _super);
-            function DimCruiseFlagsForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!DimCruiseFlagsForm.init) {
-                    DimCruiseFlagsForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = DWSupport.SelectYNEditor;
-                    var w3 = s.DecimalEditor;
-                    var w4 = s.DateEditor;
-                    Q.initFormType(DimCruiseFlagsForm, [
-                        'CruiseCd', w0,
-                        'CruiseSegmentCd', w0,
-                        'ShipCd', w0,
-                        'CompanyCd', w0,
-                        'CappedCapacity', w1,
-                        'OnbrdAvgPaxQty', w1,
-                        'HighlightInd', w2,
-                        'ColorInd', w2,
-                        'DrydockInd', w2,
-                        'VarToCurve', w3,
-                        'ShowInDr001', w2,
-                        'ShowInDr010', w2,
-                        'ShowInCube', w2,
-                        'IntlDatelineInd', w2,
-                        'MinisegInd', w2,
-                        'EffectiveFrom', w4,
-                        'EffectiveTo', w4,
-                        'LoadDt', w4
-                    ]);
-                }
-                return _this;
-            }
-            DimCruiseFlagsForm.formKey = 'DWSupport.DimCruiseFlags';
-            return DimCruiseFlagsForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.DimCruiseFlagsForm = DimCruiseFlagsForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var DimCruiseFlagsRow;
-        (function (DimCruiseFlagsRow) {
-            DimCruiseFlagsRow.idProperty = 'DimCruiseFlagId';
-            DimCruiseFlagsRow.nameProperty = 'CruiseCd';
-            DimCruiseFlagsRow.localTextPrefix = 'DWSupport.DimCruiseFlags';
-        })(DimCruiseFlagsRow = DWSupport.DimCruiseFlagsRow || (DWSupport.DimCruiseFlagsRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var DimCruiseFlagsService;
-        (function (DimCruiseFlagsService) {
-            DimCruiseFlagsService.baseUrl = 'DWSupport/DimCruiseFlags';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                DimCruiseFlagsService[x] = function (r, s, o) {
-                    return Q.serviceRequest(DimCruiseFlagsService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(DimCruiseFlagsService = DWSupport.DimCruiseFlagsService || (DWSupport.DimCruiseFlagsService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -1962,69 +1652,6 @@ var DAP;
                 };
             });
         })(DistrictMasterSuppService = DWSupport.DistrictMasterSuppService || (DWSupport.DistrictMasterSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ExchangeFixedRateForm = /** @class */ (function (_super) {
-            __extends(ExchangeFixedRateForm, _super);
-            function ExchangeFixedRateForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!ExchangeFixedRateForm.init) {
-                    ExchangeFixedRateForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.DecimalEditor;
-                    var w2 = s.DateEditor;
-                    Q.initFormType(ExchangeFixedRateForm, [
-                        'CurrencyCd', w0,
-                        'ExchangeRate', w1,
-                        'EffectiveFrom', w2,
-                        'EffectiveTo', w2,
-                        'LoadDt', w2
-                    ]);
-                }
-                return _this;
-            }
-            ExchangeFixedRateForm.formKey = 'DWSupport.ExchangeFixedRate';
-            return ExchangeFixedRateForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.ExchangeFixedRateForm = ExchangeFixedRateForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ExchangeFixedRateRow;
-        (function (ExchangeFixedRateRow) {
-            ExchangeFixedRateRow.idProperty = 'ExchangeFixedRateId';
-            ExchangeFixedRateRow.nameProperty = 'CurrencyCd';
-            ExchangeFixedRateRow.localTextPrefix = 'DWSupport.ExchangeFixedRate';
-        })(ExchangeFixedRateRow = DWSupport.ExchangeFixedRateRow || (DWSupport.ExchangeFixedRateRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ExchangeFixedRateService;
-        (function (ExchangeFixedRateService) {
-            ExchangeFixedRateService.baseUrl = 'DWSupport/ExchangeFixedRate';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                ExchangeFixedRateService[x] = function (r, s, o) {
-                    return Q.serviceRequest(ExchangeFixedRateService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(ExchangeFixedRateService = DWSupport.ExchangeFixedRateService || (DWSupport.ExchangeFixedRateService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -3154,223 +2781,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var RegionForm = /** @class */ (function (_super) {
-            __extends(RegionForm, _super);
-            function RegionForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!RegionForm.init) {
-                    RegionForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.DateEditor;
-                    Q.initFormType(RegionForm, [
-                        'RegionCd', w0,
-                        'RegionType', w0,
-                        'CompanyCd', w0,
-                        'EffectiveFrom', w1,
-                        'EffectiveTo', w1,
-                        'LoadDt', w1
-                    ]);
-                }
-                return _this;
-            }
-            RegionForm.formKey = 'DWSupport.Region';
-            return RegionForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.RegionForm = RegionForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RegionRow;
-        (function (RegionRow) {
-            RegionRow.idProperty = 'RegionId';
-            RegionRow.nameProperty = 'RegionCd';
-            RegionRow.localTextPrefix = 'DWSupport.Region';
-        })(RegionRow = DWSupport.RegionRow || (DWSupport.RegionRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RegionService;
-        (function (RegionService) {
-            RegionService.baseUrl = 'DWSupport/Region';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                RegionService[x] = function (r, s, o) {
-                    return Q.serviceRequest(RegionService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(RegionService = DWSupport.RegionService || (DWSupport.RegionService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppExcelImportForm = /** @class */ (function (_super) {
-            __extends(ResExclusionSuppExcelImportForm, _super);
-            function ResExclusionSuppExcelImportForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!ResExclusionSuppExcelImportForm.init) {
-                    ResExclusionSuppExcelImportForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.ImageUploadEditor;
-                    Q.initFormType(ResExclusionSuppExcelImportForm, [
-                        'FileName', w0
-                    ]);
-                }
-                return _this;
-            }
-            ResExclusionSuppExcelImportForm.formKey = 'DWSupport.ResExclusionSuppExcelImport';
-            return ResExclusionSuppExcelImportForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.ResExclusionSuppExcelImportForm = ResExclusionSuppExcelImportForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppForm = /** @class */ (function (_super) {
-            __extends(ResExclusionSuppForm, _super);
-            function ResExclusionSuppForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!ResExclusionSuppForm.init) {
-                    ResExclusionSuppForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.DateEditor;
-                    Q.initFormType(ResExclusionSuppForm, [
-                        'ResId', w0,
-                        'FromDataAsOfDt', w1,
-                        'ToDataAsOfDt', w1,
-                        'CommentTxt', w0,
-                        'CreatedTs', w1,
-                        'CreatedByNam', w0,
-                        'ModifiedTs', w1,
-                        'ModifiedByNam', w0
-                    ]);
-                }
-                return _this;
-            }
-            ResExclusionSuppForm.formKey = 'DWSupport.ResExclusionSupp';
-            return ResExclusionSuppForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.ResExclusionSuppForm = ResExclusionSuppForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppRow;
-        (function (ResExclusionSuppRow) {
-            ResExclusionSuppRow.idProperty = 'ResExclusionId';
-            ResExclusionSuppRow.nameProperty = 'CommentTxt';
-            ResExclusionSuppRow.localTextPrefix = 'DWSupport.ResExclusionSupp';
-        })(ResExclusionSuppRow = DWSupport.ResExclusionSuppRow || (DWSupport.ResExclusionSuppRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppService;
-        (function (ResExclusionSuppService) {
-            ResExclusionSuppService.baseUrl = 'DWSupport/ResExclusionSupp';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List',
-                'ExcelImport'
-            ].forEach(function (x) {
-                ResExclusionSuppService[x] = function (r, s, o) {
-                    return Q.serviceRequest(ResExclusionSuppService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(ResExclusionSuppService = DWSupport.ResExclusionSuppService || (DWSupport.ResExclusionSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RevDetailFieldForm = /** @class */ (function (_super) {
-            __extends(RevDetailFieldForm, _super);
-            function RevDetailFieldForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!RevDetailFieldForm.init) {
-                    RevDetailFieldForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
-                    Q.initFormType(RevDetailFieldForm, [
-                        'RevdetailFieldNm', w0,
-                        'RevdetailSegmentFieldNm', w0,
-                        'RevdetailFieldCheck', w0,
-                        'OdsFieldNm', w0,
-                        'CubeInsInd', w1,
-                        'LoadDt', w2
-                    ]);
-                }
-                return _this;
-            }
-            RevDetailFieldForm.formKey = 'DWSupport.RevDetailField';
-            return RevDetailFieldForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.RevDetailFieldForm = RevDetailFieldForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RevDetailFieldRow;
-        (function (RevDetailFieldRow) {
-            RevDetailFieldRow.idProperty = 'RevDetailFieldId';
-            RevDetailFieldRow.nameProperty = 'RevdetailFieldNm';
-            RevDetailFieldRow.localTextPrefix = 'DWSupport.RevDetailField';
-        })(RevDetailFieldRow = DWSupport.RevDetailFieldRow || (DWSupport.RevDetailFieldRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RevDetailFieldService;
-        (function (RevDetailFieldService) {
-            RevDetailFieldService.baseUrl = 'DWSupport/RevDetailField';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                RevDetailFieldService[x] = function (r, s, o) {
-                    return Q.serviceRequest(RevDetailFieldService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(RevDetailFieldService = DWSupport.RevDetailFieldService || (DWSupport.RevDetailFieldService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var RollupProductCodesSuppForm = /** @class */ (function (_super) {
             __extends(RollupProductCodesSuppForm, _super);
             function RollupProductCodesSuppForm(prefix) {
@@ -3432,101 +2842,6 @@ var DAP;
                 };
             });
         })(RollupProductCodesSuppService = DWSupport.RollupProductCodesSuppService || (DWSupport.RollupProductCodesSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppExcelImportForm = /** @class */ (function (_super) {
-            __extends(SailingExclusionSuppExcelImportForm, _super);
-            function SailingExclusionSuppExcelImportForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!SailingExclusionSuppExcelImportForm.init) {
-                    SailingExclusionSuppExcelImportForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.ImageUploadEditor;
-                    Q.initFormType(SailingExclusionSuppExcelImportForm, [
-                        'FileName', w0
-                    ]);
-                }
-                return _this;
-            }
-            SailingExclusionSuppExcelImportForm.formKey = 'DWSupport.SailingExclusionSuppExcelImport';
-            return SailingExclusionSuppExcelImportForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.SailingExclusionSuppExcelImportForm = SailingExclusionSuppExcelImportForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppForm = /** @class */ (function (_super) {
-            __extends(SailingExclusionSuppForm, _super);
-            function SailingExclusionSuppForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!SailingExclusionSuppForm.init) {
-                    SailingExclusionSuppForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.LookupEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DateEditor;
-                    var w3 = s.StringEditor;
-                    Q.initFormType(SailingExclusionSuppForm, [
-                        'ShipCd', w0,
-                        'MainSailId', w1,
-                        'MainSailDt', w2,
-                        'MainVoyageCd', w3,
-                        'FromDataAsOfDt', w2,
-                        'ToDataAsOfDt', w2,
-                        'CommentTxt', w3,
-                        'CreatedTs', w2,
-                        'CreatedByNam', w3,
-                        'ModifiedTs', w2,
-                        'ModifiedByNam', w3
-                    ]);
-                }
-                return _this;
-            }
-            SailingExclusionSuppForm.formKey = 'DWSupport.SailingExclusionSupp';
-            return SailingExclusionSuppForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.SailingExclusionSuppForm = SailingExclusionSuppForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppRow;
-        (function (SailingExclusionSuppRow) {
-            SailingExclusionSuppRow.idProperty = 'SailingExclusionId';
-            SailingExclusionSuppRow.nameProperty = 'ShipCd';
-            SailingExclusionSuppRow.localTextPrefix = 'DWSupport.SailingExclusionSupp';
-        })(SailingExclusionSuppRow = DWSupport.SailingExclusionSuppRow || (DWSupport.SailingExclusionSuppRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppService;
-        (function (SailingExclusionSuppService) {
-            SailingExclusionSuppService.baseUrl = 'DWSupport/SailingExclusionSupp';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List',
-                'ExcelImport'
-            ].forEach(function (x) {
-                SailingExclusionSuppService[x] = function (r, s, o) {
-                    return Q.serviceRequest(SailingExclusionSuppService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(SailingExclusionSuppService = DWSupport.SailingExclusionSuppService || (DWSupport.SailingExclusionSuppService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -3711,73 +3026,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var Skill2SkillgroupForm = /** @class */ (function (_super) {
-            __extends(Skill2SkillgroupForm, _super);
-            function Skill2SkillgroupForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!Skill2SkillgroupForm.init) {
-                    Skill2SkillgroupForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.IntegerEditor;
-                    var w1 = s.StringEditor;
-                    var w2 = s.DateEditor;
-                    Q.initFormType(Skill2SkillgroupForm, [
-                        'SplitGroupId', w0,
-                        'SplitGroupName', w1,
-                        'Skill', w0,
-                        'AcdSource', w1,
-                        'AcdLevel1', w1,
-                        'AcdLevel2', w1,
-                        'Active', w1,
-                        'EffectiveStart', w2,
-                        'EffectiveEnd', w2
-                    ]);
-                }
-                return _this;
-            }
-            Skill2SkillgroupForm.formKey = 'DWSupport.Skill2Skillgroup';
-            return Skill2SkillgroupForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.Skill2SkillgroupForm = Skill2SkillgroupForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var Skill2SkillgroupRow;
-        (function (Skill2SkillgroupRow) {
-            Skill2SkillgroupRow.idProperty = 'Skill2SkillgroupSk';
-            Skill2SkillgroupRow.nameProperty = 'SplitGroupName';
-            Skill2SkillgroupRow.localTextPrefix = 'DWSupport.Skill2Skillgroup';
-        })(Skill2SkillgroupRow = DWSupport.Skill2SkillgroupRow || (DWSupport.Skill2SkillgroupRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var Skill2SkillgroupService;
-        (function (Skill2SkillgroupService) {
-            Skill2SkillgroupService.baseUrl = 'DWSupport/Skill2Skillgroup';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                Skill2SkillgroupService[x] = function (r, s, o) {
-                    return Q.serviceRequest(Skill2SkillgroupService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(Skill2SkillgroupService = DWSupport.Skill2SkillgroupService || (DWSupport.Skill2SkillgroupService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var SlProductCodeSuppForm = /** @class */ (function (_super) {
             __extends(SlProductCodeSuppForm, _super);
             function SlProductCodeSuppForm(prefix) {
@@ -3840,76 +3088,6 @@ var DAP;
                 };
             });
         })(SlProductCodeSuppService = DWSupport.SlProductCodeSuppService || (DWSupport.SlProductCodeSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var StlyDatesForm = /** @class */ (function (_super) {
-            __extends(StlyDatesForm, _super);
-            function StlyDatesForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!StlyDatesForm.init) {
-                    StlyDatesForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.DateEditor;
-                    var w1 = s.StringEditor;
-                    var w2 = s.IntegerEditor;
-                    var w3 = s.BooleanEditor;
-                    Q.initFormType(StlyDatesForm, [
-                        'ReportDt', w0,
-                        'DataAsOfDt', w0,
-                        'StlyDt', w0,
-                        'DayOfWeek', w1,
-                        'WeekNum', w2,
-                        'SystemIssuesInd', w3,
-                        'HolidayInd', w3,
-                        'DisasterInd', w3,
-                        'EffectiveFrom', w0,
-                        'EffectiveTo', w0,
-                        'LoadDt', w0
-                    ]);
-                }
-                return _this;
-            }
-            StlyDatesForm.formKey = 'DWSupport.StlyDates';
-            return StlyDatesForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.StlyDatesForm = StlyDatesForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var StlyDatesRow;
-        (function (StlyDatesRow) {
-            StlyDatesRow.idProperty = 'Stlyid';
-            StlyDatesRow.nameProperty = 'DayOfWeek';
-            StlyDatesRow.localTextPrefix = 'DWSupport.StlyDates';
-        })(StlyDatesRow = DWSupport.StlyDatesRow || (DWSupport.StlyDatesRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var StlyDatesService;
-        (function (StlyDatesService) {
-            StlyDatesService.baseUrl = 'DWSupport/StlyDates';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List'
-            ].forEach(function (x) {
-                StlyDatesService[x] = function (r, s, o) {
-                    return Q.serviceRequest(StlyDatesService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(StlyDatesService = DWSupport.StlyDatesService || (DWSupport.StlyDatesService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -4136,108 +3314,6 @@ var DAP;
                 };
             });
         })(UpgradeAdvAdjSuppService = DWSupport.UpgradeAdvAdjSuppService || (DWSupport.UpgradeAdvAdjSuppService = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalExcelImportForm = /** @class */ (function (_super) {
-            __extends(VoyageBudgetFinalExcelImportForm, _super);
-            function VoyageBudgetFinalExcelImportForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!VoyageBudgetFinalExcelImportForm.init) {
-                    VoyageBudgetFinalExcelImportForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.ImageUploadEditor;
-                    Q.initFormType(VoyageBudgetFinalExcelImportForm, [
-                        'FileName', w0
-                    ]);
-                }
-                return _this;
-            }
-            VoyageBudgetFinalExcelImportForm.formKey = 'DWSupport.VoyageBudgetFinalExcelImport';
-            return VoyageBudgetFinalExcelImportForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.VoyageBudgetFinalExcelImportForm = VoyageBudgetFinalExcelImportForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalSuppForm = /** @class */ (function (_super) {
-            __extends(VoyageBudgetFinalSuppForm, _super);
-            function VoyageBudgetFinalSuppForm(prefix) {
-                var _this = _super.call(this, prefix) || this;
-                if (!VoyageBudgetFinalSuppForm.init) {
-                    VoyageBudgetFinalSuppForm.init = true;
-                    var s = Serenity;
-                    var w0 = s.StringEditor;
-                    var w1 = s.IntegerEditor;
-                    var w2 = s.DecimalEditor;
-                    var w3 = s.DateEditor;
-                    Q.initFormType(VoyageBudgetFinalSuppForm, [
-                        'ShipCd', w0,
-                        'VoyageCd', w0,
-                        'SalesChannelDesc', w0,
-                        'YearNbr', w1,
-                        'MonthNbr', w1,
-                        'OperationalNtrAmt', w2,
-                        'PassengerCountQty', w2,
-                        'PassengerDaysQty', w2,
-                        'CapacityDaysQty', w2,
-                        'CabinDaysQty', w2,
-                        'BudgetTypeCd', w0,
-                        'CharterFlagCd', w0,
-                        'BkCabinDaysQty', w2,
-                        'BkCabinQty', w2,
-                        'CreatedTs', w3,
-                        'CreatedByNam', w0,
-                        'ModifiedTs', w3,
-                        'ModifiedByNam', w0
-                    ]);
-                }
-                return _this;
-            }
-            VoyageBudgetFinalSuppForm.formKey = 'DWSupport.VoyageBudgetFinalSupp';
-            return VoyageBudgetFinalSuppForm;
-        }(Serenity.PrefixedContext));
-        DWSupport.VoyageBudgetFinalSuppForm = VoyageBudgetFinalSuppForm;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalSuppRow;
-        (function (VoyageBudgetFinalSuppRow) {
-            VoyageBudgetFinalSuppRow.idProperty = 'BudgetFinalId';
-            VoyageBudgetFinalSuppRow.nameProperty = 'ShipCd';
-            VoyageBudgetFinalSuppRow.localTextPrefix = 'DWSupport.VoyageBudgetFinalSupp';
-        })(VoyageBudgetFinalSuppRow = DWSupport.VoyageBudgetFinalSuppRow || (DWSupport.VoyageBudgetFinalSuppRow = {}));
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalSuppService;
-        (function (VoyageBudgetFinalSuppService) {
-            VoyageBudgetFinalSuppService.baseUrl = 'DWSupport/VoyageBudgetFinalSupp';
-            [
-                'Create',
-                'Update',
-                'Delete',
-                'Retrieve',
-                'List',
-                'ExcelImport'
-            ].forEach(function (x) {
-                VoyageBudgetFinalSuppService[x] = function (r, s, o) {
-                    return Q.serviceRequest(VoyageBudgetFinalSuppService.baseUrl + '/' + x, r, s, o);
-                };
-            });
-        })(VoyageBudgetFinalSuppService = DWSupport.VoyageBudgetFinalSuppService || (DWSupport.VoyageBudgetFinalSuppService = {}));
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -11226,58 +10302,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var AirCostAdjSuppDialog = /** @class */ (function (_super) {
-            __extends(AirCostAdjSuppDialog, _super);
-            function AirCostAdjSuppDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.AirCostAdjSuppForm(_this.idPrefix);
-                return _this;
-            }
-            AirCostAdjSuppDialog.prototype.getFormKey = function () { return DWSupport.AirCostAdjSuppForm.formKey; };
-            AirCostAdjSuppDialog.prototype.getIdProperty = function () { return DWSupport.AirCostAdjSuppRow.idProperty; };
-            AirCostAdjSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.AirCostAdjSuppRow.localTextPrefix; };
-            AirCostAdjSuppDialog.prototype.getNameProperty = function () { return DWSupport.AirCostAdjSuppRow.nameProperty; };
-            AirCostAdjSuppDialog.prototype.getService = function () { return DWSupport.AirCostAdjSuppService.baseUrl; };
-            AirCostAdjSuppDialog.prototype.getToolbarButtons = function () {
-                var b = _super.prototype.getToolbarButtons.call(this);
-                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
-                //b.splice(Q.indexOf(b, x => x.cssClass == "apply-changes-button"), 1);
-                return b;
-            };
-            AirCostAdjSuppDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], AirCostAdjSuppDialog);
-            return AirCostAdjSuppDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.AirCostAdjSuppDialog = AirCostAdjSuppDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var AirCostAdjSuppGrid = /** @class */ (function (_super) {
-            __extends(AirCostAdjSuppGrid, _super);
-            function AirCostAdjSuppGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            AirCostAdjSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.AirCostAdjSupp'; };
-            AirCostAdjSuppGrid.prototype.getDialogType = function () { return DWSupport.AirCostAdjSuppDialog; };
-            AirCostAdjSuppGrid.prototype.getIdProperty = function () { return DWSupport.AirCostAdjSuppRow.idProperty; };
-            AirCostAdjSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.AirCostAdjSuppRow.localTextPrefix; };
-            AirCostAdjSuppGrid.prototype.getService = function () { return DWSupport.AirCostAdjSuppService.baseUrl; };
-            AirCostAdjSuppGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], AirCostAdjSuppGrid);
-            return AirCostAdjSuppGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.AirCostAdjSuppGrid = AirCostAdjSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var AmenitiesSuppDialog = /** @class */ (function (_super) {
             __extends(AmenitiesSuppDialog, _super);
             function AmenitiesSuppDialog() {
@@ -11729,14 +10753,14 @@ var DAP;
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
                     var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value(t1 * t2);
+                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
                     _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
                 });
                 _this.form.ParticipationRate.change(function (e) {
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
                     var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value(t1 * t2);
+                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
                     _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
                 });
                 _this.form.CxBuffer.change(function (e) {
@@ -11785,98 +10809,6 @@ var DAP;
             return CreditCardAdjSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.CreditCardAdjSuppGrid = CreditCardAdjSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CrlinkOverrideFinanceDialog = /** @class */ (function (_super) {
-            __extends(CrlinkOverrideFinanceDialog, _super);
-            function CrlinkOverrideFinanceDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.CrlinkOverrideFinanceForm(_this.idPrefix);
-                return _this;
-            }
-            CrlinkOverrideFinanceDialog.prototype.getFormKey = function () { return DWSupport.CrlinkOverrideFinanceForm.formKey; };
-            CrlinkOverrideFinanceDialog.prototype.getIdProperty = function () { return DWSupport.CrlinkOverrideFinanceRow.idProperty; };
-            CrlinkOverrideFinanceDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CrlinkOverrideFinanceRow.localTextPrefix; };
-            CrlinkOverrideFinanceDialog.prototype.getNameProperty = function () { return DWSupport.CrlinkOverrideFinanceRow.nameProperty; };
-            CrlinkOverrideFinanceDialog.prototype.getService = function () { return DWSupport.CrlinkOverrideFinanceService.baseUrl; };
-            CrlinkOverrideFinanceDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], CrlinkOverrideFinanceDialog);
-            return CrlinkOverrideFinanceDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.CrlinkOverrideFinanceDialog = CrlinkOverrideFinanceDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CrlinkOverrideFinanceGrid = /** @class */ (function (_super) {
-            __extends(CrlinkOverrideFinanceGrid, _super);
-            function CrlinkOverrideFinanceGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            CrlinkOverrideFinanceGrid.prototype.getColumnsKey = function () { return 'DWSupport.CrlinkOverrideFinance'; };
-            CrlinkOverrideFinanceGrid.prototype.getDialogType = function () { return DWSupport.CrlinkOverrideFinanceDialog; };
-            CrlinkOverrideFinanceGrid.prototype.getIdProperty = function () { return DWSupport.CrlinkOverrideFinanceRow.idProperty; };
-            CrlinkOverrideFinanceGrid.prototype.getLocalTextPrefix = function () { return DWSupport.CrlinkOverrideFinanceRow.localTextPrefix; };
-            CrlinkOverrideFinanceGrid.prototype.getService = function () { return DWSupport.CrlinkOverrideFinanceService.baseUrl; };
-            CrlinkOverrideFinanceGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], CrlinkOverrideFinanceGrid);
-            return CrlinkOverrideFinanceGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.CrlinkOverrideFinanceGrid = CrlinkOverrideFinanceGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CruiseSegmentDaysOverrideDialog = /** @class */ (function (_super) {
-            __extends(CruiseSegmentDaysOverrideDialog, _super);
-            function CruiseSegmentDaysOverrideDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.CruiseSegmentDaysOverrideForm(_this.idPrefix);
-                return _this;
-            }
-            CruiseSegmentDaysOverrideDialog.prototype.getFormKey = function () { return DWSupport.CruiseSegmentDaysOverrideForm.formKey; };
-            CruiseSegmentDaysOverrideDialog.prototype.getIdProperty = function () { return DWSupport.CruiseSegmentDaysOverrideRow.idProperty; };
-            CruiseSegmentDaysOverrideDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CruiseSegmentDaysOverrideRow.localTextPrefix; };
-            CruiseSegmentDaysOverrideDialog.prototype.getNameProperty = function () { return DWSupport.CruiseSegmentDaysOverrideRow.nameProperty; };
-            CruiseSegmentDaysOverrideDialog.prototype.getService = function () { return DWSupport.CruiseSegmentDaysOverrideService.baseUrl; };
-            CruiseSegmentDaysOverrideDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], CruiseSegmentDaysOverrideDialog);
-            return CruiseSegmentDaysOverrideDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.CruiseSegmentDaysOverrideDialog = CruiseSegmentDaysOverrideDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var CruiseSegmentDaysOverrideGrid = /** @class */ (function (_super) {
-            __extends(CruiseSegmentDaysOverrideGrid, _super);
-            function CruiseSegmentDaysOverrideGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            CruiseSegmentDaysOverrideGrid.prototype.getColumnsKey = function () { return 'DWSupport.CruiseSegmentDaysOverride'; };
-            CruiseSegmentDaysOverrideGrid.prototype.getDialogType = function () { return DWSupport.CruiseSegmentDaysOverrideDialog; };
-            CruiseSegmentDaysOverrideGrid.prototype.getIdProperty = function () { return DWSupport.CruiseSegmentDaysOverrideRow.idProperty; };
-            CruiseSegmentDaysOverrideGrid.prototype.getLocalTextPrefix = function () { return DWSupport.CruiseSegmentDaysOverrideRow.localTextPrefix; };
-            CruiseSegmentDaysOverrideGrid.prototype.getService = function () { return DWSupport.CruiseSegmentDaysOverrideService.baseUrl; };
-            CruiseSegmentDaysOverrideGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], CruiseSegmentDaysOverrideGrid);
-            return CruiseSegmentDaysOverrideGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.CruiseSegmentDaysOverrideGrid = CruiseSegmentDaysOverrideGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -11990,52 +10922,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var DimCruiseFlagsDialog = /** @class */ (function (_super) {
-            __extends(DimCruiseFlagsDialog, _super);
-            function DimCruiseFlagsDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.DimCruiseFlagsForm(_this.idPrefix);
-                return _this;
-            }
-            DimCruiseFlagsDialog.prototype.getFormKey = function () { return DWSupport.DimCruiseFlagsForm.formKey; };
-            DimCruiseFlagsDialog.prototype.getIdProperty = function () { return DWSupport.DimCruiseFlagsRow.idProperty; };
-            DimCruiseFlagsDialog.prototype.getLocalTextPrefix = function () { return DWSupport.DimCruiseFlagsRow.localTextPrefix; };
-            DimCruiseFlagsDialog.prototype.getNameProperty = function () { return DWSupport.DimCruiseFlagsRow.nameProperty; };
-            DimCruiseFlagsDialog.prototype.getService = function () { return DWSupport.DimCruiseFlagsService.baseUrl; };
-            DimCruiseFlagsDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], DimCruiseFlagsDialog);
-            return DimCruiseFlagsDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.DimCruiseFlagsDialog = DimCruiseFlagsDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var DimCruiseFlagsGrid = /** @class */ (function (_super) {
-            __extends(DimCruiseFlagsGrid, _super);
-            function DimCruiseFlagsGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            DimCruiseFlagsGrid.prototype.getColumnsKey = function () { return 'DWSupport.DimCruiseFlags'; };
-            DimCruiseFlagsGrid.prototype.getDialogType = function () { return DWSupport.DimCruiseFlagsDialog; };
-            DimCruiseFlagsGrid.prototype.getIdProperty = function () { return DWSupport.DimCruiseFlagsRow.idProperty; };
-            DimCruiseFlagsGrid.prototype.getLocalTextPrefix = function () { return DWSupport.DimCruiseFlagsRow.localTextPrefix; };
-            DimCruiseFlagsGrid.prototype.getService = function () { return DWSupport.DimCruiseFlagsService.baseUrl; };
-            DimCruiseFlagsGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], DimCruiseFlagsGrid);
-            return DimCruiseFlagsGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.DimCruiseFlagsGrid = DimCruiseFlagsGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var DistrictMasterSuppDialog = /** @class */ (function (_super) {
             __extends(DistrictMasterSuppDialog, _super);
             function DistrictMasterSuppDialog() {
@@ -12091,52 +10977,6 @@ var DAP;
             return DistrictMasterSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.DistrictMasterSuppGrid = DistrictMasterSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ExchangeFixedRateDialog = /** @class */ (function (_super) {
-            __extends(ExchangeFixedRateDialog, _super);
-            function ExchangeFixedRateDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.ExchangeFixedRateForm(_this.idPrefix);
-                return _this;
-            }
-            ExchangeFixedRateDialog.prototype.getFormKey = function () { return DWSupport.ExchangeFixedRateForm.formKey; };
-            ExchangeFixedRateDialog.prototype.getIdProperty = function () { return DWSupport.ExchangeFixedRateRow.idProperty; };
-            ExchangeFixedRateDialog.prototype.getLocalTextPrefix = function () { return DWSupport.ExchangeFixedRateRow.localTextPrefix; };
-            ExchangeFixedRateDialog.prototype.getNameProperty = function () { return DWSupport.ExchangeFixedRateRow.nameProperty; };
-            ExchangeFixedRateDialog.prototype.getService = function () { return DWSupport.ExchangeFixedRateService.baseUrl; };
-            ExchangeFixedRateDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ExchangeFixedRateDialog);
-            return ExchangeFixedRateDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.ExchangeFixedRateDialog = ExchangeFixedRateDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ExchangeFixedRateGrid = /** @class */ (function (_super) {
-            __extends(ExchangeFixedRateGrid, _super);
-            function ExchangeFixedRateGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            ExchangeFixedRateGrid.prototype.getColumnsKey = function () { return 'DWSupport.ExchangeFixedRate'; };
-            ExchangeFixedRateGrid.prototype.getDialogType = function () { return DWSupport.ExchangeFixedRateDialog; };
-            ExchangeFixedRateGrid.prototype.getIdProperty = function () { return DWSupport.ExchangeFixedRateRow.idProperty; };
-            ExchangeFixedRateGrid.prototype.getLocalTextPrefix = function () { return DWSupport.ExchangeFixedRateRow.localTextPrefix; };
-            ExchangeFixedRateGrid.prototype.getService = function () { return DWSupport.ExchangeFixedRateService.baseUrl; };
-            ExchangeFixedRateGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ExchangeFixedRateGrid);
-            return ExchangeFixedRateGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.ExchangeFixedRateGrid = ExchangeFixedRateGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -13069,228 +11909,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var RegionDialog = /** @class */ (function (_super) {
-            __extends(RegionDialog, _super);
-            function RegionDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.RegionForm(_this.idPrefix);
-                return _this;
-            }
-            RegionDialog.prototype.getFormKey = function () { return DWSupport.RegionForm.formKey; };
-            RegionDialog.prototype.getIdProperty = function () { return DWSupport.RegionRow.idProperty; };
-            RegionDialog.prototype.getLocalTextPrefix = function () { return DWSupport.RegionRow.localTextPrefix; };
-            RegionDialog.prototype.getNameProperty = function () { return DWSupport.RegionRow.nameProperty; };
-            RegionDialog.prototype.getService = function () { return DWSupport.RegionService.baseUrl; };
-            RegionDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RegionDialog);
-            return RegionDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.RegionDialog = RegionDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RegionGrid = /** @class */ (function (_super) {
-            __extends(RegionGrid, _super);
-            function RegionGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            RegionGrid.prototype.getColumnsKey = function () { return 'DWSupport.Region'; };
-            RegionGrid.prototype.getDialogType = function () { return DWSupport.RegionDialog; };
-            RegionGrid.prototype.getIdProperty = function () { return DWSupport.RegionRow.idProperty; };
-            RegionGrid.prototype.getLocalTextPrefix = function () { return DWSupport.RegionRow.localTextPrefix; };
-            RegionGrid.prototype.getService = function () { return DWSupport.RegionService.baseUrl; };
-            RegionGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RegionGrid);
-            return RegionGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.RegionGrid = RegionGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppDialog = /** @class */ (function (_super) {
-            __extends(ResExclusionSuppDialog, _super);
-            function ResExclusionSuppDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.ResExclusionSuppForm(_this.idPrefix);
-                return _this;
-            }
-            ResExclusionSuppDialog.prototype.getFormKey = function () { return DWSupport.ResExclusionSuppForm.formKey; };
-            ResExclusionSuppDialog.prototype.getIdProperty = function () { return DWSupport.ResExclusionSuppRow.idProperty; };
-            ResExclusionSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.ResExclusionSuppRow.localTextPrefix; };
-            ResExclusionSuppDialog.prototype.getNameProperty = function () { return DWSupport.ResExclusionSuppRow.nameProperty; };
-            ResExclusionSuppDialog.prototype.getService = function () { return DWSupport.ResExclusionSuppService.baseUrl; };
-            ResExclusionSuppDialog.prototype.getToolbarButtons = function () {
-                var b = _super.prototype.getToolbarButtons.call(this);
-                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
-                return b;
-            };
-            ResExclusionSuppDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ResExclusionSuppDialog);
-            return ResExclusionSuppDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.ResExclusionSuppDialog = ResExclusionSuppDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppExcelImport = /** @class */ (function (_super) {
-            __extends(ResExclusionSuppExcelImport, _super);
-            function ResExclusionSuppExcelImport() {
-                var _this = _super.call(this) || this;
-                _this.form = new DWSupport.ResExclusionSuppExcelImportForm(_this.idPrefix);
-                return _this;
-            }
-            ResExclusionSuppExcelImport.prototype.getDialogTitle = function () {
-                return "Excel Import";
-            };
-            ResExclusionSuppExcelImport.prototype.getDialogButtons = function () {
-                var _this = this;
-                return [
-                    {
-                        text: 'Import',
-                        click: function () {
-                            if (!_this.validateBeforeSave())
-                                return;
-                            if (_this.form.FileName.value == null ||
-                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
-                                Q.notifyError("Please select a file!");
-                                return;
-                            }
-                            DWSupport.ResExclusionSuppService.ExcelImport({
-                                FileName: _this.form.FileName.value.Filename
-                            }, function (response) {
-                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
-                                    ', Updated: ' + (response.Updated || 0));
-                                if (response.ErrorList != null && response.ErrorList.length > 0) {
-                                    Q.notifyError(response.ErrorList.join(',\r\n '));
-                                }
-                                _this.dialogClose();
-                            });
-                        },
-                    },
-                    {
-                        text: 'Cancel',
-                        click: function () { return _this.dialogClose(); }
-                    }
-                ];
-            };
-            ResExclusionSuppExcelImport = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ResExclusionSuppExcelImport);
-            return ResExclusionSuppExcelImport;
-        }(Serenity.PropertyDialog));
-        DWSupport.ResExclusionSuppExcelImport = ResExclusionSuppExcelImport;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var ResExclusionSuppGrid = /** @class */ (function (_super) {
-            __extends(ResExclusionSuppGrid, _super);
-            function ResExclusionSuppGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            ResExclusionSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.ResExclusionSupp'; };
-            ResExclusionSuppGrid.prototype.getDialogType = function () { return DWSupport.ResExclusionSuppDialog; };
-            ResExclusionSuppGrid.prototype.getIdProperty = function () { return DWSupport.ResExclusionSuppRow.idProperty; };
-            ResExclusionSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.ResExclusionSuppRow.localTextPrefix; };
-            ResExclusionSuppGrid.prototype.getService = function () { return DWSupport.ResExclusionSuppService.baseUrl; };
-            ResExclusionSuppGrid.prototype.getButtons = function () {
-                var _this = this;
-                var buttons = _super.prototype.getButtons.call(this);
-                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
-                    grid: this,
-                    service: DWSupport.ResExclusionSuppService.baseUrl + '/ListExcel',
-                    onViewSubmit: function () { return _this.onViewSubmit(); },
-                    separator: true,
-                    title: "Export to Excel"
-                }));
-                // add our import button
-                buttons.push({
-                    title: 'Import From Excel',
-                    cssClass: 'export-xlsx-button',
-                    onClick: function () {
-                        // open import dialog, let it handle rest
-                        var dialog = new DWSupport.ResExclusionSuppExcelImport();
-                        dialog.element.on('dialogclose', function () {
-                            _this.refresh();
-                            dialog = null;
-                        });
-                        dialog.dialogOpen();
-                    }
-                });
-                return buttons;
-            };
-            ResExclusionSuppGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], ResExclusionSuppGrid);
-            return ResExclusionSuppGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.ResExclusionSuppGrid = ResExclusionSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RevDetailFieldDialog = /** @class */ (function (_super) {
-            __extends(RevDetailFieldDialog, _super);
-            function RevDetailFieldDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.RevDetailFieldForm(_this.idPrefix);
-                return _this;
-            }
-            RevDetailFieldDialog.prototype.getFormKey = function () { return DWSupport.RevDetailFieldForm.formKey; };
-            RevDetailFieldDialog.prototype.getIdProperty = function () { return DWSupport.RevDetailFieldRow.idProperty; };
-            RevDetailFieldDialog.prototype.getLocalTextPrefix = function () { return DWSupport.RevDetailFieldRow.localTextPrefix; };
-            RevDetailFieldDialog.prototype.getNameProperty = function () { return DWSupport.RevDetailFieldRow.nameProperty; };
-            RevDetailFieldDialog.prototype.getService = function () { return DWSupport.RevDetailFieldService.baseUrl; };
-            RevDetailFieldDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RevDetailFieldDialog);
-            return RevDetailFieldDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.RevDetailFieldDialog = RevDetailFieldDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var RevDetailFieldGrid = /** @class */ (function (_super) {
-            __extends(RevDetailFieldGrid, _super);
-            function RevDetailFieldGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            RevDetailFieldGrid.prototype.getColumnsKey = function () { return 'DWSupport.RevDetailField'; };
-            RevDetailFieldGrid.prototype.getDialogType = function () { return DWSupport.RevDetailFieldDialog; };
-            RevDetailFieldGrid.prototype.getIdProperty = function () { return DWSupport.RevDetailFieldRow.idProperty; };
-            RevDetailFieldGrid.prototype.getLocalTextPrefix = function () { return DWSupport.RevDetailFieldRow.localTextPrefix; };
-            RevDetailFieldGrid.prototype.getService = function () { return DWSupport.RevDetailFieldService.baseUrl; };
-            RevDetailFieldGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], RevDetailFieldGrid);
-            return RevDetailFieldGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.RevDetailFieldGrid = RevDetailFieldGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var RollupProductCodesSuppDialog = /** @class */ (function (_super) {
             __extends(RollupProductCodesSuppDialog, _super);
             function RollupProductCodesSuppDialog() {
@@ -13331,136 +11949,6 @@ var DAP;
             return RollupProductCodesSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.RollupProductCodesSuppGrid = RollupProductCodesSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppDialog = /** @class */ (function (_super) {
-            __extends(SailingExclusionSuppDialog, _super);
-            function SailingExclusionSuppDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.SailingExclusionSuppForm(_this.idPrefix);
-                return _this;
-            }
-            SailingExclusionSuppDialog.prototype.getFormKey = function () { return DWSupport.SailingExclusionSuppForm.formKey; };
-            SailingExclusionSuppDialog.prototype.getIdProperty = function () { return DWSupport.SailingExclusionSuppRow.idProperty; };
-            SailingExclusionSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.SailingExclusionSuppRow.localTextPrefix; };
-            SailingExclusionSuppDialog.prototype.getNameProperty = function () { return DWSupport.SailingExclusionSuppRow.nameProperty; };
-            SailingExclusionSuppDialog.prototype.getService = function () { return DWSupport.SailingExclusionSuppService.baseUrl; };
-            SailingExclusionSuppDialog.prototype.getToolbarButtons = function () {
-                var b = _super.prototype.getToolbarButtons.call(this);
-                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
-                return b;
-            };
-            SailingExclusionSuppDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SailingExclusionSuppDialog);
-            return SailingExclusionSuppDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.SailingExclusionSuppDialog = SailingExclusionSuppDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppExcelImportDialog = /** @class */ (function (_super) {
-            __extends(SailingExclusionSuppExcelImportDialog, _super);
-            function SailingExclusionSuppExcelImportDialog() {
-                var _this = _super.call(this) || this;
-                _this.form = new DWSupport.SailingExclusionSuppExcelImportForm(_this.idPrefix);
-                return _this;
-            }
-            SailingExclusionSuppExcelImportDialog.prototype.getDialogTitle = function () {
-                return "Excel Import";
-            };
-            SailingExclusionSuppExcelImportDialog.prototype.getDialogButtons = function () {
-                var _this = this;
-                return [
-                    {
-                        text: 'Import',
-                        click: function () {
-                            if (!_this.validateBeforeSave())
-                                return;
-                            if (_this.form.FileName.value == null ||
-                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
-                                Q.notifyError("Please select a file!");
-                                return;
-                            }
-                            DWSupport.SailingExclusionSuppService.ExcelImport({
-                                FileName: _this.form.FileName.value.Filename
-                            }, function (response) {
-                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
-                                    ', Updated: ' + (response.Updated || 0));
-                                if (response.ErrorList != null && response.ErrorList.length > 0) {
-                                    Q.notifyError(response.ErrorList.join(',\r\n '));
-                                }
-                                _this.dialogClose();
-                            });
-                        },
-                    },
-                    {
-                        text: 'Cancel',
-                        click: function () { return _this.dialogClose(); }
-                    }
-                ];
-            };
-            SailingExclusionSuppExcelImportDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SailingExclusionSuppExcelImportDialog);
-            return SailingExclusionSuppExcelImportDialog;
-        }(Serenity.PropertyDialog));
-        DWSupport.SailingExclusionSuppExcelImportDialog = SailingExclusionSuppExcelImportDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var SailingExclusionSuppGrid = /** @class */ (function (_super) {
-            __extends(SailingExclusionSuppGrid, _super);
-            function SailingExclusionSuppGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            SailingExclusionSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.SailingExclusionSupp'; };
-            SailingExclusionSuppGrid.prototype.getDialogType = function () { return DWSupport.SailingExclusionSuppDialog; };
-            SailingExclusionSuppGrid.prototype.getIdProperty = function () { return DWSupport.SailingExclusionSuppRow.idProperty; };
-            SailingExclusionSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.SailingExclusionSuppRow.localTextPrefix; };
-            SailingExclusionSuppGrid.prototype.getService = function () { return DWSupport.SailingExclusionSuppService.baseUrl; };
-            SailingExclusionSuppGrid.prototype.getButtons = function () {
-                var _this = this;
-                var buttons = _super.prototype.getButtons.call(this);
-                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
-                    grid: this,
-                    service: DWSupport.SailingExclusionSuppService.baseUrl + '/ListExcel',
-                    onViewSubmit: function () { return _this.onViewSubmit(); },
-                    separator: true,
-                    title: "Export to Excel"
-                }));
-                // add our import button
-                buttons.push({
-                    title: 'Import From Excel',
-                    cssClass: 'export-xlsx-button',
-                    onClick: function () {
-                        // open import dialog, let it handle rest
-                        var dialog = new DWSupport.SailingExclusionSuppExcelImportDialog();
-                        dialog.element.on('dialogclose', function () {
-                            _this.refresh();
-                            dialog = null;
-                        });
-                        dialog.dialogOpen();
-                    }
-                });
-                return buttons;
-            };
-            SailingExclusionSuppGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], SailingExclusionSuppGrid);
-            return SailingExclusionSuppGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.SailingExclusionSuppGrid = SailingExclusionSuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -13896,52 +12384,6 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
-        var Skill2SkillgroupDialog = /** @class */ (function (_super) {
-            __extends(Skill2SkillgroupDialog, _super);
-            function Skill2SkillgroupDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.Skill2SkillgroupForm(_this.idPrefix);
-                return _this;
-            }
-            Skill2SkillgroupDialog.prototype.getFormKey = function () { return DWSupport.Skill2SkillgroupForm.formKey; };
-            Skill2SkillgroupDialog.prototype.getIdProperty = function () { return DWSupport.Skill2SkillgroupRow.idProperty; };
-            Skill2SkillgroupDialog.prototype.getLocalTextPrefix = function () { return DWSupport.Skill2SkillgroupRow.localTextPrefix; };
-            Skill2SkillgroupDialog.prototype.getNameProperty = function () { return DWSupport.Skill2SkillgroupRow.nameProperty; };
-            Skill2SkillgroupDialog.prototype.getService = function () { return DWSupport.Skill2SkillgroupService.baseUrl; };
-            Skill2SkillgroupDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], Skill2SkillgroupDialog);
-            return Skill2SkillgroupDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.Skill2SkillgroupDialog = Skill2SkillgroupDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var Skill2SkillgroupGrid = /** @class */ (function (_super) {
-            __extends(Skill2SkillgroupGrid, _super);
-            function Skill2SkillgroupGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            Skill2SkillgroupGrid.prototype.getColumnsKey = function () { return 'DWSupport.Skill2Skillgroup'; };
-            Skill2SkillgroupGrid.prototype.getDialogType = function () { return DWSupport.Skill2SkillgroupDialog; };
-            Skill2SkillgroupGrid.prototype.getIdProperty = function () { return DWSupport.Skill2SkillgroupRow.idProperty; };
-            Skill2SkillgroupGrid.prototype.getLocalTextPrefix = function () { return DWSupport.Skill2SkillgroupRow.localTextPrefix; };
-            Skill2SkillgroupGrid.prototype.getService = function () { return DWSupport.Skill2SkillgroupService.baseUrl; };
-            Skill2SkillgroupGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], Skill2SkillgroupGrid);
-            return Skill2SkillgroupGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.Skill2SkillgroupGrid = Skill2SkillgroupGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
         var SlProductCodeSuppDialog = /** @class */ (function (_super) {
             __extends(SlProductCodeSuppDialog, _super);
             function SlProductCodeSuppDialog() {
@@ -13982,52 +12424,6 @@ var DAP;
             return SlProductCodeSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.SlProductCodeSuppGrid = SlProductCodeSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var StlyDatesDialog = /** @class */ (function (_super) {
-            __extends(StlyDatesDialog, _super);
-            function StlyDatesDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.StlyDatesForm(_this.idPrefix);
-                return _this;
-            }
-            StlyDatesDialog.prototype.getFormKey = function () { return DWSupport.StlyDatesForm.formKey; };
-            StlyDatesDialog.prototype.getIdProperty = function () { return DWSupport.StlyDatesRow.idProperty; };
-            StlyDatesDialog.prototype.getLocalTextPrefix = function () { return DWSupport.StlyDatesRow.localTextPrefix; };
-            StlyDatesDialog.prototype.getNameProperty = function () { return DWSupport.StlyDatesRow.nameProperty; };
-            StlyDatesDialog.prototype.getService = function () { return DWSupport.StlyDatesService.baseUrl; };
-            StlyDatesDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], StlyDatesDialog);
-            return StlyDatesDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.StlyDatesDialog = StlyDatesDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var StlyDatesGrid = /** @class */ (function (_super) {
-            __extends(StlyDatesGrid, _super);
-            function StlyDatesGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            StlyDatesGrid.prototype.getColumnsKey = function () { return 'DWSupport.StlyDates'; };
-            StlyDatesGrid.prototype.getDialogType = function () { return DWSupport.StlyDatesDialog; };
-            StlyDatesGrid.prototype.getIdProperty = function () { return DWSupport.StlyDatesRow.idProperty; };
-            StlyDatesGrid.prototype.getLocalTextPrefix = function () { return DWSupport.StlyDatesRow.localTextPrefix; };
-            StlyDatesGrid.prototype.getService = function () { return DWSupport.StlyDatesService.baseUrl; };
-            StlyDatesGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], StlyDatesGrid);
-            return StlyDatesGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.StlyDatesGrid = StlyDatesGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -14277,131 +12673,6 @@ var DAP;
             return UpgradeAdvAdjSuppGrid;
         }(Serenity.EntityGrid));
         DWSupport.UpgradeAdvAdjSuppGrid = UpgradeAdvAdjSuppGrid;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalExcelImportDialog = /** @class */ (function (_super) {
-            __extends(VoyageBudgetFinalExcelImportDialog, _super);
-            function VoyageBudgetFinalExcelImportDialog() {
-                var _this = _super.call(this) || this;
-                _this.form = new DWSupport.VoyageBudgetFinalExcelImportForm(_this.idPrefix);
-                return _this;
-            }
-            VoyageBudgetFinalExcelImportDialog.prototype.getDialogTitle = function () {
-                return "Excel Import";
-            };
-            VoyageBudgetFinalExcelImportDialog.prototype.getDialogButtons = function () {
-                var _this = this;
-                return [
-                    {
-                        text: 'Import',
-                        click: function () {
-                            if (!_this.validateBeforeSave())
-                                return;
-                            if (_this.form.FileName.value == null ||
-                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
-                                Q.notifyError("Please select a file!");
-                                return;
-                            }
-                            DWSupport.VoyageBudgetFinalSuppService.ExcelImport({
-                                FileName: _this.form.FileName.value.Filename
-                            }, function (response) {
-                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
-                                    ', Updated: ' + (response.Updated || 0));
-                                if (response.ErrorList != null && response.ErrorList.length > 0) {
-                                    Q.notifyError(response.ErrorList.join(',\r\n '));
-                                }
-                                _this.dialogClose();
-                            });
-                        },
-                    },
-                    {
-                        text: 'Cancel',
-                        click: function () { return _this.dialogClose(); }
-                    }
-                ];
-            };
-            VoyageBudgetFinalExcelImportDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], VoyageBudgetFinalExcelImportDialog);
-            return VoyageBudgetFinalExcelImportDialog;
-        }(Serenity.PropertyDialog));
-        DWSupport.VoyageBudgetFinalExcelImportDialog = VoyageBudgetFinalExcelImportDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalSuppDialog = /** @class */ (function (_super) {
-            __extends(VoyageBudgetFinalSuppDialog, _super);
-            function VoyageBudgetFinalSuppDialog() {
-                var _this = _super !== null && _super.apply(this, arguments) || this;
-                _this.form = new DWSupport.VoyageBudgetFinalSuppForm(_this.idPrefix);
-                return _this;
-            }
-            VoyageBudgetFinalSuppDialog.prototype.getFormKey = function () { return DWSupport.VoyageBudgetFinalSuppForm.formKey; };
-            VoyageBudgetFinalSuppDialog.prototype.getIdProperty = function () { return DWSupport.VoyageBudgetFinalSuppRow.idProperty; };
-            VoyageBudgetFinalSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.VoyageBudgetFinalSuppRow.localTextPrefix; };
-            VoyageBudgetFinalSuppDialog.prototype.getNameProperty = function () { return DWSupport.VoyageBudgetFinalSuppRow.nameProperty; };
-            VoyageBudgetFinalSuppDialog.prototype.getService = function () { return DWSupport.VoyageBudgetFinalSuppService.baseUrl; };
-            VoyageBudgetFinalSuppDialog = __decorate([
-                Serenity.Decorators.registerClass()
-            ], VoyageBudgetFinalSuppDialog);
-            return VoyageBudgetFinalSuppDialog;
-        }(Serenity.EntityDialog));
-        DWSupport.VoyageBudgetFinalSuppDialog = VoyageBudgetFinalSuppDialog;
-    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
-})(DAP || (DAP = {}));
-var DAP;
-(function (DAP) {
-    var DWSupport;
-    (function (DWSupport) {
-        var VoyageBudgetFinalSuppGrid = /** @class */ (function (_super) {
-            __extends(VoyageBudgetFinalSuppGrid, _super);
-            function VoyageBudgetFinalSuppGrid(container) {
-                return _super.call(this, container) || this;
-            }
-            VoyageBudgetFinalSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.VoyageBudgetFinalSupp'; };
-            VoyageBudgetFinalSuppGrid.prototype.getDialogType = function () { return DWSupport.VoyageBudgetFinalSuppDialog; };
-            VoyageBudgetFinalSuppGrid.prototype.getIdProperty = function () { return DWSupport.VoyageBudgetFinalSuppRow.idProperty; };
-            VoyageBudgetFinalSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.VoyageBudgetFinalSuppRow.localTextPrefix; };
-            VoyageBudgetFinalSuppGrid.prototype.getService = function () { return DWSupport.VoyageBudgetFinalSuppService.baseUrl; };
-            VoyageBudgetFinalSuppGrid.prototype.getButtons = function () {
-                var _this = this;
-                var buttons = _super.prototype.getButtons.call(this);
-                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
-                    grid: this,
-                    service: DWSupport.VoyageBudgetFinalSuppService.baseUrl + '/ListExcel',
-                    onViewSubmit: function () { return _this.onViewSubmit(); },
-                    separator: true,
-                    title: "Export to Excel"
-                }));
-                // add our import button
-                buttons.push({
-                    title: 'Import From Excel',
-                    cssClass: 'export-xlsx-button',
-                    onClick: function () {
-                        // open import dialog, let it handle rest
-                        var dialog = new DWSupport.VoyageBudgetFinalExcelImportDialog();
-                        dialog.element.on('dialogclose', function () {
-                            _this.refresh();
-                            dialog = null;
-                        });
-                        dialog.dialogOpen();
-                    }
-                });
-                return buttons;
-            };
-            VoyageBudgetFinalSuppGrid = __decorate([
-                Serenity.Decorators.registerClass()
-            ], VoyageBudgetFinalSuppGrid);
-            return VoyageBudgetFinalSuppGrid;
-        }(Serenity.EntityGrid));
-        DWSupport.VoyageBudgetFinalSuppGrid = VoyageBudgetFinalSuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
@@ -20361,5 +18632,1734 @@ var DAP;
         }(Serenity.EntityGrid));
         SSISConfig.SsisConfigBaseGrid = SsisConfigBaseGrid;
     })(SSISConfig = DAP.SSISConfig || (DAP.SSISConfig = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AirCostAdjSuppForm = /** @class */ (function (_super) {
+            __extends(AirCostAdjSuppForm, _super);
+            function AirCostAdjSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!AirCostAdjSuppForm.init) {
+                    AirCostAdjSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(AirCostAdjSuppForm, [
+                        'VoyageCd', w0,
+                        'RmEstimatedAirCost', w1,
+                        'EffectiveFromDt', w2,
+                        'EffectiveToDt', w2,
+                        'CreatedTs', w2,
+                        'CreatedByNam', w0,
+                        'ModifiedTs', w2,
+                        'ModifiedByNam', w0
+                    ]);
+                }
+                return _this;
+            }
+            AirCostAdjSuppForm.formKey = 'DWSupport.AirCostAdjSupp';
+            return AirCostAdjSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.AirCostAdjSuppForm = AirCostAdjSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AirCostAdjSuppRow;
+        (function (AirCostAdjSuppRow) {
+            AirCostAdjSuppRow.idProperty = 'AirCostAdjId';
+            AirCostAdjSuppRow.nameProperty = 'VoyageCd';
+            AirCostAdjSuppRow.localTextPrefix = 'DWSupport.AirCostAdjSupp';
+        })(AirCostAdjSuppRow = DWSupport.AirCostAdjSuppRow || (DWSupport.AirCostAdjSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AirCostAdjSuppService;
+        (function (AirCostAdjSuppService) {
+            AirCostAdjSuppService.baseUrl = 'DWSupport/AirCostAdjSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                AirCostAdjSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(AirCostAdjSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(AirCostAdjSuppService = DWSupport.AirCostAdjSuppService || (DWSupport.AirCostAdjSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CcOfficeLoationsRow;
+        (function (CcOfficeLoationsRow) {
+            CcOfficeLoationsRow.idProperty = 'Cd';
+            CcOfficeLoationsRow.nameProperty = 'Cd';
+            CcOfficeLoationsRow.localTextPrefix = 'DWSupport.CcOfficeLoations';
+            CcOfficeLoationsRow.lookupKey = 'DWSupport.CCOffice';
+            function getLookup() {
+                return Q.getLookup('DWSupport.CCOffice');
+            }
+            CcOfficeLoationsRow.getLookup = getLookup;
+        })(CcOfficeLoationsRow = DWSupport.CcOfficeLoationsRow || (DWSupport.CcOfficeLoationsRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CcOfficeLoationsService;
+        (function (CcOfficeLoationsService) {
+            CcOfficeLoationsService.baseUrl = 'DWSupport/CcOfficeLoations';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                CcOfficeLoationsService[x] = function (r, s, o) {
+                    return Q.serviceRequest(CcOfficeLoationsService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(CcOfficeLoationsService = DWSupport.CcOfficeLoationsService || (DWSupport.CcOfficeLoationsService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CrlinkOverrideFinanceForm = /** @class */ (function (_super) {
+            __extends(CrlinkOverrideFinanceForm, _super);
+            function CrlinkOverrideFinanceForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!CrlinkOverrideFinanceForm.init) {
+                    CrlinkOverrideFinanceForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(CrlinkOverrideFinanceForm, [
+                        'CruiseCd', w0,
+                        'CruiseSegmentCd', w0,
+                        'CompanyCd', w0,
+                        'EffectiveFrom', w1,
+                        'EffectiveTo', w1,
+                        'LoadDt', w1
+                    ]);
+                }
+                return _this;
+            }
+            CrlinkOverrideFinanceForm.formKey = 'DWSupport.CrlinkOverrideFinance';
+            return CrlinkOverrideFinanceForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.CrlinkOverrideFinanceForm = CrlinkOverrideFinanceForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CrlinkOverrideFinanceRow;
+        (function (CrlinkOverrideFinanceRow) {
+            CrlinkOverrideFinanceRow.idProperty = 'CrlinkOverrideId';
+            CrlinkOverrideFinanceRow.nameProperty = 'CruiseCd';
+            CrlinkOverrideFinanceRow.localTextPrefix = 'DWSupport.CrlinkOverrideFinance';
+        })(CrlinkOverrideFinanceRow = DWSupport.CrlinkOverrideFinanceRow || (DWSupport.CrlinkOverrideFinanceRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CrlinkOverrideFinanceService;
+        (function (CrlinkOverrideFinanceService) {
+            CrlinkOverrideFinanceService.baseUrl = 'DWSupport/CrlinkOverrideFinance';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                CrlinkOverrideFinanceService[x] = function (r, s, o) {
+                    return Q.serviceRequest(CrlinkOverrideFinanceService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(CrlinkOverrideFinanceService = DWSupport.CrlinkOverrideFinanceService || (DWSupport.CrlinkOverrideFinanceService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CruiseSegmentDaysOverrideForm = /** @class */ (function (_super) {
+            __extends(CruiseSegmentDaysOverrideForm, _super);
+            function CruiseSegmentDaysOverrideForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!CruiseSegmentDaysOverrideForm.init) {
+                    CruiseSegmentDaysOverrideForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(CruiseSegmentDaysOverrideForm, [
+                        'CruiseCd', w0,
+                        'CompanyCd', w0,
+                        'CruiseDaysQty', w1,
+                        'CruiseSegmentDaysQty', w1,
+                        'EffectiveFrom', w2,
+                        'EffectiveTo', w2,
+                        'LoadDt', w2
+                    ]);
+                }
+                return _this;
+            }
+            CruiseSegmentDaysOverrideForm.formKey = 'DWSupport.CruiseSegmentDaysOverride';
+            return CruiseSegmentDaysOverrideForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.CruiseSegmentDaysOverrideForm = CruiseSegmentDaysOverrideForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CruiseSegmentDaysOverrideRow;
+        (function (CruiseSegmentDaysOverrideRow) {
+            CruiseSegmentDaysOverrideRow.idProperty = 'CruiseSegmentDayOverrideId';
+            CruiseSegmentDaysOverrideRow.nameProperty = 'CruiseCd';
+            CruiseSegmentDaysOverrideRow.localTextPrefix = 'DWSupport.CruiseSegmentDaysOverride';
+        })(CruiseSegmentDaysOverrideRow = DWSupport.CruiseSegmentDaysOverrideRow || (DWSupport.CruiseSegmentDaysOverrideRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CruiseSegmentDaysOverrideService;
+        (function (CruiseSegmentDaysOverrideService) {
+            CruiseSegmentDaysOverrideService.baseUrl = 'DWSupport/CruiseSegmentDaysOverride';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                CruiseSegmentDaysOverrideService[x] = function (r, s, o) {
+                    return Q.serviceRequest(CruiseSegmentDaysOverrideService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(CruiseSegmentDaysOverrideService = DWSupport.CruiseSegmentDaysOverrideService || (DWSupport.CruiseSegmentDaysOverrideService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var DimCruiseFlagsForm = /** @class */ (function (_super) {
+            __extends(DimCruiseFlagsForm, _super);
+            function DimCruiseFlagsForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!DimCruiseFlagsForm.init) {
+                    DimCruiseFlagsForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = DWSupport.SelectYNEditor;
+                    var w3 = s.DecimalEditor;
+                    var w4 = s.DateEditor;
+                    Q.initFormType(DimCruiseFlagsForm, [
+                        'CruiseCd', w0,
+                        'CruiseSegmentCd', w0,
+                        'ShipCd', w0,
+                        'CompanyCd', w0,
+                        'CappedCapacity', w1,
+                        'OnbrdAvgPaxQty', w1,
+                        'HighlightInd', w2,
+                        'ColorInd', w2,
+                        'DrydockInd', w2,
+                        'VarToCurve', w3,
+                        'ShowInDr001', w2,
+                        'ShowInDr010', w2,
+                        'ShowInCube', w2,
+                        'IntlDatelineInd', w2,
+                        'MinisegInd', w2,
+                        'EffectiveFrom', w4,
+                        'EffectiveTo', w4,
+                        'LoadDt', w4
+                    ]);
+                }
+                return _this;
+            }
+            DimCruiseFlagsForm.formKey = 'DWSupport.DimCruiseFlags';
+            return DimCruiseFlagsForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.DimCruiseFlagsForm = DimCruiseFlagsForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var DimCruiseFlagsRow;
+        (function (DimCruiseFlagsRow) {
+            DimCruiseFlagsRow.idProperty = 'DimCruiseFlagId';
+            DimCruiseFlagsRow.nameProperty = 'CruiseCd';
+            DimCruiseFlagsRow.localTextPrefix = 'DWSupport.DimCruiseFlags';
+        })(DimCruiseFlagsRow = DWSupport.DimCruiseFlagsRow || (DWSupport.DimCruiseFlagsRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var DimCruiseFlagsService;
+        (function (DimCruiseFlagsService) {
+            DimCruiseFlagsService.baseUrl = 'DWSupport/DimCruiseFlags';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                DimCruiseFlagsService[x] = function (r, s, o) {
+                    return Q.serviceRequest(DimCruiseFlagsService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(DimCruiseFlagsService = DWSupport.DimCruiseFlagsService || (DWSupport.DimCruiseFlagsService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateForm = /** @class */ (function (_super) {
+            __extends(ExchangeFixedRateForm, _super);
+            function ExchangeFixedRateForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ExchangeFixedRateForm.init) {
+                    ExchangeFixedRateForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DecimalEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(ExchangeFixedRateForm, [
+                        'CurrencyCd', w0,
+                        'ExchangeRate', w1,
+                        'EffectiveFrom', w2,
+                        'EffectiveTo', w2,
+                        'LoadDt', w2
+                    ]);
+                }
+                return _this;
+            }
+            ExchangeFixedRateForm.formKey = 'DWSupport.ExchangeFixedRate';
+            return ExchangeFixedRateForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.ExchangeFixedRateForm = ExchangeFixedRateForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateRow;
+        (function (ExchangeFixedRateRow) {
+            ExchangeFixedRateRow.idProperty = 'ExchangeFixedRateId';
+            ExchangeFixedRateRow.nameProperty = 'CurrencyCd';
+            ExchangeFixedRateRow.localTextPrefix = 'DWSupport.ExchangeFixedRate';
+        })(ExchangeFixedRateRow = DWSupport.ExchangeFixedRateRow || (DWSupport.ExchangeFixedRateRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateService;
+        (function (ExchangeFixedRateService) {
+            ExchangeFixedRateService.baseUrl = 'DWSupport/ExchangeFixedRate';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                ExchangeFixedRateService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ExchangeFixedRateService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ExchangeFixedRateService = DWSupport.ExchangeFixedRateService || (DWSupport.ExchangeFixedRateService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionForm = /** @class */ (function (_super) {
+            __extends(RegionForm, _super);
+            function RegionForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!RegionForm.init) {
+                    RegionForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(RegionForm, [
+                        'RegionCd', w0,
+                        'RegionType', w0,
+                        'CompanyCd', w0,
+                        'EffectiveFrom', w1,
+                        'EffectiveTo', w1,
+                        'LoadDt', w1
+                    ]);
+                }
+                return _this;
+            }
+            RegionForm.formKey = 'DWSupport.Region';
+            return RegionForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.RegionForm = RegionForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionRow;
+        (function (RegionRow) {
+            RegionRow.idProperty = 'RegionId';
+            RegionRow.nameProperty = 'RegionCd';
+            RegionRow.localTextPrefix = 'DWSupport.Region';
+        })(RegionRow = DWSupport.RegionRow || (DWSupport.RegionRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionService;
+        (function (RegionService) {
+            RegionService.baseUrl = 'DWSupport/Region';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                RegionService[x] = function (r, s, o) {
+                    return Q.serviceRequest(RegionService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(RegionService = DWSupport.RegionService || (DWSupport.RegionService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppExcelImportForm = /** @class */ (function (_super) {
+            __extends(ResExclusionSuppExcelImportForm, _super);
+            function ResExclusionSuppExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ResExclusionSuppExcelImportForm.init) {
+                    ResExclusionSuppExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(ResExclusionSuppExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            ResExclusionSuppExcelImportForm.formKey = 'DWSupport.ResExclusionSuppExcelImport';
+            return ResExclusionSuppExcelImportForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.ResExclusionSuppExcelImportForm = ResExclusionSuppExcelImportForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppForm = /** @class */ (function (_super) {
+            __extends(ResExclusionSuppForm, _super);
+            function ResExclusionSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!ResExclusionSuppForm.init) {
+                    ResExclusionSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.DateEditor;
+                    Q.initFormType(ResExclusionSuppForm, [
+                        'ResId', w0,
+                        'FromDataAsOfDt', w1,
+                        'ToDataAsOfDt', w1,
+                        'CommentTxt', w0,
+                        'CreatedTs', w1,
+                        'CreatedByNam', w0,
+                        'ModifiedTs', w1,
+                        'ModifiedByNam', w0
+                    ]);
+                }
+                return _this;
+            }
+            ResExclusionSuppForm.formKey = 'DWSupport.ResExclusionSupp';
+            return ResExclusionSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.ResExclusionSuppForm = ResExclusionSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppRow;
+        (function (ResExclusionSuppRow) {
+            ResExclusionSuppRow.idProperty = 'ResExclusionId';
+            ResExclusionSuppRow.nameProperty = 'CommentTxt';
+            ResExclusionSuppRow.localTextPrefix = 'DWSupport.ResExclusionSupp';
+        })(ResExclusionSuppRow = DWSupport.ResExclusionSuppRow || (DWSupport.ResExclusionSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppService;
+        (function (ResExclusionSuppService) {
+            ResExclusionSuppService.baseUrl = 'DWSupport/ResExclusionSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List',
+                'ExcelImport'
+            ].forEach(function (x) {
+                ResExclusionSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(ResExclusionSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(ResExclusionSuppService = DWSupport.ResExclusionSuppService || (DWSupport.ResExclusionSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldForm = /** @class */ (function (_super) {
+            __extends(RevDetailFieldForm, _super);
+            function RevDetailFieldForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!RevDetailFieldForm.init) {
+                    RevDetailFieldForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(RevDetailFieldForm, [
+                        'RevdetailFieldNm', w0,
+                        'RevdetailSegmentFieldNm', w0,
+                        'RevdetailFieldCheck', w0,
+                        'OdsFieldNm', w0,
+                        'CubeInsInd', w1,
+                        'LoadDt', w2
+                    ]);
+                }
+                return _this;
+            }
+            RevDetailFieldForm.formKey = 'DWSupport.RevDetailField';
+            return RevDetailFieldForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.RevDetailFieldForm = RevDetailFieldForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldRow;
+        (function (RevDetailFieldRow) {
+            RevDetailFieldRow.idProperty = 'RevDetailFieldId';
+            RevDetailFieldRow.nameProperty = 'RevdetailFieldNm';
+            RevDetailFieldRow.localTextPrefix = 'DWSupport.RevDetailField';
+        })(RevDetailFieldRow = DWSupport.RevDetailFieldRow || (DWSupport.RevDetailFieldRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldService;
+        (function (RevDetailFieldService) {
+            RevDetailFieldService.baseUrl = 'DWSupport/RevDetailField';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                RevDetailFieldService[x] = function (r, s, o) {
+                    return Q.serviceRequest(RevDetailFieldService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(RevDetailFieldService = DWSupport.RevDetailFieldService || (DWSupport.RevDetailFieldService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppExcelImportForm = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppExcelImportForm, _super);
+            function SailingExclusionSuppExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SailingExclusionSuppExcelImportForm.init) {
+                    SailingExclusionSuppExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(SailingExclusionSuppExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            SailingExclusionSuppExcelImportForm.formKey = 'DWSupport.SailingExclusionSuppExcelImport';
+            return SailingExclusionSuppExcelImportForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.SailingExclusionSuppExcelImportForm = SailingExclusionSuppExcelImportForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppForm = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppForm, _super);
+            function SailingExclusionSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!SailingExclusionSuppForm.init) {
+                    SailingExclusionSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.LookupEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DateEditor;
+                    var w3 = s.StringEditor;
+                    Q.initFormType(SailingExclusionSuppForm, [
+                        'ShipCd', w0,
+                        'MainSailId', w1,
+                        'MainSailDt', w2,
+                        'MainVoyageCd', w3,
+                        'FromDataAsOfDt', w2,
+                        'ToDataAsOfDt', w2,
+                        'CommentTxt', w3,
+                        'CreatedTs', w2,
+                        'CreatedByNam', w3,
+                        'ModifiedTs', w2,
+                        'ModifiedByNam', w3
+                    ]);
+                }
+                return _this;
+            }
+            SailingExclusionSuppForm.formKey = 'DWSupport.SailingExclusionSupp';
+            return SailingExclusionSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.SailingExclusionSuppForm = SailingExclusionSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppRow;
+        (function (SailingExclusionSuppRow) {
+            SailingExclusionSuppRow.idProperty = 'SailingExclusionId';
+            SailingExclusionSuppRow.nameProperty = 'ShipCd';
+            SailingExclusionSuppRow.localTextPrefix = 'DWSupport.SailingExclusionSupp';
+        })(SailingExclusionSuppRow = DWSupport.SailingExclusionSuppRow || (DWSupport.SailingExclusionSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppService;
+        (function (SailingExclusionSuppService) {
+            SailingExclusionSuppService.baseUrl = 'DWSupport/SailingExclusionSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List',
+                'ExcelImport'
+            ].forEach(function (x) {
+                SailingExclusionSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(SailingExclusionSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(SailingExclusionSuppService = DWSupport.SailingExclusionSuppService || (DWSupport.SailingExclusionSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var Skill2SkillgroupForm = /** @class */ (function (_super) {
+            __extends(Skill2SkillgroupForm, _super);
+            function Skill2SkillgroupForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!Skill2SkillgroupForm.init) {
+                    Skill2SkillgroupForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.IntegerEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.DateEditor;
+                    Q.initFormType(Skill2SkillgroupForm, [
+                        'SplitGroupId', w0,
+                        'SplitGroupName', w1,
+                        'Skill', w0,
+                        'AcdSource', w1,
+                        'AcdLevel1', w1,
+                        'AcdLevel2', w1,
+                        'Active', w1,
+                        'EffectiveStart', w2,
+                        'EffectiveEnd', w2
+                    ]);
+                }
+                return _this;
+            }
+            Skill2SkillgroupForm.formKey = 'DWSupport.Skill2Skillgroup';
+            return Skill2SkillgroupForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.Skill2SkillgroupForm = Skill2SkillgroupForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var Skill2SkillgroupRow;
+        (function (Skill2SkillgroupRow) {
+            Skill2SkillgroupRow.idProperty = 'Skill2SkillgroupSk';
+            Skill2SkillgroupRow.nameProperty = 'SplitGroupName';
+            Skill2SkillgroupRow.localTextPrefix = 'DWSupport.Skill2Skillgroup';
+        })(Skill2SkillgroupRow = DWSupport.Skill2SkillgroupRow || (DWSupport.Skill2SkillgroupRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var Skill2SkillgroupService;
+        (function (Skill2SkillgroupService) {
+            Skill2SkillgroupService.baseUrl = 'DWSupport/Skill2Skillgroup';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                Skill2SkillgroupService[x] = function (r, s, o) {
+                    return Q.serviceRequest(Skill2SkillgroupService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(Skill2SkillgroupService = DWSupport.Skill2SkillgroupService || (DWSupport.Skill2SkillgroupService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesForm = /** @class */ (function (_super) {
+            __extends(StlyDatesForm, _super);
+            function StlyDatesForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!StlyDatesForm.init) {
+                    StlyDatesForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.DateEditor;
+                    var w1 = s.StringEditor;
+                    var w2 = s.IntegerEditor;
+                    var w3 = s.BooleanEditor;
+                    Q.initFormType(StlyDatesForm, [
+                        'ReportDt', w0,
+                        'DataAsOfDt', w0,
+                        'StlyDt', w0,
+                        'DayOfWeek', w1,
+                        'WeekNum', w2,
+                        'SystemIssuesInd', w3,
+                        'HolidayInd', w3,
+                        'DisasterInd', w3,
+                        'EffectiveFrom', w0,
+                        'EffectiveTo', w0,
+                        'LoadDt', w0
+                    ]);
+                }
+                return _this;
+            }
+            StlyDatesForm.formKey = 'DWSupport.StlyDates';
+            return StlyDatesForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.StlyDatesForm = StlyDatesForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesRow;
+        (function (StlyDatesRow) {
+            StlyDatesRow.idProperty = 'Stlyid';
+            StlyDatesRow.nameProperty = 'DayOfWeek';
+            StlyDatesRow.localTextPrefix = 'DWSupport.StlyDates';
+        })(StlyDatesRow = DWSupport.StlyDatesRow || (DWSupport.StlyDatesRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesService;
+        (function (StlyDatesService) {
+            StlyDatesService.baseUrl = 'DWSupport/StlyDates';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                StlyDatesService[x] = function (r, s, o) {
+                    return Q.serviceRequest(StlyDatesService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(StlyDatesService = DWSupport.StlyDatesService || (DWSupport.StlyDatesService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalExcelImportForm = /** @class */ (function (_super) {
+            __extends(VoyageBudgetFinalExcelImportForm, _super);
+            function VoyageBudgetFinalExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!VoyageBudgetFinalExcelImportForm.init) {
+                    VoyageBudgetFinalExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(VoyageBudgetFinalExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            VoyageBudgetFinalExcelImportForm.formKey = 'DWSupport.VoyageBudgetFinalExcelImport';
+            return VoyageBudgetFinalExcelImportForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.VoyageBudgetFinalExcelImportForm = VoyageBudgetFinalExcelImportForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalSuppForm = /** @class */ (function (_super) {
+            __extends(VoyageBudgetFinalSuppForm, _super);
+            function VoyageBudgetFinalSuppForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!VoyageBudgetFinalSuppForm.init) {
+                    VoyageBudgetFinalSuppForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.StringEditor;
+                    var w1 = s.IntegerEditor;
+                    var w2 = s.DecimalEditor;
+                    var w3 = s.DateEditor;
+                    Q.initFormType(VoyageBudgetFinalSuppForm, [
+                        'ShipCd', w0,
+                        'VoyageCd', w0,
+                        'SalesChannelDesc', w0,
+                        'YearNbr', w1,
+                        'MonthNbr', w1,
+                        'OperationalNtrAmt', w2,
+                        'PassengerCountQty', w2,
+                        'PassengerDaysQty', w2,
+                        'CapacityDaysQty', w2,
+                        'CabinDaysQty', w2,
+                        'BudgetTypeCd', w0,
+                        'CharterFlagCd', w0,
+                        'BkCabinDaysQty', w2,
+                        'BkCabinQty', w2,
+                        'CreatedTs', w3,
+                        'CreatedByNam', w0,
+                        'ModifiedTs', w3,
+                        'ModifiedByNam', w0
+                    ]);
+                }
+                return _this;
+            }
+            VoyageBudgetFinalSuppForm.formKey = 'DWSupport.VoyageBudgetFinalSupp';
+            return VoyageBudgetFinalSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.VoyageBudgetFinalSuppForm = VoyageBudgetFinalSuppForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalSuppRow;
+        (function (VoyageBudgetFinalSuppRow) {
+            VoyageBudgetFinalSuppRow.idProperty = 'BudgetFinalId';
+            VoyageBudgetFinalSuppRow.nameProperty = 'ShipCd';
+            VoyageBudgetFinalSuppRow.localTextPrefix = 'DWSupport.VoyageBudgetFinalSupp';
+        })(VoyageBudgetFinalSuppRow = DWSupport.VoyageBudgetFinalSuppRow || (DWSupport.VoyageBudgetFinalSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalSuppService;
+        (function (VoyageBudgetFinalSuppService) {
+            VoyageBudgetFinalSuppService.baseUrl = 'DWSupport/VoyageBudgetFinalSupp';
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List',
+                'ExcelImport'
+            ].forEach(function (x) {
+                VoyageBudgetFinalSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(VoyageBudgetFinalSuppService.baseUrl + '/' + x, r, s, o);
+                };
+            });
+        })(VoyageBudgetFinalSuppService = DWSupport.VoyageBudgetFinalSuppService || (DWSupport.VoyageBudgetFinalSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AirCostAdjSuppDialog = /** @class */ (function (_super) {
+            __extends(AirCostAdjSuppDialog, _super);
+            function AirCostAdjSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.AirCostAdjSuppForm(_this.idPrefix);
+                return _this;
+            }
+            AirCostAdjSuppDialog.prototype.getFormKey = function () { return DWSupport.AirCostAdjSuppForm.formKey; };
+            AirCostAdjSuppDialog.prototype.getIdProperty = function () { return DWSupport.AirCostAdjSuppRow.idProperty; };
+            AirCostAdjSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.AirCostAdjSuppRow.localTextPrefix; };
+            AirCostAdjSuppDialog.prototype.getNameProperty = function () { return DWSupport.AirCostAdjSuppRow.nameProperty; };
+            AirCostAdjSuppDialog.prototype.getService = function () { return DWSupport.AirCostAdjSuppService.baseUrl; };
+            AirCostAdjSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                //b.splice(Q.indexOf(b, x => x.cssClass == "apply-changes-button"), 1);
+                return b;
+            };
+            AirCostAdjSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AirCostAdjSuppDialog);
+            return AirCostAdjSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.AirCostAdjSuppDialog = AirCostAdjSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var AirCostAdjSuppGrid = /** @class */ (function (_super) {
+            __extends(AirCostAdjSuppGrid, _super);
+            function AirCostAdjSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            AirCostAdjSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.AirCostAdjSupp'; };
+            AirCostAdjSuppGrid.prototype.getDialogType = function () { return DWSupport.AirCostAdjSuppDialog; };
+            AirCostAdjSuppGrid.prototype.getIdProperty = function () { return DWSupport.AirCostAdjSuppRow.idProperty; };
+            AirCostAdjSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.AirCostAdjSuppRow.localTextPrefix; };
+            AirCostAdjSuppGrid.prototype.getService = function () { return DWSupport.AirCostAdjSuppService.baseUrl; };
+            AirCostAdjSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AirCostAdjSuppGrid);
+            return AirCostAdjSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.AirCostAdjSuppGrid = AirCostAdjSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CrlinkOverrideFinanceDialog = /** @class */ (function (_super) {
+            __extends(CrlinkOverrideFinanceDialog, _super);
+            function CrlinkOverrideFinanceDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.CrlinkOverrideFinanceForm(_this.idPrefix);
+                return _this;
+            }
+            CrlinkOverrideFinanceDialog.prototype.getFormKey = function () { return DWSupport.CrlinkOverrideFinanceForm.formKey; };
+            CrlinkOverrideFinanceDialog.prototype.getIdProperty = function () { return DWSupport.CrlinkOverrideFinanceRow.idProperty; };
+            CrlinkOverrideFinanceDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CrlinkOverrideFinanceRow.localTextPrefix; };
+            CrlinkOverrideFinanceDialog.prototype.getNameProperty = function () { return DWSupport.CrlinkOverrideFinanceRow.nameProperty; };
+            CrlinkOverrideFinanceDialog.prototype.getService = function () { return DWSupport.CrlinkOverrideFinanceService.baseUrl; };
+            CrlinkOverrideFinanceDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CrlinkOverrideFinanceDialog);
+            return CrlinkOverrideFinanceDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.CrlinkOverrideFinanceDialog = CrlinkOverrideFinanceDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CrlinkOverrideFinanceGrid = /** @class */ (function (_super) {
+            __extends(CrlinkOverrideFinanceGrid, _super);
+            function CrlinkOverrideFinanceGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            CrlinkOverrideFinanceGrid.prototype.getColumnsKey = function () { return 'DWSupport.CrlinkOverrideFinance'; };
+            CrlinkOverrideFinanceGrid.prototype.getDialogType = function () { return DWSupport.CrlinkOverrideFinanceDialog; };
+            CrlinkOverrideFinanceGrid.prototype.getIdProperty = function () { return DWSupport.CrlinkOverrideFinanceRow.idProperty; };
+            CrlinkOverrideFinanceGrid.prototype.getLocalTextPrefix = function () { return DWSupport.CrlinkOverrideFinanceRow.localTextPrefix; };
+            CrlinkOverrideFinanceGrid.prototype.getService = function () { return DWSupport.CrlinkOverrideFinanceService.baseUrl; };
+            CrlinkOverrideFinanceGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CrlinkOverrideFinanceGrid);
+            return CrlinkOverrideFinanceGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.CrlinkOverrideFinanceGrid = CrlinkOverrideFinanceGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CruiseSegmentDaysOverrideDialog = /** @class */ (function (_super) {
+            __extends(CruiseSegmentDaysOverrideDialog, _super);
+            function CruiseSegmentDaysOverrideDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.CruiseSegmentDaysOverrideForm(_this.idPrefix);
+                return _this;
+            }
+            CruiseSegmentDaysOverrideDialog.prototype.getFormKey = function () { return DWSupport.CruiseSegmentDaysOverrideForm.formKey; };
+            CruiseSegmentDaysOverrideDialog.prototype.getIdProperty = function () { return DWSupport.CruiseSegmentDaysOverrideRow.idProperty; };
+            CruiseSegmentDaysOverrideDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CruiseSegmentDaysOverrideRow.localTextPrefix; };
+            CruiseSegmentDaysOverrideDialog.prototype.getNameProperty = function () { return DWSupport.CruiseSegmentDaysOverrideRow.nameProperty; };
+            CruiseSegmentDaysOverrideDialog.prototype.getService = function () { return DWSupport.CruiseSegmentDaysOverrideService.baseUrl; };
+            CruiseSegmentDaysOverrideDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CruiseSegmentDaysOverrideDialog);
+            return CruiseSegmentDaysOverrideDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.CruiseSegmentDaysOverrideDialog = CruiseSegmentDaysOverrideDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CruiseSegmentDaysOverrideGrid = /** @class */ (function (_super) {
+            __extends(CruiseSegmentDaysOverrideGrid, _super);
+            function CruiseSegmentDaysOverrideGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            CruiseSegmentDaysOverrideGrid.prototype.getColumnsKey = function () { return 'DWSupport.CruiseSegmentDaysOverride'; };
+            CruiseSegmentDaysOverrideGrid.prototype.getDialogType = function () { return DWSupport.CruiseSegmentDaysOverrideDialog; };
+            CruiseSegmentDaysOverrideGrid.prototype.getIdProperty = function () { return DWSupport.CruiseSegmentDaysOverrideRow.idProperty; };
+            CruiseSegmentDaysOverrideGrid.prototype.getLocalTextPrefix = function () { return DWSupport.CruiseSegmentDaysOverrideRow.localTextPrefix; };
+            CruiseSegmentDaysOverrideGrid.prototype.getService = function () { return DWSupport.CruiseSegmentDaysOverrideService.baseUrl; };
+            CruiseSegmentDaysOverrideGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CruiseSegmentDaysOverrideGrid);
+            return CruiseSegmentDaysOverrideGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.CruiseSegmentDaysOverrideGrid = CruiseSegmentDaysOverrideGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var DimCruiseFlagsDialog = /** @class */ (function (_super) {
+            __extends(DimCruiseFlagsDialog, _super);
+            function DimCruiseFlagsDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.DimCruiseFlagsForm(_this.idPrefix);
+                return _this;
+            }
+            DimCruiseFlagsDialog.prototype.getFormKey = function () { return DWSupport.DimCruiseFlagsForm.formKey; };
+            DimCruiseFlagsDialog.prototype.getIdProperty = function () { return DWSupport.DimCruiseFlagsRow.idProperty; };
+            DimCruiseFlagsDialog.prototype.getLocalTextPrefix = function () { return DWSupport.DimCruiseFlagsRow.localTextPrefix; };
+            DimCruiseFlagsDialog.prototype.getNameProperty = function () { return DWSupport.DimCruiseFlagsRow.nameProperty; };
+            DimCruiseFlagsDialog.prototype.getService = function () { return DWSupport.DimCruiseFlagsService.baseUrl; };
+            DimCruiseFlagsDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DimCruiseFlagsDialog);
+            return DimCruiseFlagsDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.DimCruiseFlagsDialog = DimCruiseFlagsDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var DimCruiseFlagsGrid = /** @class */ (function (_super) {
+            __extends(DimCruiseFlagsGrid, _super);
+            function DimCruiseFlagsGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            DimCruiseFlagsGrid.prototype.getColumnsKey = function () { return 'DWSupport.DimCruiseFlags'; };
+            DimCruiseFlagsGrid.prototype.getDialogType = function () { return DWSupport.DimCruiseFlagsDialog; };
+            DimCruiseFlagsGrid.prototype.getIdProperty = function () { return DWSupport.DimCruiseFlagsRow.idProperty; };
+            DimCruiseFlagsGrid.prototype.getLocalTextPrefix = function () { return DWSupport.DimCruiseFlagsRow.localTextPrefix; };
+            DimCruiseFlagsGrid.prototype.getService = function () { return DWSupport.DimCruiseFlagsService.baseUrl; };
+            DimCruiseFlagsGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], DimCruiseFlagsGrid);
+            return DimCruiseFlagsGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.DimCruiseFlagsGrid = DimCruiseFlagsGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateDialog = /** @class */ (function (_super) {
+            __extends(ExchangeFixedRateDialog, _super);
+            function ExchangeFixedRateDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.ExchangeFixedRateForm(_this.idPrefix);
+                return _this;
+            }
+            ExchangeFixedRateDialog.prototype.getFormKey = function () { return DWSupport.ExchangeFixedRateForm.formKey; };
+            ExchangeFixedRateDialog.prototype.getIdProperty = function () { return DWSupport.ExchangeFixedRateRow.idProperty; };
+            ExchangeFixedRateDialog.prototype.getLocalTextPrefix = function () { return DWSupport.ExchangeFixedRateRow.localTextPrefix; };
+            ExchangeFixedRateDialog.prototype.getNameProperty = function () { return DWSupport.ExchangeFixedRateRow.nameProperty; };
+            ExchangeFixedRateDialog.prototype.getService = function () { return DWSupport.ExchangeFixedRateService.baseUrl; };
+            ExchangeFixedRateDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ExchangeFixedRateDialog);
+            return ExchangeFixedRateDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.ExchangeFixedRateDialog = ExchangeFixedRateDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ExchangeFixedRateGrid = /** @class */ (function (_super) {
+            __extends(ExchangeFixedRateGrid, _super);
+            function ExchangeFixedRateGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ExchangeFixedRateGrid.prototype.getColumnsKey = function () { return 'DWSupport.ExchangeFixedRate'; };
+            ExchangeFixedRateGrid.prototype.getDialogType = function () { return DWSupport.ExchangeFixedRateDialog; };
+            ExchangeFixedRateGrid.prototype.getIdProperty = function () { return DWSupport.ExchangeFixedRateRow.idProperty; };
+            ExchangeFixedRateGrid.prototype.getLocalTextPrefix = function () { return DWSupport.ExchangeFixedRateRow.localTextPrefix; };
+            ExchangeFixedRateGrid.prototype.getService = function () { return DWSupport.ExchangeFixedRateService.baseUrl; };
+            ExchangeFixedRateGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ExchangeFixedRateGrid);
+            return ExchangeFixedRateGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.ExchangeFixedRateGrid = ExchangeFixedRateGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionDialog = /** @class */ (function (_super) {
+            __extends(RegionDialog, _super);
+            function RegionDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.RegionForm(_this.idPrefix);
+                return _this;
+            }
+            RegionDialog.prototype.getFormKey = function () { return DWSupport.RegionForm.formKey; };
+            RegionDialog.prototype.getIdProperty = function () { return DWSupport.RegionRow.idProperty; };
+            RegionDialog.prototype.getLocalTextPrefix = function () { return DWSupport.RegionRow.localTextPrefix; };
+            RegionDialog.prototype.getNameProperty = function () { return DWSupport.RegionRow.nameProperty; };
+            RegionDialog.prototype.getService = function () { return DWSupport.RegionService.baseUrl; };
+            RegionDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionDialog);
+            return RegionDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.RegionDialog = RegionDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionGrid = /** @class */ (function (_super) {
+            __extends(RegionGrid, _super);
+            function RegionGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RegionGrid.prototype.getColumnsKey = function () { return 'DWSupport.Region'; };
+            RegionGrid.prototype.getDialogType = function () { return DWSupport.RegionDialog; };
+            RegionGrid.prototype.getIdProperty = function () { return DWSupport.RegionRow.idProperty; };
+            RegionGrid.prototype.getLocalTextPrefix = function () { return DWSupport.RegionRow.localTextPrefix; };
+            RegionGrid.prototype.getService = function () { return DWSupport.RegionService.baseUrl; };
+            RegionGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionGrid);
+            return RegionGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.RegionGrid = RegionGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppDialog = /** @class */ (function (_super) {
+            __extends(ResExclusionSuppDialog, _super);
+            function ResExclusionSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.ResExclusionSuppForm(_this.idPrefix);
+                return _this;
+            }
+            ResExclusionSuppDialog.prototype.getFormKey = function () { return DWSupport.ResExclusionSuppForm.formKey; };
+            ResExclusionSuppDialog.prototype.getIdProperty = function () { return DWSupport.ResExclusionSuppRow.idProperty; };
+            ResExclusionSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.ResExclusionSuppRow.localTextPrefix; };
+            ResExclusionSuppDialog.prototype.getNameProperty = function () { return DWSupport.ResExclusionSuppRow.nameProperty; };
+            ResExclusionSuppDialog.prototype.getService = function () { return DWSupport.ResExclusionSuppService.baseUrl; };
+            ResExclusionSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            ResExclusionSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResExclusionSuppDialog);
+            return ResExclusionSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.ResExclusionSuppDialog = ResExclusionSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppExcelImport = /** @class */ (function (_super) {
+            __extends(ResExclusionSuppExcelImport, _super);
+            function ResExclusionSuppExcelImport() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.ResExclusionSuppExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            ResExclusionSuppExcelImport.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            ResExclusionSuppExcelImport.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            DWSupport.ResExclusionSuppService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            ResExclusionSuppExcelImport = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResExclusionSuppExcelImport);
+            return ResExclusionSuppExcelImport;
+        }(Serenity.PropertyDialog));
+        DWSupport.ResExclusionSuppExcelImport = ResExclusionSuppExcelImport;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var ResExclusionSuppGrid = /** @class */ (function (_super) {
+            __extends(ResExclusionSuppGrid, _super);
+            function ResExclusionSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            ResExclusionSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.ResExclusionSupp'; };
+            ResExclusionSuppGrid.prototype.getDialogType = function () { return DWSupport.ResExclusionSuppDialog; };
+            ResExclusionSuppGrid.prototype.getIdProperty = function () { return DWSupport.ResExclusionSuppRow.idProperty; };
+            ResExclusionSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.ResExclusionSuppRow.localTextPrefix; };
+            ResExclusionSuppGrid.prototype.getService = function () { return DWSupport.ResExclusionSuppService.baseUrl; };
+            ResExclusionSuppGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: DWSupport.ResExclusionSuppService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export to Excel"
+                }));
+                // add our import button
+                buttons.push({
+                    title: 'Import From Excel',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new DWSupport.ResExclusionSuppExcelImport();
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                return buttons;
+            };
+            ResExclusionSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], ResExclusionSuppGrid);
+            return ResExclusionSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.ResExclusionSuppGrid = ResExclusionSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldDialog = /** @class */ (function (_super) {
+            __extends(RevDetailFieldDialog, _super);
+            function RevDetailFieldDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.RevDetailFieldForm(_this.idPrefix);
+                return _this;
+            }
+            RevDetailFieldDialog.prototype.getFormKey = function () { return DWSupport.RevDetailFieldForm.formKey; };
+            RevDetailFieldDialog.prototype.getIdProperty = function () { return DWSupport.RevDetailFieldRow.idProperty; };
+            RevDetailFieldDialog.prototype.getLocalTextPrefix = function () { return DWSupport.RevDetailFieldRow.localTextPrefix; };
+            RevDetailFieldDialog.prototype.getNameProperty = function () { return DWSupport.RevDetailFieldRow.nameProperty; };
+            RevDetailFieldDialog.prototype.getService = function () { return DWSupport.RevDetailFieldService.baseUrl; };
+            RevDetailFieldDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RevDetailFieldDialog);
+            return RevDetailFieldDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.RevDetailFieldDialog = RevDetailFieldDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RevDetailFieldGrid = /** @class */ (function (_super) {
+            __extends(RevDetailFieldGrid, _super);
+            function RevDetailFieldGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RevDetailFieldGrid.prototype.getColumnsKey = function () { return 'DWSupport.RevDetailField'; };
+            RevDetailFieldGrid.prototype.getDialogType = function () { return DWSupport.RevDetailFieldDialog; };
+            RevDetailFieldGrid.prototype.getIdProperty = function () { return DWSupport.RevDetailFieldRow.idProperty; };
+            RevDetailFieldGrid.prototype.getLocalTextPrefix = function () { return DWSupport.RevDetailFieldRow.localTextPrefix; };
+            RevDetailFieldGrid.prototype.getService = function () { return DWSupport.RevDetailFieldService.baseUrl; };
+            RevDetailFieldGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RevDetailFieldGrid);
+            return RevDetailFieldGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.RevDetailFieldGrid = RevDetailFieldGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppDialog = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppDialog, _super);
+            function SailingExclusionSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.SailingExclusionSuppForm(_this.idPrefix);
+                return _this;
+            }
+            SailingExclusionSuppDialog.prototype.getFormKey = function () { return DWSupport.SailingExclusionSuppForm.formKey; };
+            SailingExclusionSuppDialog.prototype.getIdProperty = function () { return DWSupport.SailingExclusionSuppRow.idProperty; };
+            SailingExclusionSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.SailingExclusionSuppRow.localTextPrefix; };
+            SailingExclusionSuppDialog.prototype.getNameProperty = function () { return DWSupport.SailingExclusionSuppRow.nameProperty; };
+            SailingExclusionSuppDialog.prototype.getService = function () { return DWSupport.SailingExclusionSuppService.baseUrl; };
+            SailingExclusionSuppDialog.prototype.getToolbarButtons = function () {
+                var b = _super.prototype.getToolbarButtons.call(this);
+                b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
+                return b;
+            };
+            SailingExclusionSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SailingExclusionSuppDialog);
+            return SailingExclusionSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.SailingExclusionSuppDialog = SailingExclusionSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppExcelImportDialog = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppExcelImportDialog, _super);
+            function SailingExclusionSuppExcelImportDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.SailingExclusionSuppExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            SailingExclusionSuppExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            SailingExclusionSuppExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            DWSupport.SailingExclusionSuppService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            SailingExclusionSuppExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SailingExclusionSuppExcelImportDialog);
+            return SailingExclusionSuppExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        DWSupport.SailingExclusionSuppExcelImportDialog = SailingExclusionSuppExcelImportDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var SailingExclusionSuppGrid = /** @class */ (function (_super) {
+            __extends(SailingExclusionSuppGrid, _super);
+            function SailingExclusionSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            SailingExclusionSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.SailingExclusionSupp'; };
+            SailingExclusionSuppGrid.prototype.getDialogType = function () { return DWSupport.SailingExclusionSuppDialog; };
+            SailingExclusionSuppGrid.prototype.getIdProperty = function () { return DWSupport.SailingExclusionSuppRow.idProperty; };
+            SailingExclusionSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.SailingExclusionSuppRow.localTextPrefix; };
+            SailingExclusionSuppGrid.prototype.getService = function () { return DWSupport.SailingExclusionSuppService.baseUrl; };
+            SailingExclusionSuppGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: DWSupport.SailingExclusionSuppService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export to Excel"
+                }));
+                // add our import button
+                buttons.push({
+                    title: 'Import From Excel',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new DWSupport.SailingExclusionSuppExcelImportDialog();
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                return buttons;
+            };
+            SailingExclusionSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], SailingExclusionSuppGrid);
+            return SailingExclusionSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.SailingExclusionSuppGrid = SailingExclusionSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var Skill2SkillgroupDialog = /** @class */ (function (_super) {
+            __extends(Skill2SkillgroupDialog, _super);
+            function Skill2SkillgroupDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.Skill2SkillgroupForm(_this.idPrefix);
+                return _this;
+            }
+            Skill2SkillgroupDialog.prototype.getFormKey = function () { return DWSupport.Skill2SkillgroupForm.formKey; };
+            Skill2SkillgroupDialog.prototype.getIdProperty = function () { return DWSupport.Skill2SkillgroupRow.idProperty; };
+            Skill2SkillgroupDialog.prototype.getLocalTextPrefix = function () { return DWSupport.Skill2SkillgroupRow.localTextPrefix; };
+            Skill2SkillgroupDialog.prototype.getNameProperty = function () { return DWSupport.Skill2SkillgroupRow.nameProperty; };
+            Skill2SkillgroupDialog.prototype.getService = function () { return DWSupport.Skill2SkillgroupService.baseUrl; };
+            Skill2SkillgroupDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], Skill2SkillgroupDialog);
+            return Skill2SkillgroupDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.Skill2SkillgroupDialog = Skill2SkillgroupDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var Skill2SkillgroupGrid = /** @class */ (function (_super) {
+            __extends(Skill2SkillgroupGrid, _super);
+            function Skill2SkillgroupGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            Skill2SkillgroupGrid.prototype.getColumnsKey = function () { return 'DWSupport.Skill2Skillgroup'; };
+            Skill2SkillgroupGrid.prototype.getDialogType = function () { return DWSupport.Skill2SkillgroupDialog; };
+            Skill2SkillgroupGrid.prototype.getIdProperty = function () { return DWSupport.Skill2SkillgroupRow.idProperty; };
+            Skill2SkillgroupGrid.prototype.getLocalTextPrefix = function () { return DWSupport.Skill2SkillgroupRow.localTextPrefix; };
+            Skill2SkillgroupGrid.prototype.getService = function () { return DWSupport.Skill2SkillgroupService.baseUrl; };
+            Skill2SkillgroupGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], Skill2SkillgroupGrid);
+            return Skill2SkillgroupGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.Skill2SkillgroupGrid = Skill2SkillgroupGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesDialog = /** @class */ (function (_super) {
+            __extends(StlyDatesDialog, _super);
+            function StlyDatesDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.StlyDatesForm(_this.idPrefix);
+                return _this;
+            }
+            StlyDatesDialog.prototype.getFormKey = function () { return DWSupport.StlyDatesForm.formKey; };
+            StlyDatesDialog.prototype.getIdProperty = function () { return DWSupport.StlyDatesRow.idProperty; };
+            StlyDatesDialog.prototype.getLocalTextPrefix = function () { return DWSupport.StlyDatesRow.localTextPrefix; };
+            StlyDatesDialog.prototype.getNameProperty = function () { return DWSupport.StlyDatesRow.nameProperty; };
+            StlyDatesDialog.prototype.getService = function () { return DWSupport.StlyDatesService.baseUrl; };
+            StlyDatesDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StlyDatesDialog);
+            return StlyDatesDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.StlyDatesDialog = StlyDatesDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var StlyDatesGrid = /** @class */ (function (_super) {
+            __extends(StlyDatesGrid, _super);
+            function StlyDatesGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            StlyDatesGrid.prototype.getColumnsKey = function () { return 'DWSupport.StlyDates'; };
+            StlyDatesGrid.prototype.getDialogType = function () { return DWSupport.StlyDatesDialog; };
+            StlyDatesGrid.prototype.getIdProperty = function () { return DWSupport.StlyDatesRow.idProperty; };
+            StlyDatesGrid.prototype.getLocalTextPrefix = function () { return DWSupport.StlyDatesRow.localTextPrefix; };
+            StlyDatesGrid.prototype.getService = function () { return DWSupport.StlyDatesService.baseUrl; };
+            StlyDatesGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], StlyDatesGrid);
+            return StlyDatesGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.StlyDatesGrid = StlyDatesGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalExcelImportDialog = /** @class */ (function (_super) {
+            __extends(VoyageBudgetFinalExcelImportDialog, _super);
+            function VoyageBudgetFinalExcelImportDialog() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.VoyageBudgetFinalExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            VoyageBudgetFinalExcelImportDialog.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            VoyageBudgetFinalExcelImportDialog.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            DWSupport.VoyageBudgetFinalSuppService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            VoyageBudgetFinalExcelImportDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VoyageBudgetFinalExcelImportDialog);
+            return VoyageBudgetFinalExcelImportDialog;
+        }(Serenity.PropertyDialog));
+        DWSupport.VoyageBudgetFinalExcelImportDialog = VoyageBudgetFinalExcelImportDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalSuppDialog = /** @class */ (function (_super) {
+            __extends(VoyageBudgetFinalSuppDialog, _super);
+            function VoyageBudgetFinalSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.VoyageBudgetFinalSuppForm(_this.idPrefix);
+                return _this;
+            }
+            VoyageBudgetFinalSuppDialog.prototype.getFormKey = function () { return DWSupport.VoyageBudgetFinalSuppForm.formKey; };
+            VoyageBudgetFinalSuppDialog.prototype.getIdProperty = function () { return DWSupport.VoyageBudgetFinalSuppRow.idProperty; };
+            VoyageBudgetFinalSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.VoyageBudgetFinalSuppRow.localTextPrefix; };
+            VoyageBudgetFinalSuppDialog.prototype.getNameProperty = function () { return DWSupport.VoyageBudgetFinalSuppRow.nameProperty; };
+            VoyageBudgetFinalSuppDialog.prototype.getService = function () { return DWSupport.VoyageBudgetFinalSuppService.baseUrl; };
+            VoyageBudgetFinalSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VoyageBudgetFinalSuppDialog);
+            return VoyageBudgetFinalSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.VoyageBudgetFinalSuppDialog = VoyageBudgetFinalSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var VoyageBudgetFinalSuppGrid = /** @class */ (function (_super) {
+            __extends(VoyageBudgetFinalSuppGrid, _super);
+            function VoyageBudgetFinalSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            VoyageBudgetFinalSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.VoyageBudgetFinalSupp'; };
+            VoyageBudgetFinalSuppGrid.prototype.getDialogType = function () { return DWSupport.VoyageBudgetFinalSuppDialog; };
+            VoyageBudgetFinalSuppGrid.prototype.getIdProperty = function () { return DWSupport.VoyageBudgetFinalSuppRow.idProperty; };
+            VoyageBudgetFinalSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.VoyageBudgetFinalSuppRow.localTextPrefix; };
+            VoyageBudgetFinalSuppGrid.prototype.getService = function () { return DWSupport.VoyageBudgetFinalSuppService.baseUrl; };
+            VoyageBudgetFinalSuppGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: DWSupport.VoyageBudgetFinalSuppService.baseUrl + '/ListExcel',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export to Excel"
+                }));
+                // add our import button
+                buttons.push({
+                    title: 'Import From Excel',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new DWSupport.VoyageBudgetFinalExcelImportDialog();
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                return buttons;
+            };
+            VoyageBudgetFinalSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], VoyageBudgetFinalSuppGrid);
+            return VoyageBudgetFinalSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.VoyageBudgetFinalSuppGrid = VoyageBudgetFinalSuppGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 //# sourceMappingURL=DAP.Web.js.map
