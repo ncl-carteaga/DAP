@@ -12,6 +12,8 @@ namespace DAP.Membership
         public string Username { get; set; }
         [PasswordEditor, Placeholder("NCL network password"), Required(true)]
         public string Password { get; set; }
+        [Placeholder("example: nclmiami.ncl.com"), Required(true)]
+        public string Domain { get; set; }
         [Ignore]
         public string TwoFactorGuid { get; set; }
         [Ignore]

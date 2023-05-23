@@ -7,10 +7,11 @@ namespace DAP.Administration
 {
     public class ActiveDirectoryService : IDirectoryService
     {
-        public DirectoryEntry Validate(string username, string password)
+        public DirectoryEntry Validate(string username, string password, string domain)
         {
-            var config = Config.Get<Settings>();
-            using (var context = new PrincipalContext(ContextType.Domain, config.Domain))
+            //var config = Config.Get<Settings>();        
+
+            using (var context = new PrincipalContext(ContextType.Domain, domain /* config.Domain */))
             {
                 bool isValid;
                 try
