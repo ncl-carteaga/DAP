@@ -11,7 +11,7 @@
     {
         public bool Validate(ref string username, string password, string domain)
         {
-            if (username.IsTrimmedEmpty() || string.IsNullOrEmpty(password))
+            if (username.IsTrimmedEmpty() || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(domain))
                 return false;
 
             username = username.TrimToEmpty();

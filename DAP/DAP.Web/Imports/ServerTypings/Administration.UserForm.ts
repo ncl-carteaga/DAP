@@ -9,6 +9,7 @@
         UserImage: Serenity.ImageUploadEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
+        Domain: Serenity.LookupEditor;
         Source: Serenity.StringEditor;
     }
 
@@ -29,6 +30,7 @@
                 var w3 = s.EnumEditor;
                 var w4 = s.ImageUploadEditor;
                 var w5 = s.PasswordEditor;
+                var w6 = s.LookupEditor;
 
                 Q.initFormType(UserForm, [
                     'Username', w0,
@@ -40,6 +42,7 @@
                     'UserImage', w4,
                     'Password', w5,
                     'PasswordConfirm', w5,
+                    'Domain', w6,
                     'Source', w0
                 ]);
             }

@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.Administration.Entities
 {
+    using DAP.Default.Entities;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
@@ -99,7 +100,7 @@ namespace DAP.Administration.Entities
             set { Fields.Password[this] = value; }
         }
 
-        [DisplayName("Domain"), Size(50), NotMapped]
+        [DisplayName("Domain"), Size(50), NotMapped, LookupEditor(typeof(DomainListRow))]
         public String Domain
         {
             get { return Fields.Domain[this]; }

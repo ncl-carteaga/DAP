@@ -19,6 +19,8 @@
         public String Password { get; set; }
         [PasswordEditor, OneWay, Required(true)]
         public String PasswordConfirm { get; set; }
+        [Required(true)]
+        public String Domain { get; set; }
         [OneWay]
         public string Source { get; set; }
     }

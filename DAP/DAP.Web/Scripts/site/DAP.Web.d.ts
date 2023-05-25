@@ -268,6 +268,7 @@ declare namespace DAP.Administration {
         UserImage: Serenity.ImageUploadEditor;
         Password: Serenity.PasswordEditor;
         PasswordConfirm: Serenity.PasswordEditor;
+        Domain: Serenity.LookupEditor;
         Source: Serenity.StringEditor;
     }
     class UserForm extends Serenity.PrefixedContext {
@@ -395,6 +396,7 @@ declare namespace DAP.Administration {
         LastDirectoryUpdate?: string;
         IsActive?: number;
         Password?: string;
+        Domain?: string;
         PasswordConfirm?: string;
         ImpersonationToken?: string;
         InsertUserId?: number;
@@ -424,6 +426,7 @@ declare namespace DAP.Administration {
             LastDirectoryUpdate = "LastDirectoryUpdate",
             IsActive = "IsActive",
             Password = "Password",
+            Domain = "Domain",
             PasswordConfirm = "PasswordConfirm",
             ImpersonationToken = "ImpersonationToken",
             InsertUserId = "InsertUserId",
@@ -4664,6 +4667,40 @@ declare namespace DAP.DWSupport {
         }
     }
 }
+declare namespace DAP.Default {
+    interface DomainListRow {
+        Id?: number;
+        Description?: string;
+    }
+    namespace DomainListRow {
+        const idProperty = "Description";
+        const nameProperty = "Description";
+        const localTextPrefix = "Default.DomainList";
+        const lookupKey = "Default.DomainList";
+        function getLookup(): Q.Lookup<DomainListRow>;
+        const enum Fields {
+            Id = "Id",
+            Description = "Description"
+        }
+    }
+}
+declare namespace DAP.Default {
+    namespace DomainListService {
+        const baseUrl = "Default/DomainList";
+        function Create(request: Serenity.SaveRequest<DomainListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DomainListRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DomainListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DomainListRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Default/DomainList/Create",
+            Update = "Default/DomainList/Update",
+            Delete = "Default/DomainList/Delete",
+            Retrieve = "Default/DomainList/Retrieve",
+            List = "Default/DomainList/List"
+        }
+    }
+}
 declare namespace Serenity.EmailClient {
     interface EmailAttachment {
         Key?: number;
@@ -4911,6 +4948,7 @@ declare namespace DAP.Membership {
     interface LoginForm {
         Username: Serenity.StringEditor;
         Password: Serenity.PasswordEditor;
+        Domain: Serenity.LookupEditor;
     }
     class LoginForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -4922,6 +4960,7 @@ declare namespace DAP.Membership {
     interface LoginRequest extends Serenity.ServiceRequest {
         Username?: string;
         Password?: string;
+        Domain?: string;
         TwoFactorGuid?: string;
         TwoFactorCode?: number;
     }
@@ -11191,6 +11230,7 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.Membership {
     class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
         protected getFormKey(): string;
+        protected form: LoginForm;
         constructor(container: JQuery);
         protected redirectToReturnUrl(): void;
         protected handleTwoFactorAuthentication(user: string, pass: string, twoFactorGuid: string, info: string): void;
