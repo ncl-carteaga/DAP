@@ -87,7 +87,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.AmenityAddonAmt[this] = value; }
         }
 
-        [DisplayName("Is Per Diem"), Column("IS_PER_DIEM_CD"), Size(1), SelectYNEditor]
+        [DisplayName("Is Per Diem"), Column("IS_PER_DIEM_CD"), Size(1), SelectYNEditor, Required]
         public String IsPerDiemCd
         {
             get { return Fields.IsPerDiemCd[this]; }

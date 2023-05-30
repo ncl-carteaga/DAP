@@ -13,6 +13,7 @@ namespace DAP.DWSupport.Forms
     [BasedOnRow(typeof(Entities.AmenityDetailsSuppRow), CheckNames = true)]
     public class AmenityDetailsSuppForm
     {
+        [ReadOnly(true)]
         public Int64 AmenityId { get; set; }
         public String AmenityDetailCd { get; set; }
         public String OfficeCd { get; set; }
