@@ -19,7 +19,7 @@ namespace DAP.DWSupport.Forms
         public Decimal CxBuffer { get; set; }
         [DisplayName("Blended Rate (Calculated)")]
         public Decimal BlendedRate { get; set; }
-        [DisplayName("Proposed Rate (Calculated)")]
+        [Visible(false)]
         public Decimal ProposedRate { get; set; }
         public DateTime EffectiveFromDt { get; set; }
         public DateTime EffectiveToDt { get; set; }
