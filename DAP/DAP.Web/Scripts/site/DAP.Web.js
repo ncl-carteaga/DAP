@@ -11332,6 +11332,15 @@ var DAP;
             AmenitiesSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.AmenitiesSuppRow.localTextPrefix; };
             AmenitiesSuppDialog.prototype.getNameProperty = function () { return DWSupport.AmenitiesSuppRow.nameProperty; };
             AmenitiesSuppDialog.prototype.getService = function () { return DWSupport.AmenitiesSuppService.baseUrl; };
+            AmenitiesSuppDialog.prototype.onSaveSuccess = function (response) {
+                Q.notifySuccess("Master detail entered successfully.");
+                Q.notifyInfo("ENTER new detail.");
+                var dialog = new DWSupport.AmenityDetailsSuppDialog();
+                dialog.loadEntityAndOpenDialog({
+                    AmenityId: response.EntityId,
+                    AmenityDetailCd: this.form.AmenityCd.value
+                });
+            };
             AmenitiesSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], AmenitiesSuppDialog);
