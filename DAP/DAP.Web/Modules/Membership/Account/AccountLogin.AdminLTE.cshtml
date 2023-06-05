@@ -78,6 +78,7 @@ jQuery(function() {
     $('.field.Username,.field.Password').addClass("has-icon");
     $('.field.Username input').after("<span class='glyphicon glyphicon-user form-control-feedback'></span>");
     $('.field.Password input').after("<span class='glyphicon glyphicon-lock form-control-feedback'></span>");
+    $('.field.Domain input').after("<span class='glyphicon glyphicon-lock form-control-feedback'></span>");
     $('input').iCheck({
         checkboxClass: 'icheckbox_square-blue',
         radioClass: 'iradio_square-blue',
@@ -89,6 +90,7 @@ jQuery(function() {
     $(function() { 
         $('#DAP_Membership_LoginPanel0_Username').val(@Html.Raw(Serenity.JSON.Stringify(ViewData["Activated"])));
         $('#DAP_Membership_LoginPanel0_Password').focus();
+        $('#DAP_Membership_LoginPanel0_Domain');
     });
     </text>
 }

@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.Administration.Entities
 {
+    using DAP.Default.Entities;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Data.Mapping;
@@ -99,6 +100,13 @@ namespace DAP.Administration.Entities
             set { Fields.Password[this] = value; }
         }
 
+        [DisplayName("Domain"), Size(50), NotMapped, LookupEditor(typeof(DomainListRow))]
+        public String Domain
+        {
+            get { return Fields.Domain[this]; }
+            set { Fields.Domain[this] = value; }
+        }
+
         [NotNull, Insertable(false), Updatable(true)]
         public Int16? IsActive
         {
@@ -166,6 +174,7 @@ namespace DAP.Administration.Entities
             public Int16Field IsActive;
 
             public StringField Password;
+            public StringField Domain;
             public StringField PasswordConfirm;
 
             public StringField ImpersonationToken;

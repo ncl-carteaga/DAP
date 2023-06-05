@@ -4,9 +4,15 @@
     export class LoginPanel extends Serenity.PropertyPanel<LoginRequest, any> {
 
         protected getFormKey() { return LoginForm.formKey; }
+        protected form = new LoginForm(this.idPrefix);
 
         constructor(container: JQuery) {
             super(container);
+
+            console.log(this.form);
+
+            // set default value for drop-down
+            this.form.Domain.value = this.form.Domain.items[1].text;
 
             $.fn['vegas'] && $('body')['vegas']({
                 delay: 30000,
@@ -150,6 +156,7 @@
             showDialog();
             window.setTimeout(updateCounter, 1000);
         }
+
 
         protected getTemplate() {
             return `

@@ -14,6 +14,7 @@
         LastDirectoryUpdate?: string;
         IsActive?: number;
         Password?: string;
+        Domain?: string;
         PasswordConfirm?: string;
         ImpersonationToken?: string;
         InsertUserId?: number;
@@ -48,6 +49,7 @@
             LastDirectoryUpdate = "LastDirectoryUpdate",
             IsActive = "IsActive",
             Password = "Password",
+            Domain = "Domain",
             PasswordConfirm = "PasswordConfirm",
             ImpersonationToken = "ImpersonationToken",
             InsertUserId = "InsertUserId",

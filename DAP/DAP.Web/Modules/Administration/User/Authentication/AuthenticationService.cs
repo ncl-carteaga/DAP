@@ -7,11 +7,11 @@
     using Serenity.Data;
     using System;
 
-    public class AuthenticationService : IAuthenticationService
+    public class AuthenticationService : IAuthenticationService2
     {
-        public bool Validate(ref string username, string password)
+        public bool Validate(ref string username, string password, string domain)
         {
-            if (username.IsTrimmedEmpty() || string.IsNullOrEmpty(password))
+            if (username.IsTrimmedEmpty() || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(domain))
                 return false;
 
             username = username.TrimToEmpty();
@@ -19,12 +19,12 @@
             var user = Dependency.Resolve<IUserRetrieveService>().ByUsername(username) as UserDefinition;
 
             if (user != null)
-                return ValidateExistingUser(ref username, password, user);
+                return ValidateExistingUser(ref username, password, domain, user);
 
-            return ValidateFirstTimeUser(ref username, password);
+            return ValidateFirstTimeUser(ref username, password, domain);
         }
 
-        private bool ValidateExistingUser(ref string username, string password, UserDefinition user)
+        private bool ValidateExistingUser(ref string username, string password, string domain, UserDefinition user)
         {
             username = user.Username;
 
@@ -76,7 +76,7 @@
             DirectoryEntry entry;
             try
             {
-                entry = directoryService.Validate(username, password);
+                entry = directoryService.Validate(username, password, domain);
                 if (entry == null)
                     return false;
 
@@ -135,7 +135,7 @@
             }
         }
 
-        private bool ValidateFirstTimeUser(ref string username, string password)
+        private bool ValidateFirstTimeUser(ref string username, string password, string domain)
         {
             var throttler = new Throttler("ValidateUser:" + username.ToLowerInvariant(), TimeSpan.FromMinutes(30), 50);
             if (!throttler.Check())
@@ -148,7 +148,7 @@
             DirectoryEntry entry;
             try
             {
-                entry = directoryService.Validate(username, password);
+                entry = directoryService.Validate(username, password, domain);
                 if (entry == null)
                     return false;
 
@@ -198,5 +198,13 @@
                 return false;
             }
         }
+    }
+}
+
+namespace Serenity.Abstractions
+{
+    public interface IAuthenticationService2
+    {
+        bool Validate(ref string username, string password, string domain);
     }
 }
