@@ -10749,6 +10749,13 @@ var DAP;
                 _this.form = new DWSupport.CreditCardAdjSuppForm(_this.idPrefix);
                 // Calculate and refresh [Calculated fields] when base fields change
                 // ---------------------------------------------
+                _this.form.CxBuffer.change(function (e) {
+                    var t1 = _this.form.ParticipationRate.value;
+                    var t2 = _this.form.BaseRate.value;
+                    var t3 = _this.form.CxBuffer.value;
+                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
+                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
+                });
                 _this.form.BaseRate.change(function (e) {
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
@@ -10762,11 +10769,6 @@ var DAP;
                     var t3 = _this.form.CxBuffer.value;
                     _this.form.BlendedRate.set_value((t1 * t2) + t3);
                     _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
-                });
-                _this.form.CxBuffer.change(function (e) {
-                    var t1 = _this.form.CxBuffer.value;
-                    var t2 = _this.form.BlendedRate.value;
-                    _this.form.ProposedRate.set_value(t1 + t2);
                 });
                 return _this;
                 // ---------------------------------------------     
