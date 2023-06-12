@@ -20,7 +20,7 @@
 
                 var registrar = Dependency.Resolve<IDependencyRegistrar>();
                 registrar.RegisterInstance<IAuthorizationService>(new Administration.AuthorizationService());
-                registrar.RegisterInstance<IAuthenticationService>(new Administration.AuthenticationService());
+                registrar.RegisterInstance<IAuthenticationService2>(new Administration.AuthenticationService());
                 registrar.RegisterInstance<IPermissionService>(new LogicOperatorPermissionService(new Administration.PermissionService()));
                 registrar.RegisterInstance<IUserRetrieveService>(new Administration.UserRetrieveService());
                 registrar.RegisterInstance<ISMSService>(new Administration.FakeSMSService());

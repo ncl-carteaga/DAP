@@ -11,5 +11,17 @@ namespace DAP.DWSupport {
 
         protected form = new AmenitiesSuppForm(this.idPrefix);
 
+
+        protected onSaveSuccess(response: Serenity.SaveResponse): void {
+            Q.notifySuccess("Master detail entered successfully.");
+            Q.notifyInfo("ENTER new detail.");
+            
+            var dialog = new AmenityDetailsSuppDialog();         
+
+            dialog.loadEntityAndOpenDialog(<AmenityDetailsSuppRow>{
+                AmenityId: response.EntityId,
+                AmenityDetailCd: this.form.AmenityCd.value
+            });
+        }
     }
 }

@@ -79,6 +79,13 @@ namespace DAP.Administration
             }
         }
 
+
+
+        public DirectoryEntry Validate(string username, string password, string domain)
+        {
+            return null;
+        }
+
         [Hidden, SettingScope("Application"), SettingKey("LDAP")]
         private class Settings
         {

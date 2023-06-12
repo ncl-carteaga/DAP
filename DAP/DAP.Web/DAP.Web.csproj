@@ -3527,6 +3527,8 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.Skill2SkillgroupForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4444,6 +4446,9 @@
     <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupPage.cs" />
     <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupColumns.cs" />
     <Compile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupForm.cs" />
+    <Compile Include="Modules\Default\DomainList\DomainListRow.cs" />
+    <Compile Include="Modules\Default\DomainList\DomainListRepository.cs" />
+    <Compile Include="Modules\Default\DomainList\DomainListEndpoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

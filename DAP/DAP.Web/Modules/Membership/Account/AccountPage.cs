@@ -54,7 +54,7 @@ namespace DAP.Membership.Pages
 
                 var username = request.Username;
 
-                if (Dependency.Resolve<IAuthenticationService>().Validate(ref username, request.Password))
+                if (Dependency.Resolve<IAuthenticationService2>().Validate(ref username, request.Password, request.Domain))
                 {
                     CheckTwoFactorAuthentication(username, request);
 
