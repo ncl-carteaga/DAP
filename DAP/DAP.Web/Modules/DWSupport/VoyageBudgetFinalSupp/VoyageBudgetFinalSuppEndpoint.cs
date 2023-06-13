@@ -116,228 +116,351 @@ namespace DAP.DWSupport.Endpoints
                 //response.ErrorList.Add(q.Text);
             }
 
-            //if (!importedHeaders.Contains("Ship Cd", StringComparer.OrdinalIgnoreCase) == true)
-            //{
-            //    response.ErrorList.Add("Missing Required Column Ship Cd.");
-            //}
-            //if (!importedHeaders.Contains("Main Sail Id", StringComparer.OrdinalIgnoreCase) == true)
-            //{
-            //    response.ErrorList.Add("Missing Required Column Main Sail Id.");
-            //}
+            if (!importedHeaders.Contains("Ship Cd", StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column Ship Cd.");
+            }
+            if (!importedHeaders.Contains("Voyage Cd", StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column Voyage Cd.");
+            }
+            if (!importedHeaders.Contains("Sales Channel Desc", StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column SalesChannelDesc.");
+            }
             //if (!importedHeaders.Contains("Main Sail Dt", StringComparer.OrdinalIgnoreCase) == true)
             //{
             //    response.ErrorList.Add("Missing Required Column Main Sail Dt.");
             //}
-            //if (!importedHeaders.Contains("Main Voyage Cd", StringComparer.OrdinalIgnoreCase) == true)
-            //{
-            //    response.ErrorList.Add("Missing Required Column Main Voyage Cd.");
-            //}
 
-            //if (response.ErrorList.Count > 0)
-            //{
-            //    return response;
-            //}
+
+            if (response.ErrorList.Count > 0)
+            {
+                return response;
+            }
 
             ///*  Add system headers to proper list while also adding 'ID' to the list. 'ID'
             // *  is the key field from exported files and needs to be mapped manually */
-            //systemHeaders.Add("ID");
-            //foreach (var t in myFields)
-            //{
-            //    systemHeaders.Add(t.Title);
-            //};
+            systemHeaders.Add("ID");
+            foreach (var t in myFields)
+            {
+                systemHeaders.Add(t.Title);
+            };
 
-            ///* Not all columns will be expected to be imported. To avoid unnecesary error messages 
-            // * we add the titles of the fields we want ignored here.*/
-            ////exceptionHeaders.Add(myFields.AddressLogId.Title);
+            /* Not all columns will be expected to be imported. To avoid unnecesary error messages 
+             * we add the titles of the fields we want ignored here.*/
+            //exceptionHeaders.Add(myFields.AddressLogId.Title);
 
-            ///* Using the systemHeaders to compare against the importedHeaders, we build an index with 
-            //* the column location and match it to the system header using a Dictionary<string, int>. */
+            /* Using the systemHeaders to compare against the importedHeaders, we build an index with 
+             the column location and match it to the system header using a Dictionary<string, int>. */
 
-            //Dictionary<string, int> headerMap = myImpHelp.myExcelHeaderMap(importedHeaders, systemHeaders, myErrors, exceptionHeaders);
+            Dictionary<string, int> headerMap = myImpHelp.myExcelHeaderMap(importedHeaders, systemHeaders, myErrors, exceptionHeaders);
 
-            //for (var row = 2; row <= wsEnd.Row; row++)
-            //{
-            //    try
-            //    {
-            //        /* This instance checks the ID field as to whether the row exists or not. if the 
-            //         * ID key exists, it will use it to update the row with the imported fields but if
-            //         * it does not exist, it creates a new entry. */
-
-
-            //        // ---------- Set fields to check against DB - Fill from excel vals ---------- //
-            //        string main_sail_dt = "";
-            //        string main_voyage_cd = "";
-
-
-            //        entType = jImpHelp.entryType.String;      //excel field type
-            //        fieldTitle = myFields.MainSailDt.Title;     //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                main_sail_dt = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
+            //public Int32Field BudgetFinalId;
+            //public StringField ShipCd;
+            //public StringField VoyageCd;
+            //public StringField SalesChannelDesc;
+            
+            for (var row = 2; row <= wsEnd.Row; row++)
+            {
+                try
+                {
+                    /* This instance checks the ID field as to whether the row exists or not. if the 
+                     * ID key exists, it will use it to update the row with the imported fields but if
+                     * it does not exist, it creates a new entry. */
 
 
-            //        entType = jImpHelp.entryType.String;            //excel field type
-            //        fieldTitle = myFields.MainVoyageCd.Title;       //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                main_voyage_cd = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
-
-            //        var dt = DateTime.FromOADate(double.Parse(main_sail_dt));
-
-            //        // Check if row exists in DB
-            //        var currentRow = uow.Connection.TryFirst<SailingExclusionSuppRow>(q => q
-            //            .Select(myFields.SailingExclusionId)
-            //            .Where(
-            //                myFields.MainVoyageCd == main_voyage_cd &&
-            //                myFields.MainSailDt == dt
-            //            )
-            //        );
-
-            //        // Row doesn't exist in DB
-            //        if (currentRow == null)
-            //            currentRow = new SailingExclusionSuppRow
-            //            {
-            //                MainVoyageCd = main_voyage_cd,
-            //                MainSailDt = dt
-            //            };
-            //        else
-            //        { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
+                    // ---------- Set fields to check against DB - Fill from excel vals ---------- //
+                    string ship_cd = "";
+                    string voyage_cd = "";
+                    string sales_channel_desc = "";
 
 
-            //        // ----------   Create Row from Excel Values   ---------- //
-            //        entType = jImpHelp.entryType.String;            //excel field type
-            //        fieldTitle = myFields.ShipCd.Title;             //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                currentRow.ShipCd = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
-
-            //        entType = jImpHelp.entryType.Int;           //excel field type
-            //        fieldTitle = myFields.MainSailId.Title;     //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                currentRow.MainSailId = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
-
-            //        entType = jImpHelp.entryType.dateTime;           //excel field type
-            //        fieldTitle = myFields.FromDataAsOfDt.Title;      //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                currentRow.FromDataAsOfDt = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
-
-            //        entType = jImpHelp.entryType.dateTime;    //excel field type
-            //        fieldTitle = myFields.ToDataAsOfDt.Title;  //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                currentRow.ToDataAsOfDt = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
-
-            //        entType = jImpHelp.entryType.String;    //excel field type
-            //        fieldTitle = myFields.CommentTxt.Title;   //excel field name
-            //        obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-            //        if (obj != null)
-            //        {
-            //            importedValues.Add(obj);
-            //            sysHeader.Add(fieldTitle);
-            //            a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-            //            if (a != null)
-            //            {
-            //                currentRow.CommentTxt = a; //designate the field to be updated in the system
-            //            }
-            //            sysHeader.Clear();
-            //            importedValues.Clear();
-            //        }
-
-            //        // current field value to validate against Model
-
-            //        //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
-            //        if (currentRow.SailingExclusionId == null)
-            //        {
-            //            new SailingExclusionSuppRepository().Create(uow, new SaveWithLocalizationRequest<MyRow>
-            //            {
-            //                Entity = currentRow
-            //            });
-            //            response.Inserted = response.Inserted + 1;
-            //        }
-            //        else
-            //        {
-            //            new SailingExclusionSuppRepository().Update(uow, new SaveWithLocalizationRequest<MyRow>
-            //            {
-            //                Entity = currentRow,
-            //                EntityId = currentRow.SailingExclusionId.Value
-            //            });
-            //            response.Updated = response.Updated + 1;
-            //        }
+                    entType = jImpHelp.entryType.String;      //excel field type
+                    fieldTitle = myFields.ShipCd.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            ship_cd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
 
+                    entType = jImpHelp.entryType.String;            //excel field type
+                    fieldTitle = myFields.VoyageCd.Title;       //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            voyage_cd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.String;            //excel field type
+                    fieldTitle = myFields.SalesChannelDesc.Title;       //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            sales_channel_desc = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
 
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        // if current row matches thrown exception, add msessage from current field
-            //        var msg = (ex.Message.Contains(fieldTitle)) ? "Exception on Row " + row + ": Field: " + fieldTitle + ": " : "";
-            //        response.ErrorList.Add("Error on row " + row + ": " + msg + ex.Message);
-            //        //response.ErrorList.Add("Value: " + a);
-            //    }
-            //} // for loop
+                    // Check if row exists in DB
+                    var currentRow = uow.Connection.TryFirst<VoyageBudgetFinalSuppRow>(q => q
+                        .Select(myFields.BudgetFinalId)
+                        .Where(
+                            myFields.ShipCd == ship_cd &&
+                            myFields.VoyageCd == voyage_cd &&
+                            myFields.SalesChannelDesc == sales_channel_desc
+                        )
+                    );
+
+                    // Row doesn't exist in DB
+                    if (currentRow == null)
+                        currentRow = new VoyageBudgetFinalSuppRow
+                        {
+                            ShipCd = ship_cd,
+                            VoyageCd = voyage_cd,
+                            SalesChannelDesc = sales_channel_desc
+                        };
+                    else
+                    { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
+
+                    // ----------   Create Row from Excel Values   ---------- //
+                    entType = jImpHelp.entryType.String;            //excel field type
+                    fieldTitle = myFields.BudgetTypeCd.Title;             //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.BudgetTypeCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.String;    //excel field type
+                    fieldTitle = myFields.CharterFlagCd.Title;   //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.CharterFlagCd = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Int;           //excel field type
+                    fieldTitle = myFields.YearNbr.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.YearNbr = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Int;           //excel field type
+                    fieldTitle = myFields.MonthNbr.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.MonthNbr = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    //public DoubleField OperationalNtrAmt;
+                    //public DoubleField PassengerCountQty;
+                    //public DoubleField PassengerDaysQty;
+                    //public DoubleField CapacityDaysQty;
+                    //public DoubleField CabinDaysQty;
+                    //public DoubleField BkCabinDaysQty;
+                    //public DoubleField BkCabinQty;
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.OperationalNtrAmt.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.OperationalNtrAmt = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.PassengerCountQty.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.PassengerCountQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.PassengerDaysQty.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.PassengerDaysQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.CapacityDaysQty.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.CapacityDaysQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.CabinDaysQty.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.CabinDaysQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.BkCabinDaysQty.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.BkCabinDaysQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    entType = jImpHelp.entryType.Double;           //excel field type
+                    fieldTitle = myFields.BkCabinQty.Title;     //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            currentRow.BkCabinQty = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
+
+                    // current field value to validate against Model
+                    //----------------------------------------Run Object Entries with Create or Update ------------------------------------//
+                    if (currentRow.BudgetFinalId == null)
+                    {
+                        new VoyageBudgetFinalSuppRepository().Create(uow, new SaveWithLocalizationRequest<MyRow>
+                        {
+                            Entity = currentRow
+                        });
+                        response.Inserted = response.Inserted + 1;
+                    }
+                    else
+                    {
+                        new VoyageBudgetFinalSuppRepository().Update(uow, new SaveWithLocalizationRequest<MyRow>
+                        {
+                            Entity = currentRow,
+                            EntityId = currentRow.BudgetFinalId.Value
+                        });
+                        response.Updated = response.Updated + 1;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    // if current row matches thrown exception, add msessage from current field
+                    var msg = (ex.Message.Contains(fieldTitle)) ? "Exception on Row " + row + ": Field: " + fieldTitle + ": " : "";
+                    response.ErrorList.Add("Error on row " + row + ": " + msg + ex.Message);
+                    //response.ErrorList.Add("Value: " + a);
+                }
+            } // for loop
 
             return response;
         }
