@@ -1227,6 +1227,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AirCostAdjSuppExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenitiesSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1611,6 +1614,7 @@
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogDialog.ts" />
     <TypeScriptCompile Include="Modules\Administration\DataAuditLog\DataAuditLogGrid.ts" />
     <Content Include="Modules\Membership\Account\LoginPanel.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenitiesSupp\AmenityDetailDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenitiesSupp\AmenityDetailGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitDetailGrid.ts" />
@@ -3527,8 +3531,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.Skill2SkillgroupForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3702,6 +3710,7 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceModels.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
+    <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\AreaLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelCdLookup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelLookup.cs" />

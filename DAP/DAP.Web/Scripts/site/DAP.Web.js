@@ -949,6 +949,30 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var AirCostAdjSuppExcelImportForm = /** @class */ (function (_super) {
+            __extends(AirCostAdjSuppExcelImportForm, _super);
+            function AirCostAdjSuppExcelImportForm(prefix) {
+                var _this = _super.call(this, prefix) || this;
+                if (!AirCostAdjSuppExcelImportForm.init) {
+                    AirCostAdjSuppExcelImportForm.init = true;
+                    var s = Serenity;
+                    var w0 = s.ImageUploadEditor;
+                    Q.initFormType(AirCostAdjSuppExcelImportForm, [
+                        'FileName', w0
+                    ]);
+                }
+                return _this;
+            }
+            AirCostAdjSuppExcelImportForm.formKey = 'DWSupport.AirCostAdjSuppExcelImport';
+            return AirCostAdjSuppExcelImportForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.AirCostAdjSuppExcelImportForm = AirCostAdjSuppExcelImportForm;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var AirCostAdjSuppForm = /** @class */ (function (_super) {
             __extends(AirCostAdjSuppForm, _super);
             function AirCostAdjSuppForm(prefix) {
@@ -1002,7 +1026,8 @@ var DAP;
                 'Update',
                 'Delete',
                 'Retrieve',
-                'List'
+                'List',
+                'ExcelImport'
             ].forEach(function (x) {
                 AirCostAdjSuppService[x] = function (r, s, o) {
                     return Q.serviceRequest(AirCostAdjSuppService.baseUrl + '/' + x, r, s, o);
@@ -11298,6 +11323,59 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var AirCostAdjSuppExcelImport = /** @class */ (function (_super) {
+            __extends(AirCostAdjSuppExcelImport, _super);
+            function AirCostAdjSuppExcelImport() {
+                var _this = _super.call(this) || this;
+                _this.form = new DWSupport.AirCostAdjSuppExcelImportForm(_this.idPrefix);
+                return _this;
+            }
+            AirCostAdjSuppExcelImport.prototype.getDialogTitle = function () {
+                return "Excel Import";
+            };
+            AirCostAdjSuppExcelImport.prototype.getDialogButtons = function () {
+                var _this = this;
+                return [
+                    {
+                        text: 'Import',
+                        click: function () {
+                            if (!_this.validateBeforeSave())
+                                return;
+                            if (_this.form.FileName.value == null ||
+                                Q.isEmptyOrNull(_this.form.FileName.value.Filename)) {
+                                Q.notifyError("Please select a file!");
+                                return;
+                            }
+                            DWSupport.AirCostAdjSuppService.ExcelImport({
+                                FileName: _this.form.FileName.value.Filename
+                            }, function (response) {
+                                Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+                                _this.dialogClose();
+                            });
+                        },
+                    },
+                    {
+                        text: 'Cancel',
+                        click: function () { return _this.dialogClose(); }
+                    }
+                ];
+            };
+            AirCostAdjSuppExcelImport = __decorate([
+                Serenity.Decorators.registerClass()
+            ], AirCostAdjSuppExcelImport);
+            return AirCostAdjSuppExcelImport;
+        }(Serenity.PropertyDialog));
+        DWSupport.AirCostAdjSuppExcelImport = AirCostAdjSuppExcelImport;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var AirCostAdjSuppGrid = /** @class */ (function (_super) {
             __extends(AirCostAdjSuppGrid, _super);
             function AirCostAdjSuppGrid(container) {
@@ -11308,6 +11386,32 @@ var DAP;
             AirCostAdjSuppGrid.prototype.getIdProperty = function () { return DWSupport.AirCostAdjSuppRow.idProperty; };
             AirCostAdjSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.AirCostAdjSuppRow.localTextPrefix; };
             AirCostAdjSuppGrid.prototype.getService = function () { return DWSupport.AirCostAdjSuppService.baseUrl; };
+            AirCostAdjSuppGrid.prototype.getButtons = function () {
+                var _this = this;
+                var buttons = _super.prototype.getButtons.call(this);
+                buttons.push(DAP.Common.ExcelExportHelper.createToolButton({
+                    grid: this,
+                    service: DWSupport.AirCostAdjSuppService.baseUrl + '/ExcelExport',
+                    onViewSubmit: function () { return _this.onViewSubmit(); },
+                    separator: true,
+                    title: "Export to Excel"
+                }));
+                // add our import button
+                buttons.push({
+                    title: 'Import From Excel',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new DWSupport.AirCostAdjSuppExcelImport();
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                return buttons;
+            };
             AirCostAdjSuppGrid = __decorate([
                 Serenity.Decorators.registerClass()
             ], AirCostAdjSuppGrid);
@@ -11780,14 +11884,14 @@ var DAP;
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
                     var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value(t1 * t2);
+                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
                     _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
                 });
                 _this.form.ParticipationRate.change(function (e) {
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
                     var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value(t1 * t2);
+                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
                     _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
                 });
                 _this.form.CxBuffer.change(function (e) {
