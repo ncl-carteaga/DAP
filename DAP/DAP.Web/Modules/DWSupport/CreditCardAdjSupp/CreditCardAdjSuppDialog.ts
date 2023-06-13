@@ -16,6 +16,13 @@ namespace DAP.DWSupport {
 
             // Calculate and refresh [Calculated fields] when base fields change
             // ---------------------------------------------
+                this.form.CxBuffer.change(e => {
+                    let t1 = this.form.ParticipationRate.value;
+                    let t2 = this.form.BaseRate.value;
+                    let t3 = this.form.CxBuffer.value;
+                    this.form.BlendedRate.set_value((t1 * t2) + t3);
+                    this.form.ProposedRate.set_value(this.form.BlendedRate.value + t3);
+                });
                 this.form.BaseRate.change(e => {
                     let t1 = this.form.ParticipationRate.value;
                     let t2 = this.form.BaseRate.value;
@@ -29,11 +36,6 @@ namespace DAP.DWSupport {
                     let t3 = this.form.CxBuffer.value;
                     this.form.BlendedRate.set_value((t1 * t2) + t3);
                     this.form.ProposedRate.set_value(this.form.BlendedRate.value + t3);
-                });
-                this.form.CxBuffer.change(e => {
-                    let t1 = this.form.CxBuffer.value;
-                    let t2 = this.form.BlendedRate.value;
-                    this.form.ProposedRate.set_value(t1 + t2);
                 });
             // ---------------------------------------------     
         }
