@@ -7,13 +7,15 @@
         export declare function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AirCostAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AirCostAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
         export declare const enum Methods {
             Create = "DWSupport/AirCostAdjSupp/Create",
             Update = "DWSupport/AirCostAdjSupp/Update",
             Delete = "DWSupport/AirCostAdjSupp/Delete",
             Retrieve = "DWSupport/AirCostAdjSupp/Retrieve",
-            List = "DWSupport/AirCostAdjSupp/List"
+            List = "DWSupport/AirCostAdjSupp/List",
+            ExcelImport = "DWSupport/AirCostAdjSupp/ExcelImport"
         }
 
         [
@@ -21,7 +23,8 @@
             'Update', 
             'Delete', 
             'Retrieve', 
-            'List'
+            'List', 
+            'ExcelImport'
         ].forEach(x => {
             (<any>AirCostAdjSuppService)[x] = function (r, s, o) {
                 return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
