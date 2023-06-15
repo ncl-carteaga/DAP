@@ -1024,6 +1024,16 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface AirCostAdjSuppExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class AirCostAdjSuppExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
     interface AirCostAdjSuppForm {
         VoyageCd: Serenity.StringEditor;
         RmEstimatedAirCost: Serenity.DecimalEditor;
@@ -1077,12 +1087,14 @@ declare namespace DAP.DWSupport {
         function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<AirCostAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<AirCostAdjSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "DWSupport/AirCostAdjSupp/Create",
             Update = "DWSupport/AirCostAdjSupp/Update",
             Delete = "DWSupport/AirCostAdjSupp/Delete",
             Retrieve = "DWSupport/AirCostAdjSupp/Retrieve",
-            List = "DWSupport/AirCostAdjSupp/List"
+            List = "DWSupport/AirCostAdjSupp/List",
+            ExcelImport = "DWSupport/AirCostAdjSupp/ExcelImport"
         }
     }
 }
@@ -10274,6 +10286,14 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class AirCostAdjSuppExcelImport extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.DWSupport {
     class AirCostAdjSuppGrid extends Serenity.EntityGrid<AirCostAdjSuppRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof AirCostAdjSuppDialog;
@@ -10281,6 +10301,7 @@ declare namespace DAP.DWSupport {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {
