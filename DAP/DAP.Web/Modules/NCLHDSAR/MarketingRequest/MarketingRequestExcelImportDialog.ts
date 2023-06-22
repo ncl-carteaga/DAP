@@ -60,6 +60,20 @@
 
                                 this.dialogClose();
                             });
+                        } else if (this.index == 2) {
+                            MarketingRequestService.ExcelImportOptOut({
+                                FileName: this.form.FileName.value.Filename
+                            }, response => {
+                                Q.notifyInfo(
+                                    'Inserted: ' + (response.Inserted || 0) +
+                                    ', Updated: ' + (response.Updated || 0));
+
+                                if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                    Q.notifyError(response.ErrorList.join(',\r\n '));
+                                }
+
+                                this.dialogClose();
+                            });
                         }
                     },
                 },
