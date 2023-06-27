@@ -9,6 +9,7 @@
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function ExcelImportChangeOfAddress(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function ExcelImportReturnMail(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        export declare function ExcelImportOptOut(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
         export declare const enum Methods {
             Create = "NCLHDSAR/MarketingRequest/Create",
@@ -17,7 +18,8 @@
             Retrieve = "NCLHDSAR/MarketingRequest/Retrieve",
             List = "NCLHDSAR/MarketingRequest/List",
             ExcelImportChangeOfAddress = "NCLHDSAR/MarketingRequest/ExcelImportChangeOfAddress",
-            ExcelImportReturnMail = "NCLHDSAR/MarketingRequest/ExcelImportReturnMail"
+            ExcelImportReturnMail = "NCLHDSAR/MarketingRequest/ExcelImportReturnMail",
+            ExcelImportOptOut = "NCLHDSAR/MarketingRequest/ExcelImportOptOut"
         }
 
         [
@@ -27,7 +29,8 @@
             'Retrieve', 
             'List', 
             'ExcelImportChangeOfAddress', 
-            'ExcelImportReturnMail'
+            'ExcelImportReturnMail', 
+            'ExcelImportOptOut'
         ].forEach(x => {
             (<any>MarketingRequestService)[x] = function (r, s, o) {
                 return Q.serviceRequest(baseUrl + '/' + x, r, s, o);

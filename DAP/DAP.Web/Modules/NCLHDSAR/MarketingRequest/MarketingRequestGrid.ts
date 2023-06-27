@@ -62,6 +62,22 @@ namespace DAP.NCLHDSAR {
                 }
             });
 
+            // import button 3
+            buttons.push({
+                title: 'Import Opt Out',
+                cssClass: 'export-xlsx-button',
+                onClick: () => {
+                    // open import dialog, let it handle rest
+                    var dialog = new MarketingRequestExcelImportDialog(2);
+                    dialog.element.on('dialogclose', () => {
+                        this.refresh();
+                        dialog = null;
+                    });
+
+                    dialog.dialogOpen();
+                }
+            });
+
             return buttons;
         }
     }

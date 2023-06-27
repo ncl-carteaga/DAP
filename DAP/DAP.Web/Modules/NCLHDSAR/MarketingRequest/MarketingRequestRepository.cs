@@ -87,6 +87,14 @@ namespace DAP.NCLHDSAR.Repositories
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.ChannelDescription.Name));
                         }
+                        else if (Row.BrandId < 1)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
+                        }
+                        else if (Row.Address1 == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Address1.Name));
+                        }
                     }
 
                 }
@@ -116,6 +124,14 @@ namespace DAP.NCLHDSAR.Repositories
                         if (Row.ChannelId == null)
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.ChannelDescription.Name));
+                        }
+                        else if (Row.BrandId < 1)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
+                        }
+                        else if (Row.Address1 == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Address1.Name));
                         }
                     }
                 }

@@ -193,7 +193,7 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.BrandDescription[this] = value; }
         }
 
-        [DisplayName("Channel Description"), Expression("jChannel.[Description]")]
+        [DisplayName("CHANNEL"), Expression("jChannel.[Description]")]
         public String ChannelDescription
         {
             get { return Fields.ChannelDescription[this]; }
