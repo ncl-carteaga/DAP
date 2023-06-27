@@ -5359,6 +5359,7 @@ declare namespace DAP.NCLHDSAR {
         function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<MarketingRequestRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function ExcelImportChangeOfAddress(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         function ExcelImportReturnMail(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImportOptOut(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         const enum Methods {
             Create = "NCLHDSAR/MarketingRequest/Create",
             Update = "NCLHDSAR/MarketingRequest/Update",
@@ -5366,7 +5367,8 @@ declare namespace DAP.NCLHDSAR {
             Retrieve = "NCLHDSAR/MarketingRequest/Retrieve",
             List = "NCLHDSAR/MarketingRequest/List",
             ExcelImportChangeOfAddress = "NCLHDSAR/MarketingRequest/ExcelImportChangeOfAddress",
-            ExcelImportReturnMail = "NCLHDSAR/MarketingRequest/ExcelImportReturnMail"
+            ExcelImportReturnMail = "NCLHDSAR/MarketingRequest/ExcelImportReturnMail",
+            ExcelImportOptOut = "NCLHDSAR/MarketingRequest/ExcelImportOptOut"
         }
     }
 }

@@ -4908,7 +4908,8 @@ var DAP;
                 'Retrieve',
                 'List',
                 'ExcelImportChangeOfAddress',
-                'ExcelImportReturnMail'
+                'ExcelImportReturnMail',
+                'ExcelImportOptOut'
             ].forEach(function (x) {
                 MarketingRequestService[x] = function (r, s, o) {
                     return Q.serviceRequest(MarketingRequestService.baseUrl + '/' + x, r, s, o);
@@ -11880,26 +11881,24 @@ var DAP;
                 _this.form = new DWSupport.CreditCardAdjSuppForm(_this.idPrefix);
                 // Calculate and refresh [Calculated fields] when base fields change
                 // ---------------------------------------------
-                _this.form.CxBuffer.change(function (e) {
-                    var t1 = _this.form.ParticipationRate.value;
-                    var t2 = _this.form.BaseRate.value;
-                    var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
-                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
-                });
                 _this.form.BaseRate.change(function (e) {
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
                     var t3 = _this.form.CxBuffer.value;
                     _this.form.BlendedRate.set_value((t1 * t2) + t3);
-                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
+                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
                 });
                 _this.form.ParticipationRate.change(function (e) {
                     var t1 = _this.form.ParticipationRate.value;
                     var t2 = _this.form.BaseRate.value;
                     var t3 = _this.form.CxBuffer.value;
                     _this.form.BlendedRate.set_value((t1 * t2) + t3);
-                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
+                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value + t3);
+                });
+                _this.form.CxBuffer.change(function (e) {
+                    var t1 = _this.form.CxBuffer.value;
+                    var t2 = _this.form.BlendedRate.value;
+                    _this.form.ProposedRate.set_value(t1 + t2);
                 });
                 return _this;
                 // ---------------------------------------------     
@@ -15097,6 +15096,18 @@ var DAP;
                                     _this.dialogClose();
                                 });
                             }
+                            else if (_this.index == 2) {
+                                NCLHDSAR.MarketingRequestService.ExcelImportOptOut({
+                                    FileName: _this.form.FileName.value.Filename
+                                }, function (response) {
+                                    Q.notifyInfo('Inserted: ' + (response.Inserted || 0) +
+                                        ', Updated: ' + (response.Updated || 0));
+                                    if (response.ErrorList != null && response.ErrorList.length > 0) {
+                                        Q.notifyError(response.ErrorList.join(',\r\n '));
+                                    }
+                                    _this.dialogClose();
+                                });
+                            }
                         },
                     },
                     {
@@ -15163,6 +15174,20 @@ var DAP;
                     onClick: function () {
                         // open import dialog, let it handle rest
                         var dialog = new NCLHDSAR.MarketingRequestExcelImportDialog(1);
+                        dialog.element.on('dialogclose', function () {
+                            _this.refresh();
+                            dialog = null;
+                        });
+                        dialog.dialogOpen();
+                    }
+                });
+                // import button 3
+                buttons.push({
+                    title: 'Import Opt Out',
+                    cssClass: 'export-xlsx-button',
+                    onClick: function () {
+                        // open import dialog, let it handle rest
+                        var dialog = new NCLHDSAR.MarketingRequestExcelImportDialog(2);
                         dialog.element.on('dialogclose', function () {
                             _this.refresh();
                             dialog = null;
