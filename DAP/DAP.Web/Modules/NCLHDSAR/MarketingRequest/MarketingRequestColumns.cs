@@ -23,7 +23,7 @@ namespace DAP.NCLHDSAR.Columns
         public String BrandDescription { get; set; }
         [EditLink]
         public String ContactId { get; set; }
-        [DisplayName("Channel")]
+        [DisplayName("CHANNEL")]
         public String ChannelDescription { get; set; }
         public Int16 OptOutStatusID { get; set; }
         public String FirstName { get; set; }
