@@ -770,7 +770,7 @@ namespace DAP.NCLHDSAR.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.IsReturnedMailCd = (a == "Y");
+                            currentRow.IsReturnedMailCd = (a.ToLower() == "true");
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
@@ -1076,21 +1076,21 @@ namespace DAP.NCLHDSAR.Endpoints
                     string address = "";
 
 
-                    //entType = jImpHelp.entryType.String;            //excel field type
-                    //fieldTitle = myFields.Address1.Title;   //excel field name
-                    //obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
-                    //if (obj != null)
-                    //{
-                    //    importedValues.Add(obj);
-                    //    sysHeader.Add(fieldTitle);
-                    //    a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
-                    //    if (a != null)
-                    //    {
-                    //        address = a; //designate the field to be updated in the system
-                    //    }
-                    //    sysHeader.Clear();
-                    //    importedValues.Clear();
-                    //}
+                    entType = jImpHelp.entryType.String;            //excel field type
+                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
+                    if (obj != null)
+                    {
+                        importedValues.Add(obj);
+                        sysHeader.Add(fieldTitle);
+                        a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
+                        if (a != null)
+                        {
+                            address = a; //designate the field to be updated in the system
+                        }
+                        sysHeader.Clear();
+                        importedValues.Clear();
+                    }
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
@@ -1111,7 +1111,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ChannelDescription.Title;   //excel field name
+                    fieldTitle = myFields.ChannelId.Title;   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1211,7 +1211,7 @@ namespace DAP.NCLHDSAR.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.IsReturnedMailCd = (a == "Y");
+                            currentRow.IsReturnedMailCd = (a.ToLower() == "true");
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
