@@ -20,16 +20,12 @@ namespace DAP.NCLHDSAR.Endpoints
     using DAP.NCLHDSAR.Entities;
     using DAP.NCLHDSAR.Lookups;
     using OfficeOpenXml;
-    using Serenity;
-    using Serenity.Data;
     using Serenity.Reporting;
-    using Serenity.Services;
     using Serenity.Web;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Web.Mvc;
     using MyRow = Entities.MarketingRequestRow;
     using jImpHelp = myImportFields.ExcelImportHelper;
     using myImpHelp = myImportHelper.ExcelImportHelper;
@@ -71,8 +67,7 @@ namespace DAP.NCLHDSAR.Endpoints
         }
 
 
-
-
+        
         // Export endpoint
         [HttpPost]
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
@@ -520,11 +515,6 @@ namespace DAP.NCLHDSAR.Endpoints
 
             return response;
         }
-
-
-
-
-
 
         // Import endpoint 2
         [HttpPost]
@@ -1111,7 +1101,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ChannelId.Title;   //excel field name
+                    fieldTitle = myFields.ChannelDescription.Title;   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
