@@ -20,12 +20,16 @@ namespace DAP.NCLHDSAR.Endpoints
     using DAP.NCLHDSAR.Entities;
     using DAP.NCLHDSAR.Lookups;
     using OfficeOpenXml;
+    using Serenity;
+    using Serenity.Data;
     using Serenity.Reporting;
+    using Serenity.Services;
     using Serenity.Web;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Web.Mvc;
     using MyRow = Entities.MarketingRequestRow;
     using jImpHelp = myImportFields.ExcelImportHelper;
     using myImpHelp = myImportHelper.ExcelImportHelper;
@@ -67,7 +71,8 @@ namespace DAP.NCLHDSAR.Endpoints
         }
 
 
-        
+
+
         // Export endpoint
         [HttpPost]
         public FileContentResult ListExcel(IDbConnection connection, ListRequest request)
@@ -129,21 +134,21 @@ namespace DAP.NCLHDSAR.Endpoints
                 //response.ErrorList.Add(q.Text);
             }
 
-            if (!importedHeaders.Contains(myFields.BrandDescription.Title, StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.BrandDescription.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column "+ myFields.BrandDescription.Title + ".");
+                response.ErrorList.Add("Missing Required Column "+ myFields.BrandDescription.Title.ToLower() + ".");
             }
             if (!importedHeaders.Contains("Title", StringComparer.OrdinalIgnoreCase) == true)
             {
                 response.ErrorList.Add("Missing Required Column Title.");
             }
-            if (!importedHeaders.Contains(myFields.FirstName.Title, StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.FirstName.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column "+ myFields.FirstName.Title + ".");
+                response.ErrorList.Add("Missing Required Column "+ myFields.FirstName.Title.ToLower() + ".");
             }
-            if (!importedHeaders.Contains(myFields.LastName.Title, StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.LastName.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column "+ myFields.LastName.Title + ".");
+                response.ErrorList.Add("Missing Required Column "+ myFields.LastName.Title.ToLower() + ".");
             }
 
             if (response.ErrorList.Count > 0)
@@ -156,12 +161,12 @@ namespace DAP.NCLHDSAR.Endpoints
             systemHeaders.Add("ID");
             foreach (var t in myFields)
             {
-                systemHeaders.Add(t.Title);
+                systemHeaders.Add(t.Title.ToLower());
             };
 
             /* Not all columns will be expected to be imported. To avoid unnecesary error messages 
              * we add the titles of the fields we want ignored here.*/
-            //exceptionHeaders.Add(myFields.AddressLogId.Title);
+            //exceptionHeaders.Add(myFields.AddressLogId.Title.ToLower());
 
             /* Using the systemHeaders to compare against the importedHeaders, we build an index with 
             * the column location and match it to the system header using a Dictionary<string, int>. */
@@ -184,7 +189,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     string channel = "";
 
                     entType = jImpHelp.entryType.String;    //designate the type of item
-                    fieldTitle = myFields.ContactId.Title;    //designate the field to be looked at
+                    fieldTitle = myFields.ContactId.Title.ToLower();    //designate the field to be looked at
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -201,7 +206,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    fieldTitle = myFields.Address1.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -218,7 +223,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandDescription.Title;   //excel field name
+                    fieldTitle = myFields.BrandDescription.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -235,7 +240,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ChannelDescription.Title;   //excel field name
+                    fieldTitle = myFields.ChannelDescription.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -252,7 +257,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.FirstName.Title;  //excel field name
+                    fieldTitle = myFields.FirstName.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -303,7 +308,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
                     // ----------   Create Row from Excel Values   ---------- //
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandId.Title;            //excel field name
+                    fieldTitle = myFields.BrandId.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -319,7 +324,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.ContactId.Title;  //excel field name
+                    fieldTitle = myFields.ContactId.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -335,7 +340,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Title.Title;      //excel field name
+                    fieldTitle = myFields.Title.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -351,7 +356,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.FirstName.Title;  //excel field name
+                    fieldTitle = myFields.FirstName.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -367,7 +372,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.LastName.Title;   //excel field name
+                    fieldTitle = myFields.LastName.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -383,7 +388,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    fieldTitle = myFields.Address1.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -399,7 +404,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address2.Title;   //excel field name
+                    fieldTitle = myFields.Address2.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -415,7 +420,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.City.Title;       //excel field name
+                    fieldTitle = myFields.City.Title.ToLower();       //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -431,7 +436,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.State.Title;      //excel field name
+                    fieldTitle = myFields.State.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -447,7 +452,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Zip.Title;        //excel field name
+                    fieldTitle = myFields.Zip.Title.ToLower();        //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -463,7 +468,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String; //excel field type
-                    fieldTitle = myFields.Country.Title; //excel field name
+                    fieldTitle = myFields.Country.Title.ToLower(); //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -516,6 +521,11 @@ namespace DAP.NCLHDSAR.Endpoints
             return response;
         }
 
+
+
+
+
+
         // Import endpoint 2
         [HttpPost]
         public ExcelImportResponse ExcelImportReturnMail(IUnitOfWork uow, ExcelImportRequest request)
@@ -566,13 +576,13 @@ namespace DAP.NCLHDSAR.Endpoints
                 //response.ErrorList.Add(q.Text);
             }
 
-            if (!importedHeaders.Contains(myFields.BrandDescription.Title, StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.BrandDescription.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column " + myFields.BrandDescription.Title + ".");
+                response.ErrorList.Add("Missing Required Column " + myFields.BrandDescription.Title.ToLower() + ".");
             }
-            if (!importedHeaders.Contains(myFields.IsReturnedMailCd.Title, StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(myFields.IsReturnedMailCd.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column " + myFields.IsReturnedMailCd.Title + ".");
+                response.ErrorList.Add("Missing Required Column " + myFields.IsReturnedMailCd.Title.ToLower() + ".");
             }
 
             if (response.ErrorList.Count > 0)
@@ -585,12 +595,12 @@ namespace DAP.NCLHDSAR.Endpoints
             systemHeaders.Add("ID");
             foreach (var t in myFields)
             {
-                systemHeaders.Add(t.Title);
+                systemHeaders.Add(t.Title.ToLower());
             };
 
             /* Not all columns will be expected to be imported. To avoid unnecesary error messages 
              * we add the titles of the fields we want ignored here.*/
-            //exceptionHeaders.Add(myFields.AddressLogId.Title);
+            //exceptionHeaders.Add(myFields.AddressLogId.Title.ToLower());
 
             /* Using the systemHeaders to compare against the importedHeaders, we build an index with 
             * the column location and match it to the system header using a Dictionary<string, int>. */
@@ -613,7 +623,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     string channel = "";
 
                     entType = jImpHelp.entryType.String;                //designate the type of item
-                    fieldTitle = myFields.IsReturnedMailCd.Title;       //designate the field to be looked at
+                    fieldTitle = myFields.IsReturnedMailCd.Title.ToLower();       //designate the field to be looked at
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -630,7 +640,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    fieldTitle = myFields.Address1.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -647,7 +657,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandDescription.Title;   //excel field name
+                    fieldTitle = myFields.BrandDescription.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -664,7 +674,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ChannelDescription.Title;   //excel field name
+                    fieldTitle = myFields.ChannelDescription.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -681,7 +691,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.FirstName.Title;  //excel field name
+                    fieldTitle = myFields.FirstName.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -735,7 +745,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
                     // ----------   Create Row from Excel Values   ---------- //
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandId.Title;            //excel field name
+                    fieldTitle = myFields.BrandId.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -751,7 +761,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.IsReturnedMailCd.Title;            //excel field name
+                    fieldTitle = myFields.IsReturnedMailCd.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -767,7 +777,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.ContactId.Title;  //excel field name
+                    fieldTitle = myFields.ContactId.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -783,7 +793,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Title.Title;      //excel field name
+                    fieldTitle = myFields.Title.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -799,7 +809,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.FirstName.Title;  //excel field name
+                    fieldTitle = myFields.FirstName.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -815,7 +825,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.LastName.Title;   //excel field name
+                    fieldTitle = myFields.LastName.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -831,7 +841,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    fieldTitle = myFields.Address1.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -847,7 +857,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address2.Title;   //excel field name
+                    fieldTitle = myFields.Address2.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -863,7 +873,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.City.Title;       //excel field name
+                    fieldTitle = myFields.City.Title.ToLower();       //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -879,7 +889,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.State.Title;      //excel field name
+                    fieldTitle = myFields.State.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -895,7 +905,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Zip.Title;        //excel field name
+                    fieldTitle = myFields.Zip.Title.ToLower();        //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -911,7 +921,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String; //excel field type
-                    fieldTitle = myFields.Country.Title; //excel field name
+                    fieldTitle = myFields.Country.Title.ToLower(); //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1013,7 +1023,7 @@ namespace DAP.NCLHDSAR.Endpoints
             /*Add Imported file headers to proper list*/
             foreach (var q in headers)
             {
-                importedHeaders.Add(q.Text);
+                importedHeaders.Add(q.Text.ToLower());
                 //response.ErrorList.Add(q.Text);
             }
 
@@ -1040,12 +1050,12 @@ namespace DAP.NCLHDSAR.Endpoints
             systemHeaders.Add("ID");
             foreach (var t in myFields)
             {
-                systemHeaders.Add(t.Title);
+                systemHeaders.Add(t.Title.ToLower().ToLower());
             };
 
             /* Not all columns will be expected to be imported. To avoid unnecesary error messages 
              * we add the titles of the fields we want ignored here.*/
-            //exceptionHeaders.Add(myFields.AddressLogId.Title);
+            //exceptionHeaders.Add(myFields.AddressLogId.Title.ToLower());
 
             /* Using the systemHeaders to compare against the importedHeaders, we build an index with 
             * the column location and match it to the system header using a Dictionary<string, int>. */
@@ -1067,7 +1077,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    fieldTitle = myFields.Address1.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1084,7 +1094,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandDescription.Title;   //excel field name
+                    fieldTitle = myFields.BrandId.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1101,7 +1111,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ChannelDescription.Title;   //excel field name
+                    fieldTitle = myFields.ChannelId.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1160,7 +1170,7 @@ namespace DAP.NCLHDSAR.Endpoints
 
                     // ----------   Create Row from Excel Values   ---------- //
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.BrandId.Title;            //excel field name
+                    fieldTitle = myFields.BrandId.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1176,7 +1186,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ChannelId.Title;            //excel field name
+                    fieldTitle = myFields.ChannelId.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1192,7 +1202,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.IsReturnedMailCd.Title;            //excel field name
+                    fieldTitle = myFields.IsReturnedMailCd.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1208,7 +1218,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.ContactId.Title;  //excel field name
+                    fieldTitle = myFields.ContactId.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1224,7 +1234,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Title.Title;      //excel field name
+                    fieldTitle = myFields.Title.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1240,7 +1250,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.FirstName.Title;  //excel field name
+                    fieldTitle = myFields.FirstName.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1256,7 +1266,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.LastName.Title;   //excel field name
+                    fieldTitle = myFields.LastName.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1272,7 +1282,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address1.Title;   //excel field name
+                    fieldTitle = myFields.Address1.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1288,7 +1298,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Address2.Title;   //excel field name
+                    fieldTitle = myFields.Address2.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1304,7 +1314,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.City.Title;       //excel field name
+                    fieldTitle = myFields.City.Title.ToLower();       //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1320,7 +1330,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.State.Title;      //excel field name
+                    fieldTitle = myFields.State.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1336,7 +1346,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.Zip.Title;        //excel field name
+                    fieldTitle = myFields.Zip.Title.ToLower();        //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1352,7 +1362,7 @@ namespace DAP.NCLHDSAR.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String; //excel field type
-                    fieldTitle = myFields.Country.Title; //excel field name
+                    fieldTitle = myFields.Country.Title.ToLower(); //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
