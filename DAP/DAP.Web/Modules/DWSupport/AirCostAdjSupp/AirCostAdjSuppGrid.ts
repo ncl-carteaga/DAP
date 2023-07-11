@@ -22,6 +22,7 @@ namespace DAP.DWSupport {
                 onViewSubmit: () => this.onViewSubmit(),
                 separator: true,
                 title: "Export to Excel"
+
             }));
 
             // add our import button
