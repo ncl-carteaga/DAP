@@ -903,6 +903,7 @@
     <Content Include="Modules\PCHODS\UarEmployeeDirectreports\UarEmployeeDirectreportsRow.cs.orig" />
     <Content Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\Index.cshtml" />
     <Content Include="Modules\DWSupport\SailingExclusionSupp\SailingExclusionSuppIndex.cshtml" />
+    <Content Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideIndex.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -1181,7 +1182,6 @@
     <Content Include="Modules\DWSupport\RollupProductCodesSupp\RollupProductCodesSuppIndex.cshtml" />
     <Content Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestIndex.cshtml" />
     <Content Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppIndex.cshtml" />
-    <Content Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideIndex.cshtml" />
     <Content Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CmiSupp\CmiSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\GtfSupp\GtfSuppIndex.cshtml" />
@@ -1198,6 +1198,7 @@
     <Content Include="Modules\DWSupport\ResExclusionSupp\ResExclusionSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceIndex.cshtml" />
     <Content Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupIndex.cshtml" />
+    <Content Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1234,6 +1235,12 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityDetailsSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CasinoSlotMasterDescSuppColumns.ts">
@@ -1620,6 +1627,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitDetailGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitMasterDetailPane.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitMasterGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppExcelImportDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogGridDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogListGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitDetailGrid.ts" />
@@ -1662,6 +1670,8 @@
     <TypeScriptCompile Include="Modules\PCHODSNVS\NtrPastMonthsActual\NtrPastMonthsActualExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImport.ts" />
     <TypeScriptCompile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImport.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideDialog.ts" />
+    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideGrid.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUEditor.ts" />
     <TypeScriptCompile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUDialog.ts" />
@@ -1810,8 +1820,6 @@
     <TypeScriptCompile Include="Modules\NCLHDSAR\MarketingRequest\MarketingRequestGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppGrid.ts" />
-    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideDialog.ts" />
-    <TypeScriptCompile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CmiSupp\CmiSuppDialog.ts" />
@@ -1844,6 +1852,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3537,6 +3547,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\Default.DomainListService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3711,6 +3730,7 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppExcelImportForm.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\AreaLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelCdLookup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\ChannelLookup.cs" />
@@ -3805,7 +3825,16 @@
     <Compile Include="Modules\PCHODSNVS\PCHODSNVSPermissionKeys.cs" />
     <Compile Include="Modules\PCHODSNVS\SuppKeyAcctTarget\KeyAcctTargetExcelImportForm.cs" />
     <Compile Include="Modules\PCHODSNVS\TransferEstimateOciAmt\TransferEstimateOciAmtExcelImportForm.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionEndpoint.cs" />
     <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionLookupEditor.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRepository.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRow.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideColumns.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideEndpoint.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideForm.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverridePage.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRepository.cs" />
+    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRow.cs" />
     <Compile Include="Modules\PCHODS\OutboundAgentLocation\OutboundAgentLocationLookup.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHistAu\SelectCompanyAUForm.cs" />
     <Compile Include="Modules\PCHODS\OutboundCommissionHist\SelectCompanyForm.cs" />
@@ -4344,15 +4373,6 @@
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppPage.cs" />
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\PsGlAccountSupp\PsGlAccountSuppForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRow.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideRepository.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideEndpoint.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverridePage.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideColumns.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverride\InboundUserOverrideForm.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRow.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionRepository.cs" />
-    <Compile Include="Modules\PCHODS\InboundUserOverrideDescription\InboundUserOverrideDescriptionEndpoint.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppRow.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppRepository.cs" />
     <Compile Include="Modules\DWSupport\FinPlannedCapacitySupp\FinPlannedCapacitySuppEndpoint.cs" />
@@ -4458,6 +4478,12 @@
     <Compile Include="Modules\Default\DomainList\DomainListRow.cs" />
     <Compile Include="Modules\Default\DomainList\DomainListRepository.cs" />
     <Compile Include="Modules\Default\DomainList\DomainListEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

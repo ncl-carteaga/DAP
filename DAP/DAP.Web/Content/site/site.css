@@ -8707,7 +8707,7 @@ div.s-Toolbar .tool-button.no-text span.button-inner {
 .select2-dropdown-open .select2-choice {
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: #ffffff;
+  background-color: transparent;
   background-image: none;
   filter: unset;
 }
@@ -9769,6 +9769,12 @@ button.ui-button {
   width: 650px;
 }
 .s-DWSupport-Skill2SkillgroupDialog .caption {
+  width: 150px;
+}
+.s-DWSupport-CappingAdjustmentsSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CappingAdjustmentsSuppDialog .caption {
   width: 150px;
 }
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
