@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = Serenity.LocalText.Get("Db.DWSupport.CappingAdjustmentsSupp.EntityPlural");
+}
+
+<div id="GridDiv"></div>
+
+<script type="text/javascript">
+    jQuery(function () {
+        new DAP.DWSupport.CappingAdjustmentsSuppGrid($('#GridDiv'), {}).init();
+
+        Q.initFullHeightGridPage($('#GridDiv'));
+    });
+</script>

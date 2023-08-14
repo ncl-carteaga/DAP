@@ -93,6 +93,11 @@ namespace MVC
                 public const string Index = "~/Modules/DWSupport/AmenityMasterDetail/Index.cshtml";
             }
 
+            public static class CappingAdjustmentsSupp
+            {
+                public const string CappingAdjustmentsSuppIndex = "~/Modules/DWSupport/CappingAdjustmentsSupp/CappingAdjustmentsSuppIndex.cshtml";
+            }
+
             public static class CasinoSlotMasterDescSupp
             {
                 public const string CasinoSlotMasterDescSuppIndex = "~/Modules/DWSupport/CasinoSlotMasterDescSupp/CasinoSlotMasterDescSuppIndex.cshtml";

@@ -59,6 +59,7 @@ namespace DAP.DWSupport
             public const string SailingExclusionSupp = "DWSupp:Page:SailingExclusionSupp";
             public const string VoyageBudgetFinalSupp = "DWSupp:Page:VoyageBudgetFinalSupp";
             public const string ResExclusionSupp = "DWSupp:Page:ResExclusionSupp";
+            public const string CappingAdjustmentsSupp = "DWSupp:Page:CappingAdjustmentsSupp";
 
             //nvs
             public const string DimCruiseFlags = "DWSupp:Page:DimCruiseFlags";

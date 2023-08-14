@@ -1429,6 +1429,86 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface CappingAdjustmentsSuppExcelImportForm {
+        FileName: Serenity.ImageUploadEditor;
+    }
+    class CappingAdjustmentsSuppExcelImportForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CappingAdjustmentsSuppForm {
+        CompanyCd: PCHODS.CompanyEditor;
+        ShipCd: Serenity.LookupEditor;
+        CruiseCd: Serenity.StringEditor;
+        CappedCabinCapacity: Serenity.IntegerEditor;
+        SingleCabinCapacity: Serenity.IntegerEditor;
+        EffectiveFromDate: Serenity.DateEditor;
+        EffectiveToDate: Serenity.DateEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+    class CappingAdjustmentsSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CappingAdjustmentsSuppRow {
+        Id?: number;
+        CompanyCd?: string;
+        ShipCd?: string;
+        CruiseCd?: string;
+        CappedCabinCapacity?: number;
+        SingleCabinCapacity?: number;
+        EffectiveFromDate?: string;
+        EffectiveToDate?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace CappingAdjustmentsSuppRow {
+        const idProperty = "Id";
+        const nameProperty = "CompanyCd";
+        const localTextPrefix = "DWSupport.CappingAdjustmentsSupp";
+        const enum Fields {
+            Id = "Id",
+            CompanyCd = "CompanyCd",
+            ShipCd = "ShipCd",
+            CruiseCd = "CruiseCd",
+            CappedCabinCapacity = "CappedCabinCapacity",
+            SingleCabinCapacity = "SingleCabinCapacity",
+            EffectiveFromDate = "EffectiveFromDate",
+            EffectiveToDate = "EffectiveToDate",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CappingAdjustmentsSuppService {
+        const baseUrl = "DWSupport/CappingAdjustmentsSupp";
+        function Create(request: Serenity.SaveRequest<CappingAdjustmentsSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CappingAdjustmentsSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CappingAdjustmentsSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CappingAdjustmentsSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function ExcelImport(request: ExcelImportRequest, onSuccess?: (response: ExcelImportResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/CappingAdjustmentsSupp/Create",
+            Update = "DWSupport/CappingAdjustmentsSupp/Update",
+            Delete = "DWSupport/CappingAdjustmentsSupp/Delete",
+            Retrieve = "DWSupport/CappingAdjustmentsSupp/Retrieve",
+            List = "DWSupport/CappingAdjustmentsSupp/List",
+            ExcelImport = "DWSupport/CappingAdjustmentsSupp/ExcelImport"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface CasinoSlotMasterDescSuppForm {
         SlotMasterDesc: Serenity.StringEditor;
         CommentTxt: Serenity.StringEditor;
@@ -10385,6 +10465,35 @@ declare namespace DAP.DWSupport {
         constructor(container: JQuery);
         protected getSlickOptions(): Slick.GridOptions;
         protected createSlickGrid(): Slick.Grid;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CappingAdjustmentsSuppDialog extends Serenity.EntityDialog<CappingAdjustmentsSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CappingAdjustmentsSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CappingAdjustmentsSuppExcelImportDialog extends Serenity.PropertyDialog<any, any> {
+        private form;
+        constructor();
+        protected getDialogTitle(): string;
+        protected getDialogButtons(): Serenity.DialogButton[];
+    }
+}
+declare namespace DAP.DWSupport {
+    class CappingAdjustmentsSuppGrid extends Serenity.EntityGrid<CappingAdjustmentsSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CappingAdjustmentsSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace DAP.DWSupport {
