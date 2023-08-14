@@ -91,12 +91,7 @@ namespace DAP.NCLHDSAR.Repositories
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
                         }
-                        else if (Row.Address1 == null)
-                        {
-                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Address1.Name));
-                        }
                     }
-
                 }
 
                 if (IsCreate)
@@ -117,7 +112,19 @@ namespace DAP.NCLHDSAR.Repositories
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
                         }
-                    }// if
+                    }
+                    //  ------------------ Return Mail Validation ------------------ //
+                    else if (Row.RequestTypeId == 3)
+                    {
+                        if (Row.IsReturnedMailCd == null)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.IsReturnedMailCd.Name));
+                        }
+                        else if (Row.BrandId < 1)
+                        {
+                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
+                        }
+                    }
                     //  ------------------ Opt Outs Validation ------------------ //
                     else if (Row.RequestTypeId == 1)
                     {
@@ -128,10 +135,6 @@ namespace DAP.NCLHDSAR.Repositories
                         else if (Row.BrandId < 1)
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
-                        }
-                        else if (Row.Address1 == null)
-                        {
-                            throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.Address1.Name));
                         }
                     }
                 }
