@@ -43,9 +43,23 @@ namespace DAP.DWSupport.Repositories
             {
                 base.BeforeSave();
 
-                if (Row.CruiseCd.IsEmptyOrNull() || Row.EffectiveFromDate.ToString().IsEmptyOrNull() || Row.EffectiveToDate.ToString().IsEmptyOrNull())
+                var t = Row;
+
+                if (    Row.ShipCd.IsEmptyOrNull() 
+                    ||  Row.EffectiveFromDate.ToString().IsEmptyOrNull() 
+                    ||  Row.EffectiveToDate.ToString().IsEmptyOrNull()
+                    ||  Row.CappedCabinCapacity.ToString().IsEmptyOrNull()
+                    ||  Row.SingleCabinCapacity.ToString().IsEmptyOrNull()
+                )
                 {
-                    throw new ValidationError(string.Format("Missing values for {0}, {1} or {2}.", MyRow.Fields.ShipCd.Title, MyRow.Fields.EffectiveFromDate.Title, MyRow.Fields.EffectiveToDate.Title));
+                    throw new ValidationError(string.Format(
+                        "Missing values for {0}, {1}, {2}, {3} or {4}."
+                        , MyRow.Fields.ShipCd.Title
+                        , MyRow.Fields.EffectiveFromDate.Title
+                        , MyRow.Fields.EffectiveToDate.Title
+                        , MyRow.Fields.CappedCabinCapacity.Title
+                        , MyRow.Fields.SingleCabinCapacity.Title
+                    ));
                 }
             }
             protected override void SetInternalFields()
