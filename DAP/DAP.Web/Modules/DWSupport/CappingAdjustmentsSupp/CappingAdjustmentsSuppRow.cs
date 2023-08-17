@@ -1,6 +1,7 @@
 ﻿
 namespace DAP.DWSupport.Entities
 {
+    using DAP.DWSupport.Lookups;
     using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
@@ -24,14 +25,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("COMPANY_CD"), Size(3), QuickFilter, PCHODS.CompanyEditor]
+        [DisplayName("Company Cd"), Column("COMPANY_CD"), Size(3), QuickSearch, LookupEditor(typeof(CompanyCDONRLookupEditor))]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(50), QuickSearch, NotNull, LookupEditor(typeof(ShipRow))]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(50), NotNull, LookupEditor(typeof(ONRShipCodeLookupEditor))]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }
@@ -45,14 +46,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.CruiseCd[this] = value; }
         }
 
-        [DisplayName("Capped Cabin Capacity"), Column("CAPPED_CABIN_CAPACITY")]
+        [DisplayName("Capped Cabin Capacity"), Column("CAPPED_CABIN_CAPACITY"), Required]
         public Int32? CappedCabinCapacity
         {
             get { return Fields.CappedCabinCapacity[this]; }
             set { Fields.CappedCabinCapacity[this] = value; }
         }
 
-        [DisplayName("Single Cabin Capacity"), Column("SINGLE_CABIN_CAPACITY")]
+        [DisplayName("Single Cabin Capacity"), Column("SINGLE_CABIN_CAPACITY"), Required]
         public Int32? SingleCabinCapacity
         {
             get { return Fields.SingleCabinCapacity[this]; }

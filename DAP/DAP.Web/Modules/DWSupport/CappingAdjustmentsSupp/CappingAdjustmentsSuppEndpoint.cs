@@ -120,9 +120,17 @@ namespace DAP.DWSupport.Endpoints
             {
                 response.ErrorList.Add("Missing Required Column" + MyRow.Fields.EffectiveFromDate.Title);
             }
-            if (!importedHeaders.Contains(MyRow.Fields.CruiseCd.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
+            if (!importedHeaders.Contains(MyRow.Fields.ShipCd.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
             {
-                response.ErrorList.Add("Missing Required Column" + MyRow.Fields.CruiseCd.Title);
+                response.ErrorList.Add("Missing Required Column" + MyRow.Fields.ShipCd.Title);
+            }
+            if (!importedHeaders.Contains(MyRow.Fields.CappedCabinCapacity.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column" + MyRow.Fields.CappedCabinCapacity.Title);
+            }
+            if (!importedHeaders.Contains(MyRow.Fields.SingleCabinCapacity.Title.ToLower(), StringComparer.OrdinalIgnoreCase) == true)
+            {
+                response.ErrorList.Add("Missing Required Column" + MyRow.Fields.SingleCabinCapacity.Title);
             }
 
             if (response.ErrorList.Count > 0)
@@ -156,12 +164,12 @@ namespace DAP.DWSupport.Endpoints
                      * it does not exist, it creates a new entry. */
 
                     // ---------- Get fields to check against DB (as Composite Prim Key) ---------- //
-                    string cruise_cd = "";
+                    string ship_cd = "";
                     DateTime effective_from_date = DateTime.MinValue;
 
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.CruiseCd.Title.ToLower();   //excel field name
+                    fieldTitle = myFields.ShipCd.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -170,7 +178,7 @@ namespace DAP.DWSupport.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            cruise_cd = a; //designate the field to be updated in the system
+                            ship_cd = a; //designate the field to be updated in the system
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
@@ -201,7 +209,7 @@ namespace DAP.DWSupport.Endpoints
                     var currentRow = uow.Connection.TryFirst<CappingAdjustmentsSuppRow>(q => q
                         .Select(myFields.Id)
                         .Where(
-                            myFields.CruiseCd == cruise_cd
+                            myFields.ShipCd == ship_cd
                             &&
                             myFields.EffectiveFromDate == effective_from_date
                         )
@@ -211,7 +219,7 @@ namespace DAP.DWSupport.Endpoints
                     if (currentRow == null)
                         currentRow = new CappingAdjustmentsSuppRow
                         {                 
-                            CruiseCd = cruise_cd,
+                            ShipCd = ship_cd,
                             EffectiveFromDate = effective_from_date
                         };
                         else
@@ -239,7 +247,7 @@ namespace DAP.DWSupport.Endpoints
                     }
 
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.ShipCd.Title.ToLower();            //excel field name
+                    fieldTitle = myFields.CruiseCd.Title.ToLower();            //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -248,7 +256,7 @@ namespace DAP.DWSupport.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.ShipCd = a; //designate the field to be updated in the system
+                            currentRow.CruiseCd = a; //designate the field to be updated in the system
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
@@ -287,7 +295,7 @@ namespace DAP.DWSupport.Endpoints
                     }
 
                     entType = jImpHelp.entryType.dateTime;    //excel field type
-                    fieldTitle = myFields.EffectiveToDate.Title;      //excel field name
+                    fieldTitle = myFields.EffectiveToDate.Title.ToLower();      //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {

@@ -28,7 +28,6 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Exclusions", typeof(MyPages.SailingExclusionSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Voyage Budget Final", typeof(MyPages.VoyageBudgetFinalSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Res Exclusion Supp", typeof(MyPages.ResExclusionSuppController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DW Support/Capping Adjustments", typeof(MyPages.CappingAdjustmentsSuppController), icon: null)]
 
 
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Cruise Segment Days Override", typeof(MyPages.CruiseSegmentDaysOverrideController), icon: null)]
@@ -38,6 +37,7 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Rev Detail Field", typeof(MyPages.RevDetailFieldController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Dim Cruise Flags", typeof(MyPages.DimCruiseFlagsController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Crlink Override Finance", typeof(MyPages.CrlinkOverrideFinanceController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Capping Adjustments", typeof(MyPages.CappingAdjustmentsSuppController), icon: null)]
 
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Amenity Details Supp", typeof(MyPages.AmenityDetailsSuppController), icon: null)]
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Import Error Log", typeof(MyPages.ImportErrorLogController), icon: null)]
