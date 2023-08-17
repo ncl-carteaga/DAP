@@ -1,7 +1,7 @@
 ﻿
-//  ======================= DUAL EXCEL IMPORTS =======================  //
+//  ======================= MULTI EXCEL IMPORTS =======================  //
 
-    // This module contains 2 different endpoints for excel import;     //
+    // This module contains 3 different endpoints for excel import;     //
     // these are selected based on param passed into the typescript;    //
     // additionally, row IDs are dynamically found from values          //
     // retrieved from Excel.                                            //
@@ -20,16 +20,12 @@ namespace DAP.NCLHDSAR.Endpoints
     using DAP.NCLHDSAR.Entities;
     using DAP.NCLHDSAR.Lookups;
     using OfficeOpenXml;
-    using Serenity;
-    using Serenity.Data;
     using Serenity.Reporting;
-    using Serenity.Services;
     using Serenity.Web;
     using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Web.Mvc;
     using MyRow = Entities.MarketingRequestRow;
     using jImpHelp = myImportFields.ExcelImportHelper;
     using myImpHelp = myImportHelper.ExcelImportHelper;
@@ -130,7 +126,7 @@ namespace DAP.NCLHDSAR.Endpoints
             /*Add Imported file headers to proper list*/
             foreach (var q in headers)
             {
-                importedHeaders.Add(q.Text);
+                importedHeaders.Add(q.Text.ToLower());
                 //response.ErrorList.Add(q.Text);
             }
 
@@ -572,7 +568,7 @@ namespace DAP.NCLHDSAR.Endpoints
             /*Add Imported file headers to proper list*/
             foreach (var q in headers)
             {
-                importedHeaders.Add(q.Text);
+                importedHeaders.Add(q.Text.ToLower());
                 //response.ErrorList.Add(q.Text);
             }
 
@@ -622,8 +618,8 @@ namespace DAP.NCLHDSAR.Endpoints
                     string brand = "";
                     string channel = "";
 
-                    entType = jImpHelp.entryType.String;                //designate the type of item
-                    fieldTitle = myFields.IsReturnedMailCd.Title.ToLower();       //designate the field to be looked at
+                    entType = jImpHelp.entryType.String;                            //designate the type of item
+                    fieldTitle = myFields.IsReturnedMailCd.Title.ToLower();         //designate the field to be looked at
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -1050,7 +1046,7 @@ namespace DAP.NCLHDSAR.Endpoints
             systemHeaders.Add("ID");
             foreach (var t in myFields)
             {
-                systemHeaders.Add(t.Title.ToLower().ToLower());
+                systemHeaders.Add(t.Title.ToLower());
             };
 
             /* Not all columns will be expected to be imported. To avoid unnecesary error messages 
@@ -1329,8 +1325,8 @@ namespace DAP.NCLHDSAR.Endpoints
                         importedValues.Clear();
                     }
 
-                    entType = jImpHelp.entryType.String;    //excel field type
-                    fieldTitle = myFields.State.Title.ToLower();      //excel field name
+                    entType = jImpHelp.entryType.String;                //excel field type
+                    fieldTitle = myFields.State.Title.ToLower();        //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
