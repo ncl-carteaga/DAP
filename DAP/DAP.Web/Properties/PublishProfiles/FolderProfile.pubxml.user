@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/05/2013 06:41:36</publishTime>
     </File>
     <File Include="bin/DAP.Web.dll">
-      <publishTime>07/11/2023 14:22:37</publishTime>
+      <publishTime>08/14/2023 18:39:12</publishTime>
     </File>
     <File Include="bin/DAP.Web.pdb">
-      <publishTime>07/11/2023 14:22:37</publishTime>
+      <publishTime>08/14/2023 18:39:12</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>05/16/2018 18:40:30</publishTime>
@@ -1882,10 +1882,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/24/2023 14:21:32</publishTime>
     </File>
     <File Include="Content/site/site.css">
-      <publishTime>06/05/2023 09:18:04</publishTime>
+      <publishTime>08/14/2023 15:57:44</publishTime>
     </File>
     <File Include="Content/site/site.dwsupport.less">
-      <publishTime>05/05/2023 06:58:45</publishTime>
+      <publishTime>08/14/2023 15:57:44</publishTime>
     </File>
     <File Include="Content/site/site.finance.less">
       <publishTime>01/24/2023 14:29:52</publishTime>
@@ -2188,7 +2188,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:28</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>07/11/2023 14:15:55</publishTime>
+      <publishTime>08/14/2023 18:37:43</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>04/12/2019 14:26:24</publishTime>
@@ -2303,6 +2303,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Modules/DWSupport/AmenityMasterDetail/Index.cshtml">
       <publishTime>01/24/2023 15:14:32</publishTime>
+    </File>
+    <File Include="Modules/DWSupport/CappingAdjustmentsSupp/CappingAdjustmentsSuppIndex.cshtml">
+      <publishTime>08/14/2023 15:57:44</publishTime>
     </File>
     <File Include="Modules/DWSupport/CasinoSlotMasterDescSupp/CasinoSlotMasterDescSuppIndex.cshtml">
       <publishTime>01/24/2023 15:14:32</publishTime>
@@ -4075,7 +4078,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:27:04</publishTime>
     </File>
     <File Include="Scripts/site/DAP.Web.js">
-      <publishTime>06/27/2023 10:06:08</publishTime>
+      <publishTime>08/14/2023 15:57:44</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>04/12/2019 14:26:28</publishTime>
