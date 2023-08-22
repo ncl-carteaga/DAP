@@ -45,6 +45,9 @@ namespace DAP.NCLHDSAR.Repositories
 
         private class MySaveHandler : SaveRequestHandler<MyRow>
         {
+            // Filter list for channels (1) Email - (4) Digital
+            private List<short> valid_channels = new List<short>() { 1, 4 };
+
             protected override void BeforeSave()
             {
                 base.BeforeSave();
@@ -82,7 +85,7 @@ namespace DAP.NCLHDSAR.Repositories
                     }
                     //  ------------------ Opt Outs Validation ------------------ //
                     else if (Row.RequestTypeId == 1)
-                    {                        
+                    {   
                         if (Row.ChannelId == null)
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.ChannelDescription.Name));
@@ -90,6 +93,10 @@ namespace DAP.NCLHDSAR.Repositories
                         else if (Row.BrandId < 1)
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
+                        }
+                        else if (!valid_channels.Contains((short)Row.ChannelId))
+                        {
+                            throw new ValidationError(string.Format("Field [{0}] is required when Channel is not Email or Digital.", MyRow.Fields.Address1.Name));
                         }
                     }
                 }
@@ -135,6 +142,10 @@ namespace DAP.NCLHDSAR.Repositories
                         else if (Row.BrandId < 1)
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
+                        }
+                        else if (!valid_channels.Contains((short)Row.ChannelId))
+                        {
+                            throw new ValidationError(string.Format("Field [{0}] is required when Channel is not Email or Digital.", MyRow.Fields.Address1.Name));
                         }
                     }
                 }
