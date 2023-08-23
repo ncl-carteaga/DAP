@@ -1,5 +1,4 @@
-﻿
-namespace DAP.PCHDW {
+﻿namespace DAP.PCHDW {
     export namespace DimCompanyService {
         export const baseUrl = 'PCHDW/DimCompany';
 
@@ -9,12 +8,12 @@ namespace DAP.PCHDW {
         export declare function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DimCompanyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
         export declare function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DimCompanyRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
 
-        export namespace Methods {
-            export declare const Create: string;
-            export declare const Update: string;
-            export declare const Delete: string;
-            export declare const Retrieve: string;
-            export declare const List: string;
+        export declare const enum Methods {
+            Create = "PCHDW/DimCompany/Create",
+            Update = "PCHDW/DimCompany/Update",
+            Delete = "PCHDW/DimCompany/Delete",
+            Retrieve = "PCHDW/DimCompany/Retrieve",
+            List = "PCHDW/DimCompany/List"
         }
 
         [
@@ -24,10 +23,10 @@ namespace DAP.PCHDW {
             'Retrieve', 
             'List'
         ].forEach(x => {
-            (<any>DimCompanyService)[x] = function (r, s, o) { 
-                return Q.serviceRequest(baseUrl + '/' + x, r, s, o); 
+            (<any>DimCompanyService)[x] = function (r, s, o) {
+                return Q.serviceRequest(baseUrl + '/' + x, r, s, o);
             };
-            (<any>Methods)[x] = baseUrl + '/' + x;
         });
     }
 }
+

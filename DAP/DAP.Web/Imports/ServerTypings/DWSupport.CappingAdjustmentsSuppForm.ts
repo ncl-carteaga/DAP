@@ -1,6 +1,6 @@
 ﻿namespace DAP.DWSupport {
     export interface CappingAdjustmentsSuppForm {
-        CompanyCd: PCHODS.CompanyEditor;
+        CompanyCd: Serenity.LookupEditor;
         ShipCd: Serenity.LookupEditor;
         CruiseCd: Serenity.StringEditor;
         CappedCabinCapacity: Serenity.IntegerEditor;
@@ -22,22 +22,21 @@
                 CappingAdjustmentsSuppForm.init = true;
 
                 var s = Serenity;
-                var w0 = PCHODS.CompanyEditor;
-                var w1 = s.LookupEditor;
-                var w2 = s.StringEditor;
-                var w3 = s.IntegerEditor;
-                var w4 = s.DateEditor;
+                var w0 = s.LookupEditor;
+                var w1 = s.StringEditor;
+                var w2 = s.IntegerEditor;
+                var w3 = s.DateEditor;
 
                 Q.initFormType(CappingAdjustmentsSuppForm, [
                     'CompanyCd', w0,
-                    'ShipCd', w1,
-                    'CruiseCd', w2,
-                    'CappedCabinCapacity', w3,
-                    'SingleCabinCapacity', w3,
-                    'EffectiveFromDate', w4,
-                    'EffectiveToDate', w4,
-                    'ModifiedTs', w4,
-                    'ModifiedByNam', w2
+                    'ShipCd', w0,
+                    'CruiseCd', w1,
+                    'CappedCabinCapacity', w2,
+                    'SingleCabinCapacity', w2,
+                    'EffectiveFromDate', w3,
+                    'EffectiveToDate', w3,
+                    'ModifiedTs', w3,
+                    'ModifiedByNam', w1
                 ]);
             }
         }
