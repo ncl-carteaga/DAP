@@ -25,7 +25,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.Id[this] = value; }
         }
 
-        [DisplayName("Company Cd"), Column("COMPANY_CD"), Size(3), QuickSearch, LookupEditor(typeof(CompanyCDONRLookupEditor))]
+        [DisplayName("Company Cd"), Column("COMPANY_CD"), Size(3), LookupEditor(typeof(CompanyCDONRLookupEditor)), Hint("100 Oceania Cruises / 110 Regent Seven Seas Cruises")]
         public String CompanyCd
         {
             get { return Fields.CompanyCd[this]; }

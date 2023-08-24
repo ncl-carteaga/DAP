@@ -43,8 +43,6 @@ namespace DAP.DWSupport.Repositories
             {
                 base.BeforeSave();
 
-                var t = Row;
-
                 if (    Row.ShipCd.IsEmptyOrNull() 
                     ||  Row.EffectiveFromDate.ToString().IsEmptyOrNull() 
                     ||  Row.EffectiveToDate.ToString().IsEmptyOrNull()

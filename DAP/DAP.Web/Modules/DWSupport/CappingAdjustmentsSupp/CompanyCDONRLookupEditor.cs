@@ -16,14 +16,14 @@
     {
         public CompanyCDONRLookupEditor()
         {
-            IdField = TextField = DimCompanyRow.Fields.CompanyNm.PropertyName;
+            IdField = TextField = DimCompanyRow.Fields.CompanyCd.PropertyName;
         }
 
         protected override void PrepareQuery(SqlQuery query)
         {
             var fld = DimCompanyRow.Fields;
             query.Distinct(false)
-                .Select(fld.CompanyNm)
+                .Select(fld.CompanyCd)
                 .Where(
                     new Criteria(fld.CompanyCd) == 100
                     |
