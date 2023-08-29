@@ -14,6 +14,7 @@ namespace DAP.DWSupport {
         protected updateInterface() {
             super.updateInterface();
 
+            // default values on interface load
             this.form.AmenityPtsQty.set_value(0);
             this.form.MinCabinQty.set_value(0);
             this.form.SailDayFromQty.set_value(0);
