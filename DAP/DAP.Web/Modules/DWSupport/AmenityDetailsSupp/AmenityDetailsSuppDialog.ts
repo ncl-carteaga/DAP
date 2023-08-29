@@ -11,5 +11,13 @@ namespace DAP.DWSupport {
 
         protected form = new AmenityDetailsSuppForm(this.idPrefix);
 
+        protected updateInterface() {
+            super.updateInterface();
+
+            this.form.AmenityPtsQty.set_value(0);
+            this.form.MinCabinQty.set_value(0);
+            this.form.SailDayFromQty.set_value(0);
+            this.form.SailDayToQty.set_value(0);
+        }
     }
 }
