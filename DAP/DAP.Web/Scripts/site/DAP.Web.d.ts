@@ -10452,6 +10452,7 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: AmenityDetailsSuppForm;
+        protected updateInterface(): void;
     }
 }
 declare namespace DAP.DWSupport {

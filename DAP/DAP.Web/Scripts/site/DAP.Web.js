@@ -11630,6 +11630,14 @@ var DAP;
             AmenityDetailsSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.AmenityDetailsSuppRow.localTextPrefix; };
             AmenityDetailsSuppDialog.prototype.getNameProperty = function () { return DWSupport.AmenityDetailsSuppRow.nameProperty; };
             AmenityDetailsSuppDialog.prototype.getService = function () { return DWSupport.AmenityDetailsSuppService.baseUrl; };
+            AmenityDetailsSuppDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                // default values on interface load
+                this.form.AmenityPtsQty.set_value(0);
+                this.form.MinCabinQty.set_value(0);
+                this.form.SailDayFromQty.set_value(0);
+                this.form.SailDayToQty.set_value(0);
+            };
             AmenityDetailsSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], AmenityDetailsSuppDialog);
