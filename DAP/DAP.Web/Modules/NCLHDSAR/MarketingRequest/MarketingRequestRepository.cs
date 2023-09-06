@@ -143,8 +143,9 @@ namespace DAP.NCLHDSAR.Repositories
                         {
                             throw new ValidationError(string.Format("Field: {0} must be filled out.", MyRow.Fields.BrandId.Name));
                         }
-                        else if (!valid_channels.Contains((short)Row.ChannelId))
+                        else if (Row.Address1 == null && !valid_channels.Contains((short)Row.ChannelId))
                         {
+                            // requires address 1 present and valid channel
                             throw new ValidationError(string.Format("Field [{0}] is required when Channel is not Email or Digital.", MyRow.Fields.Address1.Name));
                         }
                     }
