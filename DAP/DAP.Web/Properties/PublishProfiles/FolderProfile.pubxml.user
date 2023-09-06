@@ -16,10 +16,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/05/2013 06:41:36</publishTime>
     </File>
     <File Include="bin/DAP.Web.dll">
-      <publishTime>08/24/2023 09:52:11</publishTime>
+      <publishTime>08/30/2023 08:22:34</publishTime>
     </File>
     <File Include="bin/DAP.Web.pdb">
-      <publishTime>08/24/2023 09:52:11</publishTime>
+      <publishTime>08/30/2023 08:22:34</publishTime>
     </File>
     <File Include="bin/Dapper.dll">
       <publishTime>05/16/2018 18:40:30</publishTime>
@@ -2188,7 +2188,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:26:28</publishTime>
     </File>
     <File Include="Imports/ClientTypes/ClientTypes.log">
-      <publishTime>08/24/2023 09:06:00</publishTime>
+      <publishTime>08/30/2023 08:06:01</publishTime>
     </File>
     <File Include="Imports/CodeGenerationHelpers.ttinclude">
       <publishTime>04/12/2019 14:26:24</publishTime>
@@ -4078,7 +4078,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/12/2019 14:27:04</publishTime>
     </File>
     <File Include="Scripts/site/DAP.Web.js">
-      <publishTime>08/24/2023 09:04:11</publishTime>
+      <publishTime>08/30/2023 08:03:29</publishTime>
     </File>
     <File Include="Scripts/site/ScriptBundles.json">
       <publishTime>04/12/2019 14:26:28</publishTime>
