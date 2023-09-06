@@ -10602,8 +10602,8 @@ declare namespace DAP.DWSupport {
         protected getNameProperty(): string;
         protected getService(): string;
         protected form: CreditCardAdjSuppForm;
-        constructor();
         protected getToolbarButtons(): Serenity.ToolButton[];
+        protected updateInterface(): void;
     }
 }
 declare namespace DAP.DWSupport {

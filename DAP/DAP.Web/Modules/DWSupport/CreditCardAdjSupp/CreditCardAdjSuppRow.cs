@@ -47,7 +47,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.ParticipationRate[this] = value; }
         }
 
-        [DisplayName("Blended Rate"), Column("BLENDED_RATE"), Size(18), Scale(2), NotNull, ReadOnly(true)]
+        [DisplayName("Blended Rate"), Column("BLENDED_RATE"), Size(18), Scale(2), NotNull]
         public Decimal? BlendedRate
         {
             get { return Fields.BlendedRate[this]; }
