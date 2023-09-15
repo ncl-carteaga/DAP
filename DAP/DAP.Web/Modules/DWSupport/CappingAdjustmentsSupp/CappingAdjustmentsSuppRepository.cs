@@ -60,8 +60,6 @@ namespace DAP.DWSupport.Repositories
                     List<dynamic> result_ls1 = this.Connection.Query(query_sc1).ToList();
                     result_ls1.ForEach(n => str_ls1.Add(n.ShipCode));
 
-                    var t = Row.ShipCd;
-
                     if (str_ls1.Contains(Row.ShipCd))
                     {
                         throw new ValidationError(string.Format(
@@ -83,8 +81,6 @@ namespace DAP.DWSupport.Repositories
                     List<string> str_ls1 = new List<string>();
                     List<dynamic> result_ls1 = this.Connection.Query(query_sc1).ToList();
                     result_ls1.ForEach(n => str_ls1.Add(n.ShipCode));
-
-                    var t = Row.ShipCd;
 
                     if (str_ls1.Contains(Row.ShipCd))
                     {
