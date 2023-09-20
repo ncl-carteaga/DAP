@@ -11,7 +11,7 @@
     //      this module will filter the codes by specific Brand.
     //  =============== ============================ =============== //
 
-    [LookupScript]
+    [LookupScript(Permission = "*")]
     public class ONRShipCodeLookupEditor : RowLookupScript<Entities.ShipRow>
     {
         public ONRShipCodeLookupEditor()
