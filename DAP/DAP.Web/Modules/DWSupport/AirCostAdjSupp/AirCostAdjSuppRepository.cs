@@ -6,7 +6,9 @@ namespace DAP.DWSupport.Repositories
     using Serenity.Data;
     using Serenity.Services;
     using System;
+    using System.Collections.Generic;
     using System.Data;
+    using System.Linq;
     using MyRow = Entities.AirCostAdjSuppRow;
 
     public class AirCostAdjSuppRepository
@@ -44,27 +46,36 @@ namespace DAP.DWSupport.Repositories
             {
                 base.BeforeSave();
 
-                if (IsUpdate)
+                // --------- CONSTRAINT FOR INSERTING / UPDATING --------- //
+                // New records will have a default effective date.
+                // Updated records will cause an update
+                // to a previous record and will insert a new one.
+                // --------- ----------------------------------- --------- //
+                if (this.Connection.Exists<MyRow>(
+                    MyRow.Fields.VoyageCd == Row.VoyageCd
+                    &&
+                    MyRow.Fields.RmEstimatedAirCost != Row.RmEstimatedAirCost.Value
+                ))
                 {
-                    if (this.Connection.Exists<AirCostAdjSuppRow>(MyRow.Fields.VoyageCd == Row.VoyageCd &&
-                                                                  MyRow.Fields.EffectiveToDt > DateTime.Now &&
-                                                                  MyRow.Fields.AirCostAdjId != Row.AirCostAdjId.Value))
-                    {
-                        throw new ValidationError("An Active Air Cost Entry Already Exists For This Voyage CD");
-                    }
+                    // SELECT previous record
+                    var row_old_rec = this.Connection.First<MyRow>(
+                        new Criteria(MyRow.Fields.VoyageCd) == Row.VoyageCd &
+                        new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999"));
+                    // NEW row for insert
+                    //Row.VoyageCd = "VIV-20231229-09-SJU-SJU";
+                    var row_new_rec = Row;
+                    row_new_rec.EffectiveToDt = DateTime.Parse("12/30/9999");
+                    row_new_rec.VoyageCd = Row.VoyageCd;
+                    row_new_rec.RmEstimatedAirCost = Row.RmEstimatedAirCost;
+                    // UPDATE previous record
+                    row_old_rec.EffectiveToDt = row_new_rec.EffectiveFromDt.Value.AddDays(-1);
+                    this.Connection.UpdateById<MyRow>(row_old_rec);
+                    // INSERT new record
+                    this.Connection.Insert<MyRow>(row_new_rec);
                 }
-
-                if (IsCreate)
-                {
-                    if (this.Connection.Exists<AirCostAdjSuppRow>(MyRow.Fields.VoyageCd == Row.VoyageCd &&
-                                                                  MyRow.Fields.EffectiveToDt > DateTime.Now ))
-                    {
-                        throw new ValidationError("An Active Air Cost Entry Already Exists For This Voyage CD.");
-                    }
-                }
-
-
             }
+
+
 
             protected override void SetInternalFields()
             {
@@ -84,6 +95,14 @@ namespace DAP.DWSupport.Repositories
         }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
-        private class MyListHandler : ListRequestHandler<MyRow> { }
+        private class MyListHandler : ListRequestHandler<MyRow>
+        {
+            protected override void ApplyFilters(SqlQuery query)
+            {
+                base.ApplyFilters(query);
+
+                query.Where(new Criteria(fld.EffectiveToDt) == DateTime.Parse("12/30/9999"));
+            }
+        }
     }
 }

@@ -112,7 +112,7 @@ namespace DAP.DWSupport.Endpoints
             /*Add Imported file headers to proper list*/
             foreach (var q in headers)
             {
-                importedHeaders.Add(q.Text);
+                importedHeaders.Add(q.Text.ToLower());
                 //response.ErrorList.Add(q.Text);
             }
 
@@ -139,10 +139,10 @@ namespace DAP.DWSupport.Endpoints
             systemHeaders.Add("ID");
             foreach (var t in myFields)
             {
-                systemHeaders.Add(t.Title);
+                systemHeaders.Add(t.Title.ToLower());
             };
 
-            /* Not all columns will be expected to be imported. To avoid unnecesary error messages 
+            /* Not all columns will be expected to be imported. To avoid unnecesary error messages
              * we add the titles of the fields we want ignored here.*/
             //exceptionHeaders.Add(myFields.AddressLogId.Title);
 
@@ -162,10 +162,11 @@ namespace DAP.DWSupport.Endpoints
 
                     // ---------- Set fields to check against DB - Fill from excel vals ---------- //
                     string voyage_code = "";
+                    decimal cost = 0; 
 
                     // Load record as string and parse manually later to date
                     entType = jImpHelp.entryType.String;            //excel field type
-                    fieldTitle = myFields.VoyageCd.Title;           //excel field name
+                    fieldTitle = myFields.VoyageCd.Title.ToLower();           //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -181,27 +182,9 @@ namespace DAP.DWSupport.Endpoints
                     }
 
 
-                    // Check if row exists in DB
-                    var currentRow = uow.Connection.TryFirst<AirCostAdjSuppRow>(q => q
-                        .Select(myFields.AirCostAdjId)
-                        .Where(
-                            myFields.VoyageCd == voyage_code
-                        )
-                    );
-
-                    // Row doesn't exist in DB
-                    if (currentRow == null)
-                        currentRow = new AirCostAdjSuppRow
-                        {
-                            VoyageCd = voyage_code
-                        };
-                    else
-                    { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
-
-
                     // ----------   Create Row from Excel Values   ---------- //
-                    entType = jImpHelp.entryType.Decimal;                //excel field type
-                    fieldTitle = myFields.RmEstimatedAirCost.Title;               //excel field name
+                    entType = jImpHelp.entryType.Decimal;                       //excel field type
+                    fieldTitle = myFields.RmEstimatedAirCost.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -210,14 +193,35 @@ namespace DAP.DWSupport.Endpoints
                         a = jImpHelp.myImportEntry(importedValues, myErrors, sysHeader, row, entType, myConnection);
                         if (a != null)
                         {
-                            currentRow.RmEstimatedAirCost = a; //designate the field to be updated in the system
+                            cost = a;              //designate the field to be updated in the system
                         }
                         sysHeader.Clear();
                         importedValues.Clear();
                     }
 
-                    entType = jImpHelp.entryType.dateTime;            //excel field type
-                    fieldTitle = myFields.EffectiveFromDt.Title;         //excel field name
+
+                    // Check if row exists in DB
+                    var currentRow = uow.Connection.TryFirst<AirCostAdjSuppRow>(q => q
+                        .Select(myFields.AirCostAdjId)
+                        .Where(
+                            myFields.VoyageCd == voyage_code
+                            &&
+                            myFields.RmEstimatedAirCost == cost
+                        )
+                    );
+
+                    // Row doesn't exist in DB
+                    if (currentRow == null)
+                        currentRow = new AirCostAdjSuppRow
+                        {
+                            VoyageCd = voyage_code,
+                            RmEstimatedAirCost = cost
+                        };
+                    else
+                    { /* avoid assignment errors */ currentRow.TrackWithChecks = false; }
+
+                    entType = jImpHelp.entryType.dateTime;                  //excel field type
+                    fieldTitle = myFields.EffectiveFromDt.Title.ToLower();  //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -233,7 +237,7 @@ namespace DAP.DWSupport.Endpoints
                     }
 
                     entType = jImpHelp.entryType.dateTime;            //excel field type
-                    fieldTitle = myFields.EffectiveToDt.Title;         //excel field name
+                    fieldTitle = myFields.EffectiveToDt.Title.ToLower();         //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
