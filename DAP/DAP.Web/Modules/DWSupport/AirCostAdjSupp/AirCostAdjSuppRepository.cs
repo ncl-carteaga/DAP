@@ -60,7 +60,7 @@ namespace DAP.DWSupport.Repositories
                     )
                 ){
                     throw new ValidationError(string.Format(
-                        "An entry for this {0} already exists.", AirCostAdjSuppRow.Fields.AliasName
+                        "An entry for this same record already exists."
                     ));
                 }
 
@@ -93,8 +93,12 @@ namespace DAP.DWSupport.Repositories
                     });
 
                     // close current with today's date
+                    //Row.RmEstimatedAirCost = MyRow.Fields.RmEstimatedAirCost.value;
                     Row.EffectiveToDt = DateTime.Today;
-
+                    if (row_old_rec.AirCostAdjId != null){
+                        Row.RmEstimatedAirCost = row_old_rec.RmEstimatedAirCost;
+                        this.Connection.UpdateById<MyRow>(row_old_rec);
+                    }
                 }
                 // INSERT DETECTED
                 else if (IsCreate)
@@ -103,6 +107,7 @@ namespace DAP.DWSupport.Repositories
                     Row.EffectiveToDt = DateTime.Parse("12/30/9999");
                     // Default values for previous record
                     if (row_old_rec.AirCostAdjId != null){
+                        // prevent new dialog updates to this field from updating historical record
                         row_old_rec.EffectiveToDt = Row.EffectiveFromDt.Value.AddDays(-1);
                         this.Connection.UpdateById<MyRow>(row_old_rec);
                     }
