@@ -51,27 +51,61 @@ namespace DAP.DWSupport.Repositories
                 // Updated records will cause an update
                 // to a previous record and will insert a new one.
                 // --------- ----------------------------------- --------- //
+
+                // SELECT previous record, cannot update if exists
                 if (this.Connection.Exists<MyRow>(
-                    MyRow.Fields.VoyageCd == Row.VoyageCd
-                    &&
-                    MyRow.Fields.RmEstimatedAirCost != Row.RmEstimatedAirCost.Value
-                ))
-                {
-                    // SELECT previous record
-                    var row_old_rec = this.Connection.First<MyRow>(
                         new Criteria(MyRow.Fields.VoyageCd) == Row.VoyageCd &
-                        new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999"));
-                    // NEW row for insert
-                    //Row.VoyageCd = "VIV-20231229-09-SJU-SJU";
-                    var row_new_rec = Row;
-                    row_new_rec.EffectiveToDt = DateTime.Parse("12/30/9999");
-                    row_new_rec.VoyageCd = Row.VoyageCd;
-                    row_new_rec.RmEstimatedAirCost = Row.RmEstimatedAirCost;
-                    // UPDATE previous record
-                    row_old_rec.EffectiveToDt = row_new_rec.EffectiveFromDt.Value.AddDays(-1);
-                    this.Connection.UpdateById<MyRow>(row_old_rec);
-                    // INSERT new record
-                    this.Connection.Insert<MyRow>(row_new_rec);
+                        new Criteria(MyRow.Fields.RmEstimatedAirCost) == Row.RmEstimatedAirCost.Value &
+                        new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999")
+                    )
+                ){
+                    throw new ValidationError(string.Format(
+                        "An entry for this {0} already exists.", AirCostAdjSuppRow.Fields.AliasName
+                    ));
+                }
+
+                // SELECT previous record if exists
+                var row_old_rec = new MyRow();
+                try {
+                    row_old_rec = this.Connection.First<MyRow>(
+                        new Criteria(MyRow.Fields.VoyageCd) == Row.VoyageCd &
+                        new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999")
+                    );
+                } catch (Exception e) {}
+
+
+                // UPDATE DETECTED 
+                if (IsUpdate)
+                {
+                    var user = (UserDefinition)Authorization.UserDefinition;
+
+                    // Create new record
+                    this.Connection.Insert(new AirCostAdjSuppRow
+                    {
+                        VoyageCd = Row.VoyageCd,
+                        RmEstimatedAirCost = Row.RmEstimatedAirCost,
+                        EffectiveFromDt = Row.EffectiveFromDt,
+                        EffectiveToDt = Row.EffectiveToDt,
+                        CreatedTs = DateTime.Now,
+                        CreatedByNam = user.Username.ToUpper(),
+                        ModifiedTs = DateTime.Now,
+                        ModifiedByNam = user.Username.ToUpper()
+                    });
+
+                    // close current with today's date
+                    Row.EffectiveToDt = DateTime.Today;
+
+                }
+                // INSERT DETECTED
+                else if (IsCreate)
+                {
+                    // Default values for new record
+                    Row.EffectiveToDt = DateTime.Parse("12/30/9999");
+                    // Default values for previous record
+                    if (row_old_rec.AirCostAdjId != null){
+                        row_old_rec.EffectiveToDt = Row.EffectiveFromDt.Value.AddDays(-1);
+                        this.Connection.UpdateById<MyRow>(row_old_rec);
+                    }
                 }
             }
 
