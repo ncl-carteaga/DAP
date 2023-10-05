@@ -11630,6 +11630,14 @@ var DAP;
             AmenityDetailsSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.AmenityDetailsSuppRow.localTextPrefix; };
             AmenityDetailsSuppDialog.prototype.getNameProperty = function () { return DWSupport.AmenityDetailsSuppRow.nameProperty; };
             AmenityDetailsSuppDialog.prototype.getService = function () { return DWSupport.AmenityDetailsSuppService.baseUrl; };
+            AmenityDetailsSuppDialog.prototype.updateInterface = function () {
+                _super.prototype.updateInterface.call(this);
+                // default values on interface load
+                this.form.AmenityPtsQty.set_value(0);
+                this.form.MinCabinQty.set_value(0);
+                this.form.SailDayFromQty.set_value(0);
+                this.form.SailDayToQty.set_value(0);
+            };
             AmenityDetailsSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], AmenityDetailsSuppDialog);
@@ -12128,33 +12136,9 @@ var DAP;
         var CreditCardAdjSuppDialog = /** @class */ (function (_super) {
             __extends(CreditCardAdjSuppDialog, _super);
             function CreditCardAdjSuppDialog() {
-                var _this = _super.call(this) || this;
+                var _this = _super !== null && _super.apply(this, arguments) || this;
                 _this.form = new DWSupport.CreditCardAdjSuppForm(_this.idPrefix);
-                // Calculate and refresh [Calculated fields] when base fields change
-                // ---------------------------------------------
-                _this.form.CxBuffer.change(function (e) {
-                    var t1 = _this.form.ParticipationRate.value;
-                    var t2 = _this.form.BaseRate.value;
-                    var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
-                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
-                });
-                _this.form.BaseRate.change(function (e) {
-                    var t1 = _this.form.ParticipationRate.value;
-                    var t2 = _this.form.BaseRate.value;
-                    var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
-                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
-                });
-                _this.form.ParticipationRate.change(function (e) {
-                    var t1 = _this.form.ParticipationRate.value;
-                    var t2 = _this.form.BaseRate.value;
-                    var t3 = _this.form.CxBuffer.value;
-                    _this.form.BlendedRate.set_value((t1 * t2) + t3);
-                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
-                });
                 return _this;
-                // ---------------------------------------------     
             }
             CreditCardAdjSuppDialog.prototype.getFormKey = function () { return DWSupport.CreditCardAdjSuppForm.formKey; };
             CreditCardAdjSuppDialog.prototype.getIdProperty = function () { return DWSupport.CreditCardAdjSuppRow.idProperty; };
@@ -12165,6 +12149,17 @@ var DAP;
                 var b = _super.prototype.getToolbarButtons.call(this);
                 b.splice(Q.indexOf(b, function (x) { return x.cssClass == "delete-button"; }), 1);
                 return b;
+            };
+            CreditCardAdjSuppDialog.prototype.updateInterface = function () {
+                var _this = this;
+                _super.prototype.updateInterface.call(this);
+                // Calculate and refresh [Calculated fields] when base fields change
+                // -------------------------------------------------------------- //
+                this.form.BlendedRate.change(function (e) {
+                    // set proposed rate value = this value
+                    _this.form.ProposedRate.set_value(_this.form.BlendedRate.value);
+                });
+                // -------------------------------------------------------------- //
             };
             CreditCardAdjSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()

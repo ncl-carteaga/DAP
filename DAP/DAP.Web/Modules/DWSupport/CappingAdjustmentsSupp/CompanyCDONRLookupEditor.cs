@@ -11,7 +11,7 @@
     //      this module will filter the codes by specific Description.
     //  =============== ============================ =============== //
 
-    [LookupScript]
+    [LookupScript(Permission = "*")]
     public class CompanyCDONRLookupEditor : RowLookupScript<DimCompanyRow>
     {
         public CompanyCDONRLookupEditor()

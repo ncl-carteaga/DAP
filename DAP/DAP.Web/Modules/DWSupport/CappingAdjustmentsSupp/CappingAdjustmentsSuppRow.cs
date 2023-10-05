@@ -32,14 +32,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.CompanyCd[this] = value; }
         }
 
-        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(50), NotNull, LookupEditor(typeof(ONRShipCodeLookupEditor))]
+        [DisplayName("Ship Cd"), Column("SHIP_CD"), Size(3), NotNull, LookupEditor(typeof(ONRShipCodeLookupEditor))]
         public String ShipCd
         {
             get { return Fields.ShipCd[this]; }
             set { Fields.ShipCd[this] = value; }
         }
 
-        [DisplayName("Cruise Cd"), Column("CRUISE_CD"), Size(50), QuickSearch]
+        [DisplayName("Cruise Cd"), Column("CRUISE_CD"), Size(10), QuickSearch]
         public String CruiseCd
         {
             get { return Fields.CruiseCd[this]; }

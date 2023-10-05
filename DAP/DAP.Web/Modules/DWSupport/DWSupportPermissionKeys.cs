@@ -26,6 +26,12 @@ namespace DAP.DWSupport
         [Description("DWSupport_Revenue")]
         public const string DWSupport_Revenue = "DWSupport:DWSupport_Revenue";
 
+        [Description("DWSupport_Oceania")]
+        public const string Oceania = "DWSupport:Oceania";
+
+        [Description("DWSupport_Regent")]
+        public const string Regent = "DWSupport:Regent";
+
         [DisplayName("Page")]
         public class PagePermission
         {

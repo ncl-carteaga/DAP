@@ -1,6 +1,7 @@
 ﻿namespace DAP.DWSupport.Lookups
 {
     using Entities;
+    using Serenity;
     using Serenity.ComponentModel;
     using Serenity.Data;
     using Serenity.Web;
@@ -10,7 +11,7 @@
     //      this module will filter the codes by specific Brand.
     //  =============== ============================ =============== //
 
-    [LookupScript]
+    [LookupScript(Permission = "*")]
     public class ONRShipCodeLookupEditor : RowLookupScript<Entities.ShipRow>
     {
         public ONRShipCodeLookupEditor()
@@ -20,14 +21,31 @@
 
         protected override void PrepareQuery(SqlQuery query)
         {
-            var fld = Entities.ShipRow.Fields;
-            query.Distinct(true)
-                .Select(fld.ShipCode)
-                .Where(
-                    new Criteria(fld.Brand) == "OCI" 
-                    |
-                    new Criteria(fld.Brand) == "RSSC"
-                );
+            var flds = Entities.ShipRow.Fields;
+
+            // Dynamic drop-down based on user authorization
+            // Ship codes will be selected depending on brand
+
+            if (Authorization.HasPermission(PermissionKeys.Oceania))
+            {
+                query.Distinct(true)
+                    .Select(flds.ShipCode)
+                    .Where(
+                        new Criteria(flds.Brand) == "OCI"
+                        &&
+                        new Criteria(flds.IsActive) == 1
+                    );
+            }
+            else if (Authorization.HasPermission(PermissionKeys.Regent))
+            {
+                query.Distinct(true)
+                    .Select(flds.ShipCode)
+                    .Where(
+                        new Criteria(flds.Brand) == "RSSC"
+                        &&
+                        new Criteria(flds.IsActive) == 1
+                    );
+            }
         }
     }
 }
