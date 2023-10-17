@@ -48,9 +48,14 @@ namespace DAP.DWSupport.Repositories
                 {
                     var sDate = getStartDate();
                     var eDate = getEndDate();
-
-                    if (!ValidStartEndDates())
-                        throw new ValidationError("Start and end dates must match voyage code date. \nStart: "+sDate+"\nEnd: "+eDate);
+                    
+                    // vogaye code must contain date fields
+                    if (!ValidStartEndDates()) {           
+                        throw new ValidationError("Start and end dates must match voyage code date. \nStart: " + sDate + "\nEnd: " + eDate);
+                    // voyage code must contain ship code
+                    } else if (!Row.VoyageCD.Contains(Row.ShipCD)) {
+                        throw new ValidationError("The ship code must be contained within the voyage code.");
+                    }
                 }
             }
 
@@ -65,11 +70,10 @@ namespace DAP.DWSupport.Repositories
                 {
                     Row.CreatedByNam = user.DisplayName;
                     Row.CreatedTs = DateTime.Now;
-                    Row.ModifiedTs = DateTime.Now;
                 }
                 if (IsUpdate)
                 {
-                    Row.ModifiedByNam = user.DisplayName.ToUpper();
+                    Row.ModifiedByName = user.DisplayName.ToUpper();
                     Row.ModifiedTs = DateTime.Now;
                 }
             }
@@ -94,7 +98,7 @@ namespace DAP.DWSupport.Repositories
             {
                 // parse start cruise date     e.g:     PRL-20160111-04-MIA-MIA     /yyyy-mm-dd
                 DateTime sDate;
-                var str = Row.VoyageCd.Substring(4, 8).Insert(4, "-").Insert(7, "-"); // transform date string: 20160111 > 2016-01-11
+                var str = Row.VoyageCD.Substring(4, 8).Insert(4, "-").Insert(7, "-"); // transform date string: 20160111 > 2016-01-11
                 var validDate = DateTime.TryParse(str, out sDate);
 
                 // invalid date parsing, return default value
@@ -109,7 +113,7 @@ namespace DAP.DWSupport.Repositories
                 if (getStartDate() == dDate) return dDate;
 
                 DateTime eDate;
-                var length = Convert.ToDouble(Row.VoyageCd.Substring(13, 2));
+                var length = Convert.ToDouble(Row.VoyageCD.Substring(13, 2));
                 // get end date by adding trip length to start date 
                 eDate = getStartDate().AddDays(length);
 

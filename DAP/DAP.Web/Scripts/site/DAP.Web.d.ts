@@ -1687,45 +1687,27 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CmiSuppForm {
-        ShipCd: Serenity.LookupEditor;
-        SailId: Serenity.IntegerEditor;
-        AgencyId: Serenity.IntegerEditor;
-        VoyageCd: Serenity.StringEditor;
-        CmiTypeCd: Serenity.StringEditor;
-        CruiseRevAmt: Serenity.DecimalEditor;
-        NcfAmt: Serenity.DecimalEditor;
-        CommissionAmt: Serenity.DecimalEditor;
-        CmiAmenityCostAmt: Serenity.DecimalEditor;
-        CabinQty: Serenity.IntegerEditor;
-        PaxQty: Serenity.IntegerEditor;
+        Id: Serenity.IntegerEditor;
+        SailYear: Serenity.IntegerEditor;
+        EffectiveStartDate: Serenity.DateEditor;
+        EffectiveEndDate: Serenity.DateEditor;
+        VoyageCD: Serenity.StringEditor;
+        ShipCD: Serenity.LookupEditor;
         VoyageStartDate: Serenity.DateEditor;
         VoyageEndDate: Serenity.DateEditor;
-        ContractDat: Serenity.DateEditor;
-        BookingCurrencyCd: Serenity.StringEditor;
-        CreatedTs: Serenity.DateEditor;
+        AgencyID: Serenity.IntegerEditor;
+        Market: Serenity.StringEditor;
+        CmiTypeCd: Serenity.StringEditor;
+        CharterFlagCd: Serenity.StringEditor;
+        Ntr: Serenity.DecimalEditor;
+        PaxDays: Serenity.IntegerEditor;
+        BkCabinDays: Serenity.IntegerEditor;
+        CapacityDays: Serenity.IntegerEditor;
+        CabinCapacityDays: Serenity.IntegerEditor;
         CreatedByNam: Serenity.StringEditor;
-        ModifiedByNam: Serenity.StringEditor;
-        ModifiedTs: Serenity.DateEditor;
-        CmiSubTypeCd: Serenity.StringEditor;
-        CmiSubType2Cd: Serenity.StringEditor;
-        SmCabinFareAmt: Serenity.DecimalEditor;
-        SmCabinFareNonrevAmt: Serenity.DecimalEditor;
-        SmExcessTicketingAmt: Serenity.DecimalEditor;
-        SmCruiseDiscAmt: Serenity.DecimalEditor;
-        SmCostOfSalesAmt: Serenity.DecimalEditor;
-        SmGuestFeesGratsExpenseAmt: Serenity.DecimalEditor;
-        SmCreditCardCostAmt: Serenity.DecimalEditor;
-        SailDat: Serenity.DateEditor;
-        SailDayQty: Serenity.IntegerEditor;
-        CharterDesc: Serenity.StringEditor;
-        RmContractAdjNtrNoSvcAmt: Serenity.StringEditor;
-        OfficeCd: Serenity.StringEditor;
-        RmFinalGuestQty: Serenity.IntegerEditor;
-        RmFinalAdjNtrAmt: Serenity.IntegerEditor;
-        RmFinalAdjNtrNoSvcAmt: Serenity.IntegerEditor;
-        DistrictNbr: Serenity.StringEditor;
-        ContractPriceAmt: Serenity.IntegerEditor;
-        DepositDat: Serenity.DateEditor;
+        ModifiedByName: Serenity.StringEditor;
+        ModifiedTs: Serenity.StringEditor;
+        CreatedTs: Serenity.StringEditor;
     }
     class CmiSuppForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -1735,92 +1717,54 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CmiSuppRow {
-        CmiSurKey?: number;
-        CmiTypeCd?: string;
-        SailId?: number;
-        CruiseRevAmt?: number;
-        NcfAmt?: number;
-        CommissionAmt?: number;
-        CmiAmenityCostAmt?: number;
-        AgencyId?: number;
-        ContractDat?: string;
-        CabinQty?: number;
-        PaxQty?: number;
-        BookingCurrencyCd?: string;
-        CreatedTs?: string;
+        Id?: number;
+        SailYear?: number;
+        EffectiveStartDate?: string;
+        EffectiveEndDate?: string;
+        VoyageCD?: string;
+        ShipCD?: string;
         VoyageStartDate?: string;
         VoyageEndDate?: string;
+        AgencyID?: number;
+        Market?: string;
+        CmiTypeCd?: string;
+        CharterFlagCd?: string;
+        Ntr?: number;
+        PaxDays?: number;
+        BkCabinDays?: number;
+        CapacityDays?: number;
+        CabinCapacityDays?: number;
         CreatedByNam?: string;
-        ModifiedByNam?: string;
+        ModifiedByName?: string;
         ModifiedTs?: string;
-        CmiSubTypeCd?: string;
-        CmiSubType2Cd?: string;
-        VoyageCd?: string;
-        SmCabinFareAmt?: number;
-        SmCabinFareNonrevAmt?: number;
-        SmExcessTicketingAmt?: number;
-        SmCruiseDiscAmt?: number;
-        SmCostOfSalesAmt?: number;
-        SmGuestFeesGratsExpenseAmt?: number;
-        SmCreditCardCostAmt?: number;
-        ShipCd?: string;
-        SailDat?: string;
-        SailDayQty?: number;
-        CharterDesc?: string;
-        RmContractAdjNtrNoSvcAmt?: string;
-        OfficeCd?: string;
-        RmFinalGuestQty?: number;
-        RmFinalAdjNtrAmt?: number;
-        RmFinalAdjNtrNoSvcAmt?: number;
-        DistrictNbr?: string;
-        ContractPriceAmt?: number;
-        DepositDat?: string;
+        CreatedTs?: string;
     }
     namespace CmiSuppRow {
-        const idProperty = "CmiSurKey";
+        const idProperty = "Id";
         const nameProperty = "CmiTypeCd";
         const localTextPrefix = "DWSupport.CmiSupp";
         const enum Fields {
-            CmiSurKey = "CmiSurKey",
-            CmiTypeCd = "CmiTypeCd",
-            SailId = "SailId",
-            CruiseRevAmt = "CruiseRevAmt",
-            NcfAmt = "NcfAmt",
-            CommissionAmt = "CommissionAmt",
-            CmiAmenityCostAmt = "CmiAmenityCostAmt",
-            AgencyId = "AgencyId",
-            ContractDat = "ContractDat",
-            CabinQty = "CabinQty",
-            PaxQty = "PaxQty",
-            BookingCurrencyCd = "BookingCurrencyCd",
-            CreatedTs = "CreatedTs",
+            Id = "Id",
+            SailYear = "SailYear",
+            EffectiveStartDate = "EffectiveStartDate",
+            EffectiveEndDate = "EffectiveEndDate",
+            VoyageCD = "VoyageCD",
+            ShipCD = "ShipCD",
             VoyageStartDate = "VoyageStartDate",
             VoyageEndDate = "VoyageEndDate",
+            AgencyID = "AgencyID",
+            Market = "Market",
+            CmiTypeCd = "CmiTypeCd",
+            CharterFlagCd = "CharterFlagCd",
+            Ntr = "Ntr",
+            PaxDays = "PaxDays",
+            BkCabinDays = "BkCabinDays",
+            CapacityDays = "CapacityDays",
+            CabinCapacityDays = "CabinCapacityDays",
             CreatedByNam = "CreatedByNam",
-            ModifiedByNam = "ModifiedByNam",
+            ModifiedByName = "ModifiedByName",
             ModifiedTs = "ModifiedTs",
-            CmiSubTypeCd = "CmiSubTypeCd",
-            CmiSubType2Cd = "CmiSubType2Cd",
-            VoyageCd = "VoyageCd",
-            SmCabinFareAmt = "SmCabinFareAmt",
-            SmCabinFareNonrevAmt = "SmCabinFareNonrevAmt",
-            SmExcessTicketingAmt = "SmExcessTicketingAmt",
-            SmCruiseDiscAmt = "SmCruiseDiscAmt",
-            SmCostOfSalesAmt = "SmCostOfSalesAmt",
-            SmGuestFeesGratsExpenseAmt = "SmGuestFeesGratsExpenseAmt",
-            SmCreditCardCostAmt = "SmCreditCardCostAmt",
-            ShipCd = "ShipCd",
-            SailDat = "SailDat",
-            SailDayQty = "SailDayQty",
-            CharterDesc = "CharterDesc",
-            RmContractAdjNtrNoSvcAmt = "RmContractAdjNtrNoSvcAmt",
-            OfficeCd = "OfficeCd",
-            RmFinalGuestQty = "RmFinalGuestQty",
-            RmFinalAdjNtrAmt = "RmFinalAdjNtrAmt",
-            RmFinalAdjNtrNoSvcAmt = "RmFinalAdjNtrNoSvcAmt",
-            DistrictNbr = "DistrictNbr",
-            ContractPriceAmt = "ContractPriceAmt",
-            DepositDat = "DepositDat"
+            CreatedTs = "CreatedTs"
         }
     }
 }
