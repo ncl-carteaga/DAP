@@ -11554,6 +11554,23 @@ var DAP;
                     AmenityDetailCd: this.form.AmenityCd.value
                 });
             };
+            AmenitiesSuppDialog.prototype.updateInterface = function () {
+                var _this = this;
+                _super.prototype.updateInterface.call(this);
+                // duplicate entered data
+                this.form.AmenityDesc.change(function (e) {
+                    var val = _this.form.AmenityDesc.value;
+                    // copy this value to other fields
+                    _this.form.ConditionDesc.value = val;
+                    _this.form.CommentTxt.value = val;
+                });
+                // duplicate entered data
+                this.form.AmenityCostAmt.change(function (e) {
+                    var val = _this.form.AmenityCostAmt.value;
+                    // copy this value to other fields
+                    _this.form.AmenityAddonAmt.value = val;
+                });
+            };
             AmenitiesSuppDialog = __decorate([
                 Serenity.Decorators.registerClass()
             ], AmenitiesSuppDialog);
