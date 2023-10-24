@@ -31,7 +31,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.AmenityCd[this] = value; }
         }
 
-        [DisplayName("Amenity Type ID"), Column("AMENITY_TYPE_ID"), NotNull, ForeignKey("[dbo].[AMENITY_TYPES_SUPP]", "AMENITY_TYPE_ID"), LeftJoin("jAmenityType"), TextualField("AmenityType"), LookupEditor("DWSupport.AmenityType"), QuickFilter]
+        [DisplayName("Amenity Type ID"), Column("AMENITY_TYPE_ID"), NotNull, ForeignKey("[dbo].[AMENITY_TYPES_SUPP]", "AMENITY_TYPE_ID"), LeftJoin("jAmenityType"), TextualField("AmenityType"), LookupEditor("DWSupport.AmenityType"), QuickFilter, DefaultValue(4)]
         public Int64? AmenityTypeId
         {
             get { return Fields.AmenityTypeId[this]; }
@@ -45,7 +45,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.AmenityDesc[this] = value; }
         }
 
-        [DisplayName("Amenity Category"), Column("AMENITY_CATEGORY_CD"), Size(15), NotNull, LookupEditor("DWSupport.AmenityCategory"), QuickFilter]
+        [DisplayName("Amenity Category"), Column("AMENITY_CATEGORY_CD"), Size(15), NotNull, LookupEditor("DWSupport.AmenityCategory"), QuickFilter, DefaultValue("ADD-ON")]
         public String AmenityCategoryCd
         {
             get { return Fields.AmenityCategoryCd[this]; }
@@ -94,7 +94,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.IsPerDiemCd[this] = value; }
         }
 
-        [DisplayName("Currency"), Column("CURRENCY_CD"), Size(5), NotNull, LookupEditor("PCHDW.Currency")]
+        [DisplayName("Currency"), Column("CURRENCY_CD"), Size(5), NotNull, LookupEditor("PCHDW.Currency"), DefaultValue("USD")]
         public String CurrencyCd
         {
             get { return Fields.CurrencyCd[this]; }
