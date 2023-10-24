@@ -23,5 +23,26 @@ namespace DAP.DWSupport {
                 AmenityDetailCd: this.form.AmenityCd.value
             });
         }
+
+        updateInterface() {
+            super.updateInterface();
+
+            // duplicate entered data
+            this.form.AmenityDesc.change(e => {
+                var val = this.form.AmenityDesc.value;
+
+                // copy this value to other fields
+                this.form.ConditionDesc.value = val;
+                this.form.CommentTxt.value = val;
+            });
+
+            // duplicate entered data
+            this.form.AmenityCostAmt.change(e => {
+                var val = this.form.AmenityCostAmt.value;
+
+                // copy this value to other fields
+                this.form.AmenityAddonAmt.value = val;
+            });
+        }
     }
 }

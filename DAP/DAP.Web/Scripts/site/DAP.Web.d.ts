@@ -10375,6 +10375,7 @@ declare namespace DAP.DWSupport {
         protected getService(): string;
         protected form: AmenitiesSuppForm;
         protected onSaveSuccess(response: Serenity.SaveResponse): void;
+        updateInterface(): void;
     }
 }
 declare namespace DAP.DWSupport {
