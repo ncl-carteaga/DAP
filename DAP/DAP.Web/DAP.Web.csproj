@@ -1199,6 +1199,7 @@
     <Content Include="Modules\DWSupport\CrlinkOverrideFinance\CrlinkOverrideFinanceIndex.cshtml" />
     <Content Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupIndex.cshtml" />
     <Content Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\DrydockSupp\DrydockSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1277,6 +1278,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DistrictMasterSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateColumns.ts">
@@ -1854,6 +1858,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\DrydockSupp\DrydockSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\DrydockSupp\DrydockSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3562,6 +3568,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\PCHDW.DimCompanyService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3745,6 +3760,7 @@
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\GroupLookup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesChannelLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesRepLookup.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppStatusLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
     <Compile Include="Modules\DWSupport\GtfSupp\GTFPortLookupEditor.cs" />
@@ -4495,6 +4511,12 @@
     <Compile Include="Modules\PCHDW\DimCompany\DimCompanyRow.cs" />
     <Compile Include="Modules\PCHDW\DimCompany\DimCompanyRepository.cs" />
     <Compile Include="Modules\PCHDW\DimCompany\DimCompanyEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

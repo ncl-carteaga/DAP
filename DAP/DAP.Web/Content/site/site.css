@@ -9777,6 +9777,12 @@ button.ui-button {
 .s-DWSupport-CappingAdjustmentsSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-DrydockSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-DrydockSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

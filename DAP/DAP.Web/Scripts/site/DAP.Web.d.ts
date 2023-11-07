@@ -2235,6 +2235,83 @@ declare namespace DAP.DWSupport {
 declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
+    interface DrydockSuppForm {
+        ShipCd: Serenity.StringEditor;
+        StartDate: Serenity.DateEditor;
+        EndDate: Serenity.DateEditor;
+        NumberOfDays: Serenity.IntegerEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        SailYear: Serenity.IntegerEditor;
+        Status: Serenity.StringEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+    class DrydockSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace DAP.DWSupport {
+    interface DrydockSuppRow {
+        DrydockId?: number;
+        ShipCd?: string;
+        StartDate?: string;
+        EndDate?: string;
+        NumberOfDays?: number;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
+        SailYear?: number;
+        Status?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace DrydockSuppRow {
+        const idProperty = "DrydockId";
+        const nameProperty = "ShipCd";
+        const localTextPrefix = "DWSupport.DrydockSupp";
+        const enum Fields {
+            DrydockId = "DrydockId",
+            ShipCd = "ShipCd",
+            StartDate = "StartDate",
+            EndDate = "EndDate",
+            NumberOfDays = "NumberOfDays",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
+            SailYear = "SailYear",
+            Status = "Status",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace DrydockSuppService {
+        const baseUrl = "DWSupport/DrydockSupp";
+        function Create(request: Serenity.SaveRequest<DrydockSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<DrydockSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<DrydockSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<DrydockSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "DWSupport/DrydockSupp/Create",
+            Update = "DWSupport/DrydockSupp/Update",
+            Delete = "DWSupport/DrydockSupp/Delete",
+            Retrieve = "DWSupport/DrydockSupp/Retrieve",
+            List = "DWSupport/DrydockSupp/List"
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+}
+declare namespace DAP.DWSupport {
     interface ExchangeFixedRateForm {
         CurrencyCd: Serenity.StringEditor;
         ExchangeRate: Serenity.DecimalEditor;
@@ -10663,6 +10740,26 @@ declare namespace DAP.DWSupport {
         constructor(container: JQuery);
         protected createQuickFilters(): void;
         protected createSlickGrid(): Slick.Grid;
+    }
+}
+declare namespace DAP.DWSupport {
+    class DrydockSuppDialog extends Serenity.EntityDialog<DrydockSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: DrydockSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class DrydockSuppGrid extends Serenity.EntityGrid<DrydockSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof DrydockSuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.DWSupport {
