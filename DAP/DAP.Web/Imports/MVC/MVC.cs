@@ -143,6 +143,11 @@ namespace MVC
                 public const string DistrictMasterSuppIndex = "~/Modules/DWSupport/DistrictMasterSupp/DistrictMasterSuppIndex.cshtml";
             }
 
+            public static class DrydockSupp
+            {
+                public const string DrydockSuppIndex = "~/Modules/DWSupport/DrydockSupp/DrydockSuppIndex.cshtml";
+            }
+
             public static class ExchangeFixedRate
             {
                 public const string ExchangeFixedRateIndex = "~/Modules/DWSupport/ExchangeFixedRate/ExchangeFixedRateIndex.cshtml";
