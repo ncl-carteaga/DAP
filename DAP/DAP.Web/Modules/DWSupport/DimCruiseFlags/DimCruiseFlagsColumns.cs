@@ -17,6 +17,8 @@ namespace DAP.DWSupport.Columns
         public Int32 DimCruiseFlagId { get; set; }
         [EditLink]
         public String CruiseCd { get; set; }
+        public String RevenueMgmtMarketSegment { get; set; }
+        public String FinancialSuppressInd { get; set; }
         public String CruiseSegmentCd { get; set; }
         public String ShipCd { get; set; }
         public String CompanyCd { get; set; }
