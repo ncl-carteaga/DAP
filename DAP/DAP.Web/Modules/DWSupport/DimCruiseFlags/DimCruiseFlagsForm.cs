@@ -13,6 +13,8 @@ namespace DAP.DWSupport.Forms
     [BasedOnRow(typeof(Entities.DimCruiseFlagsRow), CheckNames = true)]
     public class DimCruiseFlagsForm
     {
+        public String RevenueMgmtMarketSegment { get; set; }
+        public String FinancialSuppressInd { get; set; }
         public String CruiseCd { get; set; }
         public String CruiseSegmentCd { get; set; }
         public String ShipCd { get; set; }

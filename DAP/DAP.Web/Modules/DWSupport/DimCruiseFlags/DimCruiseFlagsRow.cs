@@ -94,6 +94,20 @@ namespace DAP.DWSupport.Entities
             set { Fields.VarToCurve[this] = value; }
         }
 
+        [DisplayName("Revenue Mgmt Market Segment"), Column("revenue_mgmt_market_segment")]
+        public String RevenueMgmtMarketSegment
+        {
+            get { return Fields.RevenueMgmtMarketSegment[this]; }
+            set { Fields.RevenueMgmtMarketSegment[this] = value; }
+        }
+
+        [DisplayName("Financial Suppress Ind"), Column("financial_suppress_ind")]
+        public String FinancialSuppressInd
+        {
+            get { return Fields.FinancialSuppressInd[this]; }
+            set { Fields.FinancialSuppressInd[this] = value; }
+        }
+
         [DisplayName("Show In Dr001"), Column("show_in_dr001"), Size(1), SelectYNEditor]
         public String ShowInDr001
         {
@@ -188,6 +202,8 @@ namespace DAP.DWSupport.Entities
             public DateTimeField EffectiveFrom;
             public DateTimeField EffectiveTo;
             public DateTimeField LoadDt;
+            public StringField RevenueMgmtMarketSegment;
+            public StringField FinancialSuppressInd;
         }
     }
 }
