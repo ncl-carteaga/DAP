@@ -30,6 +30,7 @@ namespace DAP.NCLHDSAR.Columns
         public String FirstNm { get; set; }
         public String MiddleNm { get; set; }
         public String LastNm { get; set; }
+        public String PhoneNumber { get; set; }
 
         public String Addr1 { get; set; }
 

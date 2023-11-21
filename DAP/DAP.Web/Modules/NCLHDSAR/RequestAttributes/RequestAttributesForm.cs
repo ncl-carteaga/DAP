@@ -28,6 +28,7 @@ namespace DAP.NCLHDSAR.Forms
         public String MiddleNm { get; set; }
         [OneThirdWidth]
         public String LastNm { get; set; }
+        public String PhoneNumber { get; set; }
         public String Addr1 { get; set; }
 
         public String Addr2 { get; set; }
