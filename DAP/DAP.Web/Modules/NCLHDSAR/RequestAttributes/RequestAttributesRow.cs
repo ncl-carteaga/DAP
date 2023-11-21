@@ -88,6 +88,13 @@ namespace DAP.NCLHDSAR.Entities
             set { Fields.LastNm[this] = value; }
         }
 
+        [DisplayName("Phone Number"), Column("PhoneNumber"), Size(15)]
+        public String PhoneNumber
+        {
+            get { return Fields.PhoneNumber[this]; }
+            set { Fields.PhoneNumber[this] = value; }
+        }
+
         [DisplayName("Address 1"), Size(255)]
         
         public String Addr1
@@ -290,6 +297,7 @@ namespace DAP.NCLHDSAR.Entities
             public StringField FirstNm;
             public StringField MiddleNm;
             public StringField LastNm;
+            public StringField PhoneNumber;
             public StringField Addr1;
             public StringField Addr2;
             public StringField CityNm;
