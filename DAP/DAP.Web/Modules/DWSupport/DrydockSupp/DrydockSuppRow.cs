@@ -74,14 +74,14 @@ namespace DAP.DWSupport.Entities
             set { Fields.SailYear[this] = value; }
         }
 
-        [DisplayName("Status"), Column("STATUS"), Size(2), LookupEditor(typeof(DrydockSuppStatusLookupEditor))]
+        [DisplayName("Status"), Column("STATUS"), LookupEditor(typeof(DrydockStatusLookupEditor))]
         public String Status
         {
             get { return Fields.Status[this]; }
             set { Fields.Status[this] = value; }
         }
 
-        [DisplayName("Created Ts"), Column("CREATED_TS"), NotNull]
+        [DisplayName("Created Ts"), Column("CREATED_TS")]
         public DateTime? CreatedTs
         {
             get { return Fields.CreatedTs[this]; }
@@ -95,7 +95,7 @@ namespace DAP.DWSupport.Entities
             set { Fields.CreatedByNam[this] = value; }
         }
 
-        [DisplayName("Modified Ts"), Column("MODIFIED_TS"), NotNull]
+        [DisplayName("Modified Ts"), Column("MODIFIED_TS")]
         public DateTime? ModifiedTs
         {
             get { return Fields.ModifiedTs[this]; }

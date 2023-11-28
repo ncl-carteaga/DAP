@@ -1,13 +1,13 @@
 ﻿namespace DAP.DWSupport {
     export interface DrydockSuppForm {
-        ShipCd: Serenity.StringEditor;
+        ShipCd: Serenity.LookupEditor;
         StartDate: Serenity.DateEditor;
         EndDate: Serenity.DateEditor;
         NumberOfDays: Serenity.IntegerEditor;
         EffectiveFromDt: Serenity.DateEditor;
         EffectiveToDt: Serenity.DateEditor;
         SailYear: Serenity.IntegerEditor;
-        Status: Serenity.StringEditor;
+        Status: Serenity.LookupEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
@@ -25,9 +25,10 @@
                 DrydockSuppForm.init = true;
 
                 var s = Serenity;
-                var w0 = s.StringEditor;
+                var w0 = s.LookupEditor;
                 var w1 = s.DateEditor;
                 var w2 = s.IntegerEditor;
+                var w3 = s.StringEditor;
 
                 Q.initFormType(DrydockSuppForm, [
                     'ShipCd', w0,
@@ -39,9 +40,9 @@
                     'SailYear', w2,
                     'Status', w0,
                     'CreatedTs', w1,
-                    'CreatedByNam', w0,
+                    'CreatedByNam', w3,
                     'ModifiedTs', w1,
-                    'ModifiedByNam', w0
+                    'ModifiedByNam', w3
                 ]);
             }
         }
