@@ -45,13 +45,10 @@ namespace DAP.DWSupport.Repositories
 
                 var user = (UserDefinition)Authorization.UserDefinition;
 
-                if (IsCreate)
+                if (IsCreate || IsUpdate)
                 {
                     Row.CreatedByNam = user.Username.ToUpper();
                     Row.CreatedTs = DateTime.Now;
-                }
-                if (IsUpdate)
-                {
                     Row.ModifiedByNam = user.Username.ToUpper();
                     Row.ModifiedTs = DateTime.Now;
                 }
