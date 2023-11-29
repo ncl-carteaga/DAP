@@ -1200,6 +1200,7 @@
     <Content Include="Modules\DWSupport\Skill2Skillgroup\Skill2SkillgroupIndex.cshtml" />
     <Content Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\DrydockSupp\DrydockSuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1860,6 +1861,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\DrydockSupp\DrydockSuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\DrydockSupp\DrydockSuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3577,6 +3580,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4517,6 +4523,12 @@
     <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppPage.cs" />
     <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppColumns.cs" />
     <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppForm.cs" />
+    <Compile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryRow.cs" />
+    <Compile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryRepository.cs" />
+    <Compile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryPage.cs" />
+    <Compile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryColumns.cs" />
+    <Compile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

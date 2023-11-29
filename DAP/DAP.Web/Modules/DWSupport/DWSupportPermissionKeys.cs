@@ -67,6 +67,7 @@ namespace DAP.DWSupport
             public const string ResExclusionSupp = "DWSupp:Page:ResExclusionSupp";
             public const string CappingAdjustmentsSupp = "DWSupp:Page:CappingAdjustmentsSupp";
             public const string DrydockSupp = "DWSupp:Page:DrydockSupp";
+            public const string MarketingTollfreeBrandInventory = "DWSupp:Page:MarketingTollfreeBrandInventory";
 
             //nvs
             public const string DimCruiseFlags = "DWSupp:Page:DimCruiseFlags";
