@@ -9783,6 +9783,12 @@ button.ui-button {
 .s-DWSupport-DrydockSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-MarketingTollfreeBrandInventoryDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-MarketingTollfreeBrandInventoryDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }
