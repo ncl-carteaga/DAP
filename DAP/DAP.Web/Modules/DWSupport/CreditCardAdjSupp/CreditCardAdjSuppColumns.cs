@@ -17,10 +17,7 @@ namespace DAP.DWSupport.Columns
         public Int32 CreditcardAdjId { get; set; }
         [EditLink]
         public String Office { get; set; }
-        public Decimal BaseRate { get; set; }
-        public Decimal ParticipationRate { get; set; }
         public Decimal BlendedRate { get; set; }
-        public Decimal CxBuffer { get; set; }
         public Decimal ProposedRate { get; set; }
         public DateTime EffectiveFromDt { get; set; }
         public DateTime EffectiveToDt { get; set; }

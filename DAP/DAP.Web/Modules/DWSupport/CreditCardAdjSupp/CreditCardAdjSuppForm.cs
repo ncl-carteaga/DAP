@@ -14,12 +14,6 @@ namespace DAP.DWSupport.Forms
     public class CreditCardAdjSuppForm
     {
         public String Office { get; set; }
-        [Visible(false)]
-        public Decimal BaseRate { get; set; }
-        [Visible(false)]
-        public Decimal ParticipationRate { get; set; }
-        [Visible(false)]
-        public Decimal CxBuffer { get; set; }
         public Decimal BlendedRate { get; set; }
         public Decimal ProposedRate { get; set; }
         public DateTime EffectiveFromDt { get; set; }
