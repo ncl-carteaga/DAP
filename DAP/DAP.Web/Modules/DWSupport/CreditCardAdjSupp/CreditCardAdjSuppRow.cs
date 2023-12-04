@@ -33,32 +33,11 @@ namespace DAP.DWSupport.Entities
             set { Fields.Office[this] = value; }
         }
 
-        [DisplayName("Base Rate"), Column("BASE_RATE"), Size(18), Scale(2), NotNull]
-        public Decimal? BaseRate
-        {
-            get { return Fields.BaseRate[this]; }
-            set { Fields.BaseRate[this] = value; }
-        }
-
-        [DisplayName("Participation Rate"), Column("PARTICIPATION_RATE"), Size(18), Scale(2), NotNull]
-        public Decimal? ParticipationRate
-        {
-            get { return Fields.ParticipationRate[this]; }
-            set { Fields.ParticipationRate[this] = value; }
-        }
-
         [DisplayName("Blended Rate"), Column("BLENDED_RATE"), Size(18), Scale(2), NotNull]
         public Decimal? BlendedRate
         {
             get { return Fields.BlendedRate[this]; }
             set { Fields.BlendedRate[this] = value; }
-        }
-
-        [DisplayName("Cx Buffer"), Column("CX_BUFFER"), Size(18), Scale(2)]
-        public Decimal? CxBuffer
-        {
-            get { return Fields.CxBuffer[this]; }
-            set { Fields.CxBuffer[this] = value; }
         }
 
         [DisplayName("Proposed Rate"), Column("PROPOSED_RATE"), Size(18), Scale(2), ReadOnly(true)]
@@ -131,10 +110,7 @@ namespace DAP.DWSupport.Entities
         {
             public Int32Field CreditcardAdjId;
             public StringField Office;
-            public DecimalField BaseRate;
-            public DecimalField ParticipationRate;
             public DecimalField BlendedRate;
-            public DecimalField CxBuffer;
             public DecimalField ProposedRate;
             public DateTimeField EffectiveFromDt;
             public DateTimeField EffectiveToDt;

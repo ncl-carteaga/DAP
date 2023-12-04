@@ -58,7 +58,7 @@ namespace DAP.DWSupport.Repositories
                 {
                     if (this.Connection.Exists<CreditCardAdjSuppRow>(
                         MyRow.Fields.Office == this.Row.Office &&
-                        MyRow.Fields.EffectiveToDt > DateTime.Now
+                        MyRow.Fields.EffectiveToDt == this.Row.EffectiveToDt.Value
                     ))
                     {
                         throw new ValidationError("There is already an active record for this office.");
