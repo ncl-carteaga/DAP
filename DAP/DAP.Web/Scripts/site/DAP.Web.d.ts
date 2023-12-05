@@ -1461,6 +1461,76 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class CapacitySuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface CapacitySuppForm {
+        ShipCd: Serenity.StringEditor;
+        DoCapacity: Serenity.IntegerEditor;
+        CabinCapacity: Serenity.IntegerEditor;
+        EffectiveFromDt: Serenity.DateEditor;
+        EffectiveToDt: Serenity.DateEditor;
+        SailStartDate: Serenity.DateEditor;
+        SailEndDate: Serenity.DateEditor;
+        CreatedTs: Serenity.DateEditor;
+        CreatedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.DateEditor;
+        ModifiedByNam: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.DWSupport {
+    interface CapacitySuppRow {
+        CapacityId?: number;
+        ShipCd?: string;
+        DoCapacity?: number;
+        CabinCapacity?: number;
+        EffectiveFromDt?: string;
+        EffectiveToDt?: string;
+        SailStartDate?: string;
+        SailEndDate?: string;
+        CreatedTs?: string;
+        CreatedByNam?: string;
+        ModifiedTs?: string;
+        ModifiedByNam?: string;
+    }
+    namespace CapacitySuppRow {
+        const idProperty = "CapacityId";
+        const nameProperty = "ShipCd";
+        const localTextPrefix = "DWSupport.CapacitySupp";
+        namespace Fields {
+            const CapacityId: any;
+            const ShipCd: any;
+            const DoCapacity: any;
+            const CabinCapacity: any;
+            const EffectiveFromDt: any;
+            const EffectiveToDt: any;
+            const SailStartDate: any;
+            const SailEndDate: any;
+            const CreatedTs: any;
+            const CreatedByNam: any;
+            const ModifiedTs: any;
+            const ModifiedByNam: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace CapacitySuppService {
+        const baseUrl = "DWSupport/CapacitySupp";
+        function Create(request: Serenity.SaveRequest<CapacitySuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<CapacitySuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<CapacitySuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<CapacitySuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface CappingAdjustmentsSuppExcelImportForm {
@@ -2270,14 +2340,14 @@ declare namespace DAP.DWSupport {
 }
 declare namespace DAP.DWSupport {
     interface DrydockSuppForm {
-        ShipCd: Serenity.StringEditor;
+        ShipCd: Serenity.LookupEditor;
         StartDate: Serenity.DateEditor;
         EndDate: Serenity.DateEditor;
         NumberOfDays: Serenity.IntegerEditor;
         EffectiveFromDt: Serenity.DateEditor;
         EffectiveToDt: Serenity.DateEditor;
         SailYear: Serenity.IntegerEditor;
-        Status: Serenity.StringEditor;
+        Status: Serenity.LookupEditor;
         CreatedTs: Serenity.DateEditor;
         CreatedByNam: Serenity.StringEditor;
         ModifiedTs: Serenity.DateEditor;
@@ -10584,6 +10654,26 @@ declare namespace DAP.DWSupport {
         constructor(container: JQuery);
         protected getSlickOptions(): Slick.GridOptions;
         protected createSlickGrid(): Slick.Grid;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CapacitySuppDialog extends Serenity.EntityDialog<CapacitySuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: CapacitySuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class CapacitySuppGrid extends Serenity.EntityGrid<CapacitySuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof CapacitySuppDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
     }
 }
 declare namespace DAP.DWSupport {

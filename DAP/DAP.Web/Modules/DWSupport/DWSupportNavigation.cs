@@ -54,3 +54,4 @@ using MyPages = DAP.DWSupport.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Product Codes", typeof(MyPages.SlProductCodeSuppController), icon: null)]
 [assembly: NavigationMenu(int.MaxValue, "Gamification", icon: "fa-trophy")]
 [assembly: NavigationLink(int.MaxValue, "Gamification/Skill to Skill Group", typeof(MyPages.Skill2SkillgroupController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DWSupport/Capacity Supp", typeof(MyPages.CapacitySuppController), icon: null)]

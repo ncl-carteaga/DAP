@@ -9789,6 +9789,12 @@ button.ui-button {
 .s-DWSupport-MarketingTollfreeBrandInventoryDialog .caption {
   width: 150px;
 }
+.s-DWSupport-CapacitySuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-CapacitySuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

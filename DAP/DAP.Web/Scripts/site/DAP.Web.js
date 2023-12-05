@@ -1342,6 +1342,94 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var CapacitySuppForm = /** @class */ (function (_super) {
+            __extends(CapacitySuppForm, _super);
+            function CapacitySuppForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            CapacitySuppForm.formKey = 'DWSupport.CapacitySupp';
+            return CapacitySuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.CapacitySuppForm = CapacitySuppForm;
+        [,
+            ['ShipCd', function () { return Serenity.StringEditor; }],
+            ['DoCapacity', function () { return Serenity.IntegerEditor; }],
+            ['CabinCapacity', function () { return Serenity.IntegerEditor; }],
+            ['EffectiveFromDt', function () { return Serenity.DateEditor; }],
+            ['EffectiveToDt', function () { return Serenity.DateEditor; }],
+            ['SailStartDate', function () { return Serenity.DateEditor; }],
+            ['SailEndDate', function () { return Serenity.DateEditor; }],
+            ['CreatedTs', function () { return Serenity.DateEditor; }],
+            ['CreatedByNam', function () { return Serenity.StringEditor; }],
+            ['ModifiedTs', function () { return Serenity.DateEditor; }],
+            ['ModifiedByNam', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(CapacitySuppForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CapacitySuppRow;
+        (function (CapacitySuppRow) {
+            CapacitySuppRow.idProperty = 'CapacityId';
+            CapacitySuppRow.nameProperty = 'ShipCd';
+            CapacitySuppRow.localTextPrefix = 'DWSupport.CapacitySupp';
+            var Fields;
+            (function (Fields) {
+            })(Fields = CapacitySuppRow.Fields || (CapacitySuppRow.Fields = {}));
+            [
+                'CapacityId',
+                'ShipCd',
+                'DoCapacity',
+                'CabinCapacity',
+                'EffectiveFromDt',
+                'EffectiveToDt',
+                'SailStartDate',
+                'SailEndDate',
+                'CreatedTs',
+                'CreatedByNam',
+                'ModifiedTs',
+                'ModifiedByNam'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(CapacitySuppRow = DWSupport.CapacitySuppRow || (DWSupport.CapacitySuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CapacitySuppService;
+        (function (CapacitySuppService) {
+            CapacitySuppService.baseUrl = 'DWSupport/CapacitySupp';
+            var Methods;
+            (function (Methods) {
+            })(Methods = CapacitySuppService.Methods || (CapacitySuppService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                CapacitySuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(CapacitySuppService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = CapacitySuppService.baseUrl + '/' + x;
+            });
+        })(CapacitySuppService = DWSupport.CapacitySuppService || (DWSupport.CapacitySuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var CappingAdjustmentsSuppExcelImportForm = /** @class */ (function (_super) {
             __extends(CappingAdjustmentsSuppExcelImportForm, _super);
             function CappingAdjustmentsSuppExcelImportForm(prefix) {
@@ -2115,9 +2203,10 @@ var DAP;
                 if (!DrydockSuppForm.init) {
                     DrydockSuppForm.init = true;
                     var s = Serenity;
-                    var w0 = s.StringEditor;
+                    var w0 = s.LookupEditor;
                     var w1 = s.DateEditor;
                     var w2 = s.IntegerEditor;
+                    var w3 = s.StringEditor;
                     Q.initFormType(DrydockSuppForm, [
                         'ShipCd', w0,
                         'StartDate', w1,
@@ -2128,9 +2217,9 @@ var DAP;
                         'SailYear', w2,
                         'Status', w0,
                         'CreatedTs', w1,
-                        'CreatedByNam', w0,
+                        'CreatedByNam', w3,
                         'ModifiedTs', w1,
-                        'ModifiedByNam', w0
+                        'ModifiedByNam', w3
                     ]);
                 }
                 return _this;
@@ -11994,6 +12083,52 @@ var DAP;
             return SplitMasterGrid;
         }(DWSupport.AmenitiesSuppGrid));
         DWSupport.SplitMasterGrid = SplitMasterGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CapacitySuppDialog = /** @class */ (function (_super) {
+            __extends(CapacitySuppDialog, _super);
+            function CapacitySuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.CapacitySuppForm(_this.idPrefix);
+                return _this;
+            }
+            CapacitySuppDialog.prototype.getFormKey = function () { return DWSupport.CapacitySuppForm.formKey; };
+            CapacitySuppDialog.prototype.getIdProperty = function () { return DWSupport.CapacitySuppRow.idProperty; };
+            CapacitySuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.CapacitySuppRow.localTextPrefix; };
+            CapacitySuppDialog.prototype.getNameProperty = function () { return DWSupport.CapacitySuppRow.nameProperty; };
+            CapacitySuppDialog.prototype.getService = function () { return DWSupport.CapacitySuppService.baseUrl; };
+            CapacitySuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CapacitySuppDialog);
+            return CapacitySuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.CapacitySuppDialog = CapacitySuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var CapacitySuppGrid = /** @class */ (function (_super) {
+            __extends(CapacitySuppGrid, _super);
+            function CapacitySuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            CapacitySuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.CapacitySupp'; };
+            CapacitySuppGrid.prototype.getDialogType = function () { return DWSupport.CapacitySuppDialog; };
+            CapacitySuppGrid.prototype.getIdProperty = function () { return DWSupport.CapacitySuppRow.idProperty; };
+            CapacitySuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.CapacitySuppRow.localTextPrefix; };
+            CapacitySuppGrid.prototype.getService = function () { return DWSupport.CapacitySuppService.baseUrl; };
+            CapacitySuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], CapacitySuppGrid);
+            return CapacitySuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.CapacitySuppGrid = CapacitySuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;
