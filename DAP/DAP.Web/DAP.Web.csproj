@@ -1240,6 +1240,12 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.AmenityDetailsSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppExcelImportForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1310,6 +1316,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.InvoiceItemTypeSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MinibarSetupSuppColumns.ts">
@@ -1633,6 +1642,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitDetailGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitMasterDetailPane.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitMasterGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\CapacitySupp\CapacitySuppExcelImportDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppExcelImportDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogGridDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogListGrid.ts" />
@@ -3583,12 +3593,24 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3763,6 +3785,7 @@
     <Compile Include="Modules\Common\UserPreference\UserPreferenceEndpoint.cs" />
     <Compile Include="Modules\Common\UserPreference\UserPreferenceRepository.cs" />
     <Compile Include="Modules\DWSupport\AirCostAdjSupp\AirCostAdjSuppExcelImportForm.cs" />
+    <Compile Include="Modules\DWSupport\CapacitySupp\CapacitySuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\CompanyCDONRLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\CappingAdjustmentsSupp\ShipCDONRLookupEditor.cs" />

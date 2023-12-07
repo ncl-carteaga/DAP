@@ -247,8 +247,8 @@ namespace DAP.DWSupport.Endpoints
 
 
                     // ----------   Create Row from Excel Values   ---------- //
-                    entType = jImpHelp.entryType.Int;            //excel field type
-                    fieldTitle = myFields.DoCapacity.Title.ToLower();            //excel field name
+                    entType = jImpHelp.entryType.Int;                   //excel field type
+                    fieldTitle = myFields.DoCapacity.Title.ToLower();   //excel field name
                     obj = myImpHelp.myExcelVal(row, myImpHelpExt.GetEntry(headerMap, fieldTitle).Value, worksheet);
                     if (obj != null)
                     {
@@ -349,5 +349,4 @@ namespace DAP.DWSupport.Endpoints
             return response;
         }
     }
-}
 }

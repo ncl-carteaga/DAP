@@ -93,6 +93,11 @@ namespace MVC
                 public const string Index = "~/Modules/DWSupport/AmenityMasterDetail/Index.cshtml";
             }
 
+            public static class CapacitySupp
+            {
+                public const string CapacitySuppIndex = "~/Modules/DWSupport/CapacitySupp/CapacitySuppIndex.cshtml";
+            }
+
             public static class CappingAdjustmentsSupp
             {
                 public const string CappingAdjustmentsSuppIndex = "~/Modules/DWSupport/CappingAdjustmentsSupp/CappingAdjustmentsSuppIndex.cshtml";
@@ -196,6 +201,11 @@ namespace MVC
             public static class InvoiceItemTypeSupp
             {
                 public const string InvoiceItemTypeSuppIndex = "~/Modules/DWSupport/InvoiceItemTypeSupp/InvoiceItemTypeSuppIndex.cshtml";
+            }
+
+            public static class MarketingTollfreeBrandInventory
+            {
+                public const string MarketingTollfreeBrandInventoryIndex = "~/Modules/DWSupport/MarketingTollfreeBrandInventory/MarketingTollfreeBrandInventoryIndex.cshtml";
             }
 
             public static class MinibarSetupSupp

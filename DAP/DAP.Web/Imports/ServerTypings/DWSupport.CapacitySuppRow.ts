@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface CapacitySuppRow {
         CapacityId?: number;
         ShipCd?: string;
@@ -20,34 +19,20 @@ namespace DAP.DWSupport {
         export const nameProperty = 'ShipCd';
         export const localTextPrefix = 'DWSupport.CapacitySupp';
 
-        export namespace Fields {
-            export declare const CapacityId;
-            export declare const ShipCd;
-            export declare const DoCapacity;
-            export declare const CabinCapacity;
-            export declare const EffectiveFromDt;
-            export declare const EffectiveToDt;
-            export declare const SailStartDate;
-            export declare const SailEndDate;
-            export declare const CreatedTs;
-            export declare const CreatedByNam;
-            export declare const ModifiedTs;
-            export declare const ModifiedByNam;
+        export declare const enum Fields {
+            CapacityId = "CapacityId",
+            ShipCd = "ShipCd",
+            DoCapacity = "DoCapacity",
+            CabinCapacity = "CabinCapacity",
+            EffectiveFromDt = "EffectiveFromDt",
+            EffectiveToDt = "EffectiveToDt",
+            SailStartDate = "SailStartDate",
+            SailEndDate = "SailEndDate",
+            CreatedTs = "CreatedTs",
+            CreatedByNam = "CreatedByNam",
+            ModifiedTs = "ModifiedTs",
+            ModifiedByNam = "ModifiedByNam"
         }
-
-        [
-            'CapacityId',
-            'ShipCd',
-            'DoCapacity',
-            'CabinCapacity',
-            'EffectiveFromDt',
-            'EffectiveToDt',
-            'SailStartDate',
-            'SailEndDate',
-            'CreatedTs',
-            'CreatedByNam',
-            'ModifiedTs',
-            'ModifiedByNam'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+
