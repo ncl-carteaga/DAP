@@ -1,5 +1,7 @@
 ﻿namespace DAP.DWSupport {
     export interface DimCruiseFlagsForm {
+        RevenueMgmtMarketSegment: Serenity.StringEditor;
+        FinancialSuppressInd: Serenity.StringEditor;
         CruiseCd: Serenity.StringEditor;
         CruiseSegmentCd: Serenity.StringEditor;
         ShipCd: Serenity.StringEditor;
@@ -38,6 +40,8 @@
                 var w4 = s.DateEditor;
 
                 Q.initFormType(DimCruiseFlagsForm, [
+                    'RevenueMgmtMarketSegment', w0,
+                    'FinancialSuppressInd', w0,
                     'CruiseCd', w0,
                     'CruiseSegmentCd', w0,
                     'ShipCd', w0,

@@ -8,6 +8,7 @@
         FirstNm: Serenity.StringEditor;
         MiddleNm: Serenity.StringEditor;
         LastNm: Serenity.StringEditor;
+        PhoneNumber: Serenity.StringEditor;
         Addr1: Serenity.StringEditor;
         Addr2: Serenity.StringEditor;
         CityNm: Serenity.StringEditor;
@@ -51,6 +52,7 @@
                     'FirstNm', w0,
                     'MiddleNm', w0,
                     'LastNm', w0,
+                    'PhoneNumber', w0,
                     'Addr1', w0,
                     'Addr2', w0,
                     'CityNm', w0,

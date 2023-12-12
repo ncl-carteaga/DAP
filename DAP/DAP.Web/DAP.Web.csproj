@@ -1202,6 +1202,7 @@
     <Content Include="Modules\DWSupport\DrydockSupp\DrydockSuppIndex.cshtml" />
     <Content Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryIndex.cshtml" />
     <Content Include="Modules\DWSupport\CapacitySupp\CapacitySuppIndex.cshtml" />
+    <Content Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.DataAuditLogColumns.ts">
@@ -1876,6 +1877,8 @@
     <TypeScriptCompile Include="Modules\DWSupport\MarketingTollfreeBrandInventory\MarketingTollfreeBrandInventoryGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CapacitySupp\CapacitySuppDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CapacitySupp\CapacitySuppGrid.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppGrid.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Imports\ServerTypings\Administration.LanguageColumns.ts">
@@ -3611,6 +3614,9 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -4564,6 +4570,12 @@
     <Compile Include="Modules\DWSupport\CapacitySupp\CapacitySuppPage.cs" />
     <Compile Include="Modules\DWSupport\CapacitySupp\CapacitySuppColumns.cs" />
     <Compile Include="Modules\DWSupport\CapacitySupp\CapacitySuppForm.cs" />
+    <Compile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppRow.cs" />
+    <Compile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppRepository.cs" />
+    <Compile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppEndpoint.cs" />
+    <Compile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppPage.cs" />
+    <Compile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppColumns.cs" />
+    <Compile Include="Modules\DWSupport\SuperPriceProgramsSupp\SuperPriceProgramsSuppForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

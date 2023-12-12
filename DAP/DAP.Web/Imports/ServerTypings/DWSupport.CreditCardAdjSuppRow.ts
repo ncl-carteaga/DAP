@@ -2,10 +2,7 @@
     export interface CreditCardAdjSuppRow {
         CreditcardAdjId?: number;
         Office?: string;
-        BaseRate?: number;
-        ParticipationRate?: number;
         BlendedRate?: number;
-        CxBuffer?: number;
         ProposedRate?: number;
         EffectiveFromDt?: string;
         EffectiveToDt?: string;
@@ -23,10 +20,7 @@
         export declare const enum Fields {
             CreditcardAdjId = "CreditcardAdjId",
             Office = "Office",
-            BaseRate = "BaseRate",
-            ParticipationRate = "ParticipationRate",
             BlendedRate = "BlendedRate",
-            CxBuffer = "CxBuffer",
             ProposedRate = "ProposedRate",
             EffectiveFromDt = "EffectiveFromDt",
             EffectiveToDt = "EffectiveToDt",

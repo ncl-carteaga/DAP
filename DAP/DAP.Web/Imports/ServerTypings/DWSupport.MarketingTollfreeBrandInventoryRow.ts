@@ -1,5 +1,4 @@
-﻿
-namespace DAP.DWSupport {
+﻿namespace DAP.DWSupport {
     export interface MarketingTollfreeBrandInventoryRow {
         Id?: number;
         BrandId?: number;
@@ -18,30 +17,18 @@ namespace DAP.DWSupport {
         export const nameProperty = 'Location';
         export const localTextPrefix = 'DWSupport.MarketingTollfreeBrandInventory';
 
-        export namespace Fields {
-            export declare const Id;
-            export declare const BrandId;
-            export declare const Location;
-            export declare const TollFreeNumber;
-            export declare const Description;
-            export declare const Vdn;
-            export declare const ModifiedBy;
-            export declare const CreatedBy;
-            export declare const ModifiedTs;
-            export declare const CreatedTs;
+        export declare const enum Fields {
+            Id = "Id",
+            BrandId = "BrandId",
+            Location = "Location",
+            TollFreeNumber = "TollFreeNumber",
+            Description = "Description",
+            Vdn = "Vdn",
+            ModifiedBy = "ModifiedBy",
+            CreatedBy = "CreatedBy",
+            ModifiedTs = "ModifiedTs",
+            CreatedTs = "CreatedTs"
         }
-
-        [
-            'Id',
-            'BrandId',
-            'Location',
-            'TollFreeNumber',
-            'Description',
-            'Vdn',
-            'ModifiedBy',
-            'CreatedBy',
-            'ModifiedTs',
-            'CreatedTs'
-        ].forEach(x => (<any>Fields)[x] = x);
     }
 }
+
