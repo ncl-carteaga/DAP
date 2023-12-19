@@ -19,6 +19,8 @@
         EffectiveFrom?: string;
         EffectiveTo?: string;
         LoadDt?: string;
+        RevenueMgmtMarketSegment?: string;
+        FinancialSuppressInd?: string;
     }
 
     export namespace DimCruiseFlagsRow {
@@ -45,7 +47,9 @@
             MinisegInd = "MinisegInd",
             EffectiveFrom = "EffectiveFrom",
             EffectiveTo = "EffectiveTo",
-            LoadDt = "LoadDt"
+            LoadDt = "LoadDt",
+            RevenueMgmtMarketSegment = "RevenueMgmtMarketSegment",
+            FinancialSuppressInd = "FinancialSuppressInd"
         }
     }
 }

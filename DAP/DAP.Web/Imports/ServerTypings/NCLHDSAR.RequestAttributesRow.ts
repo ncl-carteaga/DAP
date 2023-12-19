@@ -9,6 +9,7 @@
         FirstNm?: string;
         MiddleNm?: string;
         LastNm?: string;
+        PhoneNumber?: string;
         Addr1?: string;
         Addr2?: string;
         CityNm?: string;
@@ -54,6 +55,7 @@
             FirstNm = "FirstNm",
             MiddleNm = "MiddleNm",
             LastNm = "LastNm",
+            PhoneNumber = "PhoneNumber",
             Addr1 = "Addr1",
             Addr2 = "Addr2",
             CityNm = "CityNm",

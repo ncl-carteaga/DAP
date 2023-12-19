@@ -31,6 +31,7 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/Res Exclusion Supp", typeof(MyPages.ResExclusionSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Drydock Supp", typeof(MyPages.DrydockSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Capacity Supp", typeof(MyPages.CapacitySuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Super Price Programs Supp", typeof(MyPages.SuperPriceProgramsSuppController), icon: null)]
 
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Cruise Segment Days Override", typeof(MyPages.CruiseSegmentDaysOverrideController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Stly Dates", typeof(MyPages.StlyDatesController), icon: null)]

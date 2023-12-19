@@ -1,9 +1,6 @@
 ﻿namespace DAP.DWSupport {
     export interface CreditCardAdjSuppForm {
         Office: Serenity.LookupEditor;
-        BaseRate: Serenity.DecimalEditor;
-        ParticipationRate: Serenity.DecimalEditor;
-        CxBuffer: Serenity.DecimalEditor;
         BlendedRate: Serenity.DecimalEditor;
         ProposedRate: Serenity.DecimalEditor;
         EffectiveFromDt: Serenity.DateEditor;
@@ -32,9 +29,6 @@
 
                 Q.initFormType(CreditCardAdjSuppForm, [
                     'Office', w0,
-                    'BaseRate', w1,
-                    'ParticipationRate', w1,
-                    'CxBuffer', w1,
                     'BlendedRate', w1,
                     'ProposedRate', w1,
                     'EffectiveFromDt', w2,
