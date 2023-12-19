@@ -6,7 +6,7 @@ namespace DAP.DWSupport.Pages
     using System.Web.Mvc;
 
     [RoutePrefix("DWSupport/SuperPriceProgramsSupp"), Route("{action=index}")]
-    [PageAuthorize(typeof(Entities.SuperPriceProgramsSuppRow))]
+    [PageAuthorize(PermissionKeys.PagePermission.SuperPriceProgramsSupp)]
     public class SuperPriceProgramsSuppController : Controller
     {
         public ActionResult Index()

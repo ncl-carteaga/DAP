@@ -31,6 +31,7 @@ using MyPages = DAP.DWSupport.Pages;
 [assembly: NavigationLink(int.MaxValue, "DW Support/Res Exclusion Supp", typeof(MyPages.ResExclusionSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Drydock Supp", typeof(MyPages.DrydockSuppController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "DW Support/Capacity Supp", typeof(MyPages.CapacitySuppController), icon: null)]
+[assembly: NavigationLink(int.MaxValue, "DW Support/Super Price Programs Supp", typeof(MyPages.SuperPriceProgramsSuppController), icon: null)]
 
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Cruise Segment Days Override", typeof(MyPages.CruiseSegmentDaysOverrideController), icon: null)]
 [assembly: NavigationLink(int.MaxValue, "Brand Finance & Strategy/Stly Dates", typeof(MyPages.StlyDatesController), icon: null)]
@@ -54,4 +55,3 @@ using MyPages = DAP.DWSupport.Pages;
 //[assembly: NavigationLink(int.MaxValue, "DW Support/Sailing Product Codes", typeof(MyPages.SlProductCodeSuppController), icon: null)]
 [assembly: NavigationMenu(int.MaxValue, "Gamification", icon: "fa-trophy")]
 [assembly: NavigationLink(int.MaxValue, "Gamification/Skill to Skill Group", typeof(MyPages.Skill2SkillgroupController), icon: null)]
-[assembly: NavigationLink(int.MaxValue, "DWSupport/Super Price Programs Supp", typeof(MyPages.SuperPriceProgramsSuppController), icon: null)]

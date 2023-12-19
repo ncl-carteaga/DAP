@@ -11,8 +11,11 @@ namespace DAP.DWSupport.Entities
 
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[SUPER_PRICE_PROGRAMS_SUPP]")]
     [DisplayName("Super Price Programs Supp"), InstanceName("Super Price Programs Supp")]
-    [ReadPermission("Administration:General")]
-    [ModifyPermission("Administration:General")]
+    [ReadPermission(PermissionKeys.DWSupport.View)]
+    [ModifyPermission(PermissionKeys.DWSupport.Modify)]
+    [DeletePermission(PermissionKeys.DWSupport.Delete)]
+    [DataAuditLog]
+
     public sealed class SuperPriceProgramsSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Super Price Program Sur Key"), Column("SUPER_PRICE_PROGRAM_SUR_KEY")]

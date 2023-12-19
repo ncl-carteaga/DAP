@@ -37,7 +37,26 @@ namespace DAP.DWSupport.Repositories
             return new MyListHandler().Process(connection, request);
         }
 
-        private class MySaveHandler : SaveRequestHandler<MyRow> { }
+        private class MySaveHandler : SaveRequestHandler<MyRow>
+        {
+            protected override void SetInternalFields()
+            {
+                base.SetInternalFields();
+
+                var user = (UserDefinition)Authorization.UserDefinition;
+
+                if (IsCreate)
+                {
+                    Row.CreatedByNam = user.Username.ToUpper();
+                    Row.CreatedTs = DateTime.Now.ToString();
+                }
+                if (IsUpdate)
+                {
+                    Row.ModifiedByNam = user.Username.ToUpper();
+                    Row.CreatedTs = DateTime.Now.ToString();
+                }
+            }
+        }
         private class MyDeleteHandler : DeleteRequestHandler<MyRow> { }
         private class MyRetrieveHandler : RetrieveRequestHandler<MyRow> { }
         private class MyListHandler : ListRequestHandler<MyRow> { }

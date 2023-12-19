@@ -68,6 +68,7 @@ namespace DAP.DWSupport
             public const string CappingAdjustmentsSupp = "DWSupp:Page:CappingAdjustmentsSupp";
             public const string DrydockSupp = "DWSupp:Page:DrydockSupp";
             public const string MarketingTollfreeBrandInventory = "DWSupp:Page:MarketingTollfreeBrandInventory";
+            public const string SuperPriceProgramsSupp = "DWSupp:Page:SuperPriceProgramsSupp";
 
             //nvs
             public const string DimCruiseFlags = "DWSupp:Page:DimCruiseFlags";
