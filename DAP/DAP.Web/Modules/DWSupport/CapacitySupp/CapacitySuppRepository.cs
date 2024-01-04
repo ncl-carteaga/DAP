@@ -53,10 +53,9 @@ namespace DAP.DWSupport.Repositories
                 // SELECT previous record, cannot update if exists
                 if (this.Connection.Exists<MyRow>(
                         new Criteria(MyRow.Fields.ShipCd) == Row.ShipCd &
-                        new Criteria(MyRow.Fields.EffectiveFromDt) == Row.EffectiveFromDt.Value &
-                        new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999") &
-                        new Criteria(MyRow.Fields.DoCapacity) == Row.DoCapacity.Value &
-                        new Criteria(MyRow.Fields.CabinCapacity) == Row.CabinCapacity.Value
+                        new Criteria(MyRow.Fields.SailStartDate) == Row.SailStartDate.Value &
+                        new Criteria(MyRow.Fields.SailEndDate) == Row.SailEndDate.Value &
+                        new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999")
                     )
                 )
                 {
@@ -71,7 +70,8 @@ namespace DAP.DWSupport.Repositories
                 {
                     row_old_rec = this.Connection.First<MyRow>(
                         new Criteria(MyRow.Fields.ShipCd) == Row.ShipCd &&
-                        new Criteria(MyRow.Fields.EffectiveFromDt) == Row.EffectiveFromDt.Value &&
+                        new Criteria(MyRow.Fields.SailStartDate) == Row.SailStartDate.Value &&
+                        new Criteria(MyRow.Fields.SailEndDate) == Row.SailEndDate.Value &&
                         new Criteria(MyRow.Fields.EffectiveToDt) == DateTime.Parse("12/30/9999")
                     );
                 }
