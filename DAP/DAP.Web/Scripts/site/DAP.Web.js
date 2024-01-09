@@ -3556,6 +3556,86 @@ var DAP;
 (function (DAP) {
     var DWSupport;
     (function (DWSupport) {
+        var RegionMasterSuppForm = /** @class */ (function (_super) {
+            __extends(RegionMasterSuppForm, _super);
+            function RegionMasterSuppForm() {
+                return _super !== null && _super.apply(this, arguments) || this;
+            }
+            RegionMasterSuppForm.formKey = 'DWSupport.RegionMasterSupp';
+            return RegionMasterSuppForm;
+        }(Serenity.PrefixedContext));
+        DWSupport.RegionMasterSuppForm = RegionMasterSuppForm;
+        [,
+            ['RegionCd', function () { return Serenity.StringEditor; }],
+            ['ResponsibilityDesc', function () { return Serenity.StringEditor; }],
+            ['SalesrepUserId', function () { return Serenity.StringEditor; }],
+            ['CreatedByNam', function () { return Serenity.StringEditor; }],
+            ['CreatedTs', function () { return Serenity.StringEditor; }],
+            ['ModifiedByNam', function () { return Serenity.StringEditor; }],
+            ['ModifiedTs', function () { return Serenity.StringEditor; }]
+        ].forEach(function (x) { return Object.defineProperty(RegionMasterSuppForm.prototype, x[0], {
+            get: function () {
+                return this.w(x[0], x[1]());
+            },
+            enumerable: true,
+            configurable: true
+        }); });
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionMasterSuppRow;
+        (function (RegionMasterSuppRow) {
+            RegionMasterSuppRow.idProperty = 'RegionSurKey';
+            RegionMasterSuppRow.nameProperty = 'RegionCd';
+            RegionMasterSuppRow.localTextPrefix = 'DWSupport.RegionMasterSupp';
+            var Fields;
+            (function (Fields) {
+            })(Fields = RegionMasterSuppRow.Fields || (RegionMasterSuppRow.Fields = {}));
+            [
+                'RegionSurKey',
+                'RegionCd',
+                'ResponsibilityDesc',
+                'SalesrepUserId',
+                'CreatedByNam',
+                'CreatedTs',
+                'ModifiedByNam',
+                'ModifiedTs'
+            ].forEach(function (x) { return Fields[x] = x; });
+        })(RegionMasterSuppRow = DWSupport.RegionMasterSuppRow || (DWSupport.RegionMasterSuppRow = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionMasterSuppService;
+        (function (RegionMasterSuppService) {
+            RegionMasterSuppService.baseUrl = 'DWSupport/RegionMasterSupp';
+            var Methods;
+            (function (Methods) {
+            })(Methods = RegionMasterSuppService.Methods || (RegionMasterSuppService.Methods = {}));
+            [
+                'Create',
+                'Update',
+                'Delete',
+                'Retrieve',
+                'List'
+            ].forEach(function (x) {
+                RegionMasterSuppService[x] = function (r, s, o) {
+                    return Q.serviceRequest(RegionMasterSuppService.baseUrl + '/' + x, r, s, o);
+                };
+                Methods[x] = RegionMasterSuppService.baseUrl + '/' + x;
+            });
+        })(RegionMasterSuppService = DWSupport.RegionMasterSuppService || (DWSupport.RegionMasterSuppService = {}));
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
         var RegionRow;
         (function (RegionRow) {
             RegionRow.idProperty = 'RegionId';
@@ -14032,6 +14112,52 @@ var DAP;
             return RegionGrid;
         }(Serenity.EntityGrid));
         DWSupport.RegionGrid = RegionGrid;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionMasterSuppDialog = /** @class */ (function (_super) {
+            __extends(RegionMasterSuppDialog, _super);
+            function RegionMasterSuppDialog() {
+                var _this = _super !== null && _super.apply(this, arguments) || this;
+                _this.form = new DWSupport.RegionMasterSuppForm(_this.idPrefix);
+                return _this;
+            }
+            RegionMasterSuppDialog.prototype.getFormKey = function () { return DWSupport.RegionMasterSuppForm.formKey; };
+            RegionMasterSuppDialog.prototype.getIdProperty = function () { return DWSupport.RegionMasterSuppRow.idProperty; };
+            RegionMasterSuppDialog.prototype.getLocalTextPrefix = function () { return DWSupport.RegionMasterSuppRow.localTextPrefix; };
+            RegionMasterSuppDialog.prototype.getNameProperty = function () { return DWSupport.RegionMasterSuppRow.nameProperty; };
+            RegionMasterSuppDialog.prototype.getService = function () { return DWSupport.RegionMasterSuppService.baseUrl; };
+            RegionMasterSuppDialog = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionMasterSuppDialog);
+            return RegionMasterSuppDialog;
+        }(Serenity.EntityDialog));
+        DWSupport.RegionMasterSuppDialog = RegionMasterSuppDialog;
+    })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
+})(DAP || (DAP = {}));
+var DAP;
+(function (DAP) {
+    var DWSupport;
+    (function (DWSupport) {
+        var RegionMasterSuppGrid = /** @class */ (function (_super) {
+            __extends(RegionMasterSuppGrid, _super);
+            function RegionMasterSuppGrid(container) {
+                return _super.call(this, container) || this;
+            }
+            RegionMasterSuppGrid.prototype.getColumnsKey = function () { return 'DWSupport.RegionMasterSupp'; };
+            RegionMasterSuppGrid.prototype.getDialogType = function () { return DWSupport.RegionMasterSuppDialog; };
+            RegionMasterSuppGrid.prototype.getIdProperty = function () { return DWSupport.RegionMasterSuppRow.idProperty; };
+            RegionMasterSuppGrid.prototype.getLocalTextPrefix = function () { return DWSupport.RegionMasterSuppRow.localTextPrefix; };
+            RegionMasterSuppGrid.prototype.getService = function () { return DWSupport.RegionMasterSuppService.baseUrl; };
+            RegionMasterSuppGrid = __decorate([
+                Serenity.Decorators.registerClass()
+            ], RegionMasterSuppGrid);
+            return RegionMasterSuppGrid;
+        }(Serenity.EntityGrid));
+        DWSupport.RegionMasterSuppGrid = RegionMasterSuppGrid;
     })(DWSupport = DAP.DWSupport || (DAP.DWSupport = {}));
 })(DAP || (DAP = {}));
 var DAP;

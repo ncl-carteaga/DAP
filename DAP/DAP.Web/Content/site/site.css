@@ -9801,6 +9801,12 @@ button.ui-button {
 .s-DWSupport-SuperPriceProgramsSuppDialog .caption {
   width: 150px;
 }
+.s-DWSupport-RegionMasterSuppDialog > .size {
+  width: 650px;
+}
+.s-DWSupport-RegionMasterSuppDialog .caption {
+  width: 150px;
+}
 .s-NCLHODSSPENDVIS-AmoslevelDialog > .size {
   width: 650px;
 }

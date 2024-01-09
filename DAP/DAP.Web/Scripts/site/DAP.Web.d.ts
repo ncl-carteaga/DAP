@@ -3748,6 +3748,64 @@ declare namespace DAP.DWSupport {
     }
 }
 declare namespace DAP.DWSupport {
+    class RegionMasterSuppForm extends Serenity.PrefixedContext {
+        static formKey: string;
+    }
+    interface RegionMasterSuppForm {
+        RegionCd: Serenity.StringEditor;
+        ResponsibilityDesc: Serenity.StringEditor;
+        SalesrepUserId: Serenity.StringEditor;
+        CreatedByNam: Serenity.StringEditor;
+        CreatedTs: Serenity.StringEditor;
+        ModifiedByNam: Serenity.StringEditor;
+        ModifiedTs: Serenity.StringEditor;
+    }
+}
+declare namespace DAP.DWSupport {
+    interface RegionMasterSuppRow {
+        RegionSurKey?: number;
+        RegionCd?: string;
+        ResponsibilityDesc?: string;
+        SalesrepUserId?: string;
+        CreatedByNam?: string;
+        CreatedTs?: string;
+        ModifiedByNam?: string;
+        ModifiedTs?: string;
+    }
+    namespace RegionMasterSuppRow {
+        const idProperty = "RegionSurKey";
+        const nameProperty = "RegionCd";
+        const localTextPrefix = "DWSupport.RegionMasterSupp";
+        namespace Fields {
+            const RegionSurKey: any;
+            const RegionCd: any;
+            const ResponsibilityDesc: any;
+            const SalesrepUserId: any;
+            const CreatedByNam: any;
+            const CreatedTs: any;
+            const ModifiedByNam: any;
+            const ModifiedTs: any;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
+    namespace RegionMasterSuppService {
+        const baseUrl = "DWSupport/RegionMasterSupp";
+        function Create(request: Serenity.SaveRequest<RegionMasterSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<RegionMasterSuppRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<RegionMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<RegionMasterSuppRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        namespace Methods {
+            const Create: string;
+            const Update: string;
+            const Delete: string;
+            const Retrieve: string;
+            const List: string;
+        }
+    }
+}
+declare namespace DAP.DWSupport {
     interface RegionRow {
         RegionId?: number;
         RegionCd?: string;
@@ -11380,6 +11438,26 @@ declare namespace DAP.DWSupport {
     class RegionGrid extends Serenity.EntityGrid<RegionRow, any> {
         protected getColumnsKey(): string;
         protected getDialogType(): typeof RegionDialog;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+    }
+}
+declare namespace DAP.DWSupport {
+    class RegionMasterSuppDialog extends Serenity.EntityDialog<RegionMasterSuppRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected form: RegionMasterSuppForm;
+    }
+}
+declare namespace DAP.DWSupport {
+    class RegionMasterSuppGrid extends Serenity.EntityGrid<RegionMasterSuppRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof RegionMasterSuppDialog;
         protected getIdProperty(): string;
         protected getLocalTextPrefix(): string;
         protected getService(): string;
