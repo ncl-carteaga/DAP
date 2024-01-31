@@ -70,6 +70,7 @@ namespace DAP.DWSupport
             public const string MarketingTollfreeBrandInventory = "DWSupp:Page:MarketingTollfreeBrandInventory";
             public const string SuperPriceProgramsSupp = "DWSupp:Page:SuperPriceProgramsSupp";
             public const string RegionMasterSupp = "DWSupp:Page:RegionMasterSupp";
+            public const string CapacitySupp = "DWSupp:Page:CapacitySupp";
 
             //nvs
             public const string DimCruiseFlags = "DWSupp:Page:DimCruiseFlags";
