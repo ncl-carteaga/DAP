@@ -12,7 +12,7 @@ namespace DAP.DWSupport.Entities
     [ConnectionKey("DW_Support"), Module("DWSupport"), TableName("[dbo].[AMENITY_TYPES_SUPP]")]
     [DisplayName("Amenity Types Supp"), InstanceName("Amenity Types Supp")]
     [ReadPermission(PermissionKeys.DWSupport.View)]
-    [LookupScript("DWSupport.AmenityType")]
+    [LookupScript("DWSupport.AmenityType", Permission = "*")]
     public sealed class AmenityTypesSuppRow : Row, IIdRow, INameRow
     {
         [DisplayName("Amenity Type Id"), Column("AMENITY_TYPE_ID"), Identity]
