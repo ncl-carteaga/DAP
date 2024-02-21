@@ -12,7 +12,7 @@ namespace DAP.PCHDW.Entities
     [ConnectionKey("PCH_DW"), Module("PCHDW"), TableName("[dbo].[dim_currency]")]
     [DisplayName("Dim Currency"), InstanceName("Dim Currency")]
     [ReadPermission(PermissionKeys.EDMSupport.View)]
-    [LookupScript("PCHDW.Currency")]
+    [LookupScript("PCHDW.Currency", Permission = "*")]
     public sealed class DimCurrencyRow : Row, IIdRow, INameRow
     {
         [DisplayName("Tk"), Column("currency_tk"), Identity]
