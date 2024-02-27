@@ -233,6 +233,11 @@ namespace MVC
                 public const string RegionIndex = "~/Modules/DWSupport/Region/RegionIndex.cshtml";
             }
 
+            public static class RegionMasterSupp
+            {
+                public const string RegionMasterSuppIndex = "~/Modules/DWSupport/RegionMasterSupp/RegionMasterSuppIndex.cshtml";
+            }
+
             public static class ResExclusionSupp
             {
                 public const string ResExclusionSuppIndex = "~/Modules/DWSupport/ResExclusionSupp/ResExclusionSuppIndex.cshtml";
@@ -271,6 +276,11 @@ namespace MVC
             public static class StlyDates
             {
                 public const string StlyDatesIndex = "~/Modules/DWSupport/StlyDates/StlyDatesIndex.cshtml";
+            }
+
+            public static class SuperPriceProgramsSupp
+            {
+                public const string SuperPriceProgramsSuppIndex = "~/Modules/DWSupport/SuperPriceProgramsSupp/SuperPriceProgramsSuppIndex.cshtml";
             }
 
             public static class SurveyFilterExclusionSupp

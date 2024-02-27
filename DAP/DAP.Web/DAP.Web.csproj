@@ -64,11 +64,11 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimize>false</Optimize>
     <OutputPath>bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -1248,6 +1248,15 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CappingAdjustmentsSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1291,6 +1300,9 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.DrydockSuppExcelImportForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ExchangeFixedRateColumns.ts">
@@ -1338,6 +1350,18 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppService.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.ResExclusionSuppColumns.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
@@ -1378,6 +1402,18 @@
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.StlyDatesColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppColumns.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppForm.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppRow.ts">
+      <DependentUpon>ServerTypings.tt</DependentUpon>
+    </TypeScriptCompile>
+    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppService.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SurveyFilterExclusionSuppColumns.ts">
@@ -1646,6 +1682,7 @@
     <TypeScriptCompile Include="Modules\DWSupport\AmenityMasterDetail\SplitMasterGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CapacitySupp\CapacitySuppExcelImportDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\CappingAdjustmentsSupp\CappingAdjustmentsSuppExcelImportDialog.ts" />
+    <TypeScriptCompile Include="Modules\DWSupport\DrydockSupp\DrydockSuppExcelImport.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogGridDialog.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\ImportErrorLog\ImportErrorLogListGrid.ts" />
     <TypeScriptCompile Include="Modules\DWSupport\InvoiceItemTypeMasterDetail\InvoiceItemTypeSplitDetailGrid.ts" />
@@ -3608,21 +3645,6 @@
     <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.MarketingTollfreeBrandInventoryForm.ts">
       <DependentUpon>ServerTypings.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppRow.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppService.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.CapacitySuppForm.ts">
-      <DependentUpon>ServerTypings.tt</DependentUpon>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.SuperPriceProgramsSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppRow.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppService.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
-    <TypeScriptCompile Include="Imports\ServerTypings\DWSupport.RegionMasterSuppForm.ts">  <DependentUpon>ServerTypings.tt</DependentUpon></TypeScriptCompile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -3807,6 +3829,7 @@
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\GroupLookup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesChannelLooukup.cs" />
     <Compile Include="Modules\DWSupport\DistrictMasterSupp\SalesRepLookup.cs" />
+    <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppExcelImportForm.cs" />
     <Compile Include="Modules\DWSupport\DrydockSupp\DrydockSuppStatusLookupEditor.cs" />
     <Compile Include="Modules\DWSupport\DWSupportPermissionKeys.cs" />
     <TypeScriptCompile Include="Modules\DWSupport\GtfSupp\GTFCategoryEditor.ts" />
